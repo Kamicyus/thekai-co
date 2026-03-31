@@ -1,0 +1,103 @@
+"use client";
+
+import Image from "next/image";
+import FadeIn from "@/components/ui/FadeIn";
+
+const HIGHLIGHTS = [
+  "AI-Native Stüdyo",
+  "72+ AI Ajan Altyapısı",
+  "20M+ Toplam Dinlenme",
+  "6 Aktif Proje",
+];
+
+export default function About() {
+  return (
+    <section id="hakkinda" className="py-24 lg:py-32">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+        {/* Section Title */}
+        <FadeIn className="text-center mb-16 lg:mb-20">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
+            The Kai Hakkında
+          </h2>
+          <p className="text-[#999999] text-lg max-w-lg mx-auto">
+            Dünyalar kuran bir stüdyo.
+          </p>
+        </FadeIn>
+
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+          {/* Left: Story (3/5 width) */}
+          <div className="lg:col-span-3">
+            <FadeIn delay={0.1}>
+              <div className="space-y-6 text-[#999999] text-lg leading-relaxed">
+                <p>
+                  The Kai, müzik ile teknolojiyi birleştiren bir yaratıcı stüdyodur.
+                  AI müzik prodüksiyonundan yazılım geliştirmeye, içerik üretiminden
+                  otomasyon sistemlerine kadar geniş bir yelpazede hizmet veriyoruz.
+                </p>
+                <p>
+                  Echo Bazaar projesiyle AI müzik dünyasında 20 milyon dinlenmeyi
+                  aştık. MURMUR ile klasik edebiyatı yapay zekâ sesiyle yeniden hayata
+                  geçiriyoruz. 72&apos;den fazla AI ajanla kendi operasyonlarımızı
+                  yönetiyoruz.
+                </p>
+                <p>
+                  Aynı teknolojiyi ve vizyonu sizin projeniz için de kullanıyoruz.
+                  İster bir AI ajan sistemi kurun, ister içerik üretin, ister bir web
+                  uygulaması geliştirin — The Kai her projeye aynı tutkuyla yaklaşır.
+                </p>
+              </div>
+            </FadeIn>
+
+            {/* Quote Highlight */}
+            <FadeIn delay={0.2}>
+              <div className="mt-10 pl-6 border-l-2 border-[#D8FB32]">
+                <p className="text-[#F5F5F5] text-xl lg:text-2xl font-medium italic leading-relaxed">
+                  &ldquo;Her proje bir dünya. Her dünya bir hikâye. Ve her hikâye,
+                  teknolojiyle büyüyor.&rdquo;
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Right: Founder Card (2/5 width) */}
+          <div className="lg:col-span-2">
+            <FadeIn delay={0.3} direction="left">
+              <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-8 lg:p-10">
+                {/* Avatar */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">
+                    <Image src="/images/kamer.png" alt="Kamer" width={64} height={64} className="object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-[#F5F5F5] font-semibold text-lg">
+                      Kamer
+                    </p>
+                    <p className="text-[#999999] text-sm">
+                      Founder &amp; Creative Director
+                    </p>
+                  </div>
+                </div>
+
+                {/* Highlights */}
+                <div className="space-y-4">
+                  {HIGHLIGHTS.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-3 py-3 border-b border-[#1F2937]/50 last:border-0"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-[#D8FB32] flex-shrink-0" />
+                      <span className="text-[#F5F5F5] text-base font-medium">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0A0A0A;
+  --foreground: #F5F5F5;
+  --charcoal: #1A1A1A;
+  --spark: #D8FB32;
+  --spark-dark: #B4F030;
+  --purple: #5532FA;
+  --gray-600: #666666;
+  --gray-400: #999999;
+  --gray-200: #E0E0E0;
+  --border: #1F2937;
+  --card-bg: #141414;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-charcoal: var(--charcoal);
+  --color-spark: var(--spark);
+  --color-spark-dark: var(--spark-dark);
+  --color-purple: var(--purple);
+  --color-gray-600: var(--gray-600);
+  --color-gray-400: var(--gray-400);
+  --color-gray-200: var(--gray-200);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --font-sans: var(--font-inter);
+  --font-body: var(--font-dm-sans);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-serif: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Tailwind v4 preflight handles reset — no manual * reset needed */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background: rgba(216, 251, 50, 0.3);
+  color: #F5F5F5;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Grid background animation */
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.06; }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(216, 251, 50, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216, 251, 50, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #D8FB32 0%, #5532FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Slow spin animations for decorative pinwheels */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-slow-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
