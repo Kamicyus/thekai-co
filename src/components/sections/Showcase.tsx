@@ -123,7 +123,7 @@ export default function Showcase() {
 
         {/* Project Grid */}
         <StaggerChildren
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           staggerDelay={0.12}
         >
           {PROJECTS.map((project) => (
@@ -212,7 +212,7 @@ export default function Showcase() {
                 )}
 
                 {/* Content */}
-                <div className="p-8 flex flex-col flex-1">
+                <div className="p-5 sm:p-8 flex flex-col flex-1">
                   <h3 className="font-sans text-xl lg:text-2xl font-semibold text-[#F5F5F5] mb-3 tracking-[-0.5px]">
                     {project.title}
                   </h3>

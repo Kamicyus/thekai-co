@@ -27,7 +27,7 @@ export default function Services() {
 
         {/* Cards Grid */}
         <StaggerChildren
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
           staggerDelay={0.08}
         >
           {SERVICES.map((service) => (

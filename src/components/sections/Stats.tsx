@@ -14,7 +14,7 @@ export default function Stats() {
         >
           {STATS.map((stat, i) => (
             <StaggerItem key={stat.label} className="text-center relative">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#D8FB32] tracking-[-2px] mb-2 font-sans">
+              <div className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#D8FB32] tracking-[-2px] mb-2 font-sans">
                 {stat.value}
               </div>
               <div className="text-sm sm:text-base text-[#999999] font-medium">

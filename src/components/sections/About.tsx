@@ -29,7 +29,7 @@ export default function About() {
           {/* Left: Story (3/5 width) */}
           <div className="lg:col-span-3">
             <FadeIn delay={0.1}>
-              <div className="space-y-6 text-[#999999] text-lg leading-relaxed">
+              <div className="space-y-5 text-[#999999] text-base sm:text-lg leading-relaxed">
                 <p>
                   The Kai, müzik ile teknolojiyi birleştiren bir yaratıcı stüdyodur.
                   AI müzik prodüksiyonundan yazılım geliştirmeye, içerik üretiminden
@@ -63,7 +63,7 @@ export default function About() {
           {/* Right: Founder Card (2/5 width) */}
           <div className="lg:col-span-2">
             <FadeIn delay={0.3} direction="left">
-              <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-8 lg:p-10">
+              <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 lg:p-10">
                 {/* Avatar */}
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">

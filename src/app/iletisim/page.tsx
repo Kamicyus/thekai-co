@@ -61,8 +61,8 @@ export default function IletisimPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Form */}
           <FadeIn direction="left" className="lg:col-span-3">
-            <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-8 lg:p-10">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-5 sm:p-8 lg:p-10">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className={labelClasses}>
@@ -170,7 +170,7 @@ export default function IletisimPage() {
 
           {/* Contact Info */}
           <FadeIn direction="right" delay={0.15} className="lg:col-span-2">
-            <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-8 lg:p-10 h-fit lg:sticky lg:top-28">
+            <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-5 sm:p-8 lg:p-10 h-fit lg:sticky lg:top-28">
               <h3 className="font-sans text-xl font-semibold text-[#F5F5F5] mb-6">
                 Doğrudan Ulaşın
               </h3>

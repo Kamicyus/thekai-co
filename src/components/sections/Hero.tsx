@@ -22,20 +22,23 @@ export default function Hero() {
 
       {/* Subtle radial glow */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] rounded-full opacity-20 pointer-events-none"
         style={{
           background: "radial-gradient(circle, rgba(216,251,50,0.08) 0%, transparent 70%)",
         }}
       />
 
       {/* Large background pinwheel — center, slowly rotating */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] pointer-events-none hidden sm:block">
         <DecorativePinwheel size={550} opacity={0.04} animate />
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] pointer-events-none sm:hidden">
+        <DecorativePinwheel size={280} opacity={0.04} animate />
       </div>
 
       {/* Small pinwheel — bottom-right, reverse rotation */}
-      <div className="absolute bottom-16 right-12 pointer-events-none">
-        <DecorativePinwheel size={150} opacity={0.08} animate reverse />
+      <div className="absolute bottom-16 right-6 sm:right-12 pointer-events-none">
+        <DecorativePinwheel size={80} opacity={0.08} animate reverse />
       </div>
 
       {/* Content */}

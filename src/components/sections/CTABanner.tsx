@@ -26,7 +26,7 @@ export default function CTABanner() {
 
       <FadeIn>
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] tracking-[-0.02em] mb-6 max-w-3xl mx-auto leading-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] tracking-[-0.02em] mb-6 max-w-3xl mx-auto leading-tight">
             Bir Sonraki Dünyanızı<br className="hidden sm:block" /> Birlikte Kuralım
           </h2>
           <p className="text-[#0A0A0A]/70 text-lg sm:text-xl mb-10 max-w-lg mx-auto">

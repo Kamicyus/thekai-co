@@ -40,12 +40,12 @@ export default function TechStack() {
 
         {/* Tech Grid */}
         <StaggerChildren
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-5"
           staggerDelay={0.06}
         >
           {TECH_ITEMS.map((item) => (
             <StaggerItem key={item.name}>
-              <div className="group relative flex flex-col items-center justify-center text-center p-6 lg:p-8 bg-[#141414] border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:bg-[#1A1A1A]">
+              <div className="group relative flex flex-col items-center justify-center text-center p-4 sm:p-6 lg:p-8 bg-[#141414] border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:bg-[#1A1A1A]">
                 {/* Tiny pinwheel — fades in on hover */}
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                   <DecorativePinwheel
