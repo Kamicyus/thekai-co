@@ -29,34 +29,14 @@ const MUSIC_ARTWORKS = [
 
 const DIGITAL_ARTWORKS = [
   {
-    title: "Vortex",
-    description: "Işık girdabına yürüyen figür — sonsuzluğa adım.",
-    image: "/images/artworks/vortex.jpg",
-  },
-  {
     title: "Red Chaos",
     description: "Kırmızı tuval üzerinde kaotik figürler — hareketin enerjisi.",
     image: "/images/artworks/red-chaos.jpg",
   },
   {
-    title: "Shadow Crown",
-    description: "Mor ışıkta taçlı gölge figür — karanlığın asaleti.",
-    image: "/images/artworks/shadow-crown.jpg",
-  },
-  {
-    title: "Flower Field",
-    description: "Çiçek tarlasında şeffaf figür — doğayla bütünleşme.",
-    image: "/images/artworks/flower-field.jpg",
-  },
-  {
-    title: "Tango",
-    description: "Altın ışıkta dans eden çift — tutkunun renkleri.",
-    image: "/images/artworks/tango.jpg",
-  },
-  {
-    title: "Mushroom Portrait",
-    description: "Mantar başlıklı portre — sürrealist güzellik.",
-    image: "/images/artworks/mushroom-portrait.jpg",
+    title: "Leopards",
+    description: "Kükreyen leoparlar — doğanın ham gücü.",
+    image: "/images/artworks/leopards.jpg",
   },
   {
     title: "White Horse",
@@ -64,14 +44,34 @@ const DIGITAL_ARTWORKS = [
     image: "/images/artworks/white-horse.jpg",
   },
   {
+    title: "Vortex",
+    description: "Işık girdabına yürüyen figür — sonsuzluğa adım.",
+    image: "/images/artworks/vortex.jpg",
+  },
+  {
+    title: "Tango",
+    description: "Altın ışıkta dans eden çift — tutkunun renkleri.",
+    image: "/images/artworks/tango.jpg",
+  },
+  {
+    title: "Shadow Crown",
+    description: "Mor ışıkta taçlı gölge figür — karanlığın asaleti.",
+    image: "/images/artworks/shadow-crown.jpg",
+  },
+  {
+    title: "Mushroom Portrait",
+    description: "Mantar başlıklı portre — sürrealist güzellik.",
+    image: "/images/artworks/mushroom-portrait.jpg",
+  },
+  {
+    title: "Flower Field",
+    description: "Çiçek tarlasında şeffaf figür — doğayla bütünleşme.",
+    image: "/images/artworks/flower-field.jpg",
+  },
+  {
     title: "Still Life",
     description: "Pikap ve sofra — nostaljik gerçekçilik.",
     image: "/images/artworks/still-life.jpg",
-  },
-  {
-    title: "Leopards",
-    description: "Kükreyen leoparlar — doğanın ham gücü.",
-    image: "/images/artworks/leopards.jpg",
   },
 ];
 

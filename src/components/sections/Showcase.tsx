@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
@@ -49,6 +50,7 @@ const PROJECTS = [
     accentTo: "#F59E0B",
     decoration: "waves" as const,
     image: "/images/projects/kimjungvada.jpg",
+    href: "/portfolyo",
   },
   {
     category: "Sosyal Medya",
@@ -93,9 +95,11 @@ export default function Showcase() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           staggerDelay={0.12}
         >
-          {PROJECTS.map((project) => (
+          {PROJECTS.map((project) => {
+            const Wrapper = project.href ? ({ children, className }: { children: React.ReactNode; className: string }) => <Link href={project.href!} className={className}>{children}</Link> : ({ children, className }: { children: React.ReactNode; className: string }) => <div className={className}>{children}</div>;
+            return (
             <StaggerItem key={project.title}>
-              <div className="group relative flex flex-col h-full bg-[#141414] border border-[#1F2937] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01]">
+              <Wrapper className="group relative flex flex-col h-full bg-[#141414] border border-[#1F2937] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01]">
                 {/* Header Area — Image or Gradient */}
                 {project.image ? (
                   <div className="relative h-[160px] w-full overflow-hidden">
@@ -187,9 +191,10 @@ export default function Showcase() {
                     {project.description}
                   </p>
                 </div>
-              </div>
+              </Wrapper>
             </StaggerItem>
-          ))}
+            );
+          })}
         </StaggerChildren>
 
       </div>
