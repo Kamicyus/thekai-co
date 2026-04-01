@@ -8,10 +8,10 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Ana Sayfa", href: "/" },
   { label: "Hizmetler", href: "/hizmetler" },
   { label: "Portfolyo", href: "/#portfolyo" },
-  { label: "Hakkında", href: "/#hakkinda" },
+  { label: "Blog", href: "/blog" },
+  { label: "Araçlar", href: "/araclar" },
   { label: "İletişim", href: "/iletisim" },
 ] as const;
 
