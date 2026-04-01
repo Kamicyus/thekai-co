@@ -10,11 +10,14 @@ export interface BlogPost {
 }
 
 export interface BlogSection {
-  type: "h2" | "h3" | "p" | "ul" | "cta";
+  type: "h2" | "h3" | "p" | "ul" | "cta" | "faq" | "img";
   text?: string;
   items?: string[];
   href?: string;
   label?: string;
+  faqItems?: { question: string; answer: string }[];
+  src?: string;
+  alt?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -37,88 +40,100 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "2026 yılında yapay zeka artık sadece bir chatbot değil. Bir metne cevap yazmaktan çok daha fazlasını yapabilen, görevleri planlayan, kararlar alan, araçları kullanan ve birbirleriyle iletişim kuran AI sistemleri iş dünyasını dönüştürüyor. Bu sistemlerin adı: AI ajan sistemleri.",
+        text: "<strong>AI ajan sistemi</strong>, 2026'da artık bir buzzword değil — gerçek işlerin döndüğü bir altyapı. Bir chatbot'a \"merhaba\" yazmaktan çok farklı bir şeyden bahsediyorum. Görevleri planlayan, kararlar alan, araçları kullanan ve birbirleriyle iletişim kuran yapay zeka bileşenlerinden oluşan bir ekosistem bu. Ben bu sistemi kendi işlerimde kurdum, kullanıyorum ve müşterilerime de kuruyorum. İşin aslı şu ki: AI ajan sistemini anlamadan 2026'da dijitalde rekabet etmek giderek zorlaşıyor.",
+      },
+      {
+        type: "img",
+        alt: "AI ajan sistemi mimarisi - orkestratör ve uzman ajanlar arası iletişim diyagramı",
       },
       {
         type: "h2",
-        text: "AI Ajan Nedir?",
+        text: "AI Ajan Tam Olarak Nedir?",
       },
       {
         type: "p",
-        text: "Bir AI ajan, belirli bir görevi yerine getirmek üzere tasarlanmış, otonom çalışabilen yapay zeka bileşenidir. Geleneksel chatbot'lardan farkı şudur: bir chatbot sadece gelen mesaja yanıt üretir; bir ajan ise hedef doğrultusunda planlama yapar, araçlar kullanır (e-posta gönderir, dosya okur, API çağrısı yapar), hafızasını kullanır ve gerektiğinde diğer ajanlara iş delege eder.",
+        text: "Bir <strong>AI ajan</strong>, belirli bir görevi yerine getirmek üzere tasarlanmış, otonom çalışabilen yapay zeka bileşenidir. Geleneksel chatbot'lardan farkı net: bir chatbot gelen mesaja yanıt üretir ve orada biter. Bir ajan ise hedef doğrultusunda planlama yapar, araçlar kullanır — e-posta gönderir, dosya okur, API çağrısı yapar — hafızasını kullanır ve gerektiğinde diğer ajanlara iş delege eder.",
       },
       {
         type: "p",
-        text: "Bir AI ajan, tek bir komutla birden fazla adımı sırayla yürütebilir. Örneğin \"bu müşteriyle ilgili son 5 e-postayı özetle ve takvime bir takip toplantısı ekle\" gibi bir talimat, doğru yapılandırılmış bir ajan için tek bir iş akışıdır.",
+        text: "Bunu somutlaştırayım. \"Bu müşteriyle ilgili son 5 e-postayı özetle ve takvime bir takip toplantısı ekle\" dediğinizde, doğru yapılandırılmış bir ajan Gmail'e bağlanır, e-postaları çeker, özetler, Google Calendar'da etkinlik oluşturur ve size sonucu bildirir. Tek komut, beş farklı adım. İnsan müdahalesi sıfır.",
       },
       {
         type: "h2",
-        text: "Tek Ajan mı, Çoklu Ajan mı?",
+        text: "Tek Ajan mı Kullanmalı, Çoklu Ajan mı?",
       },
       {
         type: "p",
-        text: "Basit ihtiyaçlar için tek bir AI ajan yeterli olabilir. Ancak gerçek dünyada işler nadiren bu kadar basittir. Bir şirketin pazarlama, satış, müşteri hizmetleri, finans ve operasyon gibi farklı departmanları vardır. Her departmanın farklı araçlara, farklı bilgi tabanlarına ve farklı karar mekanizmalarına ihtiyacı vardır.",
+        text: "Basit ihtiyaçlar için tek bir AI ajan yeterli olabilir. Ama gerçek dünyada işler nadiren basit kalıyor, değil mi? Bir şirketin pazarlama, satış, müşteri hizmetleri, finans ve operasyon gibi departmanları var. Her birinin farklı araçlara, farklı bilgi tabanlarına ve farklı karar mekanizmalarına ihtiyacı var.",
       },
       {
         type: "p",
-        text: "Çoklu ajan mimarisi (multi-agent architecture), her departman veya fonksiyon için uzmanlaşmış ajanlar oluşturup bunları bir orkestratör ajan aracılığıyla koordine etme yaklaşımıdır. Bu mimari, her ajanın kendi alanında derinleşmesini sağlarken, sistemin bütünlüklü çalışmasını garanti eder.",
+        text: "<strong>Çoklu ajan mimarisi</strong> (multi-agent architecture), her departman için uzmanlaşmış ajanlar oluşturup bunları bir orkestratör ajan aracılığıyla koordine etme yaklaşımı. Her ajan kendi alanında derinleşiyor, sistem bir bütün olarak çalışıyor. Benim kendi sistemimde 72'den fazla ajan var — her biri kendi görev tanımına, hafıza sistemine ve araç setine sahip.",
       },
       {
-        type: "h3",
-        text: "Çoklu Ajan Mimarisinin Avantajları",
+        type: "img",
+        alt: "Tek ajan vs çoklu ajan mimarisi karşılaştırma şeması",
+      },
+      {
+        type: "h2",
+        text: "Çoklu Ajan Mimarisinin Avantajları Nelerdir?",
       },
       {
         type: "ul",
         items: [
-          "Uzmanlık: Her ajan kendi alanında derinleşir, genel bir yapay zekadan çok daha isabetli sonuçlar üretir",
-          "Ölçeklenebilirlik: Yeni bir departman veya ihtiyaç ortaya çıktığında sisteme yeni bir ajan eklemek yeterlidir",
-          "Hata izolasyonu: Bir ajan hata yapsa bile diğer ajanlar etkilenmez",
-          "Hafıza yönetimi: Her ajan sadece kendi alanıyla ilgili bilgileri taşır, context window verimli kullanılır",
-          "Maliyet optimizasyonu: Basit görevler için küçük modeller, kritik kararlar için güçlü modeller kullanılabilir",
+          "<strong>Uzmanlık:</strong> Her ajan kendi alanında derinleşir. Genel bir AI'dan çok daha isabetli sonuçlar alırsınız",
+          "<strong>Ölçeklenebilirlik:</strong> Yeni bir departman veya ihtiyaç çıktığında sisteme yeni bir ajan eklemek yeterli",
+          "<strong>Hata izolasyonu:</strong> Bir ajan hata yapsa bile diğerleri etkilenmez. Kritik bir fark bu",
+          "<strong>Hafıza yönetimi:</strong> Her ajan sadece kendi alanıyla ilgili bilgileri taşır, context window verimli kullanılır",
+          "<strong>Maliyet optimizasyonu:</strong> Basit görevler için küçük modeller, kritik kararlar için güçlü modeller — gereksiz API harcaması yok",
         ],
       },
       {
         type: "h2",
-        text: "Orkestrasyon: Ajanları Kim Yönetir?",
+        text: "Orkestrasyon Nasıl Çalışıyor?",
       },
       {
         type: "p",
-        text: "Çoklu ajan sistemlerinin kalbi orkestrasyon katmanıdır. Orkestratör ajan, gelen talepleri analiz eder, doğru ajana yönlendirir ve sonuçları kullanıcıya sunar. Bunu bir şirketin CEO'su gibi düşünebilirsiniz: her departmanın işini bilir, kimin ne yapacağını belirler ve büyük resmi görür.",
+        text: "Çoklu ajan sistemlerinin kalbi <strong>orkestrasyon katmanı</strong>. Orkestratör ajan, gelen talepleri analiz eder, doğru ajana yönlendirir ve sonuçları kullanıcıya sunar. Bunu bir şirketin CEO'su gibi düşünün: her departmanın işini bilir, kimin ne yapacağını belirler, büyük resmi görür.",
       },
       {
         type: "p",
-        text: "İyi bir orkestrasyon sistemi anahtar kelime tetikleyicileri, bağlam analizi ve öncelik kuralları kullanarak talepleri yönlendirir. Belirsiz durumlarda ise kullanıcıya sormak yerine en olası ajana yönlendirip sonucu doğrular.",
+        text: "Kendi sistemimden bir örnek vereyim: Ben Telegram'dan bir ses kaydı gönderiyorum. Orkestratör bunu alıyor, transkript çıkarıyor, içeriğe göre ilgili ajana yönlendiriyor — müzikle ilgiliyse Müzik Ajanı'na, iş geliştirmeyle ilgiliyse Satış Ajanı'na. Ben sadece konuşuyorum, gerisini sistem hallediyor.",
       },
       {
         type: "h2",
-        text: "Gerçek Dünya Örneği: The Kai'nin 72+ Ajan Sistemi",
+        text: "72+ Ajan Sistemi: Kendi Deneyimimden",
       },
       {
         type: "p",
-        text: "The Kai olarak, Claude Code tabanlı 72'den fazla AI ajan içeren bir sistem geliştirdik ve günlük operasyonlarımızda aktif olarak kullanıyoruz. Bu sistem 10 departmana yayılmış uzman ajanlardan oluşuyor:",
+        text: "The Kai olarak, <strong>Claude Code tabanlı 72'den fazla AI ajan</strong> içeren bir sistem geliştirdim ve her gün aktif olarak kullanıyorum. Bu sistemi sıfırdan kurdum — önce kendi ihtiyaçlarım için, sonra baktım ki müşteriler de aynı şeye ihtiyaç duyuyor. 10 departmana yayılmış uzman ajanlardan oluşuyor:",
       },
       {
         type: "ul",
         items: [
-          "Müzik Departmanı: Prodüksiyon, söz yazma, mix-master, dağıtım ajanları",
-          "Pazarlama Departmanı: Sosyal medya, içerik üretimi, SEO ajanları",
-          "Teknoloji Departmanı: Web geliştirme, bot kurulumu, otomasyon ajanları",
-          "İstihbarat Departmanı: Trend analizi, rakip takibi, veri besleme ajanları",
-          "Yaratıcı Departman: Görsel tasarım, video prodüksiyon, copywriting ajanları",
-          "Destek Departmanı: Finans, hukuk, psikoloji danışmanlık ajanları",
+          "<strong>Müzik Departmanı:</strong> Prodüksiyon, söz yazma, mix-master, dağıtım ajanları",
+          "<strong>Pazarlama Departmanı:</strong> Sosyal medya, içerik üretimi, SEO ajanları",
+          "<strong>Teknoloji Departmanı:</strong> Web geliştirme, bot kurulumu, otomasyon ajanları",
+          "<strong>İstihbarat Departmanı:</strong> Trend analizi, rakip takibi, veri besleme ajanları",
+          "<strong>Yaratıcı Departman:</strong> Görsel tasarım, video prodüksiyon, copywriting ajanları",
+          "<strong>Destek Departmanı:</strong> Finans, hukuk, psikoloji danışmanlık ajanları",
         ],
       },
       {
         type: "p",
-        text: "Her ajan kendi AGENT.md dosyasıyla tanımlanmış, kendi hafıza sistemine sahip ve MCP (Model Context Protocol) entegrasyonlarıyla Gmail, Google Calendar, Canva gibi gerçek araçlara bağlı. Sistem, tek bir konuşma noktasından (orkestratör) yönetiliyor — kullanıcı ne istediğini söylüyor, orkestratör doğru ajana yönlendiriyor.",
-      },
-      {
-        type: "h2",
-        text: "Kimler AI Ajan Sistemi Kullanmalı?",
+        text: "Her ajan kendi AGENT.md dosyasıyla tanımlanmış, kendi hafıza sistemine sahip ve <strong>MCP (Model Context Protocol)</strong> entegrasyonlarıyla Gmail, Google Calendar, Canva gibi gerçek araçlara bağlı. İlk kurduğumda 5 ajanla başlamıştım, 3 ayda 72'ye çıktı. Neden? Çünkü bir kez altyapıyı kurduğunuzda yeni ajan eklemek saatler sürüyor, günler değil.",
       },
       {
         type: "p",
-        text: "AI ajan sistemleri her ölçekten işletmeye fayda sağlayabilir. Ancak özellikle şu profillerdeki işletmeler için çarpıcı sonuçlar üretiyor:",
+        text: "Bu konuda daha teknik detay istersen, <a href=\"/blog/claude-code-rehber\">Claude Code ile Neler Yapabilirsiniz?</a> yazımıza göz atabilirsin.",
+      },
+      {
+        type: "h2",
+        text: "Hangi İşletmeler AI Ajan Sistemi Kullanmalı?",
+      },
+      {
+        type: "p",
+        text: "AI ajan sistemleri her ölçekten işletmeye fayda sağlayabilir. Ama özellikle şu profillerdeki işletmelerde çarpıcı sonuçlar görüyorum:",
       },
       {
         type: "ul",
@@ -127,9 +142,13 @@ export const blogPosts: BlogPost[] = [
           "Birden fazla dijital platformda varlık gösteren markalar",
           "İçerik üretimi sürecini hızlandırmak isteyen yaratıcı ajanslar",
           "Müşteri iletişimini otomatize etmek isteyen e-ticaret şirketleri",
-          "Tek kişilik veya küçük ekipli girişimler (solopreneur/freelancer)",
+          "Tek kişilik veya küçük ekipli girişimler — solopreneur'lar ve freelancer'lar",
           "Dijital dönüşüm sürecindeki orta ve büyük ölçekli şirketler",
         ],
+      },
+      {
+        type: "p",
+        text: "Peki bu ne anlama geliyor? Diyelim 3 kişilik bir dijital ajans iseniz ve haftada 15 saat sosyal medya içeriği üretiyorsunuz. Doğru kurulmuş bir <strong>AI ajan sistemi</strong> bu süreyi 3 saate düşürebilir. Geri kalan 12 saati strateji, müşteri ilişkileri veya yeni iş geliştirmeye harcarsınız. Gerçekten de müşterilerimden biri tam olarak bunu yaşadı.",
       },
       {
         type: "h2",
@@ -137,7 +156,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bir AI ajan sistemi kurmak, bir chatbot açmaktan farklı bir süreçtir. Doğru yapılandırma için şu adımlar izlenir:",
+        text: "Bir AI ajan sistemi kurmak, bir chatbot açmaktan farklı. Doğru yapılandırma için şu adımları izliyoruz:",
       },
       {
         type: "h3",
@@ -145,7 +164,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Önce işletmenizin hangi süreçlerinde yapay zeka desteğine ihtiyacı olduğu belirlenir. Hangi görevler tekrarlayan? Hangi kararlar veri odaklı alınabilir? Hangi iletişim kanalları otomatize edilebilir?",
+        text: "Önce işletmenizin hangi süreçlerinde yapay zeka desteğine ihtiyacı olduğunu belirliyoruz. Hangi görevler tekrarlayan? Hangi kararlar veri odaklı alınabilir? Hangi iletişim kanalları otomatize edilebilir? Bu aşamayı atlamak, yanlış ajana yatırım yapmak demek.",
       },
       {
         type: "h3",
@@ -153,7 +172,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Her ajan için görev tanımı, yetkinlik alanı, kullanacağı araçlar ve hafıza yapısı belirlenir. Bu aşamada AGENT.md dosyaları oluşturulur — her ajan için bir kimlik belgesi gibi düşünebilirsiniz.",
+        text: "Her ajan için görev tanımı, yetkinlik alanı, kullanacağı araçlar ve hafıza yapısı belirlenir. Bu aşamada AGENT.md dosyaları oluşturulur — her ajan için bir kimlik belgesi gibi düşünebilirsiniz. Burada dikkat etmeniz gereken şey: ajanı çok geniş tanımlarsanız performans düşer, çok dar tanımlarsanız esneklik kaybolur.",
       },
       {
         type: "h3",
@@ -161,7 +180,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ajanlar arası yönlendirme kuralları, öncelik sıralamaları ve tetikleyiciler tanımlanır. CLAUDE.md dosyası, orkestratörün beyni gibi çalışır.",
+        text: "Ajanlar arası yönlendirme kuralları, öncelik sıralamaları ve tetikleyiciler tanımlanır. CLAUDE.md dosyası, orkestratörün beyni gibi çalışır. <a href=\"/hizmetler\">Hizmetlerimiz</a> sayfasında bu sürecin detaylarını inceleyebilirsiniz.",
       },
       {
         type: "h3",
@@ -169,7 +188,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ajanlar, işletmenizin mevcut araçlarına bağlanır: Gmail, Google Calendar, Slack, Telegram, CRM sistemleri, e-ticaret platformları ve daha fazlası. MCP (Model Context Protocol) bu entegrasyonları standart bir şekilde sağlar.",
+        text: "Ajanlar, işletmenizin mevcut araçlarına bağlanır: Gmail, Google Calendar, Slack, Telegram, CRM sistemleri, e-ticaret platformları. MCP (Model Context Protocol) bu entegrasyonları standart bir şekilde sağlıyor.",
       },
       {
         type: "h3",
@@ -177,24 +196,49 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Sistem gerçek senaryolarla test edilir, hafıza dosyaları beslenir ve ajan davranışları ince ayarlanır. Bu süreç süreklidir — sistem kullandıkça öğrenir ve gelişir.",
+        text: "Sistem gerçek senaryolarla test edilir, hafıza dosyaları beslenir ve ajan davranışları ince ayarlanır. Bu süreç sürekli — sistem kullandıkça öğreniyor ve gelişiyor. İlk hafta ile üçüncü ay arasındaki fark inanılmaz.",
       },
       {
         type: "h2",
-        text: "Türkiye'de AI Ajan Sistemleri",
+        text: "Türkiye'de AI Ajan Sistemleri Ne Durumda?",
       },
       {
         type: "p",
-        text: "Türkiye'de AI ajan sistemi kurulumu henüz erken aşamada. Çoğu şirket hâlâ temel chatbot çözümlerinde takılı kalıyor. Bu, erken hareket eden işletmeler için büyük bir rekabet avantajı anlamına geliyor. The Kai olarak, Türkiye'deki ilk kapsamlı AI ajan sistemi kurulum hizmetini sunuyoruz — 72+ ajan deneyimimizle.",
+        text: "<strong>Türkiye'de AI ajan sistemi kurulumu</strong> henüz erken aşamada. Çoğu şirket hala temel chatbot çözümlerinde takılı. Bu, erken hareket eden işletmeler için büyük bir rekabet avantajı. The Kai olarak, Türkiye'deki ilk kapsamlı AI ajan sistemi kurulum hizmetini sunuyoruz — 72+ ajan deneyimimizle.",
       },
       {
         type: "p",
-        text: "İşletmenizin AI dönüşümünü başlatmak, tekrarlayan görevleri otomatize etmek ve ekibinizi güçlendirmek istiyorsanız, size özel bir ajan mimarisi tasarlayabiliriz.",
+        text: "İşletmenizin AI dönüşümünü başlatmak, tekrarlayan görevleri otomatize etmek ve ekibinizi güçlendirmek istiyorsanız, size özel bir ajan mimarisi tasarlayabiliriz. İlk görüşmemiz ücretsiz.",
       },
       {
         type: "cta",
         label: "AI Ajan Sisteminizi Kuralım",
         href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI ajan sistemi kurmak ne kadar sürer?",
+            answer:
+              "İhtiyaç analizine bağlı olarak değişir. Basit bir 3-5 ajanlı sistem 1-2 haftada kurulabilir. Kapsamlı bir çoklu departman sistemi ise 4-8 hafta sürebilir. Biz kendi 72+ ajanlı sistemimizi 3 ayda iteratif olarak kurduk.",
+          },
+          {
+            question: "AI ajan sistemi için teknik bilgi gerekli mi?",
+            answer:
+              "Sistemi <strong>kullanmak</strong> için teknik bilgi gerekmez — doğal dilde komut verirsiniz. Sistemi <strong>kurmak</strong> için ise yapılandırma bilgisi gerekir. The Kai olarak kurulum, eğitim ve destek sürecinin tamamını üstleniyoruz.",
+          },
+          {
+            question: "AI ajan sistemi ne kadar maliyetli?",
+            answer:
+              "Maliyet, ajan sayısına, entegrasyon karmaşıklığına ve kullanılan AI modeline göre değişir. API maliyetleri aylık birkaç yüz TL'den başlayabilir. Kurulum hizmeti için <a href='/iletisim'>iletişime geçin</a>, ihtiyacınıza özel fiyat sunalım.",
+          },
+          {
+            question: "Mevcut araçlarımla (Gmail, Slack, CRM) entegre olabilir mi?",
+            answer:
+              "Evet. MCP (Model Context Protocol) sayesinde Gmail, Google Calendar, Slack, Telegram, Canva ve birçok araçla entegrasyon mümkün. Mevcut iş akışınızı bozmadan AI ajan sistemi entegre ediyoruz.",
+          },
+        ],
       },
     ],
   },
@@ -218,15 +262,23 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Yapay zeka ile müzik üretimi 2024'te deneysel bir merak konusuydu, 2025'te ciddi bir üretim aracına dönüştü, 2026'da ise endüstrinin ayrılmaz bir parçası haline geldi. Peki gerçekte neler mümkün, sınırlar nerede ve bu araçlarla nasıl profesyonel sonuçlar elde ediliyor? Echo Bazaar kanalında 20 milyondan fazla dinlenme elde etmiş bir ekip olarak, deneyimlerimizi paylaşıyoruz.",
-      },
-      {
-        type: "h2",
-        text: "2026'nın AI Müzik Araçları",
+        text: "<strong>Yapay zeka ile müzik yapmak</strong> 2024'te deneysel bir merak konusuydu, 2025'te ciddi bir üretim aracına dönüştü, 2026'da ise endüstrinin ayrılmaz bir parçası haline geldi. 15 yıldır şarkı yazıyorum, prodüksiyon yapıyorum. Echo Bazaar kanalında bu araçları kullanarak 20 milyondan fazla dinlenmeye ulaştık. İlk şarkımız yayınlandığında 3 gün içinde 100K dinlenmeyi geçti — o an anladım ki bu sadece bir \"oyuncak\" değil, ciddi bir üretim altyapısı.",
       },
       {
         type: "p",
-        text: "AI müzik üretim ekosistemi hızla büyüyor. Her aracın kendine özgü güçlü yanları ve sınırlamaları var. İşte günlük üretimde aktif olarak kullandığımız araçlar:",
+        text: "Peki gerçekte neler mümkün, sınırlar nerede ve bu araçlarla nasıl profesyonel sonuçlar elde ediliyor? Deneyimlerimizi paylaşıyorum.",
+      },
+      {
+        type: "img",
+        alt: "AI müzik üretim süreci - Suno'dan Logic Pro'ya iş akışı diyagramı",
+      },
+      {
+        type: "h2",
+        text: "2026'da Hangi AI Müzik Araçları Kullanılıyor?",
+      },
+      {
+        type: "p",
+        text: "AI müzik üretim ekosistemi hızla büyüyor. Her aracın kendine özgü güçlü yanları ve sınırlamaları var. Günlük üretimde aktif olarak kullandığım araçları anlatayım:",
       },
       {
         type: "h3",
@@ -234,7 +286,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Suno, metin tabanlı müzik üretiminin lider platformu. Bir prompt yazıyorsunuz — söz, tarz, tempo bilgisi veriyorsunuz — ve dakikalar içinde tam bir şarkı üretiyor. Güçlü yanı, farklı türlerde tutarlı ve dinlenebilir çıktılar üretebilmesi. Sınırlaması ise mix kalitesinin henüz profesyonel stüdyo seviyesinde olmaması. Echo Bazaar'daki içeriklerin büyük çoğunluğu Suno tabanlı üretimlerle başlıyor, ardından post-prodüksiyon sürecinden geçiyor.",
+        text: "<strong>Suno</strong>, metin tabanlı müzik üretiminin lider platformu. Bir prompt yazıyorsunuz — söz, tarz, tempo bilgisi veriyorsunuz — dakikalar içinde tam bir şarkı üretiyor. Echo Bazaar'daki içeriklerin büyük çoğunluğu Suno tabanlı üretimlerle başlıyor. Güçlü yanı: farklı türlerde tutarlı ve dinlenebilir çıktılar üretebilmesi. Sınırlaması? Mix kalitesi henüz profesyonel stüdyo seviyesinde değil. Ama ham malzeme olarak mükemmel bir başlangıç noktası.",
       },
       {
         type: "h3",
@@ -242,7 +294,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "ElevenLabs, ses klonlama ve text-to-speech alanında sektör lideri. Müzik prodüksiyonda vokal üretimi, ses değiştirme ve seslendirme için kullanıyoruz. Özellikle sesli kitap prodüksiyonunda da kritik bir araç. Türkçe dahil birçok dilde doğal ses üretebiliyor.",
+        text: "<strong>ElevenLabs</strong>, ses klonlama ve text-to-speech alanında sektör lideri. Müzik prodüksiyonda vokal üretimi, ses değiştirme ve seslendirme için kullanıyorum. Ayrıca <a href=\"/blog/ai-sesli-kitap\">sesli kitap prodüksiyonumuz Murmur</a> için de kritik bir araç. Türkçe dahil birçok dilde doğal ses üretebiliyor.",
       },
       {
         type: "h3",
@@ -250,7 +302,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "RVC, mevcut bir vokal performansını başka bir ses karakterine dönüştüren açık kaynak bir araç. AI müzik topluluğunda \"AI cover\" olarak bilinen içeriklerin temelini oluşturuyor. Bir şarkıyı farklı bir sanatçının ses karakteriyle yeniden yorumlayabiliyorsunuz. Kalitesi eğitim verisine ve model ayarlarına doğrudan bağlı.",
+        text: "<strong>RVC</strong>, mevcut bir vokal performansını başka bir ses karakterine dönüştüren açık kaynak bir araç. AI müzik topluluğunda \"AI cover\" olarak bilinen içeriklerin temelini oluşturuyor. Bir şarkıyı farklı bir sanatçının ses karakteriyle yeniden yorumlayabiliyorsunuz. Kalitesi eğitim verisine ve model ayarlarına doğrudan bağlı — iyi model, iyi sonuç. Kötü model, robotik ses.",
       },
       {
         type: "h3",
@@ -258,92 +310,125 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "AI araçları tek başına yeterli değil. Profesyonel sonuçlar için geleneksel DAW'lar (Digital Audio Workstation) hâlâ vazgeçilmez. Logic Pro, Ableton Live veya FL Studio ile AI üretimlerini düzenliyor, mix yapıyor ve mastering uyguluyoruz. AI ham malzemeyi üretiyor, insan dokunuşu onu profesyonel hale getiriyor.",
+        text: "AI araçları tek başına yeterli değil. Profesyonel sonuçlar için geleneksel <strong>DAW'lar</strong> (Digital Audio Workstation) hala vazgeçilmez. Logic Pro, Ableton Live veya FL Studio ile AI üretimlerini düzenliyor, mix yapıyor ve mastering uyguluyoruz. İşin özü şu: AI ham malzemeyi üretiyor, insan dokunuşu onu profesyonel hale getiriyor.",
       },
       {
         type: "h2",
-        text: "Hibrit Üretim: AI + İnsan Dokunuşu",
+        text: "Hibrit Üretim Nedir ve Neden Önemli?",
       },
       {
         type: "p",
-        text: "En iyi sonuçlar, AI'ı bir araç olarak kullanıp insan yaratıcılığıyla birleştirdiğinizde ortaya çıkıyor. Biz buna \"hibrit üretim\" diyoruz ve Echo Bazaar'daki tüm içerikleri bu yaklaşımla üretiyoruz.",
+        text: "En iyi sonuçlar, <strong>AI'ı bir araç olarak kullanıp insan yaratıcılığıyla birleştirdiğinizde</strong> ortaya çıkıyor. Ben buna \"hibrit üretim\" diyorum ve Echo Bazaar'daki tüm içerikleri bu yaklaşımla üretiyoruz. Tamamen AI'a bırakılan şarkılarla hibrit yaklaşımla üretilen şarkılar arasındaki kalite farkını dinleyiciler hemen hissediyor.",
       },
       {
         type: "p",
-        text: "Tipik bir hibrit üretim süreci şöyle işliyor:",
+        text: "Tipik bir hibrit üretim sürecimiz şöyle işliyor:",
       },
       {
         type: "ul",
         items: [
-          "Konsept ve söz yazımı: İnsan yaratıcılığı ile başlıyoruz. Tema, hikaye, duygusal ton belirleniyor",
-          "AI üretimi: Suno veya benzeri araçlarla ham müzik üretiliyor. Birden fazla versiyon deneniyor",
-          "Seçim ve düzenleme: En iyi versiyonlar seçilip DAW'a aktarılıyor. Yapı, arrangement düzenleniyor",
-          "Vokal işleme: Gerekiyorsa RVC veya ElevenLabs ile vokal dönüşümü yapılıyor",
-          "Mix ve master: Logic Pro'da profesyonel mix ve mastering uygulanıyor",
-          "Görsel prodüksiyon: Kapak tasarımı, thumbnail ve video içeriği hazırlanıyor",
-          "Dağıtım: Spotify, Apple Music, YouTube ve diğer platformlara dağıtılıyor",
+          "<strong>Konsept ve söz yazımı:</strong> İnsan yaratıcılığıyla başlıyoruz. Tema, hikaye, duygusal ton — bunlar AI'ın en zayıf olduğu alan",
+          "<strong>AI üretimi:</strong> Suno veya benzeri araçlarla ham müzik üretiliyor. 10-15 versiyon deniyorum, en iyi 2-3 tanesi seçiliyor",
+          "<strong>DAW düzenleme:</strong> En iyi versiyonlar Logic Pro'ya aktarılıyor. Yapı ve arrangement düzenleniyor",
+          "<strong>Vokal işleme:</strong> Gerekiyorsa RVC veya ElevenLabs ile vokal dönüşümü yapılıyor",
+          "<strong>Mix ve master:</strong> Logic Pro'da profesyonel mix ve mastering uygulanıyor",
+          "<strong>Görsel prodüksiyon:</strong> Kapak tasarımı, thumbnail ve video içeriği hazırlanıyor",
+          "<strong>Dağıtım:</strong> Spotify, Apple Music, YouTube ve diğer platformlara dağıtılıyor",
         ],
       },
       {
+        type: "img",
+        alt: "Echo Bazaar YouTube kanalı ekran görüntüsü - AI müzik içerikleri",
+      },
+      {
         type: "h2",
-        text: "Echo Bazaar Deneyimi: 20M+ Dinlenme Nasıl Oldu?",
+        text: "Echo Bazaar Deneyimi: 20M+ Dinlenmeye Nasıl Ulaştık?",
       },
       {
         type: "p",
-        text: "Echo Bazaar, AI müzik içeriği üreten bir YouTube kanalı olarak başladı ve bugün 20 milyonun üzerinde toplam dinlenmeye ulaştı. Bu başarının arkasında birkaç temel strateji var:",
+        text: "Echo Bazaar, AI müzik içeriği üreten bir YouTube kanalı olarak başladı ve 20 milyonun üzerinde toplam dinlenmeye ulaştı. İlk videomuz yayınlandığında ne olacağını bilmiyorduk açıkçası. Üçüncü günde 100K görüntülenmeyi geçtiğinde \"burada bir şey var\" dedik. Arkasındaki stratejileri açıklayayım:",
       },
       {
         type: "ul",
         items: [
-          "Niş odak: Belirli müzik türlerinde (Ortadoğu melodileri, Türk hip-hop, lo-fi) uzmanlaştık",
-          "Tutarlılık: Düzenli yayın takvimi ve tutarlı kalite standardı",
-          "Thumbnail ve başlık optimizasyonu: Her video için A/B testleri yaparak CTR'ı sürekli iyileştirdik",
-          "Topluluk: Dinleyici geri bildirimleri doğrudan üretim sürecine yansıdı",
-          "Hibrit yaklaşım: Tamamen AI'a bırakmadık, her adımda insan kontrolü ve yaratıcılığı devam etti",
+          "<strong>Niş odak:</strong> Belirli müzik türlerinde uzmanlaştık — Ortadoğu melodileri, Türk hip-hop, lo-fi. Her şeyi yapmaya çalışmadık",
+          "<strong>Tutarlılık:</strong> Düzenli yayın takvimi ve tutarlı kalite standardı. Haftada minimum 3 video",
+          "<strong>Thumbnail ve başlık optimizasyonu:</strong> Her video için A/B testleri yaparak CTR'ı sürekli iyileştirdik. Bu tek başına görüntülenmeleri 2 katına çıkardı",
+          "<strong>Topluluk:</strong> Dinleyici geri bildirimleri doğrudan üretim sürecine yansıdı. En çok beğenilen tarzlarda derinleştik",
+          "<strong>Hibrit yaklaşım:</strong> Tamamen AI'a bırakmadık, her adımda insan kontrolü devam etti",
         ],
       },
       {
+        type: "p",
+        text: "İşin aslı şu ki: AI müzik işi sadece teknoloji bilmekle olmuyor. 15 yıllık müzik prodüksiyon deneyimim olmasa, bu araçlardan bu sonuçları çıkaramazdım. AI aracı güçlü yapan, onu kullanan insanın bilgisi.",
+      },
+      {
         type: "h2",
-        text: "Telif Hakları ve Hukuki Durum",
+        text: "Telif Hakları Konusunda Ne Bilmek Gerekiyor?",
       },
       {
         type: "p",
-        text: "AI ile üretilen müziğin telif hakları, 2026 itibarıyla hâlâ netleşme sürecinde olan bir alan. Genel çerçeveyi şöyle özetleyebiliriz:",
+        text: "AI ile üretilen müziğin <strong>telif hakları</strong>, 2026 itibarıyla hala netleşme sürecinde. Bu alanda dikkatli olmak gerekiyor. Genel çerçeveyi özetleyeyim:",
       },
       {
         type: "ul",
         items: [
           "Suno gibi platformlarda ticari lisansla üretilen içerikler, platformun kullanım şartlarına göre ticari olarak kullanılabiliyor",
           "Tamamen AI tarafından üretilmiş bir eserin telif hakkı birçok ülkede henüz netleşmemiş durumda",
-          "İnsan müdahalesi içeren hibrit üretimler, geleneksel telif korumasına daha yakın bir konumda",
+          "<strong>İnsan müdahalesi içeren hibrit üretimler</strong>, geleneksel telif korumasına daha yakın bir konumda",
           "Her platformun (Spotify, Apple Music, YouTube) AI içerikle ilgili kendi politikaları var ve bunlar sık güncelleniyor",
-          "Mevcut bir sanatçının sesini izinsiz kullanmak (deepfake) hukuki risk taşıyor",
+          "Mevcut bir sanatçının sesini izinsiz kullanmak (deepfake) hukuki risk taşıyor — bu konuda çok dikkatli olun",
         ],
       },
       {
         type: "p",
-        text: "Bizim tavsiyemiz: AI müzik üretirken her zaman orijinal içerik oluşturmaya odaklanın, platform kurallarını düzenli takip edin ve ticari kullanım öncesi lisans koşullarını mutlaka kontrol edin.",
+        text: "Tavsiyem: AI müzik üretirken orijinal içerik oluşturmaya odaklanın, platform kurallarını düzenli takip edin ve ticari kullanım öncesi lisans koşullarını mutlaka kontrol edin. <a href=\"/hizmetler\">Müzik prodüksiyon hizmetimizde</a> bu konularda da danışmanlık veriyoruz.",
       },
       {
         type: "h2",
-        text: "AI Müzik Üretiminin Geleceği",
+        text: "AI Müzik Üretiminin Geleceği Nasıl Görünüyor?",
       },
       {
         type: "p",
-        text: "2026 sonrası AI müzik araçlarının kalitesi artmaya, maliyetleri düşmeye devam edecek. Stem ayrıştırma (vokal, enstrüman ayrımı), gerçek zamanlı üretim ve kişiselleştirilmiş müzik deneyimleri gibi alanlar hızla gelişiyor. Ancak müziğin özü — duygu, hikaye, insani bağlantı — hâlâ insan yaratıcılığına dayanıyor.",
+        text: "2026 sonrası AI müzik araçlarının kalitesi artmaya, maliyetleri düşmeye devam edecek. <strong>Stem ayrıştırma</strong> (vokal, enstrüman ayrımı), gerçek zamanlı üretim ve kişiselleştirilmiş müzik deneyimleri gibi alanlar hızla gelişiyor. Ancak müziğin özü — duygu, hikaye, insani bağlantı — hala insan yaratıcılığına dayanıyor.",
       },
       {
         type: "p",
-        text: "AI, müzik üretimini demokratikleştiriyor. Daha önce bir stüdyo, enstrüman bilgisi ve binlerce dolarlık ekipman gerektiren süreçler, şimdi bir bilgisayar ve doğru araçlarla mümkün hale geliyor. Bu, tehdit değil fırsat — ve bu fırsatı en iyi değerlendiren, AI'ı bir araç olarak kullanıp yaratıcılığını katanlar olacak.",
+        text: "AI, müzik üretimini demokratikleştiriyor. Daha önce bir stüdyo, enstrüman bilgisi ve binlerce dolarlık ekipman gerektiren süreçler, şimdi bir bilgisayar ve doğru araçlarla mümkün. Bu tehdit değil, fırsat. Ve bu fırsatı en iyi değerlendiren, AI'ı bir araç olarak kullanıp yaratıcılığını katanlar olacak.",
       },
       {
         type: "p",
-        text: "AI destekli müzik prodüksiyon sürecinizi başlatmak veya mevcut üretiminizi AI ile güçlendirmek istiyorsanız, deneyimlerimizi sizinle paylaşmak isteriz.",
+        text: "AI destekli müzik prodüksiyon sürecinizi başlatmak veya mevcut üretiminizi AI ile güçlendirmek istiyorsanız, 15 yıllık deneyimimle ve Echo Bazaar'daki 20M+ dinlenme birikimimizle yardımcı olabiliriz.",
       },
       {
         type: "cta",
         label: "Müzik Prodüksiyon Hizmetimizi İnceleyin",
         href: "/hizmetler#muzik-produksiyon",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Yapay zeka ile müzik yapmak için müzik bilgisi gerekli mi?",
+            answer:
+              "Temel seviyede hayır — Suno gibi araçlarla prompt yazarak müzik üretebilirsiniz. Ancak profesyonel kalitede sonuçlar için müzik teorisi, mix-master bilgisi ve prodüksiyon deneyimi büyük fark yaratır. Echo Bazaar'daki başarımızın arkasında 15 yıllık müzik deneyimi var.",
+          },
+          {
+            question: "AI ile ürettiğim müziği Spotify'da yayınlayabilir miyim?",
+            answer:
+              "Evet, ancak platformun AI içerik politikalarına uymanız gerekir. Suno'nun ticari lisansıyla üretilen içerikler dağıtılabilir. Spotify, 2025 sonundan itibaren AI içerik beyanı istiyor. İnsan müdahalesi içeren hibrit üretimler daha az sorun yaşıyor.",
+          },
+          {
+            question: "AI müzik araçlarının maliyeti ne kadar?",
+            answer:
+              "Suno Pro aylık yaklaşık 10 dolar, ElevenLabs 5 dolardan başlıyor. Logic Pro tek seferlik bir satın alma. Toplamda ayda 20-50 dolar civarı bir bütçeyle ciddi üretim yapılabiliyor — geleneksel stüdyo maliyetiyle kıyaslanamaz.",
+          },
+          {
+            question: "Echo Bazaar ile iş birliği yapabilir miyiz?",
+            answer:
+              "Evet, müzik üreticileri ve içerik oluşturucularla iş birliğine açığız. <a href='/iletisim'>İletişim sayfamızdan</a> bize ulaşabilirsiniz.",
+          },
+        ],
       },
     ],
   },
@@ -366,43 +451,55 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Claude Code, Anthropic'in geliştirdiği CLI (komut satırı arayüzü) tabanlı bir AI geliştirme aracıdır. Terminalde çalışır, dosyalarınızı okuyabilir ve düzenleyebilir, shell komutları çalıştırabilir, Git işlemleri yapabilir ve MCP sunucuları aracılığıyla dış araçlara bağlanabilir. 2026 itibarıyla, yazılım geliştirme ve AI otomasyon dünyasında en güçlü araçlardan biri haline geldi.",
+        text: "<strong>Claude Code</strong>, Anthropic'in geliştirdiği CLI tabanlı bir AI geliştirme aracı. Terminalde çalışır, dosyalarınızı okuyabilir ve düzenleyebilir, shell komutları çalıştırabilir, Git işlemleri yapabilir ve MCP sunucuları aracılığıyla dış araçlara bağlanabilir. Ben bu aracı günde ortalama 8-10 saat kullanıyorum. thekai.co sitesi, 72+ ajan sistemim, Telegram botlarım, hatta bu blog yazısı bile Claude Code ile üretildi.",
+      },
+      {
+        type: "p",
+        text: "2026 itibarıyla, yazılım geliştirme ve AI otomasyon dünyasında en güçlü araçlardan biri haline geldi. Ama çoğu kişi hala sadece \"chatbot\" olarak düşünüyor. İşin aslı çok farklı.",
       },
       {
         type: "h2",
-        text: "Claude Code Nedir?",
+        text: "Claude Code Tam Olarak Nedir?",
       },
       {
         type: "p",
-        text: "Claude Code, geleneksel bir chatbot değildir. Bilgisayarınızda, projenizin içinde çalışan bir AI asistanıdır. Dosyalarınızı okuyabilir, yeni dosyalar oluşturabilir, kod yazabilir, mevcut kodu düzenleyebilir, terminal komutları çalıştırabilir ve projenizin tamamını anlayabilir. Bu onu, bir chatbot'tan çok bir \"AI takım arkadaşı\" yapıyor.",
+        text: "<strong>Claude Code</strong> geleneksel bir chatbot değil. Bilgisayarınızda, projenizin içinde çalışan bir AI asistanı. Dosyalarınızı okuyabilir, yeni dosyalar oluşturabilir, kod yazabilir, mevcut kodu düzenleyebilir, terminal komutları çalıştırabilir ve projenizin tamamını anlayabilir. Bu onu bir chatbot'tan çok bir \"AI takım arkadaşı\" yapıyor.",
       },
       {
         type: "p",
-        text: "Claude Code'un temel yetenekleri şunlardır:",
+        text: "Somut bir örnek: Dün gece saat 2'de bu web sitesine yeni bir hizmet sayfası eklemem gerekti. Claude Code'a \"hizmetler sayfasına AI sesli kitap üretimi ekle, mevcut tasarımla tutarlı olsun\" dedim. 3 dakikada sayfa hazırdı, deploy edildi, sitemap güncellendi. Tasarımcı yok, developer yok — ben ve Claude Code.",
+      },
+      {
+        type: "p",
+        text: "Temel yetenekleri şunlar:",
       },
       {
         type: "ul",
         items: [
-          "Dosya okuma ve yazma (Read, Write, Edit araçları)",
-          "Shell komutu çalıştırma (Bash aracı)",
-          "Dosya arama ve içerik arama (Glob, Grep araçları)",
-          "Git entegrasyonu (commit, PR oluşturma, branch yönetimi)",
-          "MCP sunucularına bağlanma (Gmail, Calendar, Canva ve daha fazlası)",
-          "Sub-agent başlatma (arka planda görevler çalıştırma)",
-          "1 milyona kadar token context window (büyük projeleri anlama kapasitesi)",
+          "<strong>Dosya okuma ve yazma:</strong> Read, Write, Edit araçlarıyla projenizdeki her dosyaya erişim",
+          "<strong>Shell komutu çalıştırma:</strong> Bash aracıyla terminal komutları — build, deploy, git işlemleri",
+          "<strong>Dosya ve içerik arama:</strong> Glob ve Grep araçlarıyla büyük projelerde arama",
+          "<strong>Git entegrasyonu:</strong> Commit, PR oluşturma, branch yönetimi — tam bir Git asistanı",
+          "<strong>MCP sunucularına bağlanma:</strong> Gmail, Calendar, Canva ve daha fazlası",
+          "<strong>Sub-agent başlatma:</strong> Arka planda paralel görevler çalıştırma",
+          "<strong>1M token context window:</strong> Büyük projeleri bir seferde anlama kapasitesi",
         ],
       },
       {
+        type: "img",
+        alt: "Claude Code terminal ekran görüntüsü - gerçek zamanlı kod düzenleme",
+      },
+      {
         type: "h2",
-        text: "CLAUDE.md: Projenizin Beyni",
+        text: "CLAUDE.md Nedir ve Neden Bu Kadar Önemli?",
       },
       {
         type: "p",
-        text: "Claude Code'un en güçlü özelliklerinden biri CLAUDE.md dosyasıdır. Bu dosya, projenizin kök dizinine yerleştirilen bir konfigürasyon ve talimat dosyasıdır. Claude Code her oturum başında bu dosyayı okur ve içindeki talimatlara göre davranır.",
+        text: "Claude Code'un en güçlü özelliklerinden biri <strong>CLAUDE.md dosyası</strong>. Projenizin kök dizinine yerleştirilen bir konfigürasyon ve talimat dosyası bu. Claude Code her oturum başında okur ve içindeki talimatlara göre davranır. Bunu projenizin \"anayasası\" gibi düşünün.",
       },
       {
         type: "p",
-        text: "CLAUDE.md dosyasında şunları tanımlayabilirsiniz:",
+        text: "CLAUDE.md dosyasında tanımlayabileceğiniz şeyler:",
       },
       {
         type: "ul",
@@ -418,79 +515,75 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Biz The Kai olarak, CLAUDE.md dosyamızda 72'den fazla ajanın yönlendirme kurallarını, departman yapısını, hafıza protokollerini ve iletişim standartlarını tanımlıyoruz. Bu dosya, tüm sistemimizin orkestrasyon merkezidir.",
+        text: "Benim CLAUDE.md dosyam 300+ satır. İçinde 72+ ajanın yönlendirme kuralları, departman yapısı, hafıza protokolleri ve iletişim standartları var. Tüm sistemin beyni bu dosya. Doğru bir CLAUDE.md yazmak ile yazmamak arasındaki fark, harita ile haritasız yolculuk yapmak gibi. <a href=\"/blog/ai-ajan-sistemi-nedir\">AI ajan sistemleri hakkındaki yazımızda</a> bu mimarinin detaylarını anlatıyorum.",
       },
       {
         type: "h2",
-        text: "MCP (Model Context Protocol) Nedir?",
+        text: "MCP (Model Context Protocol) Ne İşe Yarıyor?",
       },
       {
         type: "p",
-        text: "MCP, Claude Code'un dış dünyayla iletişim kurmasını sağlayan standart bir protokoldür. Bir MCP sunucusu, belirli bir servise (Gmail, Google Calendar, Slack, Canva vb.) bağlantı sağlar ve Claude Code'a bu servislerin araçlarını kullanma yeteneği kazandırır.",
+        text: "<strong>MCP</strong>, Claude Code'un dış dünyayla iletişim kurmasını sağlayan standart bir protokol. Bir MCP sunucusu, belirli bir servise (Gmail, Google Calendar, Slack, Canva vb.) bağlantı sağlar ve Claude Code'a bu servislerin araçlarını kullanma yeteneği kazandırır.",
       },
       {
         type: "p",
-        text: "Örneğin Gmail MCP sunucusu kurduğunuzda, Claude Code doğrudan e-postalarınızı okuyabilir, taslak oluşturabilir ve gönderim yapabilir. Google Calendar MCP'si ile takvim etkinliklerinizi görebilir, yeni etkinlikler oluşturabilir. Canva MCP'si ile tasarım oluşturabilir.",
+        text: "Pratikte şöyle çalışıyor: Gmail MCP sunucusu kurduğunuzda, Claude Code doğrudan e-postalarınızı okuyabilir, taslak oluşturabilir ve gönderim yapabilir. Google Calendar MCP'si ile takvim etkinliklerinizi görebilir, yeni etkinlikler oluşturabilir. Ben sabah kalktığımda \"bugünkü takvimimde ne var?\" diyorum, Claude Code Calendar'a bakıp günümü özetliyor.",
       },
       {
         type: "h3",
-        text: "Yaygın MCP Entegrasyonları",
+        text: "En Yaygın MCP Entegrasyonları",
       },
       {
         type: "ul",
         items: [
-          "Gmail MCP: E-posta okuma, taslak yazma, gönderim",
-          "Google Calendar MCP: Takvim yönetimi, etkinlik oluşturma",
-          "Canva MCP: Tasarım oluşturma ve düzenleme",
-          "YouTube Transcript MCP: Video transkriptleri çekme",
-          "Context7 MCP: Güncel kütüphane ve framework dokümantasyonu",
-          "PubMed MCP: Akademik makale araştırma",
-          "Slack / Discord MCP: Mesajlaşma platformu entegrasyonu",
+          "<strong>Gmail MCP:</strong> E-posta okuma, taslak yazma, gönderim",
+          "<strong>Google Calendar MCP:</strong> Takvim yönetimi, etkinlik oluşturma, boş zaman bulma",
+          "<strong>Canva MCP:</strong> Tasarım oluşturma ve düzenleme",
+          "<strong>YouTube Transcript MCP:</strong> Video transkriptleri çekme ve analiz",
+          "<strong>Context7 MCP:</strong> Güncel kütüphane ve framework dokümantasyonu — eski bilgiyle kod yazmayı önler",
+          "<strong>PubMed MCP:</strong> Akademik makale araştırma",
+          "<strong>Slack / Discord MCP:</strong> Mesajlaşma platformu entegrasyonu",
         ],
       },
       {
         type: "h2",
-        text: "Skill Sistemi",
+        text: "Skill Sistemi Nasıl Çalışıyor?",
       },
       {
         type: "p",
-        text: "Claude Code'un skill sistemi, tekrar eden görevleri paketlenmiş komutlar haline getirmenizi sağlar. Bir skill, belirli bir görev için optimize edilmiş talimatlar ve iş akışları içerir. Slash command (/komut) formatıyla çağrılır.",
+        text: "Claude Code'un <strong>skill sistemi</strong>, tekrar eden görevleri paketlenmiş komutlar haline getirmenizi sağlıyor. Bir skill, belirli bir görev için optimize edilmiş talimatlar ve iş akışları içerir. Slash command (/komut) formatıyla çağrılır.",
       },
       {
         type: "p",
-        text: "Örneğin bir \"deploy\" skill'i oluşturabilirsiniz: /deploy komutu çalıştığında, otomatik olarak testleri çalıştırır, build alır, Vercel'e deploy eder ve sonucu raporlar. Ya da bir \"blog-yaz\" skill'i oluşturup, SEO optimizasyonlu blog yazısı üretim sürecini otomatize edebilirsiniz.",
-      },
-      {
-        type: "p",
-        text: "Bizim sistemimizde 50'den fazla aktif skill var — sesli kitap üretiminden tweet işlemeye, günlük rapor oluşturmadan müzik prodüksiyona kadar her alan için özelleştirilmiş skill'ler kullanıyoruz.",
+        text: "Mesela bir \"deploy\" skill'im var: /deploy dediğimde testleri çalıştırır, build alır, Vercel'e deploy eder ve sonucu raporlar. Ya da \"blog-yaz\" skill'im: SEO optimizasyonlu blog yazısı üretim sürecini otomatize eder. Sistemimde 50'den fazla aktif skill var — sesli kitap üretiminden tweet işlemeye kadar.",
       },
       {
         type: "h2",
-        text: "Hook Sistemi",
+        text: "Hook Sistemi Ne İşe Yarıyor?",
       },
       {
         type: "p",
-        text: "Hook'lar, Claude Code'un yaşam döngüsünün belirli anlarında otomatik olarak çalışan script'lerdir. Üç temel hook türü vardır:",
+        text: "<strong>Hook'lar</strong>, Claude Code'un yaşam döngüsünün belirli anlarında otomatik çalışan script'ler. Üç temel hook türü var:",
       },
       {
         type: "ul",
         items: [
-          "PreCompact: Context sıkıştırma başlamadan önce çalışır. Mevcut durumu kaydetmek için kullanılır",
-          "Stop: Claude her yanıt sonrası çalışır. Bildirim göndermek veya log tutmak için idealdir",
-          "SessionStart: Yeni oturum başladığında çalışır. Ortam hazırlığı ve durum kontrolü için kullanılır",
+          "<strong>PreCompact:</strong> Context sıkıştırma başlamadan önce çalışır. Mevcut durumu kaydetmek için kullanıyorum",
+          "<strong>Stop:</strong> Claude her yanıt sonrası çalışır. Telegram üzerinden bildirim göndermek için idealdir",
+          "<strong>SessionStart:</strong> Yeni oturum başladığında çalışır. Ortam hazırlığı ve durum kontrolü yapar",
         ],
       },
       {
         type: "p",
-        text: "Hook'lar, ~/.claude/settings.json dosyasında tanımlanır. Örneğin, her görev tamamlandığında Telegram üzerinden bildirim gönderen bir Stop hook'u oluşturabilirsiniz.",
+        text: "Benim Stop hook'um her görev tamamlandığında Telegram'dan bana bildirim gönderiyor. Başka bir odada olsam bile işin bittiğini anlık öğreniyorum. Bu tür otomasyonlar küçük gibi görünüyor ama günde 20-30 kez tetiklendiğinde ciddi bir zaman tasarrufu sağlıyor.",
       },
       {
         type: "h2",
-        text: "AI Ajan Oluşturma",
+        text: "Claude Code ile AI Ajan Nasıl Oluşturulur?",
       },
       {
         type: "p",
-        text: "Claude Code ile AI ajan oluşturmak, bir AGENT.md dosyası yazmakla başlar. Bu dosyada ajanın kim olduğu, ne yaptığı, hangi araçlara erişebildiği ve nasıl iletişim kurduğu tanımlanır. Ardından orkestratör CLAUDE.md dosyasında bu ajanın tetikleyicileri belirlenir.",
+        text: "Claude Code ile <strong>AI ajan oluşturmak</strong>, bir AGENT.md dosyası yazmakla başlıyor. Bu dosyada ajanın kim olduğu, ne yaptığı, hangi araçlara erişebildiği ve nasıl iletişim kurduğu tanımlanır. Sonra orkestratör CLAUDE.md dosyasında tetikleyicileri belirlenir.",
       },
       {
         type: "p",
@@ -499,21 +592,21 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Kimlik: Ajanın adı, departmanı ve görevi",
-          "Yetkinlikler: Ne yapabilir, ne yapamaz",
-          "Araçlar: Hangi MCP sunucularına ve dosyalara erişebilir",
-          "Hafıza: Hangi bilgi dosyalarını okur ve yazar",
-          "İletişim: Hangi dilde, hangi tonda, hangi formatta çıktı üretir",
-          "Tetikleyiciler: Hangi anahtar kelimeler bu ajanı aktive eder",
+          "<strong>Kimlik:</strong> Ajanın adı, departmanı ve görevi",
+          "<strong>Yetkinlikler:</strong> Ne yapabilir, ne yapamaz — sınırlar net olmalı",
+          "<strong>Araçlar:</strong> Hangi MCP sunucularına ve dosyalara erişebilir",
+          "<strong>Hafıza:</strong> Hangi bilgi dosyalarını okur ve yazar",
+          "<strong>İletişim:</strong> Hangi dilde, hangi tonda, hangi formatta çıktı üretir",
+          "<strong>Tetikleyiciler:</strong> Hangi anahtar kelimeler bu ajanı aktive eder",
         ],
       },
       {
         type: "h2",
-        text: "Gerçek Kullanım Senaryoları",
+        text: "Gerçek Hayatta Claude Code'u Nasıl Kullanıyoruz?",
       },
       {
         type: "p",
-        text: "Claude Code'u günlük hayatta nasıl kullanıyoruz? İşte The Kai'nin gerçek kullanım senaryolarından bazıları:",
+        text: "The Kai'nin günlük hayatından gerçek kullanım senaryoları:",
       },
       {
         type: "h3",
@@ -521,7 +614,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bu web sitesi (thekai.co) tamamen Claude Code ile geliştirildi. Next.js, Tailwind CSS ve Framer Motion stack'i kullanıyoruz. Yeni sayfa ekleme, SEO optimizasyonu, blog yazısı oluşturma gibi tüm işlemler Claude Code üzerinden yapılıyor. Tek bir komutla yeni bir hizmet sayfası ekleyebilir, sitemap'i güncelleyebilir ve Vercel'e deploy edebiliyoruz.",
+        text: "Bu web sitesi (thekai.co) tamamen Claude Code ile geliştirildi. Next.js, Tailwind CSS ve Framer Motion kullanıyoruz. Yeni sayfa ekleme, SEO optimizasyonu, blog yazısı oluşturma — tüm işlemler Claude Code üzerinden. Tek bir komutla yeni bir hizmet sayfası ekleyebilir, sitemap'i güncelleyebilir ve Vercel'e deploy edebiliyorum. Toplam geliştirme süresi? 2 gün. Geleneksel yöntemle en az 2 hafta sürerdi.",
       },
       {
         type: "h3",
@@ -529,7 +622,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Claude Code ile always-on Telegram botları geliştiriyoruz. Ses kaydı alma, transkript çıkarma, AI destekli yanıt üretme, dosya işleme gibi gelişmiş özellikler içeren botlar dakikalar içinde kurulabiliyor. Systemd servis yönetimi ile kesintisiz çalışma sağlanıyor.",
+        text: "Always-on Telegram botları geliştiriyorum Claude Code ile. Ses kaydı alma, transkript çıkarma, AI destekli yanıt üretme, dosya işleme gibi gelişmiş özellikler içeren botlar dakikalar içinde kuruluyor. Partner'ım Kardelen için bile izole bir finans danışmanlık botu kurdum — kendi bilgi tabanı, kendi kapsamı var.",
       },
       {
         type: "h3",
@@ -537,7 +630,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Sosyal medya içerikleri, blog yazıları, e-posta taslakları ve raporlar Claude Code ile üretiliyor. Her platform için özelleştirilmiş içerik ajanları var — Twitter ajanı tweet formatında, LinkedIn ajanı profesyonel tonda, Instagram ajanı görsel odaklı içerik üretiyor.",
+        text: "Sosyal medya içerikleri, blog yazıları, e-posta taslakları ve raporlar Claude Code ile üretiliyor. Her platform için özelleştirilmiş içerik ajanları var. Twitter ajanı tweet formatında yazar, LinkedIn ajanı profesyonel tonda, Instagram ajanı görsel odaklı içerik üretir. Hepsi aynı orkestratörün altında koordineli çalışır.",
       },
       {
         type: "h3",
@@ -545,24 +638,49 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Söz yazma, BPM hesaplama, ton analizi, şarkı künye oluşturma, Spotify dağıtım yönetimi gibi müzik prodüksiyon süreçlerinde Claude Code aktif olarak kullanılıyor. Suno prompt'larının optimize edilmesi bile Claude Code ajanları tarafından yapılıyor.",
+        text: "Söz yazma, BPM hesaplama, ton analizi, şarkı künye oluşturma, <a href=\"/blog/yapay-zeka-ile-muzik-yapmak\">Spotify dağıtım yönetimi</a> gibi müzik prodüksiyon süreçlerinde Claude Code aktif. Suno prompt'larının optimize edilmesi bile Claude Code ajanları tarafından yapılıyor.",
       },
       {
         type: "h2",
-        text: "Claude Code ile Başlamak",
+        text: "Claude Code ile Nasıl Başlanır?",
       },
       {
         type: "p",
-        text: "Claude Code'u kullanmaya başlamak için Anthropic hesabı ve terminal erişimi yeterli. Ancak gerçek gücünü ortaya çıkarmak için doğru yapılandırma, CLAUDE.md dosyası oluşturma, MCP entegrasyonları kurma ve ajan mimarisi tasarlama gerekiyor.",
+        text: "Claude Code'u kullanmaya başlamak için Anthropic hesabı ve terminal erişimi yeterli. Ama gerçek gücünü ortaya çıkarmak için doğru yapılandırma gerekiyor: CLAUDE.md dosyası oluşturma, MCP entegrasyonları kurma, ajan mimarisi tasarlama. Bu süreci kendiniz yapabilirsiniz, ama düzgün bir altyapı kurmak deneyim istiyor.",
       },
       {
         type: "p",
-        text: "Eğer Claude Code ile kendi AI ajan sisteminizi kurmak istiyorsanız — ister kişisel kullanım, ister işletmeniz için — bu süreci sizin yerinize planlayıp hayata geçirebiliriz.",
+        text: "Eğer Claude Code ile kendi <strong>AI ajan sisteminizi</strong> kurmak istiyorsanız — ister kişisel kullanım, ister işletmeniz için — bu süreci sizin yerinize planlayıp hayata geçirebiliriz. 72+ ajan deneyimiyle.",
       },
       {
         type: "cta",
         label: "AI Ajan Sistemi Hizmetimizi İnceleyin",
         href: "/hizmetler#ai-ajan-sistemi",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Claude Code ücretsiz mi?",
+            answer:
+              "Claude Code kendisi ücretsiz olarak indirilebilir. Ancak kullanım için Anthropic API kredisi veya Claude Pro/Max aboneliği gerekir. API kullanımı token başına ücretlendirilir — günlük yoğun kullanımda aylık maliyet kullanıma göre değişir.",
+          },
+          {
+            question: "Claude Code Windows'ta çalışır mı?",
+            answer:
+              "Evet, Claude Code Windows, macOS ve Linux'ta çalışır. WSL (Windows Subsystem for Linux) üzerinden de sorunsuz kullanılabilir. Biz macOS üzerinde kullanıyoruz ancak müşterilerimize her platformda kurulum yapıyoruz.",
+          },
+          {
+            question: "Claude Code ile web sitesi yapılabilir mi?",
+            answer:
+              "Kesinlikle. thekai.co tamamen Claude Code ile geliştirildi — Next.js, Tailwind CSS, Framer Motion stack'i. Sayfa ekleme, SEO, deployment dahil tüm süreç Claude Code üzerinden yönetiliyor. Detaylar için <a href='/hizmetler'>hizmetlerimize</a> göz atın.",
+          },
+          {
+            question: "MCP entegrasyonu kurmak zor mu?",
+            answer:
+              "Teknik bilgi gerektirir ama karmaşık değil. Bir MCP sunucusu kurmak genellikle 15-30 dakika sürer. Birden fazla entegrasyon kurmak ve bunları ajan sistemiyle koordine etmek ise daha fazla planlama gerektirir — bu konuda <a href='/iletisim'>yardımcı olabiliriz</a>.",
+          },
+        ],
       },
     ],
   },
@@ -586,27 +704,35 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Sesli kitap pazarı dünya genelinde hızla büyüyor. Spotify'ın sesli kitap entegrasyonu, Audible'ın genişleyen kütüphanesi ve yeni platformların ortaya çıkması, bu alanda büyük fırsatlar yaratıyor. Ancak geleneksel sesli kitap üretimi pahalı ve yavaş bir süreç. İşte tam bu noktada yapay zeka seslendirme teknolojisi devreye giriyor.",
+        text: "<strong>AI sesli kitap</strong> üretimi, yayıncılık dünyasını kökten değiştiriyor. Spotify'ın sesli kitap entegrasyonu, Audible'ın genişleyen kütüphanesi ve yeni platformlar bu alanda büyük fırsatlar yaratıyor. Ama geleneksel sesli kitap üretimi pahalı ve yavaş. Profesyonel seslendirme sanatçısı, stüdyo kirası, ses mühendisi... Tek bir kitap için onbinlerce lira ve haftalarca süre. İşte tam bu noktada yapay zeka seslendirme devreye giriyor.",
+      },
+      {
+        type: "p",
+        text: "Ben bu konuya müzik prodüksiyon tarafından girdim. Echo Bazaar'da ses teknolojileriyle çalışırken fark ettim: aynı araçlarla sesli kitap üretmek mümkün. Ve bu fırsatı kaçırmamak gerektiğini düşündüm.",
+      },
+      {
+        type: "img",
+        alt: "Murmur AI sesli kitap yayınevi - logo ve marka görseli",
       },
       {
         type: "h2",
-        text: "Murmur: AI Sesli Kitap Yayınevi",
+        text: "Murmur Nedir?",
       },
       {
         type: "p",
-        text: "Murmur, The Kai bünyesinde kurulan AI sesli kitap yayınevimizdir. Amacımız, klasik ve modern Türk edebiyatını yapay zeka seslendirmesiyle sesli kitaba dönüştürmek ve dijital platformlarda yayınlamak. Telif süresi dolmuş klasik eserlerden başlayıp, izinli modern eserlere doğru genişleme stratejisi izliyoruz.",
+        text: "<strong>Murmur</strong>, The Kai bünyesinde kurduğum AI sesli kitap yayınevi. Amacımız, klasik ve modern Türk edebiyatını yapay zeka seslendirmesiyle sesli kitaba dönüştürmek ve dijital platformlarda yayınlamak. Telif süresi dolmuş klasik eserlerden başlıyoruz — Sabahattin Ali, Ömer Seyfettin, Reşat Nuri Güntekin. Sonra izinli modern eserlere genişleyeceğiz.",
       },
       {
         type: "p",
-        text: "Neden \"Murmur\"? Fısıltı, mırıltı anlamına gelen bu kelime, edebiyatın sessiz harflerini sese dönüştürme misyonumuzu yansıtıyor. Kitaplar artık sadece okunan değil, dinlenen eserler.",
+        text: "Neden \"Murmur\"? Fısıltı, mırıltı anlamına gelen bu kelime, edebiyatın sessiz harflerini sese dönüştürme misyonumuzu yansıtıyor. Kitaplar artık sadece okunan değil, dinlenen eserler. İlk projemiz \"Kürk Mantolu Madonna\" — prodüksiyon aşamasında.",
       },
       {
         type: "h2",
-        text: "ElevenLabs TTS: Teknolojinin Kalbi",
+        text: "ElevenLabs TTS Teknolojisi Nasıl Çalışıyor?",
       },
       {
         type: "p",
-        text: "ElevenLabs'in text-to-speech teknolojisi, AI sesli kitap üretiminin temelini oluşturuyor. Geleneksel TTS sistemlerinden farklı olarak, ElevenLabs doğal intonasyon, duygusal ifade ve tutarlı ses karakteri sunuyor. 2026 itibarıyla Türkçe desteği de oldukça gelişmiş durumda.",
+        text: "<strong>ElevenLabs</strong>'in text-to-speech teknolojisi, AI sesli kitap üretiminin temelini oluşturuyor. Geleneksel TTS sistemlerinden farklı olarak doğal intonasyon, duygusal ifade ve tutarlı ses karakteri sunuyor. 2026 itibarıyla Türkçe desteği de ciddi şekilde gelişti. 2 yıl önce Türkçe TTS dinlenecek gibi değildi, şimdi ise insandan ayırt etmek giderek zorlaşıyor.",
       },
       {
         type: "h3",
@@ -615,20 +741,20 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Doğal ses kalitesi: Robotik hissettirmeyen, neredeyse insan sesine yakın çıktılar",
-          "Ses klonlama: Belirli bir ses karakterini klonlayıp tutarlı seslendirme yapabilme",
-          "Çoklu dil desteği: Türkçe dahil 30'dan fazla dilde seslendirme",
-          "Duygusal ton kontrolü: Üzgün, heyecanlı, sakin gibi farklı tonlarda seslendirme",
-          "API erişimi: Otomasyon pipeline'larına entegrasyon imkanı",
+          "<strong>Doğal ses kalitesi:</strong> Robotik hissettirmeyen, neredeyse insan sesine yakın çıktılar",
+          "<strong>Ses klonlama:</strong> Belirli bir ses karakterini klonlayıp tutarlı seslendirme yapabilme",
+          "<strong>30+ dil desteği:</strong> Türkçe dahil geniş dil yelpazesi",
+          "<strong>Duygusal ton kontrolü:</strong> Üzgün, heyecanlı, sakin gibi farklı tonlarda seslendirme — roman için kritik",
+          "<strong>API erişimi:</strong> Otomasyon pipeline'larına entegrasyon imkanı",
         ],
       },
       {
         type: "h2",
-        text: "Sesli Kitap Üretim Süreci",
+        text: "Sesli Kitap Üretim Süreci Nasıl İşliyor?",
       },
       {
         type: "p",
-        text: "Bir kitabı sesli kitaba dönüştürmek, sadece metni TTS motoruna vermekten ibaret değil. Kaliteli bir sesli kitap üretimi için sistematik bir süreç izliyoruz:",
+        text: "Bir kitabı sesli kitaba dönüştürmek, sadece metni TTS motoruna vermekten ibaret değil. Bunu ilk denediğimde öğrendim. Ham TTS çıktısı dinlenebilir değil — telaffuz hataları, garip duraklamalar, monoton tonlama. Kaliteli bir sesli kitap için sistematik bir süreç gerekiyor:",
       },
       {
         type: "h3",
@@ -636,7 +762,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Kaynak metin dijitalleştirilir, OCR hataları düzeltilir, noktalama işaretleri kontrol edilir. Bölüm yapısı belirlenir. Diyalog, anlatıcı ve iç monolog bölümleri işaretlenir.",
+        text: "Kaynak metin dijitalleştirilir, OCR hataları düzeltilir, noktalama işaretleri kontrol edilir. Bölüm yapısı belirlenir. Diyalog, anlatıcı ve iç monolog bölümleri işaretlenir. Bu aşama en çok vakit alan kısım — ama atlanırsa sonuç felaket oluyor.",
       },
       {
         type: "h3",
@@ -644,7 +770,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Kitabın karakterine uygun ses seçilir. Anlatıcı sesi, diyalog karakterleri ve genel ton belirlenir. ElevenLabs'in ses kütüphanesinden seçim yapılır veya özel ses klonlama uygulanır.",
+        text: "Kitabın karakterine uygun ses seçilir. Anlatıcı sesi, diyalog karakterleri ve genel ton belirlenir. ElevenLabs'in ses kütüphanesinden seçim yapılır veya özel ses klonlama uygulanır. \"Kürk Mantolu Madonna\" için 4 farklı ses denedik, en uygunu bulmak 2 gün sürdü.",
       },
       {
         type: "h3",
@@ -652,7 +778,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Her bölüm ayrı ayrı seslendirilir, kalite kontrolden geçirilir. Telaffuz hataları, ritim bozuklukları ve doğal olmayan geçişler düzeltilir. Bu aşamada insan kulağıyla denetim kritik önem taşıyor.",
+        text: "Her bölüm ayrı ayrı seslendirilir, kalite kontrolden geçirilir. Telaffuz hataları, ritim bozuklukları ve doğal olmayan geçişler düzeltilir. Bu aşamada insan kulağıyla denetim kritik. AI seslendirme ne kadar iyi olursa olsun, insan kontrolü olmadan yayınlamak riskli.",
       },
       {
         type: "h3",
@@ -660,7 +786,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ses dosyaları düzenlenir, sessizlik süreleri ayarlanır, bölüm geçişleri eklenir. Gerekirse arka plan müziği veya ses efektleri entegre edilir. Final mastering uygulanır.",
+        text: "Ses dosyaları düzenlenir, sessizlik süreleri ayarlanır, bölüm geçişleri eklenir. Gerekirse arka plan müziği veya ses efektleri entegre edilir. Final mastering uygulanır. <a href=\"/blog/yapay-zeka-ile-muzik-yapmak\">Müzik prodüksiyon deneyimimiz</a> bu aşamada çok işe yarıyor.",
       },
       {
         type: "h3",
@@ -671,41 +797,74 @@ export const blogPosts: BlogPost[] = [
         text: "Tamamlanan sesli kitap Spotify, Apple Books, Google Play Books ve diğer platformlara dağıtılır. Kapak tasarımı, metadata ve kategori bilgileri hazırlanır.",
       },
       {
-        type: "h2",
-        text: "Maliyet Analizi: Geleneksel vs AI",
-      },
-      {
-        type: "p",
-        text: "Geleneksel sesli kitap üretiminde profesyonel bir seslendirme sanatçısı, stüdyo kirası, ses mühendisi ve post-prodüksiyon ekibi gerekiyor. 10 saatlik bir kitap için toplam maliyet kolayca 30.000-100.000 TL arasına çıkabiliyor. Üretim süresi ise haftalar alabiliyor.",
-      },
-      {
-        type: "p",
-        text: "AI seslendirme ile aynı kitap, ElevenLabs API maliyeti olarak birkaç bin TL'ye ve birkaç güne indirgenebiliyor. Bu, özellikle küçük yayınevleri ve bağımsız yazarlar için devrim niteliğinde bir fark. Tabii ki kalite kontrolü ve post-prodüksiyon sürecine yatırım yapmak hâlâ gerekiyor — ancak toplam maliyet geleneksel yöntemin çok altında kalıyor.",
+        type: "img",
+        alt: "AI sesli kitap üretim pipeline'ı - metin hazırlığından dağıtıma kadar iş akışı",
       },
       {
         type: "h2",
-        text: "Spotify Sesli Kitap Pazarı",
+        text: "Maliyet Karşılaştırması: Geleneksel mi, AI mı?",
       },
       {
         type: "p",
-        text: "Spotify'ın sesli kitap pazarına girişi, bu alanı tamamen değiştirdi. Premium abonelere aylık sesli kitap dinleme hakkı sunulması, sesli kitap tüketimini demokratikleştirdi. Türkiye'de sesli kitap pazarı henüz gelişme aşamasında — bu, erken giren üreticiler için büyük bir fırsat penceresi açıyor.",
+        text: "Rakamlarla konuşalım. Geleneksel sesli kitap üretiminde profesyonel bir seslendirme sanatçısı, stüdyo kirası, ses mühendisi ve post-prodüksiyon ekibi gerekiyor. <strong>10 saatlik bir kitap için toplam maliyet kolayca 30.000-100.000 TL</strong> arasına çıkabiliyor. Üretim süresi ise haftalar alabiliyor.",
       },
       {
         type: "p",
-        text: "Murmur olarak hedefimiz, Türk edebiyatının klasiklerini (Sabahattin Ali, Ömer Seyfettin, Reşat Nuri Güntekin gibi telif süresi dolmuş eserleri) sesli kitaba dönüştürüp bu büyüyen pazarda yer almak. İlk eserimiz olan \"Kürk Mantolu Madonna\" prodüksiyon aşamasında.",
+        text: "<strong>AI seslendirme ile aynı kitap</strong>, ElevenLabs API maliyeti olarak birkaç bin TL'ye ve birkaç güne indirgenebiliyor. Bu, özellikle küçük yayınevleri ve bağımsız yazarlar için devrim niteliğinde. Kalite kontrolü ve post-prodüksiyona yatırım yapmak hala gerekiyor — ama toplam maliyet geleneksel yöntemin onda birine düşüyor.",
       },
       {
         type: "h2",
-        text: "Nasıl Başlanır?",
+        text: "Spotify Sesli Kitap Pazarında Fırsatlar Neler?",
       },
       {
         type: "p",
-        text: "Sesli kitap üretim sürecinizi başlatmak istiyorsanız — ister bir yayınevi olun, ister bağımsız bir yazar, ister içerik üreticisi — Murmur'un altyapısını ve deneyimimizi sizinle paylaşabiliriz. Tek bölümden başlayıp tam kitap prodüksiyonuna kadar ölçeklenen paketlerimiz mevcut.",
+        text: "Spotify'ın sesli kitap pazarına girişi bu alanı tamamen değiştirdi. Premium abonelere aylık sesli kitap dinleme hakkı sunulması, sesli kitap tüketimini demokratikleştirdi. <strong>Türkiye'de sesli kitap pazarı henüz gelişme aşamasında</strong> — bu, erken giren üreticiler için büyük bir fırsat penceresi.",
+      },
+      {
+        type: "p",
+        text: "Murmur olarak hedefimiz, Türk edebiyatının klasiklerini sesli kitaba dönüştürüp bu büyüyen pazarda yer almak. Telif süresi dolmuş eserler sıfır lisans maliyetiyle başlama imkanı veriyor. İlk eserimiz \"Kürk Mantolu Madonna\" prodüksiyon aşamasında — çıktığında bu sayfadan duyuracağız.",
+      },
+      {
+        type: "h2",
+        text: "Sesli Kitap Üretimine Nasıl Başlanır?",
+      },
+      {
+        type: "p",
+        text: "Sesli kitap üretim sürecinizi başlatmak istiyorsanız — ister bir yayınevi olun, ister bağımsız bir yazar, ister içerik üreticisi — Murmur'un altyapısını ve deneyimimizi sizinle paylaşabiliriz. <a href=\"/hizmetler\">Tek bölümden başlayıp tam kitap prodüksiyonuna kadar ölçeklenen paketlerimiz</a> mevcut.",
+      },
+      {
+        type: "p",
+        text: "Bir de şunu ekleyeyim: AI sesli kitap üretimi sadece yayıncılık değil. E-öğrenme içerikleri, podcast'ler, kurumsal eğitim materyalleri — sesli içerik ihtiyacı olan her alanda bu teknoloji kullanılabilir. Potansiyel çok geniş.",
       },
       {
         type: "cta",
         label: "Sesli Kitap Prodüksiyon Hizmetimizi İnceleyin",
         href: "/hizmetler#sesli-kitap",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI sesli kitap kalitesi insan seslendirmesiyle karşılaştırılabilir mi?",
+            answer:
+              "2026 itibarıyla ElevenLabs'in çıktıları insan sesine çok yaklaşmış durumda. Ancak duygusal derinlik gerektiren sahnelerde (ağlama, fısıldama, öfke) hala fark edilebiliyor. Post-prodüksiyon ile bu fark minimize ediliyor. Kısa dinlemelerde çoğu dinleyici AI olduğunu fark edemiyor.",
+          },
+          {
+            question: "Telif hakkı sorunu yaşar mıyız?",
+            answer:
+              "Telif süresi dolmuş eserler (yazar ölümünden 70 yıl sonra) için sorun yok. Modern eserler için yayınevi veya yazardan izin almak gerekiyor. Murmur olarak telif süreçlerini sizin adınıza yönetiyoruz.",
+          },
+          {
+            question: "Sesli kitap üretimi ne kadar sürer?",
+            answer:
+              "Ortalama bir roman (300 sayfa) için metin hazırlığı dahil 1-2 hafta. Geleneksel yöntemle aynı iş 1-2 ay sürer. Bölüm sayısı, kalite kontrol iterasyonları ve post-prodüksiyon karmaşıklığına göre değişir.",
+          },
+          {
+            question: "Hangi platformlarda yayınlayabiliriz?",
+            answer:
+              "Spotify, Apple Books, Google Play Books, Audible ve diğer dijital platformlarda yayınlama imkanı var. Dağıtım sürecini de biz yönetiyoruz — metadata, kapak tasarımı ve platform uyumluluğu dahil. <a href='/iletisim'>Detaylar için bize ulaşın</a>.",
+          },
+        ],
       },
     ],
   },

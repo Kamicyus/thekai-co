@@ -66,9 +66,10 @@ function BlogContent({ section }: { section: BlogSection }) {
       );
     case "p":
       return (
-        <p className="text-[#CCCCCC] text-base sm:text-lg leading-relaxed mb-4">
-          {section.text}
-        </p>
+        <p
+          className="text-[#CCCCCC] text-base sm:text-lg leading-relaxed mb-4 [&_strong]:text-[#F5F5F5] [&_strong]:font-semibold [&_a]:text-[#D8FB32] [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-[#B4F030]"
+          dangerouslySetInnerHTML={{ __html: section.text || "" }}
+        />
       );
     case "ul":
       return (
@@ -76,9 +77,10 @@ function BlogContent({ section }: { section: BlogSection }) {
           {section.items?.map((item, i) => (
             <li key={i} className="flex items-start gap-3">
               <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full mt-2.5 shrink-0" />
-              <span className="text-[#CCCCCC] text-base sm:text-lg leading-relaxed">
-                {item}
-              </span>
+              <span
+                className="text-[#CCCCCC] text-base sm:text-lg leading-relaxed [&_strong]:text-[#F5F5F5] [&_strong]:font-semibold"
+                dangerouslySetInnerHTML={{ __html: item }}
+              />
             </li>
           ))}
         </ul>
@@ -93,6 +95,71 @@ function BlogContent({ section }: { section: BlogSection }) {
             {section.label}
           </Link>
         </div>
+      );
+    case "faq":
+      return (
+        <div className="mt-12 mb-6">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-6">
+            Sık Sorulan Sorular
+          </h2>
+          <div className="space-y-4">
+            {section.faqItems?.map((faq, i) => (
+              <details
+                key={i}
+                className="group bg-[#141414] border border-[#1F2937] rounded-[16px] overflow-hidden"
+              >
+                <summary className="flex items-center justify-between p-5 cursor-pointer text-[#F5F5F5] font-medium text-base sm:text-lg hover:text-[#D8FB32] transition-colors">
+                  <span>{faq.question}</span>
+                  <svg
+                    className="w-5 h-5 text-[#666666] group-open:rotate-180 transition-transform duration-200 shrink-0 ml-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p
+                  className="px-5 pb-5 text-[#CCCCCC] text-base leading-relaxed [&_strong]:text-[#F5F5F5] [&_strong]:font-semibold [&_a]:text-[#D8FB32] [&_a]:underline"
+                  dangerouslySetInnerHTML={{ __html: faq.answer }}
+                />
+              </details>
+            ))}
+          </div>
+        </div>
+      );
+    case "img":
+      return (
+        <figure className="my-8">
+          <div className="bg-[#141414] border border-[#1F2937] rounded-[16px] overflow-hidden aspect-video flex items-center justify-center">
+            <div className="text-center p-8">
+              <svg
+                className="w-12 h-12 text-[#333333] mx-auto mb-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p className="text-[#666666] text-sm">{section.alt}</p>
+            </div>
+          </div>
+          {section.alt && (
+            <figcaption className="text-[#666666] text-xs mt-2 text-center">
+              {section.alt}
+            </figcaption>
+          )}
+        </figure>
       );
     default:
       return null;
@@ -144,12 +211,35 @@ export default async function BlogPostPage({
     keywords: post.keywords.join(", "),
   };
 
+  // FAQ JSON-LD structured data
+  const faqSection = post.content.find((s) => s.type === "faq");
+  const faqJsonLd = faqSection?.faqItems
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqSection.faqItems.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer.replace(/<[^>]*>/g, ""),
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <article className="pt-32 pb-24 lg:pt-40 lg:pb-32 relative overflow-hidden">
         <div className="max-w-[780px] mx-auto px-6 lg:px-8">

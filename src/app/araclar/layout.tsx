@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ucretsiz Online Araclar | The Kai",
+  title: "Ücretsiz Online Araçlar | The Kai",
   description:
-    "Reklamsiz, kayit gerektirmeyen ucretsiz online araclar. QR kod olusturucu, kelime sayaci ve daha fazlasi.",
+    "Reklamsız, kayıt gerektirmeyen ücretsiz online araçlar. QR kod oluşturucu, kelime sayacı ve daha fazlası.",
   openGraph: {
-    title: "Ucretsiz Online Araclar | The Kai",
+    title: "Ücretsiz Online Araçlar | The Kai",
     description:
-      "Reklamsiz, kayit gerektirmeyen ucretsiz online araclar. QR kod olusturucu, kelime sayaci ve daha fazlasi.",
+      "Reklamsız, kayıt gerektirmeyen ücretsiz online araçlar. QR kod oluşturucu, kelime sayacı ve daha fazlası.",
     url: "https://thekai.co/araclar",
     siteName: "The Kai",
     type: "website",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "https://thekai.co/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "The Kai - Ucretsiz Online Araclar",
+        alt: "The Kai - Ücretsiz Online Araçlar",
       },
     ],
   },

@@ -76,11 +76,11 @@ export default function KelimeSayaciPage() {
 
   const statCards = [
     { label: "Kelime", value: stats.words, accent: true },
-    { label: "Karakter (bosluklu)", value: stats.charsWithSpaces },
-    { label: "Karakter (bosluksuz)", value: stats.charsWithoutSpaces },
-    { label: "Cumle", value: stats.sentences },
+    { label: "Karakter (boşluklu)", value: stats.charsWithSpaces },
+    { label: "Karakter (boşluksuz)", value: stats.charsWithoutSpaces },
+    { label: "Cümle", value: stats.sentences },
     { label: "Paragraf", value: stats.paragraphs },
-    { label: "Okuma Suresi", value: stats.readingTime, isString: true },
+    { label: "Okuma Süresi", value: stats.readingTime, isString: true },
   ];
 
   return (
@@ -101,21 +101,21 @@ export default function KelimeSayaciPage() {
               href="/araclar"
               className="text-[#999999] hover:text-[#D8FB32] transition-colors"
             >
-              Araclar
+              Araçlar
             </Link>
             <span className="text-[#666666]">/</span>
-            <span className="text-[#F5F5F5]">Kelime & Karakter Sayaci</span>
+            <span className="text-[#F5F5F5]">Kelime & Karakter Sayacı</span>
           </nav>
         </FadeIn>
 
         {/* Page Header */}
         <FadeIn className="mb-12">
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Kelime & Karakter Sayaci
+            Kelime & Karakter Sayacı
           </h1>
           <p className="text-[#999999] text-lg max-w-2xl leading-relaxed">
-            Metninizi yapisitirin veya yazin. Kelime, karakter, cumle ve paragraf
-            sayisi aninda guncellenir.
+            Metninizi yapıştırın veya yazın. Kelime, karakter, cümle ve paragraf
+            sayisi anında guncellenir.
           </p>
         </FadeIn>
 
@@ -206,7 +206,7 @@ export default function KelimeSayaciPage() {
         {otherTools.length > 0 && (
           <FadeIn className="mt-20 lg:mt-28">
             <h2 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-6">
-              Diger Araclar
+              Diğer Araçlar
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {otherTools.map((tool) => (
@@ -228,7 +228,7 @@ export default function KelimeSayaciPage() {
         {/* Bottom Info */}
         <FadeIn className="mt-12 text-center">
           <p className="text-[#666666] text-sm">
-            Tum islemler tarayicinizda yapilir. Metniniz sunucuya gonderilmez.
+            Tum islemler tarayıcınızda yapilir. Metniniz sunucuya gönderilmez.
           </p>
         </FadeIn>
       </div>

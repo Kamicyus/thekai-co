@@ -46,20 +46,20 @@ export default function QRKodPage() {
               href="/araclar"
               className="text-[#999999] hover:text-[#D8FB32] transition-colors"
             >
-              Araclar
+              Araçlar
             </Link>
             <span className="text-[#666666]">/</span>
-            <span className="text-[#F5F5F5]">QR Kod Olusturucu</span>
+            <span className="text-[#F5F5F5]">QR Kod Oluşturucu</span>
           </nav>
         </FadeIn>
 
         {/* Page Header */}
         <FadeIn className="mb-12">
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            QR Kod Olusturucu
+            QR Kod Oluşturucu
           </h1>
           <p className="text-[#999999] text-lg max-w-2xl leading-relaxed">
-            URL veya metin girin, aninda QR kod olusturun. Renk ve boyut secin, PNG olarak indirin. Reklamsiz, ucretsiz, hizli.
+            URL veya metin girin, anında QR kod oluşturun. Renk ve boyut seçin, PNG olarak indirin. Reklamsız, ücretsiz, hızlı.
           </p>
         </FadeIn>
 
@@ -149,7 +149,7 @@ export default function QRKodPage() {
               {/* Quick Presets */}
               <div>
                 <label className="block text-xs text-[#666666] uppercase tracking-wider font-medium mb-2">
-                  Hizli Renk Sablonlari
+                  Hızlı Renk Sablonlari
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {[
@@ -229,7 +229,7 @@ export default function QRKodPage() {
         {otherTools.length > 0 && (
           <FadeIn className="mt-20 lg:mt-28">
             <h2 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-6">
-              Diger Araclar
+              Diğer Araçlar
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {otherTools.map((tool) => (

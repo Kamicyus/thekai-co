@@ -50,15 +50,15 @@ export default function AraclarPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Ucretsiz Araclar
+              Ücretsiz Araçlar
             </span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-5">
-            Online Araclar
+            Online Araçlar
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            Reklamsiz, kayit gerektirmeyen, tamamen ucretsiz online araclar.
-            Hizli, guvenli ve sinirsiz kullanim.
+            Reklamsız, kayıt gerektirmeyen, tamamen ücretsiz online araçlar.
+            Hızlı, güvenli ve sınırsız kullanım.
           </p>
         </FadeIn>
 
@@ -115,7 +115,7 @@ export default function AraclarPage() {
                   {/* Badge */}
                   <div className="absolute top-6 left-6">
                     <span className="text-[10px] bg-[#D8FB32]/15 text-[#D8FB32] px-2.5 py-1 rounded-full font-medium uppercase tracking-wider">
-                      Ucretsiz
+                      Ücretsiz
                     </span>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export default function AraclarPage() {
         {/* Bottom Info */}
         <FadeIn className="mt-16 lg:mt-20 text-center">
           <p className="text-[#666666] text-sm">
-            Tum araclar tarayicinizda calisir. Verileriniz sunucuya gonderilmez.
+            Tüm araçlar tarayıcınızda çalışır. Verileriniz sunucuya gönderilmez.
           </p>
         </FadeIn>
       </div>
