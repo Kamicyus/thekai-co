@@ -172,7 +172,8 @@ export default function TunerPage() {
             Online Gitar Akort Cihazı
           </h1>
           <p className="text-[#999999] text-base max-w-lg mx-auto">
-            Mikrofonunuzu kullanarak gitarınızı akort edin. Akustik ve elektro gitar için uygundur.
+            Mikrofonunuzu kullanarak gitarınızı akort edin.<br />
+            Akustik ve elektro gitar için uygundur.
           </p>
         </div>
 
