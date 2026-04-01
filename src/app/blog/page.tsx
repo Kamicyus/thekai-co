@@ -55,8 +55,22 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 hover:border-[#D8FB32]/20 transition-all duration-300 flex flex-col"
+              className="group bg-[#141414] border border-[#1F2937] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/20 transition-all duration-300 flex flex-col"
             >
+              {/* Cover Image */}
+              {post.coverImage && (
+                <div className="relative w-full aspect-[1200/630] overflow-hidden">
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-60" />
+                </div>
+              )}
+
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
               {/* Meta */}
               <div className="flex items-center gap-3 mb-4">
                 <time
@@ -101,6 +115,7 @@ export default function BlogPage() {
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
                 </svg>
+              </div>
               </div>
             </Link>
           ))}

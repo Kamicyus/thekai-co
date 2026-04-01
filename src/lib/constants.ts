@@ -113,6 +113,30 @@ export const TOOLS = [
     icon: "textcase",
     slug: "harf-cevirici",
   },
+  {
+    title: "JSON Formatlayıcı",
+    description: "JSON verilerinizi otomatik formatlayın, syntax hatalarını tespit edin, sıkıştırın veya güzelleştirin.",
+    icon: "json",
+    slug: "json-formatlayici",
+  },
+  {
+    title: "Yüzde Hesaplayıcı",
+    description: "Yüzde hesaplama, oran bulma ve yüzde değişim hesaplama. 3 farklı hesaplama modu.",
+    icon: "percent",
+    slug: "yuzde-hesaplayici",
+  },
+  {
+    title: "Görsel Boyutlandırıcı",
+    description: "Görsellerinizi sosyal medya boyutlarına uyarlayın. Instagram, YouTube, Twitter ve özel boyutlar.",
+    icon: "image",
+    slug: "gorsel-boyutlandirma",
+  },
+  {
+    title: "Yaş Hesaplayıcı",
+    description: "Doğum tarihinizi girin, yaşınızı yıl, ay, gün olarak görün. Burç ve doğum gününe kalan süre.",
+    icon: "cake",
+    slug: "yas-hesaplayici",
+  },
 ] as const;
 
 export const STATS = [

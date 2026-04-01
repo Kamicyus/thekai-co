@@ -40,12 +40,25 @@ export async function generateMetadata({
       authors: [post.author],
       siteName: "The Kai",
       locale: "tr_TR",
+      ...(post.coverImage && {
+        images: [
+          {
+            url: `https://thekai.co${post.coverImage}`,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
+      }),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
       site: "@callmethekai",
+      ...(post.coverImage && {
+        images: [`https://thekai.co${post.coverImage}`],
+      }),
     },
   };
 }
@@ -208,6 +221,9 @@ export default async function BlogPostPage({
       "@type": "WebPage",
       "@id": `https://thekai.co/blog/${post.slug}`,
     },
+    ...(post.coverImage && {
+      image: `https://thekai.co${post.coverImage}`,
+    }),
     keywords: post.keywords.join(", "),
   };
 
@@ -312,6 +328,17 @@ export default async function BlogPostPage({
               </div>
             </div>
           </header>
+
+          {/* Cover Image */}
+          {post.coverImage && (
+            <div className="relative w-full aspect-[1200/630] overflow-hidden rounded-[20px] border border-[#1F2937] mb-10">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
 
           {/* Content */}
           <div className="border-t border-[#1F2937] pt-10">

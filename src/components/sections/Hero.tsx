@@ -41,6 +41,87 @@ export default function Hero() {
         <DecorativePinwheel size={80} opacity={0.08} animate reverse />
       </div>
 
+      {/* Orbiting Planets — "Dünyalar Kuruyoruz" */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
+        {/* Orbit ring 1 — subtle */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-[#1F2937]/20"
+          style={{ originX: "50%", originY: "50%" }}
+        />
+
+        {/* Neptune — large orbit, slow */}
+        <motion.div
+          className="absolute top-1/2 left-1/2"
+          style={{ width: 0, height: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute" style={{ top: -350, left: -8 }}>
+            <div className="w-4 h-4 rounded-full opacity-40"
+              style={{ background: "radial-gradient(circle at 30% 30%, #5B8DEF, #1a3a8a)" }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Jupiter — medium orbit */}
+        <motion.div
+          className="absolute top-1/2 left-1/2"
+          style={{ width: 0, height: 0 }}
+          animate={{ rotate: -360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute" style={{ top: -260, left: -10 }}>
+            <div className="w-5 h-5 rounded-full opacity-35"
+              style={{ background: "radial-gradient(circle at 30% 30%, #D4A76A, #8B6914)" }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Mars — closer orbit, faster */}
+        <motion.div
+          className="absolute top-1/2 left-1/2"
+          style={{ width: 0, height: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute" style={{ top: -180, left: -5 }}>
+            <div className="w-3 h-3 rounded-full opacity-30"
+              style={{ background: "radial-gradient(circle at 30% 30%, #E07040, #8B3A1A)" }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Saturn — wide orbit with ring effect */}
+        <motion.div
+          className="absolute top-1/2 left-1/2"
+          style={{ width: 0, height: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 75, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute" style={{ top: -310, left: -8 }}>
+            <div className="relative">
+              <div className="w-4 h-4 rounded-full opacity-30"
+                style={{ background: "radial-gradient(circle at 30% 30%, #E8D5A3, #A08040)" }}
+              />
+              {/* Saturn ring */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-2 rounded-full border border-[#E8D5A3]/20 -rotate-[25deg]" />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Small moon — tight orbit, fast */}
+        <motion.div
+          className="absolute top-1/2 left-1/2"
+          style={{ width: 0, height: 0 }}
+          animate={{ rotate: -360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute" style={{ top: -130, left: -3 }}>
+            <div className="w-2 h-2 rounded-full bg-[#D8FB32] opacity-15" />
+          </div>
+        </motion.div>
+      </div>
+
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 lg:px-8 text-center mt-20 sm:mt-16">
         {/* Headline */}

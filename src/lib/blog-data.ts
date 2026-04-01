@@ -6,6 +6,7 @@ export interface BlogPost {
   readingTime: string;
   author: string;
   keywords: string[];
+  coverImage?: string;
   content: BlogSection[];
 }
 
@@ -37,6 +38,7 @@ export const blogPosts: BlogPost[] = [
       "çoklu ajan mimarisi",
       "AI orkestrasyon",
     ],
+    coverImage: "/images/blog/ai-ajan-sistemi-nedir.jpg",
     content: [
       {
         type: "p",
@@ -259,6 +261,7 @@ export const blogPosts: BlogPost[] = [
       "yapay zeka müzik üretimi 2026",
       "AI müzik telif",
     ],
+    coverImage: "/images/blog/yapay-zeka-ile-muzik-yapmak.jpg",
     content: [
       {
         type: "p",
@@ -448,6 +451,7 @@ export const blogPosts: BlogPost[] = [
       "Claude Code ajan",
       "Claude Code Türkçe",
     ],
+    coverImage: "/images/blog/claude-code-rehber.jpg",
     content: [
       {
         type: "p",
@@ -701,6 +705,7 @@ export const blogPosts: BlogPost[] = [
       "sesli kitap Spotify",
       "AI audiobook",
     ],
+    coverImage: "/images/blog/ai-sesli-kitap.jpg",
     content: [
       {
         type: "p",
