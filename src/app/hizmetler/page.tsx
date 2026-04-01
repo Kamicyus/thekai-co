@@ -154,6 +154,23 @@ const HIZMET_DETAYLARI = [
     ],
     packages: null,
   },
+  {
+    slug: "sesli-kitap",
+    icon: "microphone",
+    title: "Sesli Kitap Prodüksiyon",
+    subtitle: "AI seslendirme ile yayıncılık.",
+    description:
+      "Klasik ve modern edebiyatı yapay zekâ seslendirmesiyle sesli kitaba dönüştürüyoruz. Metin bölümleme, ses seçimi, seslendirme, düzenleme ve dijital platform dağıtımı. Murmur yayınevi deneyimiyle.",
+    features: [
+      "AI seslendirme (ElevenLabs)",
+      "Metin bölümleme ve hazırlık",
+      "Ses tasarımı ve düzenleme",
+      "Spotify & platformlara dağıtım",
+      "Kapak tasarımı ve branding",
+      "Telif hakkı danışmanlığı",
+    ],
+    packages: null,
+  },
 ];
 
 export default function HizmetlerPage() {
