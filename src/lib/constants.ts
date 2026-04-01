@@ -22,7 +22,7 @@ export const SOCIAL_LINKS = [
   { label: "Instagram", href: "https://instagram.com/callmethekai", icon: "instagram" },
   { label: "TikTok", href: "https://tiktok.com/@callmethekai", icon: "tiktok" },
   { label: "Pinterest", href: "https://pinterest.com/callmethekai", icon: "pinterest" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/thekai", icon: "linkedin" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/the-kai", icon: "linkedin" },
 ] as const;
 
 export const SERVICES = [

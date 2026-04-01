@@ -122,7 +122,7 @@ export default function RootLayout({
                 "https://youtube.com/@callmethekai",
                 "https://instagram.com/callmethekai",
                 "https://tiktok.com/@callmethekai",
-                "https://linkedin.com/company/thekai",
+                "https://linkedin.com/company/the-kai",
               ],
             }),
           }}
