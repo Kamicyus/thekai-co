@@ -44,11 +44,6 @@ const DIGITAL_ARTWORKS = [
     image: "/images/artworks/white-horse.jpg",
   },
   {
-    title: "Vortex",
-    description: "Işık girdabına yürüyen figür — sonsuzluğa adım.",
-    image: "/images/artworks/vortex.jpg",
-  },
-  {
     title: "Tango",
     description: "Altın ışıkta dans eden çift — tutkunun renkleri.",
     image: "/images/artworks/tango.jpg",
@@ -57,6 +52,11 @@ const DIGITAL_ARTWORKS = [
     title: "Shadow Crown",
     description: "Mor ışıkta taçlı gölge figür — karanlığın asaleti.",
     image: "/images/artworks/shadow-crown.jpg",
+  },
+  {
+    title: "Vortex",
+    description: "Işık girdabına yürüyen figür — sonsuzluğa adım.",
+    image: "/images/artworks/vortex.jpg",
   },
   {
     title: "Mushroom Portrait",
@@ -194,18 +194,18 @@ export default function PortfolyoPage() {
           <p className="text-[#999999] text-base mb-8 max-w-lg">
             AI destekli üretim süreciyle oluşturulan orijinal sanat eserleri.
           </p>
-          <div className="columns-2 lg:columns-3 gap-4 space-y-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {DIGITAL_ARTWORKS.map((item) => (
               <div
                 key={item.title}
-                className="break-inside-avoid group"
+                className="group"
               >
                 <div className="relative bg-[#141414] border border-[#1F2937] rounded-[16px] overflow-hidden hover:border-[#D8FB32]/20 transition-all duration-500">
-                  <div className="overflow-hidden">
+                  <div className="aspect-square overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
                   </div>
