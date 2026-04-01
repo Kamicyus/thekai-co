@@ -149,6 +149,18 @@ export const TOOLS = [
     icon: "music",
     slug: "tuner",
   },
+  {
+    title: "Online Metronom",
+    description: "Web Audio API ile calisan metronom. BPM ayarlama, tap tempo, vurus sayisi secimi ve gorsel vurus gostergesi.",
+    icon: "music",
+    slug: "metronom",
+  },
+  {
+    title: "BPM Bulucu",
+    description: "Ritme tiklayarak sarkinin BPM degerini hesaplayin. Ortalama, minimum ve maksimum BPM gostergesi.",
+    icon: "music",
+    slug: "bpm-bulucu",
+  },
 ] as const;
 
 export const STATS = [
