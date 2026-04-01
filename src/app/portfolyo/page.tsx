@@ -14,16 +14,16 @@ const MUSIC_ARTWORKS = [
     image: "/images/artworks/estarabim.jpg",
   },
   {
-    title: "Yandı Dibine Kadar",
-    category: "SINGLE ARTWORK",
-    description: "Çöl estetiği ve sinematik görsellikle tasarlanan artwork.",
-    image: "/images/artworks/yandi-dibine-kadar.jpg",
-  },
-  {
     title: "Kamer",
     category: "ALBUM ARTWORK",
     description: "Gitarlı portre — Kamer'in sanatçı kimliğini yansıtan ikonik kare.",
     image: "/images/artworks/kamer-genius.jpg",
+  },
+  {
+    title: "Yandı Dibine Kadar",
+    category: "SINGLE ARTWORK",
+    description: "Çöl estetiği ve sinematik görsellikle tasarlanan artwork.",
+    image: "/images/artworks/yandi-dibine-kadar.jpg",
   },
 ];
 
@@ -116,10 +116,10 @@ export default function PortfolyoPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { name: "Echo Bazaar", image: "/images/projects/scroll-ozeta.jpg" },
-              { name: "Shortlist Creative", image: "/images/projects/scroll-shortlist.jpg" },
-              { name: "The Kai", image: "/images/projects/scroll-thekai.jpg" },
-            ].map((site, i) => (
+              { name: "Echo Bazaar", video: "/videos/ozeta.webm" },
+              { name: "Shortlist Creative", video: "/videos/shortlist.webm" },
+              { name: "The Kai", video: "/videos/thekai.webm" },
+            ].map((site) => (
               <div key={site.name} className="group/site">
                 {/* Browser frame */}
                 <div className="rounded-t-xl bg-[#1A1A1A] border border-[#2A2A2A] border-b-0 px-3 py-2.5 flex items-center gap-2">
@@ -130,17 +130,17 @@ export default function PortfolyoPage() {
                   </div>
                   <div className="flex-1 mx-2 bg-[#0A0A0A] rounded-md h-5" />
                 </div>
-                {/* Scrolling viewport */}
-                <div className="h-[320px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
-                  <img
-                    src={site.image}
-                    alt={`${site.name} web sitesi`}
-                    className="w-full h-auto object-cover object-top"
-                    loading="lazy"
-                    style={{
-                      animation: `scrollSite 18s ease-in-out infinite alternate`,
-                    }}
-                  />
+                {/* Video viewport */}
+                <div className="overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-auto"
+                  >
+                    <source src={site.video} type="video/webm" />
+                  </video>
                 </div>
                 {/* Site name */}
                 <p className="text-center text-[#F5F5F5] text-sm font-medium mt-3">{site.name}</p>
