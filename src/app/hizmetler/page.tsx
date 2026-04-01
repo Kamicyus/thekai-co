@@ -427,35 +427,45 @@ export default function HizmetlerPage() {
                     </div>
                   )}
 
-                  {/* Web Sitesi Showcase — mockup browser frames */}
+                  {/* Web Sitesi Showcase — scrolling browser mockups */}
                   {hizmet.slug === "web-sitesi-tasarimi" && (
                     <div className="mb-8">
                       <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
                         Yaptığımız Siteler
                       </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                         {[
-                          { name: "Echo Bazaar", url: "o-zeta-murex.vercel.app", image: "/images/projects/mockup-ozeta.png" },
-                          { name: "Shortlist Creative", url: "shortlistcreative.com", image: "/images/projects/mockup-shortlist.png" },
-                          { name: "The Kai", url: "thekai.co", image: "/images/projects/mockup-thekai.png" },
-                        ].map((site) => (
-                          <div key={site.name} className="group/site relative rounded-2xl overflow-hidden border border-[#1F2937] hover:border-[#D8FB32]/20 transition-all duration-300 bg-[#0A0A0A]">
-                            <div className="overflow-hidden">
+                          { name: "Echo Bazaar", image: "/images/projects/scroll-ozeta.jpg" },
+                          { name: "Shortlist Creative", image: "/images/projects/scroll-shortlist.jpg" },
+                          { name: "The Kai", image: "/images/projects/scroll-thekai.jpg" },
+                        ].map((site, i) => (
+                          <div key={site.name} className="group/site">
+                            {/* Browser frame */}
+                            <div className="rounded-t-xl bg-[#1A1A1A] border border-[#2A2A2A] border-b-0 px-3 py-2.5 flex items-center gap-2">
+                              <div className="flex gap-1.5">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#FEBD2E]" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+                              </div>
+                              <div className="flex-1 mx-2 bg-[#0A0A0A] rounded-md h-5 flex items-center px-2">
+                                <span className="text-[10px] text-[#555]">●</span>
+                              </div>
+                            </div>
+                            {/* Scrolling viewport */}
+                            <div className="h-[280px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 relative bg-[#0A0A0A]">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
                                 src={site.image}
                                 alt={`${site.name} web sitesi`}
-                                className="w-full h-auto object-cover group-hover/site:scale-[1.02] transition-transform duration-500"
+                                className="w-full h-auto object-cover object-top"
                                 loading="lazy"
+                                style={{
+                                  animation: `scrollSite ${12 + i * 4}s ease-in-out infinite alternate`,
+                                }}
                               />
                             </div>
-                            <div className="p-3 flex items-center justify-between">
-                              <div>
-                                <p className="text-[#F5F5F5] text-sm font-medium">{site.name}</p>
-                                <p className="text-[#666666] text-xs">{site.url}</p>
-                              </div>
-                              <span className="text-[10px] bg-[#D8FB32]/15 text-[#D8FB32] px-2 py-0.5 rounded-full font-medium">Canlı</span>
-                            </div>
+                            {/* Site name */}
+                            <p className="text-center text-[#F5F5F5] text-sm font-medium mt-3">{site.name}</p>
                           </div>
                         ))}
                       </div>
