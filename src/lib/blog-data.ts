@@ -46,6 +46,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "img",
+        src: "/images/blog/ai-ajan-mimari.jpg",
         alt: "AI ajan sistemi mimarisi - orkestratör ve uzman ajanlar arası iletişim diyagramı",
       },
       {
@@ -74,6 +75,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "img",
+        src: "/images/blog/tek-vs-coklu-ajan.jpg",
         alt: "Tek ajan vs çoklu ajan mimarisi karşılaştırma şeması",
       },
       {
@@ -273,6 +275,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "img",
+        src: "/images/blog/ai-muzik-uretim.jpg",
         alt: "AI müzik üretim süreci - Suno'dan Logic Pro'ya iş akışı diyagramı",
       },
       {
@@ -341,6 +344,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "img",
+        src: "/images/blog/echo-bazaar-kanal.jpg",
         alt: "Echo Bazaar YouTube kanalı ekran görüntüsü - AI müzik içerikleri",
       },
       {
@@ -491,6 +495,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "img",
+        src: "/images/blog/claude-code-terminal.jpg",
         alt: "Claude Code terminal ekran görüntüsü - gerçek zamanlı kod düzenleme",
       },
       {
@@ -717,6 +722,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "img",
+        src: "/images/blog/murmur-sesli-kitap.jpg",
         alt: "Murmur AI sesli kitap yayınevi - logo ve marka görseli",
       },
       {
@@ -803,6 +809,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "img",
+        src: "/images/blog/ai-sesli-kitap-pipeline.jpg",
         alt: "AI sesli kitap üretim pipeline'ı - metin hazırlığından dağıtıma kadar iş akışı",
       },
       {
@@ -868,6 +875,441 @@ export const blogPosts: BlogPost[] = [
             question: "Hangi platformlarda yayınlayabiliriz?",
             answer:
               "Spotify, Apple Books, Google Play Books, Audible ve diğer dijital platformlarda yayınlama imkanı var. Dağıtım sürecini de biz yönetiyoruz — metadata, kapak tasarımı ve platform uyumluluğu dahil. <a href='/iletisim'>Detaylar için bize ulaşın</a>.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "telegram-botu-isletmeler-icin",
+    title: "Telegram Botu İşletmeniz İçin Ne Yapabilir? Otomasyon Rehberi",
+    description:
+      "İşletmeniz için Telegram botu kurmanın avantajları, kullanım senaryoları ve maliyet analizi. Müşteri hizmetlerinden sipariş takibine kadar gerçek örneklerle anlatıyoruz.",
+    date: "2026-04-01",
+    readingTime: "7 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "Telegram botu",
+      "Telegram bot kurulumu",
+      "işletme için Telegram botu",
+      "Telegram otomasyon",
+      "müşteri hizmeti botu",
+      "Telegram bot Türkiye",
+      "chatbot kurulumu",
+    ],
+    coverImage: "/images/blog/telegram-botu-isletmeler-icin.jpg",
+    content: [
+      {
+        type: "p",
+        text: "WhatsApp Business'ı herkes kullanıyor, biliyorum. Peki <strong>Telegram botu</strong> ile neler yapabileceğinizi biliyor musunuz? Ben kendi işlerimde hem kişisel hem ticari amaçla Telegram botları kullanıyorum ve söyleyebileceğim tek şey şu: WhatsApp'ın sunduğu her şeyi yapıyor, ama üstüne otomasyon imkanı sunuyor — ve ücretsiz.",
+      },
+      {
+        type: "h2",
+        text: "Telegram Botu Nedir ve Nasıl Çalışır?",
+      },
+      {
+        type: "p",
+        text: "Telegram botu, Telegram platformu üzerinde çalışan otomatik bir yazılım ajanıdır. 7/24 aktiftir, mesaj alır, komutlara yanıt verir, dosya gönderir, hatırlatma yapar ve hatta ödeme bile alabilir. Bir chatbot'tan farkı: Telegram botu gerçek işlemleri gerçekleştirebilir — veritabanına kayıt yapar, dosya işler, API'lere bağlanır.",
+      },
+      {
+        type: "p",
+        text: "Mesela benim kullandığım bot sistemi her sabah bana günlük rapor gönderiyor: bekleyen görevler, takvim, hava durumu, dün yapılanların özeti. Ben hiçbir şeye basmıyorum — bot kendi başına çalışıyor. Aynı sistemi müşterilerime de kuruyorum.",
+      },
+      {
+        type: "h2",
+        text: "İşletmeler İçin 7 Telegram Bot Kullanım Senaryosu",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Müşteri destek botu:</strong> Sık sorulan soruları otomatik yanıtlar, karmaşık konuları canlı destek ekibine yönlendirir. Gece 3'te bile çalışır.",
+          "<strong>Sipariş ve randevu botu:</strong> Müşteriler bot üzerinden sipariş verir veya randevu alır. Onay mesajı otomatik gider.",
+          "<strong>Bildirim ve hatırlatma botu:</strong> Kargonuz yola çıktı, randevunuz yarın, ödemeniz alındı gibi otomatik bildirimler.",
+          "<strong>İç iletişim botu:</strong> Ekip içi görev atama, durum güncelleme, günlük standup raporları.",
+          "<strong>Anket ve geri bildirim botu:</strong> Müşteri memnuniyeti anketleri, ürün değerlendirmeleri — hepsi bot üzerinden.",
+          "<strong>İçerik dağıtım botu:</strong> Blog yazıları, kampanyalar, yeni ürünler — abonelere otomatik dağıtım.",
+          "<strong>Finansal takip botu:</strong> Günlük gelir-gider özeti, fatura hatırlatmaları, bütçe uyarıları.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Telegram Botu mu, WhatsApp Business mı?",
+      },
+      {
+        type: "p",
+        text: "İkisi de iyi araçlar ama farklı güçleri var. WhatsApp Business yaygınlık avantajına sahip — Türkiye'de herkes WhatsApp kullanıyor. Ama <strong>otomasyon</strong> konusunda Telegram açık ara önde.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Telegram:</strong> Sınırsız bot API, ücretsiz, dosya paylaşımı 2GB'a kadar, grup/kanal yönetimi, webhook desteği, inline modlar",
+          "<strong>WhatsApp Business:</strong> Geniş kullanıcı tabanı, tanıdık arayüz, ama API erişimi ücretli (Meta Business Suite), otomasyon sınırlı",
+        ],
+      },
+      {
+        type: "p",
+        text: "Benim tavsiyem: müşteri iletişiminde WhatsApp, arka plandaki otomasyonda Telegram. İkisini birlikte kullanmak en güçlü kombinasyon. Hatta Telegram botunuz WhatsApp mesajlarınızı da yönetebilir — bir webhook köprüsüyle.",
+      },
+      {
+        type: "h2",
+        text: "Telegram Botu Maliyeti Ne Kadar?",
+      },
+      {
+        type: "p",
+        text: "Telegram Bot API tamamen <strong>ücretsiz</strong>. Evet, doğru okudunuz. Telegram botlarının kendisi para almaz. Maliyet şu kalemlerde ortaya çıkar:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Geliştirme:</strong> Basit bir bilgi botu 2.000-5.000 ₺, kapsamlı bir otomasyon sistemi 8.000-25.000 ₺ arası.",
+          "<strong>Hosting:</strong> Küçük botlar için aylık 50-200 ₺ sunucu maliyeti. Büyük botlar için 200-500 ₺.",
+          "<strong>Bakım:</strong> Aylık güncelleme ve destek 500-2.000 ₺ arası (isteğe bağlı).",
+        ],
+      },
+      {
+        type: "p",
+        text: "Karşılaştırma: Bir tam zamanlı müşteri hizmeti çalışanı aylık 30.000+ ₺ maliyet. Telegram botu aynı işi 7/24 yapıyor, aylık 200 ₺'ye. ROI hesabını siz yapın.",
+      },
+      {
+        type: "h2",
+        text: "Nasıl Başlanır?",
+      },
+      {
+        type: "p",
+        text: "Telegram botu kurma süreci temelde 3 adım: BotFather üzerinden bot oluştur, kodu yaz, sunucuya deploy et. Basit bir bot 1-2 günde hazır. Ama gerçek değer yaratan bir sistem — AI entegrasyonu, veritabanı bağlantısı, çoklu kanal yönetimi — daha fazla planlama gerektirir.",
+      },
+      {
+        type: "p",
+        text: "The Kai olarak <a href='/hizmetler'>Telegram bot geliştirme hizmeti</a> sunuyoruz. Basit bilgi botundan karmaşık AI destekli otomasyon sistemlerine kadar her ölçekte çözüm üretiyoruz. Siz işinize odaklanın, bot arka planda çalışsın.",
+      },
+      {
+        type: "cta",
+        label: "Telegram Bot Projeni Konuşalım",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Telegram botu yapmak zor mu?",
+            answer:
+              "Basit bir bilgi botu için temel programlama bilgisi yeterli. Ama iş mantığı, AI entegrasyonu ve güvenlik gerektiren botlar için profesyonel destek almanızı öneriyoruz. <a href='/iletisim'>Bize ulaşın</a>, ücretsiz danışmanlık sunuyoruz.",
+          },
+          {
+            question: "Telegram botu güvenli mi?",
+            answer:
+              "Telegram, uçtan uca şifreleme ve güvenli bot API sunar. Botunuzun güvenliği büyük ölçüde nasıl geliştirildiğine bağlı — doğru authentication, rate limiting ve veri şifreleme uygulandığında son derece güvenlidir.",
+          },
+          {
+            question: "Bot kaç kişiye hizmet verebilir?",
+            answer:
+              "Telegram Bot API'nin resmi limiti saniyede 30 mesaj (gruplarda 20). Doğru mimariyle binlerce kullanıcıya aynı anda hizmet verebilir. Enterprise çözümlerde queue sistemi ve load balancing kullanıyoruz.",
+          },
+          {
+            question: "Mevcut sistemlerimle entegre olabilir mi?",
+            answer:
+              "Evet. CRM, ERP, e-ticaret platformu, muhasebe yazılımı — API'si olan her sistemle entegrasyon mümkün. Google Sheets, Notion, Airtable gibi araçlarla da bağlanabilir.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "web-sitesi-maliyeti-2026",
+    title: "Web Sitesi Maliyeti 2026: Profesyonel Site Yaptırmak Ne Kadar?",
+    description:
+      "2026'da web sitesi yaptırmanın gerçek maliyeti nedir? Kurumsal site, e-ticaret, landing page ve özel yazılım projelerinin fiyat karşılaştırması ve dikkat edilmesi gerekenler.",
+    date: "2026-04-01",
+    readingTime: "9 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "web sitesi maliyeti",
+      "web sitesi fiyatı 2026",
+      "web sitesi yaptırmak",
+      "kurumsal web sitesi fiyat",
+      "e-ticaret sitesi maliyet",
+      "profesyonel web sitesi",
+      "web tasarım fiyatları",
+    ],
+    coverImage: "/images/blog/web-sitesi-maliyeti-2026.jpg",
+    content: [
+      {
+        type: "p",
+        text: "\"Web sitesi yaptırmak istiyorum, ne kadara mal olur?\" — bu soruyu hem girişimci arkadaşlarımdan hem de müşterilerimden sürekli duyuyorum. Cevap her zaman aynı: <strong>duruma göre değişir</strong>. Ama bu yazıda \"duruma göre\"yü somutlaştıracağım — gerçek rakamlarla, gerçek senaryolarla.",
+      },
+      {
+        type: "h2",
+        text: "Web Sitesi Türleri ve Fiyat Aralıkları",
+      },
+      {
+        type: "p",
+        text: "Önce şunu netleştirelim: \"web sitesi\" çok geniş bir kavram. Bir tek sayfalık tanıtım sitesi ile 10.000 ürünlü bir e-ticaret platformu arasında dağlar kadar fark var. İşte 2026 Türkiye piyasasına göre gerçekçi fiyat aralıkları:",
+      },
+      {
+        type: "h3",
+        text: "1. Landing Page (Tek Sayfa)",
+      },
+      {
+        type: "p",
+        text: "Tek bir amaca hizmet eden, genellikle bir ürün veya hizmeti tanıtan tek sayfa. Fiyat: <strong>3.000 – 10.000 ₺</strong>. Süre: 3-7 gün. İçerir: Responsive tasarım, temel SEO, iletişim formu.",
+      },
+      {
+        type: "h3",
+        text: "2. Kurumsal Tanıtım Sitesi",
+      },
+      {
+        type: "p",
+        text: "5-15 sayfalık, şirketin hizmetlerini, ekibini ve portföyünü tanıtan site. Fiyat: <strong>8.000 – 30.000 ₺</strong>. Süre: 2-4 hafta. İçerir: Özel tasarım, blog altyapısı, SEO optimizasyonu, admin paneli.",
+      },
+      {
+        type: "h3",
+        text: "3. E-Ticaret Sitesi",
+      },
+      {
+        type: "p",
+        text: "Ürün satışı yapılan, ödeme entegrasyonlu platform. Fiyat: <strong>15.000 – 80.000 ₺</strong>. Süre: 4-8 hafta. İçerir: Ürün yönetimi, ödeme altyapısı (iyzico, PayTR), kargo entegrasyonu, stok takibi.",
+      },
+      {
+        type: "h3",
+        text: "4. Özel Yazılım / Web Uygulaması",
+      },
+      {
+        type: "p",
+        text: "SaaS platformu, dashboard, özel CRM gibi projeler. Fiyat: <strong>30.000 – 200.000+ ₺</strong>. Süre: 1-6 ay. İçerir: Tam özel geliştirme, API entegrasyonları, kullanıcı yönetimi, güvenlik katmanları.",
+      },
+      {
+        type: "h2",
+        text: "Fiyatı Belirleyen 5 Ana Faktör",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Tasarım karmaşıklığı:</strong> Hazır template mi, özel tasarım mı? Özel tasarım 2-3x daha pahalı ama markalaşma açısından çok daha değerli.",
+          "<strong>Sayfa sayısı ve içerik:</strong> 5 sayfa ile 50 sayfa arasında ciddi fiyat farkı var. İçerik üretimi (metin, görsel, video) ek maliyet kalemi.",
+          "<strong>Entegrasyonlar:</strong> Ödeme sistemi, CRM bağlantısı, sosyal medya entegrasyonu, e-posta otomasyon — her biri ekstra geliştirme gerektirir.",
+          "<strong>SEO ve performans:</strong> Temel SEO dahil olmalı. Gelişmiş SEO stratejisi (anahtar kelime analizi, rakip analizi, içerik planı) ekstra.",
+          "<strong>Bakım ve destek:</strong> Site teslim edildi, bitti mi? Hayır. Güncelleme, güvenlik yamaları, içerik değişiklikleri — aylık 500-3.000 ₺ bakım maliyeti.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "WordPress mu, Özel Geliştirme mi?",
+      },
+      {
+        type: "p",
+        text: "WordPress dünya genelinde sitelerin %40'ından fazlasını çalıştırıyor. Hızlı, ucuz ve eklenti ekosistemi geniş. Ama <strong>performans, güvenlik ve ölçeklenebilirlik</strong> konusunda özel geliştirme (React/Next.js gibi modern framework'ler) çok daha güçlü.",
+      },
+      {
+        type: "p",
+        text: "Benim tercihim ve müşterilerime önerim: <strong>Next.js + Tailwind CSS + Vercel</strong> stack'i. Neden? Çünkü:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Google Core Web Vitals skoru neredeyse her zaman 90+",
+          "SEO açısından SSR/SSG desteği (Google botu sayfayı tam görür)",
+          "Vercel'de hosting neredeyse ücretsiz (küçük-orta ölçek projeler için)",
+          "Bakım maliyeti düşük — WordPress gibi sürekli güncelleme gerektirmiyor",
+          "Modern, hızlı, güvenli — SQL injection gibi klasik WordPress açıkları yok",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Ucuz Site Yaptırmanın Gizli Maliyetleri",
+      },
+      {
+        type: "p",
+        text: "1.000 ₺'ye web sitesi yapan yerler var, biliyorum. Ama ucuza mal olur. Genellikle yaşanan sorunlar: yavaş yükleme (3+ saniye), mobil uyumsuzluk, SEO altyapısı olmayan siteler, güvenlik açıkları ve 6 ay sonra ulaşılamayan \"geliştirici\". Sonuçta ikinci kez yaptırıyorsunuz — toplam maliyet ilk başta doğru yaptırmaktan daha fazla oluyor.",
+      },
+      {
+        type: "h2",
+        text: "The Kai ile Web Sitesi Yaptırmak",
+      },
+      {
+        type: "p",
+        text: "The Kai olarak modern teknolojilerle (Next.js, React, Tailwind CSS) kurumsal web siteleri, e-ticaret platformları ve özel web uygulamaları geliştiriyoruz. AI destekli geliştirme sürecimiz sayesinde geleneksel ajans sürelerine kıyasla %50-70 daha hızlı teslim ediyoruz. Her projede SEO, performans ve güvenlik standart olarak dahil. <a href='/hizmetler'>Hizmetlerimizi inceleyin</a>.",
+      },
+      {
+        type: "cta",
+        label: "Ücretsiz Teklif Al",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Web sitesi ne kadar sürede hazır olur?",
+            answer:
+              "Proje kapsamına göre değişir. Landing page 3-7 gün, kurumsal site 2-4 hafta, e-ticaret 4-8 hafta. AI destekli geliştirme sürecimiz sayesinde sektör ortalamasının altında teslim süreleri sunuyoruz.",
+          },
+          {
+            question: "Domain ve hosting dahil mi?",
+            answer:
+              "Domain (alan adı) yıllık 200-500 ₺ arası, ayrı ödenir. Hosting genellikle Vercel üzerinden yapıyoruz — küçük-orta projeler için ücretsiz. Büyük projeler için aylık hosting maliyeti 100-500 ₺ arası.",
+          },
+          {
+            question: "Siteyi kendim güncelleyebilir miyim?",
+            answer:
+              "Evet. CMS (içerik yönetim sistemi) entegrasyonu yapıyoruz — blog yazısı eklemek, fiyat güncellemek, görsel değiştirmek gibi işleri kendiniz yapabilirsiniz. Teknik değişiklikler için biz varız.",
+          },
+          {
+            question: "SEO dahil mi?",
+            answer:
+              "Temel SEO (meta etiketleri, site haritası, yapısal veri, mobil uyumluluk, hız optimizasyonu) tüm projelerimize dahil. Gelişmiş SEO stratejisi (anahtar kelime araştırması, içerik planı, rakip analizi) ayrı bir hizmet olarak sunuyoruz.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "dijital-icerik-stratejisi-rehberi",
+    title: "Dijital İçerik Stratejisi: İşletmeniz İçin Kapsamlı Rehber",
+    description:
+      "Dijital içerik stratejisi nasıl oluşturulur? Blog, sosyal medya, video ve AI destekli içerik üretiminin temellerini, araçlarını ve ölçümleme yöntemlerini anlattığımız rehber.",
+    date: "2026-04-01",
+    readingTime: "10 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "dijital içerik stratejisi",
+      "içerik pazarlama",
+      "sosyal medya içerik planı",
+      "blog yazma stratejisi",
+      "AI ile içerik üretimi",
+      "içerik takvimi",
+      "SEO içerik stratejisi",
+    ],
+    coverImage: "/images/blog/dijital-icerik-stratejisi-rehberi.jpg",
+    content: [
+      {
+        type: "p",
+        text: "\"İçerik kraldır\" lafını herkes biliyor ama çoğu işletme içerik üretmeyi \"haftada bir Instagram postu atmak\" zannediyor. Gerçek bir <strong>dijital içerik stratejisi</strong> bundan çok daha fazlası — ve doğru yapıldığında en düşük maliyetli, en yüksek getirili pazarlama kanalı.",
+      },
+      {
+        type: "p",
+        text: "Ben The Kai olarak hem kendi markam için hem de müşterilerim için içerik stratejileri oluşturuyorum. Echo Bazaar YouTube kanalıyla 15 milyon+ izlenmeye ulaştım, kendi web sitemde organik trafiği sıfırdan inşa ediyorum. Bu yazıda gerçek deneyimlerimden yola çıkarak içerik stratejisinin temellerini paylaşıyorum.",
+      },
+      {
+        type: "h2",
+        text: "İçerik Stratejisi Nedir ve Neden Gerekli?",
+      },
+      {
+        type: "p",
+        text: "İçerik stratejisi, markanızın dijital varlığını planlayan, üreten, dağıtan ve ölçümleyen sistematik bir yaklaşımdır. Rastgele post atmak değil — <strong>hedef kitle analizi, anahtar kelime araştırması, içerik takvimi ve performans ölçümlemesi</strong> gibi bileşenlerden oluşur.",
+      },
+      {
+        type: "p",
+        text: "Neden gerekli? Çünkü 2026'da organik erişim her platformda düşüyor. Reklam maliyetleri artıyor. İçerik stratejisi ise uzun vadeli, birikmeli bir yatırım — 6 ay önce yazdığınız bir blog yazısı bugün hâlâ müşteri getiriyorsa, o yazının ROI'si sonsuza yaklaşıyor.",
+      },
+      {
+        type: "h2",
+        text: "İçerik Stratejisi Oluşturmanın 6 Adımı",
+      },
+      {
+        type: "h3",
+        text: "1. Hedef Kitle Analizi",
+      },
+      {
+        type: "p",
+        text: "Kim için içerik üretiyorsunuz? Yaş, ilgi alanları, sorunları, hangi platformlarda vakit geçirdikleri — bunları bilmeden içerik üretmek karanlıkta ok atmak gibi. <strong>Persona oluşturun:</strong> \"25-35 yaş, İstanbul, dijital pazarlamayla ilgilenen girişimci\" gibi somut profiller.",
+      },
+      {
+        type: "h3",
+        text: "2. Anahtar Kelime Araştırması",
+      },
+      {
+        type: "p",
+        text: "Google'da insanlar ne arıyor? Hangi sorulara cevap veriyorlar? Anahtar kelime araştırması içerik stratejisinin omurgasıdır. Araçlar: Google Keyword Planner (ücretsiz), Ubersuggest, Ahrefs, Semrush. Uzun kuyruklu anahtar kelimelere (long-tail keywords) odaklanın — rekabet düşük, dönüşüm oranı yüksek.",
+      },
+      {
+        type: "h3",
+        text: "3. İçerik Türlerini Belirleyin",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Blog yazıları:</strong> SEO'nun temeli. Evergreen (zamansız) içerikler uzun vadeli trafik getirir.",
+          "<strong>Sosyal medya içerikleri:</strong> Marka bilinirliği ve topluluk oluşturma. Platform bazlı strateji şart.",
+          "<strong>Video içerik:</strong> YouTube, TikTok, Instagram Reels. Video, 2026'da en yüksek etkileşim oranına sahip format.",
+          "<strong>E-posta bülteni:</strong> Doğrudan erişim, algoritma bağımsız. En değerli kanal.",
+          "<strong>Podcast / Sesli içerik:</strong> Niş kitleler için güçlü bağlantı aracı.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "4. İçerik Takvimi Oluşturun",
+      },
+      {
+        type: "p",
+        text: "Tutarlılık kaliteden bile önemli olabilir. Haftada 1 blog yazısı + günde 1 sosyal medya postu + ayda 2 video — başlangıç için ideal bir formül. Notion, Trello veya Google Sheets'te basit bir takvim oluşturun. Önemli olan takvime sadık kalmak.",
+      },
+      {
+        type: "h3",
+        text: "5. AI Destekli İçerik Üretimi",
+      },
+      {
+        type: "p",
+        text: "2026'da AI olmadan içerik üretmek, hesap makinesi olmadan muhasebe yapmak gibi. <strong>Claude, ChatGPT, Gemini</strong> gibi araçlar taslak oluşturmada, araştırmada ve düzenlemede inanılmaz hızlı. Ama dikkat: AI'ın ürettiği içeriği direkt yayınlamak hata. Kendi sesinizi, deneyimlerinizi ve perspektifinizi eklemelisiniz.",
+      },
+      {
+        type: "p",
+        text: "Benim iş akışım: AI ile taslak oluştur → kişisel deneyim ve veri ekle → düzenle → yayınla. Bu yöntemle tek başıma günde 2-3 kaliteli blog yazısı üretebiliyorum. Geleneksel yöntemle bu haftada 1 olurdu.",
+      },
+      {
+        type: "h3",
+        text: "6. Ölçümleme ve Optimizasyon",
+      },
+      {
+        type: "p",
+        text: "Ürettiğiniz içerik işe yarıyor mu? Google Analytics, Search Console, sosyal medya insights — bu araçları takip edin. Önemli metrikler: organik trafik, sayfa başı oturum süresi, dönüşüm oranı, sosyal medya etkileşim oranı. Ayda bir performans raporu çıkarın ve stratejiyi optimize edin.",
+      },
+      {
+        type: "h2",
+        text: "Küçük İşletmeler İçin Pratik İpuçları",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Az ama öz:</strong> Her platformda olmanıza gerek yok. Hedef kitlenizin en aktif olduğu 2 platformda güçlü olun.",
+          "<strong>Yeniden kullanım:</strong> Bir blog yazısını 5 sosyal medya postuna, 1 videoya ve 1 e-posta bültenine dönüştürün.",
+          "<strong>Evergreen içerik:</strong> Zamansız konulara odaklanın. \"2026 trendleri\" 6 ay sonra eskir, ama \"web sitesi nasıl yapılır\" yıllarca trafik getirir.",
+          "<strong>Kullanıcı içeriği (UGC):</strong> Müşteri yorumları, vaka çalışmaları, testimonial'lar — en güvenilir içerik türü.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "İçerik Stratejisi Hizmeti",
+      },
+      {
+        type: "p",
+        text: "The Kai olarak işletmelere <a href='/hizmetler'>dijital içerik stratejisi</a> hizmeti sunuyoruz. Hedef kitle analizi, anahtar kelime araştırması, içerik takvimi, blog yazıları ve sosyal medya içerik üretimi — hepsini tek çatı altında, AI destekli süreçlerle yönetiyoruz.",
+      },
+      {
+        type: "cta",
+        label: "İçerik Stratejini Planla",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "İçerik stratejisi ne kadar sürede sonuç verir?",
+            answer:
+              "SEO odaklı içerik stratejisi genellikle 3-6 ay içinde organik trafikte ciddi artış gösterir. Sosyal medya içerikleri daha hızlı sonuç verebilir — ilk 1 ayda etkileşim artışı görülür. Ama gerçek birikim 6-12 ay sürer.",
+          },
+          {
+            question: "AI ile üretilen içerik Google tarafından cezalandırılır mı?",
+            answer:
+              "Google'ın resmi açıklaması: kaliteli, faydalı içerik önemli, kim veya ne tarafından üretildiği değil. Anahtar: AI taslağını alıp kendi deneyiminiz, verileriniz ve perspektifinizle zenginleştirmek. Sıfırdan AI output'u yayınlamak değil.",
+          },
+          {
+            question: "Hangi platformlara odaklanmalıyım?",
+            answer:
+              "Hedef kitlenize bağlı. B2B için LinkedIn ve blog. B2C için Instagram, TikTok ve YouTube. Herkes için geçerli: bir blog + 1-2 sosyal medya platformu. Hepsinde vasat olmak yerine 2 platformda güçlü olun.",
+          },
+          {
+            question: "İçerik üretimini dış kaynak mı kullanmalıyım?",
+            answer:
+              "Zamansanız kendiniz yapın — markanızın sesini en iyi siz bilirsiniz. Ama ölçeklenmek istiyorsanız profesyonel destek alın. Biz The Kai olarak hem strateji hem üretim tarafında destek veriyoruz. <a href='/iletisim'>İletişime geçin</a>.",
           },
         ],
       },

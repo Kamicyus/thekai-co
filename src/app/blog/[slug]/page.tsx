@@ -149,23 +149,34 @@ function BlogContent({ section }: { section: BlogSection }) {
     case "img":
       return (
         <figure className="my-8">
-          <div className="bg-[#141414] border border-[#1F2937] rounded-[16px] overflow-hidden aspect-video flex items-center justify-center">
-            <div className="text-center p-8">
-              <svg
-                className="w-12 h-12 text-[#333333] mx-auto mb-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              <p className="text-[#666666] text-sm">{section.alt}</p>
-            </div>
+          <div className="bg-[#141414] border border-[#1F2937] rounded-[16px] overflow-hidden aspect-video">
+            {section.src ? (
+              <img
+                src={section.src}
+                alt={section.alt || ""}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="text-center p-8">
+                  <svg
+                    className="w-12 h-12 text-[#333333] mx-auto mb-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <p className="text-[#666666] text-sm">{section.alt}</p>
+                </div>
+              </div>
+            )}
           </div>
           {section.alt && (
             <figcaption className="text-[#666666] text-xs mt-2 text-center">
