@@ -1316,7 +1316,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "spotify-sarkı-dagitim-rehberi",
+    slug: "spotify-sarki-dagitim-rehberi",
     title: "Spotify'a Şarkı Yüklemek: 2026 Dağıtım Rehberi",
     description:
       "Spotify, Apple Music ve diğer platformlara şarkı nasıl yüklenir? Dijital dağıtım servisleri karşılaştırması, royalty hesaplama ve ilk release stratejisi.",

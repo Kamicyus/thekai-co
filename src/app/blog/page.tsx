@@ -51,7 +51,7 @@ export default function BlogPage() {
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {blogPosts.map((post) => (
+          {[...blogPosts].reverse().map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
