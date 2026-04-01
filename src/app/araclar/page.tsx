@@ -89,6 +89,7 @@ export default function AraclarPage() {
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
             Reklamsız, kayıt gerektirmeyen, tamamen ücretsiz online araçlar.
+            <br />
             Hızlı, güvenli ve sınırsız kullanım.
           </p>
         </FadeIn>

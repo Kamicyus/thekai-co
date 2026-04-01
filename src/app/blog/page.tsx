@@ -43,8 +43,9 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            AI ajan sistemleri, müzik prodüksiyon, Claude Code ve dijital
-            yaratıcılık üzerine derinlemesine yazılar.
+            AI ajan sistemleri, müzik prodüksiyon, Claude Code ve dijital yaratıcılık.
+            <br />
+            Derinlemesine yazılar, rehberler ve deneyimler.
           </p>
         </div>
 

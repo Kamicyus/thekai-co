@@ -298,6 +298,7 @@ export default function HizmetlerPage() {
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
             Müzik, teknoloji ve yaratıcılık kesişiminde sekiz temel alan.
+            <br />
             Her biri ayrı bir uzmanlık, hepsi birlikte yaratıcı güç.
           </p>
         </FadeIn>
