@@ -299,8 +299,8 @@ export default async function BlogPostPage({
 
             {/* Author */}
             <div className="flex items-center gap-3 mt-6 pt-6 border-t border-[#1F2937]">
-              <div className="w-10 h-10 rounded-full bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center">
-                <span className="text-[#D8FB32] text-sm font-bold">K</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">
+                <img src="/images/kamer.png" alt="Kamer Can İzvermez" className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="text-[#E0E0E0] text-sm font-medium">

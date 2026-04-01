@@ -123,7 +123,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.2 }}
-          className="mt-16 sm:mt-20 flex justify-center"
+          className="mt-24 sm:mt-28 flex justify-center"
         >
           <a
             href="/#hizmetler"
