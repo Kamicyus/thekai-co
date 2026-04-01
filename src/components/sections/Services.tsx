@@ -22,7 +22,7 @@ export default function Services() {
             Ne Yapıyoruz
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Yedi temel alandan birleşen yaratıcı güç.
+            Sekiz temel alandan birleşen yaratıcı güç.
           </p>
         </FadeIn>
 

@@ -32,12 +32,6 @@ export const SERVICES = [
     slug: "ai-ajan-sistemi",
   },
   {
-    title: "Müzik Prodüksiyon",
-    description: "Beste, aranjman, mix ve master.",
-    icon: "music",
-    slug: "muzik-produksiyon",
-  },
-  {
     title: "Web Sitesi Tasarımı",
     description: "Kurumsal site, landing page, portfolyo.",
     icon: "browser",
@@ -56,16 +50,28 @@ export const SERVICES = [
     slug: "artwork-tasarim",
   },
   {
-    title: "Telegram Bot Geliştirme",
-    description: "Kişiye özel bot kurulumu ve otomasyon.",
-    icon: "robot",
-    slug: "telegram-bot",
+    title: "Sesli Kitap Prodüksiyon",
+    description: "AI seslendirme ile yayıncılık.",
+    icon: "microphone",
+    slug: "sesli-kitap",
+  },
+  {
+    title: "Müzik Prodüksiyon",
+    description: "Beste, aranjman, mix ve master.",
+    icon: "music",
+    slug: "muzik-produksiyon",
   },
   {
     title: "Dijital Strateji & Danışmanlık",
     description: "AI danışmanlık, dijital dönüşüm.",
     icon: "lightbulb",
     slug: "dijital-strateji",
+  },
+  {
+    title: "Telegram Bot Geliştirme",
+    description: "Kişiye özel bot kurulumu ve otomasyon.",
+    icon: "robot",
+    slug: "telegram-bot",
   },
 ] as const;
 

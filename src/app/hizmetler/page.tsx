@@ -13,7 +13,7 @@ const HIZMET_DETAYLARI = [
     title: "AI Ajan Sistemi Kurulumu",
     subtitle: "Claude Code tabanlı, 72+ ajan deneyimiyle.",
     description:
-      "İşletmeniz için özel AI ajan ekibi kuruyoruz. Departmanlarınıza özel, birbirleriyle iletişim kurabilen, 7/24 çalışan akıllı ajan sistemleri tasarlıyoruz. Orkestrasyon, hafıza yönetimi, otomasyon pipeline'ları ve MCP entegrasyonları dahil.",
+      "İşletmeniz için özel AI ajan ekibi kuruyoruz. Departmanlarınıza özel, birbirleriyle iletişim kurabilen, 7/24 çalışan akıllı ajan sistemleri. Orkestrasyon, hafıza yönetimi, otomasyon pipeline'ları ve MCP entegrasyonları dahil.",
     features: [
       "Departman bazlı ajan tasarımı",
       "Orkestrasyon ve yönlendirme sistemi",
@@ -26,29 +26,149 @@ const HIZMET_DETAYLARI = [
       {
         name: "SPARK",
         label: "Başlangıç",
-        features: ["3 temel ajan", "Tek orkestrasyon", "Temel hafıza", "1 hafta kurulum"],
+        features: ["3 temel ajan", "Tek orkestrasyon", "Temel hafıza sistemi", "CLAUDE.md yapılandırma", "1 hafta kurulum", "1 ay destek"],
       },
       {
         name: "ENGINE",
         label: "Profesyonel",
-        features: [
-          "10+ özel ajan",
-          "Çoklu orkestrasyon",
-          "Gelişmiş hafıza",
-          "MCP entegrasyonları",
-          "2 hafta kurulum",
-        ],
+        features: ["10+ özel ajan", "Çoklu orkestrasyon", "Gelişmiş hafıza + bilgi tabanı", "MCP entegrasyonları (3+)", "Telegram bot dahil", "2 hafta kurulum + 3 ay destek"],
       },
       {
         name: "ARCHITECT",
         label: "Kurumsal",
-        features: [
-          "Sınırsız ajan",
-          "Tam orkestrasyon mimarisi",
-          "Özel model routing",
-          "Tüm entegrasyonlar",
-          "Sürekli destek",
-        ],
+        features: ["Sınırsız ajan mimarisi", "Tam orkestrasyon + model routing", "Özel MCP server geliştirme", "Cron otomasyon pipeline'ları", "Ekip eğitimi + dokümantasyon", "Sürekli destek + bakım"],
+      },
+    ],
+  },
+  {
+    slug: "web-sitesi-tasarimi",
+    icon: "browser",
+    title: "Web Sitesi Tasarımı",
+    subtitle: "Modern, hızlı, etkileyici.",
+    description:
+      "Next.js, Tailwind CSS ve Framer Motion ile yüksek performanslı, görsel açıdan etkileyici web siteleri. Kurumsal siteler, landing page'ler, portfolyo siteleri ve e-ticaret çözümleri. Shortlist Creative ve thekai.co referanslarıyla.",
+    features: [
+      "Next.js + Tailwind CSS + Framer Motion",
+      "Responsive ve mobil uyumlu tasarım",
+      "SEO optimizasyonu",
+      "Vercel deployment",
+      "CMS entegrasyonu",
+      "Core Web Vitals optimizasyonu",
+    ],
+    packages: [
+      {
+        name: "STARTER",
+        label: "Tek Sayfa",
+        features: ["Landing page tasarımı", "Mobil responsive", "Temel SEO", "İletişim formu", "Vercel deployment", "1 revizyon turu"],
+      },
+      {
+        name: "PRO",
+        label: "Kurumsal Site",
+        features: ["5+ sayfa (ana, hizmetler, hakkımızda, iletişim, blog)", "Gelişmiş SEO + sitemap", "Animasyonlar (Framer Motion)", "Sosyal medya entegrasyonu", "Analytics kurulumu", "3 revizyon turu"],
+      },
+      {
+        name: "PREMIUM",
+        label: "Tam Paket",
+        features: ["Sınırsız sayfa", "E-ticaret / ödeme entegrasyonu", "Blog + CMS altyapısı", "Çoklu dil desteği", "Özel tasarım sistemi", "6 ay bakım + destek"],
+      },
+    ],
+  },
+  {
+    slug: "icerik-uretimi",
+    icon: "content",
+    title: "İçerik Üretimi",
+    subtitle: "20M+ dinlenme deneyimiyle.",
+    description:
+      "YouTube, sosyal medya ve marka içeriği üretimi. Video prodüksiyon, thumbnail tasarım, içerik stratejisi ve platform optimizasyonu. Echo Bazaar kanalında 20M+ dinlenme ile kanıtlanmış içerik üretim metodolojisi.",
+    features: [
+      "YouTube video prodüksiyon",
+      "Thumbnail tasarım ve A/B test",
+      "Sosyal medya içerik planı",
+      "Marka içerik stratejisi",
+      "Video editing ve post-prodüksiyon",
+      "Platform bazlı optimizasyon",
+    ],
+    packages: [
+      {
+        name: "BASIC",
+        label: "Başlangıç",
+        features: ["Aylık 8 sosyal medya postu", "2 platform (seçiminize göre)", "Temel görsel tasarım", "İçerik takvimi", "Aylık performans raporu", "1 revizyon/post"],
+      },
+      {
+        name: "GROWTH",
+        label: "Büyüme",
+        features: ["Aylık 20 post + 4 video", "4 platform yönetimi", "Thumbnail + görsel tasarım", "Hashtag ve SEO stratejisi", "Haftalık performans raporu", "Sınırsız revizyon"],
+      },
+      {
+        name: "SCALE",
+        label: "Ölçeklendirme",
+        features: ["Sınırsız içerik üretimi", "Tüm platformlar", "Video prodüksiyon (çekim dahil)", "Influencer koordinasyonu", "Reklam kreatif üretimi", "Günlük raporlama + strateji toplantısı"],
+      },
+    ],
+  },
+  {
+    slug: "artwork-tasarim",
+    icon: "palette",
+    title: "Artwork & Tasarım",
+    subtitle: "Sinematik, understated, etkileyici.",
+    description:
+      "Müzik kapak fotoğrafları, görsel kimlik tasarımı ve artwork üretimi. Kim Jung Vada tasarım portföyü referansıyla, Apple marka kimliği anlayışında minimal ve güçlü görseller.",
+    features: [
+      "Single/albüm kapak tasarımı",
+      "Görsel kimlik ve marka dili",
+      "Sosyal medya görselleri",
+      "Poster ve banner tasarımı",
+      "AI destekli görsel üretim",
+      "Baskıya hazır dosya çıktısı",
+    ],
+    packages: [
+      {
+        name: "SINGLE",
+        label: "Tek Proje",
+        features: ["1 kapak tasarımı veya görsel set", "3 konsept önerisi", "Tüm platform boyutları", "Kaynak dosyalar (AI/PSD)", "2 revizyon turu", "5 iş günü teslimat"],
+      },
+      {
+        name: "BUNDLE",
+        label: "Paket",
+        features: ["5 kapak/görsel tasarımı", "Tutarlı görsel dil", "Sosyal medya kit", "Animasyonlu versiyon", "Sınırsız revizyon", "Öncelikli teslimat"],
+      },
+      {
+        name: "IDENTITY",
+        label: "Marka Kimliği",
+        features: ["Logo + görsel kimlik sistemi", "Renk paleti + tipografi", "Sosyal medya şablonları", "Marka rehberi (brand guide)", "Kartvizit + kurumsal set", "Kapsamlı sunum dosyası"],
+      },
+    ],
+  },
+  {
+    slug: "sesli-kitap",
+    icon: "microphone",
+    title: "Sesli Kitap Prodüksiyon",
+    subtitle: "AI seslendirme ile yayıncılık.",
+    description:
+      "Klasik ve modern edebiyatı yapay zekâ seslendirmesiyle sesli kitaba dönüştürüyoruz. Metin bölümleme, ses seçimi, seslendirme, düzenleme ve dijital platform dağıtımı. Murmur yayınevi deneyimiyle.",
+    features: [
+      "AI seslendirme (ElevenLabs)",
+      "Metin bölümleme ve hazırlık",
+      "Ses tasarımı ve düzenleme",
+      "Spotify & platformlara dağıtım",
+      "Kapak tasarımı ve branding",
+      "Telif hakkı danışmanlığı",
+    ],
+    packages: [
+      {
+        name: "CHAPTER",
+        label: "Tek Bölüm",
+        features: ["1 bölüm seslendirme (max 30 dk)", "Ses seçimi (5+ ses)", "Temel düzenleme", "MP3 + WAV çıktı", "1 revizyon", "3 iş günü teslimat"],
+      },
+      {
+        name: "BOOK",
+        label: "Tam Kitap",
+        features: ["Komple kitap seslendirme", "Profesyonel ses tasarımı", "Bölüm bölüm düzenleme", "Tüm platformlara dağıtım", "Kapak tasarımı dahil", "Sınırsız revizyon"],
+      },
+      {
+        name: "PUBLISHER",
+        label: "Yayınevi",
+        features: ["Aylık 3+ kitap prodüksiyon", "Özel ses kütüphanesi", "Otomatik pipeline kurulumu", "Platform yönetimi", "Gelir takibi + raporlama", "Sürekli destek + öncelik"],
       },
     ],
   },
@@ -67,75 +187,23 @@ const HIZMET_DETAYLARI = [
       "AI müzik üretimi (Suno, ElevenLabs)",
       "Spotify/Apple Music dağıtım danışmanlığı",
     ],
-    packages: null,
-  },
-  {
-    slug: "web-sitesi-tasarimi",
-    icon: "browser",
-    title: "Web Sitesi Tasarımı",
-    subtitle: "Modern, hızlı, etkileyici.",
-    description:
-      "Next.js, Tailwind CSS ve Framer Motion ile yüksek performanslı, görsel açıdan etkileyici web siteleri. Kurumsal siteler, landing page'ler, portfolyo siteleri ve e-ticaret çözümleri. Shortlist Creative ve thekai.co referanslarıyla.",
-    features: [
-      "Next.js + Tailwind CSS + Framer Motion",
-      "Responsive ve mobil uyumlu tasarım",
-      "SEO optimizasyonu",
-      "Vercel deployment",
-      "CMS entegrasyonu",
-      "Performans optimizasyonu (Core Web Vitals)",
+    packages: [
+      {
+        name: "TRACK",
+        label: "Tek Şarkı",
+        features: ["1 şarkı prodüksiyon", "Beat/aranjman", "Mix + master", "Vokal düzenleme", "Dijital dağıtım danışmanlığı", "2 revizyon turu"],
+      },
+      {
+        name: "EP",
+        label: "EP Paketi",
+        features: ["4-6 şarkı prodüksiyon", "Tutarlı ses tasarımı", "Profesyonel mix + master", "Artwork tasarımı dahil", "Spotify/Apple Music dağıtım", "Sınırsız revizyon"],
+      },
+      {
+        name: "ALBUM",
+        label: "Albüm",
+        features: ["10+ şarkı full prodüksiyon", "Konsept geliştirme", "AI + geleneksel hibrit üretim", "Mastering (referans eşleştirme)", "Tam artwork + video klip danışmanlık", "Lansman stratejisi"],
+      },
     ],
-    packages: null,
-  },
-  {
-    slug: "icerik-uretimi",
-    icon: "content",
-    title: "İçerik Üretimi",
-    subtitle: "20M+ dinlenme deneyimiyle.",
-    description:
-      "YouTube, sosyal medya ve marka içeriği üretimi. Video prodüksiyon, thumbnail tasarım, içerik stratejisi ve platform optimizasyonu. Echo Bazaar kanalında 20M+ dinlenme ile kanıtlanmış içerik üretim metodolojisi.",
-    features: [
-      "YouTube video prodüksiyon",
-      "Thumbnail tasarım ve A/B test",
-      "Sosyal medya içerik planı",
-      "Marka içerik stratejisi",
-      "Video editing ve post-prodüksiyon",
-      "Platform bazlı optimizasyon",
-    ],
-    packages: null,
-  },
-  {
-    slug: "artwork-tasarim",
-    icon: "palette",
-    title: "Artwork & Tasarım",
-    subtitle: "Sinematik, understated, etkileyici.",
-    description:
-      "Müzik kapak fotoğrafları, görsel kimlik tasarımı ve artwork üretimi. Kim Jung Vada tasarım portföyü referansıyla, Apple marka kimliği anlayışında minimal ve güçlü görseller.",
-    features: [
-      "Single/albüm kapak tasarımı",
-      "Görsel kimlik ve marka dili",
-      "Sosyal medya görselleri",
-      "Poster ve banner tasarımı",
-      "AI destekli görsel üretim",
-      "Baskıya hazır dosya çıktısı",
-    ],
-    packages: null,
-  },
-  {
-    slug: "telegram-bot",
-    icon: "robot",
-    title: "Telegram Bot Geliştirme",
-    subtitle: "7/24 çalışan, always-on mimari.",
-    description:
-      "Kişiye özel Telegram bot kurulumu. Finans danışmanı, içerik asistanı, müşteri destek botu, otomasyon araçları. Systemd servis yönetimi ile kesintisiz çalışan, Claude API entegrasyonlu akıllı botlar.",
-    features: [
-      "Kişiye özel bot geliştirme",
-      "Claude API entegrasyonu",
-      "Ses ve görsel mesaj desteği",
-      "Always-on systemd mimari",
-      "Bilgi tabanı ve hafıza yönetimi",
-      "Webhook ve otomasyon entegrasyonu",
-    ],
-    packages: null,
   },
   {
     slug: "dijital-strateji",
@@ -152,24 +220,56 @@ const HIZMET_DETAYLARI = [
       "Rakip ve pazar analizi",
       "KPI takip ve raporlama",
     ],
-    packages: null,
+    packages: [
+      {
+        name: "AUDIT",
+        label: "Analiz",
+        features: ["Mevcut durum analizi", "Rakip araştırması", "SWOT analizi", "Fırsat haritası", "Aksiyon önerileri raporu", "1 saat danışmanlık görüşmesi"],
+      },
+      {
+        name: "STRATEGY",
+        label: "Strateji",
+        features: ["3 aylık strateji planı", "Platform bazlı yol haritası", "İçerik stratejisi", "KPI tanımlama + dashboard", "Haftalık check-in toplantıları", "Aylık performans raporu"],
+      },
+      {
+        name: "PARTNER",
+        label: "Ortak",
+        features: ["Sürekli strateji ortağı", "Tüm platformların yönetimi", "Reklam bütçesi optimizasyonu", "Kriz yönetimi", "Ekip eğitimi", "Sınırsız danışmanlık"],
+      },
+    ],
   },
   {
-    slug: "sesli-kitap",
-    icon: "microphone",
-    title: "Sesli Kitap Prodüksiyon",
-    subtitle: "AI seslendirme ile yayıncılık.",
+    slug: "telegram-bot",
+    icon: "robot",
+    title: "Telegram Bot Geliştirme",
+    subtitle: "7/24 çalışan, always-on mimari.",
     description:
-      "Klasik ve modern edebiyatı yapay zekâ seslendirmesiyle sesli kitaba dönüştürüyoruz. Metin bölümleme, ses seçimi, seslendirme, düzenleme ve dijital platform dağıtımı. Murmur yayınevi deneyimiyle.",
+      "Kişiye özel Telegram bot kurulumu. Finans danışmanı, içerik asistanı, müşteri destek botu, otomasyon araçları. Systemd servis yönetimi ile kesintisiz çalışan, Claude API entegrasyonlu akıllı botlar.",
     features: [
-      "AI seslendirme (ElevenLabs)",
-      "Metin bölümleme ve hazırlık",
-      "Ses tasarımı ve düzenleme",
-      "Spotify & platformlara dağıtım",
-      "Kapak tasarımı ve branding",
-      "Telif hakkı danışmanlığı",
+      "Kişiye özel bot geliştirme",
+      "Claude API entegrasyonu",
+      "Ses ve görsel mesaj desteği",
+      "Always-on systemd mimari",
+      "Bilgi tabanı ve hafıza yönetimi",
+      "Webhook ve otomasyon entegrasyonu",
     ],
-    packages: null,
+    packages: [
+      {
+        name: "BASIC BOT",
+        label: "Temel Bot",
+        features: ["Tek amaçlı bot (FAQ, bilgi, destek)", "Metin tabanlı etkileşim", "Temel komut sistemi", "Basit hafıza", "Always-on kurulum", "1 hafta geliştirme"],
+      },
+      {
+        name: "SMART BOT",
+        label: "Akıllı Bot",
+        features: ["AI destekli konuşma (Claude API)", "Ses + görsel mesaj desteği", "Bilgi tabanı entegrasyonu", "Kullanıcı bazlı hafıza", "Webhook tetikleyiciler", "2 hafta geliştirme + 1 ay destek"],
+      },
+      {
+        name: "ENTERPRISE",
+        label: "Kurumsal Bot",
+        features: ["Çoklu bot mimarisi", "CRM / veritabanı entegrasyonu", "Otomatik raporlama", "Kullanıcı yönetim paneli", "API erişimi", "Sürekli geliştirme + bakım"],
+      },
+    ],
   },
 ];
 
@@ -197,7 +297,7 @@ export default function HizmetlerPage() {
             Ne Yapıyoruz
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            Müzik, teknoloji ve yaratıcılık kesişiminde yedi temel alan.
+            Müzik, teknoloji ve yaratıcılık kesişiminde sekiz temel alan.
             Her biri ayrı bir uzmanlık, hepsi birlikte yaratıcı güç.
           </p>
         </FadeIn>
@@ -274,7 +374,7 @@ export default function HizmetlerPage() {
                     </StaggerChildren>
                   </div>
 
-                  {/* Packages (only for AI Ajan Sistemi) */}
+                  {/* Packages */}
                   {hizmet.packages && (
                     <div className="mb-8">
                       <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
