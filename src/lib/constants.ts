@@ -137,6 +137,12 @@ export const TOOLS = [
     icon: "cake",
     slug: "yas-hesaplayici",
   },
+  {
+    title: "Online Gitar Akort",
+    description: "Mikrofonunuzu kullanarak gitarınızı akort edin. Standart akort (EADGBE), referans notalar ve cent göstergesi.",
+    icon: "music",
+    slug: "tuner",
+  },
 ] as const;
 
 export const STATS = [
