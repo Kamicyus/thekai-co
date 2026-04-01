@@ -9,19 +9,19 @@ import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 const MUSIC_ARTWORKS = [
   {
     title: "Estarabim",
-    category: "Single Artwork",
+    category: "SINGLE ARTWORK",
     description: "Türk hip-hop ve Orta Doğu melodilerini birleştiren single. Kamer'in en son çıkan teki.",
     image: "/images/artworks/estarabim.jpg",
   },
   {
     title: "Yandı Dibine Kadar",
-    category: "Single Artwork",
+    category: "SINGLE ARTWORK",
     description: "Çöl estetiği ve sinematik görsellikle tasarlanan artwork.",
     image: "/images/artworks/yandi-dibine-kadar.jpg",
   },
   {
     title: "Kamer",
-    category: "Sanatçı Görseli",
+    category: "ALBUM ARTWORK",
     description: "Gitarlı portre — Kamer'in sanatçı kimliğini yansıtan ikonik kare.",
     image: "/images/artworks/kamer-genius.jpg",
   },
