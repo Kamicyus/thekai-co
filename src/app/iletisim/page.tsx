@@ -258,8 +258,8 @@ export default function IletisimPage() {
 
             {/* Kamer Personal Social */}
             <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-5 sm:p-8 lg:p-10 mt-4">
-              <h3 className="font-sans text-sm font-semibold text-[#999999] mb-4 uppercase tracking-wider">
-                Kurucu — Kamer Can İzvermez
+              <h3 className="font-sans text-sm font-medium text-[#999999] mb-4 tracking-wide">
+                Kurucu / Kamer Can İzvermez
               </h3>
               <div className="flex items-center gap-3 flex-wrap">
                 <a href="https://x.com/kamicyus" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] border border-[#1F2937] rounded-xl text-[#999999] hover:text-[#D8FB32] hover:border-[#D8FB32]/30 transition-all duration-200 text-sm">
