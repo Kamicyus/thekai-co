@@ -203,20 +203,24 @@ export default function TunerPage() {
             </svg>
           </div>
 
-          {/* Note Display */}
-          <div className="text-center mb-8">
+          {/* Note Display — fixed height to prevent layout shift */}
+          <div className="text-center mb-8 h-[180px] sm:h-[200px] flex flex-col items-center justify-center">
             <div className={`text-8xl sm:text-9xl font-bold mb-2 transition-colors duration-300 ${isInTune && isActive ? "text-[#22C55E]" : "text-[#F5F5F5]"}`}>
               {note.name}
               {isActive && note.name !== "-" && <span className="text-3xl sm:text-4xl text-[#999] ml-1">{note.octave}</span>}
             </div>
-            {isActive && frequency > 0 && (
-              <div className="text-[#999] text-base">
-                {frequency} Hz • {note.cents > 0 ? "+" : ""}{note.cents} cent
-              </div>
-            )}
-            {isActive && isInTune && frequency > 0 && (
-              <div className="text-[#22C55E] text-base font-medium mt-2">✓ Akort tamam!</div>
-            )}
+            <div className="h-6">
+              {isActive && frequency > 0 && (
+                <span className="text-[#999] text-base">
+                  {frequency} Hz • {note.cents > 0 ? "+" : ""}{note.cents} cent
+                </span>
+              )}
+            </div>
+            <div className="h-6 mt-1">
+              {isActive && isInTune && frequency > 0 && (
+                <span className="text-[#22C55E] text-base font-medium">✓ Akort tamam!</span>
+              )}
+            </div>
           </div>
 
           {/* Start/Stop Button */}
