@@ -206,7 +206,7 @@ export default function TunerPage() {
           {/* Note Display — fixed height to prevent layout shift */}
           <div className="text-center mb-8 h-[180px] sm:h-[200px] flex flex-col items-center justify-center">
             {!isActive || note.name === "-" ? (
-              <img src="/images/kai-carksiz.png" alt="Kai" className="h-20 sm:h-24 opacity-20 mb-2" />
+              <img src="/images/kai-carkli.svg" alt="Kai" className="h-20 sm:h-24 opacity-20 mb-2" />
             ) : (
               <div className={`text-8xl sm:text-9xl font-bold mb-2 transition-colors duration-300 ${isInTune ? "text-[#22C55E]" : "text-[#F5F5F5]"}`}>
                 {note.name}
