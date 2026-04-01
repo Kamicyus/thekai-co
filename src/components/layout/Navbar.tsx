@@ -42,7 +42,11 @@ export default function Navbar() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
+            <Link
+              href="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="flex items-center group"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/kai-carkli.svg"
@@ -57,6 +61,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={link.href === "/" ? () => window.scrollTo({ top: 0, behavior: "smooth" }) : undefined}
                   className="text-sm font-medium text-[#999999] hover:text-[#F5F5F5] transition-colors duration-200"
                 >
                   {link.label}
@@ -118,7 +123,10 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      if (link.href === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                     className="text-2xl font-semibold text-[#F5F5F5] hover:text-[#D8FB32] transition-colors"
                   >
                     {link.label}

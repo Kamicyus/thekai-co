@@ -26,8 +26,8 @@ export default function Footer() {
               />
             </div>
             <p className="text-[#999999] text-sm leading-relaxed mb-6 max-w-xs">
-              Call Me Kai — Müzik, teknoloji ve yaratıcılık kesişiminde bir
-              stüdyo.
+              Call Me Kai — Müzik, teknoloji ve<br />
+              yaratıcılık kesişiminde bir stüdyo.
             </p>
             <div className="flex items-center gap-4">
               {SOCIAL_LINKS.map((social) => (

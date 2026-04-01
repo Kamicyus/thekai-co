@@ -177,7 +177,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -top-4 sm:-top-6 md:-top-7 left-2 sm:left-8 md:left-10 font-serif italic text-[18px] sm:text-2xl md:text-[28px] text-[#999999] -rotate-[15deg] select-none whitespace-nowrap"
+              className="absolute -top-2 sm:-top-4 md:-top-5 left-0 sm:left-4 md:left-6 font-serif italic text-[22px] sm:text-[30px] md:text-[36px] text-[#999999] -rotate-[15deg] select-none whitespace-nowrap"
             >
               The
             </motion.span>
