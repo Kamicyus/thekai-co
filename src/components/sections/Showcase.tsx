@@ -19,7 +19,7 @@ const PROJECTS = [
   },
   {
     category: "Beat Prodüksiyon",
-    title: "Prime Beats TV",
+    title: "Prime Beats",
     description:
       "Psychedelic fusion, trap ve melodic beat prodüksiyonu. Ücretsiz type beat kanalı.",
     metric: "83 video",
@@ -40,70 +40,37 @@ const PROJECTS = [
     image: "/images/projects/lofi-reworks.jpg",
   },
   {
-    category: "Yayıncılık",
-    title: "Murmur",
-    description:
-      "AI sesli kitap yayınevi. Klasik edebiyatı yapay zekâ seslendirmesiyle yeniden hayata geçiriyoruz.",
-    metric: "Yeni proje",
-    accentFrom: "#F59E0B",
-    accentTo: "#EF4444",
-    decoration: "waves" as const,
-    image: null,
-  },
-  {
-    category: "Teknoloji",
-    title: "72+ AI Ajan Sistemi",
-    description:
-      "9 departman, 72+ uzman AI ajan. The Kai'nin operasyonlarını yöneten tam otomasyon altyapısı.",
-    metric: "72+ ajan",
-    accentFrom: "#3B82F6",
-    accentTo: "#D8FB32",
-    decoration: "circuit" as const,
-    image: null,
-  },
-  {
-    category: "Yazılım",
-    title: "Shortlist Creative",
-    description:
-      "Yaratıcı ajans için minimalist portfolyo sitesi. Next.js + Tailwind CSS + Framer Motion.",
-    metric: "Müşteri Projesi",
-    accentFrom: "#06B6D4",
-    accentTo: "#8B5CF6",
-    decoration: "circuit" as const,
-    image: null,
-  },
-  {
-    category: "Kurumsal",
-    title: "thekai.co",
-    description:
-      "The Kai kurumsal web sitesi. Next.js 15, Tailwind CSS v4, Framer Motion ile geliştirildi.",
-    metric: "Bu site",
-    accentFrom: "#D8FB32",
-    accentTo: "#F5F5F5",
-    decoration: "pinwheel" as const,
-    image: null,
-  },
-  {
-    category: "AI Müzik",
+    category: "Tasarım",
     title: "Kim Jung Vada",
     description:
-      "Echo Bazaar'ın viral AI müzik projesi. Kore ve Hint melodilerini yapay zekâ ile harmanlayan özgün füzyon.",
-    metric: "Viral Hit",
+      "Kore ve Hint kültürlerinden ilham alan görsel tasarım projesi. Müzik artwork, dijital illüstrasyon ve marka kimliği çalışmaları.",
+    metric: "Tasarım Portföyü",
     accentFrom: "#EF4444",
     accentTo: "#F59E0B",
     decoration: "waves" as const,
     image: "/images/projects/kimjungvada.jpg",
   },
   {
-    category: "Bot",
-    title: "Telegram Bot+",
+    category: "Sosyal Medya",
+    title: "Ekşi Maya Sports",
     description:
-      "Kişiye özel Telegram botları kuruyoruz. Finans danışmanı, içerik asistanı, otomasyon — ihtiyacınıza göre tasarlanır.",
-    metric: "Kişiye Özel",
-    accentFrom: "#EC4899",
-    accentTo: "#F59E0B",
+      "Spor odaklı sosyal medya yönetimi ve içerik üretimi. Strateji, tasarım ve topluluk yönetimi.",
+    metric: "Müşteri Projesi",
+    accentFrom: "#06B6D4",
+    accentTo: "#D8FB32",
+    decoration: "circuit" as const,
+    image: "/images/projects/eksi-maya-sports.jpg",
+  },
+  {
+    category: "Yayıncılık",
+    title: "Murmur",
+    description:
+      "AI sesli kitap yayınevi. Klasik edebiyatı yapay zekâ seslendirmesiyle yeniden hayata geçiriyoruz.",
+    metric: "Yeni Proje",
+    accentFrom: "#F59E0B",
+    accentTo: "#EF4444",
     decoration: "waves" as const,
-    image: null,
+    image: "/images/projects/murmur.jpg",
   },
 ];
 
