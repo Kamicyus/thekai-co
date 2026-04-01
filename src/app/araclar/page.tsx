@@ -31,6 +31,37 @@ const toolIcons: Record<string, React.ReactNode> = {
       <path d="M20 15.5v1.5l1 1" />
     </svg>
   ),
+  password: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <circle cx="12" cy="16" r="1" />
+    </svg>
+  ),
+  color: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="13.5" cy="6.5" r="4.5" />
+      <circle cx="17.5" cy="14.5" r="4.5" />
+      <circle cx="8.5" cy="14.5" r="4.5" />
+    </svg>
+  ),
+  bmi: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v1m0 16v1m-9-9h1m16 0h1" />
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 3" />
+    </svg>
+  ),
+  textcase: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 20h7" />
+      <path d="M6.5 20V4" />
+      <path d="M3 4h7" />
+      <path d="M14 20h7" />
+      <path d="M17.5 20v-8" />
+      <path d="M14 12h7" />
+    </svg>
+  ),
 };
 
 export default function AraclarPage() {

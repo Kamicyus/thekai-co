@@ -89,6 +89,30 @@ export const TOOLS = [
     icon: "counter",
     slug: "kelime-sayaci",
   },
+  {
+    title: "Şifre Oluşturucu",
+    description: "Güvenli, rastgele şifre oluşturun. Uzunluk, karakter tipi seçenekleri ve şifre gücü göstergesi.",
+    icon: "password",
+    slug: "sifre-olusturucu",
+  },
+  {
+    title: "Renk Kodu Çevirici",
+    description: "HEX, RGB ve HSL renk kodlarını anında çevirin. Canlı önizleme ve kopyalama.",
+    icon: "color",
+    slug: "renk-cevirici",
+  },
+  {
+    title: "BMI Hesaplayıcı",
+    description: "Boy ve kilonuzu girin, vücut kitle indeksinizi anında hesaplayın. Sağlıklı kilo aralığı göstergesi.",
+    icon: "bmi",
+    slug: "bmi-hesaplayici",
+  },
+  {
+    title: "Büyük/Küçük Harf Çevirici",
+    description: "Metni büyük harfe, küçük harfe, başlık düzenine veya cümle düzenine anında çevirin.",
+    icon: "textcase",
+    slug: "harf-cevirici",
+  },
 ] as const;
 
 export const STATS = [
