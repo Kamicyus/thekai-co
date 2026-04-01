@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ServiceIcon } from "@/components/icons/ServiceIcons";
 import { SERVICES } from "@/lib/constants";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
@@ -21,7 +22,7 @@ export default function Services() {
             Ne Yapıyoruz
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Sekiz temel alandan birleşen yaratıcı güç.
+            Yedi temel alandan birleşen yaratıcı güç.
           </p>
         </FadeIn>
 
@@ -32,29 +33,36 @@ export default function Services() {
         >
           {SERVICES.map((service) => (
             <StaggerItem key={service.title}>
-              <div className="group relative flex flex-col h-full p-5 lg:p-6 bg-[#141414] border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01]">
-                {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center mb-4 text-[#D8FB32] group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
-                  <ServiceIcon icon={service.icon} size={22} />
-                </div>
+              <Link href={`/hizmetler#${service.slug}`} className="block h-full">
+                <div className="group relative flex flex-col h-full p-5 lg:p-6 bg-[#141414] border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01] cursor-pointer">
+                  {/* Icon */}
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center mb-4 text-[#D8FB32] group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
+                    <ServiceIcon icon={service.icon} size={22} />
+                  </div>
 
-                {/* Text */}
-                <h3 className="font-sans text-base lg:text-lg font-semibold text-[#F5F5F5] mb-2 tracking-[-0.3px]">
-                  {service.title}
-                </h3>
-                <p className="text-[#999999] text-sm leading-relaxed flex-1">
-                  {service.description}
-                </p>
+                  {/* Text */}
+                  <h3 className="font-sans text-base lg:text-lg font-semibold text-[#F5F5F5] mb-2 tracking-[-0.3px]">
+                    {service.title}
+                  </h3>
+                  <p className="text-[#999999] text-sm leading-relaxed flex-1">
+                    {service.description}
+                  </p>
 
-                {/* Corner accent on hover — pinwheel spins */}
-                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <DecorativePinwheel
-                    size={18}
-                    opacity={0.4}
-                    className="group-hover:animate-[spin-slow_3s_linear_infinite]"
-                  />
+                  {/* Arrow indicator */}
+                  <div className="mt-4 text-[#D8FB32] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+                    Detayları Gör →
+                  </div>
+
+                  {/* Corner accent on hover — pinwheel spins */}
+                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <DecorativePinwheel
+                      size={18}
+                      opacity={0.4}
+                      className="group-hover:animate-[spin-slow_3s_linear_infinite]"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerChildren>

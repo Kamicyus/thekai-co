@@ -29,41 +29,43 @@ export const SERVICES = [
     title: "AI Ajan Sistemi",
     description: "İşletmeniz için özel AI ajan ekibi.",
     icon: "brain",
+    slug: "ai-ajan-sistemi",
   },
   {
     title: "Müzik Prodüksiyon",
     description: "Beste, aranjman, mix ve master.",
     icon: "music",
-  },
-  {
-    title: "İçerik Üretimi",
-    description: "YouTube, sosyal medya, marka içeriği.",
-    icon: "content",
-  },
-  {
-    title: "Yazılım Geliştirme",
-    description: "Web uygulamaları ve otomasyon.",
-    icon: "code",
-  },
-  {
-    title: "Artwork & Tasarım",
-    description: "Kapak fotoğrafı, görsel kimlik, artwork.",
-    icon: "palette",
-  },
-  {
-    title: "Kayıt & Vokal",
-    description: "Stüdyo kayıt, vokal prodüksiyon.",
-    icon: "microphone",
+    slug: "muzik-produksiyon",
   },
   {
     title: "Web Sitesi Tasarımı",
     description: "Kurumsal site, landing page, portfolyo.",
     icon: "browser",
+    slug: "web-sitesi-tasarimi",
   },
   {
-    title: "Strateji & Danışmanlık",
-    description: "AI danışmanlık, dijital strateji.",
+    title: "İçerik Üretimi",
+    description: "YouTube, sosyal medya, marka içeriği.",
+    icon: "content",
+    slug: "icerik-uretimi",
+  },
+  {
+    title: "Artwork & Tasarım",
+    description: "Kapak fotoğrafı, görsel kimlik, artwork.",
+    icon: "palette",
+    slug: "artwork-tasarim",
+  },
+  {
+    title: "Telegram Bot Geliştirme",
+    description: "Kişiye özel bot kurulumu ve otomasyon.",
+    icon: "robot",
+    slug: "telegram-bot",
+  },
+  {
+    title: "Dijital Strateji & Danışmanlık",
+    description: "AI danışmanlık, dijital dönüşüm.",
     icon: "lightbulb",
+    slug: "dijital-strateji",
   },
 ] as const;
 

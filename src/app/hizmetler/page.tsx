@@ -1,0 +1,348 @@
+"use client";
+
+import Link from "next/link";
+import { ServiceIcon } from "@/components/icons/ServiceIcons";
+import FadeIn from "@/components/ui/FadeIn";
+import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
+import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
+
+const HIZMET_DETAYLARI = [
+  {
+    slug: "ai-ajan-sistemi",
+    icon: "brain",
+    title: "AI Ajan Sistemi Kurulumu",
+    subtitle: "Claude Code tabanlı, 72+ ajan deneyimiyle.",
+    description:
+      "İşletmeniz için özel AI ajan ekibi kuruyoruz. Departmanlarınıza özel, birbirleriyle iletişim kurabilen, 7/24 çalışan akıllı ajan sistemleri tasarlıyoruz. Orkestrasyon, hafıza yönetimi, otomasyon pipeline'ları ve MCP entegrasyonları dahil.",
+    features: [
+      "Departman bazlı ajan tasarımı",
+      "Orkestrasyon ve yönlendirme sistemi",
+      "Hafıza yönetimi ve bilgi tabanı",
+      "MCP entegrasyonları (Gmail, Calendar, Slack)",
+      "Telegram/Discord bot entegrasyonu",
+      "Eğitim ve dokümantasyon",
+    ],
+    packages: [
+      {
+        name: "SPARK",
+        label: "Başlangıç",
+        features: ["3 temel ajan", "Tek orkestrasyon", "Temel hafıza", "1 hafta kurulum"],
+      },
+      {
+        name: "ENGINE",
+        label: "Profesyonel",
+        features: [
+          "10+ özel ajan",
+          "Çoklu orkestrasyon",
+          "Gelişmiş hafıza",
+          "MCP entegrasyonları",
+          "2 hafta kurulum",
+        ],
+      },
+      {
+        name: "ARCHITECT",
+        label: "Kurumsal",
+        features: [
+          "Sınırsız ajan",
+          "Tam orkestrasyon mimarisi",
+          "Özel model routing",
+          "Tüm entegrasyonlar",
+          "Sürekli destek",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "muzik-produksiyon",
+    icon: "music",
+    title: "Müzik Prodüksiyon",
+    subtitle: "Geleneksel ve AI destekli üretim.",
+    description:
+      "Beste, aranjman, mix, master ve vokal prodüksiyon hizmetleri. 15 yıllık şarkı yazma deneyimi, Echo Bazaar'da 20M+ dinlenme ile kanıtlanmış AI müzik üretim kapasitesi. Suno, ElevenLabs ve geleneksel DAW araçlarıyla hibrit prodüksiyon.",
+    features: [
+      "Beste ve söz yazarlığı",
+      "Aranjman ve prodüksiyon",
+      "Mix ve mastering",
+      "Vokal kayıt ve prodüksiyon",
+      "AI müzik üretimi (Suno, ElevenLabs)",
+      "Spotify/Apple Music dağıtım danışmanlığı",
+    ],
+    packages: null,
+  },
+  {
+    slug: "web-sitesi-tasarimi",
+    icon: "browser",
+    title: "Web Sitesi Tasarımı",
+    subtitle: "Modern, hızlı, etkileyici.",
+    description:
+      "Next.js, Tailwind CSS ve Framer Motion ile yüksek performanslı, görsel açıdan etkileyici web siteleri. Kurumsal siteler, landing page'ler, portfolyo siteleri ve e-ticaret çözümleri. Shortlist Creative ve thekai.co referanslarıyla.",
+    features: [
+      "Next.js + Tailwind CSS + Framer Motion",
+      "Responsive ve mobil uyumlu tasarım",
+      "SEO optimizasyonu",
+      "Vercel deployment",
+      "CMS entegrasyonu",
+      "Performans optimizasyonu (Core Web Vitals)",
+    ],
+    packages: null,
+  },
+  {
+    slug: "icerik-uretimi",
+    icon: "content",
+    title: "İçerik Üretimi",
+    subtitle: "20M+ dinlenme deneyimiyle.",
+    description:
+      "YouTube, sosyal medya ve marka içeriği üretimi. Video prodüksiyon, thumbnail tasarım, içerik stratejisi ve platform optimizasyonu. Echo Bazaar kanalında 20M+ dinlenme ile kanıtlanmış içerik üretim metodolojisi.",
+    features: [
+      "YouTube video prodüksiyon",
+      "Thumbnail tasarım ve A/B test",
+      "Sosyal medya içerik planı",
+      "Marka içerik stratejisi",
+      "Video editing ve post-prodüksiyon",
+      "Platform bazlı optimizasyon",
+    ],
+    packages: null,
+  },
+  {
+    slug: "artwork-tasarim",
+    icon: "palette",
+    title: "Artwork & Tasarım",
+    subtitle: "Sinematik, understated, etkileyici.",
+    description:
+      "Müzik kapak fotoğrafları, görsel kimlik tasarımı ve artwork üretimi. Kim Jung Vada tasarım portföyü referansıyla, Apple marka kimliği anlayışında minimal ve güçlü görseller.",
+    features: [
+      "Single/albüm kapak tasarımı",
+      "Görsel kimlik ve marka dili",
+      "Sosyal medya görselleri",
+      "Poster ve banner tasarımı",
+      "AI destekli görsel üretim",
+      "Baskıya hazır dosya çıktısı",
+    ],
+    packages: null,
+  },
+  {
+    slug: "telegram-bot",
+    icon: "robot",
+    title: "Telegram Bot Geliştirme",
+    subtitle: "7/24 çalışan, always-on mimari.",
+    description:
+      "Kişiye özel Telegram bot kurulumu. Finans danışmanı, içerik asistanı, müşteri destek botu, otomasyon araçları. Systemd servis yönetimi ile kesintisiz çalışan, Claude API entegrasyonlu akıllı botlar.",
+    features: [
+      "Kişiye özel bot geliştirme",
+      "Claude API entegrasyonu",
+      "Ses ve görsel mesaj desteği",
+      "Always-on systemd mimari",
+      "Bilgi tabanı ve hafıza yönetimi",
+      "Webhook ve otomasyon entegrasyonu",
+    ],
+    packages: null,
+  },
+  {
+    slug: "dijital-strateji",
+    icon: "lightbulb",
+    title: "Dijital Strateji & Danışmanlık",
+    subtitle: "AI-native dönüşüm.",
+    description:
+      "AI danışmanlık, dijital dönüşüm stratejisi, sosyal medya planlaması ve marka konumlandırma. Ekşi Maya Sports referansıyla kurumsal düzeyde strateji geliştirme ve uygulama.",
+    features: [
+      "AI dönüşüm danışmanlığı",
+      "Dijital pazarlama stratejisi",
+      "Sosyal medya yönetimi",
+      "Marka konumlandırma",
+      "Rakip ve pazar analizi",
+      "KPI takip ve raporlama",
+    ],
+    packages: null,
+  },
+];
+
+export default function HizmetlerPage() {
+  return (
+    <section className="pt-32 pb-24 lg:pt-40 lg:pb-32 relative overflow-hidden">
+      {/* Decorative pinwheels */}
+      <div className="absolute top-20 right-8 pointer-events-none">
+        <DecorativePinwheel size={120} opacity={0.04} rotate={15} />
+      </div>
+      <div className="absolute bottom-40 left-4 pointer-events-none">
+        <DecorativePinwheel size={80} opacity={0.03} rotate={-20} />
+      </div>
+
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+        {/* Page Header */}
+        <FadeIn className="text-center mb-20 lg:mb-28">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
+            <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
+              Hizmetlerimiz
+            </span>
+          </div>
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-5">
+            Ne Yapıyoruz
+          </h1>
+          <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
+            Müzik, teknoloji ve yaratıcılık kesişiminde yedi temel alan.
+            Her biri ayrı bir uzmanlık, hepsi birlikte yaratıcı güç.
+          </p>
+        </FadeIn>
+
+        {/* Service Detail Cards */}
+        <div className="space-y-16 lg:space-y-24">
+          {HIZMET_DETAYLARI.map((hizmet, index) => (
+            <div key={hizmet.slug} id={hizmet.slug} className="scroll-mt-28">
+              <FadeIn
+                direction={index % 2 === 0 ? "left" : "right"}
+                delay={0.1}
+              >
+                <div className="group relative bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 lg:p-10 hover:border-[#D8FB32]/15 transition-all duration-500">
+                  {/* Corner pinwheel */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <DecorativePinwheel
+                      size={24}
+                      opacity={0.3}
+                      className="group-hover:animate-[spin-slow_3s_linear_infinite]"
+                    />
+                  </div>
+
+                  {/* Header */}
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-8">
+                    <div className="w-14 h-14 rounded-2xl bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center text-[#D8FB32] shrink-0 group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
+                      <ServiceIcon icon={hizmet.icon} size={28} />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-2">
+                        {hizmet.title}
+                      </h2>
+                      <p className="text-[#D8FB32]/70 text-sm font-medium">
+                        {hizmet.subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-[#CCCCCC] text-base leading-relaxed mb-8 max-w-3xl">
+                    {hizmet.description}
+                  </p>
+
+                  {/* Features Grid */}
+                  <div className="mb-8">
+                    <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
+                      Neler Dahil
+                    </h3>
+                    <StaggerChildren
+                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+                      staggerDelay={0.05}
+                    >
+                      {hizmet.features.map((feature) => (
+                        <StaggerItem key={feature}>
+                          <div className="flex items-center gap-3 p-3 bg-[#1A1A1A] border border-[#1F2937]/50 rounded-xl">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#D8FB32"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="shrink-0"
+                            >
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span className="text-[#E0E0E0] text-sm">
+                              {feature}
+                            </span>
+                          </div>
+                        </StaggerItem>
+                      ))}
+                    </StaggerChildren>
+                  </div>
+
+                  {/* Packages (only for AI Ajan Sistemi) */}
+                  {hizmet.packages && (
+                    <div className="mb-8">
+                      <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
+                        Paketler
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {hizmet.packages.map((pkg, pkgIndex) => (
+                          <div
+                            key={pkg.name}
+                            className={`p-5 rounded-2xl border transition-all duration-300 ${
+                              pkgIndex === 1
+                                ? "bg-[#D8FB32]/5 border-[#D8FB32]/30"
+                                : "bg-[#1A1A1A] border-[#1F2937]"
+                            }`}
+                          >
+                            <div className="flex items-center gap-2 mb-1">
+                              <span
+                                className={`text-sm font-bold tracking-wider ${
+                                  pkgIndex === 1
+                                    ? "text-[#D8FB32]"
+                                    : "text-[#5532FA]"
+                                }`}
+                              >
+                                {pkg.name}
+                              </span>
+                              {pkgIndex === 1 && (
+                                <span className="text-[10px] bg-[#D8FB32]/20 text-[#D8FB32] px-2 py-0.5 rounded-full font-medium">
+                                  Popüler
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-[#999999] text-xs mb-4">
+                              {pkg.label}
+                            </p>
+                            <ul className="space-y-2">
+                              {pkg.features.map((f) => (
+                                <li
+                                  key={f}
+                                  className="flex items-center gap-2 text-[#CCCCCC] text-sm"
+                                >
+                                  <span className="w-1 h-1 bg-[#D8FB32] rounded-full shrink-0" />
+                                  {f}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* CTA */}
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-sm hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.08)]"
+                  >
+                    İletişime Geç
+                  </Link>
+                </div>
+              </FadeIn>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <FadeIn className="mt-24 lg:mt-32 text-center">
+          <div className="bg-gradient-to-br from-[#141414] to-[#1A1A1A] border border-[#1F2937] rounded-[20px] p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+            <div className="absolute top-6 right-6 pointer-events-none">
+              <DecorativePinwheel size={60} opacity={0.06} rotate={30} animate />
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
+              Projenizi Konuşalım
+            </h2>
+            <p className="text-[#999999] text-lg max-w-xl mx-auto mb-8">
+              Hangi hizmete ihtiyacınız olursa olsun, size özel bir çözüm üretiyoruz.
+            </p>
+            <Link
+              href="/iletisim"
+              className="inline-flex items-center justify-center px-10 py-4 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-base hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.1)]"
+            >
+              İletişime Geç
+            </Link>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
