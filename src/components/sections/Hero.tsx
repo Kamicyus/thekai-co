@@ -28,11 +28,11 @@ export default function Hero() {
         }}
       />
 
-      {/* Large background pinwheel — centered with Kai logo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] pointer-events-none hidden sm:block">
+      {/* Large background pinwheel — center, slowly rotating */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] pointer-events-none hidden sm:block">
         <DecorativePinwheel size={550} opacity={0.04} animate />
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] pointer-events-none sm:hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] pointer-events-none sm:hidden">
         <DecorativePinwheel size={280} opacity={0.04} animate />
       </div>
 
@@ -42,7 +42,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 lg:px-8 text-center mt-16 sm:mt-12">
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 lg:px-8 text-center mt-20 sm:mt-16">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
