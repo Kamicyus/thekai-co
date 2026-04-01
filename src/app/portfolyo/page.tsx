@@ -138,7 +138,7 @@ export default function PortfolyoPage() {
                     className="w-full h-auto object-cover object-top"
                     loading="lazy"
                     style={{
-                      animation: `scrollSite ${12 + i * 4}s ease-in-out infinite alternate`,
+                      animation: `scrollSite 18s ease-in-out infinite alternate`,
                     }}
                   />
                 </div>
