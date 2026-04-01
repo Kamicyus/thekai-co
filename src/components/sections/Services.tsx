@@ -55,26 +55,26 @@ export default function Services() {
                       backgroundPosition: "center",
                     }}
                   />
-                  {/* Dark gradient overlay — darker at bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#0A0A0A]/90" />
+                  {/* Dark gradient overlay — much darker at bottom for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/30 via-[#0A0A0A]/70 to-[#0A0A0A]/95" />
 
-                  {/* Content */}
-                  <div className="relative z-10">
+                  {/* Content — pushed to bottom */}
+                  <div className="relative z-10 flex flex-col h-full justify-end">
                     {/* Icon */}
-                    <div className="w-12 h-12 rounded-xl bg-[#0A0A0A]/60 backdrop-blur-sm border border-[#1F2937]/50 flex items-center justify-center mb-4 text-[#D8FB32] group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-[#0A0A0A]/60 backdrop-blur-sm border border-[#1F2937]/50 flex items-center justify-center mb-3 text-[#D8FB32] group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
                       <ServiceIcon icon={service.icon} size={22} />
                     </div>
 
                     {/* Text */}
-                    <h3 className="font-sans text-base lg:text-lg font-semibold text-[#F5F5F5] mb-2 tracking-[-0.3px]">
+                    <h3 className="font-sans text-base lg:text-lg font-semibold text-[#F5F5F5] mb-1.5 tracking-[-0.3px]">
                       {service.title}
                     </h3>
-                    <p className="text-[#BBBBBB] text-sm leading-relaxed flex-1">
+                    <p className="text-[#CCCCCC] text-sm leading-relaxed">
                       {service.description}
                     </p>
 
                     {/* Arrow indicator */}
-                    <div className="mt-4 text-[#D8FB32] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+                    <div className="mt-3 text-[#D8FB32] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
                       Detayları Gör →
                     </div>
                   </div>
