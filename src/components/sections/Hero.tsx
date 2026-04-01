@@ -139,7 +139,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="absolute -top-3 sm:-top-4 md:-top-5 left-0 sm:left-4 font-serif italic text-[14px] sm:text-xl md:text-[22px] text-[#999999] -rotate-[15deg] select-none whitespace-nowrap"
             >
-              Call Me
+              The
             </motion.span>
             {/* CARKSIZ logo PNG — no pinwheel, we add our own animated one */}
             <Image
@@ -173,9 +173,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-sm sm:text-base text-[#999999] tracking-[0.03em] mb-12"
+          className="text-sm sm:text-base text-[#999999] tracking-[0.03em] mb-3"
         >
           Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="text-xs sm:text-sm text-[#666666] italic font-serif tracking-[0.05em] mb-12"
+        >
+          Call me Kai!
         </motion.p>
 
         {/* CTAs */}
