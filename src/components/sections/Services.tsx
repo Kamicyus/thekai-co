@@ -31,30 +31,56 @@ export default function Services() {
           className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
           staggerDelay={0.08}
         >
-          {SERVICES.map((service) => (
+          {SERVICES.map((service) => {
+            const bgMap: Record<string, string> = {
+              "ai-ajan-sistemi": "/images/services/ai-ajan.jpg",
+              "web-sitesi-tasarimi": "/images/services/web-sitesi.jpg",
+              "icerik-uretimi": "/images/services/icerik.jpg",
+              "artwork-tasarim": "/images/services/artwork.jpg",
+              "sesli-kitap": "/images/services/sesli-kitap.jpg",
+              "muzik-produksiyon": "/images/services/muzik.jpg",
+              "dijital-strateji": "/images/services/dijital-strateji.jpg",
+              "telegram-bot": "/images/services/telegram-bot.jpg",
+            };
+            return (
             <StaggerItem key={service.title}>
               <Link href={`/hizmetler#${service.slug}`} className="block h-full">
-                <div className="group relative flex flex-col h-full p-5 lg:p-6 bg-[#141414] border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01] cursor-pointer">
-                  {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center mb-4 text-[#D8FB32] group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
-                    <ServiceIcon icon={service.icon} size={22} />
-                  </div>
+                <div className="group relative flex flex-col h-full p-5 lg:p-6 border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01] cursor-pointer overflow-hidden">
+                  {/* Background image */}
+                  <div
+                    className="absolute inset-0 opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                    style={{
+                      backgroundImage: `url(${bgMap[service.slug] || ""})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                  {/* Dark gradient overlay — darker at bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#0A0A0A]/90" />
 
-                  {/* Text */}
-                  <h3 className="font-sans text-base lg:text-lg font-semibold text-[#F5F5F5] mb-2 tracking-[-0.3px]">
-                    {service.title}
-                  </h3>
-                  <p className="text-[#999999] text-sm leading-relaxed flex-1">
-                    {service.description}
-                  </p>
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="w-12 h-12 rounded-xl bg-[#0A0A0A]/60 backdrop-blur-sm border border-[#1F2937]/50 flex items-center justify-center mb-4 text-[#D8FB32] group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
+                      <ServiceIcon icon={service.icon} size={22} />
+                    </div>
 
-                  {/* Arrow indicator */}
-                  <div className="mt-4 text-[#D8FB32] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
-                    Detayları Gör →
+                    {/* Text */}
+                    <h3 className="font-sans text-base lg:text-lg font-semibold text-[#F5F5F5] mb-2 tracking-[-0.3px]">
+                      {service.title}
+                    </h3>
+                    <p className="text-[#BBBBBB] text-sm leading-relaxed flex-1">
+                      {service.description}
+                    </p>
+
+                    {/* Arrow indicator */}
+                    <div className="mt-4 text-[#D8FB32] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+                      Detayları Gör →
+                    </div>
                   </div>
 
                   {/* Corner accent on hover — pinwheel spins */}
-                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
                     <DecorativePinwheel
                       size={18}
                       opacity={0.4}
@@ -64,7 +90,8 @@ export default function Services() {
                 </div>
               </Link>
             </StaggerItem>
-          ))}
+            );
+          })}
         </StaggerChildren>
       </div>
     </section>
