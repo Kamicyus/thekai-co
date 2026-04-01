@@ -56,7 +56,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -top-3 sm:-top-4 md:-top-5 left-1 sm:left-4 font-serif italic text-[17px] sm:text-xl md:text-[22px] text-[#999999] -rotate-[15deg] select-none"
+              className="absolute -top-3 sm:-top-4 md:-top-5 left-0 sm:left-4 font-serif italic text-[14px] sm:text-xl md:text-[22px] text-[#999999] -rotate-[15deg] select-none whitespace-nowrap"
             >
               Call Me
             </motion.span>
@@ -116,6 +116,27 @@ export default function Hero() {
           >
             Portfolyo
           </Link>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+          className="mt-16 sm:mt-20 flex justify-center"
+        >
+          <a
+            href="/#hizmetler"
+            className="flex flex-col items-center gap-2 text-[#666666] hover:text-[#999999] transition-colors duration-300 group"
+          >
+            <div className="w-6 h-10 rounded-full border-2 border-[#333333] group-hover:border-[#666666] transition-colors duration-300 flex justify-center pt-2">
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full"
+              />
+            </div>
+          </a>
         </motion.div>
 
       </div>
