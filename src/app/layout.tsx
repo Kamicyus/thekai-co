@@ -31,6 +31,9 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "381hRN8N9uH22ahkeV6odWFlJEv-KSBqya4Pvaj6iIU",
+  },
   title: "The Kai — AI Ajan Sistemi, Müzik Prodüksiyon, Dijital Yaratıcılık Stüdyosu",
   description:
     "AI ajan sistemi kurulumu, müzik prodüksiyon, web tasarımı ve içerik üretimi. 72+ AI ajan, 20M+ dinlenme. İstanbul merkezli AI-native creative studio.",
