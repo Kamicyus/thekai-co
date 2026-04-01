@@ -1676,6 +1676,378 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "ai-ile-muzik-artwork-tasarimi",
+    title: "AI ile Müzik Artwork Tasarımı: Kapak Fotoğrafı Nasıl Yapılır?",
+    description:
+      "Midjourney, DALL-E ve Leonardo AI ile müzik kapak fotoğrafı tasarımı. Spotify, Apple Music ve YouTube için artwork oluşturma rehberi.",
+    date: "2026-04-01",
+    readingTime: "7 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "AI artwork tasarımı",
+      "müzik kapak fotoğrafı",
+      "Midjourney müzik artwork",
+      "Spotify kapak tasarımı",
+      "AI görsel tasarım",
+      "albüm kapağı yapma",
+      "müzik artwork boyutları",
+    ],
+    coverImage: "/images/blog/ai-ile-muzik-artwork-tasarimi.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Estarabim'in kapak fotoğrafını ben tasarladım. Yandı Dibine Kadar'ı da, Boş Vitrin'i de. Her birinde farklı teknikler kullandım — AI üretimi, fotoğraf manipülasyonu, kolaj. <strong>Bugün bir müzik artwork'ü için grafik tasarımcıya binlerce lira ödemenize gerek yok.</strong> AI araçlarıyla profesyonel kapak fotoğrafları üretebilirsiniz. Nasıl mı? Anlatıyorum.",
+      },
+      {
+        type: "h2",
+        text: "Müzik Artwork Boyutları ve Gereksinimleri",
+      },
+      {
+        type: "p",
+        text: "Her platform farklı gereksinimler istiyor gibi görünse de standart var:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Spotify / Apple Music / Tidal:</strong> 3000x3000px, JPG veya PNG, RGB, max 10MB",
+          "<strong>YouTube Thumbnail:</strong> 1280x720px (16:9 oran), JPG/PNG",
+          "<strong>SoundCloud:</strong> 800x800px minimum",
+          "<strong>Genel kural:</strong> Her zaman 3000x3000px kare olarak tasarla, diğer boyutlar için crop yap",
+        ],
+      },
+      {
+        type: "h2",
+        text: "AI Artwork Araçları Karşılaştırması",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Midjourney ($10/ay'dan):</strong> En yüksek kalite, sanatsal ifade gücü. Discord üzerinden çalışır. Benim birincil tercihim.",
+          "<strong>DALL-E 3 (ChatGPT Plus ile):</strong> Metin komutlarını en iyi anlayan model. Karmaşık konseptler için ideal.",
+          "<strong>Leonardo AI (ücretsiz plan var):</strong> Hızlı, tutarlı sonuçlar. Ücretsiz başlamak isteyenler için.",
+          "<strong>Stable Diffusion (ücretsiz, açık kaynak):</strong> Kendi bilgisayarında çalıştırabilirsin. Teknik bilgi gerektirir.",
+          "<strong>Canva AI (Magic Studio):</strong> Basit düzenlemeler ve text overlay için. Tasarım bilmeyenler için en kolay.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Etkili Prompt Yazma Teknikleri",
+      },
+      {
+        type: "p",
+        text: "AI'ya \"güzel bir albüm kapağı yap\" demek yetmez. İyi bir prompt şu unsurları içermeli:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Stil:</strong> 'oil painting style', 'digital art', 'photorealistic', 'collage art', 'minimalist'",
+          "<strong>Renk paleti:</strong> 'dark moody tones', 'vibrant neon', 'earth tones', 'black and red'",
+          "<strong>Kompozisyon:</strong> 'centered portrait', 'wide landscape', 'close-up detail', 'symmetrical'",
+          "<strong>Atmosfer:</strong> 'cinematic lighting', 'dreamy', 'gritty', 'ethereal', 'psychedelic'",
+          "<strong>Referans:</strong> 'in the style of album covers from the 70s', 'similar to Kanye West MBDTF artwork'",
+        ],
+      },
+      {
+        type: "p",
+        text: "Örnek prompt: \"<em>A silhouette of a man walking through a cosmic desert, golden sunset, sand dunes meet stars, cinematic wide shot, album cover art, vibrant warm tones, psychedelic Anatolian rock aesthetic --ar 1:1 --v 6</em>\" — bu tam olarak Yandı Dibine Kadar artwork'ünün konseptiydi.",
+      },
+      {
+        type: "h2",
+        text: "Post-Prodüksiyon: AI Çıktısını Bitmiş Ürüne Dönüştürmek",
+      },
+      {
+        type: "p",
+        text: "AI'ın ürettiği görsel ham haliyle nadiren yeterli olur. Post-prodüksiyon adımları:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Upscale:</strong> Topaz Gigapixel veya Real-ESRGAN ile 3000x3000'e büyüt",
+          "<strong>Metin ekleme:</strong> Photoshop, Figma veya Canva'da sanatçı adı ve şarkı adı ekle",
+          "<strong>Renk düzeltme:</strong> Kontrast, doygunluk ve ton ayarları — Lightroom veya Photoshop",
+          "<strong>Logo/branding:</strong> Varsa label logosu, parental advisory etiketi",
+          "<strong>Final kontrol:</strong> Farklı ekran boyutlarında test et — telefonda küçük thumbnail'de de okunabilir olmalı",
+        ],
+      },
+      {
+        type: "cta",
+        label: "Artwork Tasarımı Yaptır",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI ile yapılan artwork'ün telif hakları kime ait?",
+            answer:
+              "Bu tartışmalı bir konu. Midjourney ve DALL-E'nin kullanım koşullarına göre ücretli planlarda ticari kullanım hakkı size ait. Ama AI üretimi görsellerin telif koruması hukuki olarak belirsiz — ABD'de AI üretimi eserler telif koruması alamıyor. En güvenli yol: AI çıktısını önemli ölçüde düzenleyerek orijinal eseriniz haline getirmek.",
+          },
+          {
+            question: "Spotify artwork'ü reddedilirse ne yapmalıyım?",
+            answer:
+              "Yaygın ret nedenleri: düşük çözünürlük (3000x3000'den küçük), bulanık görüntü, uygunsuz içerik, telif ihlali (başkasının fotoğrafı), fazla metin. Reddi düzelt, yeniden yükle. Genellikle 24 saat içinde tekrar onaylanır.",
+          },
+          {
+            question: "Ücretsiz artwork tasarımı mümkün mü?",
+            answer:
+              "Evet. Leonardo AI ücretsiz plan sunuyor, Canva'nın ücretsiz versiyonu yeterli olabilir, Stable Diffusion tamamen ücretsiz. Profesyonel kalite istiyorsanız Midjourney ($10/ay) en iyi yatırım. <a href='/portfolyo#artwork'>Portfolyomuzdaki örneklere göz atın</a>.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "kucuk-isletmeler-icin-ai-otomasyon",
+    title: "Küçük İşletmeler İçin AI Otomasyon: Nereden Başlamalı?",
+    description:
+      "Küçük işletmenizi AI ile nasıl otomatize edersiniz? E-posta, müşteri hizmeti, sosyal medya ve muhasebe otomasyonu için pratik rehber.",
+    date: "2026-04-01",
+    readingTime: "8 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "küçük işletme AI otomasyon",
+      "işletme otomasyonu",
+      "AI ile iş yönetimi",
+      "küçük işletme dijitalleşme",
+      "otomasyon araçları",
+      "AI müşteri hizmeti",
+      "işletme verimliliği",
+    ],
+    coverImage: "/images/blog/kucuk-isletmeler-icin-ai-otomasyon.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Küçük işletme sahiplerinin %80'i günde en az 2 saat tekrarlayan işlerle uğraşıyor — e-posta yanıtlama, fatura kesme, sosyal medya paylaşımı, randevu yönetimi. <strong>Bu 2 saat, AI otomasyon ile 10 dakikaya düşürülebilir.</strong> Hem de dev bütçeler harcamadan. Bu yazıda küçük işletmenizi AI ile nasıl otomatize edeceğinizi, nereden başlamanız gerektiğini ve hangi araçları kullanabileceğinizi anlatıyorum.",
+      },
+      {
+        type: "h2",
+        text: "AI Otomasyonu Kimler İçin?",
+      },
+      {
+        type: "p",
+        text: "Kısa cevap: <strong>tekrarlayan bir işi olan herkes.</strong> E-ticaret mağazası, restoran, kuaför salonu, danışmanlık firması, freelancer — sektör fark etmez. Eğer aynı e-postayı haftada 10 kez yazıyorsanız, aynı soruya hep aynı cevabı veriyorsanız, aynı raporu her ay sıfırdan hazırlıyorsanız — AI otomasyonu sizin için.",
+      },
+      {
+        type: "h2",
+        text: "Otomasyona Başlamak İçin 5 Adım",
+      },
+      {
+        type: "h3",
+        text: "1. Tekrarlayan İşleri Listele",
+      },
+      {
+        type: "p",
+        text: "Bir hafta boyunca yaptığınız her işi not alın. Hangisi tekrar ediyor? Hangisi her seferinde aynı? Hangisi sizi en çok yoruyor? En sık tekrarlanan 3 işlem otomasyon adayınız.",
+      },
+      {
+        type: "h3",
+        text: "2. Doğru Aracı Seç",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>E-posta otomasyonu:</strong> Gmail + Claude API veya Mailchimp — otomatik yanıt, sınıflandırma, takip",
+          "<strong>Müşteri hizmeti:</strong> Telegram/WhatsApp chatbot — 7/24 sık sorulan soruları yanıtlar",
+          "<strong>Sosyal medya:</strong> Buffer + AI içerik üretimi — haftalık postları bir seferde planla",
+          "<strong>Muhasebe:</strong> Parasut + n8n webhook — fatura otomatik oluşturma, gider takibi",
+          "<strong>Randevu:</strong> Calendly + Google Calendar API — müşteri kendi randevusunu alsın",
+        ],
+      },
+      {
+        type: "h3",
+        text: "3. Küçük Başla, Hızlı Test Et",
+      },
+      {
+        type: "p",
+        text: "Tüm işletmenizi bir gecede otomatize etmeye çalışmayın. Tek bir süreçle başlayın — mesela müşteri destek e-postalarını otomatik yanıtlama. 1 hafta test edin. Çalışıyorsa genişletin.",
+      },
+      {
+        type: "h3",
+        text: "4. İnsan Kontrolü Koru",
+      },
+      {
+        type: "p",
+        text: "AI otomasyonu \"insansız\" demek değil. En iyi yaklaşım: AI ön eleme yapsın, karmaşık konuları insana yönlendirsin. Müşteri şikayetini chatbot yanıtlamasın — insana aktarsın. <strong>AI asistan, patron değil.</strong>",
+      },
+      {
+        type: "h3",
+        text: "5. Ölç ve Optimize Et",
+      },
+      {
+        type: "p",
+        text: "Otomasyon kurulduktan sonra takip edin: ne kadar zaman tasarrufu? Müşteri memnuniyeti değişti mi? Hata oranı? Aylık review yapın ve sistemi iyileştirin.",
+      },
+      {
+        type: "h2",
+        text: "Gerçek Dünya Örnekleri",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Kuaför salonu:</strong> WhatsApp chatbot ile randevu alma → Google Calendar entegrasyonu → otomatik hatırlatma SMS'i. Sonuç: telefon trafiği %60 azaldı.",
+          "<strong>E-ticaret:</strong> Sipariş sonrası otomatik teşekkür + kargo takip e-postası + 7 gün sonra yorum isteme. Sonuç: müşteri yorum oranı 3x arttı.",
+          "<strong>Danışmanlık firması:</strong> Gelen e-postaları AI sınıflandırıyor → acil/normal/spam. Sonuç: günde 45 dakika tasarruf.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Maliyet Analizi",
+      },
+      {
+        type: "p",
+        text: "Küçük bir otomasyon sistemi kurulumu: <strong>2.000-8.000 ₺</strong> (tek seferlik). Aylık çalışma maliyeti: <strong>200-500 ₺</strong> (sunucu + API). Karşılaştırma: bir yarı zamanlı çalışan aylık 15.000+ ₺. ROI genellikle 1-2 ay içinde pozitife dönüyor.",
+      },
+      {
+        type: "cta",
+        label: "AI Otomasyon Kurulumu İçin Bize Ulaşın",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI otomasyon güvenli mi? Verilerim ne olacak?",
+            answer:
+              "Doğru kurulumda son derece güvenli. Verileriniz kendi sunucunuzda kalabilir, üçüncü taraf hizmetler kullanılacaksa KVKK uyumlu olanlar tercih edilir. Biz The Kai olarak tüm projelerimizde veri güvenliğini ön planda tutuyoruz.",
+          },
+          {
+            question: "Teknik bilgi gerekiyor mu?",
+            answer:
+              "Hayır. Profesyonel kurulum sonrası sistemi kullanmak için teknik bilgi gerekmez. Biz kurulumu yapıyoruz, siz kullanıyorsunuz. Eğitim ve dokümantasyon dahil. <a href='/hizmetler#ai-ajan-sistemi'>AI Ajan Sistemi hizmetimizi inceleyin</a>.",
+          },
+          {
+            question: "Hangi sektörler için uygun?",
+            answer:
+              "Her sektör için. E-ticaret, sağlık, eğitim, hukuk, gayrimenkul, restoran, güzellik, danışmanlık — tekrarlayan işi olan her işletme fayda görür. Sektöre özel çözümler sunuyoruz.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "next-js-ile-web-sitesi-nasil-yapilir",
+    title: "Next.js ile Web Sitesi Nasıl Yapılır? Başlangıç Rehberi",
+    description:
+      "Next.js nedir, neden tercih edilmeli? React tabanlı modern web sitesi geliştirme rehberi. Kurulum, routing, SEO ve Vercel deployment adım adım.",
+    date: "2026-04-01",
+    readingTime: "10 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "Next.js rehber",
+      "Next.js web sitesi",
+      "Next.js nedir",
+      "React web sitesi",
+      "Next.js SEO",
+      "Next.js Vercel",
+      "modern web geliştirme",
+    ],
+    coverImage: "/images/blog/next-js-ile-web-sitesi-nasil-yapilir.jpg",
+    content: [
+      {
+        type: "p",
+        text: "thekai.co'yu Next.js ile geliştirdim. Shortlist Creative'i de. Echo Bazaar'ın web sitesini de. Neden hep Next.js? Çünkü <strong>hız, SEO ve geliştirici deneyimi</strong> açısından şu an en iyi framework. WordPress'ten geliyorsanız veya sıfırdan web geliştirmeye başlıyorsanız, bu yazı tam size göre.",
+      },
+      {
+        type: "h2",
+        text: "Next.js Nedir?",
+      },
+      {
+        type: "p",
+        text: "Next.js, React üzerine inşa edilmiş bir <strong>full-stack web framework</strong>'tür. Vercel tarafından geliştirilir. React tek başına bir \"kütüphane\" iken, Next.js routing, SSR (server-side rendering), API routes, image optimization ve daha fazlasını kutudan çıkar şekilde sunar.",
+      },
+      {
+        type: "p",
+        text: "Basit anlatımla: React ile web uygulaması yaparsın, Next.js ile tam bir web sitesi yaparsın — SEO'su, performansı ve deployment'ı dahil.",
+      },
+      {
+        type: "h2",
+        text: "Neden Next.js?",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>SEO:</strong> Server-side rendering ve static generation ile Google botları sayfanızı tam görür. WordPress kadar iyi, hatta daha iyi SEO.",
+          "<strong>Performans:</strong> Automatic code splitting, image optimization, font optimization — Google Core Web Vitals skoru neredeyse her zaman 90+.",
+          "<strong>Geliştirici deneyimi:</strong> Hot reload, TypeScript desteği, file-based routing — hızlı geliştirme.",
+          "<strong>Vercel deployment:</strong> Git push = otomatik deployment. SSL, CDN, preview URL'leri — hepsi ücretsiz.",
+          "<strong>Ekosistem:</strong> React'in devasa ekosisteminden faydalanır. Binlerce kütüphane ve component.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Kurulum (5 Dakika)",
+      },
+      {
+        type: "p",
+        text: "Terminal açın ve şu komutu çalıştırın: <strong>npx create-next-app@latest my-site</strong>. TypeScript, Tailwind CSS ve App Router seçeneklerini 'Evet' olarak işaretleyin. Tebrikler, Next.js projeniz hazır.",
+      },
+      {
+        type: "p",
+        text: "<strong>npm run dev</strong> komutuyla localhost:3000'de sitenizi görürsünüz. Dosya yapısı: <strong>src/app/</strong> klasörü altında her klasör bir sayfa. <strong>page.tsx</strong> dosyası o sayfanın içeriği. <strong>layout.tsx</strong> dosyası tüm sayfalarda ortak olan yapı (navbar, footer).",
+      },
+      {
+        type: "h2",
+        text: "Önerdiğimiz Tech Stack",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Next.js 15:</strong> Framework — routing, SSR, API",
+          "<strong>Tailwind CSS v4:</strong> Styling — utility-first CSS, responsive tasarım",
+          "<strong>Framer Motion:</strong> Animasyonlar — scroll efektleri, geçişler",
+          "<strong>TypeScript:</strong> Tip güvenliği — daha az hata, daha iyi autocomplete",
+          "<strong>Vercel:</strong> Hosting — ücretsiz, hızlı, güvenilir",
+        ],
+      },
+      {
+        type: "p",
+        text: "Bu tam olarak thekai.co'nun tech stack'i. Ve müşterilerimize de aynı stack'i öneriyoruz. Neden? Çünkü <strong>kanıtlanmış, hızlı ve bakım maliyeti düşük.</strong>",
+      },
+      {
+        type: "h2",
+        text: "WordPress vs Next.js",
+      },
+      {
+        type: "p",
+        text: "WordPress dünyada en yaygın CMS ama 2026'da ciddi dezavantajları var: yavaş (her sayfa veritabanı sorgusu yapıyor), güvenlik açıkları (eklenti ekosistemi risk), bakım maliyeti (sürekli güncelleme). Next.js ile statik olarak oluşturulan sayfalar çok daha hızlı, güvenli ve bakımsız çalışıyor.",
+      },
+      {
+        type: "p",
+        text: "Ne zaman WordPress? Teknik bilginiz sıfırsa ve hızla bir blog açmak istiyorsanız. Ne zaman Next.js? Performans, SEO ve profesyonel görünüm önemliyse — ki önemliyse.",
+      },
+      {
+        type: "cta",
+        label: "Next.js ile Site Yaptırmak İstiyorum",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Next.js öğrenmek zor mu?",
+            answer:
+              "HTML/CSS biliyorsanız temel bir site 1-2 haftada yapabilirsiniz. React biliyorsanız Next.js'e geçiş 2-3 gün. Hiç programlama bilmiyorsanız biraz daha zor — ama YouTube'da binlerce ücretsiz kaynak var. Ya da bize bırakın, biz yapalım.",
+          },
+          {
+            question: "Next.js ile e-ticaret sitesi yapılabilir mi?",
+            answer:
+              "Evet. Shopify Hydrogen (Next.js tabanlı), Saleor, Medusa gibi headless e-ticaret çözümleriyle tam entegrasyon mümkün. Ödeme: iyzico, Stripe, PayTR. Stok yönetimi, sepet, sipariş takibi — hepsi yapılabilir.",
+          },
+          {
+            question: "Hosting ücretsiz mi?",
+            answer:
+              "Vercel'de küçük-orta projeler için evet, ücretsiz. Aylık 100GB bandwidth, sınırsız deployment, SSL dahil. Büyük projeler için Pro plan $20/ay. WordPress hosting'den çok daha ucuz ve hızlı.",
+          },
+          {
+            question: "SEO açısından WordPress'ten iyi mi?",
+            answer:
+              "Doğru yapıldığında evet. Next.js'in SSR/SSG desteği, otomatik sitemap, meta tag yönetimi ve Core Web Vitals performansı WordPress'in önünde. thekai.co'nun Google performans skoru 95+ — bunu WordPress ile yakalamak çok zor.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
