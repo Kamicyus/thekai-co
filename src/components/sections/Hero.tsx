@@ -41,84 +41,129 @@ export default function Hero() {
         <DecorativePinwheel size={80} opacity={0.08} animate reverse />
       </div>
 
-      {/* Orbiting Planets — "Dünyalar Kuruyoruz" — overflow-hidden clips edges */}
+      {/* Orbiting Planets — realistic, far from center, overflow-hidden clips edges */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
-        {/* Neptune — outermost orbit, starts 0°, very slow */}
+        {/* Neptune — icy blue, outermost orbit */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: [0, 360] }}
           transition={{ duration: 140, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -550, left: -14 }}>
-            <div className="w-8 h-8 rounded-full opacity-35"
-              style={{ background: "radial-gradient(circle at 30% 30%, #5B8DEF, #1a3a8a)", boxShadow: "0 0 20px rgba(91,141,239,0.25)" }}
-            />
+          <div className="absolute" style={{ top: -520, left: -16 }}>
+            <div className="w-10 h-10 rounded-full relative overflow-hidden"
+              style={{
+                background: "radial-gradient(circle at 35% 30%, #7EB8E8 0%, #3B6BAA 40%, #1B3B6E 70%, #0A1A3A 100%)",
+                boxShadow: "0 0 25px rgba(91,141,239,0.3), inset -3px -2px 6px rgba(0,0,0,0.4), inset 2px 2px 4px rgba(200,230,255,0.15)",
+                opacity: 0.45,
+              }}
+            >
+              {/* Atmosphere band */}
+              <div className="absolute inset-0 rounded-full" style={{
+                background: "linear-gradient(160deg, transparent 30%, rgba(100,160,220,0.2) 50%, transparent 70%)",
+              }} />
+            </div>
           </div>
         </motion.div>
 
-        {/* Saturn — starts at 72°, wide orbit with ring */}
+        {/* Saturn — golden with prominent ring */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: [72, 432] }}
           transition={{ duration: 110, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -480, left: -12 }}>
+          <div className="absolute" style={{ top: -460, left: -20 }}>
             <div className="relative">
-              <div className="w-7 h-7 rounded-full opacity-30"
-                style={{ background: "radial-gradient(circle at 30% 30%, #E8D5A3, #A08040)", boxShadow: "0 0 15px rgba(232,213,163,0.2)" }}
+              <div className="w-9 h-9 rounded-full relative overflow-hidden"
+                style={{
+                  background: "radial-gradient(circle at 35% 30%, #F0DCA0 0%, #D4A84A 30%, #A07820 60%, #604810 100%)",
+                  boxShadow: "0 0 20px rgba(232,213,163,0.25), inset -3px -2px 5px rgba(0,0,0,0.4), inset 2px 1px 3px rgba(255,240,200,0.2)",
+                  opacity: 0.4,
+                }}
+              >
+                {/* Bands */}
+                <div className="absolute w-full" style={{ top: '35%', height: '8%', background: 'rgba(180,140,60,0.3)' }} />
+                <div className="absolute w-full" style={{ top: '55%', height: '5%', background: 'rgba(140,100,30,0.25)' }} />
+              </div>
+              {/* Ring */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[16px] rounded-full -rotate-[25deg]"
+                style={{
+                  border: '1.5px solid rgba(232,213,163,0.3)',
+                  background: 'linear-gradient(90deg, transparent 10%, rgba(232,213,163,0.08) 50%, transparent 90%)',
+                }}
               />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-4 rounded-full border border-[#E8D5A3]/25 -rotate-[25deg]" />
             </div>
           </div>
         </motion.div>
 
-        {/* Jupiter — starts at 200°, biggest planet, reverse */}
+        {/* Jupiter — largest, banded brown-orange */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: [200, -160] }}
           transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -420, left: -16 }}>
-            <div className="w-10 h-10 rounded-full opacity-30"
-              style={{ background: "radial-gradient(circle at 30% 30%, #D4A76A, #8B6914)", boxShadow: "0 0 22px rgba(212,167,106,0.18)" }}
-            />
+          <div className="absolute" style={{ top: -400, left: -18 }}>
+            <div className="w-12 h-12 rounded-full relative overflow-hidden"
+              style={{
+                background: "radial-gradient(circle at 35% 30%, #E8C080 0%, #C09040 30%, #8B6020 60%, #503010 100%)",
+                boxShadow: "0 0 28px rgba(212,167,106,0.2), inset -4px -3px 8px rgba(0,0,0,0.5), inset 3px 2px 5px rgba(255,220,150,0.15)",
+                opacity: 0.4,
+              }}
+            >
+              {/* Jupiter bands */}
+              <div className="absolute w-full" style={{ top: '25%', height: '6%', background: 'rgba(200,150,80,0.3)' }} />
+              <div className="absolute w-full" style={{ top: '40%', height: '10%', background: 'rgba(160,100,40,0.25)' }} />
+              <div className="absolute w-full" style={{ top: '60%', height: '7%', background: 'rgba(180,120,50,0.2)' }} />
+              {/* Great Red Spot */}
+              <div className="absolute w-3 h-2 rounded-full" style={{ top: '42%', left: '55%', background: 'rgba(200,80,40,0.3)' }} />
+            </div>
           </div>
         </motion.div>
 
-        {/* Mars — starts at 290°, medium-far orbit */}
+        {/* Mars — red, smaller */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: [290, 650] }}
           transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -500, left: -8 }}>
-            <div className="w-5 h-5 rounded-full opacity-30"
-              style={{ background: "radial-gradient(circle at 30% 30%, #E07040, #8B3A1A)", boxShadow: "0 0 12px rgba(224,112,64,0.2)" }}
-            />
+          <div className="absolute" style={{ top: -480, left: -10 }}>
+            <div className="w-7 h-7 rounded-full relative overflow-hidden"
+              style={{
+                background: "radial-gradient(circle at 35% 30%, #E89070 0%, #C05030 40%, #802010 70%, #401008 100%)",
+                boxShadow: "0 0 15px rgba(224,112,64,0.25), inset -2px -2px 5px rgba(0,0,0,0.5), inset 1px 1px 3px rgba(255,180,140,0.15)",
+                opacity: 0.4,
+              }}
+            >
+              {/* Polar ice cap */}
+              <div className="absolute w-3 h-1.5 rounded-full" style={{ top: '8%', left: '30%', background: 'rgba(255,240,230,0.2)' }} />
+            </div>
           </div>
         </motion.div>
 
-        {/* Green moon — starts at 145°, spark colored, reverse */}
+        {/* Green moon — Kai spark colored */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: [145, -215] }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -380, left: -6 }}>
-            <div className="w-4 h-4 rounded-full bg-[#D8FB32] opacity-15"
-              style={{ boxShadow: "0 0 12px rgba(216,251,50,0.2)" }}
+          <div className="absolute" style={{ top: -360, left: -7 }}>
+            <div className="w-5 h-5 rounded-full"
+              style={{
+                background: "radial-gradient(circle at 35% 30%, #E8FF80 0%, #D8FB32 40%, #90B010 70%, #506008 100%)",
+                boxShadow: "0 0 18px rgba(216,251,50,0.25), inset -2px -1px 4px rgba(0,0,0,0.3), inset 1px 1px 2px rgba(255,255,200,0.2)",
+                opacity: 0.2,
+              }}
             />
           </div>
         </motion.div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 lg:px-8 text-center mt-20 sm:mt-16">
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 lg:px-8 text-center mt-28 sm:mt-24">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

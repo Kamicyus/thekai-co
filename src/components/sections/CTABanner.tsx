@@ -22,35 +22,47 @@ export default function CTABanner() {
         <DecorativePinwheel size={90} opacity={0.1} color="#0A0A0A" rotate={-15} />
       </div>
 
-      {/* Dark orbiting planets — "Dünyalar" theme */}
+      {/* Dark orbiting planets — realistic, wide orbits */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
         {/* Dark Neptune */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+          animate={{ rotate: [15, 375] }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -350, left: -10 }}>
-            <div className="w-6 h-6 rounded-full opacity-15"
-              style={{ background: "radial-gradient(circle at 30% 30%, #1a2a4a, #0a0a2a)" }}
+          <div className="absolute" style={{ top: -420, left: -14 }}>
+            <div className="w-9 h-9 rounded-full relative overflow-hidden"
+              style={{
+                background: "radial-gradient(circle at 35% 30%, #1a3050 0%, #0a1a30 50%, #050a18 100%)",
+                boxShadow: "inset -2px -2px 5px rgba(0,0,0,0.6), inset 1px 1px 3px rgba(60,100,140,0.1)",
+                opacity: 0.2,
+              }}
             />
           </div>
         </motion.div>
 
-        {/* Dark Saturn */}
+        {/* Dark Saturn with ring */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
-          animate={{ rotate: -360 }}
-          transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
+          animate={{ rotate: [100, -260] }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -300, left: -10 }}>
+          <div className="absolute" style={{ top: -380, left: -16 }}>
             <div className="relative">
-              <div className="w-5 h-5 rounded-full opacity-12"
-                style={{ background: "radial-gradient(circle at 30% 30%, #3a3020, #1a1808)" }}
+              <div className="w-8 h-8 rounded-full relative overflow-hidden"
+                style={{
+                  background: "radial-gradient(circle at 35% 30%, #3a3020 0%, #201808 50%, #100a04 100%)",
+                  boxShadow: "inset -2px -2px 5px rgba(0,0,0,0.6), inset 1px 1px 2px rgba(100,80,40,0.1)",
+                  opacity: 0.18,
+                }}
+              >
+                <div className="absolute w-full" style={{ top: '40%', height: '6%', background: 'rgba(60,50,30,0.3)' }} />
+              </div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[44px] h-[14px] rounded-full -rotate-[25deg]"
+                style={{ border: '1px solid rgba(80,60,30,0.15)' }}
               />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-3 rounded-full border border-[#0A0A0A]/15 -rotate-[25deg]" />
             </div>
           </div>
         </motion.div>
@@ -59,13 +71,20 @@ export default function CTABanner() {
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
+          animate={{ rotate: [220, 580] }}
+          transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -250, left: -12 }}>
-            <div className="w-7 h-7 rounded-full opacity-10"
-              style={{ background: "radial-gradient(circle at 30% 30%, #2a2010, #0a0a04)" }}
-            />
+          <div className="absolute" style={{ top: -350, left: -16 }}>
+            <div className="w-10 h-10 rounded-full relative overflow-hidden"
+              style={{
+                background: "radial-gradient(circle at 35% 30%, #2a2010 0%, #181008 50%, #0a0804 100%)",
+                boxShadow: "inset -3px -2px 6px rgba(0,0,0,0.6), inset 1px 1px 3px rgba(80,60,20,0.08)",
+                opacity: 0.15,
+              }}
+            >
+              <div className="absolute w-full" style={{ top: '30%', height: '6%', background: 'rgba(50,40,20,0.2)' }} />
+              <div className="absolute w-full" style={{ top: '55%', height: '8%', background: 'rgba(40,30,15,0.2)' }} />
+            </div>
           </div>
         </motion.div>
 
@@ -73,12 +92,16 @@ export default function CTABanner() {
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
-          animate={{ rotate: -360 }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          animate={{ rotate: [310, -50] }}
+          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -200, left: -6 }}>
-            <div className="w-4 h-4 rounded-full opacity-10"
-              style={{ background: "radial-gradient(circle at 30% 30%, #3a1a10, #1a0808)" }}
+          <div className="absolute" style={{ top: -400, left: -8 }}>
+            <div className="w-6 h-6 rounded-full"
+              style={{
+                background: "radial-gradient(circle at 35% 30%, #3a1a10 0%, #201008 50%, #100804 100%)",
+                boxShadow: "inset -2px -1px 4px rgba(0,0,0,0.6)",
+                opacity: 0.15,
+              }}
             />
           </div>
         </motion.div>

@@ -7,37 +7,43 @@ const MILESTONES = [
   {
     year: "2011",
     title: "Başlangıç",
-    description: "Kurucu Kamer Can İzvermez'in müzik yolculuğu başladı.",
+    description: "Kurucu Kamer Can İzvermez, müzik yolculuğuna şarkı yazarak başladı. Müziğini dağıtmak ve tanıtmak adına pazarlama, tasarım ve dijital strateji öğrenmeye koyuldu.",
+  },
+  {
+    year: "2011–2023",
+    title: "Çok Yönlü Deneyim",
+    description:
+      "Dergi editörlüğü, call center, spor ajanslarında sosyal medya yönetimi — farklı sektörlerde çalışırken hep müzik yapmaya ve şarkılar çıkarmaya devam etti. Bu süreçte pazarlama, marka yönetimi ve dijital içerik üretiminin inceliklerini sahada öğrendi.",
+  },
+  {
+    year: "2023",
+    title: "Yapay Zeka Dönüşümü",
+    description:
+      "AI araçlarını en başından beri iş süreçlerine entegre eden Kamer, yapay zekanın yaratıcı endüstriyi dönüştürme potansiyelini erken fark etti. Otomasyon ve AI ajan sistemleri kurmaya başladı.",
   },
   {
     year: "2024",
     title: "Echo Bazaar",
     description:
-      "The Kai'nin ilk büyük projesi: AI müzik kanalı kuruldu.",
+      "The Kai'nin ilk büyük projesi: AI müzik kanalı kuruldu. YouTube'da yükselen bir marka haline geldi.",
   },
   {
     year: "2025",
-    title: "15 Milyon+",
+    title: "20 Milyon+ Dinlenme",
     description:
-      "Echo Bazaar 15 milyon dinlenmeyi aştı. KİM? albümü yayınlandı.",
-  },
-  {
-    year: "2025",
-    title: "AI Altyapı",
-    description:
-      "72+ AI ajan sistemi kuruldu. Operasyonlar tamamen otomatize edildi.",
+      "Echo Bazaar 20 milyon dinlenmeyi aştı. KİM? albümü Spotify Keşif playlist'inde yer aldı. 72+ AI ajan sistemi kuruldu, operasyonlar otomatize edildi.",
   },
   {
     year: "2026",
     title: "The Kai",
     description:
-      "Şirket resmi olarak kuruldu. thekai.co yayına girdi.",
+      "Şirket resmi olarak kuruldu. thekai.co yayına girdi. Müzik, teknoloji ve yaratıcılığı birleştiren bir stüdyo doğdu.",
   },
   {
     year: "2026",
-    title: "MURMUR",
+    title: "Murmur",
     description:
-      "Sesli kitap yayınevi projesi başlatıldı. Yeni dünyalar kurmaya devam.",
+      "AI sesli kitap yayınevi projesi başlatıldı. Yeni dünyalar kurmaya devam.",
   },
 ];
 
