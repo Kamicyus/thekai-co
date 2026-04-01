@@ -76,6 +76,21 @@ export const SERVICES = [
   },
 ] as const;
 
+export const TOOLS = [
+  {
+    title: "QR Kod Oluşturucu",
+    description: "URL veya metin girin, anında QR kod oluşturun. Renk ve boyut özelleştirme. PNG olarak indirin.",
+    icon: "qrcode",
+    slug: "qr-kod",
+  },
+  {
+    title: "Kelime & Karakter Sayacı",
+    description: "Metin yapıştırın, kelime, karakter, cümle ve paragraf sayısını anında görün. Okuma süresi tahmini.",
+    icon: "counter",
+    slug: "kelime-sayaci",
+  },
+] as const;
+
 export const STATS = [
   { value: "20M+", label: "Toplam Dinlenme" },
   { value: "72+", label: "AI Ajan" },
