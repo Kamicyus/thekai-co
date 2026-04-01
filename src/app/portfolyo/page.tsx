@@ -26,21 +26,21 @@ const MUSIC_ARTWORKS = [
     image: "/images/artworks/beni-affet.jpg",
   },
   {
-    title: "Boş Vitrin",
-    category: "SINGLE ARTWORK",
-    description: "Kolaj ve çift pozlama tekniğiyle pop-art esintili artwork.",
-    image: "/images/artworks/bos-vitrin.jpg",
-  },
-  {
     title: "Yandı Dibine Kadar",
     category: "SINGLE ARTWORK",
     description: "Çöl estetiği ve sinematik görsellikle tasarlanan artwork.",
     image: "/images/artworks/yandi-dibine-kadar.jpg",
   },
   {
-    title: "Cosmic Dervish",
+    title: "Boş Vitrin",
     category: "SINGLE ARTWORK",
-    description: "Kapadokya'da kozmik müzisyenler — psikedelik Anadolu rock artwork.",
+    description: "Kolaj ve çift pozlama tekniğiyle pop-art esintili artwork.",
+    image: "/images/artworks/bos-vitrin.jpg",
+  },
+  {
+    title: "Cosmic Dervish — Cappadocia",
+    category: "ALBUM ARTWORK",
+    description: "Kapadokya'da kozmik müzisyenler — psikedelik Anadolu rock albümü.",
     image: "/images/artworks/cosmic-dervish.jpg",
   },
 ];
@@ -134,9 +134,9 @@ export default function PortfolyoPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { name: "Echo Bazaar", video: "/videos/ozeta.webm" },
-              { name: "Shortlist Creative", video: "/videos/shortlist.webm" },
-              { name: "The Kai", video: "/videos/thekai.webm" },
+              { name: "Echo Bazaar", image: "/images/projects/scroll-ozeta.jpg" },
+              { name: "Shortlist Creative", image: "/images/projects/scroll-shortlist.jpg" },
+              { name: "The Kai", image: "/images/projects/scroll-thekai.jpg" },
             ].map((site) => (
               <div key={site.name} className="group/site">
                 {/* Browser frame */}
@@ -148,17 +148,17 @@ export default function PortfolyoPage() {
                   </div>
                   <div className="flex-1 mx-2 bg-[#0A0A0A] rounded-md h-5" />
                 </div>
-                {/* Video viewport */}
-                <div className="overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-auto"
-                  >
-                    <source src={site.video} type="video/webm" />
-                  </video>
+                {/* Smooth CSS scroll viewport */}
+                <div className="h-[320px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
+                  <img
+                    src={site.image}
+                    alt={`${site.name} web sitesi`}
+                    className="w-full h-auto object-cover object-top"
+                    loading="lazy"
+                    style={{
+                      animation: "scrollSite 25s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate",
+                    }}
+                  />
                 </div>
                 {/* Site name */}
                 <p className="text-center text-[#F5F5F5] text-sm font-medium mt-3">{site.name}</p>
