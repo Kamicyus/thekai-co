@@ -273,6 +273,39 @@ const HIZMET_DETAYLARI = [
       },
     ],
   },
+  {
+    slug: "performans-pazarlama",
+    icon: "chart",
+    title: "Performans Pazarlama",
+    subtitle: "Google Ads & Meta Ads ile büyüme.",
+    description:
+      "Google Ads ve Meta (Facebook/Instagram) Ads kampanya yönetimi. AI destekli optimizasyon ile reklam bütçenizden maksimum dönüşüm. Hedef kitle analizi, A/B test, dönüşüm takibi ve aylık performans raporları.",
+    features: [
+      "Google Ads kampanya yönetimi",
+      "Meta (Facebook/Instagram) Ads",
+      "AI destekli bütçe optimizasyonu",
+      "Hedef kitle analizi ve segmentasyon",
+      "A/B test ve dönüşüm takibi",
+      "Aylık performans raporları",
+    ],
+    packages: [
+      {
+        name: "STARTER",
+        label: "Başlangıç",
+        features: ["1 platform (Google veya Meta)", "Aylık 10.000 TL'ye kadar reklam bütçesi", "Kampanya kurulumu + optimizasyon", "Temel hedef kitle analizi", "Aylık performans raporu", "Haftalık kontrol"],
+      },
+      {
+        name: "PRO",
+        label: "Profesyonel",
+        features: ["Google + Meta Ads birlikte", "Aylık 50.000 TL'ye kadar reklam bütçesi", "Gelişmiş hedef kitle + retargeting", "A/B test stratejisi", "Dönüşüm takibi + Analytics kurulumu", "Haftalık rapor + strateji toplantısı"],
+      },
+      {
+        name: "PREMIUM",
+        label: "Kurumsal",
+        features: ["Tüm platformlar (Google + Meta + YouTube)", "Sınırsız reklam bütçesi yönetimi", "AI destekli otomatik optimizasyon", "Rakip analizi + pazar araştırması", "Landing page tasarımı dahil", "Günlük izleme + 7/24 destek"],
+      },
+    ],
+  },
 ];
 
 export default function HizmetlerPage() {
@@ -299,7 +332,7 @@ export default function HizmetlerPage() {
             Ne Yapıyoruz
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            Müzik, teknoloji ve yaratıcılık kesişiminde sekiz temel alan.
+            Müzik, teknoloji ve yaratıcılık kesişiminde dokuz temel alan.
             <br />
             Her biri ayrı bir uzmanlık, hepsi birlikte yaratıcı güç.
           </p>

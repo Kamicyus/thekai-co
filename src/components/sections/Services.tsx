@@ -22,7 +22,7 @@ export default function Services() {
             Ne Yapıyoruz
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Sekiz temel alandan birleşen yaratıcı güç.
+            Dokuz temel alandan birleşen yaratıcı güç.
           </p>
         </FadeIn>
 
@@ -41,6 +41,7 @@ export default function Services() {
               "muzik-produksiyon": "/images/services/muzik.jpg",
               "dijital-strateji": "/images/services/dijital-strateji.jpg",
               "telegram-bot": "/images/services/telegram-bot.jpg",
+              "performans-pazarlama": "/images/services/performans-pazarlama.jpg",
             };
             return (
             <StaggerItem key={service.title}>

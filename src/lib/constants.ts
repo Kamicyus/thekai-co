@@ -74,6 +74,12 @@ export const SERVICES = [
     icon: "robot",
     slug: "telegram-bot",
   },
+  {
+    title: "Performans Pazarlama",
+    description: "Google Ads & Meta Ads ile büyüme.",
+    icon: "chart",
+    slug: "performans-pazarlama",
+  },
 ] as const;
 
 export const TOOLS = [

@@ -22,7 +22,7 @@ const RESPONSES: { pattern: RegExp; reply: string }[] = [
   {
     pattern: /hizmet|ne yapıyorsunuz|servis|neler sunuyorsunuz/i,
     reply:
-      '8 temel alanda hizmet veriyoruz: AI Ajan Sistemi, Web Sitesi, İçerik Üretimi, Artwork, Sesli Kitap, Müzik Prodüksiyon, Dijital Strateji ve Telegram Bot. Detaylar için [Hizmetler](/hizmetler) sayfamıza göz atın!',
+      '9 temel alanda hizmet veriyoruz: AI Ajan Sistemi, Web Sitesi, İçerik Üretimi, Artwork, Sesli Kitap, Müzik Prodüksiyon, Dijital Strateji, Telegram Bot ve Performans Pazarlama. Detaylar için [Hizmetler](/hizmetler) sayfamıza göz atın!',
   },
   {
     pattern: /fiyat|ücret|maliyet|kaç para|fiyatlandırma/i,

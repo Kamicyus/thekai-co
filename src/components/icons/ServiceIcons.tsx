@@ -98,6 +98,17 @@ export function RobotIcon({ className = "", size = 32 }: IconProps) {
   );
 }
 
+export function ChartIcon({ className = "", size = 32 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="12" width="4" height="9" rx="1" />
+      <rect x="10" y="7" width="4" height="14" rx="1" />
+      <rect x="17" y="3" width="4" height="18" rx="1" />
+      <line x1="2" y1="22" x2="22" y2="22" />
+    </svg>
+  );
+}
+
 const serviceIconMap = {
   brain: BrainIcon,
   music: MusicIcon,
@@ -108,6 +119,7 @@ const serviceIconMap = {
   browser: BrowserIcon,
   lightbulb: LightbulbIcon,
   robot: RobotIcon,
+  chart: ChartIcon,
 };
 
 export function ServiceIcon({ icon, ...props }: IconProps & { icon: string }) {
