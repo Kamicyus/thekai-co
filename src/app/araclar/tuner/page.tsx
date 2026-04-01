@@ -65,6 +65,9 @@ function autoCorrelate(buf: Float32Array, sampleRate: number) {
   return sampleRate / T0;
 }
 
+// Smoothing buffer to prevent jitter
+const SMOOTH_SIZE = 8;
+
 export default function TunerPage() {
   const [isActive, setIsActive] = useState(false);
   const [frequency, setFrequency] = useState(0);
@@ -75,15 +78,32 @@ export default function TunerPage() {
   const analyserRef = useRef<AnalyserNode | null>(null);
   const rafRef = useRef<number>(0);
   const streamRef = useRef<MediaStream | null>(null);
+  const freqBufferRef = useRef<number[]>([]);
+  const lastUpdateRef = useRef<number>(0);
 
   const updatePitch = useCallback(() => {
     if (!analyserRef.current) return;
     const buf = new Float32Array(analyserRef.current.fftSize);
     analyserRef.current.getFloatTimeDomainData(buf);
     const freq = autoCorrelate(buf, audioContextRef.current!.sampleRate);
+
     if (freq > 0 && freq < 2000) {
-      setFrequency(Math.round(freq * 10) / 10);
-      setNote(getNote(freq));
+      // Add to smoothing buffer
+      freqBufferRef.current.push(freq);
+      if (freqBufferRef.current.length > SMOOTH_SIZE) {
+        freqBufferRef.current.shift();
+      }
+
+      // Only update display every 100ms to prevent jitter
+      const now = Date.now();
+      if (now - lastUpdateRef.current > 100) {
+        lastUpdateRef.current = now;
+        // Median filter (removes outliers better than average)
+        const sorted = [...freqBufferRef.current].sort((a, b) => a - b);
+        const median = sorted[Math.floor(sorted.length / 2)];
+        setFrequency(Math.round(median * 10) / 10);
+        setNote(getNote(median));
+      }
     }
     rafRef.current = requestAnimationFrame(updatePitch);
   }, []);
@@ -142,7 +162,7 @@ export default function TunerPage() {
 
   return (
     <section className="pt-32 pb-24 lg:pt-40 lg:pb-32">
-      <div className="max-w-[700px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[800px] mx-auto px-6 lg:px-8">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
@@ -157,9 +177,9 @@ export default function TunerPage() {
         </div>
 
         {/* Tuner Display */}
-        <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 mb-6">
+        <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-8 sm:p-10 mb-6">
           {/* Gauge */}
-          <div className="relative w-64 h-40 mx-auto mb-6">
+          <div className="relative w-80 sm:w-96 h-48 sm:h-56 mx-auto mb-8">
             {/* Arc background */}
             <svg viewBox="0 0 200 110" className="w-full h-full">
               {/* Background arc */}
@@ -176,7 +196,7 @@ export default function TunerPage() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 transform={`rotate(${centsAngle}, 100, 100)`}
-                style={{ transition: "transform 0.15s ease-out" }}
+                style={{ transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)" }}
               />
               {/* Center dot */}
               <circle cx="100" cy="100" r="6" fill={isActive ? (isInTune ? "#22C55E" : "#D8FB32") : "#333"} />
@@ -184,18 +204,18 @@ export default function TunerPage() {
           </div>
 
           {/* Note Display */}
-          <div className="text-center mb-6">
-            <div className={`text-6xl font-bold mb-1 transition-colors ${isInTune && isActive ? "text-[#22C55E]" : "text-[#F5F5F5]"}`}>
+          <div className="text-center mb-8">
+            <div className={`text-8xl sm:text-9xl font-bold mb-2 transition-colors duration-300 ${isInTune && isActive ? "text-[#22C55E]" : "text-[#F5F5F5]"}`}>
               {note.name}
-              {isActive && note.name !== "-" && <span className="text-2xl text-[#999]">{note.octave}</span>}
+              {isActive && note.name !== "-" && <span className="text-3xl sm:text-4xl text-[#999] ml-1">{note.octave}</span>}
             </div>
             {isActive && frequency > 0 && (
-              <div className="text-[#999] text-sm">
+              <div className="text-[#999] text-base">
                 {frequency} Hz • {note.cents > 0 ? "+" : ""}{note.cents} cent
               </div>
             )}
             {isActive && isInTune && frequency > 0 && (
-              <div className="text-[#22C55E] text-sm font-medium mt-1">Akort tamam!</div>
+              <div className="text-[#22C55E] text-base font-medium mt-2">✓ Akort tamam!</div>
             )}
           </div>
 
