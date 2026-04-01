@@ -1,6 +1,16 @@
 import { MetadataRoute } from "next";
+import { getAllSlugs } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const blogSlugs = getAllSlugs();
+
+  const blogEntries: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `https://thekai.co/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: "https://thekai.co",
@@ -24,7 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://thekai.co/blog",
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.8,
     },
+    ...blogEntries,
   ];
 }
