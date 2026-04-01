@@ -8,6 +8,7 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
+  { label: "Ana Sayfa", href: "/" },
   { label: "Hizmetler", href: "/hizmetler" },
   { label: "Portfolyo", href: "/#portfolyo" },
   { label: "Blog", href: "/blog" },

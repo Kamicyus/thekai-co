@@ -1,18 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { blogPosts } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
-  title: "Blog — The Kai | AI, Müzik ve Yaratıcılık",
+  title: "Blog — The Kai | AI Ajan Sistemi, Müzik Prodüksiyon, Teknoloji",
   description:
-    "AI ajan sistemleri, müzik prodüksiyon, dijital yaratıcılık ve teknoloji üzerine yazılar. The Kai blog.",
+    "AI ajan sistemleri, yapay zeka ile müzik yapma, Claude Code rehberi, AI sesli kitap üretimi ve dijital yaratıcılık üzerine derinlemesine yazılar. The Kai blog.",
+  keywords: [
+    "AI ajan sistemi",
+    "yapay zeka müzik",
+    "Claude Code",
+    "AI sesli kitap",
+    "dijital yaratıcılık",
+    "AI otomasyon",
+    "Türkiye AI",
+  ],
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Blog — The Kai | AI, Müzik ve Yaratıcılık",
+    title: "Blog — The Kai | AI Ajan Sistemi, Müzik Prodüksiyon, Teknoloji",
     description:
-      "AI ajan sistemleri, müzik prodüksiyon, dijital yaratıcılık ve teknoloji üzerine yazılar.",
+      "AI ajan sistemleri, yapay zeka ile müzik yapma, Claude Code rehberi ve AI sesli kitap üretimi üzerine yazılar.",
     url: "https://thekai.co/blog",
+    type: "website",
   },
 };
 
@@ -21,7 +32,7 @@ export default function BlogPage() {
     <section className="pt-32 pb-24 lg:pt-40 lg:pb-32 relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         {/* Page Header */}
-        <div className="text-center mb-20 lg:mb-28">
+        <div className="text-center mb-16 lg:mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
@@ -32,42 +43,66 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            AI, müzik, teknoloji ve yaratıcılık üzerine yazılar.
+            AI ajan sistemleri, müzik prodüksiyon, Claude Code ve dijital
+            yaratıcılık üzerine derinlemesine yazılar.
           </p>
         </div>
 
-        {/* Coming Soon Card */}
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-8 sm:p-12 lg:p-16 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center mx-auto mb-6">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#D8FB32"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 20h9" />
-                <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
-              </svg>
-            </div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-              İçeriklerimiz Yakında Burada Olacak
-            </h2>
-            <p className="text-[#999999] text-base leading-relaxed mb-8 max-w-md mx-auto">
-              AI ajan sistemleri, müzik prodüksiyon süreçleri ve dijital yaratıcılık
-              üzerine derinlemesine yazılar hazırlıyoruz.
-            </p>
+        {/* Blog Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {blogPosts.map((post) => (
             <Link
-              href="/"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-sm hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.08)]"
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 hover:border-[#D8FB32]/20 transition-all duration-300 flex flex-col"
             >
-              Ana Sayfaya Dön
+              {/* Meta */}
+              <div className="flex items-center gap-3 mb-4">
+                <time
+                  dateTime={post.date}
+                  className="text-[#666666] text-xs font-medium"
+                >
+                  {new Date(post.date).toLocaleDateString("tr-TR", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </time>
+                <span className="w-1 h-1 bg-[#333333] rounded-full" />
+                <span className="text-[#666666] text-xs font-medium">
+                  {post.readingTime} okuma
+                </span>
+              </div>
+
+              {/* Title */}
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3 group-hover:text-[#D8FB32] transition-colors duration-300 leading-snug">
+                {post.title}
+              </h2>
+
+              {/* Description */}
+              <p className="text-[#999999] text-sm leading-relaxed mb-6 flex-1">
+                {post.description}
+              </p>
+
+              {/* Read More */}
+              <div className="flex items-center gap-2 text-[#D8FB32] text-sm font-medium group-hover:gap-3 transition-all duration-300">
+                <span>Devamını Oku</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </div>
             </Link>
-          </div>
+          ))}
         </div>
       </div>
     </section>
