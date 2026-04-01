@@ -45,6 +45,7 @@ const HIZMET_DETAYLARI = [
     icon: "browser",
     title: "Web Sitesi Tasarımı",
     subtitle: "Modern, hızlı, etkileyici.",
+    portfolioLink: "/portfolyo#web-siteleri",
     description:
       "Next.js, Tailwind CSS ve Framer Motion ile yüksek performanslı, görsel açıdan etkileyici web siteleri. Kurumsal siteler, landing page'ler, portfolyo siteleri ve e-ticaret çözümleri. Shortlist Creative ve thekai.co referanslarıyla.",
     features: [
@@ -111,6 +112,7 @@ const HIZMET_DETAYLARI = [
     icon: "palette",
     title: "Artwork & Tasarım",
     subtitle: "Sinematik, understated, etkileyici.",
+    portfolioLink: "/portfolyo#artwork",
     description:
       "Müzik kapak fotoğrafları, görsel kimlik tasarımı ve artwork üretimi. Kim Jung Vada tasarım portföyü referansıyla, Apple marka kimliği anlayışında minimal ve güçlü görseller.",
     features: [
@@ -427,58 +429,24 @@ export default function HizmetlerPage() {
                     </div>
                   )}
 
-                  {/* Web Sitesi Showcase — scrolling browser mockups */}
-                  {hizmet.slug === "web-sitesi-tasarimi" && (
-                    <div className="mb-8">
-                      <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
-                        Yaptığımız Siteler
-                      </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                        {[
-                          { name: "Echo Bazaar", image: "/images/projects/scroll-ozeta.jpg" },
-                          { name: "Shortlist Creative", image: "/images/projects/scroll-shortlist.jpg" },
-                          { name: "The Kai", image: "/images/projects/scroll-thekai.jpg" },
-                        ].map((site, i) => (
-                          <div key={site.name} className="group/site">
-                            {/* Browser frame */}
-                            <div className="rounded-t-xl bg-[#1A1A1A] border border-[#2A2A2A] border-b-0 px-3 py-2.5 flex items-center gap-2">
-                              <div className="flex gap-1.5">
-                                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-                                <span className="w-2.5 h-2.5 rounded-full bg-[#FEBD2E]" />
-                                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-                              </div>
-                              <div className="flex-1 mx-2 bg-[#0A0A0A] rounded-md h-5 flex items-center px-2">
-                                <span className="text-[10px] text-[#555]">●</span>
-                              </div>
-                            </div>
-                            {/* Scrolling viewport */}
-                            <div className="h-[280px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 relative bg-[#0A0A0A]">
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={site.image}
-                                alt={`${site.name} web sitesi`}
-                                className="w-full h-auto object-cover object-top"
-                                loading="lazy"
-                                style={{
-                                  animation: `scrollSite ${12 + i * 4}s ease-in-out infinite alternate`,
-                                }}
-                              />
-                            </div>
-                            {/* Site name */}
-                            <p className="text-center text-[#F5F5F5] text-sm font-medium mt-3">{site.name}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* CTA */}
-                  <Link
-                    href="/iletisim"
-                    className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-sm hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.08)]"
-                  >
-                    İletişime Geç
-                  </Link>
+                  {/* CTAs */}
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/iletisim"
+                      className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-sm hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.08)]"
+                    >
+                      İletişime Geç
+                    </Link>
+                    {hizmet.portfolioLink && (
+                      <Link
+                        href={hizmet.portfolioLink}
+                        className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#1F2937] text-[#F5F5F5] font-semibold rounded-[10px] text-sm hover:border-[#D8FB32]/30 hover:bg-[#D8FB32]/5 transition-all duration-200"
+                      >
+                        Örnekleri Gör
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </FadeIn>
             </div>

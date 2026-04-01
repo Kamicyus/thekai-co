@@ -96,16 +96,62 @@ export default function PortfolyoPage() {
             </span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-5">
-            Artwork Galerisi
+            Portfolyo
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            Müzik kapakları, dijital sanat ve yaratıcı projeler.
+            Web siteleri, müzik kapakları, dijital sanat ve yaratıcı projeler.
             <br />
             Her eser bir dünya, her tasarım bir hikaye.
           </p>
         </FadeIn>
 
+        {/* Web Siteleri */}
+        <div id="web-siteleri" className="scroll-mt-28">
+        <FadeIn className="mb-20">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3">
+            Web Siteleri
+          </h2>
+          <p className="text-[#999999] text-base mb-8 max-w-lg">
+            Modern teknolojilerle geliştirdiğimiz web projeleri.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { name: "Echo Bazaar", image: "/images/projects/scroll-ozeta.jpg" },
+              { name: "Shortlist Creative", image: "/images/projects/scroll-shortlist.jpg" },
+              { name: "The Kai", image: "/images/projects/scroll-thekai.jpg" },
+            ].map((site, i) => (
+              <div key={site.name} className="group/site">
+                {/* Browser frame */}
+                <div className="rounded-t-xl bg-[#1A1A1A] border border-[#2A2A2A] border-b-0 px-3 py-2.5 flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FEBD2E]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+                  </div>
+                  <div className="flex-1 mx-2 bg-[#0A0A0A] rounded-md h-5" />
+                </div>
+                {/* Scrolling viewport */}
+                <div className="h-[320px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
+                  <img
+                    src={site.image}
+                    alt={`${site.name} web sitesi`}
+                    className="w-full h-auto object-cover object-top"
+                    loading="lazy"
+                    style={{
+                      animation: `scrollSite ${12 + i * 4}s ease-in-out infinite alternate`,
+                    }}
+                  />
+                </div>
+                {/* Site name */}
+                <p className="text-center text-[#F5F5F5] text-sm font-medium mt-3">{site.name}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+        </div>
+
         {/* Müzik Artwork'leri */}
+        <div id="artwork" className="scroll-mt-28">
         <FadeIn className="mb-20">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">
             Müzik Artwork'leri
@@ -138,6 +184,7 @@ export default function PortfolyoPage() {
             ))}
           </div>
         </FadeIn>
+        </div>
 
         {/* Dijital Sanat / Kim Jung Vada */}
         <FadeIn>
