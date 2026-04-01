@@ -43,81 +43,76 @@ export default function Hero() {
 
       {/* Orbiting Planets — "Dünyalar Kuruyoruz" */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
-        {/* Orbit ring 1 — subtle */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-[#1F2937]/20"
-          style={{ originX: "50%", originY: "50%" }}
-        />
-
-        {/* Neptune — large orbit, slow */}
+        {/* Neptune — widest orbit, slow */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: 360 }}
-          transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -350, left: -8 }}>
-            <div className="w-4 h-4 rounded-full opacity-40"
-              style={{ background: "radial-gradient(circle at 30% 30%, #5B8DEF, #1a3a8a)" }}
+          <div className="absolute" style={{ top: -480, left: -10 }}>
+            <div className="w-6 h-6 rounded-full opacity-35"
+              style={{ background: "radial-gradient(circle at 30% 30%, #5B8DEF, #1a3a8a)", boxShadow: "0 0 15px rgba(91,141,239,0.2)" }}
             />
           </div>
         </motion.div>
 
-        {/* Jupiter — medium orbit */}
-        <motion.div
-          className="absolute top-1/2 left-1/2"
-          style={{ width: 0, height: 0 }}
-          animate={{ rotate: -360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        >
-          <div className="absolute" style={{ top: -260, left: -10 }}>
-            <div className="w-5 h-5 rounded-full opacity-35"
-              style={{ background: "radial-gradient(circle at 30% 30%, #D4A76A, #8B6914)" }}
-            />
-          </div>
-        </motion.div>
-
-        {/* Mars — closer orbit, faster */}
+        {/* Saturn — wide orbit with ring */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: 360 }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -180, left: -5 }}>
-            <div className="w-3 h-3 rounded-full opacity-30"
-              style={{ background: "radial-gradient(circle at 30% 30%, #E07040, #8B3A1A)" }}
-            />
-          </div>
-        </motion.div>
-
-        {/* Saturn — wide orbit with ring effect */}
-        <motion.div
-          className="absolute top-1/2 left-1/2"
-          style={{ width: 0, height: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 75, repeat: Infinity, ease: "linear" }}
-        >
-          <div className="absolute" style={{ top: -310, left: -8 }}>
+          <div className="absolute" style={{ top: -420, left: -10 }}>
             <div className="relative">
-              <div className="w-4 h-4 rounded-full opacity-30"
-                style={{ background: "radial-gradient(circle at 30% 30%, #E8D5A3, #A08040)" }}
+              <div className="w-5 h-5 rounded-full opacity-30"
+                style={{ background: "radial-gradient(circle at 30% 30%, #E8D5A3, #A08040)", boxShadow: "0 0 12px rgba(232,213,163,0.15)" }}
               />
-              {/* Saturn ring */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-2 rounded-full border border-[#E8D5A3]/20 -rotate-[25deg]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-3 rounded-full border border-[#E8D5A3]/25 -rotate-[25deg]" />
             </div>
           </div>
         </motion.div>
 
-        {/* Small moon — tight orbit, fast */}
+        {/* Jupiter — large, reverse direction */}
         <motion.div
           className="absolute top-1/2 left-1/2"
           style={{ width: 0, height: 0 }}
           animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute" style={{ top: -130, left: -3 }}>
-            <div className="w-2 h-2 rounded-full bg-[#D8FB32] opacity-15" />
+          <div className="absolute" style={{ top: -360, left: -12 }}>
+            <div className="w-7 h-7 rounded-full opacity-30"
+              style={{ background: "radial-gradient(circle at 30% 30%, #D4A76A, #8B6914)", boxShadow: "0 0 18px rgba(212,167,106,0.15)" }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Mars — medium orbit */}
+        <motion.div
+          className="absolute top-1/2 left-1/2"
+          style={{ width: 0, height: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute" style={{ top: -300, left: -7 }}>
+            <div className="w-4 h-4 rounded-full opacity-25"
+              style={{ background: "radial-gradient(circle at 30% 30%, #E07040, #8B3A1A)", boxShadow: "0 0 10px rgba(224,112,64,0.15)" }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Green moon — spark colored, closest */}
+        <motion.div
+          className="absolute top-1/2 left-1/2"
+          style={{ width: 0, height: 0 }}
+          animate={{ rotate: -360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute" style={{ top: -240, left: -4 }}>
+            <div className="w-3 h-3 rounded-full bg-[#D8FB32] opacity-12"
+              style={{ boxShadow: "0 0 8px rgba(216,251,50,0.15)" }}
+            />
           </div>
         </motion.div>
       </div>
@@ -137,7 +132,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -top-3 sm:-top-4 md:-top-5 left-0 sm:left-4 font-serif italic text-[14px] sm:text-xl md:text-[22px] text-[#999999] -rotate-[15deg] select-none whitespace-nowrap"
+              className="absolute -top-4 sm:-top-6 md:-top-7 left-2 sm:left-8 md:left-10 font-serif italic text-[18px] sm:text-2xl md:text-[28px] text-[#999999] -rotate-[15deg] select-none whitespace-nowrap"
             >
               The
             </motion.span>
