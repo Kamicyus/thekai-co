@@ -20,10 +20,28 @@ const MUSIC_ARTWORKS = [
     image: "/images/artworks/kamer-genius.jpg",
   },
   {
+    title: "Beni Affet",
+    category: "SINGLE ARTWORK",
+    description: "Siyah-beyaz portre ve kırmızı kaligrafi — duygusal derinlik.",
+    image: "/images/artworks/beni-affet.jpg",
+  },
+  {
+    title: "Boş Vitrin",
+    category: "SINGLE ARTWORK",
+    description: "Kolaj ve çift pozlama tekniğiyle pop-art esintili artwork.",
+    image: "/images/artworks/bos-vitrin.jpg",
+  },
+  {
     title: "Yandı Dibine Kadar",
     category: "SINGLE ARTWORK",
     description: "Çöl estetiği ve sinematik görsellikle tasarlanan artwork.",
     image: "/images/artworks/yandi-dibine-kadar.jpg",
+  },
+  {
+    title: "Cosmic Dervish",
+    category: "SINGLE ARTWORK",
+    description: "Kapadokya'da kozmik müzisyenler — psikedelik Anadolu rock artwork.",
+    image: "/images/artworks/cosmic-dervish.jpg",
   },
 ];
 
