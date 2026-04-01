@@ -1315,6 +1315,367 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "spotify-sarkı-dagitim-rehberi",
+    title: "Spotify'a Şarkı Yüklemek: 2026 Dağıtım Rehberi",
+    description:
+      "Spotify, Apple Music ve diğer platformlara şarkı nasıl yüklenir? Dijital dağıtım servisleri karşılaştırması, royalty hesaplama ve ilk release stratejisi.",
+    date: "2026-04-01",
+    readingTime: "8 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "Spotify şarkı yükleme",
+      "dijital müzik dağıtım",
+      "DistroKid",
+      "TuneCore",
+      "müzik dağıtım servisi",
+      "Spotify for Artists",
+      "şarkı yayınlama",
+    ],
+    coverImage: "/images/blog/spotify-sarki-dagitim-rehberi.jpg",
+    content: [
+      {
+        type: "p",
+        text: "İlk şarkımı 2015'te yayınladım. O zamanlar süreç çok daha karmaşıktı — fiziksel albüm dağıtımından dijitale geçiş henüz tamamlanmamıştı. Bugün? <strong>Telefonundan şarkı kaydedip aynı gün Spotify'a yükleyebilirsin.</strong> Ama \"yüklemek\" ile \"doğru yüklemek\" arasında dağlar kadar fark var. Bu yazıda hem teknik süreci hem de stratejik yaklaşımı anlatıyorum.",
+      },
+      {
+        type: "h2",
+        text: "Dijital Dağıtım Nedir?",
+      },
+      {
+        type: "p",
+        text: "Spotify, Apple Music, YouTube Music, Deezer, Tidal — bu platformlara doğrudan şarkı yükleyemezsin. Arada bir <strong>dijital dağıtım servisi</strong> (distributor) olması gerekiyor. Bu servisler şarkını alıp tüm platformlara dağıtır, royalty'lerini toplar ve sana öder. Bir nevi dijital plak şirketi gibi düşün — ama sen kontrolü bırakmıyorsun.",
+      },
+      {
+        type: "h2",
+        text: "En İyi Dağıtım Servisleri Karşılaştırması",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>DistroKid ($22.99/yıl):</strong> Sınırsız şarkı yükleme, hızlı dağıtım, basit arayüz. Benim tercihim. %100 royalty sana kalıyor.",
+          "<strong>TuneCore ($9.99/single, $29.99/albüm/yıl):</strong> Yıllık ücret, ama güvenilir ve köklü. UnitedMasters ile birleşti.",
+          "<strong>CD Baby ($9.95/single, $29/albüm — tek seferlik):</strong> Tek ödeme modeli. %9 komisyon alıyor ama yıllık ücret yok.",
+          "<strong>Amuse (ücretsiz plan var):</strong> Ücretsiz dağıtım, ama royalty ödemesi yavaş. Pro plan ($59.99/yıl) daha hızlı.",
+          "<strong>LANDR ($12/yıl'dan başlıyor):</strong> Mastering + dağıtım birlikte. Kaliteli ses isteyenler için pratik.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Şarkı Yükleme Süreci (Adım Adım)",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>1. Master audio dosyası hazırla:</strong> WAV veya FLAC, 44.1kHz/16-bit minimum. MP3 kabul eden platformlar var ama kalite düşer.",
+          "<strong>2. Artwork hazırla:</strong> 3000x3000px, JPG veya PNG, RGB renk modu. Bulanık veya düşük çözünürlüklü görseller reddedilir.",
+          "<strong>3. Metadata doldur:</strong> Şarkı adı, sanatçı adı, albüm adı, genre, release tarihi, ISRC kodu, songwriter kredileri.",
+          "<strong>4. Dağıtım servisine yükle:</strong> Tüm bilgileri gir, platformları seç, release tarihini belirle.",
+          "<strong>5. 1-3 gün bekle:</strong> Platformlar onayladıktan sonra şarkın yayına girer. Spotify genellikle 24 saat, Apple Music 2-3 gün.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "İlk Release Stratejisi",
+      },
+      {
+        type: "p",
+        text: "Şarkını yayınlamadan önce yapman gereken en önemli şey: <strong>Spotify for Artists</strong> hesabını doğrulamak. Bu sayede profil fotoğrafını düzenleyebilir, biyografini yazabilir ve en önemlisi — <strong>playlist editörlerine pitch yapabilirsin</strong>. Release tarihinden en az 7 gün önce pitch'ini gönder.",
+      },
+      {
+        type: "p",
+        text: "Benim KİM? albümüm Spotify Keşfet playlist'inde yer aldı. Nasıl mı? İyi bir pitch, doğru zamanlama ve tutarlı release takvimi. Tek bir viral şarkıya güvenmek yerine düzenli çıkış yapmak algoritmayı besler.",
+      },
+      {
+        type: "h2",
+        text: "Royalty ve Kazanç",
+      },
+      {
+        type: "p",
+        text: "Spotify'da ortalama stream başı ödeme: <strong>$0.003-0.005</strong>. Yani 1 milyon stream ≈ $3.000-5.000. Az gibi görünebilir ama birden fazla platformda, birden fazla şarkıyla bu rakamlar birikir. Apple Music daha iyi ödüyor (~$0.01/stream). YouTube Music en düşük ödeyen platformlardan.",
+      },
+      {
+        type: "p",
+        text: "Bağımsız sanatçı olarak <strong>%100 royalty</strong> senin. Bir plak şirketiyle anlaşırsan bu %15-50'ye düşebilir. Bu yüzden dijital dağıtım servisleri bağımsız müzisyenler için devrim niteliğinde.",
+      },
+      {
+        type: "cta",
+        label: "Müzik Dağıtım Danışmanlığı Al",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Spotify'a şarkı yüklemek ücretsiz mi?",
+            answer:
+              "Doğrudan yükleyemezsin, bir dağıtım servisi kullanman gerekir. Amuse gibi ücretsiz seçenekler var, ama DistroKid gibi ücretli servisler çok daha hızlı ve güvenilir. Yıllık $22.99 ile sınırsız şarkı yükleyebilirsin.",
+          },
+          {
+            question: "Şarkım ne kadar sürede yayına girer?",
+            answer:
+              "Genellikle 1-3 iş günü. Spotify 24 saat içinde yayına alabilir, Apple Music 2-3 gün sürebilir. İlk release için 2 hafta önceden yüklemeyi öneriyorum — playlist pitch süresi için.",
+          },
+          {
+            question: "ISRC kodu nedir ve nereden alırım?",
+            answer:
+              "ISRC (International Standard Recording Code), her ses kaydına atanan benzersiz bir kod. Çoğu dağıtım servisi otomatik üretiyor. Manuel almak istersen Türkiye'de MÜ-YAP üzerinden başvurabilirsin.",
+          },
+          {
+            question: "Cover şarkı yayınlayabilir miyim?",
+            answer:
+              "Evet, ama telif haklarına dikkat. Çoğu dağıtım servisi (DistroKid dahil) cover lisansı sunar. Mekanik lisans almadan cover yayınlamak telif ihlalidir ve şarkın kaldırılabilir.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "freelancer-olarak-ai-hizmeti-satmak",
+    title: "Freelancer Olarak AI Hizmeti Satmak: 2026 Rehberi",
+    description:
+      "AI otomasyon, chatbot, ajan sistemi ve AI içerik üretimi gibi hizmetleri freelancer olarak nasıl satabilirsin? Fiyatlandırma, müşteri bulma ve portföy oluşturma rehberi.",
+    date: "2026-04-01",
+    readingTime: "9 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "AI freelancer",
+      "AI hizmeti satmak",
+      "freelancer AI otomasyon",
+      "yapay zeka danışmanlık",
+      "AI iş fikirleri",
+      "ChatGPT ile para kazanmak",
+      "AI freelance fiyatlandırma",
+    ],
+    coverImage: "/images/blog/freelancer-olarak-ai-hizmeti-satmak.jpg",
+    content: [
+      {
+        type: "p",
+        text: "2024'te kendi AI ajan sistemimi kurdum. 2025'te bunu müşterilerime de kurmaya başladım. 2026'da The Kai'yi resmi olarak şirketleştirdim. Bu süreçte öğrendiğim en önemli şey: <strong>AI hizmeti satmak teknik bilgi kadar, doğru pozisyonlama ve güven inşası gerektiriyor.</strong> Bu yazıda kendi deneyimlerimden yola çıkarak freelancer olarak AI hizmeti satmanın yol haritasını çiziyorum.",
+      },
+      {
+        type: "h2",
+        text: "Hangi AI Hizmetlerini Satabilirsin?",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>AI Chatbot / Asistan:</strong> Web sitelerine veya Telegram/WhatsApp'a entegre edilen akıllı asistanlar. Müşteri hizmeti otomasyonu.",
+          "<strong>AI Otomasyon:</strong> Tekrarlayan iş süreçlerini otomatikleştirme. E-posta yanıtlama, veri girişi, rapor oluşturma.",
+          "<strong>AI İçerik Üretimi:</strong> Blog, sosyal medya, e-posta bülteni — AI destekli içerik stratejisi ve üretimi.",
+          "<strong>AI Ajan Sistemi:</strong> Birden fazla AI ajanın koordineli çalıştığı karmaşık otomasyon sistemleri. En yüksek değerli hizmet.",
+          "<strong>AI Danışmanlık:</strong> Şirketlere AI stratejisi, araç seçimi ve implementasyon yol haritası sunma.",
+          "<strong>Prompt Mühendisliği:</strong> Kurumlar için özel prompt kütüphaneleri ve workflow tasarımı.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Fiyatlandırma Stratejisi",
+      },
+      {
+        type: "p",
+        text: "En büyük hata: saatlik ücret biçmek. AI hizmetlerinde <strong>değer bazlı fiyatlandırma</strong> kullan. Bir chatbot saatte 50$ ile yapılabilir ama müşteriye ayda 10.000$'lık müşteri hizmeti maliyeti tasarrufu sağlıyorsa, 3.000-5.000$ fiyat biçmek gayet makul.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Basit chatbot:</strong> $500-2.000 (tek seferlik) + aylık $100-300 bakım",
+          "<strong>AI otomasyon kurulumu:</strong> $1.000-5.000 proje bazlı",
+          "<strong>AI içerik stratejisi:</strong> $500-2.000/ay retainer",
+          "<strong>AI ajan sistemi:</strong> $3.000-15.000+ (karmaşıklığa göre)",
+          "<strong>AI danışmanlık:</strong> $150-500/saat veya $2.000-5.000/ay",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Müşteri Nereden Bulunur?",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>LinkedIn:</strong> AI hizmetleri için en güçlü platform. Haftalık 2-3 değerli post at, vaka çalışmaları paylaş.",
+          "<strong>Upwork / Fiverr:</strong> Başlangıç için iyi, portföy oluşturmak için. Ama uzun vadede kendi markandan satış yapmayı hedefle.",
+          "<strong>Twitter/X:</strong> AI topluluğu çok aktif. Öğrendiklerini paylaş, projelerini göster.",
+          "<strong>Referans:</strong> En güçlü kanal. İlk 3-5 müşterini mükemmel hizmetle kazan, gerisi gelir.",
+          "<strong>Kendi web siten:</strong> Blog + portföy + iletişim formu. SEO ile organik müşteri çekimi. Biz <a href='/hizmetler'>The Kai'de tam da bunu yapıyoruz</a>.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Portföy Nasıl Oluşturulur?",
+      },
+      {
+        type: "p",
+        text: "Müşterin yokken portföy nasıl yaparsın? Basit: <strong>kendin için yap.</strong> Kendi işini otomatize et, kendi web sitene chatbot kur, kendi sosyal medyanı AI ile yönet. Sonuçları belgele. İlk 2-3 müşterini indirimli al, vaka çalışması olarak kullan. Benim yolculuğum tam olarak böyle başladı.",
+      },
+      {
+        type: "p",
+        text: "Portföyünde şunlar olsun: problem tanımı, çözüm yaklaşımı, kullanılan araçlar, sonuçlar (rakamlarla). \"Müşterinin e-posta yanıt süresini 24 saatten 2 saate düşürdük\" gibi somut ifadeler güven yaratır.",
+      },
+      {
+        type: "h2",
+        text: "Gerekli Teknik Yetkinlikler",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Prompt mühendisliği:</strong> Claude, ChatGPT, Gemini ile etkili çalışabilme",
+          "<strong>API entegrasyonu:</strong> OpenAI/Anthropic API, webhook'lar, n8n/Zapier gibi otomasyon araçları",
+          "<strong>Temel programlama:</strong> Python veya JavaScript — en azından script yazabilecek kadar",
+          "<strong>No-code araçlar:</strong> Voiceflow, Botpress, Make.com — hızlı prototipleme için",
+          "<strong>İş analizi:</strong> Müşterinin ihtiyacını anlama, doğru çözümü önerme",
+        ],
+      },
+      {
+        type: "cta",
+        label: "AI Hizmeti Kurmak İstiyorum",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI bilmeden bu işe başlayabilir miyim?",
+            answer:
+              "Evet, ama öğrenmeye hazır olmalısın. Temel prompt mühendisliği ve bir otomasyon aracı (n8n, Make.com) öğrenmek 2-4 hafta sürer. Programlama bilmeden de no-code araçlarla chatbot kurabilirsin.",
+          },
+          {
+            question: "Hangi AI modelini kullanmalıyım?",
+            answer:
+              "Genel amaçlı: Claude (Anthropic) veya GPT-4 (OpenAI). Kod odaklı: Claude Code veya GitHub Copilot. Görsel: Midjourney, DALL-E 3. Müzik: Suno, Udio. Projeye göre model seç, tek bir modele bağlı kalma.",
+          },
+          {
+            question: "AI freelancer olarak ne kadar kazanılır?",
+            answer:
+              "Başlangıçta aylık $1.000-3.000, deneyim ve portföy büyüdükçe $5.000-15.000+. AI ajan sistemi gibi yüksek değerli hizmetler tek projede $10.000+ getirebilir. Önemli olan doğru pozisyonlama ve sürekli öğrenme.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "youtube-kanal-buyutme-stratejisi",
+    title: "YouTube Kanal Büyütme Stratejisi: 0'dan 20M Dinlenmeye",
+    description:
+      "YouTube kanalını nasıl büyütürsün? Echo Bazaar'ı 0'dan 20 milyon dinlenmeye taşıyan stratejiler: SEO, thumbnail tasarımı, yükleme sıklığı ve algoritma.",
+    date: "2026-04-01",
+    readingTime: "10 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "YouTube kanal büyütme",
+      "YouTube SEO",
+      "YouTube algoritması",
+      "YouTube thumbnail tasarımı",
+      "YouTube abone kasma",
+      "YouTube başarı stratejisi",
+      "YouTube içerik stratejisi",
+    ],
+    coverImage: "/images/blog/youtube-kanal-buyutme-stratejisi.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Echo Bazaar kanalını 2024'te kurdum. 2025 sonunda 20 milyon dinlenmeyi aştık. Nasıl mı? Büyük bütçe yok, reklam yok, viral şans yok. Sadece <strong>tutarlı strateji, veri odaklı optimizasyon ve algoritmayı anlama</strong>. Bu yazıda Echo Bazaar'ı büyütürken öğrendiğim her şeyi paylaşıyorum.",
+      },
+      {
+        type: "h2",
+        text: "YouTube Algoritması Nasıl Çalışır?",
+      },
+      {
+        type: "p",
+        text: "YouTube'un tek bir amacı var: <strong>izleyiciyi platformda tutmak.</strong> Algoritma bu amaca hizmet eden videoları öne çıkarır. İki kritik metrik var: CTR (tıklama oranı) ve AVD (ortalama izlenme süresi). CTR yüksek + AVD uzun = algoritma seni seviyor.",
+      },
+      {
+        type: "p",
+        text: "Bunun pratikte anlamı: thumbnail ve başlık tıklama yaratmalı (CTR), video ise insanları tutmalı (AVD). İlk 30 saniye kritik — izleyiciyi neden bu videoyu sonuna kadar izlemesi gerektiğine ikna etmelisin.",
+      },
+      {
+        type: "h2",
+        text: "Thumbnail Tasarımının Gücü",
+      },
+      {
+        type: "p",
+        text: "Echo Bazaar'da en büyük dönüm noktası thumbnail stratejimizi değiştirdiğimiz an oldu. <strong>CTR %2'den %8'e çıktı</strong> — bu tek başına 4 kat daha fazla görüntülenme demek.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Kontrast:</strong> Arka plan ve ön plan arasında güçlü renk kontrast. Sarı-siyah, kırmızı-beyaz gibi kombinasyonlar.",
+          "<strong>Yüz ifadesi:</strong> İnsan yüzü (şaşkınlık, merak) CTR'ı %30 artırıyor. Echo Bazaar'da bunu sanatçı görselleriyle yapıyoruz.",
+          "<strong>Az metin:</strong> Maximum 3-4 kelime. Telefonda okunabilir olmalı — izleyicilerin %70'i mobil.",
+          "<strong>A/B test:</strong> Her video için 2-3 thumbnail tasarla. İlk 48 saatte en düşük CTR olanı değiştir.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "İçerik Stratejisi: Ne Sıklıkla Yüklemeli?",
+      },
+      {
+        type: "p",
+        text: "Echo Bazaar'da haftada 3-5 video yüklüyoruz. Bu agresif bir tempo ama AI destekli prodüksiyon sürecimiz sayesinde sürdürülebilir. Başlangıç için <strong>haftada 2 video</strong> ideal. Tutarlılık kaliteden bile önemli — algoritma düzenli yükleyicileri ödüllendiriyor.",
+      },
+      {
+        type: "p",
+        text: "Bir formül: <strong>%70 kanıtlanmış format, %20 deney, %10 trend.</strong> Çalışan formatı tekrarla, yeni şeyler dene, trend konulara atla. Ama asla sadece trend peşinde koşma.",
+      },
+      {
+        type: "h2",
+        text: "YouTube SEO: Aranarak Bulunmak",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Başlık:</strong> Ana anahtar kelimeyi başlığın başına koy. 'Lofi Hip Hop Mix — 1 Hour Study Music' gibi.",
+          "<strong>Açıklama:</strong> İlk 2 cümle kritik — aramada görünüyor. Ana ve yan anahtar kelimeler doğal olarak yer alsın.",
+          "<strong>Etiketler:</strong> 15-20 etiket. Ana kelime, varyasyonları ve ilişkili konular.",
+          "<strong>Chapters:</strong> Video bölümlerini işaretle. Hem izleyici deneyimini iyileştirir hem SEO'ya katkı sağlar.",
+          "<strong>Playlist:</strong> İlgili videoları playlist'lere grupla. İzlenme süresini %20-40 artırır.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Gelir Modelleri",
+      },
+      {
+        type: "p",
+        text: "YouTube Partner Programı (AdSense) en temel gelir kaynağı ama tek başına yetmez. Echo Bazaar'ın gelir dağılımı kabaca: <strong>%40 AdSense, %30 Spotify/Apple Music royalty, %20 sponsorluk, %10 diğer.</strong> Çoklu gelir akışı oluştur.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>AdSense:</strong> 1000 izlenme başına $1-8 (niş ve coğrafyaya göre değişir)",
+          "<strong>Sponsorluk:</strong> 10K+ aboneden sonra markalar gelmeye başlıyor",
+          "<strong>Affiliate marketing:</strong> Ürün önerileri, müzik ekipmanı, yazılım",
+          "<strong>Kendi ürünlerin:</strong> Beat satışı, kurs, danışmanlık, merch",
+          "<strong>Cross-platform:</strong> YouTube içeriğini Spotify, podcast, blog'a taşı",
+        ],
+      },
+      {
+        type: "cta",
+        label: "YouTube Strateji Danışmanlığı Al",
+        href: "/iletisim",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "YouTube'da kaç aboneyle para kazanılır?",
+            answer:
+              "YouTube Partner Programı için minimum 1.000 abone + 4.000 saat izlenme (veya 10 milyon Shorts görüntüleme) gerekiyor. Bu eşiklere ulaştıktan sonra AdSense geliri başlıyor. Ama gerçek para 10K+ abonede sponsorluk ve çoklu gelir akışlarıyla geliyor.",
+          },
+          {
+            question: "Hangi niş en çok kazandırıyor?",
+            answer:
+              "Finans, teknoloji ve eğitim en yüksek CPM'e sahip nişler ($10-30/1000 izlenme). Müzik ve eğlence daha düşük CPM ($1-5) ama hacim çok daha yüksek. Önemli olan senin tutkulu olduğun ve tutarlı üretebileceğin bir niş seçmek.",
+          },
+          {
+            question: "AI ile YouTube içerik üretilebilir mi?",
+            answer:
+              "Kesinlikle — biz Echo Bazaar'da AI destekli prodüksiyon yapıyoruz. AI müzik üretimi (Suno), thumbnail tasarımı (Midjourney), script yazımı (Claude), video düzenleme — hepsi AI ile hızlandırılabilir. Ama tamamen AI'a bırakmak yerine AI'ı araç olarak kullan, sen yönet.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
