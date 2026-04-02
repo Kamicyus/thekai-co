@@ -2048,6 +2048,656 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "google-ads-kampanya-rehberi",
+    title: "Google Ads ile İlk Kampanyanızı Nasıl Oluşturursunuz?",
+    description:
+      "Google Ads'e sıfırdan başlamak isteyenler için kapsamlı rehber. Kampanya türleri, bütçe yönetimi, anahtar kelime stratejisi ve dönüşüm takibi — gerçek deneyimlerle.",
+    date: "2026-04-01",
+    readingTime: "10 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "Google Ads",
+      "Google reklam",
+      "dijital pazarlama",
+      "PPC",
+      "kampanya oluşturma",
+    ],
+    coverImage: "/images/blog/google-ads-kampanya-rehberi.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Google Ads, dijital pazarlamanın en güçlü araçlarından biri — ama ilk kez açtığınızda sizi boğabilecek kadar karmaşık bir arayüzle karşılaşıyorsunuz. Kampanya türleri, teklif stratejileri, anahtar kelime eşleme türleri, negatif anahtar kelimeler... Liste uzayıp gidiyor. Ben The Kai olarak müşterilerime Google Ads kampanyaları kurarken en çok karşılaştığım sorunu biliyorum: nereden başlayacağını bilememek. Bu yazıda, ilk kampanyanızı adım adım nasıl oluşturacağınızı, bütçenizi nasıl yöneteceğinizi ve en önemlisi paranızı nasıl boşa harcamayacağınızı anlatacağım.",
+      },
+      {
+        type: "h2",
+        text: "Google Ads Nedir ve Neden Hâlâ Bu Kadar Etkili?",
+      },
+      {
+        type: "p",
+        text: "Google Ads (eski adıyla Google AdWords), Google'ın reklam platformu. Arama sonuçlarında, YouTube'da, Gmail'de ve milyonlarca web sitesinde reklamlarınızı göstermenizi sağlıyor. 2026'da hâlâ bu kadar etkili olmasının nedeni basit: insanlar bir şey satın almak istediğinde hâlâ Google'a yazıyor. SEO uzun vadeli bir yatırım — ama Google Ads ile bugün arama sonuçlarının en üstünde çıkabilirsiniz.",
+      },
+      {
+        type: "p",
+        text: "Rakamlarla konuşayım: Google Ads'in ortalama <strong>dönüşüm oranı arama ağında %4-6</strong> arasında. Yani her 100 tıklamadan 4-6'sı müşteriye dönüşüyor. E-ticaret için bu oran %2-3, hizmet sektörü için %5-8'e kadar çıkabiliyor. Doğru yapılandırıldığında, harcadığınız her 1 TL'nin 5-10 TL'ye dönmesini sağlayabilirsiniz. Ama \"doğru yapılandırıldığında\" kısmı kritik.",
+      },
+      {
+        type: "h2",
+        text: "Kampanya Türleri: Hangisini Seçmelisiniz?",
+      },
+      {
+        type: "p",
+        text: "Google Ads'te birkaç kampanya türü var ve doğru olanı seçmek başarınızın yarısı:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Arama Kampanyası (Search):</strong> Google'da arama yapan kullanıcılara metin reklamı gösterir. En yüksek dönüşüm oranına sahip kampanya türü. Hizmet satıyorsanız buradan başlayın.",
+          "<strong>Görüntülü Reklam (Display):</strong> Web sitelerinde banner reklam. Marka bilinirliği için iyi ama dönüşüm oranı düşük. İlk kampanyanız için önermiyorum.",
+          "<strong>YouTube Reklamları (Video):</strong> YouTube'da video reklam. Marka bilinirliği ve retargeting için güçlü. Bütçeniz varsa ikinci adım olarak ekleyin.",
+          "<strong>Performance Max:</strong> Google'ın AI destekli kampanya türü. Tüm Google ağında otomatik optimizasyon yapıyor. E-ticaret için harika ama kontrolü bırakmak istemiyorsanız dikkatli olun.",
+          "<strong>Alışveriş Kampanyası (Shopping):</strong> Ürün satıyorsanız ve Google Merchant Center'ınız varsa, ürün görselleriyle arama sonuçlarında çıkarsınız.",
+        ],
+      },
+      {
+        type: "p",
+        text: "İlk kampanyanız için tavsiyem: <strong>Arama kampanyasıyla başlayın.</strong> Neden? Çünkü zaten sizi arayan insanlara ulaşıyorsunuz. Bir avukat arayan biri Google'a \"İstanbul iş hukuku avukatı\" yazdığında, tam o anda reklamınız çıkıyor. Daha sıcak bir lead bulamazsınız.",
+      },
+      {
+        type: "h2",
+        text: "Adım Adım İlk Kampanyanızı Oluşturma",
+      },
+      {
+        type: "h3",
+        text: "1. Google Ads Hesabı Açma",
+      },
+      {
+        type: "p",
+        text: "<a href='https://ads.google.com' target='_blank'>ads.google.com</a> adresine gidin ve bir hesap oluşturun. Google sizi \"Akıllı Kampanya\" moduna yönlendirecek — bunu atlayın ve \"Uzman Modu\"na geçin. Akıllı Kampanya, Google'ın sizin adınıza her şeyi yönettiği basitleştirilmiş bir mod. Kulağa güzel geliyor ama kontrolü tamamen bırakıyorsunuz ve genelde pahalıya patlıyor.",
+      },
+      {
+        type: "h3",
+        text: "2. Kampanya Hedefi Belirleme",
+      },
+      {
+        type: "p",
+        text: "Google size \"Ne yapmak istiyorsunuz?\" diye soracak: satış, potansiyel müşteri, web sitesi trafiği, marka bilinirliği... Hizmet sektöründeyseniz <strong>\"Potansiyel Müşteri\"</strong> seçin. E-ticaret yapıyorsanız <strong>\"Satış\"</strong>. Bu seçim, Google'ın kampanyanızı optimize ederken kullanacağı sinyali belirler.",
+      },
+      {
+        type: "h3",
+        text: "3. Anahtar Kelime Araştırması",
+      },
+      {
+        type: "p",
+        text: "İşin en kritik kısmı burası. Yanlış anahtar kelimelere teklif verirseniz, bütçeniz 3 günde buharlaşır. Google Keyword Planner'ı kullanın — ücretsiz ve Google Ads hesabınızla erişebilirsiniz. Anahtar kelime seçerken şunlara dikkat edin:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Arama niyetine bakın:</strong> \"Web sitesi nedir\" yazan biri bilgi arıyor, satın almaya hazır değil. \"Web sitesi yaptırmak istiyorum\" yazan biri müşteri adayı. İkinci tür kelimeleri hedefleyin.",
+          "<strong>Eşleme türlerini anlayın:</strong> Geniş eşleme (broad match) çok fazla alakasız tıklama getirir. Cümle eşleme (phrase match) veya tam eşleme (exact match) ile başlayın.",
+          "<strong>Negatif anahtar kelime ekleyin:</strong> \"Ücretsiz\", \"bedava\", \"nasıl yapılır\" gibi kelimeleri negatif listeye ekleyin. Bu kelimeleri arayan kişilere reklamınız gösterilmez ve bütçenizi korursunuz.",
+          "<strong>Uzun kuyruklu kelimeleri tercih edin:</strong> \"Avukat\" yerine \"İstanbul Kadıköy iş hukuku avukatı\" hedefleyin. Daha az rekabet, daha ucuz tıklama, daha yüksek dönüşüm.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "4. Bütçe ve Teklif Stratejisi",
+      },
+      {
+        type: "p",
+        text: "İlk kampanyanız için günlük bütçeyi <strong>100-300 TL</strong> arasında tutmanızı öneriyorum. Çok düşük bütçeyle yeterli veri toplayamazsınız, çok yüksek bütçeyle de optimize etmeden para yakarsınız. Teklif stratejisi olarak başlangıçta <strong>\"Tıklamaları En Üst Düzeye Çıkar\"</strong> seçin ve maksimum TBM (tıklama başına maliyet) limiti koyun. 2-3 hafta veri topladıktan sonra <strong>\"Dönüşümleri En Üst Düzeye Çıkar\"</strong> stratejisine geçin.",
+      },
+      {
+        type: "h3",
+        text: "5. Reklam Metni Yazma",
+      },
+      {
+        type: "p",
+        text: "Google Ads'te reklam metni yazarken 3 altın kural var:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Başlıkta anahtar kelimeyi kullanın:</strong> Kullanıcı \"web sitesi yaptırmak\" yazıyorsa, başlığınızda \"Web Sitesi Yaptırın\" olmalı. Google bu eşleşmeyi kalın yazıyla vurgular.",
+          "<strong>Farklılaştırıcı özelliğinizi belirtin:</strong> \"7 Günde Teslim\", \"Ücretsiz Danışmanlık\", \"%100 Memnuniyet Garantisi\" gibi somut vaatler.",
+          "<strong>Güçlü bir CTA ekleyin:</strong> \"Hemen Teklif Alın\", \"Ücretsiz Keşif Görüşmesi İçin Arayın\" gibi aksiyon çağrıları.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Her reklam grubuna en az 3 reklam varyasyonu ekleyin. Google otomatik olarak en iyi performans göstereni daha çok gösterecek. Responsive Search Ads (Duyarlı Arama Reklamları) kullanın — 15 başlık ve 4 açıklama girip Google'ın kombinasyonları test etmesine izin verin.",
+      },
+      {
+        type: "h2",
+        text: "Dönüşüm Takibi: Ölçemediğinizi Yönetemezsiniz",
+      },
+      {
+        type: "p",
+        text: "Bu adım çoğu kişinin atladığı ve en çok para kaybettiren kısım. Dönüşüm takibi olmadan Google Ads kullanmak, gözü kapalı araba sürmek gibi. Ne olduğunu bilmiyorsunuz — hangi anahtar kelime satış getirdi, hangi reklam metni çalıştı, hangi saatte dönüşüm oranı yüksek?",
+      },
+      {
+        type: "p",
+        text: "Yapmanız gereken: <strong>Google Tag Manager</strong> kurulumu yapın, <strong>Google Analytics 4</strong> ile entegre edin ve Google Ads dönüşüm izleme kodunu sitenize ekleyin. Form gönderimi, telefon araması, WhatsApp tıklaması — ne dönüşüm olarak sayıyorsanız onu takip edin. Bu kurulumu yapmadan reklama para harcamayın.",
+      },
+      {
+        type: "h2",
+        text: "Sık Yapılan Hatalar ve Nasıl Kaçınırsınız",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Geniş eşleme ile başlamak:</strong> Google alakasız aramalara da reklamınızı gösterir. \"Web sitesi\" yazdığınızda \"web sitesi şablonları ücretsiz\" aramasında da çıkarsınız. Para yakar.",
+          "<strong>Landing page'i optimize etmemek:</strong> Reklamınız mükemmel olsa bile, tıklayan kişi karmaşık veya yavaş bir sayfaya gelirse geri döner. Reklam ile landing page arasında mesaj tutarlılığı şart.",
+          "<strong>Dönüşüm takibi kurmamak:</strong> Yukarıda bahsettim ama tekrar vurgulayacağım — bu olmadan Google Ads'e para atıyorsunuz, yatırım yapmıyorsunuz.",
+          "<strong>Optimizasyon yapmamak:</strong> Kampanyayı kurup bırakmak en büyük hata. Haftalık olarak arama terimlerini kontrol edin, kötü performans gösteren anahtar kelimeleri durdurun, iyi olanların bütçesini artırın.",
+          "<strong>Tek reklam varyasyonu kullanmak:</strong> A/B testi yapmazsan neyin işe yaradığını bilemezsin.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Gerçek Bir Örnek: Bir Müşterimizin Sonuçları",
+      },
+      {
+        type: "p",
+        text: "Geçtiğimiz ay bir müşterimiz için kurduğumuz arama kampanyasından bahsedeyim. İstanbul'da bir hukuk bürosu, iş hukuku alanında müşteri arıyordu. Aylık bütçe: 6.000 TL. İlk ay 47 potansiyel müşteri formu geldi, bunların 12'si ücretli danışmanlığa dönüştü. Müşteri başına ortalama gelir 8.000 TL olduğunu düşünürsek, 6.000 TL'lik reklam harcamasından 96.000 TL'lik iş döndü. ROI: <strong>%1.500</strong>. Tabii bu sonuç doğru anahtar kelime seçimi, optimize edilmiş landing page ve düzgün dönüşüm takibi ile mümkün oldu.",
+      },
+      {
+        type: "h2",
+        text: "Bütçeniz Kısıtlıysa Ne Yapmalısınız?",
+      },
+      {
+        type: "p",
+        text: "Herkesin binlerce lira bütçesi yok ve bu tamamen normal. Küçük bütçeyle yapabileceğiniz en akıllı hamle: <strong>çok spesifik, uzun kuyruklu anahtar kelimelere odaklanmak.</strong> \"Web sitesi\" yerine \"Kadıköy'de e-ticaret sitesi yaptırmak\" gibi. Daha az tıklama alırsınız ama her tıklama çok daha değerli olur. Ayrıca coğrafi hedeflemeyi daraltın — Türkiye geneline değil, sadece hizmet verdiğiniz şehir veya ilçeye gösterin.",
+      },
+      {
+        type: "p",
+        text: "Ve en önemlisi: <a href='/hizmetler#performans-pazarlama'>profesyonel destek almaktan çekinmeyin.</a> Google Ads karmaşık bir platform ve yanlış yapılandırma bütçenizi eritir. Biz The Kai olarak küçük bütçeli kampanyalar için de optimizasyon yapıyoruz.",
+      },
+      {
+        type: "h2",
+        text: "Google Ads mı, SEO mu?",
+      },
+      {
+        type: "p",
+        text: "İkisi de. Ama farklı zaman dilimlerinde. Google Ads hemen sonuç verir — bugün kampanya açarsanız, yarın tıklama alırsınız. SEO ise 3-6 ay sonra meyve verir ama sürdürülebilir ve ücretsiz trafik sağlar. İdeal strateji: Google Ads ile hemen müşteri kazanırken, paralelde SEO çalışması yaparak organik trafiğinizi büyütmek. <a href='/blog/web-sitesi-maliyeti-2026'>Web sitesi yatırımınızın gerçek maliyetini</a> anlamak için bu yazımızı da okuyabilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "Sıkça Sorulan Sorular",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Google Ads'te minimum bütçe ne kadar olmalı?",
+            answer:
+              "Sektöre göre değişiyor ama Türkiye'de anlamlı sonuç almak için günlük en az 100 TL (aylık ~3.000 TL) ile başlamanızı öneriyorum. Bunun altında yeterli veri toplayamaz ve optimizasyon yapamazsınız.",
+          },
+          {
+            question: "Google Ads'ten ne kadar sürede sonuç alırım?",
+            answer:
+              "İlk tıklamalar aynı gün gelir. Ama gerçek optimizasyon için 2-4 hafta veri toplamanız gerekiyor. Google'ın algoritması da kampanyanızı öğrenmek için zamana ihtiyaç duyuyor. 3 ay sonunda kampanyanız olgunlaşmış olur.",
+          },
+          {
+            question: "Google Ads'i kendim yönetebilir miyim?",
+            answer:
+              "Basit kampanyalar için evet, kendiniz yönetebilirsiniz. Ama rekabetin yoğun olduğu sektörlerde veya aylık 5.000 TL+ bütçelerde profesyonel yönetim ciddi fark yaratır. Yanlış yapılandırma bütçenizin %30-50'sini çöpe atabilir.",
+          },
+          {
+            question: "Rakiplerimin reklam stratejisini görebilir miyim?",
+            answer:
+              "Kısmen evet. Google Ads Transparency Center'dan rakiplerin aktif reklamlarını görebilirsiniz. Ayrıca SEMrush, SpyFu gibi araçlar rakiplerin hedeflediği anahtar kelimeleri ve tahmini bütçelerini gösteriyor.",
+          },
+          {
+            question: "Performance Max mı yoksa arama kampanyası mı kullanmalıyım?",
+            answer:
+              "İlk kampanyanız için arama kampanyası. Performance Max güçlü bir araç ama nasıl çalıştığını anlamadan kullanırsanız kontrolü kaybedersiniz. Arama kampanyasıyla temel metrikleri öğrendikten sonra Performance Max'i ek kanal olarak ekleyebilirsiniz.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Sonuç: İlk Adımı Atın",
+      },
+      {
+        type: "p",
+        text: "Google Ads, doğru kullanıldığında işletmenizin büyüme motorlarından biri olabilir. Ama \"doğru kullanım\" burada anahtar kelime. Yanlış anahtar kelime seçimi, dönüşüm takibi eksikliği veya optimize edilmemiş landing page'ler bütçenizi eritir. Bu yazıdaki adımları takip ederek sağlam bir temel atabilirsiniz.",
+      },
+      {
+        type: "cta",
+        text: "Google Ads kampanyanızı profesyonel şekilde kurmak ve yönetmek istiyorsanız, ücretsiz keşif görüşmesi için bize ulaşın.",
+        href: "/iletisim",
+        label: "Ücretsiz Keşif Görüşmesi",
+      },
+    ],
+  },
+  {
+    slug: "muzisyenler-icin-dijital-pazarlama",
+    title: "Müzisyenler İçin Dijital Pazarlama: Şarkınızı Dünyaya Duyurun",
+    description:
+      "Müzisyenler için dijital pazarlama stratejileri. Spotify playlist pitching, YouTube büyütme, sosyal medya ve reklam kampanyaları — gerçek deneyimlerle.",
+    date: "2026-04-01",
+    readingTime: "11 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "müzisyen dijital pazarlama",
+      "şarkı tanıtım",
+      "Spotify playlist",
+      "müzik pazarlama",
+    ],
+    coverImage: "/images/blog/muzisyenler-icin-dijital-pazarlama.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Bir şarkı yazmak, kaydetmek ve yayınlamak — bunlar zor işler. Ama asıl zor olan kısım, o şarkıyı insanlara ulaştırmak. Ben hem bir müzisyen hem de dijital pazarlamacı olarak bu işin iki tarafını da yaşadım. Kendi şarkılarımı yayınladım, 15 milyondan fazla dinlenme alan bir AI müzik kanalı (Echo Bazaar) kurdum ve bu süreçte müzik pazarlamasının dinamiklerini deneyerek öğrendim. Bu yazıda, bağımsız müzisyenlerin şarkılarını dünyaya duyurmak için kullanabileceği dijital pazarlama stratejilerini paylaşacağım.",
+      },
+      {
+        type: "h2",
+        text: "Müzik Endüstrisi Değişti — Siz de Değişmelisiniz",
+      },
+      {
+        type: "p",
+        text: "Artık bir plak şirketinin sizi keşfetmesini beklemenize gerek yok. 2026'da bir müzisyen olarak elinizde inanılmaz araçlar var: Spotify, Apple Music, YouTube, TikTok, Instagram... Sorun araç eksikliği değil, strateji eksikliği. Her gün Spotify'a 100.000'den fazla yeni şarkı yükleniyor. Bu gürültüde duyulmak için sadece iyi müzik yetmiyor — akıllı bir dijital pazarlama stratejisi de gerekiyor.",
+      },
+      {
+        type: "p",
+        text: "Bir veri paylaşayım: bağımsız müzisyenlerin %90'ından fazlası dijital pazarlama stratejisi olmadan şarkı yayınlıyor. Sonuç? İlk haftada 50-100 dinlenme, sonra unutulmak. Ama doğru stratejiyle, sıfır reklam bütçesiyle bile binlerce dinleyiciye ulaşmak mümkün.",
+      },
+      {
+        type: "h2",
+        text: "Spotify Stratejisi: Playlist'lere Girmenin Yolları",
+      },
+      {
+        type: "p",
+        text: "Spotify'da büyümenin en etkili yolu editöryal ve algoritmik playlist'lere girmek. Bunu nasıl yapacağınızı adım adım anlatayım:",
+      },
+      {
+        type: "h3",
+        text: "Spotify for Artists ile Editöryal Playlist Pitch",
+      },
+      {
+        type: "p",
+        text: "Şarkınızı yayın tarihinden en az <strong>4 hafta önce</strong> Spotify for Artists üzerinden pitch edin. Bu, Spotify editörlerine şarkınızı dinleme şansı verir. Pitch yaparken şunlara dikkat edin: şarkınızın türünü doğru seçin, mood etiketlerini ekleyin, kısa ama çarpıcı bir açıklama yazın. \"Bu şarkı çok güzel\" yazmayın — şarkının hikayesini, prodüksiyon detaylarını ve hedef kitlenizi anlatın.",
+      },
+      {
+        type: "h3",
+        text: "Algoritmik Playlist'leri Tetiklemek",
+      },
+      {
+        type: "p",
+        text: "Spotify'ın algoritmik playlist'leri (Discover Weekly, Release Radar, Radio) veriye dayalı çalışır. Algoritma şunlara bakıyor: ilk 30 saniyede skip oranı, şarkıyı sonuna kadar dinleme oranı (completion rate), kaydetme ve paylaşma oranı, playlist'lere eklenme sayısı. İlk 24-48 saat kritik. Şarkınız yayınlandığında, mevcut takipçilerinizin dinlemesini sağlayın. Onların davranışları algoritmaya sinyal gönderiyor.",
+      },
+      {
+        type: "p",
+        text: "<a href='/blog/spotify-sarki-dagitim-rehberi'>Spotify'a şarkı dağıtma sürecinin detayları için bu rehberimize</a> göz atabilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "YouTube: Müzisyenler İçin En Güçlü Platform",
+      },
+      {
+        type: "p",
+        text: "YouTube hâlâ müzik keşfi için en önemli platform. Bir şarkıyı ilk kez YouTube'da duyup sonra Spotify'da arayan milyonlarca insan var. YouTube stratejiniz şu ayaklardan oluşmalı:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Resmi müzik videosu:</strong> Bütçeniz varsa harika. Yoksa bile lyric video veya visualizer ile güçlü bir görsel deneyim sunabilirsiniz. Canva veya CapCut ile ücretsiz yapılabilir.",
+          "<strong>YouTube Shorts:</strong> 60 saniyeye kadar kısa videolar. Şarkınızın en çarpıcı 15-30 saniyesini alıp bir Shorts yapın. Behind-the-scenes, kayıt süreci, şarkının hikayesi — bunlar Shorts için harika içerikler.",
+          "<strong>SEO optimizasyonu:</strong> Video başlığı, açıklama ve etiketler çok önemli. \"Yeni Türkçe şarkı 2026\" gibi aranabilir kelimeler kullanın. Açıklamada şarkı sözlerini ekleyin — insanlar sözleri arıyor.",
+          "<strong>Düzenli yükleme:</strong> Ayda en az 2-4 video yükleyin. Tek şarkı videosu değil — arkasına unplugged versiyon, reaction, cover, making of gibi içerikler ekleyin.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Echo Bazaar kanalımda öğrendiğim en büyük ders: <strong>tutarlılık algoritmadan daha önemli.</strong> Düzenli yükleme yapan kanallar, sporadik yükleyenlerden her zaman daha iyi performans gösteriyor.",
+      },
+      {
+        type: "h2",
+        text: "Sosyal Medya Stratejisi: TikTok, Instagram, X",
+      },
+      {
+        type: "h3",
+        text: "TikTok: Viral Olma Şansınız",
+      },
+      {
+        type: "p",
+        text: "TikTok, 2026'da müzik keşfi için en güçlü platformlardan biri. Bir şarkının viral olması için milyonlarca takipçiye ihtiyacınız yok. Şarkınızın 15-30 saniyelik en akılda kalıcı bölümünü TikTok'ta paylaşın. Ama sadece ses paylaşmak yetmez — bir trend başlatın, bir challenge oluşturun veya şarkınızın kullanılabileceği bir format önerun. İnsanların o sesi kendi videolarında kullanmasını sağlayın.",
+      },
+      {
+        type: "h3",
+        text: "Instagram: Görsel Hikaye Anlatımı",
+      },
+      {
+        type: "p",
+        text: "Instagram, müzisyenler için bir portfolio ve günlük yaşam penceresi. Reels ile şarkı tanıtımı yapın, Stories ile kayıt sürecini paylaşın, Carousel postlarla şarkı sözlerinizin arkasındaki hikayeyi anlatın. İnsanlar sadece müziğinizi değil, sizi de tanımak istiyor. Otantik olmak burada her şeyden değerli.",
+      },
+      {
+        type: "h3",
+        text: "X (Twitter): Müzik Topluluğuyla Bağlantı",
+      },
+      {
+        type: "p",
+        text: "X, diğer müzisyenler, prodüktörler ve müzik endüstrisi profesyonelleriyle bağlantı kurmak için ideal. Şarkınızı sadece paylaşmayın — müzik tartışmalarına katılın, diğer sanatçıları destekleyin, sektörle ilgili düşüncelerinizi paylaşın. Networking burada gerçek sonuçlar verir.",
+      },
+      {
+        type: "h2",
+        text: "Reklam Kampanyaları: Küçük Bütçeyle Büyük Sonuçlar",
+      },
+      {
+        type: "p",
+        text: "Organik büyüme harika ama yavaş. Şarkınıza hız kazandırmak için küçük bütçeli reklam kampanyaları çok etkili olabilir:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Instagram/Facebook Ads:</strong> Şarkınızın en iyi bölümünü içeren 15 saniyelik bir video reklam oluşturun. Hedef kitle: benzer sanatçıları dinleyenler. Günlük 50-100 TL bütçeyle bile binlerce kişiye ulaşabilirsiniz.",
+          "<strong>YouTube Ads:</strong> Müzik videonuzu reklam olarak gösterin. \"Benzer şarkıları izleyenler\" hedeflemesi yapın. Görüntüleme başına maliyet genelde 0.02-0.05 TL — yani 100 TL ile 2.000-5.000 görüntüleme alabilirsiniz.",
+          "<strong>Spotify Ad Studio:</strong> Spotify'ın kendi reklam platformu. 250$ minimum bütçeyle Spotify dinleyicilerine sesli reklam verebilirsiniz. Hedefleme çok spesifik — tür, mood, yaş, lokasyon.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Önemli bir not: <strong>sahte dinlenme, sahte takipçi satın almayın.</strong> Spotify ve YouTube bu bot aktivitelerini tespit ediyor ve hesabınızı cezalandırabiliyor. Gerçek büyüme zaman alır ama kalıcıdır.",
+      },
+      {
+        type: "h2",
+        text: "Pre-Save Kampanyası: Yayın Öncesi Hype Oluşturmak",
+      },
+      {
+        type: "p",
+        text: "Şarkınız yayınlanmadan önce bir pre-save kampanyası oluşturun. DistroKid, Feature.fm veya ToneDen gibi platformlar ücretsiz pre-save linkleri oluşturmanıza imkân veriyor. Pre-save yapan dinleyiciler, şarkı yayınlandığında otomatik olarak kütüphanelerine eklenir ve dinler. Bu da Spotify algoritmasına güçlü bir ilk sinyal gönderir.",
+      },
+      {
+        type: "p",
+        text: "Pre-save kampanyanızı 2-3 hafta öncesinden başlatın. Sosyal medyada teaser paylaşın, şarkının 10 saniyelik snippet'larını verin, şarkının hikayesini anlatın. Merak uyandırın ama her şeyi göstermeyin.",
+      },
+      {
+        type: "h2",
+        text: "E-posta Listesi: Platformlardan Bağımsız Kitleniz",
+      },
+      {
+        type: "p",
+        text: "Sosyal medya algoritmaları değişir, platformlar kapanabilir — ama e-posta listeniz size ait. Bir müzisyen olarak e-posta listesi oluşturmak, uzun vadede en değerli varlığınız olacak. Web sitenize bir kayıt formu ekleyin ve her yeni şarkıda, her konserde, her önemli haberde listenize mail atın. Mailchimp veya ConvertKit ücretsiz planlarla başlamanıza yeterli.",
+      },
+      {
+        type: "h2",
+        text: "Sıkça Sorulan Sorular",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Dijital pazarlama için bütçem yok, ne yapabilirim?",
+            answer:
+              "Organik büyüme stratejilerine odaklanın: TikTok ve YouTube Shorts ile ücretsiz erişim elde edin, Spotify playlist pitch yapın, diğer müzisyenlerle işbirliği yapın. Bütçe olmadan da büyümek mümkün, sadece daha fazla zaman ve emek gerektirir.",
+          },
+          {
+            question: "Şarkımı kaç platformda yayınlamalıyım?",
+            answer:
+              "Mümkün olduğunca çok platformda. DistroKid veya TuneCore gibi dağıtıcılar tek seferde 150+ platforma yayın yapıyor. Spotify, Apple Music, YouTube Music, Amazon Music, Deezer — hepsinde olun. Dinleyicilerinizin nerede olduğunu bilemezsiniz.",
+          },
+          {
+            question: "Playlist'lere girmek için para ödemeli miyim?",
+            answer:
+              "Spotify editöryal playlist'leri için kesinlikle hayır — Spotify bunu yasaklıyor ve tespit ederse hesabınızı kapatabilir. Bağımsız playlist küratörleri için SubmitHub gibi platformlar meşru bir seçenek (genelde 1-2$ per submission). Ama \"garantili playlist yerleşimi\" vaat eden hizmetlerden uzak durun — bunlar genellikle dolandırıcılık.",
+          },
+          {
+            question: "Ne sıklıkta yeni müzik yayınlamalıyım?",
+            answer:
+              "2026'da ideal yayın sıklığı: her 4-6 haftada bir tekli. Algoritmaların sizi unutmaması için düzenli yayın şart. Bir albüm biriktirmek yerine tekli tekli yayınlayıp her birinin pazarlamasını ayrı yapmak daha etkili.",
+          },
+          {
+            question: "AI ile müzik pazarlaması yapılabilir mi?",
+            answer:
+              "Kesinlikle. AI ile sosyal medya içerik planı oluşturabilir, reklam metinleri yazabilir, thumbnail tasarlayabilir, hatta müzik videosu için görseller üretebilirsiniz. Ben Echo Bazaar'da AI'ı yoğun kullanıyorum. Ama AI'ı bir araç olarak kullanın, otantikliğinizden vazgeçmeyin.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Sonuç: Müziğiniz Hak Ettiği Kitleyi Bulsun",
+      },
+      {
+        type: "p",
+        text: "Dijital pazarlama, müzisyenler için artık bir lüks değil, bir zorunluluk. İyi müzik yapmak yetmiyor — o müziğin insanlara ulaşması için stratejik çalışmak gerekiyor. Spotify pitching, YouTube optimizasyonu, sosyal medya tutarlılığı ve akıllı reklam kampanyalarıyla bağımsız bir müzisyen olarak ciddi bir dinleyici kitlesi oluşturabilirsiniz.",
+      },
+      {
+        type: "cta",
+        text: "Müzik pazarlama stratejinizi profesyonel olarak planlamak istiyorsanız, <a href='/hizmetler#icerik-uretimi'>içerik üretimi hizmetlerimize</a> göz atın veya bizimle iletişime geçin.",
+        href: "/iletisim",
+        label: "İletişime Geçin",
+      },
+    ],
+  },
+  {
+    slug: "freelancer-ai-hizmeti-baslangic-rehberi",
+    title: "Freelancer Olarak AI Hizmeti Satmak: Başlangıç Rehberi",
+    description:
+      "AI hizmetlerini freelancer olarak satmaya sıfırdan nasıl başlanır? Hizmet paketleme, fiyatlandırma, müşteri bulma ve portföy oluşturma — The Kai deneyimiyle.",
+    date: "2026-04-01",
+    readingTime: "12 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "AI freelancer",
+      "AI hizmet satmak",
+      "Upwork AI",
+      "yapay zeka danışmanlık",
+    ],
+    coverImage: "/images/blog/freelancer-olarak-ai-hizmeti-satmak.jpg",
+    content: [
+      {
+        type: "p",
+        text: "2026'da AI hizmeti satmak, 2010'da web sitesi yapmak gibi — talep patlıyor ama arz henüz yetişmedi. Ben The Kai'yi kurarken tam da bu boşluğu gördüm. İşletmeler AI kullanmak istiyor ama nereden başlayacaklarını bilmiyorlar. Ve bu \"bilmiyoruz\" noktası, freelancer olarak senin en büyük fırsatın. Bu yazıda, AI hizmetlerini freelancer olarak nasıl paketleyeceğini, fiyatlandıracağını ve müşteri bulacağını — kendi deneyimlerimden çıkardığım derslerle anlatacağım.",
+      },
+      {
+        type: "h2",
+        text: "AI Hizmeti Satmak Ne Demek?",
+      },
+      {
+        type: "p",
+        text: "Önce kafadaki bulanıklığı giderelim. \"AI hizmeti\" dediğimizde, GPT-4 gibi bir model geliştirmekten bahsetmiyoruz. Freelancer olarak satabileceğin AI hizmetleri şunlar:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>AI otomasyon kurulumu:</strong> Zapier, Make.com, n8n gibi araçlarla iş süreçlerini otomatikleştirme. Örneğin: gelen e-postaları otomatik kategorilendirme, müşteri sorularına otomatik yanıt.",
+          "<strong>Chatbot ve AI asistan kurulumu:</strong> Web sitelerine özel AI chatbot entegrasyonu. Müşterinin bilgi tabanıyla eğitilmiş, 7/24 çalışan bir asistan.",
+          "<strong>AI ajan sistemi:</strong> Daha gelişmiş, çoklu ajan mimarileri. CRM'e bağlanan, e-posta yöneten, raporlama yapan ajan sistemleri.",
+          "<strong>AI içerik üretimi:</strong> Blog yazıları, sosyal medya içerikleri, ürün açıklamaları — AI destekli içerik üretim pipeline'ı kurma.",
+          "<strong>Veri analizi ve raporlama:</strong> AI ile müşteri verilerini analiz etme, dashboard oluşturma, tahminleme modelleri kurma.",
+          "<strong>AI eğitim ve danışmanlık:</strong> Şirket çalışanlarına AI araçlarını kullanmayı öğretme, strateji oluşturma.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Bunların hepsini yapman gerekmiyor. Birinde uzmanlaş ve o alanda derinleş. Ben The Kai olarak <a href='/hizmetler#ai-ajan-sistemi'>AI ajan sistemi kurulumuna</a> odaklandım çünkü en yüksek değeri burada gördüm.",
+      },
+      {
+        type: "h2",
+        text: "Hangi Becerilere İhtiyacın Var?",
+      },
+      {
+        type: "p",
+        text: "Kodlama bilmek avantaj ama şart değil. İhtiyacın olan beceriler:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Prompt engineering:</strong> AI modellerinden istediğin çıktıyı alma becerisi. Bu, AI hizmetlerinin temeli.",
+          "<strong>No-code/low-code araçlar:</strong> Make.com, Zapier, Bubble, n8n gibi platformlarda iş akışı kurma. Kod yazmadan ciddi otomasyonlar yapılabilir.",
+          "<strong>AI araç bilgisi:</strong> ChatGPT, Claude, Gemini, Midjourney, Suno gibi araçları derinlemesine bilmek. Hangisi ne iş yapar, sınırları ne?",
+          "<strong>İş analizi:</strong> Müşterinin ihtiyacını anlama ve bunu teknik çözüme çevirme becerisi. Bu, teknik bilgiden daha değerli.",
+          "<strong>İletişim:</strong> Teknik olmayan müşterilere AI'ın ne yapabileceğini ve ne yapamayacağını anlatabilmek.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Eğer Python veya JavaScript biliyorsan, API entegrasyonları ve özel çözümler geliştirerek fiyat aralığını ciddi şekilde yukarı çekebilirsin. Ama bilmiyorsan da no-code araçlarla aylık binlerce dolar kazanabilirsin.",
+      },
+      {
+        type: "h2",
+        text: "Fiyatlandırma: Ne Kadar Almalısın?",
+      },
+      {
+        type: "p",
+        text: "Bu en çok sorulan soru ve en çok hata yapılan konu. Saatlik çalışmayı bırak — proje bazlı veya değer bazlı fiyatla. İşte 2026 Türkiye ve global piyasa için gerçekçi fiyat aralıkları:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Basit chatbot kurulumu:</strong> 5.000-15.000 TL (veya $300-800 global piyasa)",
+          "<strong>AI otomasyon paketi (3-5 otomasyon):</strong> 10.000-30.000 TL ($500-1.500)",
+          "<strong>AI ajan sistemi (özel çözüm):</strong> 25.000-100.000+ TL ($1.500-5.000+)",
+          "<strong>AI strateji danışmanlığı (aylık):</strong> 8.000-25.000 TL ($500-1.500/ay)",
+          "<strong>AI eğitim (workshop):</strong> 3.000-10.000 TL/gün ($200-500/gün)",
+        ],
+      },
+      {
+        type: "p",
+        text: "İlk müşterilerinde fiyatı biraz düşük tutabilirsin — ama asla ücretsiz yapma. Ücretsiz yapılan iş, ne senin ne müşterinin ciddiye aldığı bir iş olur. İlk 3 projeyi portföy oluşturmak için indirimli yap, sonra piyasa fiyatına geç.",
+      },
+      {
+        type: "h2",
+        text: "Müşteri Bulma: Nereden Başlamalısın?",
+      },
+      {
+        type: "h3",
+        text: "1. Upwork ve Fiverr",
+      },
+      {
+        type: "p",
+        text: "Global freelance platformlarında \"AI automation\", \"chatbot setup\", \"AI agent\" gibi kategoriler patlıyor. Upwork'te bir profil oluştur, ilk 5-10 iş için agresif teklif ver. İlk birkaç 5-yıldızlı review'ı aldığında iş sana gelmeye başlar. Fiverr'da ise net paketler oluştur: \"I will build a custom AI chatbot for your website — $299\" gibi.",
+      },
+      {
+        type: "h3",
+        text: "2. LinkedIn",
+      },
+      {
+        type: "p",
+        text: "LinkedIn, B2B müşteri bulmak için en güçlü kanal. \"AI ile X nasıl yapılır\" konusunda düzenli içerik paylaş. Case study'lerini yayınla. Hedef sektördeki karar vericilere bağlantı isteği gönder ve değer sunan bir mesaj yaz. \"Merhaba, AI hizmeti satıyorum\" değil — \"Sektörünüzde AI ile X sürecini otomatikleştiren bir çözüm geliştirdim, sonuçları paylaşmak isterim\" gibi.",
+      },
+      {
+        type: "h3",
+        text: "3. Cold Email",
+      },
+      {
+        type: "p",
+        text: "Hedef şirketleri belirle, karar vericilerinin e-posta adreslerini bul (Apollo.io, Hunter.io gibi araçlarla) ve kişiselleştirilmiş e-postalar gönder. E-postanın yapısı: 1) Onların spesifik bir sorununu belirt, 2) AI ile nasıl çözülebileceğini anlat, 3) Benzer bir projeden sonuç paylaş, 4) 15 dakikalık bir görüşme öner. Günde 20-30 e-posta gönder, %2-5 dönüş oranı bekle.",
+      },
+      {
+        type: "h3",
+        text: "4. Yerel İşletmeler",
+      },
+      {
+        type: "p",
+        text: "En küçümsenen ama en etkili kanal. Yaşadığın şehirdeki işletmelere git, AI ile nasıl zaman ve para kazandırabileceğini göster. Bir restoran zinciri için otomatik rezervasyon chatbot'u, bir e-ticaret sitesi için müşteri hizmetleri otomasyonu, bir avukat için belge analizi — yerel işletmeler bu hizmetlere çok açık ve genelde global piyasadan daha iyi ödüyorlar.",
+      },
+      {
+        type: "h2",
+        text: "Portföy Nasıl Oluşturursun?",
+      },
+      {
+        type: "p",
+        text: "Müşteri gelmeden önce portföyün olmalı. Ama müşteri olmadan portföy nasıl oluşacak? Çözüm basit:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Kendi projelerini yap:</strong> Kendi işin için bir AI chatbot kur, otomasyonlar yap, sonuçlarını belgele. Ben kendi ajan sistemimi kurarak hem işlerimi otomatikleştirdim hem de müşterilere \"bakın, ben bunu kullanıyorum\" diyebildim.",
+          "<strong>Hayali case study'ler oluştur:</strong> Gerçek bir şirketin publicten erişilebilir verilerini kullanarak \"Bu şirket için şöyle bir çözüm kurardım\" tarzında demo projeler yap.",
+          "<strong>Open source katkı:</strong> GitHub'da AI otomasyon projeleri yayınla. Teknik yetkinliğini kanıtlar.",
+          "<strong>İçerik üret:</strong> Blog yazıları, YouTube videoları, LinkedIn postları ile uzmanlığını göster. İnsanlar senden satın almadan önce seni tanımak istiyor.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The Kai Deneyimi: Ben Nasıl Başladım?",
+      },
+      {
+        type: "p",
+        text: "Şeffaf olacağım: The Kai'yi kurarken elimde bir portföy yoktu. İlk yaptığım şey, kendi müzik projelerim için AI otomasyon sistemleri kurmak oldu. Echo Bazaar kanalı için AI ile içerik pipeline'ı, Spotify dağıtım otomasyonu, sosyal medya planlaması... Bunları gerçek projelerimde kullandım ve sonuçlarını belgeledim.",
+      },
+      {
+        type: "p",
+        text: "İlk ücretli müşterim bir arkadaşımın tavsiyesiyle geldi. Küçük bir e-ticaret sitesi için müşteri hizmetleri chatbot'u kurdum. Proje küçüktü ama sonuç büyüktü — müşteri memnuniyeti %40 arttı, destek ekibinin iş yükü %60 azaldı. Bu case study ile LinkedIn'de paylaşım yaptım ve 3 hafta içinde 4 yeni müşteri adayı geldi. Kartopu böyle büyüdü.",
+      },
+      {
+        type: "h2",
+        text: "Yasal ve Finansal Dikkat Edilecekler",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Şirket kurmak:</strong> Türkiye'de başlangıçta şahıs şirketi yeterli. Aylık gelirin 50.000 TL'yi aşmaya başladığında limited şirkete geçmeyi düşün.",
+          "<strong>Sözleşme:</strong> Her projede yazılı sözleşme yap. Kapsam, teslimat tarihi, revizyon hakları, ödeme koşulları net olmalı. Sözleşmesiz çalışmak en büyük hata.",
+          "<strong>Veri gizliliği:</strong> Müşteri verilerine erişim sağlıyorsan, KVKK ve GDPR uyumluluğunu sağla. AI sistemlerinin müşteri verilerini nasıl işlediğini şeffaf olarak belgele.",
+          "<strong>Faturalama:</strong> Global müşteriler için Wise veya Payoneer hesabı aç. Türk müşteriler için e-arşiv fatura kes.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "2026'da AI Freelancer Piyasası Nereye Gidiyor?",
+      },
+      {
+        type: "p",
+        text: "Kısa vadede talep artmaya devam edecek. Ama 2-3 yıl içinde rekabet de artacak. Şimdi başlayanlar, deneyim ve portföy avantajıyla öne geçecek. Uzun vadede ayakta kalmak için: bir nişe odaklan (sağlık sektörü AI otomasyonu, hukuk sektörü AI asistanları gibi), sürekli öğren (AI alanı ayda bir değişiyor), ve müşteri ilişkilerini güçlü tut (tekrar eden gelir, retainer modeli).",
+      },
+      {
+        type: "p",
+        text: "Bir veri daha: Upwork'ün 2026 Q1 raporuna göre \"AI & Machine Learning\" kategorisi, platformdaki en hızlı büyüyen freelance kategorisi — yıllık %340 büyüme. Bu tren henüz kalkmadı.",
+      },
+      {
+        type: "h2",
+        text: "Sıkça Sorulan Sorular",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Yazılım bilmeden AI freelancer olabilir miyim?",
+            answer:
+              "Evet. No-code araçlarla (Make.com, Zapier, Voiceflow, Botpress) ciddi AI çözümleri kurabilirsin. Ama Python veya JavaScript öğrenmek, sunabileceğin hizmet yelpazesini genişletir ve fiyatını yükseltir.",
+          },
+          {
+            question: "İlk müşteriyi bulmak ne kadar sürer?",
+            answer:
+              "Aktif olarak müşteri aradığında (günde 2-3 saat) 2-4 hafta içinde ilk müşterini bulabilirsin. LinkedIn'de içerik paylaşmak, Upwork'te teklif vermek ve yerel ağını kullanmak en hızlı yollar.",
+          },
+          {
+            question: "AI alanı çok hızlı değişiyor, nasıl takip edeceğim?",
+            answer:
+              "Haftada 3-4 saat öğrenmeye ayır. X (Twitter)'da AI thought leader'ları takip et, YouTube'da tutorial izle, yeni çıkan araçları dene. Ama her yeni aracı öğrenmeye çalışma — uzmanlık alanınla ilgili olanlarla sınırla.",
+          },
+          {
+            question: "Türkiye'den global müşteri çalışabilir miyim?",
+            answer:
+              "Kesinlikle — ve yapmalısın. Dolar bazlı gelir, TL bazlı giderlerle yaşamak büyük avantaj. Upwork, Toptal, LinkedIn üzerinden global müşteriler bulabilirsin. İngilizce iletişim becerin olması şart.",
+          },
+          {
+            question: "AI freelancer olarak ne kadar kazanabilirim?",
+            answer:
+              "Türkiye'den çalışan bir AI freelancer, başlangıçta aylık 15.000-30.000 TL, deneyimli seviyede 50.000-150.000 TL, uzman seviyede 200.000 TL+ kazanabilir. Global piyasada saatlik $50-200 aralığı yaygın.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Sonuç: Harekete Geç",
+      },
+      {
+        type: "p",
+        text: "AI freelancer olarak başlamak için mükemmel zamanı bekleme — o zaman şimdi. Talep var, rekabet henüz yoğun değil ve öğrenme kaynakları bol. İlk adımın: bir AI aracını seç, onu derinlemesine öğren, kendi projende uygula ve sonuçlarını paylaş. Portföyün oluştukça müşteriler gelecek.",
+      },
+      {
+        type: "cta",
+        text: "AI ajan sistemi kurulumu hakkında daha fazla bilgi almak veya freelance projeniz için danışmanlık istiyorsanız, <a href='/hizmetler#ai-ajan-sistemi'>AI ajan hizmetlerimize</a> göz atın.",
+        href: "/iletisim",
+        label: "İletişime Geçin",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
