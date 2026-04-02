@@ -36,16 +36,30 @@ export default function MetronomPage() {
   const playClick = useCallback((time: number, isAccent: boolean) => {
     if (!audioContextRef.current) return;
     const ctx = audioContextRef.current;
+
+    // Primary tone — louder, sharper
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
-    osc.type = "sine";
-    osc.frequency.value = isAccent ? 1000 : 800;
-    gain.gain.value = isAccent ? 0.5 : 0.3;
-    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.05);
+    osc.type = "square";
+    osc.frequency.value = isAccent ? 1200 : 900;
+    gain.gain.value = isAccent ? 1.0 : 0.7;
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.08);
     osc.connect(gain);
     gain.connect(ctx.destination);
     osc.start(time);
-    osc.stop(time + 0.05);
+    osc.stop(time + 0.08);
+
+    // Click layer — adds punch
+    const osc2 = ctx.createOscillator();
+    const gain2 = ctx.createGain();
+    osc2.type = "triangle";
+    osc2.frequency.value = isAccent ? 2400 : 1800;
+    gain2.gain.value = isAccent ? 0.6 : 0.4;
+    gain2.gain.exponentialRampToValueAtTime(0.001, time + 0.03);
+    osc2.connect(gain2);
+    gain2.connect(ctx.destination);
+    osc2.start(time);
+    osc2.stop(time + 0.03);
   }, []);
 
   const scheduler = useCallback(() => {
