@@ -125,10 +125,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-[#1F2937]/50">
-          <p className="text-[#666666] text-xs text-center">
+        <div className="mt-16 pt-8 border-t border-[#1F2937]/50 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-[#666666] text-xs">
             &copy; 2026 The Kai. Tüm hakları saklıdır.
           </p>
+          <Link
+            href="/gizlilik"
+            className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
+          >
+            Gizlilik Politikası
+          </Link>
         </div>
       </div>
     </footer>
