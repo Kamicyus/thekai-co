@@ -1,52 +1,30 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 
-const STEPS = [
-  {
-    number: "01",
-    title: "Keşfet",
-    description:
-      "İhtiyaçlarınızı dinliyor, hedeflerinizi anlıyoruz. Derinlemesine analiz ile projenin kapsamını belirliyoruz.",
-  },
-  {
-    number: "02",
-    title: "Tasarla",
-    description:
-      "Strateji ve mimariyi oluşturuyoruz. Teknoloji seçimi, içerik planı, görsel kimlik — her detay planlanıyor.",
-  },
-  {
-    number: "03",
-    title: "Kur",
-    description:
-      "Planı hayata geçiriyoruz. Hızlı iterasyonlar, sürekli iletişim. İlerlemeyi birlikte takip ediyoruz.",
-  },
-  {
-    number: "04",
-    title: "Eğit",
-    description:
-      "Sistemi teslim ediyor, ekibinizi eğitiyoruz. Dokümantasyon ve video rehberlerle bağımsız kullanımı sağlıyoruz.",
-  },
-  {
-    number: "05",
-    title: "Destek",
-    description:
-      "Lansman sonrası yanınızdayız. Performans takibi, optimizasyon ve teknik destek.",
-  },
-];
+const STEP_KEYS = ["discover", "design", "build", "train", "support"] as const;
 
 export default function Process() {
+  const t = useTranslations("process");
+
+  const STEPS = STEP_KEYS.map((key, i) => ({
+    number: String(i + 1).padStart(2, "0"),
+    title: t(`steps.${key}.title`),
+    description: t(`steps.${key}.description`),
+  }));
+
   return (
     <section className="py-24 lg:py-32">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         {/* Section Title */}
         <FadeIn className="text-center mb-16 lg:mb-20">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Nasıl Çalışıyoruz
+            {t("title")}
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Her projeye aynı disiplinle yaklaşıyoruz.
+            {t("subtitle")}
           </p>
         </FadeIn>
 

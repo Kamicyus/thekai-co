@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
 export default function CTABanner() {
+  const t = useTranslations("cta");
+
   return (
     <section
       id="cta"
@@ -110,16 +113,16 @@ export default function CTABanner() {
       <FadeIn>
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] tracking-[-0.02em] mb-6 max-w-3xl mx-auto leading-tight">
-            Bir Sonraki Dünyanızı<br className="hidden sm:block" /> Birlikte Kuralım
+            {t("title")}
           </h2>
           <p className="text-[#0A0A0A]/70 text-lg sm:text-xl mb-10 max-w-lg mx-auto">
-            Projenizi konuşalım. Müzik, teknoloji veya yaratıcı içerik — farketmez.
+            {t("subtitle")}
           </p>
           <Link
             href="/iletisim"
             className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#0A0A0A] text-[#D8FB32] font-semibold rounded-[10px] text-base hover:bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-200 shadow-xl"
           >
-            İletişime Geç
+            {t("button")}
             <span className="animate-[spin-slow_3s_linear_infinite] inline-flex">
               <DecorativePinwheel size={16} opacity={0.9} />
             </span>

@@ -2,91 +2,86 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
-const PROJECTS = [
-  {
-    category: "AI Müzik",
+const PROJECT_KEYS = [
+  "echo-bazaar",
+  "prime-beats",
+  "lofi-reworks",
+  "kim-jung-vada",
+  "eksi-maya-sports",
+  "murmur",
+] as const;
+
+const PROJECT_META: Record<string, {
+  title: string;
+  accentFrom: string;
+  accentTo: string;
+  decoration: "pinwheel" | "waves" | "circuit";
+  image: string;
+  href?: string;
+}> = {
+  "echo-bazaar": {
     title: "Echo Bazaar",
-    description:
-      "Türk halk müziğini yapay zekâ ile yeniden yorumlayan YouTube kanalı. 20 milyon dinlenmeyi aştı.",
-    metric: "20M+ dinlenme",
     accentFrom: "#D8FB32",
     accentTo: "#2DD4BF",
-    decoration: "pinwheel" as const,
+    decoration: "pinwheel",
     image: "/images/projects/echo-bazaar-logo.jpg",
   },
-  {
-    category: "Beat Prodüksiyon",
+  "prime-beats": {
     title: "Prime Beats",
-    description:
-      "Psychedelic fusion, trap ve melodic beat prodüksiyonu. Ücretsiz type beat kanalı.",
-    metric: "83 video",
     accentFrom: "#F59E0B",
     accentTo: "#EC4899",
-    decoration: "waves" as const,
+    decoration: "waves",
     image: "/images/projects/prime-beats.jpg",
   },
-  {
-    category: "Lo-Fi Müzik",
+  "lofi-reworks": {
     title: "Lofi Reworks",
-    description:
-      "Dünyaca ünlü pop şarkılarının lo-fi versiyonları. 'What if X made LoFi?' konsepti.",
-    metric: "26 video",
     accentFrom: "#8B5CF6",
     accentTo: "#EC4899",
-    decoration: "waves" as const,
+    decoration: "waves",
     image: "/images/projects/lofi-reworks.jpg",
   },
-  {
-    category: "Tasarım",
+  "kim-jung-vada": {
     title: "Kim Jung Vada",
-    description:
-      "Kore ve Hint kültürlerinden ilham alan görsel tasarım projesi. Müzik artwork, dijital illüstrasyon ve marka kimliği çalışmaları.",
-    metric: "Tasarım Portföyü",
     accentFrom: "#EF4444",
     accentTo: "#F59E0B",
-    decoration: "waves" as const,
+    decoration: "waves",
     image: "/images/projects/kimjungvada.jpg",
     href: "/portfolyo",
   },
-  {
-    category: "Sosyal Medya",
-    title: "Ekşi Maya Sports",
-    description:
-      "Spor odaklı sosyal medya yönetimi ve içerik üretimi. Strateji, tasarım ve topluluk yönetimi.",
-    metric: "Müşteri Projesi",
+  "eksi-maya-sports": {
+    title: "Eksi Maya Sports",
     accentFrom: "#06B6D4",
     accentTo: "#D8FB32",
-    decoration: "circuit" as const,
+    decoration: "circuit",
     image: "/images/projects/eksi-maya-sports.jpg",
   },
-  {
-    category: "Yayıncılık",
+  "murmur": {
     title: "Murmur",
-    description:
-      "AI sesli kitap yayınevi. Klasik edebiyatı yapay zekâ seslendirmesiyle yeniden hayata geçiriyoruz.",
-    metric: "Yeni Proje",
     accentFrom: "#F59E0B",
     accentTo: "#EF4444",
-    decoration: "waves" as const,
+    decoration: "waves",
     image: "/images/projects/murmur.jpg",
   },
-];
+};
 
 export default function Showcase() {
+  const t = useTranslations("showcase");
+
   return (
     <section id="portfolyo" className="py-24 lg:py-32 bg-[#0D0D0D]">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         {/* Section Title */}
         <FadeIn className="text-center mb-16 lg:mb-20">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Dünyalar Kuruyoruz
+            {t("title")}
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Her proje bir dünya. İşte yarattıklarımız.
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -95,10 +90,14 @@ export default function Showcase() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           staggerDelay={0.12}
         >
-          {PROJECTS.map((project) => {
+          {PROJECT_KEYS.map((key) => {
+            const project = PROJECT_META[key];
+            const category = t(`projects.${key}.category`);
+            const description = t(`projects.${key}.description`);
+            const metric = t(`projects.${key}.metric`);
             const Wrapper = project.href ? ({ children, className }: { children: React.ReactNode; className: string }) => <Link href={project.href!} className={className}>{children}</Link> : ({ children, className }: { children: React.ReactNode; className: string }) => <div className={className}>{children}</div>;
             return (
-            <StaggerItem key={project.title}>
+            <StaggerItem key={key}>
               <Wrapper className="group relative flex flex-col h-full bg-[#141414] border border-[#1F2937] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01]">
                 {/* Header Area — Image or Gradient */}
                 {project.image ? (
@@ -114,13 +113,13 @@ export default function Showcase() {
                     {/* Category badge */}
                     <div className="absolute top-6 left-6 z-10">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A]/60 backdrop-blur-sm text-[#D8FB32] border border-[#1F2937]">
-                        {project.category}
+                        {category}
                       </span>
                     </div>
                     {/* Metric badge */}
                     <div className="absolute bottom-6 right-6 z-10">
                       <span className="text-sm font-bold text-[#F5F5F5]/80">
-                        {project.metric}
+                        {metric}
                       </span>
                     </div>
                   </div>
@@ -170,13 +169,13 @@ export default function Showcase() {
                     {/* Category badge */}
                     <div className="absolute top-6 left-6">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A]/60 backdrop-blur-sm text-[#D8FB32] border border-[#1F2937]">
-                        {project.category}
+                        {category}
                       </span>
                     </div>
                     {/* Metric badge */}
                     <div className="absolute bottom-6 right-6">
                       <span className="text-sm font-bold text-[#F5F5F5]/80">
-                        {project.metric}
+                        {metric}
                       </span>
                     </div>
                   </div>
@@ -188,7 +187,7 @@ export default function Showcase() {
                     {project.title}
                   </h3>
                   <p className="text-[#999999] text-base leading-relaxed flex-1">
-                    {project.description}
+                    {description}
                   </p>
                 </div>
               </Wrapper>

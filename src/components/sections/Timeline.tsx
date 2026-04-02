@@ -1,63 +1,24 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
-const MILESTONES = [
-  {
-    year: "2011",
-    title: "Başlangıç",
-    description: "Kurucu Kamer Can İzvermez, müzik yolculuğuna şarkı yazarak başladı. Müziğini dağıtmak ve tanıtmak adına pazarlama, tasarım ve dijital strateji öğrenmeye koyuldu.",
-  },
-  {
-    year: "2011–2023",
-    title: "Çok Yönlü Deneyim",
-    description:
-      "Dergi editörlüğü, call center, spor ajanslarında sosyal medya yönetimi — farklı sektörlerde çalışırken hep müzik yapmaya ve şarkılar çıkarmaya devam etti. Bu süreçte pazarlama, marka yönetimi ve dijital içerik üretiminin inceliklerini sahada öğrendi.",
-  },
-  {
-    year: "2023",
-    title: "Yapay Zeka Dönüşümü",
-    description:
-      "AI araçlarını en başından beri iş süreçlerine entegre eden Kamer, yapay zekanın yaratıcı endüstriyi dönüştürme potansiyelini erken fark etti. Otomasyon ve AI ajan sistemleri kurmaya başladı.",
-  },
-  {
-    year: "2024",
-    title: "Echo Bazaar",
-    description:
-      "The Kai'nin ilk büyük projesi: AI müzik kanalı kuruldu. YouTube'da yükselen bir marka haline geldi.",
-  },
-  {
-    year: "2025",
-    title: "20 Milyon+ Dinlenme",
-    description:
-      "Echo Bazaar 20 milyon dinlenmeyi aştı. KİM? albümü Spotify Keşif playlist'inde yer aldı. 72+ AI ajan sistemi kuruldu, operasyonlar otomatize edildi.",
-  },
-  {
-    year: "2026",
-    title: "The Kai",
-    description:
-      "Şirket resmi olarak kuruldu. thekai.co yayına girdi. Müzik, teknoloji ve yaratıcılığı birleştiren bir stüdyo doğdu.",
-  },
-  {
-    year: "2026",
-    title: "Murmur",
-    description:
-      "AI sesli kitap yayınevi projesi başlatıldı. Yeni dünyalar kurmaya devam.",
-  },
-];
+const MILESTONE_KEYS = ["m1", "m2", "m3", "m4", "m5", "m6", "m7"] as const;
 
 export default function Timeline() {
+  const t = useTranslations("timeline");
+
   return (
     <section className="py-24 lg:py-32 bg-[#0D0D0D]">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         {/* Section Title */}
         <FadeIn className="text-center mb-16 lg:mb-20">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Yolculuk
+            {t("title")}
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Bir fikrin stüdyoya dönüşme hikâyesi.
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -67,8 +28,8 @@ export default function Timeline() {
           <div className="absolute left-[23px] lg:left-[27px] top-0 bottom-0 w-px bg-gradient-to-b from-[#D8FB32]/40 via-[#1F2937] to-[#1F2937]/20" />
 
           <div className="space-y-12">
-            {MILESTONES.map((milestone, i) => (
-              <FadeIn key={`${milestone.year}-${milestone.title}`} delay={i * 0.1}>
+            {MILESTONE_KEYS.map((key, i) => (
+              <FadeIn key={key} delay={i * 0.1}>
                 <div className="relative flex items-start gap-6 lg:gap-8">
                   {/* Pinwheel dot — snaps 72deg on hover */}
                   <div className="relative z-10 flex-shrink-0 mt-1">
@@ -80,13 +41,13 @@ export default function Timeline() {
                   {/* Content */}
                   <div className="pb-2">
                     <span className="inline-block text-sm font-bold text-[#D8FB32] mb-1 tracking-wide">
-                      {milestone.year}
+                      {t(`milestones.${key}.year`)}
                     </span>
                     <h3 className="text-lg lg:text-xl font-semibold text-[#F5F5F5] mb-1">
-                      {milestone.title}
+                      {t(`milestones.${key}.title`)}
                     </h3>
                     <p className="text-[#999999] text-base leading-relaxed">
-                      {milestone.description}
+                      {t(`milestones.${key}.description`)}
                     </p>
                   </div>
                 </div>

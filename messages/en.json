@@ -58,6 +58,101 @@
       }
     }
   },
+  "stats": {
+    "streams": "Total Streams",
+    "agents": "AI Agents",
+    "services": "Service Areas",
+    "tools": "Free Tools"
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Every project follows the same approach.",
+    "steps": {
+      "discover": { "title": "Discover", "description": "We understand your vision, analyze your market, and identify key opportunities." },
+      "design": { "title": "Design", "description": "Strategy and concept development. We create a creative brief and visual direction." },
+      "build": { "title": "Build", "description": "We bring the plan to life. AI-powered production for fast, high-quality results." },
+      "train": { "title": "Train", "description": "We teach your team the tools and systems, so the value we create keeps compounding." },
+      "support": { "title": "Support", "description": "Ongoing maintenance, optimization, and support after delivery." }
+    }
+  },
+  "showcase": {
+    "title": "Building Worlds",
+    "subtitle": "Every project is a world. Here's what we've created.",
+    "projects": {
+      "echo-bazaar": {
+        "category": "AI Music",
+        "description": "A YouTube channel reimagining Turkish folk music with AI. Surpassed 20 million streams.",
+        "metric": "20M+ streams"
+      },
+      "prime-beats": {
+        "category": "Beat Production",
+        "description": "Psychedelic fusion, trap and melodic beat production. Free type beat channel.",
+        "metric": "83 videos"
+      },
+      "lofi-reworks": {
+        "category": "Lo-Fi Music",
+        "description": "Lo-fi versions of world-famous pop songs. 'What if X made LoFi?' concept.",
+        "metric": "26 videos"
+      },
+      "kim-jung-vada": {
+        "category": "Design",
+        "description": "A visual design project inspired by Korean and Indian cultures. Music artwork, digital illustration and brand identity work.",
+        "metric": "Design Portfolio"
+      },
+      "eksi-maya-sports": {
+        "category": "Social Media",
+        "description": "Sports-focused social media management and content production. Strategy, design and community management.",
+        "metric": "Client Project"
+      },
+      "murmur": {
+        "category": "Publishing",
+        "description": "AI audiobook publisher. Bringing classic literature back to life through AI narration.",
+        "metric": "New Project"
+      }
+    }
+  },
+  "timeline": {
+    "title": "The Journey",
+    "subtitle": "The story of an idea becoming a studio.",
+    "milestones": {
+      "m1": { "year": "2011", "title": "The Beginning", "description": "Founder Kamer Can Izvermez started his music journey by writing songs. He began learning marketing, design and digital strategy to distribute and promote his music." },
+      "m2": { "year": "2011-2023", "title": "Versatile Experience", "description": "Magazine editing, call center, social media management at sports agencies -- while working across different sectors, he never stopped making music and releasing songs. During this time, he learned the nuances of marketing, brand management and digital content production in the field." },
+      "m3": { "year": "2023", "title": "AI Transformation", "description": "Kamer, who integrated AI tools into his workflows from the very beginning, recognized early the potential of artificial intelligence to transform the creative industry. He began building automation and AI agent systems." },
+      "m4": { "year": "2024", "title": "Echo Bazaar", "description": "The Kai's first major project: an AI music channel was launched. It became a rising brand on YouTube." },
+      "m5": { "year": "2025", "title": "20 Million+ Streams", "description": "Echo Bazaar surpassed 20 million streams. The KIM? album was featured on Spotify's Discover playlist. 72+ AI agent systems were built, operations were automated." },
+      "m6": { "year": "2026", "title": "The Kai", "description": "The company was officially founded. thekai.co went live. A studio merging music, technology and creativity was born." },
+      "m7": { "year": "2026", "title": "Murmur", "description": "The AI audiobook publishing project was launched. Continuing to build new worlds." }
+    }
+  },
+  "about": {
+    "title": "About The Kai",
+    "subtitle": "A studio building worlds at the intersection of music, technology and creativity.",
+    "founderTitle": "Founder",
+    "founderRole": "Founder & Creative Director",
+    "founderBio": "Musician, songwriter, composer, AI entrepreneur. From writing songs to building AI agent systems — 15 years of creative journey.",
+    "paragraph1": "The Kai is a creative studio that merges music and technology. From AI music production to software development, from content creation to automation systems — we offer a wide range of services.",
+    "paragraph2": "With the Echo Bazaar project, we surpassed 20 million streams in the AI music space. With MURMUR, we're bringing classic literature back to life through AI narration. We manage our own operations with over 72 AI agents.",
+    "paragraph3": "We bring the same technology and vision to your project. Whether you're building an AI agent system, producing content, or developing a web app — The Kai approaches every project with the same passion.",
+    "quote": "Every project is a world. Every world is a story. And every story grows with technology.",
+    "highlights": {
+      "item1": "AI-Native Studio",
+      "item2": "72+ AI Agent Infrastructure",
+      "item3": "20M+ Total Streams",
+      "item4": "6 Active Projects"
+    },
+    "values": {
+      "title": "Our Values",
+      "creativity": { "title": "Creativity", "description": "Every project is a world. We approach each one with fresh eyes." },
+      "technology": { "title": "Technology", "description": "AI-native approach. We don't just use AI — we think with it." },
+      "quality": { "title": "Quality", "description": "Obsessive attention to detail. From pixel to production." },
+      "transparency": { "title": "Transparency", "description": "Clear communication, honest pricing, no surprises." }
+    }
+  },
+  "cta": {
+    "title": "Let's Build Your Next World Together",
+    "subtitle": "Whatever service you need, we'll create a custom solution for you.",
+    "button": "Get in Touch"
+  },
   "footer": {
     "brandDescription": "Call Me Kai — A studio at the intersection\nof music, technology and creativity.",
     "pages": "Pages",

@@ -58,6 +58,101 @@
       }
     }
   },
+  "stats": {
+    "streams": "Toplam Dinlenme",
+    "agents": "AI Ajan",
+    "services": "Hizmet Alanı",
+    "tools": "Ücretsiz Araç"
+  },
+  "process": {
+    "title": "Nasıl Çalışıyoruz",
+    "subtitle": "Her projeye aynı yaklaşımla başlıyoruz.",
+    "steps": {
+      "discover": { "title": "Keşfet", "description": "Vizyonunuzu anlıyoruz, pazarınızı analiz ediyoruz ve projenin kapsamını belirliyoruz." },
+      "design": { "title": "Tasarla", "description": "Strateji ve konsept geliştirme. Yaratıcı brief ve görsel yön oluşturuyoruz." },
+      "build": { "title": "Kur", "description": "Planı hayata geçiriyoruz. AI destekli üretim süreciyle hızlı ve kaliteli sonuçlar." },
+      "train": { "title": "Eğit", "description": "Araçları ve sistemleri öğretiyoruz. Yarattığımız değer birikmeli olarak büyüyor." },
+      "support": { "title": "Destek", "description": "Teslimat sonrası bakım, optimizasyon ve sürekli destek." }
+    }
+  },
+  "showcase": {
+    "title": "Dünyalar Kuruyoruz",
+    "subtitle": "Her proje bir dünya. İşte yarattıklarımız.",
+    "projects": {
+      "echo-bazaar": {
+        "category": "AI Müzik",
+        "description": "Türk halk müziğini yapay zekâ ile yeniden yorumlayan YouTube kanalı. 20 milyon dinlenmeyi aştı.",
+        "metric": "20M+ dinlenme"
+      },
+      "prime-beats": {
+        "category": "Beat Prodüksiyon",
+        "description": "Psychedelic fusion, trap ve melodic beat prodüksiyonu. Ücretsiz type beat kanalı.",
+        "metric": "83 video"
+      },
+      "lofi-reworks": {
+        "category": "Lo-Fi Müzik",
+        "description": "Dünyaca ünlü pop şarkılarının lo-fi versiyonları. 'What if X made LoFi?' konsepti.",
+        "metric": "26 video"
+      },
+      "kim-jung-vada": {
+        "category": "Tasarım",
+        "description": "Kore ve Hint kültürlerinden ilham alan görsel tasarım projesi. Müzik artwork, dijital illüstrasyon ve marka kimliği çalışmaları.",
+        "metric": "Tasarım Portföyü"
+      },
+      "eksi-maya-sports": {
+        "category": "Sosyal Medya",
+        "description": "Spor odaklı sosyal medya yönetimi ve içerik üretimi. Strateji, tasarım ve topluluk yönetimi.",
+        "metric": "Müşteri Projesi"
+      },
+      "murmur": {
+        "category": "Yayıncılık",
+        "description": "AI sesli kitap yayınevi. Klasik edebiyatı yapay zekâ seslendirmesiyle yeniden hayata geçiriyoruz.",
+        "metric": "Yeni Proje"
+      }
+    }
+  },
+  "timeline": {
+    "title": "Yolculuk",
+    "subtitle": "Bir fikrin stüdyoya dönüşme hikâyesi.",
+    "milestones": {
+      "m1": { "year": "2011", "title": "Başlangıç", "description": "Kurucu Kamer Can İzvermez, müzik yolculuğuna şarkı yazarak başladı. Müziğini dağıtmak ve tanıtmak adına pazarlama, tasarım ve dijital strateji öğrenmeye koyuldu." },
+      "m2": { "year": "2011–2023", "title": "Çok Yönlü Deneyim", "description": "Dergi editörlüğü, call center, spor ajanslarında sosyal medya yönetimi — farklı sektörlerde çalışırken hep müzik yapmaya ve şarkılar çıkarmaya devam etti. Bu süreçte pazarlama, marka yönetimi ve dijital içerik üretiminin inceliklerini sahada öğrendi." },
+      "m3": { "year": "2023", "title": "Yapay Zeka Dönüşümü", "description": "AI araçlarını en başından beri iş süreçlerine entegre eden Kamer, yapay zekanın yaratıcı endüstriyi dönüştürme potansiyelini erken fark etti. Otomasyon ve AI ajan sistemleri kurmaya başladı." },
+      "m4": { "year": "2024", "title": "Echo Bazaar", "description": "The Kai'nin ilk büyük projesi: AI müzik kanalı kuruldu. YouTube'da yükselen bir marka haline geldi." },
+      "m5": { "year": "2025", "title": "20 Milyon+ Dinlenme", "description": "Echo Bazaar 20 milyon dinlenmeyi aştı. KİM? albümü Spotify Keşif playlist'inde yer aldı. 72+ AI ajan sistemi kuruldu, operasyonlar otomatize edildi." },
+      "m6": { "year": "2026", "title": "The Kai", "description": "Şirket resmi olarak kuruldu. thekai.co yayına girdi. Müzik, teknoloji ve yaratıcılığı birleştiren bir stüdyo doğdu." },
+      "m7": { "year": "2026", "title": "Murmur", "description": "AI sesli kitap yayınevi projesi başlatıldı. Yeni dünyalar kurmaya devam." }
+    }
+  },
+  "about": {
+    "title": "The Kai Hakkında",
+    "subtitle": "Müzik, teknoloji ve yaratıcılık kesişiminde dünyalar kuran bir stüdyo.",
+    "founderTitle": "Kurucu",
+    "founderRole": "Founder & Creative Director",
+    "founderBio": "Müzisyen, söz yazarı, besteci, AI girişimci. Şarkı yazmaktan AI ajan sistemi kurmaya — 15 yıllık yaratıcılık yolculuğu.",
+    "paragraph1": "The Kai, müzik ile teknolojiyi birleştiren bir yaratıcı stüdyodur. AI müzik prodüksiyonundan yazılım geliştirmeye, içerik üretiminden otomasyon sistemlerine kadar geniş bir yelpazede hizmet veriyoruz.",
+    "paragraph2": "Echo Bazaar projesiyle AI müzik dünyasında 20 milyon dinlenmeyi aştık. MURMUR ile klasik edebiyatı yapay zekâ sesiyle yeniden hayata geçiriyoruz. 72'den fazla AI ajanla kendi operasyonlarımızı yönetiyoruz.",
+    "paragraph3": "Aynı teknolojiyi ve vizyonu sizin projeniz için de kullanıyoruz. İster bir AI ajan sistemi kurun, ister içerik üretin, ister bir web uygulaması geliştirin — The Kai her projeye aynı tutkuyla yaklaşır.",
+    "quote": "Her proje bir dünya. Her dünya bir hikâye. Ve her hikâye, teknolojiyle büyüyor.",
+    "highlights": {
+      "item1": "AI-Native Stüdyo",
+      "item2": "72+ AI Ajan Altyapısı",
+      "item3": "20M+ Toplam Dinlenme",
+      "item4": "6 Aktif Proje"
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "creativity": { "title": "Yaratıcılık", "description": "Her proje bir dünya. Her birine taze gözlerle yaklaşıyoruz." },
+      "technology": { "title": "Teknoloji", "description": "AI-native yaklaşım. AI'ı sadece kullanmıyoruz — onunla düşünüyoruz." },
+      "quality": { "title": "Kalite", "description": "Detaylara takıntılı özen. Pikselden prodüksiyona kadar." },
+      "transparency": { "title": "Şeffaflık", "description": "Net iletişim, dürüst fiyatlandırma, sürpriz yok." }
+    }
+  },
+  "cta": {
+    "title": "Bir Sonraki Dünyanızı Birlikte Kuralım",
+    "subtitle": "Hangi hizmete ihtiyacınız olursa olsun, size özel bir çözüm üretiyoruz.",
+    "button": "İletişime Geç"
+  },
   "footer": {
     "brandDescription": "Call Me Kai — Müzik, teknoloji ve\nyaratıcılık kesişiminde bir stüdyo.",
     "pages": "Sayfalar",

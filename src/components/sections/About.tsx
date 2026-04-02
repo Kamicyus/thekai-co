@@ -4,12 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 
-const HIGHLIGHTS = [
-  "20M+ AI müzik dinlenme",
-  "72+ AI ajan deneyimi",
-  "15 yıl şarkı yazarlığı",
-  "MURMUR sesli kitap yayınevi",
-];
+const HIGHLIGHT_KEYS = ["item1", "item2", "item3", "item4"] as const;
 
 export default function About() {
   const t = useTranslations("about");
@@ -33,22 +28,9 @@ export default function About() {
           <div className="lg:col-span-3">
             <FadeIn delay={0.1}>
               <div className="space-y-5 text-[#999999] text-base sm:text-lg leading-relaxed">
-                <p>
-                  The Kai, müzik ile teknolojiyi birleştiren bir yaratıcı stüdyodur.
-                  AI müzik prodüksiyonundan yazılım geliştirmeye, içerik üretiminden
-                  otomasyon sistemlerine kadar geniş bir yelpazede hizmet veriyoruz.
-                </p>
-                <p>
-                  Echo Bazaar projesiyle AI müzik dünyasında 20 milyon dinlenmeyi
-                  aştık. MURMUR ile klasik edebiyatı yapay zekâ sesiyle yeniden hayata
-                  geçiriyoruz. 72&apos;den fazla AI ajanla kendi operasyonlarımızı
-                  yönetiyoruz.
-                </p>
-                <p>
-                  Aynı teknolojiyi ve vizyonu sizin projeniz için de kullanıyoruz.
-                  İster bir AI ajan sistemi kurun, ister içerik üretin, ister bir web
-                  uygulaması geliştirin — The Kai her projeye aynı tutkuyla yaklaşır.
-                </p>
+                <p>{t("paragraph1")}</p>
+                <p>{t("paragraph2")}</p>
+                <p>{t("paragraph3")}</p>
               </div>
             </FadeIn>
 
@@ -56,8 +38,7 @@ export default function About() {
             <FadeIn delay={0.2}>
               <div className="mt-10 pl-6 border-l-2 border-[#D8FB32]">
                 <p className="text-[#F5F5F5] text-xl lg:text-2xl font-medium italic leading-relaxed">
-                  &ldquo;Her proje bir dünya. Her dünya bir hikâye. Ve her hikâye,
-                  teknolojiyle büyüyor.&rdquo;
+                  &ldquo;{t("quote")}&rdquo;
                 </p>
               </div>
             </FadeIn>
@@ -77,21 +58,21 @@ export default function About() {
                       Kamer
                     </p>
                     <p className="text-[#999999] text-sm">
-                      Founder &amp; Creative Director
+                      {t("founderRole")}
                     </p>
                   </div>
                 </div>
 
                 {/* Highlights */}
                 <div className="space-y-4">
-                  {HIGHLIGHTS.map((item) => (
+                  {HIGHLIGHT_KEYS.map((key) => (
                     <div
-                      key={item}
+                      key={key}
                       className="flex items-center gap-3 py-3 border-b border-[#1F2937]/50 last:border-0"
                     >
                       <div className="w-2 h-2 rounded-full bg-[#D8FB32] flex-shrink-0" />
                       <span className="text-[#F5F5F5] text-base font-medium">
-                        {item}
+                        {t(`highlights.${key}`)}
                       </span>
                     </div>
                   ))}
