@@ -143,16 +143,16 @@ export default function MetronomPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Ucretsiz Arac
+              Ücretsiz Araç
             </span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
             Online Metronom
           </h1>
           <p className="text-[#999999] text-base max-w-lg mx-auto">
-            Muzik calismalari icin hassas ve kolay kullanilabilen metronom.
+            Müzik çalışmaları için hassas ve kolay kullanılabilen metronom.
             <br />
-            BPM ayarlayin, tempo belirleyin, pratik yapin.
+            BPM ayarlayın, tempo belirleyin, pratik yapın.
           </p>
         </div>
 
@@ -253,7 +253,7 @@ export default function MetronomPage() {
                   : "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#B4F030]"
               }`}
             >
-              {isPlaying ? "Durdur" : "Baslat"}
+              {isPlaying ? "Durdur" : "Başlat"}
             </button>
             <button
               onClick={handleTapTempo}
@@ -266,17 +266,17 @@ export default function MetronomPage() {
 
         {/* Info */}
         <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8">
-          <h2 className="text-lg font-semibold text-[#F5F5F5] mb-4">Nasil Kullanilir?</h2>
+          <h2 className="text-lg font-semibold text-[#F5F5F5] mb-4">Nasıl Kullanılır?</h2>
           <ol className="space-y-3 text-[#CCCCCC] text-sm list-decimal list-inside">
-            <li>BPM degerini slider veya preset butonlarla ayarlayin</li>
-            <li>Vurusu sayisini secin (2/4, 3/4, 4/4, 6/8)</li>
-            <li>&quot;Baslat&quot; butonuna tiklayin</li>
-            <li>Veya &quot;Tap Tempo&quot; butonuna ritmik tiklayarak BPM belirleyin</li>
-            <li>Ilk vurus vurguludur (aksanlı)</li>
+            <li>BPM değerini slider veya preset butonlarla ayarlayın</li>
+            <li>Vuruş sayısını seçin (2/4, 3/4, 4/4, 6/8)</li>
+            <li>&quot;Başlat&quot; butonuna tıklayın</li>
+            <li>Veya &quot;Tap Tempo&quot; butonuna ritmik tıklayarak BPM belirleyin</li>
+            <li>İlk vuruş vurguludur (aksanlı)</li>
           </ol>
           <div className="mt-4 p-3 bg-[#D8FB32]/5 border border-[#D8FB32]/10 rounded-xl">
             <p className="text-[#D8FB32] text-xs">
-              Ipucu: Tap Tempo ile bir sarkinin temposunu hizlica bulabilirsiniz. En az 3-4 tiklama yapin.
+              İpucu: Tap Tempo ile bir şarkının temposunu hızlıca bulabilirsiniz. En az 3-4 tıklama yapın.
             </p>
           </div>
         </div>

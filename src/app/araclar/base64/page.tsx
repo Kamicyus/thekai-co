@@ -95,16 +95,16 @@ export default function Base64Page() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Ucretsiz Arac
+              Ücretsiz Araç
             </span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
             Base64 Encoder / Decoder
           </h1>
           <p className="text-[#999999] text-base max-w-lg mx-auto">
-            Metin veya dosyalarinizi Base64 formatina donusturun.
+            Metin veya dosyalarınızı Base64 formatına dönüştürün.
             <br />
-            Base64 kodunu tekrar metne cevirin.
+            Base64 kodunu tekrar metne çevirin.
           </p>
         </div>
 
@@ -145,8 +145,8 @@ export default function Base64Page() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={
                   mode === "encode"
-                    ? "Encode edilecek metni yapin..."
-                    : "Base64 kodunu yapistirin..."
+                    ? "Encode edilecek metni yapıştırın..."
+                    : "Base64 kodunu yapıştırın..."
                 }
                 rows={5}
                 className="w-full bg-[#0A0A0A] border border-[#1F2937] rounded-xl px-4 py-3 text-[#F5F5F5] text-sm font-mono placeholder-[#666] focus:outline-none focus:border-[#D8FB32]/40 resize-none"
@@ -155,7 +155,7 @@ export default function Base64Page() {
           ) : (
             <div className="mb-6">
               <label className="block text-[#CCCCCC] text-sm font-medium mb-2">
-                Dosya Sec (maks. 512 KB)
+                Dosya Seç (maks. 512 KB)
               </label>
               <div
                 onClick={() => fileInputRef.current?.click()}
@@ -181,7 +181,7 @@ export default function Base64Page() {
                   <line x1="12" y1="3" x2="12" y2="15" />
                 </svg>
                 <p className="text-[#666] text-sm">
-                  {fileName || "Dosya secmek icin tiklayin"}
+                  {fileName || "Dosya seçmek için tıklayın"}
                 </p>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function Base64Page() {
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-[#CCCCCC] text-sm font-medium">
-                  Sonuc
+                  Sonuç
                 </label>
                 <button
                   onClick={handleCopy}
@@ -228,7 +228,7 @@ export default function Base64Page() {
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
-                      Kopyalandi
+                      Kopyalandı
                     </>
                   ) : (
                     <>
@@ -255,17 +255,17 @@ export default function Base64Page() {
         <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8">
           <h2 className="text-lg font-semibold text-[#F5F5F5] mb-4">Base64 Nedir?</h2>
           <p className="text-[#CCCCCC] text-sm leading-relaxed mb-4">
-            Base64, binary veriyi ASCII karakterleriyle temsil etmeye yarayan bir kodlama yontemidir.
-            E-posta ekleri, API istekleri ve veri URI&apos;lerinde yaygin olarak kullanilir.
+            Base64, binary veriyi ASCII karakterleriyle temsil etmeye yarayan bir kodlama yöntemidir.
+            E-posta ekleri, API istekleri ve veri URI&apos;lerinde yaygın olarak kullanılır.
           </p>
           <ol className="space-y-2 text-[#CCCCCC] text-sm list-decimal list-inside">
-            <li><strong>Encode:</strong> Metni Base64 formatina donusturur</li>
-            <li><strong>Decode:</strong> Base64 kodunu orijinal metne cevirir</li>
-            <li><strong>Dosya:</strong> Kucuk dosyalari Base64 Data URI&apos;ye cevirir</li>
+            <li><strong>Encode:</strong> Metni Base64 formatına dönüştürür</li>
+            <li><strong>Decode:</strong> Base64 kodunu orijinal metne çevirir</li>
+            <li><strong>Dosya:</strong> Küçük dosyaları Base64 Data URI&apos;ye çevirir</li>
           </ol>
           <div className="mt-4 p-3 bg-[#D8FB32]/5 border border-[#D8FB32]/10 rounded-xl">
             <p className="text-[#D8FB32] text-xs">
-              Ipucu: Tum islemler tarayicinizda yapilir. Verileriniz hicbir sunucuya gonderilmez.
+              İpucu: Tüm işlemler tarayıcınızda yapılır. Verileriniz hiçbir sunucuya gönderilmez.
             </p>
           </div>
         </div>

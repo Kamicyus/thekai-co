@@ -119,7 +119,7 @@ export default function PomodoroPage() {
   const progress = totalSeconds > 0 ? ((totalSeconds - secondsLeft) / totalSeconds) * 100 : 0;
 
   const phaseLabel =
-    phase === "work" ? "Calisma" : phase === "break" ? "Mola" : "Uzun Mola";
+    phase === "work" ? "Çalışma" : phase === "break" ? "Mola" : "Uzun Mola";
   const phaseColor =
     phase === "work" ? "#D8FB32" : phase === "break" ? "#22C55E" : "#3B82F6";
 
@@ -131,16 +131,16 @@ export default function PomodoroPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Ucretsiz Arac
+              Ücretsiz Araç
             </span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Pomodoro Zamanlayici
+            Pomodoro Zamanlayıcı
           </h1>
           <p className="text-[#999999] text-base max-w-lg mx-auto">
-            Pomodoro teknigi ile verimli calisin.
+            Pomodoro tekniği ile verimli çalışın.
             <br />
-            25 dk calisma, 5 dk mola, her 4 donemde uzun mola.
+            25 dk çalışma, 5 dk mola, her 4 dönemde uzun mola.
           </p>
         </div>
 
@@ -164,7 +164,7 @@ export default function PomodoroPage() {
                 }`}
                 style={phase === p ? { backgroundColor: phaseColor } : undefined}
               >
-                {p === "work" ? "Calisma" : p === "break" ? "Mola" : "Uzun Mola"}
+                {p === "work" ? "Çalışma" : p === "break" ? "Mola" : "Uzun Mola"}
               </button>
             ))}
           </div>
@@ -214,7 +214,7 @@ export default function PomodoroPage() {
                   : "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#B4F030]"
               }`}
             >
-              {isRunning ? "Duraklat" : "Baslat"}
+              {isRunning ? "Duraklat" : "Başlat"}
             </button>
             <button
               onClick={handleSkip}
@@ -226,7 +226,7 @@ export default function PomodoroPage() {
               onClick={handleReset}
               className="px-6 py-3.5 rounded-[10px] font-semibold text-base bg-[#1A1A1A] text-[#F5F5F5] border border-[#1F2937] hover:border-[#D8FB32]/40 transition-all duration-200"
             >
-              Sifirla
+              Sıfırla
             </button>
           </div>
 
@@ -256,7 +256,7 @@ export default function PomodoroPage() {
               onClick={() => setShowSettings(!showSettings)}
               className="text-[#999] text-sm hover:text-[#D8FB32] transition-colors"
             >
-              {showSettings ? "Ayarlari Gizle" : "Sure Ayarlari"}
+              {showSettings ? "Ayarları Gizle" : "Süre Ayarları"}
             </button>
           </div>
 
@@ -264,7 +264,7 @@ export default function PomodoroPage() {
           {showSettings && (
             <div className="mt-6 p-5 bg-[#0A0A0A] border border-[#1F2937] rounded-xl space-y-4">
               {[
-                { label: "Calisma (dk)", value: workMinutes, setter: setWorkMinutes, min: 1, max: 60 },
+                { label: "Çalışma (dk)", value: workMinutes, setter: setWorkMinutes, min: 1, max: 60 },
                 { label: "Mola (dk)", value: breakMinutes, setter: setBreakMinutes, min: 1, max: 30 },
                 { label: "Uzun Mola (dk)", value: longBreakMinutes, setter: setLongBreakMinutes, min: 1, max: 60 },
               ].map((setting) => (
@@ -297,21 +297,21 @@ export default function PomodoroPage() {
 
         {/* Info */}
         <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8">
-          <h2 className="text-lg font-semibold text-[#F5F5F5] mb-4">Pomodoro Teknigi Nedir?</h2>
+          <h2 className="text-lg font-semibold text-[#F5F5F5] mb-4">Pomodoro Tekniği Nedir?</h2>
           <p className="text-[#CCCCCC] text-sm leading-relaxed mb-4">
-            Pomodoro Teknigi, 1980&apos;lerde Francesco Cirillo tarafindan gelistirilen
-            bir zaman yonetimi yontemidir. Calismalarinizi kisa aralikara bolerek
-            odaklanmayi ve verimliligi artirmayi amaclar.
+            Pomodoro Tekniği, 1980&apos;lerde Francesco Cirillo tarafından geliştirilen
+            bir zaman yönetimi yöntemidir. Çalışmalarınızı kısa aralıklara bölerek
+            odaklanmayı ve verimliliği artırmayı amaçlar.
           </p>
           <ol className="space-y-2 text-[#CCCCCC] text-sm list-decimal list-inside">
-            <li>25 dakika odakli calisin</li>
+            <li>25 dakika odaklı çalışın</li>
             <li>5 dakika mola verin</li>
-            <li>Her 4 pomodoro sonrasinda 15 dakika uzun mola verin</li>
-            <li>Donguleri tekrarlayin</li>
+            <li>Her 4 pomodoro sonrasında 15 dakika uzun mola verin</li>
+            <li>Döngüleri tekrarlayın</li>
           </ol>
           <div className="mt-4 p-3 bg-[#D8FB32]/5 border border-[#D8FB32]/10 rounded-xl">
             <p className="text-[#D8FB32] text-xs">
-              Ipucu: Sure ayarlarini kendinize gore ozellestirin. Baslangic icin 25/5 onerilen standart suredir.
+              İpucu: Süre ayarlarını kendinize göre özelleştirin. Başlangıç için 25/5 önerilen standart süredir.
             </p>
           </div>
         </div>

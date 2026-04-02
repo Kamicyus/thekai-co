@@ -17,41 +17,41 @@ const MILESTONES = [
   {
     year: "2011 \u2013 2023",
     title: "Cok Yonlu Deneyim",
-    text: "Dergi editorlugu, call center, spor ajansi sosyal medya yonetimi \u2014 hep muzik yaninda.",
+    text: "Dergi editörlüğü, call center, spor ajansı sosyal medya yönetimi \u2014 hep müzik yanında.",
   },
   {
     year: "2023",
-    title: "AI Donusumu",
-    text: "AI araclarini is sureclerine entegre etmeye basladi. Otomasyon ve ajan sistemleri kuruldu.",
+    title: "AI Dönüşümü",
+    text: "AI araçlarını iş süreçlerine entegre etmeye başladı. Otomasyon ve ajan sistemleri kuruldu.",
   },
   {
     year: "2024",
     title: "Echo Bazaar",
-    text: "AI muzik kanali kuruldu. YouTube'da yukselis basladi.",
+    text: "AI müzik kanalı kuruldu. YouTube'da yükseliş başladı.",
   },
   {
     year: "2025",
-    title: "Buyume",
-    text: "20M+ dinlenme, KIM? albumu Spotify Kesif playlist'inde, 72+ AI ajan sistemi.",
+    title: "Büyüme",
+    text: "20M+ dinlenme, KİM? albümü Spotify Keşif playlist'inde, 72+ AI ajan sistemi.",
   },
   {
     year: "2026",
     title: "The Kai",
-    text: "Sirket resmi olarak kuruldu. thekai.co yayinda. Muzik, teknoloji ve yaraticilik bir arada.",
+    text: "Şirket resmi olarak kuruldu. thekai.co yayında. Müzik, teknoloji ve yaratıcılık bir arada.",
   },
 ];
 
 const STATS = [
   { value: "20M+", label: "Toplam Dinlenme" },
   { value: "72+", label: "AI Ajan" },
-  { value: "9", label: "Hizmet Alani" },
-  { value: "16", label: "Ucretsiz Arac" },
+  { value: "9", label: "Hizmet Alanı" },
+  { value: "16", label: "Ücretsiz Araç" },
 ];
 
 const VALUES = [
   {
-    title: "Yaraticilik",
-    description: "Her proje bir dunya. Kurallarini biz koyariz, hikayesini birlikte yazariz.",
+    title: "Yaratıcılık",
+    description: "Her proje bir dünya. Kurallarını biz koyarız, hikayesini birlikte yazarız.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
@@ -60,7 +60,7 @@ const VALUES = [
   },
   {
     title: "Teknoloji",
-    description: "AI-native yaklasim. 72+ ajan, otomasyon pipeline'lari, MCP entegrasyonlari.",
+    description: "AI-native yaklaşım. 72+ ajan, otomasyon pipeline'ları, MCP entegrasyonları.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -70,7 +70,7 @@ const VALUES = [
   },
   {
     title: "Kalite",
-    description: "Detaylara takintili ozen. Her piksel, her nota, her satir kod \u2014 onemli.",
+    description: "Detaylara takıntılı özen. Her piksel, her nota, her satır kod \u2014 önemli.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
@@ -79,8 +79,8 @@ const VALUES = [
     ),
   },
   {
-    title: "Seffaflik",
-    description: "Net iletisim, durust fiyatlandirma. Surpriz yok, gizli maliyet yok.",
+    title: "Şeffaflık",
+    description: "Net iletişim, dürüst fiyatlandırma. Sürpriz yok, gizli maliyet yok.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -117,19 +117,19 @@ export default function HakkimizdaPage() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D8FB32]/20 bg-[#D8FB32]/5 mb-8">
               <DecorativePinwheel size={14} opacity={0.8} />
-              <span className="text-[#D8FB32] text-sm font-medium tracking-wide">Hakkimizda</span>
+              <span className="text-[#D8FB32] text-sm font-medium tracking-wide">Hakkımızda</span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#F5F5F5] tracking-[-0.03em] mb-6 leading-[1.1]">
-              The Kai Hakkinda
+              The Kai Hakkında
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <p className="text-[#999999] text-lg sm:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
-              Muzik, teknoloji ve yaraticilik kesisiminde bir studyo.
+              Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.
             </p>
           </FadeIn>
         </div>
@@ -143,7 +143,7 @@ export default function HakkimizdaPage() {
               Yolculuk
             </h2>
             <p className="text-[#999999] text-lg max-w-lg mx-auto">
-              Bir fikrin studyoya donusme hikayesi.
+              Bir fikrin stüdyoya dönüşme hikayesi.
             </p>
           </FadeIn>
 
@@ -239,16 +239,16 @@ export default function HakkimizdaPage() {
                   {/* Info */}
                   <div className="text-center sm:text-left flex-1">
                     <h3 className="text-2xl lg:text-3xl font-bold text-[#F5F5F5] mb-1">
-                      Kamer Can Izvermez
+                      Kamer Can İzvermez
                     </h3>
                     <p className="text-[#D8FB32] text-sm font-medium tracking-wide mb-4">
                       Founder &amp; Creative Director
                     </p>
                     <p className="text-[#999999] text-base leading-relaxed mb-6">
-                      Muzisyen, soz yazari, besteci ve AI girisimci. 15 yillik sarki
+                      Müzisyen, söz yazarı, besteci ve AI girişimci. 15 yıllık şarkı
                       yazma deneyimi, 20M+ dinlenme, 72+ AI ajan sistemi. Echo Bazaar
-                      kurucusu, KIM? albumunun yaraticisi. Muzik, teknoloji ve
-                      yaraticiligi birlestirerek The Kai&apos;yi kurdu.
+                      kurucusu, KİM? albümünün yaratıcısı. Müzik, teknoloji ve
+                      yaratıcılığı birleştirerek The Kai&apos;yi kurdu.
                     </p>
 
                     {/* Social links */}
@@ -300,10 +300,10 @@ export default function HakkimizdaPage() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-16 lg:mb-20">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-              Degerlerimiz
+              Değerlerimiz
             </h2>
             <p className="text-[#999999] text-lg max-w-lg mx-auto">
-              Her kararin arkasindaki dort ilke.
+              Her kararın arkasındaki dört ilke.
             </p>
           </FadeIn>
 
@@ -346,16 +346,16 @@ export default function HakkimizdaPage() {
             <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] tracking-[-0.02em] mb-6 max-w-3xl mx-auto leading-tight">
               Bir Sonraki Projenizi{" "}
               <br className="hidden sm:block" />
-              Birlikte Kuralim
+              Birlikte Kuralım
             </h2>
             <p className="text-[#0A0A0A]/70 text-lg sm:text-xl mb-10 max-w-lg mx-auto">
-              Projenizi konusalim. Muzik, teknoloji veya yaratici icerik &mdash; farketmez.
+              Projenizi konuşalım. Müzik, teknoloji veya yaratıcı içerik &mdash; farketmez.
             </p>
             <Link
               href="/iletisim"
               className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#0A0A0A] text-[#D8FB32] font-semibold rounded-[10px] text-base hover:bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-200 shadow-xl"
             >
-              Iletisime Gec
+              İletişime Geç
               <span className="animate-[spin-slow_3s_linear_infinite] inline-flex">
                 <DecorativePinwheel size={16} opacity={0.9} />
               </span>

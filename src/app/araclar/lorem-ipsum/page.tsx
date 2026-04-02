@@ -130,16 +130,16 @@ export default function LoremIpsumPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Ucretsiz Arac
+              Ücretsiz Araç
             </span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Lorem Ipsum Uretici
+            Lorem Ipsum Üretici
           </h1>
           <p className="text-[#999999] text-base max-w-lg mx-auto">
-            Tasarim ve gelistirme projeleri icin placeholder metin uretin.
+            Tasarım ve geliştirme projeleri için placeholder metin üretin.
             <br />
-            Turkce Lorem Ipsum destegi ile.
+            Türkçe Lorem Ipsum desteği ile.
           </p>
         </div>
 
@@ -149,7 +149,7 @@ export default function LoremIpsumPage() {
           <div className="flex gap-2 mb-6">
             {([
               { key: "paragraf", label: "Paragraf" },
-              { key: "cumle", label: "Cumle" },
+              { key: "cumle", label: "Cümle" },
               { key: "kelime", label: "Kelime" },
             ] as { key: Mode; label: string }[]).map((tab) => (
               <button
@@ -174,7 +174,7 @@ export default function LoremIpsumPage() {
           <div className="flex flex-wrap items-end gap-4 mb-8">
             <div className="flex-1 min-w-[140px]">
               <label className="block text-[#CCCCCC] text-sm font-medium mb-2">
-                {mode === "paragraf" ? "Paragraf Sayisi" : mode === "cumle" ? "Cumle Sayisi" : "Kelime Sayisi"}
+                {mode === "paragraf" ? "Paragraf Sayısı" : mode === "cumle" ? "Cümle Sayısı" : "Kelime Sayısı"}
               </label>
               <div className="flex items-center gap-3">
                 <input
@@ -210,7 +210,7 @@ export default function LoremIpsumPage() {
                   : "bg-[#1A1A1A] text-[#999] border border-[#1F2937] hover:border-[#D8FB32]/30"
               }`}
             >
-              {turkish ? "Turkce" : "Latince"}
+              {turkish ? "Türkçe" : "Latince"}
             </button>
           </div>
 
@@ -220,14 +220,14 @@ export default function LoremIpsumPage() {
               onClick={handleGenerate}
               className="px-6 py-3 rounded-[10px] font-semibold text-sm bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#B4F030] transition-colors"
             >
-              Uret
+              Üret
             </button>
             {output && (
               <button
                 onClick={handleCopy}
                 className="px-6 py-3 rounded-[10px] font-semibold text-sm bg-[#1A1A1A] text-[#999] border border-[#1F2937] hover:border-[#D8FB32]/30 transition-colors"
               >
-                {copied ? "Kopyalandi!" : "Kopyala"}
+                {copied ? "Kopyalandı!" : "Kopyala"}
               </button>
             )}
           </div>
@@ -236,7 +236,7 @@ export default function LoremIpsumPage() {
           {output && (
             <div>
               <label className="block text-[#CCCCCC] text-sm font-medium mb-2">
-                Sonuc
+                Sonuç
               </label>
               <div className="w-full bg-[#0A0A0A] border border-[#1F2937] rounded-xl px-4 py-4 text-[#F5F5F5] text-sm leading-relaxed whitespace-pre-wrap max-h-[400px] overflow-y-auto">
                 {output}
@@ -249,18 +249,18 @@ export default function LoremIpsumPage() {
         <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8">
           <h2 className="text-lg font-semibold text-[#F5F5F5] mb-4">Lorem Ipsum Nedir?</h2>
           <p className="text-[#CCCCCC] text-sm leading-relaxed mb-4">
-            Lorem Ipsum, 1500&apos;lerden beri kullanilan standart placeholder metindir.
-            Tasarim ve dizgi sektorunde icerik yerine gecici dolgu metin olarak kullanilir.
+            Lorem Ipsum, 1500&apos;lerden beri kullanılan standart placeholder metindir.
+            Tasarım ve dizgi sektöründe içerik yerine geçici dolgu metin olarak kullanılır.
           </p>
           <ol className="space-y-2 text-[#CCCCCC] text-sm list-decimal list-inside">
-            <li>Paragraf, cumle veya kelime modunu secin</li>
-            <li>Istediginiz miktari ayarlayin</li>
-            <li>Latince veya Turkce secenegini belirleyin</li>
-            <li>&quot;Uret&quot; butonuna tiklayin ve kopyalayin</li>
+            <li>Paragraf, cümle veya kelime modunu seçin</li>
+            <li>İstediğiniz miktarı ayarlayın</li>
+            <li>Latince veya Türkçe seçeneğini belirleyin</li>
+            <li>&quot;Üret&quot; butonuna tıklayın ve kopyalayın</li>
           </ol>
           <div className="mt-4 p-3 bg-[#D8FB32]/5 border border-[#D8FB32]/10 rounded-xl">
             <p className="text-[#D8FB32] text-xs">
-              Ipucu: Turkce modu, Turkce projeleriniz icin dogal gorunen placeholder metin uretir.
+              İpucu: Türkçe modu, Türkçe projeleriniz için doğal görünen placeholder metin üretir.
             </p>
           </div>
         </div>

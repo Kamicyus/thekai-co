@@ -228,7 +228,7 @@ export default function KelimeSayaciPage() {
         {/* Bottom Info */}
         <FadeIn className="mt-12 text-center">
           <p className="text-[#666666] text-sm">
-            Tum islemler tarayıcınızda yapilir. Metniniz sunucuya gönderilmez.
+            Tüm işlemler tarayıcınızda yapılır. Metniniz sunucuya gönderilmez.
           </p>
         </FadeIn>
       </div>
