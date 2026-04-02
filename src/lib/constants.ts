@@ -161,6 +161,24 @@ export const TOOLS = [
     icon: "music",
     slug: "bpm-bulucu",
   },
+  {
+    title: "Base64 Encoder / Decoder",
+    description: "Metin veya dosyalarinizi Base64 formatina donusturun. Base64 kodunu tekrar metne cevirin.",
+    icon: "code",
+    slug: "base64",
+  },
+  {
+    title: "Lorem Ipsum Uretici",
+    description: "Tasarim projeleri icin placeholder metin uretin. Paragraf, cumle, kelime modu ve Turkce destegi.",
+    icon: "counter",
+    slug: "lorem-ipsum",
+  },
+  {
+    title: "Pomodoro Zamanlayici",
+    description: "25 dk calisma, 5 dk mola dongusu ile verimli calisin. Sure ozellestirme ve oturum takibi.",
+    icon: "clock",
+    slug: "pomodoro",
+  },
 ] as const;
 
 export const STATS = [

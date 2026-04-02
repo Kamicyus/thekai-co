@@ -109,6 +109,15 @@ export function ChartIcon({ className = "", size = 32 }: IconProps) {
   );
 }
 
+export function ClockIcon({ className = "", size = 32 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
 const serviceIconMap = {
   brain: BrainIcon,
   music: MusicIcon,
@@ -120,6 +129,7 @@ const serviceIconMap = {
   lightbulb: LightbulbIcon,
   robot: RobotIcon,
   chart: ChartIcon,
+  clock: ClockIcon,
 };
 
 export function ServiceIcon({ icon, ...props }: IconProps & { icon: string }) {
