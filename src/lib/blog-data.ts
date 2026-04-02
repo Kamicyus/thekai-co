@@ -2698,6 +2698,642 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "claude-code-muzik-produktor",
+    title:
+      "Claude Code'u Müzik Prodüktörüne Nasıl Çevirirsin? Adım Adım Rehber",
+    description:
+      "Claude Code ile Logic Pro entegrasyonu, şarkı sözü yazma, BPM/ton analizi, mix önerileri ve Suno entegrasyonu — gerçek müzik prodüksiyon deneyimimden pratik bir rehber.",
+    date: "2026-04-01",
+    readingTime: "14 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "Claude Code müzik",
+      "AI müzik prodüksiyon",
+      "Claude müzik asistan",
+      "AI beat yapma",
+      "Logic Pro AI entegrasyonu",
+      "Claude Code müzik prodüktör",
+      "yapay zeka ile şarkı yazma",
+      "AI müzik asistan kurulumu",
+    ],
+    coverImage: "/images/blog/claude-code-muzik-produktor.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Claude Code'u ilk açtığında ekrana bakan çoğu kişi bir yazılım aracı görüyor. Ben ise bir müzik prodüktörü görüyorum. Son 8 ayda Claude Code'u kendi müzik üretim sürecimin merkezine koydum — <strong>şarkı sözü yazmaktan BPM analizine, Logic Pro dosya yönetiminden Suno ile AI beat üretimine</strong> kadar her şeyde kullanıyorum. Sonuç: Echo Bazaar kanalımda 15 milyon dinlenmeyi geçtim ve \"Estarabim\" single'ım Spotify Keşfet listesine girdi. Bu yazıda, Claude Code'u müzik prodüktörüne çevirmenin tüm adımlarını — kendi deneyimimden, gerçek örneklerle anlatacağım.",
+      },
+      {
+        type: "h2",
+        text: "Neden Claude Code? Diğer AI Araçlarından Farkı Ne?",
+      },
+      {
+        type: "p",
+        text: "ChatGPT'ye de şarkı sözü yazdırabilirsiniz. Gemini'ye de müzik teorisi sorabilirsiniz. Ama <strong>Claude Code'un farkı, dosya sisteminize, terminalinize ve araçlarınıza doğrudan erişebilmesi</strong>. Yani sadece \"şu akorları dene\" demekle kalmıyor — Logic Pro projenizi açıyor, MIDI dosyanızı okuyor, BPM hesaplıyor, ses dosyanızı dönüştürüyor. Bir chatbot ile bir prodüktör asistan arasındaki fark bu.",
+      },
+      {
+        type: "p",
+        text: "Ben müzisyen olarak her gün şu soruyu sordum: \"AI benim yaratıcı sürecimi hızlandırabilir mi, yoksa sadece klişe çıktılar mı üretir?\" Cevap: doğru yapılandırırsan hızlandırır. Yanlış kullanırsan klişe üretir. İşin sırrı yapılandırmada — ve ben o yapılandırmayı buldum.",
+      },
+      {
+        type: "h2",
+        text: "Adım 1: CLAUDE.md ile Müzik Prodüktör Profili Oluştur",
+      },
+      {
+        type: "p",
+        text: "Claude Code'un gücü <strong>CLAUDE.md</strong> dosyasından gelir. Bu dosya Claude'a \"sen kimsin, ne yapıyorsun, nasıl düşünüyorsun\" diyen bir konfigürasyon dosyası. Müzik prodüksiyonu için bir CLAUDE.md yazarsan, Claude artık genel bir asistan değil — senin müzik anlayışına göre düşünen bir prodüktör asistan olur.",
+      },
+      {
+        type: "p",
+        text: "İşte benim kullandığım yapının özeti: Proje dizinimde bir CLAUDE.md var ve içinde Claude'a şunu söylüyorum — \"Sen bir müzik prodüktör asistanısın. Kamer Türk müzisyen, 15 yıllık şarkı yazma deneyimi var. Echo Bazaar AI müzik kanalı var. Tercihleri: Orta Doğu melodileri, Türk hip-hop, sinematik prodüksiyon.\" Claude bu bilgiyi her oturumda okuyor ve tüm önerilerini buna göre şekillendiriyor.",
+      },
+      {
+        type: "p",
+        text: "Sonuç olarak Claude'a \"Bu şarkı için bir köprü yaz\" dediğimde, genel bir pop köprüsü değil — benim müzikal kimliğime uygun, Orta Doğu harmonileri içeren, Türkçe fonetikle uyumlu bir köprü öneriyor. Bu fark, CLAUDE.md'nin gücü.",
+      },
+      {
+        type: "h2",
+        text: "Adım 2: Şarkı Sözü Yazma — AI Co-Writer Olarak Claude",
+      },
+      {
+        type: "p",
+        text: "Şarkı sözü yazma, benim için Claude Code'un en değerli kullanım alanı. Ama burada bir nuans var: <strong>Claude'u söz yazarı olarak değil, co-writer olarak kullanıyorum</strong>. Fark şu — Claude'a \"bir aşk şarkısı yaz\" demiyorum. Ona \"Bu şarkının teması kaybolmak, ama fiziksel değil — zihinsel kaybolmak. Birinci verse'te şehir metaforları kullan, ikinci verse'te iç dünya. Kafiye şeması ABAB olsun, hece sayısı 8-9 arasında kalsın\" diyorum.",
+      },
+      {
+        type: "p",
+        text: "\"Estarabim\" şarkısını yazarken tam da bunu yaptım. Şarkının ismi bile bir Claude oturumundan çıktı — Arapça \"tarab\" (müzikal vecd) kökünden türetilmiş, Türkçe \"estarabim\" kelimesi. Claude'a \"Orta Doğu müzik geleneğindeki vecd kavramını modern bir kelimeye dönüştür\" dedim, 15 alternatif sundu, en ses olarak güçlü olanı seçtik.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Kafiye havuzu:</strong> Claude'a tematik bir kafiye havuzu oluşturttum. \"Gece\" teması için: bece, hece, sece, dece... Türkçe'de yarım kafiye ve tam kafiye ayrımını biliyor",
+          "<strong>Hece analizi:</strong> Her satırın hece sayısını hesaplatıyorum. Türk müziğinde hece uyumu ritmi belirler — Claude bunu otomatik kontrol ediyor",
+          "<strong>Metafor üretimi:</strong> \"Bu duyguyu 5 farklı metaforla ifade et — klişe olmasın\" diyorum. 5 tanesinden 1'i genelde altın",
+          "<strong>Çeviri ve adaptasyon:</strong> İngilizce bir şarkı sözünü Türkçe'ye adapte ederken anlam + ses uyumunu korumasını sağlıyorum",
+          "<strong>Versiyon karşılaştırma:</strong> 3 farklı verse versiyonu yazıp Claude'a \"hangisi daha güçlü, neden?\" diye analiz ettiriyorum",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Adım 3: BPM ve Ton Analizi — Teknik Asistan",
+      },
+      {
+        type: "p",
+        text: "Claude Code dosya sisteminize erişebildiği için, ses dosyalarınız üzerinde doğrudan çalışabilir. Ben kendi sistemimde bir Python script'i yazdım — <strong>araclar/bpm_analiz.py</strong> — ve Claude bu script'i çalıştırarak herhangi bir ses dosyasının BPM'ini, tonunu ve enerji seviyesini analiz ediyor.",
+      },
+      {
+        type: "p",
+        text: "Pratik kullanım şöyle: Bir beat buldum, üzerine şarkı yazmak istiyorum. Claude'a ses dosyasını veriyorum. O BPM'i hesaplıyor (diyelim 92 BPM), tonunu tespit ediyor (D minor), ve bana şunu söylüyor: \"Bu beat 92 BPM, D minor. Türk müziğinde D minor Hicaz makamıyla uyumlu. Orta Doğu melodileri için D-Eb-F#-G-A-Bb-C# skalasını deneyebilirsin. Bu BPM'de laid-back bir flow iyi çalışır, triplet flow'dan kaçın.\"",
+      },
+      {
+        type: "p",
+        text: "Bu analiz 10 saniye sürüyor. Bunu elle yapmam 5-10 dakika alır ve makam önerisi gibi cross-referencing'i zaten aklıma gelmeyebilir. Claude müzik teorisini benim müzikal tercihlerimle birleştiriyor — çünkü CLAUDE.md'de tercihlerimi biliyor.",
+      },
+      {
+        type: "h2",
+        text: "Adım 4: Logic Pro Entegrasyonu — Computer Use ile Stüdyo Kontrolü",
+      },
+      {
+        type: "p",
+        text: "Bu kısım çoğu insanın bilmediği bir özellik: <strong>Claude Code'un Computer Use (bilgisayar kullanımı) yetenekleri</strong>. Claude, macOS üzerinde uygulamaları doğrudan kontrol edebilir — Logic Pro dahil. Ben bu özelliği şu senaryolarda kullanıyorum:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Proje organizasyonu:</strong> \"Logic Pro'daki track isimlerini düzenle — Vocal Main, Vocal Harmonies, Beat, Bass, Synth Pad, FX olarak adlandır\" diyorum, yapıyor",
+          "<strong>Dosya dönüştürme:</strong> WAV dosyalarını MP3'e, stereo'yu mono'ya çevirme gibi işlemleri ffmpeg üzerinden otomatik yapıyor",
+          "<strong>Session notları:</strong> Her kayıt oturumunun sonunda Claude'a \"bu session'da ne yaptık, notlarını yaz\" diyorum — tüm değişiklikleri dosya sistemi üzerinden takip ediyor",
+          "<strong>Bounce ve export:</strong> Farklı formatlarda export işlemlerini otomatikleştiriyor — Spotify için WAV 44.1kHz/16bit, YouTube için MP4 kapsülleme",
+        ],
+      },
+      {
+        type: "p",
+        text: "Önemli not: Claude Code henüz Logic Pro'nun MIDI editörünü veya mikserini direkt manipüle edemiyor — ama dosya yönetimi, session organizasyonu ve post-production süreçlerinde inanılmaz zaman kazandırıyor. Ve bu özellikler her güncellemeyle gelişiyor.",
+      },
+      {
+        type: "h2",
+        text: "Adım 5: Suno Entegrasyonu — AI Beat Üretimi",
+      },
+      {
+        type: "p",
+        text: "Echo Bazaar kanalım tamamen AI üretim müzik yayınlıyor ve Suno bu sürecin merkezinde. Claude Code'u Suno ile entegre etme şeklim şu:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Prompt mühendisliği:</strong> Claude, Suno için optimize edilmiş müzik prompt'ları yazıyor. \"Dark trap beat, 140 BPM, minor key, 808 bass, hi-hat rolls\" gibi teknik prompt'ları benim tematik tarifiimden üretiyor",
+          "<strong>Batch üretim:</strong> Echo Bazaar için haftada 10-15 track üretiyorum. Claude her track için farklı prompt varyasyonları oluşturuyor — böylece çeşitlilik sağlanıyor",
+          "<strong>Kalite kontrol:</strong> Üretilen track'leri dinledikten sonra Claude'a \"bu track'in zayıf noktaları ne, Suno prompt'unu nasıl iyileştirelim?\" diyorum. İteratif bir süreç",
+          "<strong>Metadata yönetimi:</strong> Her track için otomatik olarak şarkı adı, açıklama, etiketler ve Spotify metadata'sı oluşturuyor",
+        ],
+      },
+      {
+        type: "p",
+        text: "Echo Bazaar'da 15 milyon dinlenmeyi bu sistemle geçtik. Her track'in arkasında Claude Code'un optimize ettiği bir Suno prompt'u var. Bu, \"AI ile müzik yapıyorum\" demekten çok farklı — bu, <strong>AI'ı müzik üretim pipeline'ının ayrılmaz parçası yapmak</strong>.",
+      },
+      {
+        type: "h2",
+        text: "Adım 6: Mix ve Master Önerileri",
+      },
+      {
+        type: "p",
+        text: "Claude bir ses mühendisi değil — ama müzik prodüksiyonu bilgisi çok güçlü. Ben mix aşamasında Claude'u şu şekilde kullanıyorum:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Frekans çakışma analizi:</strong> \"Vokal ve synth pad aynı frekansta çakışıyor, nasıl çözerim?\" Claude: \"Synth pad'de 2-4 kHz aralığında 3 dB cut yap, vokalin presence alanını aç. Alternatif: synth pad'i stereo olarak genişlet, vokali mono ortada tut\"",
+          "<strong>Referans karşılaştırma:</strong> \"Bu mix'i Drake'in son albümüyle karşılaştır, frekans dengesi açısından ne yapmalıyım?\" sorusuna detaylı analiz veriyor",
+          "<strong>Plugin önerileri:</strong> \"Logic Pro stock plugin'leriyle bu kick drum'u nasıl daha punchy yaparım?\" — adım adım EQ, compression ve saturation ayarları",
+          "<strong>Loudness standartları:</strong> Spotify (-14 LUFS), YouTube (-13 LUFS), Apple Music (-16 LUFS) gibi platform standartlarını biliyor ve mastering sürecinde yönlendiriyor",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dikkat: Claude mix kararlarını senin yerine almıyor. Kulağın hala en önemli araç. Ama teknik bilgi konusunda anında danışabileceğin bir kaynak olması, özellikle home studio'da çalışan bağımsız müzisyenler için çok değerli.",
+      },
+      {
+        type: "h2",
+        text: "Adım 7: Müzik İş Süreçlerini Otomatikleştir",
+      },
+      {
+        type: "p",
+        text: "Müzik yapmak sadece yaratıcı süreç değil — dağıtım, metadata, tanıtım, künye, telif... Bunların hepsi zaman alıyor. Claude Code ile otomatikleştirdiğim iş süreçleri:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Spotify metadata hazırlama:</strong> Şarkı adı, sanatçı, albüm, ISRC kodu, telif bilgisi — tüm metadata'yı otomatik oluşturuyor",
+          "<strong>Künye oluşturma:</strong> \"Bu şarkıda kim ne yaptı\" bilgisini standart formatta hazırlıyor — söz: X, beste: Y, mix: Z, master: W",
+          "<strong>Dağıtım platformu formatları:</strong> Her dağıtım platformunun farklı metadata gereksinimleri var — Claude hepsini biliyor ve doğru formatta çıktı veriyor",
+          "<strong>Sosyal medya tanıtım metinleri:</strong> Yeni single için Instagram caption, X/Twitter thread, YouTube açıklama — hepsini tek seferde üretiyor",
+          "<strong>Artwork brief:</strong> Şarkının temasına göre kapak görseli brief'i hazırlıyor — renk paleti, mood, tipografi önerileri",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Gerçek Dünya Sonuçları: Rakamlarla Claude Code + Müzik",
+      },
+      {
+        type: "p",
+        text: "Somut sonuçlar her zaman teoriden güçlüdür. İşte benim deneyimim:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Şarkı yazma süresi:</strong> Ortalama 3-4 saatten 1-1.5 saate düştü. Claude co-writer olarak hem fikir üretiyor hem de teknik kontrol yapıyor",
+          "<strong>Echo Bazaar içerik üretimi:</strong> Haftada 3-4 track'ten 10-15 track'e çıktım. Suno prompt optimizasyonu ile kalite de arttı",
+          "<strong>Post-production süresi:</strong> Metadata, künye, dağıtım hazırlığı gibi işler %80 azaldı — hepsi otomatik",
+          "<strong>Mix revizyon sayısı:</strong> Claude'un teknik önerileri sayesinde mix revizyon sayısı ortalama 5'ten 2-3'e düştü",
+          "<strong>Toplam dinlenme:</strong> Echo Bazaar kanalında 15M+ dinlenme — bu sistemin ölçeklenebilirliğinin kanıtı",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Başlamak İçin Minimum Setup",
+      },
+      {
+        type: "p",
+        text: "Claude Code'u müzik prodüktörüne çevirmek için ihtiyacın olan minimum setup:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Claude Code kurulumu:</strong> Terminal'de <code>npm install -g @anthropic-ai/claude-code</code> ile kur. Pro veya Max plan gerekli",
+          "<strong>CLAUDE.md oluştur:</strong> Proje dizininde bir CLAUDE.md dosyası oluştur. İçine müzik tercihlerini, kullandığın DAW'ı, hedef türleri yaz",
+          "<strong>Python araçları:</strong> BPM analizi için librosa, ses dönüştürme için ffmpeg kur. Claude bunları otomatik kullanacak",
+          "<strong>Dosya yapısı:</strong> Projelerini düzenli tut — /sessions, /beats, /vocals, /exports gibi klasörler oluştur. Claude bu yapıyı okuyup yönetecek",
+          "<strong>İlk test:</strong> Claude'a bir ses dosyası ver ve \"bu dosyanın BPM'ini, tonunu analiz et ve üzerine yazılabilecek şarkı konsepti öner\" de. İlk 5 dakikada gücünü göreceksin",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Dikkat Edilmesi Gerekenler ve Sınırlamalar",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Claude müzik dinleyemez:</strong> Claude ses dosyalarını doğrudan dinlemiyor — metadata ve waveform analizi yapıyor. Kulağın hala en önemli araç",
+          "<strong>Yaratıcı karar senin:</strong> Claude öneri verir, karar senin. AI'ın önerisini körü körüne kabul edersen müziğin sana ait olmaktan çıkar",
+          "<strong>Context window sınırı:</strong> Çok uzun oturumlarda Claude önceki konuşmaları unutabilir. Önemli kararları CLAUDE.md'ye veya notlara kaydet",
+          "<strong>Telif hakları:</strong> Suno ile üretilen müziğin telif durumunu bilmek önemli — ticari kullanım için Suno Pro planı gerekli. Claude bu konuda da rehberlik yapabiliyor",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Sıkça Sorulan Sorular",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question:
+              "Claude Code müzik prodüksiyonu için gerçekten işe yarıyor mu?",
+            answer:
+              "Evet — ama bir DAW'ın yerini almıyor. Şarkı sözü yazma, BPM/ton analizi, metadata yönetimi, mix önerileri ve iş süreçleri otomasyonunda ciddi fark yaratıyor. Ben kendi müzik üretimimde günde 2-3 saat kazanıyorum.",
+          },
+          {
+            question:
+              "Müzik teorisi bilmeden Claude Code'u müzik için kullanabilir miyim?",
+            answer:
+              "Temel bilgi faydalı ama zorunlu değil. Claude müzik teorisini sana açıklayarak ilerleyebilir. Ama ne kadar çok bilirsen, Claude'a o kadar spesifik talimat verebilirsin ve sonuçlar o kadar iyi olur.",
+          },
+          {
+            question:
+              "Hangi DAW'larla çalışıyor?",
+            answer:
+              "Claude Code herhangi bir DAW ile çalışabilir çünkü dosya sistemi üzerinden operasyon yapıyor. Logic Pro, Ableton, FL Studio, Pro Tools — hepsi desteklenir. Computer Use özelliği ile macOS uygulamalarını doğrudan kontrol edebilir.",
+          },
+          {
+            question:
+              "Claude ile yazdığım şarkının telif hakkı kime ait?",
+            answer:
+              "AI ile birlikte yazılan şarkıların telif durumu ülkelere göre değişiyor. Türkiye'de henüz net bir yasal düzenleme yok. Genel yaklaşım: AI'ı araç olarak kullandıysan ve yaratıcı kararları sen verdiysen, telif sana ait. Ama nihai kararları bir hukuk danışmanıyla alın.",
+          },
+          {
+            question:
+              "Echo Bazaar gibi bir AI müzik kanalı nasıl açarım?",
+            answer:
+              "İlk adım: Suno veya Udio ile müzik üretmeye başla. İkinci adım: bir YouTube kanalı aç ve nişini belirle (lo-fi, cinematic, ambient gibi). Üçüncü adım: Claude Code ile içerik pipeline'ını otomatikleştir — metadata, thumbnail, açıklama, yükleme sürecini sistematize et. Detaylı rehber için blog'umuzun AI müzik yazılarına göz atın.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Sonuç: AI Müziği Öldürmüyor, Dönüştürüyor",
+      },
+      {
+        type: "p",
+        text: "\"AI müziği öldürecek\" diyenler var. Ben farklı düşünüyorum. <strong>AI, müzik üretimini demokratikleştiriyor</strong> — tıpkı ev stüdyolarının büyük stüdyo bağımlılığını kırdığı gibi. Claude Code gibi araçlar, bağımsız müzisyenlere daha önce sadece büyük prodüksiyon ekiplerinin erişebildiği verimliliği sunuyor. 15 yıllık müzik deneyimimi Claude Code ile birleştirdiğimde, ortaya çıkan şey benim kapasitemin AI ile büyümüş hali — benim yerimi alan bir robot değil.",
+      },
+      {
+        type: "p",
+        text: "Eğer müzisyenseniz, prodüktörseniz veya müzik üretmek istiyorsanız: Claude Code'u deneyin. İlk CLAUDE.md dosyanızı yazın, ilk şarkı sözü oturumunuzu yapın, ilk BPM analizini çalıştırın. 30 dakikada \"neden daha önce başlamadım\" diyeceksiniz.",
+      },
+      {
+        type: "cta",
+        text: "Müzik prodüksiyon sürecinize AI entegre etmek veya kendi Claude Code sisteminizi kurmak istiyorsanız, <a href='/hizmetler#ai-ajan-sistemi'>AI ajan hizmetlerimize</a> göz atın.",
+        href: "/iletisim",
+        label: "Ücretsiz Danışmanlık Alın",
+      },
+    ],
+  },
+  {
+    slug: "claude-code-ai-ajan-sistemi-kurulumu",
+    title:
+      "Claude Code ile AI Ajan Sistemi Nasıl Kurulur? Adım Adım Rehber",
+    description:
+      "72+ ajanlı bir AI ajan sistemini Claude Code ile nasıl kurdum? CLAUDE.md yapısı, ajan tanımları, hafıza sistemi, MCP entegrasyonları ve hook'lar — gerçek kod örnekleriyle.",
+    date: "2026-04-01",
+    readingTime: "16 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "Claude Code ajan sistemi",
+      "AI ajan kurma",
+      "çoklu ajan mimarisi",
+      "Claude Code rehber",
+      "CLAUDE.md nasıl yazılır",
+      "AI ajan sistemi kurulumu",
+      "Claude Code MCP entegrasyonu",
+      "yapay zeka ajan otomasyon",
+    ],
+    coverImage: "/images/blog/claude-code-ai-ajan-sistemi-kurulumu.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Bir AI ajan sistemi kurmak istiyorsun ama nereden başlayacağını bilmiyorsun. Ya da \"ajan sistemi\" kavramını duydun, ama pratik uygulama konusunda kafan karışık. Ben 8 aydır Claude Code üzerinde çalışan, <strong>72'den fazla uzman ajan, 25+ MCP entegrasyonu ve kapsamlı bir hafıza sistemi</strong> barındıran bir yapı kurdum — ve bu yazıda tüm sistemi adım adım anlatacağım. Teori yok, soyut kavramlar yok — gerçek dosya yapıları, gerçek kod örnekleri, gerçek sonuçlar.",
+      },
+      {
+        type: "h2",
+        text: "Neden Claude Code? Neden Başka Bir Araç Değil?",
+      },
+      {
+        type: "p",
+        text: "Piyasada çoklu ajan çatıları var — LangChain, CrewAI, AutoGen gibi. Bunları denedim. Ama Claude Code'un bir farkı var: <strong>kendi dosya sisteminizde yaşıyor</strong>. Sunucuya deploy etmenize, Docker container'lar kurmanıza gerek yok. Projenizin kök dizininde bir CLAUDE.md dosyası oluşturuyorsunuz ve Claude Code onu okuduğu anda tüm sistem ayağa kalkıyor.",
+      },
+      {
+        type: "p",
+        text: "Bu yaklaşımın avantajları net: sıfır altyapı maliyeti, sıfır devops bilgisi gereksinimi, ve en önemlisi — <strong>dosya tabanlı bir sistem olduğu için versiyonlanabilir, paylaşılabilir ve anlaşılabilir</strong>. Git ile versiyon kontrolü yapabilirsiniz. Bir başkasına tüm sisteminizi CLAUDE.md dosyası göndererek aktarabilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "Mimari: Orkestratör + Uzman Ajanlar",
+      },
+      {
+        type: "p",
+        text: "Sistemimin mimarisi basit ama güçlü: <strong>bir orkestratör ajan ve altında uzman ajanlar</strong>. Orkestratör (ana CLAUDE.md) gelen her mesajı analiz eder, konuya göre ilgili ajana yönlendirir. Her ajan kendi alanında derinleşmiş, kendi hafıza dosyaları ve araç setleri olan bir uzmandır.",
+      },
+      {
+        type: "p",
+        text: "Benim sistemimde 9 departman var: Müzik, Yaratıcı, Pazarlama, Sosyal Medya, Görsel, Teknoloji, İstihbarat, Destek ve Spor. Her departmanın altında 3-12 uzman ajan bulunuyor. Toplam 72'den fazla ajan. Ama korkmayın — bu sistemi bir günde kurmadım. İlk gün 3 ajanla başladım, ihtiyaç oldukça büyüttüm.",
+      },
+      {
+        type: "h2",
+        text: "Adım 1: Ana CLAUDE.md Dosyasını Oluştur",
+      },
+      {
+        type: "p",
+        text: "Her şey buradan başlıyor. Projenizin kök dizininde bir <strong>CLAUDE.md</strong> dosyası oluşturun. Bu dosya Claude Code'un her oturum başında okuduğu konfigürasyon dosyasıdır. İçinde şunlar olmalı:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Kimlik tanımı:</strong> \"Sen kimsin?\" sorusunun cevabı. Claude'a rolünü, amacını ve sınırlarını söyleyin. Örnek: \"Sen Kamer'in kişisel AI sistemisin. Gelen mesajları analiz et ve ilgili ajana yönlendir.\"",
+          "<strong>Kullanıcı bilgisi:</strong> \"Kamer kimdir?\" — mesleği, tercihleri, hedefleri. Claude bu bilgiyi tüm önerilerinde kullanır",
+          "<strong>Yönlendirme tablosu:</strong> Hangi anahtar kelime hangi ajana gider? Tablo formatında yazın. Örnek: \"müzik, şarkı, melodi → Müzik Ajanı\"",
+          "<strong>İletişim kuralları:</strong> Dil, ton, format tercihleri. \"Türkçe konuş, sycophancy yapma, belirsizliği söyle\" gibi",
+          "<strong>Dosya konumları:</strong> Ajan tanımları, araçlar, bilgi tabanı, çıktılar nerede? Claude'un dosya sisteminde yolunu bulması için bu bilgi şart",
+          "<strong>Sistem sınırları:</strong> Claude'un ne yapmaması gerektiğini açıkça belirtin. \"Profesyonel tıbbi tavsiye verme, ilaç dozu önerme\" gibi",
+        ],
+      },
+      {
+        type: "p",
+        text: "Bu CLAUDE.md dosyası 100 satır da olabilir, 500 satır da. Önemli olan net ve tutarlı olması. Claude her karakter'i okuyor ve ona göre davranıyor.",
+      },
+      {
+        type: "h2",
+        text: "Adım 2: Ajan Tanım Dosyaları — AGENT.md",
+      },
+      {
+        type: "p",
+        text: "Her uzman ajan bir <strong>AGENT.md</strong> dosyasıyla tanımlanır. Dosya yapısı şöyle: <code>agentlar/{departman}/{ajan-adi}/AGENT.md</code>. Örneğin müzik prodüktör ajanı: <code>agentlar/muzik/kamer-agent/AGENT.md</code>",
+      },
+      {
+        type: "p",
+        text: "Bir AGENT.md dosyasında şunlar bulunur:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Rol tanımı:</strong> \"Sen bir müzik prodüksiyon uzmanısın. Görevin: şarkı sözü yazma, BPM analizi, mix önerileri\"",
+          "<strong>Uzmanlık alanları:</strong> Ajanın ne bildiği ve ne bilmediği. Sınırları net koyun",
+          "<strong>Kullanabileceği araçlar:</strong> BPM analiz scripti, ses dönüştürücü, Spotify API gibi araçların listesi ve kullanım talimatları",
+          "<strong>Hafıza dosyaları:</strong> Ajanın okuması gereken bilgi dosyaları. Örneğin müzik ajanı: BRAND.md (sanatçı kimliği), DISCOGRAPHY.md (diskografi), PREFERENCES.md (müzikal tercihler)",
+          "<strong>Çıktı formatı:</strong> Ajanın cevaplarını nasıl formatlaması gerektiği. Başlık, maddeler, kod blokları, tablo kullanımı gibi",
+          "<strong>Tetikleyiciler:</strong> Bu ajanı aktive eden anahtar kelimeler listesi",
+        ],
+      },
+      {
+        type: "p",
+        text: "Her ajan kendi AGENT.md dosyasıyla birlikte bir <strong>MEMORY/</strong> klasörüne sahip olabilir. Bu klasörde ajanın öğrendiği bilgiler, geçmiş kararlar ve referanslar tutulur. Claude oturumlar arası bu bilgileri okuyarak \"hafızasını\" korur.",
+      },
+      {
+        type: "h2",
+        text: "Adım 3: Hafıza Sistemi — Claude'un Beyni",
+      },
+      {
+        type: "p",
+        text: "Claude Code'un doğal hafızası yok — her oturum sıfırdan başlar. Ama dosya sistemi üzerinden <strong>kalıcı hafıza</strong> kurabilirsiniz. Benim sistemimde 3 katmanlı bir hafıza yapısı var:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Global hafıza (MEMORY.md):</strong> <code>~/.claude/projects/{proje}/memory/MEMORY.md</code> — Claude Code'un otomatik okuduğu, tüm oturumlar arası kalıcı hafıza. Kullanıcı tercihleri, öğrenilen feedback'ler, proje durumları burada",
+          "<strong>Bilgi tabanı (bilgi/):</strong> Konu bazlı bilgi dosyaları — marka kimliği, müzik tercihleri, piyasa verileri, rakip analizleri. Claude ilgili konuya göre bu dosyaları okur",
+          "<strong>Ajan hafızası (MEMORY/):</strong> Her ajanın kendi klasöründeki öğrenilmiş bilgiler. Müzik ajanı şarkı tercihlerini, finans ajanı bütçe bilgilerini kendi hafızasında tutar",
+        ],
+      },
+      {
+        type: "p",
+        text: "Hafıza güncelleme protokolüm şu: yeni bilgi öğrenildiğinde ilgili dosyaya yazılır, kullanıcı tercihi keşfedildiğinde MEMORY.md'ye eklenir, haftalık review yapılır. Bu sayede Claude her oturumda \"taze\" başlasa bile, önceki oturumların bilgisini taşır.",
+      },
+      {
+        type: "h2",
+        text: "Adım 4: MCP Entegrasyonları — Claude'un Kolları",
+      },
+      {
+        type: "p",
+        text: "<strong>MCP (Model Context Protocol)</strong>, Claude Code'un dış dünyayla bağlantı kurmasını sağlayan standart protokol. Bir MCP server'ı, Claude'a yeni yetenekler kazandırır — Gmail okuma, takvim yönetimi, tasarım oluşturma gibi.",
+      },
+      {
+        type: "p",
+        text: "Benim sistemimde aktif olan MCP entegrasyonları:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Gmail MCP:</strong> E-posta okuma, taslak yazma, yanıt oluşturma. Müşteri iletişimini otomatikleştiriyor",
+          "<strong>Google Calendar MCP:</strong> Takvim yönetimi, toplantı planlama, hatırlatıcılar",
+          "<strong>Canva MCP:</strong> Görsel tasarım üretimi — sosyal medya postları, thumbnail'ler, sunumlar",
+          "<strong>YouTube Transcript MCP:</strong> Video transkript çekme — araştırma ve içerik analizi için",
+          "<strong>Context7 MCP:</strong> Güncel kütüphane ve framework dokümantasyonu — kodlama sırasında doğru bilgiye erişim",
+          "<strong>PubMed MCP:</strong> Akademik makale araştırma — sağlık ve bilim konularında güvenilir kaynak",
+        ],
+      },
+      {
+        type: "p",
+        text: "MCP kurulumu basit: <code>~/.claude/settings.json</code> dosyasında MCP server tanımlarını ekliyorsunuz. Her MCP server'ı bir npx veya Docker komutuyla çalışır. Claude Code başlatıldığında otomatik bağlanır ve araçlar kullanılabilir hale gelir.",
+      },
+      {
+        type: "h2",
+        text: "Adım 5: Araçlar — Özel Python Script'leri",
+      },
+      {
+        type: "p",
+        text: "MCP'lerin yanı sıra, kendi araçlarınızı da yazabilirsiniz. Ben <code>araclar/</code> klasöründe 15+ Python script'i tutuyorum — Claude bunları doğrudan çalıştırıyor:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>transcribe.py:</strong> Ses dosyasından transkript çıkarma (Whisper tabanlı)",
+          "<strong>bpm_analiz.py:</strong> Ses dosyasının BPM, ton ve enerji analizi",
+          "<strong>tweet_isle.py:</strong> X/Twitter linkinden tweet metni, video ve transkript çıkarma",
+          "<strong>session_save.py / session_resume.py:</strong> Oturum kaydetme ve devam etme — uzun çalışmalarda context kaybını önlüyor",
+          "<strong>hooks/pre_compact.sh:</strong> Context sıkıştırmadan önce otomatik çalışan hook — önemli bilgileri kaydediyor",
+        ],
+      },
+      {
+        type: "p",
+        text: "Araçlar dosya tabanlı olduğu için versiyon kontrolü altında. Yeni bir araç eklemek, bir Python dosyası yazmak ve CLAUDE.md'de referans vermek kadar basit. Claude araçları doğrudan çağırabilir: <code>python3 araclar/bpm_analiz.py dosya.wav</code>",
+      },
+      {
+        type: "h2",
+        text: "Adım 6: Hook Sistemi — Otomatik Lifecycle Yönetimi",
+      },
+      {
+        type: "p",
+        text: "Claude Code'un <strong>hook sistemi</strong>, belirli olaylarda otomatik script'ler çalıştırmanızı sağlar. Bu, ajan sisteminin \"reflekslerini\" oluşturur:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>SessionStart hook:</strong> Her oturum başında çalışır — güncel tarihi yazar, bekleyen görevleri kontrol eder, son değişiklikleri özetler",
+          "<strong>PreCompact hook:</strong> Context sıkıştırma başlamadan önce çalışır — önemli bilgileri hafıza dosyalarına yazar, kaybolmasını önler",
+          "<strong>Stop hook:</strong> Her cevap sonrası asenkron çalışır — log tutar, metrik toplar",
+        ],
+      },
+      {
+        type: "p",
+        text: "Hook konfigürasyonu <code>~/.claude/settings.json</code> dosyasında yapılır. Her hook bir shell komutu çalıştırır. Matcher ile hangi projelerde aktif olacağını belirleyebilirsiniz. Hook'lar sistemin \"otonom\" hissettiren kısmıdır — siz söylemeden Claude kendi bakımını yapar.",
+      },
+      {
+        type: "h2",
+        text: "Adım 7: Yönlendirme Kuralları — Akıllı Routing",
+      },
+      {
+        type: "p",
+        text: "72 ajan varsa, gelen mesajın doğru ajana gitmesi kritik. Benim yönlendirme sistemim <strong>anahtar kelime tabanlı</strong>:",
+      },
+      {
+        type: "p",
+        text: "CLAUDE.md'de bir yönlendirme tablosu var. \"Logic Pro, şarkı, melodi\" gibi kelimeler Müzik Ajanı'na; \"echo bazaar, youtube, thumbnail\" gibi kelimeler Echo Bazaar Ajanı'na; \"stres, motivasyon, kaygı\" gibi kelimeler Psikiyatr Ajanı'na gidiyor. Belirsiz veya çoklu konu varsa, orkestratör kendisi cevaplıyor ve ilgili ajanları referans gösteriyor.",
+      },
+      {
+        type: "p",
+        text: "Bu yaklaşım basit ama etkili. Daha gelişmiş bir routing için semantic matching veya intent classification kullanılabilir — ama anahtar kelime tabanlı sistem %90+ doğruluk oranıyla çalışıyor ve sıfır ek maliyet gerektiriyor.",
+      },
+      {
+        type: "h2",
+        text: "Adım 8: Model Seçimi — Doğru İş İçin Doğru Model",
+      },
+      {
+        type: "p",
+        text: "Her görev aynı model gücünü gerektirmez. Benim sistemimde <strong>3 katmanlı model stratejisi</strong> var:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Opus (en güçlü):</strong> Strateji kararları, hukuk analizi, karmaşık planlama. HIT or LIT yarışma stratejisi gibi kritik konular",
+          "<strong>Sonnet (varsayılan):</strong> Kod yazma, araştırma, içerik üretimi, ajan görevleri. Günlük işlerin %80'i burada dönüyor",
+          "<strong>Haiku (hızlı ve ucuz):</strong> Basit sorular, format dönüştürme, dosya taşıma. Token tasarrufu",
+        ],
+      },
+      {
+        type: "p",
+        text: "Sub-agent başlatırken modeli belirtiyorum: <code>claude --model claude-sonnet-4-6 -p \"Görevi yap\"</code>. Bu sayede basit bir BPM hesaplama için Opus token'ı harcamıyorum. Aylık API maliyetim bu stratejiyle %40 düştü.",
+      },
+      {
+        type: "h2",
+        text: "Adım 9: Bilgi Tabanı — 25 İçerik Üreticisi Referansı",
+      },
+      {
+        type: "p",
+        text: "Sistemimin benzersiz özelliklerinden biri: <strong>25 YouTube içerik üreticisinin bilgi birikimini taşıyan referans kaynakları</strong>. Her içerik üreticisi için bir INDEX.md ve data/ klasörü var. \"X'e sor\" dediğimde Claude ilgili kaynağın bilgi tabanını okuyor ve o kişinin perspektifinden cevap veriyor.",
+      },
+      {
+        type: "p",
+        text: "Bu yaklaşım başka alanlara da uygulanabilir: rakip analizi için rakip şirketlerin bilgi tabanları, müşteri segmentasyonu için persona dosyaları, eğitim içeriği için uzman profilleri. Dosya tabanlı bilgi tabanı, Claude'un RAG (Retrieval Augmented Generation) yapmasını sağlar — dış bir veritabanı veya vector store'a gerek kalmadan.",
+      },
+      {
+        type: "h2",
+        text: "Gerçek Dünya Sonuçları: 8 Aylık Deneyim",
+      },
+      {
+        type: "p",
+        text: "Bu sistemi 8 aydır günlük aktif kullanıyorum. Sonuçlar:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Günde 4-6 saat tasarruf:</strong> E-posta, takvim, içerik üretimi, araştırma gibi işler büyük ölçüde otomatik",
+          "<strong>72+ ajan:</strong> Müzikten finansa, sosyal medyadan hukuka kadar her alan kapsanıyor",
+          "<strong>25+ MCP entegrasyonu:</strong> Gmail, Calendar, Canva, YouTube, PubMed ve daha fazlası",
+          "<strong>Sıfır altyapı maliyeti:</strong> Tüm sistem dosya tabanlı, sunucu yok, veritabanı yok",
+          "<strong>Echo Bazaar 15M+ dinlenme:</strong> İçerik pipeline'ı bu sistemle yönetiliyor",
+          "<strong>5 aktif yazılım projesi:</strong> 4 ajanlı dev ekibiyle paralel proje geliştirme",
+          "<strong>Telegram entegrasyonu:</strong> 7/24 erişilebilir always-on bot — dışarıdan ses kaydı gönderiyorum, sistem işliyor",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Yaygın Hatalar ve Nasıl Kaçınılır",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>CLAUDE.md'yi çok uzun yazmak:</strong> 5000+ satırlık bir CLAUDE.md, Claude'un context window'unu doldurur ve performansı düşürür. Öz ve net tutun, detayları alt dosyalara yönlendirin",
+          "<strong>Tüm ajanları aynı anda kurmaya çalışmak:</strong> 3 ajanla başlayın. İhtiyaç oldukça büyütün. İlk gün 72 ajan kurmak gereksiz ve karmaşıklaştırıcı",
+          "<strong>Hafıza sistemini ihmal etmek:</strong> Hafıza dosyaları olmadan Claude her oturumda sıfırdan başlar. İlk günden MEMORY.md yapısını kurun",
+          "<strong>Hook'ları atlamak:</strong> Hook'lar olmadan sistem \"reaktif\" kalır. Hook'larla sistem \"proaktif\" olur — kendi bakımını yapar, bilgi kaybını önler",
+          "<strong>Model seçimini optimize etmemek:</strong> Her görev için Opus kullanmak gereksiz maliyet. Model stratejisi belirleyin",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Hızlı Başlangıç: 30 Dakikada İlk Ajan Sisteminiz",
+      },
+      {
+        type: "p",
+        text: "Hemen başlamak istiyorsanız, minimum viable ajan sistemi şu 4 adımla kurulur:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>1. Claude Code'u kurun:</strong> <code>npm install -g @anthropic-ai/claude-code</code> — Pro veya Max plan ile",
+          "<strong>2. Proje dizini oluşturun:</strong> <code>mkdir ai-sistem && cd ai-sistem</code> — ve bir CLAUDE.md dosyası yazın. İçine kimlik tanımı, kullanıcı bilgisi ve 2-3 yönlendirme kuralı koyun",
+          "<strong>3. İlk ajanı tanımlayın:</strong> <code>mkdir -p agentlar/genel/asistan</code> — ve içine AGENT.md yazın. Basit bir görev tanımı ve birkaç tetikleyici yeterli",
+          "<strong>4. Hafıza başlatın:</strong> Bir MEMORY.md oluşturun ve Claude'a \"bu bilgiyi hafızana yaz\" demeye başlayın. Sistem kendi kendini büyütecek",
+        ],
+      },
+      {
+        type: "p",
+        text: "30 dakikada çalışan bir sisteminiz olacak. Sonra ihtiyaç oldukça yeni ajanlar, MCP entegrasyonları ve araçlar eklersiniz. Bu sistem organik büyür — ve en güçlü yanı da bu.",
+      },
+      {
+        type: "h2",
+        text: "Sıkça Sorulan Sorular",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question:
+              "Claude Code ajan sistemi için kodlama bilmek şart mı?",
+            answer:
+              "Temel seviyede yeterli. CLAUDE.md ve AGENT.md dosyaları düz metin — Markdown formatında yazıyorsunuz. Python araçları ve hook'lar için temel kodlama bilgisi faydalı ama Claude Code sizin için de kod yazabilir. Önemli olan sistemi tasarlayabilmek.",
+          },
+          {
+            question:
+              "72 ajan gerekmez, kaç ajanla başlamalıyım?",
+            answer:
+              "3 ajanla başlayın: bir orkestratör (ana CLAUDE.md), bir genel asistan ve iş alanınıza özel bir uzman ajan. İhtiyaç oldukça yeni ajanlar ekleyin. Ben 8 ayda 3'ten 72'ye çıktım — organik büyüme en sağlıklısı.",
+          },
+          {
+            question:
+              "Bu sistem ne kadar maliyet çıkarır?",
+            answer:
+              "Claude Code Pro plan aylık $20, Max plan $100. API kullanımı (sub-agent'lar için) görev yoğunluğuna göre aylık $30-150 arasında değişir. Toplam maliyet: ayda $50-250. Karşılığında günde 4-6 saat tasarruf — ROI tartışmasız.",
+          },
+          {
+            question:
+              "Ekip olarak kullanabilir miyiz?",
+            answer:
+              "Evet. CLAUDE.md ve ajan dosyaları Git ile paylaşılabilir. Her ekip üyesi kendi Claude Code instance'ında aynı ajan sistemini çalıştırabilir. Ortak bilgi tabanı ve hafıza dosyaları ile ekip senkronizasyonu sağlanır.",
+          },
+          {
+            question:
+              "Güvenlik nasıl sağlanıyor?",
+            answer:
+              "Claude Code'un settings.json dosyasında deny kuralları tanımlayabilirsiniz — SSH anahtarları, credentials, hassas dosyalara erişimi engelleyin. MCP entegrasyonları OAuth ile çalışır. Ve Claude Code sandbox modunda çalışabilir — tehlikeli komutları engelleyen bir güvenlik katmanı.",
+          },
+          {
+            question:
+              "Windows'ta çalışır mı?",
+            answer:
+              "Claude Code şu an macOS ve Linux'ta native çalışıyor. Windows'ta WSL2 (Windows Subsystem for Linux) üzerinden kullanabilirsiniz. Computer Use özellikleri macOS'a özel, ama dosya sistemi operasyonları tüm platformlarda çalışır.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Sonuç: Sistem Kurmak, Araç Kullanmaktan Büyük",
+      },
+      {
+        type: "p",
+        text: "ChatGPT'ye soru sormak, bir AI aracı kullanmaktır. <strong>Claude Code ile ajan sistemi kurmak, bir AI ekibi oluşturmaktır.</strong> Aradaki fark devasa. Araç kullanıcısı olarak saatte birkaç dakika kazanırsınız. Sistem kurucusu olarak günde saatler kazanırsınız — ve sistem siz yokken bile çalışır.",
+      },
+      {
+        type: "p",
+        text: "Ben 72 ajanlı, 25 MCP entegrasyonlu, kapsamlı hafıza sistemli bir yapı kurdum — ama sizin 72 ajana ihtiyacınız yok. 3 ajanla başlayın. İlk CLAUDE.md dosyanızı yazın. İlk ajanınızı tanımlayın. İlk MCP'yi entegre edin. Ve sistemin organik büyümesini izleyin. 30 dakikada başlarsınız, 30 gün sonra \"bu olmadan nasıl çalışıyordum\" dersiniz.",
+      },
+      {
+        type: "cta",
+        text: "Kendi AI ajan sisteminizi kurmak istiyorsanız veya işletmeniz için özelleştirilmiş bir çözüm arıyorsanız, <a href='/hizmetler#ai-ajan-sistemi'>AI ajan kurulum hizmetlerimize</a> göz atın.",
+        href: "/iletisim",
+        label: "Ücretsiz Danışmanlık Alın",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
