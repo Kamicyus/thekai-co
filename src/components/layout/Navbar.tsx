@@ -1,15 +1,33 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import KaiIcon from "@/components/icons/KaiIcon";
-import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const NAV_LINKS = [
+    { label: t("home"), href: "/" as const },
+    { label: t("services"), href: "/hizmetler" as const },
+    { label: t("portfolio"), href: "/portfolyo" as const },
+    { label: t("about"), href: "/hakkimizda" as const },
+    { label: t("blog"), href: "/blog" as const },
+    { label: t("tools"), href: "/araclar" as const },
+    { label: t("contact"), href: "/iletisim" as const },
+  ];
+
+  const switchLocale = (newLocale: "tr" | "en") => {
+    router.replace(pathname, { locale: newLocale });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,14 +87,39 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA + Hamburger */}
+            {/* CTA + Language Switcher + Hamburger */}
             <div className="flex items-center gap-4">
               <Link
                 href="/iletisim"
                 className="hidden md:inline-flex items-center justify-center px-5 py-2.5 bg-[#D8FB32] text-[#0A0A0A] text-sm font-semibold rounded-[10px] hover:bg-[#B4F030] transition-colors duration-200"
               >
-                İletişime Geç
+                {t("cta")}
               </Link>
+
+              {/* Language Switcher */}
+              <div className="hidden md:flex items-center gap-1 text-xs font-medium">
+                <button
+                  onClick={() => switchLocale("tr")}
+                  className={`px-1.5 py-1 rounded transition-colors duration-200 ${
+                    locale === "tr"
+                      ? "text-[#D8FB32]"
+                      : "text-[#666666] hover:text-[#999999]"
+                  }`}
+                >
+                  TR
+                </button>
+                <span className="text-[#333333]">|</span>
+                <button
+                  onClick={() => switchLocale("en")}
+                  className={`px-1.5 py-1 rounded transition-colors duration-200 ${
+                    locale === "en"
+                      ? "text-[#D8FB32]"
+                      : "text-[#666666] hover:text-[#999999]"
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
 
               {/* Mobile hamburger */}
               <button
@@ -144,8 +187,39 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="inline-flex items-center justify-center px-8 py-3 bg-[#D8FB32] text-[#0A0A0A] text-lg font-semibold rounded-[10px] hover:bg-[#B4F030] transition-colors"
                 >
-                  İletişime Geç
+                  {t("cta")}
                 </Link>
+              </motion.div>
+
+              {/* Mobile Language Switcher */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: 0.4 }}
+                className="flex items-center gap-2 text-sm font-medium mt-2"
+              >
+                <button
+                  onClick={() => { switchLocale("tr"); setMobileOpen(false); }}
+                  className={`px-2 py-1 rounded transition-colors duration-200 ${
+                    locale === "tr"
+                      ? "text-[#D8FB32]"
+                      : "text-[#666666] hover:text-[#999999]"
+                  }`}
+                >
+                  TR
+                </button>
+                <span className="text-[#333333]">|</span>
+                <button
+                  onClick={() => { switchLocale("en"); setMobileOpen(false); }}
+                  className={`px-2 py-1 rounded transition-colors duration-200 ${
+                    locale === "en"
+                      ? "text-[#D8FB32]"
+                      : "text-[#666666] hover:text-[#999999]"
+                  }`}
+                >
+                  EN
+                </button>
               </motion.div>
             </div>
           </motion.div>

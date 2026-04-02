@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "portfolio": "Portfolyo",
+    "about": "Hakkımızda",
+    "blog": "Blog",
+    "tools": "Araçlar",
+    "contact": "İletişim",
+    "cta": "İletişime Geç"
+  },
+  "hero": {
+    "subtitle": "Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.",
+    "tagline": "Call me Kai!",
+    "ctaServices": "Hizmetleri Gör",
+    "ctaPortfolio": "Portfolyo"
+  },
+  "services": {
+    "title": "Ne Yapıyoruz",
+    "subtitle": "Dokuz temel alandan birleşen yaratıcı güç.",
+    "viewDetails": "Detayları Gör →",
+    "items": {
+      "ai-ajan-sistemi": {
+        "title": "AI Ajan Sistemi",
+        "description": "İşletmeniz için özel AI ajan ekibi."
+      },
+      "web-sitesi-tasarimi": {
+        "title": "Web Sitesi Tasarımı",
+        "description": "Kurumsal site, landing page, portfolyo."
+      },
+      "icerik-uretimi": {
+        "title": "İçerik Üretimi",
+        "description": "YouTube, sosyal medya, marka içeriği."
+      },
+      "artwork-tasarim": {
+        "title": "Artwork & Tasarım",
+        "description": "Kapak fotoğrafı, görsel kimlik, artwork."
+      },
+      "sesli-kitap": {
+        "title": "Sesli Kitap Prodüksiyon",
+        "description": "AI seslendirme ile yayıncılık."
+      },
+      "muzik-produksiyon": {
+        "title": "Müzik Prodüksiyon",
+        "description": "Beste, aranjman, mix ve master."
+      },
+      "dijital-strateji": {
+        "title": "Dijital Strateji & Danışmanlık",
+        "description": "AI danışmanlık, dijital dönüşüm."
+      },
+      "telegram-bot": {
+        "title": "Telegram Bot Geliştirme",
+        "description": "Kişiye özel bot kurulumu ve otomasyon."
+      },
+      "performans-pazarlama": {
+        "title": "Performans Pazarlama",
+        "description": "Google Ads & Meta Ads ile büyüme."
+      }
+    }
+  },
+  "footer": {
+    "brandDescription": "Call Me Kai — Müzik, teknoloji ve\nyaratıcılık kesişiminde bir stüdyo.",
+    "pages": "Sayfalar",
+    "contact": "İletişim",
+    "copyright": "© 2026 The Kai. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası"
+  }
+}

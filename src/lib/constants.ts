@@ -180,6 +180,24 @@ export const TOOLS = [
     icon: "clock",
     slug: "pomodoro",
   },
+  {
+    title: "Regex Test Aracı",
+    description: "Düzenli ifade (regex) pattern yazın, metin üzerinde canlı test edin. Eşleşmeleri renkli görün, grupları inceleyin.",
+    icon: "regex",
+    slug: "regex-test",
+  },
+  {
+    title: "Renk Paleti Üretici",
+    description: "Rastgele renk paleti oluşturun. HEX, RGB, HSL kodları, renk kilitleme ve tek tıkla kopyalama.",
+    icon: "palette",
+    slug: "renk-paleti",
+  },
+  {
+    title: "Metin Farkı Karşılaştırıcı",
+    description: "İki metni yan yana karşılaştırın. Eklenen satırlar yeşil, silinen satırlar kırmızı. Satır bazlı diff görünümü.",
+    icon: "diff",
+    slug: "metin-farki",
+  },
 ] as const;
 
 export const STATS = [

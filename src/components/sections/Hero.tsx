@@ -1,12 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import KaiIcon from "@/components/icons/KaiIcon";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
 export default function Hero() {
+  const t = useTranslations("hero");
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -215,7 +217,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-sm sm:text-base text-[#999999] tracking-[0.03em] mb-3"
         >
-          Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.
+          {t("subtitle")}
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
@@ -223,7 +225,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="text-sm sm:text-lg md:text-xl text-[#666666] italic font-serif tracking-[0.05em] mb-12"
         >
-          Call me Kai!
+          {t("tagline")}
         </motion.p>
 
         {/* CTAs */}
@@ -237,13 +239,13 @@ export default function Hero() {
             href="/#hizmetler"
             className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 text-base shadow-[0_0_30px_rgba(216,251,50,0.15)]"
           >
-            Hizmetleri Gör
+            {t("ctaServices")}
           </Link>
           <Link
             href="/#portfolyo"
             className="inline-flex items-center justify-center px-8 py-3.5 border border-[#1F2937] text-[#F5F5F5] font-semibold rounded-[10px] hover:border-[#D8FB32]/30 hover:bg-[#D8FB32]/5 hover:scale-[1.02] transition-all duration-200 text-base"
           >
-            Portfolyo
+            {t("ctaPortfolio")}
           </Link>
         </motion.div>
 

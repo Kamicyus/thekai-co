@@ -1,13 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { ServiceIcon } from "@/components/icons/ServiceIcons";
 import { SERVICES } from "@/lib/constants";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import FadeIn from "@/components/ui/FadeIn";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
 export default function Services() {
+  const t = useTranslations("services");
   return (
     <section id="hizmetler" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Decorative pinwheel — top-right accent */}
@@ -19,10 +21,10 @@ export default function Services() {
         {/* Section Title */}
         <FadeIn className="text-center mb-16 lg:mb-20">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Ne Yapıyoruz
+            {t("title")}
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Dokuz temel alandan birleşen yaratıcı güç.
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -68,15 +70,15 @@ export default function Services() {
 
                     {/* Text */}
                     <h3 className="font-sans text-base lg:text-lg font-semibold text-[#F5F5F5] mb-1.5 tracking-[-0.3px]">
-                      {service.title}
+                      {t(`items.${service.slug}.title`)}
                     </h3>
                     <p className="text-[#CCCCCC] text-sm leading-relaxed">
-                      {service.description}
+                      {t(`items.${service.slug}.description`)}
                     </p>
 
                     {/* Arrow indicator */}
                     <div className="mt-3 text-[#D8FB32] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
-                      Detayları Gör →
+                      {t("viewDetails")}
                     </div>
                   </div>
 

@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "blog": "Blog",
+    "tools": "Tools",
+    "contact": "Contact",
+    "cta": "Get in Touch"
+  },
+  "hero": {
+    "subtitle": "A studio at the intersection of music, technology and creativity.",
+    "tagline": "Call me Kai!",
+    "ctaServices": "View Services",
+    "ctaPortfolio": "Portfolio"
+  },
+  "services": {
+    "title": "What We Do",
+    "subtitle": "Creative power from nine core disciplines.",
+    "viewDetails": "View Details →",
+    "items": {
+      "ai-ajan-sistemi": {
+        "title": "AI Agent Systems",
+        "description": "Custom AI agent teams for your business."
+      },
+      "web-sitesi-tasarimi": {
+        "title": "Web Design",
+        "description": "Corporate sites, landing pages, portfolios."
+      },
+      "icerik-uretimi": {
+        "title": "Content Production",
+        "description": "YouTube, social media, brand content."
+      },
+      "artwork-tasarim": {
+        "title": "Artwork & Design",
+        "description": "Cover art, visual identity, artwork."
+      },
+      "sesli-kitap": {
+        "title": "Audiobook Production",
+        "description": "Publishing with AI voice synthesis."
+      },
+      "muzik-produksiyon": {
+        "title": "Music Production",
+        "description": "Composition, arrangement, mix & master."
+      },
+      "dijital-strateji": {
+        "title": "Digital Strategy & Consulting",
+        "description": "AI consulting, digital transformation."
+      },
+      "telegram-bot": {
+        "title": "Telegram Bot Development",
+        "description": "Custom bot setup and automation."
+      },
+      "performans-pazarlama": {
+        "title": "Performance Marketing",
+        "description": "Growth with Google Ads & Meta Ads."
+      }
+    }
+  },
+  "footer": {
+    "brandDescription": "Call Me Kai — A studio at the intersection\nof music, technology and creativity.",
+    "pages": "Pages",
+    "contact": "Contact",
+    "copyright": "© 2026 The Kai. All rights reserved.",
+    "privacy": "Privacy Policy"
+  }
+}

@@ -1,11 +1,24 @@
-import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import KaiIcon from "@/components/icons/KaiIcon";
 import { SocialIcon } from "@/components/icons/SocialIcons";
-import { NAV_LINKS, SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants";
+import { SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
 export default function Footer() {
+  const t = useTranslations("footer");
+  const tn = useTranslations("nav");
+
+  const NAV_LINKS = [
+    { label: tn("home"), href: "/" as const },
+    { label: tn("services"), href: "/hizmetler" as const },
+    { label: tn("portfolio"), href: "/portfolyo" as const },
+    { label: tn("about"), href: "/hakkimizda" as const },
+    { label: tn("blog"), href: "/blog" as const },
+    { label: tn("tools"), href: "/araclar" as const },
+    { label: tn("contact"), href: "/iletisim" as const },
+  ];
   return (
     <footer className="w-full bg-[#0F0F0F] border-t border-[#1F2937] relative overflow-hidden">
       {/* Large watermark pinwheel — right side */}
@@ -25,9 +38,8 @@ export default function Footer() {
                 className="h-[38px] w-auto"
               />
             </div>
-            <p className="text-[#999999] text-sm leading-relaxed mb-6 max-w-xs">
-              Call Me Kai — Müzik, teknoloji ve<br />
-              yaratıcılık kesişiminde bir stüdyo.
+            <p className="text-[#999999] text-sm leading-relaxed mb-6 max-w-xs whitespace-pre-line">
+              {t("brandDescription")}
             </p>
             <div className="flex items-center gap-4">
               {SOCIAL_LINKS.map((social) => (
@@ -58,7 +70,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-[#F5F5F5] font-semibold text-sm mb-4 tracking-wide uppercase">
-              Sayfalar
+              {t("pages")}
             </h4>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
@@ -77,7 +89,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-[#F5F5F5] font-semibold text-sm mb-4 tracking-wide uppercase">
-              İletişim
+              {t("contact")}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
@@ -127,13 +139,13 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-[#1F2937]/50 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[#666666] text-xs">
-            &copy; 2026 The Kai. Tüm hakları saklıdır.
+            {t("copyright")}
           </p>
           <Link
             href="/gizlilik"
             className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
           >
-            Gizlilik Politikası
+            {t("privacy")}
           </Link>
         </div>
       </div>

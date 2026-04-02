@@ -151,6 +151,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: "https://thekai.co/araclar/regex-test",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://thekai.co/araclar/renk-paleti",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://thekai.co/araclar/metin-farki",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://thekai.co/gizlilik",
       lastModified: new Date(),
       changeFrequency: "yearly",

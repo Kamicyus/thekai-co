@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Stats from "@/components/sections/Stats";
@@ -9,13 +9,13 @@ import Timeline from "@/components/sections/Timeline";
 import TechStack from "@/components/sections/TechStack";
 import CTABanner from "@/components/sections/CTABanner";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-};
-
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <Hero />

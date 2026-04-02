@@ -114,6 +114,35 @@ const toolIcons: Record<string, React.ReactNode> = {
       <polyline points="12 6 12 12 16 14" />
     </svg>
   ),
+  regex: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v6m0 0l3-3m-3 3L9 5" />
+      <path d="M17.5 7.5L12 12m0 0L6.5 7.5" />
+      <circle cx="5" cy="17" r="3" />
+      <path d="M14 14l4 4m0-4l-4 4" />
+    </svg>
+  ),
+  palette: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="8" cy="9" r="1.5" fill="currentColor" />
+      <circle cx="12" cy="7" r="1.5" fill="currentColor" />
+      <circle cx="16" cy="9" r="1.5" fill="currentColor" />
+      <circle cx="8" cy="13" r="1.5" fill="currentColor" />
+      <path d="M14 17a2 2 0 0 0 2-2c0-1.5-2-3-2-3s-2 1.5-2 3a2 2 0 0 0 2 2z" />
+    </svg>
+  ),
+  diff: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="8" height="18" rx="1" />
+      <rect x="13" y="3" width="8" height="18" rx="1" />
+      <path d="M6 8h2" />
+      <path d="M6 12h2" />
+      <path d="M16 8h2" />
+      <path d="M15 12h4" />
+      <path d="M17 10v4" />
+    </svg>
+  ),
 };
 
 export default function AraclarPage() {
