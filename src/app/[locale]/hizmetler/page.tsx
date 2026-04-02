@@ -12,6 +12,7 @@ const HIZMET_DETAYLARI = [
     icon: "brain",
     title: "AI Ajan Sistemi Kurulumu",
     subtitle: "Claude Code tabanlı, 72+ ajan deneyimiyle.",
+    portfolioLink: "/blog/ai-ajan-sistemi-nedir",
     description:
       "İşletmeniz için özel AI ajan ekibi kuruyoruz. Departmanlarınıza özel, birbirleriyle iletişim kurabilen, 7/24 çalışan akıllı ajan sistemleri. Orkestrasyon, hafıza yönetimi, otomasyon pipeline'ları ve MCP entegrasyonları dahil.",
     features: [
@@ -79,6 +80,7 @@ const HIZMET_DETAYLARI = [
     icon: "content",
     title: "İçerik Üretimi",
     subtitle: "20M+ dinlenme deneyimiyle.",
+    portfolioLink: "/blog/dijital-icerik-stratejisi-rehberi",
     description:
       "YouTube, sosyal medya ve marka içeriği üretimi. Video prodüksiyon, thumbnail tasarım, içerik stratejisi ve platform optimizasyonu. Echo Bazaar kanalında 20M+ dinlenme ile kanıtlanmış içerik üretim metodolojisi.",
     features: [
@@ -146,6 +148,7 @@ const HIZMET_DETAYLARI = [
     icon: "microphone",
     title: "Sesli Kitap Prodüksiyon",
     subtitle: "AI seslendirme ile yayıncılık.",
+    portfolioLink: "/blog/ai-sesli-kitap",
     description:
       "Klasik ve modern edebiyatı yapay zekâ seslendirmesiyle sesli kitaba dönüştürüyoruz. Metin bölümleme, ses seçimi, seslendirme, düzenleme ve dijital platform dağıtımı. Murmur yayınevi deneyimiyle.",
     features: [
@@ -179,6 +182,7 @@ const HIZMET_DETAYLARI = [
     icon: "music",
     title: "Müzik Prodüksiyon",
     subtitle: "Geleneksel ve AI destekli üretim.",
+    portfolioLink: "/portfolyo#artwork",
     description:
       "Beste, aranjman, mix, master ve vokal prodüksiyon hizmetleri. 15 yıllık şarkı yazma deneyimi, Echo Bazaar'da 20M+ dinlenme ile kanıtlanmış AI müzik üretim kapasitesi. Suno, ElevenLabs ve geleneksel DAW araçlarıyla hibrit prodüksiyon.",
     features: [
@@ -212,6 +216,7 @@ const HIZMET_DETAYLARI = [
     icon: "lightbulb",
     title: "Dijital Strateji & Danışmanlık",
     subtitle: "AI-native dönüşüm.",
+    portfolioLink: "/blog/claude-code-rehber",
     description:
       "AI danışmanlık, dijital dönüşüm stratejisi, sosyal medya planlaması ve marka konumlandırma. Ekşi Maya Sports referansıyla kurumsal düzeyde strateji geliştirme ve uygulama.",
     features: [
@@ -245,6 +250,7 @@ const HIZMET_DETAYLARI = [
     icon: "robot",
     title: "Telegram Bot Geliştirme",
     subtitle: "7/24 çalışan, always-on mimari.",
+    portfolioLink: "/blog/telegram-botu-isletmeler-icin",
     description:
       "Kişiye özel Telegram bot kurulumu. Finans danışmanı, içerik asistanı, müşteri destek botu, otomasyon araçları. Systemd servis yönetimi ile kesintisiz çalışan, Claude API entegrasyonlu akıllı botlar.",
     features: [
@@ -278,6 +284,7 @@ const HIZMET_DETAYLARI = [
     icon: "chart",
     title: "Performans Pazarlama",
     subtitle: "Google Ads & Meta Ads ile büyüme.",
+    portfolioLink: "/blog/google-ads-kampanya-rehberi",
     description:
       "Google Ads ve Meta (Facebook/Instagram) Ads kampanya yönetimi. AI destekli optimizasyon ile reklam bütçenizden maksimum dönüşüm. Hedef kitle analizi, A/B test, dönüşüm takibi ve aylık performans raporları.",
     features: [
