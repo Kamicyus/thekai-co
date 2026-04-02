@@ -1,8 +1,5 @@
-import "./globals.css";
-
 // Root layout — minimal shell. Locale-aware layout is in [locale]/layout.tsx.
-// We cannot use <html>/<body> here because [locale]/layout.tsx needs to set lang attribute.
-// Next.js will auto-wrap with <html><body> if not provided here.
+// html/body/globals.css are all handled in [locale]/layout.tsx so it can set lang attribute.
 
 export default function RootLayout({
   children,

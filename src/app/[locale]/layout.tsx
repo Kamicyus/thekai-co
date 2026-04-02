@@ -7,6 +7,7 @@ import { fontVariables } from "@/lib/fonts";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ChatBot from "@/components/ui/ChatBot";
+import "../globals.css";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -126,6 +127,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
+    <html lang={locale} className={`${fontVariables} antialiased`}>
+      <body className="min-h-screen flex flex-col bg-background text-foreground">
     <NextIntlClientProvider locale={locale} messages={messages}>
       <script
         type="application/ld+json"
@@ -157,5 +160,7 @@ export default async function LocaleLayout({
       <Footer />
       <ChatBot />
     </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
