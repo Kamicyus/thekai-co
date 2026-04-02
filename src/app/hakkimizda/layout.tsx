@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hakkimizda | The Kai - AI-Native Creative Studio",
+  title: "Hakkımızda | The Kai — AI-Native Creative Studio",
   description:
-    "The Kai, muzik, teknoloji ve yaraticilik kesisiminde bir studyo. 2011'den bu yana muzik, 2023'ten bu yana AI. 20M+ dinlenme, 72+ AI ajan, 9 hizmet alani.",
+    "The Kai, müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo. 2011'den bu yana müzik, 2023'ten bu yana AI. 20M+ dinlenme, 72+ AI ajan, 9 hizmet alanı.",
   keywords: [
-    "The Kai hakkinda",
-    "Kamer Can Izvermez",
-    "AI studyo",
-    "muzik produksiyon",
+    "The Kai hakkında",
+    "Kamer Can İzvermez",
+    "AI stüdyo",
+    "müzik prodüksiyon",
     "AI ajan sistemi",
     "Echo Bazaar",
-    "dijital yaraticilik",
-    "Istanbul",
+    "dijital yaratıcılık",
+    "İstanbul",
   ],
   alternates: {
     canonical: "/hakkimizda",
   },
   openGraph: {
-    title: "Hakkimizda | The Kai - AI-Native Creative Studio",
+    title: "Hakkımızda | The Kai — AI-Native Creative Studio",
     description:
-      "Muzik, teknoloji ve yaraticilik kesisiminde bir studyo. 20M+ dinlenme, 72+ AI ajan. Kurucu: Kamer Can Izvermez.",
+      "Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo. 20M+ dinlenme, 72+ AI ajan. Kurucu: Kamer Can İzvermez.",
     url: "https://thekai.co/hakkimizda",
     siteName: "The Kai",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "https://thekai.co/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "The Kai Hakkinda",
+        alt: "The Kai Hakkında",
       },
     ],
   },
