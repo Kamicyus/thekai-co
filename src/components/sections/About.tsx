@@ -1,26 +1,29 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 
 const HIGHLIGHTS = [
-  "AI-Native Stüdyo",
-  "72+ AI Ajan Altyapısı",
-  "20M+ Toplam Dinlenme",
-  "6 Aktif Proje",
+  "20M+ AI müzik dinlenme",
+  "72+ AI ajan deneyimi",
+  "15 yıl şarkı yazarlığı",
+  "MURMUR sesli kitap yayınevi",
 ];
 
 export default function About() {
+  const t = useTranslations("about");
+
   return (
     <section id="hakkinda" className="py-24 lg:py-32">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         {/* Section Title */}
         <FadeIn className="text-center mb-16 lg:mb-20">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            The Kai Hakkında
+            {t("title")}
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Dünyalar kuran bir stüdyo.
+            {t("subtitle")}
           </p>
         </FadeIn>
 
