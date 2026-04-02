@@ -1,12 +1,12 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
-const MUSIC_ARTWORKS = [
+const MUSIC_ARTWORKS_TR = [
   {
     title: "Estarabim",
     category: "SINGLE ARTWORK",
@@ -45,7 +45,46 @@ const MUSIC_ARTWORKS = [
   },
 ];
 
-const DIGITAL_ARTWORKS = [
+const MUSIC_ARTWORKS_EN = [
+  {
+    title: "Estarabim",
+    category: "SINGLE ARTWORK",
+    description: "A single blending Turkish hip-hop and Middle Eastern melodies. Kamer's latest release.",
+    image: "/images/artworks/estarabim.jpg",
+  },
+  {
+    title: "Kamer",
+    category: "ALBUM ARTWORK",
+    description: "Guitar portrait -- an iconic square reflecting Kamer's artist identity.",
+    image: "/images/artworks/kamer-genius.jpg",
+  },
+  {
+    title: "Beni Affet",
+    category: "SINGLE ARTWORK",
+    description: "Black and white portrait with red calligraphy -- emotional depth.",
+    image: "/images/artworks/beni-affet.jpg",
+  },
+  {
+    title: "Yandi Dibine Kadar",
+    category: "SINGLE ARTWORK",
+    description: "Artwork designed with desert aesthetics and cinematic visuals.",
+    image: "/images/artworks/yandi-dibine-kadar.jpg",
+  },
+  {
+    title: "Bos Vitrin",
+    category: "SINGLE ARTWORK",
+    description: "Pop-art inspired artwork with collage and double exposure techniques.",
+    image: "/images/artworks/bos-vitrin.jpg",
+  },
+  {
+    title: "Cosmic Dervish — Cappadocia",
+    category: "ALBUM ARTWORK",
+    description: "Cosmic musicians in Cappadocia -- a psychedelic Anatolian rock album.",
+    image: "/images/artworks/cosmic-dervish.jpg",
+  },
+];
+
+const DIGITAL_ARTWORKS_TR = [
   {
     title: "Red Chaos",
     description: "Kırmızı tuval üzerinde kaotik figürler — hareketin enerjisi.",
@@ -93,7 +132,60 @@ const DIGITAL_ARTWORKS = [
   },
 ];
 
+const DIGITAL_ARTWORKS_EN = [
+  {
+    title: "Red Chaos",
+    description: "Chaotic figures on a red canvas -- the energy of motion.",
+    image: "/images/artworks/red-chaos.jpg",
+  },
+  {
+    title: "Leopards",
+    description: "Roaring leopards -- the raw power of nature.",
+    image: "/images/artworks/leopards.jpg",
+  },
+  {
+    title: "White Horse",
+    description: "A white horse running through the galaxy -- symbol of freedom.",
+    image: "/images/artworks/white-horse.jpg",
+  },
+  {
+    title: "Tango",
+    description: "A couple dancing in golden light -- the colors of passion.",
+    image: "/images/artworks/tango.jpg",
+  },
+  {
+    title: "Shadow Crown",
+    description: "A crowned shadow figure in purple light -- the nobility of darkness.",
+    image: "/images/artworks/shadow-crown.jpg",
+  },
+  {
+    title: "Vortex",
+    description: "A figure walking into a vortex of light -- stepping into infinity.",
+    image: "/images/artworks/vortex.jpg",
+  },
+  {
+    title: "Mushroom Portrait",
+    description: "A portrait with a mushroom crown -- surrealist beauty.",
+    image: "/images/artworks/mushroom-portrait.jpg",
+  },
+  {
+    title: "Flower Field",
+    description: "A transparent figure in a flower field -- becoming one with nature.",
+    image: "/images/artworks/flower-field.jpg",
+  },
+  {
+    title: "Still Life",
+    description: "Turntable and dining table -- nostalgic realism.",
+    image: "/images/artworks/still-life.jpg",
+  },
+];
+
 export default function PortfolyoPage() {
+  const locale = useLocale();
+  const isEn = locale === "en";
+  const MUSIC_ARTWORKS = isEn ? MUSIC_ARTWORKS_EN : MUSIC_ARTWORKS_TR;
+  const DIGITAL_ARTWORKS = isEn ? DIGITAL_ARTWORKS_EN : DIGITAL_ARTWORKS_TR;
+
   return (
     <section className="pt-32 pb-24 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Decorative pinwheels */}
@@ -110,27 +202,39 @@ export default function PortfolyoPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Portfolyo
+              {isEn ? "Portfolio" : "Portfolyo"}
             </span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-5">
-            Portfolyo
+            {isEn ? "Portfolio" : "Portfolyo"}
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            Web siteleri, müzik kapakları, dijital sanat ve yaratıcı projeler.
-            <br />
-            Her eser bir dünya, her tasarım bir hikaye.
+            {isEn ? (
+              <>
+                Websites, music covers, digital art and creative projects.
+                <br />
+                Every piece is a world, every design is a story.
+              </>
+            ) : (
+              <>
+                Web siteleri, müzik kapakları, dijital sanat ve yaratıcı projeler.
+                <br />
+                Her eser bir dünya, her tasarım bir hikaye.
+              </>
+            )}
           </p>
         </FadeIn>
 
-        {/* Web Siteleri */}
+        {/* Web Sites */}
         <div id="web-siteleri" className="scroll-mt-28">
         <FadeIn className="mb-20">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3">
-            Web Siteleri
+            {isEn ? "Websites" : "Web Siteleri"}
           </h2>
           <p className="text-[#999999] text-base mb-8 max-w-lg">
-            Modern teknolojilerle geliştirdiğimiz web projeleri.
+            {isEn
+              ? "Web projects built with modern technologies."
+              : "Modern teknolojilerle geliştirdiğimiz web projeleri."}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
@@ -152,7 +256,7 @@ export default function PortfolyoPage() {
                 <div className="h-[320px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
                   <img
                     src={site.image}
-                    alt={`${site.name} web sitesi`}
+                    alt={`${site.name} ${isEn ? "website" : "web sitesi"}`}
                     className="w-full h-auto object-cover object-top"
                     loading="lazy"
                     style={{
@@ -168,11 +272,11 @@ export default function PortfolyoPage() {
         </FadeIn>
         </div>
 
-        {/* Müzik Artwork'leri */}
+        {/* Music Artworks */}
         <div id="artwork" className="scroll-mt-28">
         <FadeIn className="mb-20">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">
-            Müzik Artwork'leri
+            {isEn ? "Music Artworks" : "Müzik Artwork'leri"}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {MUSIC_ARTWORKS.map((item) => (
@@ -204,13 +308,15 @@ export default function PortfolyoPage() {
         </FadeIn>
         </div>
 
-        {/* Dijital Sanat / Kim Jung Vada */}
+        {/* Digital Art */}
         <FadeIn>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3">
-            Dijital Sanat
+            {isEn ? "Digital Art" : "Dijital Sanat"}
           </h2>
           <p className="text-[#999999] text-base mb-8 max-w-lg">
-            AI destekli üretim süreciyle oluşturulan orijinal sanat eserleri.
+            {isEn
+              ? "Original artworks created with AI-powered production processes."
+              : "AI destekli üretim süreciyle oluşturulan orijinal sanat eserleri."}
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {DIGITAL_ARTWORKS.map((item) => (
@@ -247,13 +353,15 @@ export default function PortfolyoPage() {
         {/* CTA */}
         <FadeIn className="mt-20 text-center">
           <p className="text-[#666666] text-sm mb-6">
-            Artwork ve kapak tasarımı hizmeti almak ister misiniz?
+            {isEn
+              ? "Would you like to get artwork and cover design services?"
+              : "Artwork ve kapak tasarımı hizmeti almak ister misiniz?"}
           </p>
           <Link
             href="/iletisim"
             className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 text-base"
           >
-            Proje Teklifi Al
+            {isEn ? "Get a Quote" : "Proje Teklifi Al"}
           </Link>
         </FadeIn>
       </div>

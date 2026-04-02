@@ -8,7 +8,7 @@ import {
   type BlogSection,
 } from "@/lib/blog-data";
 
-type Params = Promise<{ slug: string }>;
+type Params = Promise<{ slug: string; locale: string }>;
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -63,7 +63,7 @@ export async function generateMetadata({
   };
 }
 
-function BlogContent({ section }: { section: BlogSection }) {
+function BlogContent({ section, isEn }: { section: BlogSection; isEn: boolean }) {
   switch (section.type) {
     case "h2":
       return (
@@ -113,7 +113,7 @@ function BlogContent({ section }: { section: BlogSection }) {
       return (
         <div className="mt-12 mb-6">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-6">
-            Sık Sorulan Sorular
+            {isEn ? "Frequently Asked Questions" : "Sık Sorulan Sorular"}
           </h2>
           <div className="space-y-4">
             {section.faqItems?.map((faq, i) => (
@@ -195,7 +195,8 @@ export default async function BlogPostPage({
 }: {
   params: Params;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const isEn = locale === "en";
   const post = getBlogPost(slug);
 
   if (!post) {
@@ -278,7 +279,7 @@ export default async function BlogPostPage({
                   href="/"
                   className="text-[#666666] hover:text-[#999999] transition-colors"
                 >
-                  Ana Sayfa
+                  {isEn ? "Home" : "Ana Sayfa"}
                 </Link>
               </li>
               <li className="text-[#333333]">/</li>
@@ -304,7 +305,7 @@ export default async function BlogPostPage({
                 dateTime={post.date}
                 className="text-[#666666] text-sm font-medium"
               >
-                {new Date(post.date).toLocaleDateString("tr-TR", {
+                {new Date(post.date).toLocaleDateString(isEn ? "en-US" : "tr-TR", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
@@ -312,7 +313,7 @@ export default async function BlogPostPage({
               </time>
               <span className="w-1 h-1 bg-[#333333] rounded-full" />
               <span className="text-[#666666] text-sm font-medium">
-                {post.readingTime} okuma
+                {post.readingTime} {isEn ? "read" : "okuma"}
               </span>
             </div>
 
@@ -334,7 +335,7 @@ export default async function BlogPostPage({
                   {post.author}
                 </p>
                 <p className="text-[#666666] text-xs">
-                  The Kai — Kurucu
+                  The Kai — {isEn ? "Founder" : "Kurucu"}
                 </p>
               </div>
             </div>
@@ -354,7 +355,7 @@ export default async function BlogPostPage({
           {/* Content */}
           <div className="border-t border-[#1F2937] pt-10">
             {post.content.map((section, index) => (
-              <BlogContent key={index} section={section} />
+              <BlogContent key={index} section={section} isEn={isEn} />
             ))}
           </div>
 
@@ -376,7 +377,7 @@ export default async function BlogPostPage({
           {relatedPosts.length > 0 && (
             <div className="mt-16 pt-10 border-t border-[#1F2937]">
               <h3 className="font-serif text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">
-                Diğer Yazılar
+                {isEn ? "Other Posts" : "Diğer Yazılar"}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {relatedPosts.map((related) => (
@@ -389,7 +390,7 @@ export default async function BlogPostPage({
                       dateTime={related.date}
                       className="text-[#666666] text-xs font-medium"
                     >
-                      {new Date(related.date).toLocaleDateString("tr-TR", {
+                      {new Date(related.date).toLocaleDateString(isEn ? "en-US" : "tr-TR", {
                         day: "numeric",
                         month: "long",
                         year: "numeric",
@@ -399,7 +400,7 @@ export default async function BlogPostPage({
                       {related.title}
                     </h4>
                     <span className="text-[#D8FB32] text-xs font-medium">
-                      Oku &rarr;
+                      {isEn ? "Read" : "Oku"} &rarr;
                     </span>
                   </Link>
                 ))}

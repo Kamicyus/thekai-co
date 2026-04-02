@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import { ServiceIcon } from "@/components/icons/ServiceIcons";
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
-const HIZMET_DETAYLARI = [
+const HIZMET_DETAYLARI_TR = [
   {
     slug: "ai-ajan-sistemi",
     icon: "brain",
@@ -315,7 +316,320 @@ const HIZMET_DETAYLARI = [
   },
 ];
 
+const HIZMET_DETAYLARI_EN = [
+  {
+    slug: "ai-ajan-sistemi",
+    icon: "brain",
+    title: "AI Agent System Setup",
+    subtitle: "Claude Code based, with 72+ agent experience.",
+    portfolioLink: "/blog/ai-ajan-sistemi-nedir",
+    description:
+      "We build custom AI agent teams for your business. Department-specific, interconnected, 24/7 intelligent agent systems. Includes orchestration, memory management, automation pipelines and MCP integrations.",
+    features: [
+      "Department-based agent design",
+      "Orchestration & routing system",
+      "Memory management & knowledge base",
+      "MCP integrations (Gmail, Calendar, Slack)",
+      "Telegram/Discord bot integration",
+      "Training & documentation",
+    ],
+    packages: [
+      {
+        name: "SPARK",
+        label: "Starter",
+        features: ["3 core agents", "Single orchestration", "Basic memory system", "CLAUDE.md configuration", "1 week setup", "1 month support"],
+      },
+      {
+        name: "ENGINE",
+        label: "Professional",
+        features: ["10+ custom agents", "Multi-orchestration", "Advanced memory + knowledge base", "MCP integrations (3+)", "Telegram bot included", "2 week setup + 3 month support"],
+      },
+      {
+        name: "ARCHITECT",
+        label: "Enterprise",
+        features: ["Unlimited agent architecture", "Full orchestration + model routing", "Custom MCP server development", "Cron automation pipelines", "Team training + documentation", "Ongoing support + maintenance"],
+      },
+    ],
+  },
+  {
+    slug: "web-sitesi-tasarimi",
+    icon: "browser",
+    title: "Web Design",
+    subtitle: "Modern, fast, stunning.",
+    portfolioLink: "/portfolyo#web-siteleri",
+    description:
+      "High-performance, visually stunning websites with Next.js, Tailwind CSS and Framer Motion. Corporate sites, landing pages, portfolios and e-commerce solutions. References include Shortlist Creative and thekai.co.",
+    features: [
+      "Next.js + Tailwind CSS + Framer Motion",
+      "Responsive & mobile-friendly design",
+      "SEO optimization",
+      "Vercel deployment",
+      "CMS integration",
+      "Core Web Vitals optimization",
+    ],
+    packages: [
+      {
+        name: "STARTER",
+        label: "Single Page",
+        features: ["Landing page design", "Mobile responsive", "Basic SEO", "Contact form", "Vercel deployment", "1 revision round"],
+      },
+      {
+        name: "PRO",
+        label: "Corporate Site",
+        features: ["5+ pages (home, services, about, contact, blog)", "Advanced SEO + sitemap", "Animations (Framer Motion)", "Social media integration", "Analytics setup", "3 revision rounds"],
+      },
+      {
+        name: "PREMIUM",
+        label: "Full Package",
+        features: ["Unlimited pages", "E-commerce / payment integration", "Blog + CMS infrastructure", "Multi-language support", "Custom design system", "6 months maintenance + support"],
+      },
+    ],
+  },
+  {
+    slug: "icerik-uretimi",
+    icon: "content",
+    title: "Content Production",
+    subtitle: "With 20M+ streams experience.",
+    portfolioLink: "/blog/dijital-icerik-stratejisi-rehberi",
+    description:
+      "YouTube, social media and brand content production. Video production, thumbnail design, content strategy and platform optimization. Proven content production methodology with 20M+ streams on Echo Bazaar.",
+    features: [
+      "YouTube video production",
+      "Thumbnail design & A/B testing",
+      "Social media content plan",
+      "Brand content strategy",
+      "Video editing & post-production",
+      "Platform-based optimization",
+    ],
+    packages: [
+      {
+        name: "BASIC",
+        label: "Starter",
+        features: ["8 social media posts/month", "2 platforms (your choice)", "Basic visual design", "Content calendar", "Monthly performance report", "1 revision/post"],
+      },
+      {
+        name: "GROWTH",
+        label: "Growth",
+        features: ["20 posts + 4 videos/month", "4 platform management", "Thumbnail + visual design", "Hashtag & SEO strategy", "Weekly performance report", "Unlimited revisions"],
+      },
+      {
+        name: "SCALE",
+        label: "Scale",
+        features: ["Unlimited content production", "All platforms", "Video production (filming included)", "Influencer coordination", "Ad creative production", "Daily reporting + strategy meetings"],
+      },
+    ],
+  },
+  {
+    slug: "artwork-tasarim",
+    icon: "palette",
+    title: "Artwork & Design",
+    subtitle: "Cinematic, understated, impactful.",
+    portfolioLink: "/portfolyo#artwork",
+    description:
+      "Music cover art, visual identity design and artwork production. Minimal and powerful visuals with an Apple-like brand identity approach, referencing the Kim Jung Vada design portfolio.",
+    features: [
+      "Single/album cover design",
+      "Visual identity & brand language",
+      "Social media visuals",
+      "Poster & banner design",
+      "AI-powered visual production",
+      "Print-ready file output",
+    ],
+    packages: [
+      {
+        name: "SINGLE",
+        label: "Single Project",
+        features: ["1 cover design or visual set", "3 concept proposals", "All platform sizes", "Source files (AI/PSD)", "2 revision rounds", "5 business days delivery"],
+      },
+      {
+        name: "BUNDLE",
+        label: "Bundle",
+        features: ["5 cover/visual designs", "Consistent visual language", "Social media kit", "Animated version", "Unlimited revisions", "Priority delivery"],
+      },
+      {
+        name: "IDENTITY",
+        label: "Brand Identity",
+        features: ["Logo + visual identity system", "Color palette + typography", "Social media templates", "Brand guide", "Business card + corporate set", "Comprehensive presentation file"],
+      },
+    ],
+  },
+  {
+    slug: "sesli-kitap",
+    icon: "microphone",
+    title: "Audiobook Production",
+    subtitle: "Publishing with AI narration.",
+    portfolioLink: "/blog/ai-sesli-kitap",
+    description:
+      "We transform classic and modern literature into audiobooks with AI narration. Text segmentation, voice selection, narration, editing and digital platform distribution. With Murmur publishing experience.",
+    features: [
+      "AI narration (ElevenLabs)",
+      "Text segmentation & preparation",
+      "Sound design & editing",
+      "Spotify & platform distribution",
+      "Cover design & branding",
+      "Copyright consulting",
+    ],
+    packages: [
+      {
+        name: "CHAPTER",
+        label: "Single Chapter",
+        features: ["1 chapter narration (max 30 min)", "Voice selection (5+ voices)", "Basic editing", "MP3 + WAV output", "1 revision", "3 business days delivery"],
+      },
+      {
+        name: "BOOK",
+        label: "Full Book",
+        features: ["Complete book narration", "Professional sound design", "Chapter-by-chapter editing", "All platform distribution", "Cover design included", "Unlimited revisions"],
+      },
+      {
+        name: "PUBLISHER",
+        label: "Publisher",
+        features: ["3+ books/month production", "Custom voice library", "Automated pipeline setup", "Platform management", "Revenue tracking + reporting", "Ongoing support + priority"],
+      },
+    ],
+  },
+  {
+    slug: "muzik-produksiyon",
+    icon: "music",
+    title: "Music Production",
+    subtitle: "Traditional and AI-powered production.",
+    portfolioLink: "/portfolyo#artwork",
+    description:
+      "Composition, arrangement, mix, master and vocal production services. 15 years of songwriting experience, proven AI music production capacity with 20M+ streams on Echo Bazaar. Hybrid production with Suno, ElevenLabs and traditional DAW tools.",
+    features: [
+      "Composition & songwriting",
+      "Arrangement & production",
+      "Mix & mastering",
+      "Vocal recording & production",
+      "AI music production (Suno, ElevenLabs)",
+      "Spotify/Apple Music distribution consulting",
+    ],
+    packages: [
+      {
+        name: "TRACK",
+        label: "Single Track",
+        features: ["1 song production", "Beat/arrangement", "Mix + master", "Vocal editing", "Digital distribution consulting", "2 revision rounds"],
+      },
+      {
+        name: "EP",
+        label: "EP Package",
+        features: ["4-6 song production", "Consistent sound design", "Professional mix + master", "Artwork design included", "Spotify/Apple Music distribution", "Unlimited revisions"],
+      },
+      {
+        name: "ALBUM",
+        label: "Album",
+        features: ["10+ songs full production", "Concept development", "AI + traditional hybrid production", "Mastering (reference matching)", "Full artwork + music video consulting", "Launch strategy"],
+      },
+    ],
+  },
+  {
+    slug: "dijital-strateji",
+    icon: "lightbulb",
+    title: "Digital Strategy & Consulting",
+    subtitle: "AI-native transformation.",
+    portfolioLink: "/blog/claude-code-rehber",
+    description:
+      "AI consulting, digital transformation strategy, social media planning and brand positioning. Enterprise-level strategy development and execution with references from projects like Eksi Maya Sports.",
+    features: [
+      "AI transformation consulting",
+      "Digital marketing strategy",
+      "Social media management",
+      "Brand positioning",
+      "Competitor & market analysis",
+      "KPI tracking & reporting",
+    ],
+    packages: [
+      {
+        name: "AUDIT",
+        label: "Analysis",
+        features: ["Current state analysis", "Competitor research", "SWOT analysis", "Opportunity mapping", "Action recommendations report", "1 hour consulting session"],
+      },
+      {
+        name: "STRATEGY",
+        label: "Strategy",
+        features: ["3-month strategy plan", "Platform-based roadmap", "Content strategy", "KPI definition + dashboard", "Weekly check-in meetings", "Monthly performance report"],
+      },
+      {
+        name: "PARTNER",
+        label: "Partner",
+        features: ["Ongoing strategy partner", "All platform management", "Ad budget optimization", "Crisis management", "Team training", "Unlimited consulting"],
+      },
+    ],
+  },
+  {
+    slug: "telegram-bot",
+    icon: "robot",
+    title: "Telegram Bot Development",
+    subtitle: "24/7, always-on architecture.",
+    portfolioLink: "/blog/telegram-botu-isletmeler-icin",
+    description:
+      "Custom Telegram bot setup. Finance advisor, content assistant, customer support bot, automation tools. Smart bots with Claude API integration, running uninterrupted with systemd service management.",
+    features: [
+      "Custom bot development",
+      "Claude API integration",
+      "Voice & image message support",
+      "Always-on systemd architecture",
+      "Knowledge base & memory management",
+      "Webhook & automation integration",
+    ],
+    packages: [
+      {
+        name: "BASIC BOT",
+        label: "Basic Bot",
+        features: ["Single-purpose bot (FAQ, info, support)", "Text-based interaction", "Basic command system", "Simple memory", "Always-on setup", "1 week development"],
+      },
+      {
+        name: "SMART BOT",
+        label: "Smart Bot",
+        features: ["AI-powered conversation (Claude API)", "Voice + image message support", "Knowledge base integration", "User-based memory", "Webhook triggers", "2 week development + 1 month support"],
+      },
+      {
+        name: "ENTERPRISE",
+        label: "Enterprise Bot",
+        features: ["Multi-bot architecture", "CRM / database integration", "Automated reporting", "User management panel", "API access", "Ongoing development + maintenance"],
+      },
+    ],
+  },
+  {
+    slug: "performans-pazarlama",
+    icon: "chart",
+    title: "Performance Marketing",
+    subtitle: "Growth with Google Ads & Meta Ads.",
+    portfolioLink: "/blog/google-ads-kampanya-rehberi",
+    description:
+      "Google Ads and Meta (Facebook/Instagram) Ads campaign management. Maximum conversion from your ad budget with AI-powered optimization. Audience analysis, A/B testing, conversion tracking and monthly performance reports.",
+    features: [
+      "Google Ads campaign management",
+      "Meta (Facebook/Instagram) Ads",
+      "AI-powered budget optimization",
+      "Audience analysis & segmentation",
+      "A/B testing & conversion tracking",
+      "Monthly performance reports",
+    ],
+    packages: [
+      {
+        name: "STARTER",
+        label: "Starter",
+        features: ["1 platform (Google or Meta)", "Up to $300/month ad budget", "Campaign setup + optimization", "Basic audience analysis", "Monthly performance report", "Weekly check-ins"],
+      },
+      {
+        name: "PRO",
+        label: "Professional",
+        features: ["Google + Meta Ads together", "Up to $1,500/month ad budget", "Advanced audience + retargeting", "A/B test strategy", "Conversion tracking + Analytics setup", "Weekly report + strategy meeting"],
+      },
+      {
+        name: "PREMIUM",
+        label: "Enterprise",
+        features: ["All platforms (Google + Meta + YouTube)", "Unlimited ad budget management", "AI-powered auto optimization", "Competitor analysis + market research", "Landing page design included", "Daily monitoring + 24/7 support"],
+      },
+    ],
+  },
+];
+
 export default function HizmetlerPage() {
+  const locale = useLocale();
+  const isEn = locale === "en";
+  const HIZMET_DETAYLARI = isEn ? HIZMET_DETAYLARI_EN : HIZMET_DETAYLARI_TR;
+
   return (
     <section className="pt-32 pb-24 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Decorative pinwheels */}
@@ -332,16 +646,26 @@ export default function HizmetlerPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Hizmetlerimiz
+              {isEn ? "Our Services" : "Hizmetlerimiz"}
             </span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-5">
-            Ne Yapıyoruz
+            {isEn ? "What We Do" : "Ne Yapıyoruz"}
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            Müzik, teknoloji ve yaratıcılık kesişiminde dokuz temel alan.
-            <br />
-            Her biri ayrı bir uzmanlık, hepsi birlikte yaratıcı güç.
+            {isEn ? (
+              <>
+                Nine core disciplines at the intersection of music, technology and creativity.
+                <br />
+                Each one a specialty, together a creative force.
+              </>
+            ) : (
+              <>
+                Müzik, teknoloji ve yaratıcılık kesişiminde dokuz temel alan.
+                <br />
+                Her biri ayrı bir uzmanlık, hepsi birlikte yaratıcı güç.
+              </>
+            )}
           </p>
         </FadeIn>
 
@@ -386,7 +710,7 @@ export default function HizmetlerPage() {
                   {/* Features Grid */}
                   <div className="mb-8">
                     <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
-                      Neler Dahil
+                      {isEn ? "What's Included" : "Neler Dahil"}
                     </h3>
                     <StaggerChildren
                       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
@@ -421,7 +745,7 @@ export default function HizmetlerPage() {
                   {hizmet.packages && (
                     <div className="mb-8">
                       <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
-                        Paketler
+                        {isEn ? "Packages" : "Paketler"}
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {hizmet.packages.map((pkg, pkgIndex) => (
@@ -445,7 +769,7 @@ export default function HizmetlerPage() {
                               </span>
                               {pkgIndex === 1 && (
                                 <span className="text-[10px] bg-[#D8FB32]/20 text-[#D8FB32] px-2 py-0.5 rounded-full font-medium">
-                                  Popüler
+                                  {isEn ? "Popular" : "Popüler"}
                                 </span>
                               )}
                             </div>
@@ -475,14 +799,14 @@ export default function HizmetlerPage() {
                       href="/iletisim"
                       className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-sm hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.08)]"
                     >
-                      İletişime Geç
+                      {isEn ? "Get in Touch" : "İletişime Geç"}
                     </Link>
                     {hizmet.portfolioLink && (
                       <Link
                         href={hizmet.portfolioLink}
                         className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#1F2937] text-[#F5F5F5] font-semibold rounded-[10px] text-sm hover:border-[#D8FB32]/30 hover:bg-[#D8FB32]/5 transition-all duration-200"
                       >
-                        Örnekleri Gör
+                        {isEn ? "See Examples" : "Örnekleri Gör"}
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                       </Link>
                     )}
@@ -500,16 +824,18 @@ export default function HizmetlerPage() {
               <DecorativePinwheel size={60} opacity={0.06} rotate={30} animate />
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-              Projenizi Konuşalım
+              {isEn ? "Let's Talk About Your Project" : "Projenizi Konuşalım"}
             </h2>
             <p className="text-[#999999] text-lg max-w-xl mx-auto mb-8">
-              Hangi hizmete ihtiyacınız olursa olsun, size özel bir çözüm üretiyoruz.
+              {isEn
+                ? "Whatever service you need, we'll create a custom solution for you."
+                : "Hangi hizmete ihtiyacınız olursa olsun, size özel bir çözüm üretiyoruz."}
             </p>
             <Link
               href="/iletisim"
               className="inline-flex items-center justify-center px-10 py-4 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-base hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.1)]"
             >
-              İletişime Geç
+              {isEn ? "Get in Touch" : "İletişime Geç"}
             </Link>
           </div>
         </FadeIn>

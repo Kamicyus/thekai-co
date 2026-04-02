@@ -2,93 +2,84 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
 /* ─── Data ─── */
 
-const MILESTONES = [
-  {
-    year: "2011",
-    title: "Ilk Adim",
-    text: "Kamer Can Izvermez muzik yolculuguna sarki yazarak basladi.",
-  },
-  {
-    year: "2011 \u2013 2023",
-    title: "Cok Yonlu Deneyim",
-    text: "Dergi editörlüğü, call center, spor ajansı sosyal medya yönetimi \u2014 hep müzik yanında.",
-  },
-  {
-    year: "2023",
-    title: "AI Dönüşümü",
-    text: "AI araçlarını iş süreçlerine entegre etmeye başladı. Otomasyon ve ajan sistemleri kuruldu.",
-  },
-  {
-    year: "2024",
-    title: "Echo Bazaar",
-    text: "AI müzik kanalı kuruldu. YouTube'da yükseliş başladı.",
-  },
-  {
-    year: "2025",
-    title: "Büyüme",
-    text: "20M+ dinlenme, KİM? albümü Spotify Keşif playlist'inde, 72+ AI ajan sistemi.",
-  },
-  {
-    year: "2026",
-    title: "The Kai",
-    text: "Şirket resmi olarak kuruldu. thekai.co yayında. Müzik, teknoloji ve yaratıcılık bir arada.",
-  },
+const MILESTONES_TR = [
+  { year: "2011", title: "Başlangıç", text: "Kamer Can İzvermez müzik yolculuğuna şarkı yazarak başladı." },
+  { year: "2011 \u2013 2023", title: "Çok Yönlü Deneyim", text: "Dergi editörlüğü, call center, spor ajansı sosyal medya yönetimi \u2014 hep müzik yanında." },
+  { year: "2023", title: "AI Dönüşümü", text: "AI araçlarını iş süreçlerine entegre etmeye başladı. Otomasyon ve ajan sistemleri kuruldu." },
+  { year: "2024", title: "Echo Bazaar", text: "AI müzik kanalı kuruldu. YouTube'da yükseliş başladı." },
+  { year: "2025", title: "Büyüme", text: "20M+ dinlenme, KİM? albümü Spotify Keşif playlist'inde, 72+ AI ajan sistemi." },
+  { year: "2026", title: "The Kai", text: "Şirket resmi olarak kuruldu. thekai.co yayında. Müzik, teknoloji ve yaratıcılık bir arada." },
 ];
 
-const STATS = [
+const MILESTONES_EN = [
+  { year: "2011", title: "The Beginning", text: "Founder Kamer Can Izvermez started his music journey by writing songs." },
+  { year: "2011 \u2013 2023", title: "Versatile Experience", text: "Magazine editing, call center, sports agency social media -- always with music alongside." },
+  { year: "2023", title: "AI Transformation", text: "Started integrating AI tools into workflows. Automation and agent systems were built." },
+  { year: "2024", title: "Echo Bazaar", text: "AI music channel launched. A rising brand on YouTube." },
+  { year: "2025", title: "Growth", text: "20M+ streams, KIM? album on Spotify Discover playlist, 72+ AI agent systems." },
+  { year: "2026", title: "The Kai", text: "Company officially founded. thekai.co went live. Music, technology and creativity united." },
+];
+
+const STATS_TR = [
   { value: "20M+", label: "Toplam Dinlenme" },
   { value: "72+", label: "AI Ajan" },
   { value: "9", label: "Hizmet Alanı" },
   { value: "16", label: "Ücretsiz Araç" },
 ];
 
-const VALUES = [
-  {
-    title: "Yaratıcılık",
-    description: "Her proje bir dünya. Kurallarını biz koyarız, hikayesini birlikte yazarız.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Teknoloji",
-    description: "AI-native yaklaşım. 72+ ajan, otomasyon pipeline'ları, MCP entegrasyonları.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <path d="M9 9h6M9 12h6M9 15h4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Kalite",
-    description: "Detaylara takıntılı özen. Her piksel, her nota, her satır kod \u2014 önemli.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-    ),
-  },
-  {
-    title: "Şeffaflık",
-    description: "Net iletişim, dürüst fiyatlandırma. Sürpriz yok, gizli maliyet yok.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="12" y1="16" x2="12" y2="12" />
-        <line x1="12" y1="8" x2="12.01" y2="8" />
-      </svg>
-    ),
-  },
+const STATS_EN = [
+  { value: "20M+", label: "Total Streams" },
+  { value: "72+", label: "AI Agents" },
+  { value: "9", label: "Service Areas" },
+  { value: "16", label: "Free Tools" },
+];
+
+const VALUES_TR = [
+  { title: "Yaratıcılık", description: "Her proje bir dünya. Kurallarını biz koyarız, hikayesini birlikte yazarız." },
+  { title: "Teknoloji", description: "AI-native yaklaşım. 72+ ajan, otomasyon pipeline'ları, MCP entegrasyonları." },
+  { title: "Kalite", description: "Detaylara takıntılı özen. Her piksel, her nota, her satır kod \u2014 önemli." },
+  { title: "Şeffaflık", description: "Net iletişim, dürüst fiyatlandırma. Sürpriz yok, gizli maliyet yok." },
+];
+
+const VALUES_EN = [
+  { title: "Creativity", description: "Every project is a world. We set the rules, we write the story together." },
+  { title: "Technology", description: "AI-native approach. 72+ agents, automation pipelines, MCP integrations." },
+  { title: "Quality", description: "Obsessive attention to detail. Every pixel, every note, every line of code \u2014 matters." },
+  { title: "Transparency", description: "Clear communication, honest pricing. No surprises, no hidden costs." },
+];
+
+const VALUE_ICONS = [
+  (
+    <svg key="star" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+    </svg>
+  ),
+  (
+    <svg key="tech" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="2" />
+      <path d="M9 9h6M9 12h6M9 15h4" />
+    </svg>
+  ),
+  (
+    <svg key="quality" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  ),
+  (
+    <svg key="transparency" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="16" x2="12" y2="12" />
+      <line x1="12" y1="8" x2="12.01" y2="8" />
+    </svg>
+  ),
 ];
 
 const SOCIAL_FOUNDER = [
@@ -101,6 +92,12 @@ const SOCIAL_FOUNDER = [
 /* ─── Component ─── */
 
 export default function HakkimizdaPage() {
+  const locale = useLocale();
+  const isEn = locale === "en";
+  const MILESTONES = isEn ? MILESTONES_EN : MILESTONES_TR;
+  const STATS = isEn ? STATS_EN : STATS_TR;
+  const VALUES = isEn ? VALUES_EN : VALUES_TR;
+
   return (
     <>
       {/* ── Hero ── */}
@@ -117,33 +114,39 @@ export default function HakkimizdaPage() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D8FB32]/20 bg-[#D8FB32]/5 mb-8">
               <DecorativePinwheel size={14} opacity={0.8} />
-              <span className="text-[#D8FB32] text-sm font-medium tracking-wide">Hakkımızda</span>
+              <span className="text-[#D8FB32] text-sm font-medium tracking-wide">
+                {isEn ? "About" : "Hakkımızda"}
+              </span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#F5F5F5] tracking-[-0.03em] mb-6 leading-[1.1]">
-              The Kai Hakkında
+              {isEn ? "About The Kai" : "The Kai Hakkında"}
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <p className="text-[#999999] text-lg sm:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
-              Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.
+              {isEn
+                ? "A studio at the intersection of music, technology and creativity."
+                : "Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo."}
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* ── Hikaye / Timeline ── */}
+      {/* ── Timeline ── */}
       <section className="py-24 lg:py-32 bg-[#0D0D0D]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-16 lg:mb-20">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-              Yolculuk
+              {isEn ? "The Journey" : "Yolculuk"}
             </h2>
             <p className="text-[#999999] text-lg max-w-lg mx-auto">
-              Bir fikrin stüdyoya dönüşme hikayesi.
+              {isEn
+                ? "The story of an idea becoming a studio."
+                : "Bir fikrin stüdyoya dönüşme hikayesi."}
             </p>
           </FadeIn>
 
@@ -179,12 +182,12 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
-      {/* ── Rakamlar ── */}
+      {/* ── Stats ── */}
       <section className="py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-12">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em]">
-              Rakamlarla The Kai
+              {isEn ? "The Kai in Numbers" : "Rakamlarla The Kai"}
             </h2>
           </FadeIn>
 
@@ -205,12 +208,12 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
-      {/* ── Kurucu ── */}
+      {/* ── Founder ── */}
       <section className="py-24 lg:py-32 bg-[#0D0D0D]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-16 lg:mb-20">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-              Kurucu
+              {isEn ? "Founder" : "Kurucu"}
             </h2>
           </FadeIn>
 
@@ -245,10 +248,9 @@ export default function HakkimizdaPage() {
                       Founder &amp; Creative Director
                     </p>
                     <p className="text-[#999999] text-base leading-relaxed mb-6">
-                      Müzisyen, söz yazarı, besteci ve AI girişimci. 15 yıllık şarkı
-                      yazma deneyimi, 20M+ dinlenme, 72+ AI ajan sistemi. Echo Bazaar
-                      kurucusu, KİM? albümünün yaratıcısı. Müzik, teknoloji ve
-                      yaratıcılığı birleştirerek The Kai&apos;yi kurdu.
+                      {isEn
+                        ? "Musician, songwriter, composer and AI entrepreneur. 15 years of songwriting experience, 20M+ streams, 72+ AI agent systems. Founder of Echo Bazaar, creator of the KIM? album. Founded The Kai by merging music, technology and creativity."
+                        : "Müzisyen, söz yazarı, besteci ve AI girişimci. 15 yıllık şarkı yazma deneyimi, 20M+ dinlenme, 72+ AI ajan sistemi. Echo Bazaar kurucusu, KİM? albümünün yaratıcısı. Müzik, teknoloji ve yaratıcılığı birleştirerek The Kai'yi kurdu."}
                     </p>
 
                     {/* Social links */}
@@ -295,24 +297,26 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
-      {/* ── Degerlerimiz ── */}
+      {/* ── Values ── */}
       <section className="py-24 lg:py-32">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-16 lg:mb-20">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-              Değerlerimiz
+              {isEn ? "Our Values" : "Değerlerimiz"}
             </h2>
             <p className="text-[#999999] text-lg max-w-lg mx-auto">
-              Her kararın arkasındaki dört ilke.
+              {isEn
+                ? "Four principles behind every decision."
+                : "Her kararın arkasındaki dört ilke."}
             </p>
           </FadeIn>
 
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {VALUES.map((value) => (
+            {VALUES.map((value, i) => (
               <StaggerItem key={value.title}>
                 <div className="group bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 hover:border-[#D8FB32]/30 transition-all duration-300 h-full">
                   <div className="w-12 h-12 rounded-xl bg-[#D8FB32]/10 flex items-center justify-center mb-5 group-hover:bg-[#D8FB32]/20 transition-colors duration-300">
-                    {value.icon}
+                    {VALUE_ICONS[i]}
                   </div>
                   <h3 className="text-lg font-semibold text-[#F5F5F5] mb-2">
                     {value.title}
@@ -344,18 +348,30 @@ export default function HakkimizdaPage() {
         <FadeIn>
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8 text-center relative z-10">
             <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] tracking-[-0.02em] mb-6 max-w-3xl mx-auto leading-tight">
-              Bir Sonraki Projenizi{" "}
-              <br className="hidden sm:block" />
-              Birlikte Kuralım
+              {isEn ? (
+                <>
+                  Let&apos;s Build Your Next{" "}
+                  <br className="hidden sm:block" />
+                  Project Together
+                </>
+              ) : (
+                <>
+                  Bir Sonraki Projenizi{" "}
+                  <br className="hidden sm:block" />
+                  Birlikte Kuralım
+                </>
+              )}
             </h2>
             <p className="text-[#0A0A0A]/70 text-lg sm:text-xl mb-10 max-w-lg mx-auto">
-              Projenizi konuşalım. Müzik, teknoloji veya yaratıcı içerik &mdash; farketmez.
+              {isEn
+                ? "Let's talk about your project. Music, technology or creative content -- it doesn't matter."
+                : "Projenizi konuşalım. Müzik, teknoloji veya yaratıcı içerik \u2014 farketmez."}
             </p>
             <Link
               href="/iletisim"
               className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#0A0A0A] text-[#D8FB32] font-semibold rounded-[10px] text-base hover:bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-200 shadow-xl"
             >
-              İletişime Geç
+              {isEn ? "Get in Touch" : "İletişime Geç"}
               <span className="animate-[spin-slow_3s_linear_infinite] inline-flex">
                 <DecorativePinwheel size={16} opacity={0.9} />
               </span>

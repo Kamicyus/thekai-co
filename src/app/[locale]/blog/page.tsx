@@ -1,33 +1,13 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import { blogPosts } from "@/lib/blog-data";
 
-export const metadata: Metadata = {
-  title: "Blog — The Kai | AI Ajan Sistemi, Müzik Prodüksiyon, Teknoloji",
-  description:
-    "AI ajan sistemleri, yapay zeka ile müzik yapma, Claude Code rehberi, AI sesli kitap üretimi ve dijital yaratıcılık üzerine derinlemesine yazılar. The Kai blog.",
-  keywords: [
-    "AI ajan sistemi",
-    "yapay zeka müzik",
-    "Claude Code",
-    "AI sesli kitap",
-    "dijital yaratıcılık",
-    "AI otomasyon",
-    "Türkiye AI",
-  ],
-  alternates: {
-    canonical: "/blog",
-  },
-  openGraph: {
-    title: "Blog — The Kai | AI Ajan Sistemi, Müzik Prodüksiyon, Teknoloji",
-    description:
-      "AI ajan sistemleri, yapay zeka ile müzik yapma, Claude Code rehberi ve AI sesli kitap üretimi üzerine yazılar.",
-    url: "https://thekai.co/blog",
-    type: "website",
-  },
-};
-
 export default function BlogPage() {
+  const locale = useLocale();
+  const isEn = locale === "en";
+
   return (
     <section className="pt-32 pb-24 lg:pt-40 lg:pb-32 relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
@@ -43,9 +23,19 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            AI ajan sistemleri, müzik prodüksiyon, Claude Code ve dijital yaratıcılık.
-            <br />
-            Derinlemesine yazılar, rehberler ve deneyimler.
+            {isEn ? (
+              <>
+                AI agent systems, music production, Claude Code and digital creativity.
+                <br />
+                In-depth articles, guides and experiences.
+              </>
+            ) : (
+              <>
+                AI ajan sistemleri, müzik prodüksiyon, Claude Code ve dijital yaratıcılık.
+                <br />
+                Derinlemesine yazılar, rehberler ve deneyimler.
+              </>
+            )}
           </p>
         </div>
 
@@ -77,7 +67,7 @@ export default function BlogPage() {
                   dateTime={post.date}
                   className="text-[#666666] text-xs font-medium"
                 >
-                  {new Date(post.date).toLocaleDateString("tr-TR", {
+                  {new Date(post.date).toLocaleDateString(isEn ? "en-US" : "tr-TR", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
@@ -85,7 +75,7 @@ export default function BlogPage() {
                 </time>
                 <span className="w-1 h-1 bg-[#333333] rounded-full" />
                 <span className="text-[#666666] text-xs font-medium">
-                  {post.readingTime} okuma
+                  {post.readingTime} {isEn ? "read" : "okuma"}
                 </span>
               </div>
 
@@ -101,7 +91,7 @@ export default function BlogPage() {
 
               {/* Read More */}
               <div className="flex items-center gap-2 text-[#D8FB32] text-sm font-medium group-hover:gap-3 transition-all duration-300">
-                <span>Devamını Oku</span>
+                <span>{isEn ? "Read More" : "Devamını Oku"}</span>
                 <svg
                   width="16"
                   height="16"

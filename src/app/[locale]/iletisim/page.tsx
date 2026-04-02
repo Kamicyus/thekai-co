@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import { SocialIcon } from "@/components/icons/SocialIcons";
 import { SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants";
 
-const SUBJECTS = [
+const SUBJECTS_TR = [
   "AI Ajan Sistemi",
   "Müzik Prodüksiyon",
   "İçerik Üretimi",
@@ -13,7 +14,15 @@ const SUBJECTS = [
   "Diğer",
 ];
 
-const BUDGETS = [
+const SUBJECTS_EN = [
+  "AI Agent System",
+  "Music Production",
+  "Content Production",
+  "Software Development",
+  "Other",
+];
+
+const BUDGETS_TR = [
   "Belirtmek istemiyorum",
   "5.000 TL altında",
   "5.000 - 15.000 TL",
@@ -21,7 +30,20 @@ const BUDGETS = [
   "50.000 TL üstü",
 ];
 
+const BUDGETS_EN = [
+  "Prefer not to say",
+  "Under $500",
+  "$500 - $1,500",
+  "$1,500 - $5,000",
+  "Over $5,000",
+];
+
 export default function IletisimPage() {
+  const locale = useLocale();
+  const isEn = locale === "en";
+  const SUBJECTS = isEn ? SUBJECTS_EN : SUBJECTS_TR;
+  const BUDGETS = isEn ? BUDGETS_EN : BUDGETS_TR;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,10 +73,12 @@ export default function IletisimPage() {
         {/* Page Header */}
         <FadeIn className="text-center mb-16 lg:mb-20">
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            İletişim
+            {isEn ? "Contact" : "İletişim"}
           </h1>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            Projeniz hakkında konuşalım. En kısa sürede döneceğiz.
+            {isEn
+              ? "Let's talk about your project. We'll get back to you shortly."
+              : "Projeniz hakkında konuşalım. En kısa sürede döneceğiz."}
           </p>
         </FadeIn>
 
@@ -66,7 +90,7 @@ export default function IletisimPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className={labelClasses}>
-                      İsim
+                      {isEn ? "Name" : "İsim"}
                     </label>
                     <input
                       type="text"
@@ -74,14 +98,14 @@ export default function IletisimPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Adınız Soyadınız"
+                      placeholder={isEn ? "Your Full Name" : "Adınız Soyadınız"}
                       className={inputClasses}
                       required
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className={labelClasses}>
-                      E-posta
+                      {isEn ? "Email" : "E-posta"}
                     </label>
                     <input
                       type="email"
@@ -89,7 +113,7 @@ export default function IletisimPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="ornek@email.com"
+                      placeholder={isEn ? "you@example.com" : "ornek@email.com"}
                       className={inputClasses}
                       required
                     />
@@ -99,7 +123,7 @@ export default function IletisimPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="subject" className={labelClasses}>
-                      Konu
+                      {isEn ? "Subject" : "Konu"}
                     </label>
                     <select
                       id="subject"
@@ -110,7 +134,7 @@ export default function IletisimPage() {
                       required
                     >
                       <option value="" disabled>
-                        Seçin
+                        {isEn ? "Select" : "Seçin"}
                       </option>
                       {SUBJECTS.map((s) => (
                         <option key={s} value={s}>
@@ -121,7 +145,7 @@ export default function IletisimPage() {
                   </div>
                   <div>
                     <label htmlFor="budget" className={labelClasses}>
-                      Bütçe (Opsiyonel)
+                      {isEn ? "Budget (Optional)" : "Bütçe (Opsiyonel)"}
                     </label>
                     <select
                       id="budget"
@@ -131,7 +155,7 @@ export default function IletisimPage() {
                       className={`${inputClasses} appearance-none cursor-pointer`}
                     >
                       <option value="" disabled>
-                        Seçin
+                        {isEn ? "Select" : "Seçin"}
                       </option>
                       {BUDGETS.map((b) => (
                         <option key={b} value={b}>
@@ -144,14 +168,14 @@ export default function IletisimPage() {
 
                 <div>
                   <label htmlFor="message" className={labelClasses}>
-                    Mesaj
+                    {isEn ? "Message" : "Mesaj"}
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Projenizi kısaca anlatın..."
+                    placeholder={isEn ? "Briefly describe your project..." : "Projenizi kısaca anlatın..."}
                     rows={6}
                     className={`${inputClasses} resize-none`}
                     required
@@ -162,7 +186,7 @@ export default function IletisimPage() {
                   type="submit"
                   className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-base hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.1)]"
                 >
-                  Gönder
+                  {isEn ? "Send" : "Gönder"}
                 </button>
               </form>
             </div>
@@ -172,7 +196,7 @@ export default function IletisimPage() {
           <FadeIn direction="right" delay={0.15} className="lg:col-span-2">
             <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-5 sm:p-8 lg:p-10 h-fit lg:sticky lg:top-28">
               <h3 className="font-sans text-xl font-semibold text-[#F5F5F5] mb-6">
-                Doğrudan Ulaşın
+                {isEn ? "Reach Out Directly" : "Doğrudan Ulaşın"}
               </h3>
 
               <div className="space-y-6 mb-10">
@@ -195,7 +219,7 @@ export default function IletisimPage() {
                   </div>
                   <div>
                     <p className="text-xs text-[#666666] uppercase tracking-wider mb-1 font-medium">
-                      E-posta
+                      {isEn ? "Email" : "E-posta"}
                     </p>
                     <a
                       href={`mailto:${SITE_CONFIG.email}`}
@@ -237,7 +261,7 @@ export default function IletisimPage() {
               {/* The Kai Social */}
               <div>
                 <p className="text-xs text-[#666666] uppercase tracking-wider mb-4 font-medium">
-                  The Kai — Sosyal Medya
+                  {isEn ? "The Kai — Social Media" : "The Kai — Sosyal Medya"}
                 </p>
                 <div className="flex items-center gap-3">
                   {SOCIAL_LINKS.map((social) => (
@@ -259,7 +283,7 @@ export default function IletisimPage() {
             {/* Kamer Personal Social */}
             <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-5 sm:p-8 lg:p-10 mt-4">
               <h3 className="font-sans text-sm font-medium text-[#999999] mb-4 tracking-wide">
-                Kurucu / Kamer Can İzvermez
+                {isEn ? "Founder / Kamer Can Izvermez" : "Kurucu / Kamer Can İzvermez"}
               </h3>
               <div className="flex items-center gap-3 flex-wrap">
                 <a href="https://x.com/kamicyus" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] border border-[#1F2937] rounded-xl text-[#999999] hover:text-[#D8FB32] hover:border-[#D8FB32]/30 transition-all duration-200 text-sm">

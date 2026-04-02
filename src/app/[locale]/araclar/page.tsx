@@ -1,10 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 import { TOOLS } from "@/lib/constants";
+
+const TOOLS_EN: Record<string, { title: string; description: string }> = {
+  "qr-kod": { title: "QR Code Generator", description: "Enter a URL or text, generate a QR code instantly. Color and size customization. Download as PNG." },
+  "kelime-sayaci": { title: "Word & Character Counter", description: "Paste text to instantly see word, character, sentence and paragraph counts. Reading time estimate." },
+  "sifre-olusturucu": { title: "Password Generator", description: "Generate secure, random passwords. Length, character type options and password strength indicator." },
+  "renk-cevirici": { title: "Color Code Converter", description: "Instantly convert between HEX, RGB and HSL color codes. Live preview and copy." },
+  "bmi-hesaplayici": { title: "BMI Calculator", description: "Enter your height and weight, instantly calculate your body mass index. Healthy weight range indicator." },
+  "harf-cevirici": { title: "Case Converter", description: "Instantly convert text to uppercase, lowercase, title case or sentence case." },
+  "json-formatlayici": { title: "JSON Formatter", description: "Auto-format your JSON data, detect syntax errors, minify or beautify." },
+  "yuzde-hesaplayici": { title: "Percentage Calculator", description: "Percentage calculation, ratio finding and percentage change. 3 different calculation modes." },
+  "gorsel-boyutlandirma": { title: "Image Resizer", description: "Resize your images for social media dimensions. Instagram, YouTube, Twitter and custom sizes." },
+  "yas-hesaplayici": { title: "Age Calculator", description: "Enter your birth date, see your age in years, months, days. Zodiac sign and days until birthday." },
+  "tuner": { title: "Online Guitar Tuner", description: "Tune your guitar using your microphone. Standard tuning (EADGBE), reference notes and cent indicator." },
+  "metronom": { title: "Online Metronome", description: "Metronome powered by Web Audio API. BPM adjustment, tap tempo, beat selection and visual beat indicator." },
+  "bpm-bulucu": { title: "BPM Finder", description: "Calculate a song's BPM by tapping to the rhythm. Average, minimum and maximum BPM display." },
+  "base64": { title: "Base64 Encoder / Decoder", description: "Convert text or files to Base64 format. Decode Base64 back to text." },
+  "lorem-ipsum": { title: "Lorem Ipsum Generator", description: "Generate placeholder text for design projects. Paragraph, sentence, word mode with Turkish support." },
+  "pomodoro": { title: "Pomodoro Timer", description: "Work productively with 25 min work, 5 min break cycles. Duration customization and session tracking." },
+  "regex-test": { title: "Regex Tester", description: "Write regex patterns and test them live on text. See matches highlighted, inspect groups." },
+  "renk-paleti": { title: "Color Palette Generator", description: "Generate random color palettes. HEX, RGB, HSL codes, color locking and one-click copy." },
+  "metin-farki": { title: "Text Diff Comparator", description: "Compare two texts side by side. Added lines in green, removed lines in red. Line-by-line diff view." },
+};
 
 const toolIcons: Record<string, React.ReactNode> = {
   qrcode: (
@@ -146,6 +169,9 @@ const toolIcons: Record<string, React.ReactNode> = {
 };
 
 export default function AraclarPage() {
+  const locale = useLocale();
+  const isEn = locale === "en";
+
   return (
     <section className="pt-32 pb-24 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Decorative pinwheels */}
@@ -162,16 +188,26 @@ export default function AraclarPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D8FB32]/10 border border-[#D8FB32]/20 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full" />
             <span className="text-[#D8FB32] text-xs font-medium uppercase tracking-wider">
-              Ücretsiz Araçlar
+              {isEn ? "Free Tools" : "Ücretsiz Araçlar"}
             </span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-5">
-            Online Araçlar
+            {isEn ? "Online Tools" : "Online Araçlar"}
           </h1>
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            Reklamsız, kayıt gerektirmeyen, tamamen ücretsiz online araçlar.
-            <br />
-            Hızlı, güvenli ve sınırsız kullanım.
+            {isEn ? (
+              <>
+                Ad-free, no registration required, completely free online tools.
+                <br />
+                Fast, secure and unlimited usage.
+              </>
+            ) : (
+              <>
+                Reklamsız, kayıt gerektirmeyen, tamamen ücretsiz online araçlar.
+                <br />
+                Hızlı, güvenli ve sınırsız kullanım.
+              </>
+            )}
           </p>
         </FadeIn>
 
@@ -180,67 +216,72 @@ export default function AraclarPage() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           staggerDelay={0.1}
         >
-          {TOOLS.map((tool) => (
-            <StaggerItem key={tool.slug}>
-              <Link href={`/araclar/${tool.slug}`} className="block group">
-                <div className="relative bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 hover:border-[#D8FB32]/30 transition-all duration-500 h-full">
-                  {/* Corner pinwheel */}
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <DecorativePinwheel
-                      size={24}
-                      opacity={0.3}
-                      className="group-hover:animate-[spin-slow_3s_linear_infinite]"
-                    />
-                  </div>
+          {TOOLS.map((tool) => {
+            const enTool = TOOLS_EN[tool.slug];
+            return (
+              <StaggerItem key={tool.slug}>
+                <Link href={`/araclar/${tool.slug}`} className="block group">
+                  <div className="relative bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 hover:border-[#D8FB32]/30 transition-all duration-500 h-full">
+                    {/* Corner pinwheel */}
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <DecorativePinwheel
+                        size={24}
+                        opacity={0.3}
+                        className="group-hover:animate-[spin-slow_3s_linear_infinite]"
+                      />
+                    </div>
 
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-2xl bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center text-[#D8FB32] mb-5 group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
-                    {toolIcons[tool.icon]}
-                  </div>
+                    {/* Icon */}
+                    <div className="w-14 h-14 rounded-2xl bg-[#1A1A1A] border border-[#1F2937] flex items-center justify-center text-[#D8FB32] mb-5 group-hover:bg-[#D8FB32]/10 transition-colors duration-300">
+                      {toolIcons[tool.icon]}
+                    </div>
 
-                  {/* Content */}
-                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3">
-                    {tool.title}
-                  </h2>
-                  <p className="text-[#999999] text-sm leading-relaxed mb-5">
-                    {tool.description}
-                  </p>
+                    {/* Content */}
+                    <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3">
+                      {isEn && enTool ? enTool.title : tool.title}
+                    </h2>
+                    <p className="text-[#999999] text-sm leading-relaxed mb-5">
+                      {isEn && enTool ? enTool.description : tool.description}
+                    </p>
 
-                  {/* Arrow */}
-                  <div className="flex items-center gap-2 text-[#D8FB32] text-sm font-medium">
-                    <span>Kullan</span>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="group-hover:translate-x-1 transition-transform duration-200"
-                    >
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </div>
+                    {/* Arrow */}
+                    <div className="flex items-center gap-2 text-[#D8FB32] text-sm font-medium">
+                      <span>{isEn ? "Use" : "Kullan"}</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="group-hover:translate-x-1 transition-transform duration-200"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </div>
 
-                  {/* Badge */}
-                  <div className="absolute top-6 left-6">
-                    <span className="text-[10px] bg-[#D8FB32]/15 text-[#D8FB32] px-2.5 py-1 rounded-full font-medium uppercase tracking-wider">
-                      Ücretsiz
-                    </span>
+                    {/* Badge */}
+                    <div className="absolute top-6 left-6">
+                      <span className="text-[10px] bg-[#D8FB32]/15 text-[#D8FB32] px-2.5 py-1 rounded-full font-medium uppercase tracking-wider">
+                        {isEn ? "Free" : "Ücretsiz"}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </StaggerItem>
-          ))}
+                </Link>
+              </StaggerItem>
+            );
+          })}
         </StaggerChildren>
 
         {/* Bottom Info */}
         <FadeIn className="mt-16 lg:mt-20 text-center">
           <p className="text-[#666666] text-sm">
-            Tüm araçlar tarayıcınızda çalışır. Verileriniz sunucuya gönderilmez.
+            {isEn
+              ? "All tools run in your browser. Your data is never sent to a server."
+              : "Tüm araçlar tarayıcınızda çalışır. Verileriniz sunucuya gönderilmez."}
           </p>
         </FadeIn>
       </div>
