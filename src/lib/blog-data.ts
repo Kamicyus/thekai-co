@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     title: "AI Ajan Sistemi Nedir? İşletmeniz İçin Neden İhtiyacınız Var?",
     description:
       "AI ajan sistemi kavramını, tek ajan ile çoklu ajan mimarisi arasındaki farkları ve işletmeniz için neden bir AI ajan sistemine ihtiyaç duyduğunuzu gerçek örneklerle açıklıyoruz.",
-    date: "2026-04-01",
+    date: "2026-03-01",
     readingTime: "8 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -115,7 +115,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>Müzik Departmanı:</strong> Prodüksiyon, söz yazma, mix-master, dağıtım ajanları",
+          "<strong>Müzik Departmanı:</strong> Prodüksiyon analizi, mix-master önerileri, dağıtım ajanları",
           "<strong>Pazarlama Departmanı:</strong> Sosyal medya, içerik üretimi, SEO ajanları",
           "<strong>Teknoloji Departmanı:</strong> Web geliştirme, bot kurulumu, otomasyon ajanları",
           "<strong>İstihbarat Departmanı:</strong> Trend analizi, rakip takibi, veri besleme ajanları",
@@ -252,7 +252,7 @@ export const blogPosts: BlogPost[] = [
       "2026'da Yapay Zeka ile Müzik Yapmak: Araçlar, Teknikler ve Gerçekler",
     description:
       "Suno, ElevenLabs, RVC ve Logic Pro ile AI destekli müzik üretim sürecini, Echo Bazaar'ın 20M+ dinlenme deneyimini ve telif haklarını gerçeklerle anlatıyoruz.",
-    date: "2026-04-01",
+    date: "2026-03-03",
     readingTime: "9 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -333,7 +333,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>Konsept ve söz yazımı:</strong> İnsan yaratıcılığıyla başlıyoruz. Tema, hikaye, duygusal ton — bunlar AI'ın en zayıf olduğu alan",
+          "<strong>Konsept ve söz yazımı:</strong> Tamamen insan yaratıcılığı. Tema, hikaye, duygusal ton, şarkı sözleri — bunlar AI'a bırakılmaz, sanatçının kendisine aittir",
           "<strong>AI üretimi:</strong> Suno veya benzeri araçlarla ham müzik üretiliyor. 10-15 versiyon deniyorum, en iyi 2-3 tanesi seçiliyor",
           "<strong>DAW düzenleme:</strong> En iyi versiyonlar Logic Pro'ya aktarılıyor. Yapı ve arrangement düzenleniyor",
           "<strong>Vokal işleme:</strong> Gerekiyorsa RVC veya ElevenLabs ile vokal dönüşümü yapılıyor",
@@ -444,7 +444,7 @@ export const blogPosts: BlogPost[] = [
     title: "Claude Code ile Neler Yapabilirsiniz? Kapsamlı Rehber",
     description:
       "Claude Code nedir, nasıl kullanılır, MCP entegrasyonu, skill sistemi, hook'lar ve ajan oluşturma rehberi. Gerçek kullanım senaryoları ve The Kai deneyimi.",
-    date: "2026-04-01",
+    date: "2026-03-05",
     readingTime: "12 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -647,7 +647,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Söz yazma, BPM hesaplama, ton analizi, şarkı künye oluşturma, <a href=\"/blog/yapay-zeka-ile-muzik-yapmak\">Spotify dağıtım yönetimi</a> gibi müzik prodüksiyon süreçlerinde Claude Code aktif. Suno prompt'larının optimize edilmesi bile Claude Code ajanları tarafından yapılıyor.",
+        text: "BPM hesaplama, ton analizi, makam tespiti, şarkı künye oluşturma, <a href=\"/blog/yapay-zeka-ile-muzik-yapmak\">Spotify dağıtım yönetimi</a> gibi teknik müzik prodüksiyon süreçlerinde Claude Code aktif. Suno prompt'larının optimize edilmesi bile Claude Code ajanları tarafından yapılıyor.",
       },
       {
         type: "h2",
@@ -699,7 +699,7 @@ export const blogPosts: BlogPost[] = [
       "AI Sesli Kitap: Klasik Edebiyatı Yapay Zeka ile Yeniden Canlandırmak",
     description:
       "Yapay zeka seslendirme teknolojisiyle sesli kitap üretimi, ElevenLabs TTS, maliyet analizi ve Spotify sesli kitap pazarı hakkında kapsamlı rehber.",
-    date: "2026-04-01",
+    date: "2026-03-08",
     readingTime: "7 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -885,7 +885,7 @@ export const blogPosts: BlogPost[] = [
     title: "Telegram Botu İşletmeniz İçin Ne Yapabilir? Otomasyon Rehberi",
     description:
       "İşletmeniz için Telegram botu kurmanın avantajları, kullanım senaryoları ve maliyet analizi. Müşteri hizmetlerinden sipariş takibine kadar gerçek örneklerle anlatıyoruz.",
-    date: "2026-04-01",
+    date: "2026-03-10",
     readingTime: "7 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1019,7 +1019,7 @@ export const blogPosts: BlogPost[] = [
     title: "Web Sitesi Maliyeti 2026: Profesyonel Site Yaptırmak Ne Kadar?",
     description:
       "2026'da web sitesi yaptırmanın gerçek maliyeti nedir? Kurumsal site, e-ticaret, landing page ve özel yazılım projelerinin fiyat karşılaştırması ve dikkat edilmesi gerekenler.",
-    date: "2026-04-01",
+    date: "2026-03-12",
     readingTime: "9 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1166,7 +1166,7 @@ export const blogPosts: BlogPost[] = [
     title: "Dijital İçerik Stratejisi: İşletmeniz İçin Kapsamlı Rehber",
     description:
       "Dijital içerik stratejisi nasıl oluşturulur? Blog, sosyal medya, video ve AI destekli içerik üretiminin temellerini, araçlarını ve ölçümleme yöntemlerini anlattığımız rehber.",
-    date: "2026-04-01",
+    date: "2026-03-14",
     readingTime: "10 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1320,7 +1320,7 @@ export const blogPosts: BlogPost[] = [
     title: "Spotify'a Şarkı Yüklemek: 2026 Dağıtım Rehberi",
     description:
       "Spotify, Apple Music ve diğer platformlara şarkı nasıl yüklenir? Dijital dağıtım servisleri karşılaştırması, royalty hesaplama ve ilk release stratejisi.",
-    date: "2026-04-01",
+    date: "2026-03-17",
     readingTime: "8 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1435,7 +1435,7 @@ export const blogPosts: BlogPost[] = [
     title: "Freelancer Olarak AI Hizmeti Satmak: 2026 Rehberi",
     description:
       "AI otomasyon, chatbot, ajan sistemi ve AI içerik üretimi gibi hizmetleri freelancer olarak nasıl satabilirsin? Fiyatlandırma, müşteri bulma ve portföy oluşturma rehberi.",
-    date: "2026-04-01",
+    date: "2026-03-19",
     readingTime: "9 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1558,7 +1558,7 @@ export const blogPosts: BlogPost[] = [
     title: "YouTube Kanal Büyütme Stratejisi: 0'dan 20M Dinlenmeye",
     description:
       "YouTube kanalını nasıl büyütürsün? Echo Bazaar'ı 0'dan 20 milyon dinlenmeye taşıyan stratejiler: SEO, thumbnail tasarımı, yükleme sıklığı ve algoritma.",
-    date: "2026-04-01",
+    date: "2026-03-21",
     readingTime: "10 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1681,7 +1681,7 @@ export const blogPosts: BlogPost[] = [
     title: "AI ile Müzik Artwork Tasarımı: Kapak Fotoğrafı Nasıl Yapılır?",
     description:
       "Midjourney, DALL-E ve Leonardo AI ile müzik kapak fotoğrafı tasarımı. Spotify, Apple Music ve YouTube için artwork oluşturma rehberi.",
-    date: "2026-04-01",
+    date: "2026-03-23",
     readingTime: "7 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1802,7 +1802,7 @@ export const blogPosts: BlogPost[] = [
     title: "Küçük İşletmeler İçin AI Otomasyon: Nereden Başlamalı?",
     description:
       "Küçük işletmenizi AI ile nasıl otomatize edersiniz? E-posta, müşteri hizmeti, sosyal medya ve muhasebe otomasyonu için pratik rehber.",
-    date: "2026-04-01",
+    date: "2026-03-25",
     readingTime: "8 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -1930,7 +1930,7 @@ export const blogPosts: BlogPost[] = [
     title: "Next.js ile Web Sitesi Nasıl Yapılır? Başlangıç Rehberi",
     description:
       "Next.js nedir, neden tercih edilmeli? React tabanlı modern web sitesi geliştirme rehberi. Kurulum, routing, SEO ve Vercel deployment adım adım.",
-    date: "2026-04-01",
+    date: "2026-03-27",
     readingTime: "10 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -2053,7 +2053,7 @@ export const blogPosts: BlogPost[] = [
     title: "Google Ads ile İlk Kampanyanızı Nasıl Oluşturursunuz?",
     description:
       "Google Ads'e sıfırdan başlamak isteyenler için kapsamlı rehber. Kampanya türleri, bütçe yönetimi, anahtar kelime stratejisi ve dönüşüm takibi — gerçek deneyimlerle.",
-    date: "2026-04-01",
+    date: "2026-03-29",
     readingTime: "10 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -2277,7 +2277,7 @@ export const blogPosts: BlogPost[] = [
     title: "Müzisyenler İçin Dijital Pazarlama: Şarkınızı Dünyaya Duyurun",
     description:
       "Müzisyenler için dijital pazarlama stratejileri. Spotify playlist pitching, YouTube büyütme, sosyal medya ve reklam kampanyaları — gerçek deneyimlerle.",
-    date: "2026-04-01",
+    date: "2026-03-31",
     readingTime: "11 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -2485,7 +2485,7 @@ export const blogPosts: BlogPost[] = [
       "Upwork AI",
       "yapay zeka danışmanlık",
     ],
-    coverImage: "/images/blog/freelancer-olarak-ai-hizmeti-satmak.jpg",
+    coverImage: "/images/blog/freelancer-ai-hizmeti-baslangic-rehberi.jpg",
     content: [
       {
         type: "p",
@@ -2703,8 +2703,8 @@ export const blogPosts: BlogPost[] = [
     title:
       "Claude Code'u Müzik Prodüktörüne Nasıl Çevirirsin? Adım Adım Rehber",
     description:
-      "Claude Code ile Logic Pro entegrasyonu, şarkı sözü yazma, BPM/ton analizi, mix önerileri ve Suno entegrasyonu — gerçek müzik prodüksiyon deneyimimden pratik bir rehber.",
-    date: "2026-04-01",
+      "Claude Code ile Logic Pro entegrasyonu, BPM/ton/makam analizi, mix önerileri ve Suno entegrasyonu — gerçek müzik prodüksiyon deneyimimden pratik bir rehber.",
+    date: "2026-04-02",
     readingTime: "14 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -2714,14 +2714,14 @@ export const blogPosts: BlogPost[] = [
       "AI beat yapma",
       "Logic Pro AI entegrasyonu",
       "Claude Code müzik prodüktör",
-      "yapay zeka ile şarkı yazma",
+      "yapay zeka müzik prodüksiyon",
       "AI müzik asistan kurulumu",
     ],
     coverImage: "/images/blog/claude-code-muzik-produktor.jpg",
     content: [
       {
         type: "p",
-        text: "Claude Code'u ilk açtığında ekrana bakan çoğu kişi bir yazılım aracı görüyor. Ben ise bir müzik prodüktörü görüyorum. Son 8 ayda Claude Code'u kendi müzik üretim sürecimin merkezine koydum — <strong>şarkı sözü yazmaktan BPM analizine, Logic Pro dosya yönetiminden Suno ile AI beat üretimine</strong> kadar her şeyde kullanıyorum. Sonuç: Echo Bazaar kanalımda 15 milyon dinlenmeyi geçtim ve \"Estarabim\" single'ım Spotify Keşfet listesine girdi. Bu yazıda, Claude Code'u müzik prodüktörüne çevirmenin tüm adımlarını — kendi deneyimimden, gerçek örneklerle anlatacağım.",
+        text: "Claude Code'u ilk açtığında ekrana bakan çoğu kişi bir yazılım aracı görüyor. Ben ise bir müzik prodüktörü görüyorum. Son 8 ayda Claude Code'u kendi müzik üretim sürecimin merkezine koydum — <strong>BPM analizinden ton ve makam tespitine, Logic Pro dosya yönetiminden Suno ile AI beat üretimine</strong> kadar teknik prodüksiyon süreçlerinde kullanıyorum. Sonuç: Echo Bazaar kanalımda 15 milyon dinlenmeyi geçtim ve \"Estarabim\" single'ım Spotify Keşfet listesine girdi. Bu yazıda, Claude Code'u müzik prodüktörüne çevirmenin tüm adımlarını — kendi deneyimimden, gerçek örneklerle anlatacağım.",
       },
       {
         type: "h2",
@@ -2729,7 +2729,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "ChatGPT'ye de şarkı sözü yazdırabilirsiniz. Gemini'ye de müzik teorisi sorabilirsiniz. Ama <strong>Claude Code'un farkı, dosya sisteminize, terminalinize ve araçlarınıza doğrudan erişebilmesi</strong>. Yani sadece \"şu akorları dene\" demekle kalmıyor — Logic Pro projenizi açıyor, MIDI dosyanızı okuyor, BPM hesaplıyor, ses dosyanızı dönüştürüyor. Bir chatbot ile bir prodüktör asistan arasındaki fark bu.",
+        text: "ChatGPT'ye de müzik teorisi sorabilirsiniz. Gemini'ye de akor önerileri aldırabilirsiniz. Ama <strong>Claude Code'un farkı, dosya sisteminize, terminalinize ve araçlarınıza doğrudan erişebilmesi</strong>. Yani sadece \"şu akorları dene\" demekle kalmıyor — Logic Pro projenizi açıyor, MIDI dosyanızı okuyor, BPM hesaplıyor, ses dosyanızı dönüştürüyor. Bir chatbot ile bir prodüktör asistan arasındaki fark bu.",
       },
       {
         type: "p",
@@ -2749,28 +2749,28 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Sonuç olarak Claude'a \"Bu şarkı için bir köprü yaz\" dediğimde, genel bir pop köprüsü değil — benim müzikal kimliğime uygun, Orta Doğu harmonileri içeren, Türkçe fonetikle uyumlu bir köprü öneriyor. Bu fark, CLAUDE.md'nin gücü.",
+        text: "Sonuç olarak Claude'a \"Bu şarkının tonunu analiz et\" dediğimde, sadece notayı söylemekle kalmıyor — benim müzikal kimliğime uygun makam önerileri sunuyor, Orta Doğu skalalarıyla eşleştirme yapıyor. Bu fark, CLAUDE.md'nin gücü.",
       },
       {
         type: "h2",
-        text: "Adım 2: Şarkı Sözü Yazma — AI Co-Writer Olarak Claude",
+        text: "Adım 2: Prodüksiyon Analizi — BPM, Ton ve Makam Tespiti",
       },
       {
         type: "p",
-        text: "Şarkı sözü yazma, benim için Claude Code'un en değerli kullanım alanı. Ama burada bir nuans var: <strong>Claude'u söz yazarı olarak değil, co-writer olarak kullanıyorum</strong>. Fark şu — Claude'a \"bir aşk şarkısı yaz\" demiyorum. Ona \"Bu şarkının teması kaybolmak, ama fiziksel değil — zihinsel kaybolmak. Birinci verse'te şehir metaforları kullan, ikinci verse'te iç dünya. Kafiye şeması ABAB olsun, hece sayısı 8-9 arasında kalsın\" diyorum.",
+        text: "Prodüksiyon sürecinde en çok zaman alan işlerden biri teknik analiz. Bir beat'in BPM'ini bulmak, tonunu tespit etmek, uygun makamı belirlemek... Claude Code bu teknik işleri saniyeler içinde hallediyor. Ben sözlerimi kendim yazıyorum — <strong>15 yıllık söz yazarlığı deneyimim var ve bu süreçte AI kullanmıyorum</strong>. Ama teknik prodüksiyon analizinde Claude Code inanılmaz zaman kazandırıyor.",
       },
       {
         type: "p",
-        text: "\"Estarabim\" şarkısını yazarken tam da bunu yaptım. Şarkının ismi bile bir Claude oturumundan çıktı — Arapça \"tarab\" (müzikal vecd) kökünden türetilmiş, Türkçe \"estarabim\" kelimesi. Claude'a \"Orta Doğu müzik geleneğindeki vecd kavramını modern bir kelimeye dönüştür\" dedim, 15 alternatif sundu, en ses olarak güçlü olanı seçtik.",
+        text: "\"Estarabim\" şarkısının prodüksiyon sürecinde Claude Code'u teknik asistan olarak kullandım. Beat'in BPM'ini tespit ettim, ton analizini yaptırdım, Hicaz makamıyla uyumunu kontrol ettirdim. Sözleri ve konsepti ben yarattım — Claude ise prodüksiyon sürecinin teknik tarafında destek oldu.",
       },
       {
         type: "ul",
         items: [
-          "<strong>Kafiye havuzu:</strong> Claude'a tematik bir kafiye havuzu oluşturttum. \"Gece\" teması için: bece, hece, sece, dece... Türkçe'de yarım kafiye ve tam kafiye ayrımını biliyor",
-          "<strong>Hece analizi:</strong> Her satırın hece sayısını hesaplatıyorum. Türk müziğinde hece uyumu ritmi belirler — Claude bunu otomatik kontrol ediyor",
-          "<strong>Metafor üretimi:</strong> \"Bu duyguyu 5 farklı metaforla ifade et — klişe olmasın\" diyorum. 5 tanesinden 1'i genelde altın",
-          "<strong>Çeviri ve adaptasyon:</strong> İngilizce bir şarkı sözünü Türkçe'ye adapte ederken anlam + ses uyumunu korumasını sağlıyorum",
-          "<strong>Versiyon karşılaştırma:</strong> 3 farklı verse versiyonu yazıp Claude'a \"hangisi daha güçlü, neden?\" diye analiz ettiriyorum",
+          "<strong>BPM tespiti:</strong> Ses dosyasını veriyorum, librosa ile anında BPM hesaplıyor. Farklı bölümlerin tempo değişimlerini de yakalıyor",
+          "<strong>Ton analizi:</strong> Şarkının hangi tonda olduğunu tespit ediyor, uyumlu akor ilerlemelerini öneriyor",
+          "<strong>Makam eşleştirme:</strong> Batı müziği tonlarını Türk makam sistemiyle eşleştiriyor — D minor = Hicaz, A minor = Kürdi gibi referanslar sunuyor",
+          "<strong>Enerji profili:</strong> Şarkının bölümlerine göre enerji seviyesini analiz ediyor — intro, verse, chorus, bridge arasındaki dinamik farkları gösteriyor",
+          "<strong>Referans karşılaştırma:</strong> Hedef şarkıyla benzer BPM ve tondaki referans parçaları öneriyor",
         ],
       },
       {
@@ -2783,7 +2783,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Pratik kullanım şöyle: Bir beat buldum, üzerine şarkı yazmak istiyorum. Claude'a ses dosyasını veriyorum. O BPM'i hesaplıyor (diyelim 92 BPM), tonunu tespit ediyor (D minor), ve bana şunu söylüyor: \"Bu beat 92 BPM, D minor. Türk müziğinde D minor Hicaz makamıyla uyumlu. Orta Doğu melodileri için D-Eb-F#-G-A-Bb-C# skalasını deneyebilirsin. Bu BPM'de laid-back bir flow iyi çalışır, triplet flow'dan kaçın.\"",
+        text: "Pratik kullanım şöyle: Bir beat buldum, prodüksiyonunu analiz etmek istiyorum. Claude'a ses dosyasını veriyorum. O BPM'i hesaplıyor (diyelim 92 BPM), tonunu tespit ediyor (D minor), ve bana şunu söylüyor: \"Bu beat 92 BPM, D minor. Türk müziğinde D minor Hicaz makamıyla uyumlu. Orta Doğu melodileri için D-Eb-F#-G-A-Bb-C# skalasını deneyebilirsin. Bu BPM'de laid-back bir flow iyi çalışır, triplet flow'dan kaçın.\"",
       },
       {
         type: "p",
@@ -2881,7 +2881,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>Şarkı yazma süresi:</strong> Ortalama 3-4 saatten 1-1.5 saate düştü. Claude co-writer olarak hem fikir üretiyor hem de teknik kontrol yapıyor",
+          "<strong>Prodüksiyon analiz süresi:</strong> BPM, ton ve makam tespiti dakikalardan saniyelere düştü. Claude teknik analizi anında yapıyor, ben yaratıcı sürece odaklanıyorum",
           "<strong>Echo Bazaar içerik üretimi:</strong> Haftada 3-4 track'ten 10-15 track'e çıktım. Suno prompt optimizasyonu ile kalite de arttı",
           "<strong>Post-production süresi:</strong> Metadata, künye, dağıtım hazırlığı gibi işler %80 azaldı — hepsi otomatik",
           "<strong>Mix revizyon sayısı:</strong> Claude'un teknik önerileri sayesinde mix revizyon sayısı ortalama 5'ten 2-3'e düştü",
@@ -2903,7 +2903,7 @@ export const blogPosts: BlogPost[] = [
           "<strong>CLAUDE.md oluştur:</strong> Proje dizininde bir CLAUDE.md dosyası oluştur. İçine müzik tercihlerini, kullandığın DAW'ı, hedef türleri yaz",
           "<strong>Python araçları:</strong> BPM analizi için librosa, ses dönüştürme için ffmpeg kur. Claude bunları otomatik kullanacak",
           "<strong>Dosya yapısı:</strong> Projelerini düzenli tut — /sessions, /beats, /vocals, /exports gibi klasörler oluştur. Claude bu yapıyı okuyup yönetecek",
-          "<strong>İlk test:</strong> Claude'a bir ses dosyası ver ve \"bu dosyanın BPM'ini, tonunu analiz et ve üzerine yazılabilecek şarkı konsepti öner\" de. İlk 5 dakikada gücünü göreceksin",
+          "<strong>İlk test:</strong> Claude'a bir ses dosyası ver ve \"bu dosyanın BPM'ini, tonunu analiz et ve uyumlu makamları öner\" de. İlk 5 dakikada gücünü göreceksin",
         ],
       },
       {
@@ -2930,7 +2930,7 @@ export const blogPosts: BlogPost[] = [
             question:
               "Claude Code müzik prodüksiyonu için gerçekten işe yarıyor mu?",
             answer:
-              "Evet — ama bir DAW'ın yerini almıyor. Şarkı sözü yazma, BPM/ton analizi, metadata yönetimi, mix önerileri ve iş süreçleri otomasyonunda ciddi fark yaratıyor. Ben kendi müzik üretimimde günde 2-3 saat kazanıyorum.",
+              "Evet — ama bir DAW'ın yerini almıyor. BPM/ton/makam analizi, metadata yönetimi, mix önerileri ve iş süreçleri otomasyonunda ciddi fark yaratıyor. Şarkı sözlerimi kendim yazıyorum — Claude teknik prodüksiyon süreçlerinde asistan olarak kullanılıyor. Günde 2-3 saat kazanıyorum.",
           },
           {
             question:
@@ -2946,9 +2946,9 @@ export const blogPosts: BlogPost[] = [
           },
           {
             question:
-              "Claude ile yazdığım şarkının telif hakkı kime ait?",
+              "AI kullanarak ürettiğim müziğin telif hakkı kime ait?",
             answer:
-              "AI ile birlikte yazılan şarkıların telif durumu ülkelere göre değişiyor. Türkiye'de henüz net bir yasal düzenleme yok. Genel yaklaşım: AI'ı araç olarak kullandıysan ve yaratıcı kararları sen verdiysen, telif sana ait. Ama nihai kararları bir hukuk danışmanıyla alın.",
+              "Şarkı sözlerini kendiniz yazıyorsanız telif tamamen sizindir. Suno gibi AI araçlarla üretilen beat ve enstrümantasyonların telif durumu ülkelere göre değişiyor. Türkiye'de henüz net bir yasal düzenleme yok. Claude Code gibi araçlar sadece teknik asistan olarak kullanıldığında telif sorunu oluşmuyor. Nihai kararları bir hukuk danışmanıyla alın.",
           },
           {
             question:
@@ -2968,7 +2968,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Eğer müzisyenseniz, prodüktörseniz veya müzik üretmek istiyorsanız: Claude Code'u deneyin. İlk CLAUDE.md dosyanızı yazın, ilk şarkı sözü oturumunuzu yapın, ilk BPM analizini çalıştırın. 30 dakikada \"neden daha önce başlamadım\" diyeceksiniz.",
+        text: "Eğer müzisyenseniz, prodüktörseniz veya müzik üretmek istiyorsanız: Claude Code'u deneyin. İlk CLAUDE.md dosyanızı yazın, ilk BPM analizini çalıştırın, ilk mix önerisini alın. 30 dakikada \"neden daha önce başlamadım\" diyeceksiniz.",
       },
       {
         type: "cta",
@@ -2984,7 +2984,7 @@ export const blogPosts: BlogPost[] = [
       "Claude Code ile AI Ajan Sistemi Nasıl Kurulur? Adım Adım Rehber",
     description:
       "72+ ajanlı bir AI ajan sistemini Claude Code ile nasıl kurdum? CLAUDE.md yapısı, ajan tanımları, hafıza sistemi, MCP entegrasyonları ve hook'lar — gerçek kod örnekleriyle.",
-    date: "2026-04-01",
+    date: "2026-04-03",
     readingTime: "16 dk",
     author: "Kamer Can İzvermez",
     keywords: [
@@ -3065,7 +3065,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>Rol tanımı:</strong> \"Sen bir müzik prodüksiyon uzmanısın. Görevin: şarkı sözü yazma, BPM analizi, mix önerileri\"",
+          "<strong>Rol tanımı:</strong> \"Sen bir müzik prodüksiyon uzmanısın. Görevin: BPM/ton/makam analizi, mix önerileri, metadata yönetimi\"",
           "<strong>Uzmanlık alanları:</strong> Ajanın ne bildiği ve ne bilmediği. Sınırları net koyun",
           "<strong>Kullanabileceği araçlar:</strong> BPM analiz scripti, ses dönüştürücü, Spotify API gibi araçların listesi ve kullanım talimatları",
           "<strong>Hafıza dosyaları:</strong> Ajanın okuması gereken bilgi dosyaları. Örneğin müzik ajanı: BRAND.md (sanatçı kimliği), DISCOGRAPHY.md (diskografi), PREFERENCES.md (müzikal tercihler)",
