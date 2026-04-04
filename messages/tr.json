@@ -17,7 +17,7 @@
   },
   "services": {
     "title": "Ne Yapıyoruz",
-    "subtitle": "Dokuz temel alandan birleşen yaratıcı güç.",
+    "subtitle": "On iki temel alandan birleşen yaratıcı güç.",
     "viewDetails": "Detayları Gör →",
     "items": {
       "ai-ajan-sistemi": {
@@ -55,6 +55,18 @@
       "performans-pazarlama": {
         "title": "Performans Pazarlama",
         "description": "Google Ads & Meta Ads ile büyüme."
+      },
+      "video-produksiyon": {
+        "title": "Video Prodüksiyon",
+        "description": "Klip, tanıtım filmi, motion graphics."
+      },
+      "seo-organik-buyume": {
+        "title": "SEO & Organik Büyüme",
+        "description": "Google'da üst sıralara çıkın, organik trafikle büyüyün."
+      },
+      "e-ticaret": {
+        "title": "E-Ticaret Çözümleri",
+        "description": "Online mağaza kurulumu, ödeme entegrasyonu."
       }
     }
   },
@@ -146,6 +158,24 @@
       "technology": { "title": "Teknoloji", "description": "AI-native yaklaşım. AI'ı sadece kullanmıyoruz — onunla düşünüyoruz." },
       "quality": { "title": "Kalite", "description": "Detaylara takıntılı özen. Pikselden prodüksiyona kadar." },
       "transparency": { "title": "Şeffaflık", "description": "Net iletişim, dürüst fiyatlandırma, sürpriz yok." }
+    }
+  },
+  "techStack": {
+    "title": "Teknoloji Yığınımız",
+    "subtitle": "En iyi araçlarla, en iyi sonuçlar.",
+    "items": {
+      "claudeAi": "AI ajan orkestrasyon",
+      "nextjs": "Modern web framework",
+      "typescript": "Tip güvenli kod",
+      "tailwind": "Utility-first stil",
+      "supabase": "Veritabanı & auth",
+      "vercel": "Deploy & hosting",
+      "framerMotion": "Animasyonlar",
+      "telegramApi": "Bot entegrasyonu",
+      "sunoAi": "AI müzik üretimi",
+      "elevenlabs": "AI seslendirme",
+      "spotifyApi": "Müzik dağıtım",
+      "youtubeApi": "İçerik yönetimi"
     }
   },
   "cta": {

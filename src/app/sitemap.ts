@@ -1,179 +1,81 @@
 import { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/blog-data";
 
+const BASE_URL = "https://thekai.co";
+
+// Turkish routes (default locale, no prefix)
+const TR_ROUTES = [
+  { path: "", changeFrequency: "weekly" as const, priority: 1.0 },
+  { path: "/hizmetler", changeFrequency: "monthly" as const, priority: 0.9 },
+  { path: "/iletisim", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/portfolyo", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/hakkimizda", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/blog", changeFrequency: "weekly" as const, priority: 0.8 },
+  { path: "/araclar", changeFrequency: "weekly" as const, priority: 0.8 },
+  { path: "/araclar/qr-kod", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/kelime-sayaci", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/sifre-olusturucu", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/renk-cevirici", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/bmi-hesaplayici", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/harf-cevirici", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/json-formatlayici", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/yuzde-hesaplayici", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/gorsel-boyutlandirma", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/yas-hesaplayici", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/tuner", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/metronom", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/bpm-bulucu", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/base64", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/lorem-ipsum", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/pomodoro", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/regex-test", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/renk-paleti", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/metin-farki", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/gizlilik", changeFrequency: "yearly" as const, priority: 0.3 },
+];
+
+// English routes (prefixed with /en)
+const EN_ROUTES = [
+  { path: "/en", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "/en/hizmetler", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/en/iletisim", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/en/portfolyo", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/en/hakkimizda", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/en/blog", changeFrequency: "weekly" as const, priority: 0.7 },
+  { path: "/en/araclar", changeFrequency: "weekly" as const, priority: 0.7 },
+  { path: "/en/gizlilik", changeFrequency: "yearly" as const, priority: 0.3 },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = getAllSlugs();
 
-  const blogEntries: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `https://thekai.co/blog/${slug}`,
+  const trBlogEntries: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${BASE_URL}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  return [
-    {
-      url: "https://thekai.co",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: "https://thekai.co/hizmetler",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://thekai.co/iletisim",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://thekai.co/portfolyo",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://thekai.co/hakkimizda",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://thekai.co/blog",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: "https://thekai.co/araclar",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: "https://thekai.co/araclar/qr-kod",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/kelime-sayaci",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/sifre-olusturucu",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/renk-cevirici",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/bmi-hesaplayici",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/harf-cevirici",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/json-formatlayici",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/yuzde-hesaplayici",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/gorsel-boyutlandirma",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/yas-hesaplayici",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/tuner",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/metronom",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/bpm-bulucu",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/base64",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/lorem-ipsum",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/pomodoro",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/regex-test",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/renk-paleti",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/araclar/metin-farki",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://thekai.co/gizlilik",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    ...blogEntries,
-  ];
+  const enBlogEntries: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${BASE_URL}/en/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  const trEntries: MetadataRoute.Sitemap = TR_ROUTES.map(({ path, changeFrequency, priority }) => ({
+    url: `${BASE_URL}${path}`,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+  }));
+
+  const enEntries: MetadataRoute.Sitemap = EN_ROUTES.map(({ path, changeFrequency, priority }) => ({
+    url: `${BASE_URL}${path}`,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+  }));
+
+  return [...trEntries, ...trBlogEntries, ...enEntries, ...enBlogEntries];
 }

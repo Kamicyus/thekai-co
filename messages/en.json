@@ -17,7 +17,7 @@
   },
   "services": {
     "title": "What We Do",
-    "subtitle": "Creative power from nine core disciplines.",
+    "subtitle": "Creative power from twelve core disciplines.",
     "viewDetails": "View Details →",
     "items": {
       "ai-ajan-sistemi": {
@@ -55,6 +55,18 @@
       "performans-pazarlama": {
         "title": "Performance Marketing",
         "description": "Growth with Google Ads & Meta Ads."
+      },
+      "video-produksiyon": {
+        "title": "Video Production",
+        "description": "Music videos, promo films, motion graphics."
+      },
+      "seo-organik-buyume": {
+        "title": "SEO & Organic Growth",
+        "description": "Rank higher on Google, grow with organic traffic."
+      },
+      "e-ticaret": {
+        "title": "E-Commerce Solutions",
+        "description": "Online store setup, payment integration."
       }
     }
   },
@@ -146,6 +158,24 @@
       "technology": { "title": "Technology", "description": "AI-native approach. We don't just use AI — we think with it." },
       "quality": { "title": "Quality", "description": "Obsessive attention to detail. From pixel to production." },
       "transparency": { "title": "Transparency", "description": "Clear communication, honest pricing, no surprises." }
+    }
+  },
+  "techStack": {
+    "title": "Our Tech Stack",
+    "subtitle": "The best tools for the best results.",
+    "items": {
+      "claudeAi": "AI agent orchestration",
+      "nextjs": "Modern web framework",
+      "typescript": "Type-safe code",
+      "tailwind": "Utility-first styling",
+      "supabase": "Database & auth",
+      "vercel": "Deploy & hosting",
+      "framerMotion": "Animations",
+      "telegramApi": "Bot integration",
+      "sunoAi": "AI music generation",
+      "elevenlabs": "AI voice synthesis",
+      "spotifyApi": "Music distribution",
+      "youtubeApi": "Content management"
     }
   },
   "cta": {

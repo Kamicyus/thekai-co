@@ -19,9 +19,13 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
+
+  const isEn = locale === "en";
+  const canonicalPath = isEn ? `/en/blog/${post.slug}` : `/blog/${post.slug}`;
+  const ogLocale = isEn ? "en_US" : "tr_TR";
 
   return {
     title: `${post.title} — The Kai Blog`,
@@ -29,17 +33,17 @@ export async function generateMetadata({
     keywords: post.keywords,
     authors: [{ name: post.author }],
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: canonicalPath,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://thekai.co/blog/${post.slug}`,
+      url: `https://thekai.co${canonicalPath}`,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
       siteName: "The Kai",
-      locale: "tr_TR",
+      locale: ogLocale,
       ...(post.coverImage && {
         images: [
           {

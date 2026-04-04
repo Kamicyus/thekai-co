@@ -3,23 +3,26 @@
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
+import { useTranslations } from "next-intl";
 
 const TECH_ITEMS = [
-  { name: "Claude AI", description: "AI ajan orkestrasyon" },
-  { name: "Next.js", description: "Modern web framework" },
-  { name: "TypeScript", description: "Tip güvenli kod" },
-  { name: "Tailwind CSS", description: "Utility-first stil" },
-  { name: "Supabase", description: "Veritabanı & auth" },
-  { name: "Vercel", description: "Deploy & hosting" },
-  { name: "Framer Motion", description: "Animasyonlar" },
-  { name: "Telegram API", description: "Bot entegrasyonu" },
-  { name: "Suno AI", description: "AI müzik üretimi" },
-  { name: "ElevenLabs", description: "AI seslendirme" },
-  { name: "Spotify API", description: "Müzik dağıtım" },
-  { name: "YouTube API", description: "İçerik yönetimi" },
+  { key: "claudeAi", name: "Claude AI" },
+  { key: "nextjs", name: "Next.js" },
+  { key: "typescript", name: "TypeScript" },
+  { key: "tailwind", name: "Tailwind CSS" },
+  { key: "supabase", name: "Supabase" },
+  { key: "vercel", name: "Vercel" },
+  { key: "framerMotion", name: "Framer Motion" },
+  { key: "telegramApi", name: "Telegram API" },
+  { key: "sunoAi", name: "Suno AI" },
+  { key: "elevenlabs", name: "ElevenLabs" },
+  { key: "spotifyApi", name: "Spotify API" },
+  { key: "youtubeApi", name: "YouTube API" },
 ];
 
 export default function TechStack() {
+  const t = useTranslations("techStack");
+
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background watermark pinwheel */}
@@ -31,10 +34,10 @@ export default function TechStack() {
         {/* Section Title */}
         <FadeIn className="text-center mb-16 lg:mb-20">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
-            Teknoloji Yığınımız
+            {t("title")}
           </h2>
           <p className="text-[#999999] text-lg max-w-lg mx-auto">
-            En iyi araçlarla, en iyi sonuçlar.
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -44,7 +47,7 @@ export default function TechStack() {
           staggerDelay={0.06}
         >
           {TECH_ITEMS.map((item) => (
-            <StaggerItem key={item.name}>
+            <StaggerItem key={item.key}>
               <div className="group relative flex flex-col items-center justify-center text-center p-4 sm:p-6 lg:p-8 bg-[#141414] border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:bg-[#1A1A1A]">
                 {/* Tiny pinwheel — fades in on hover */}
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -58,7 +61,7 @@ export default function TechStack() {
                   {item.name}
                 </span>
                 <span className="text-[#999999] text-xs lg:text-sm">
-                  {item.description}
+                  {t(`items.${item.key}`)}
                 </span>
               </div>
             </StaggerItem>
