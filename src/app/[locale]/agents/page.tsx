@@ -825,14 +825,30 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
   const t = c(theme);
 
   const models = [
-    { name: "Claude", color: "#D97706", gradient: "from-[#D97706] to-[#F59E0B]", desc: "Anthropic" },
-    { name: "GPT-4o", color: "#10B981", gradient: "from-[#10B981] to-[#34D399]", desc: "OpenAI" },
-    { name: "Gemini", color: "#4285F4", gradient: "from-[#4285F4] to-[#60A5FA]", desc: "Google" },
-    { name: "Llama 3", color: "#7C3AED", gradient: "from-[#7C3AED] to-[#A78BFA]", desc: "Meta" },
-    { name: "Mistral", color: "#F97316", gradient: "from-[#F97316] to-[#FB923C]", desc: "Mistral AI" },
-    { name: "Grok", color: "#EF4444", gradient: "from-[#EF4444] to-[#F87171]", desc: "xAI" },
-    { name: "DeepSeek", color: "#06B6D4", gradient: "from-[#06B6D4] to-[#22D3EE]", desc: "DeepSeek" },
-    { name: "Qwen", color: "#8B5CF6", gradient: "from-[#8B5CF6] to-[#A78BFA]", desc: "Alibaba" },
+    { name: "Claude", color: "#D97706", desc: "Anthropic", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 8.5L21 9.5L16 14L17.5 21L12 17.5L6.5 21L8 14L3 9.5L9.5 8.5L12 2Z" fill="#D97706"/></svg>
+    )},
+    { name: "GPT-4o", color: "#10B981", desc: "OpenAI", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 14.5 5.5 14.5 8C14.5 10.5 16 12 18.5 12C21 12 22 14.5 22 14.5C22 14.5 18.5 17 16 17C13.5 17 12 18.5 12 22C12 18.5 10.5 17 8 17C5.5 17 2 14.5 2 14.5C2 14.5 3 12 5.5 12C8 12 9.5 10.5 9.5 8C9.5 5.5 12 2 12 2Z" fill="#10B981"/></svg>
+    )},
+    { name: "Gemini", color: "#4285F4", desc: "Google", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" fill="#4285F4"/></svg>
+    )},
+    { name: "Llama 3", color: "#7C3AED", desc: "Meta", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 12C2 12 5.5 7 8 7C10 7 10.5 10 12 10C13.5 10 14 7 16 7C18.5 7 22 12 22 12C22 12 18.5 17 16 17C14 17 13.5 14 12 14C10.5 14 10 17 8 17C5.5 17 2 12 2 12Z" fill="#7C3AED"/></svg>
+    )},
+    { name: "Mistral", color: "#F97316", desc: "Mistral AI", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="5" height="5" rx="1" fill="#F97316"/><rect x="10" y="3" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="3" width="5" height="5" rx="1" fill="#F97316"/><rect x="3" y="10" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="10" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="3" y="17" width="5" height="5" rx="1" fill="#F97316"/><rect x="10" y="17" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="17" width="5" height="5" rx="1" fill="#F97316"/></svg>
+    )},
+    { name: "Grok", color: "#EF4444", desc: "xAI", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4L10.5 12L4 20H7L12 13.5L17 20H20L13.5 12L20 4H17L12 10.5L7 4H4Z" fill="#EF4444"/></svg>
+    )},
+    { name: "DeepSeek", color: "#06B6D4", desc: "DeepSeek", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10C4 10 6 6 10 5C14 4 16 6 18 8C20 10 21 14 19 17C17 20 13 21 10 19C7 17 5 14 6 11" stroke="#06B6D4" strokeWidth="2.5" strokeLinecap="round" fill="none"/><circle cx="14" cy="10" r="1.5" fill="#06B6D4"/></svg>
+    )},
+    { name: "Qwen", color: "#8B5CF6", desc: "Alibaba", svg: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#8B5CF6" strokeWidth="2.5" fill="none"/><path d="M15 12C15 14 13.5 16 12 16C10.5 16 9 14 9 12C9 10 10.5 8 12 8C13.5 8 15 10 15 12Z" fill="#8B5CF6"/><path d="M16 16L20 21" stroke="#8B5CF6" strokeWidth="2.5" strokeLinecap="round"/></svg>
+    )},
   ];
 
   return (
@@ -857,11 +873,12 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
                 (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
               }}
             >
-              {/* Color dot logo */}
+              {/* Model SVG icon */}
               <div
-                className={`w-8 h-8 rounded-lg bg-gradient-to-br ${model.gradient} flex items-center justify-center text-white text-xs font-black shadow-sm group-hover:shadow-md transition-shadow`}
+                className="w-8 h-8 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow"
+                style={{ backgroundColor: `${model.color}15` }}
               >
-                {model.name.charAt(0)}
+                {model.svg}
               </div>
               <div>
                 <span className={`${t.text} text-sm font-bold block leading-tight`}>{model.name}</span>
