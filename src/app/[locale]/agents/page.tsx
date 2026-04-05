@@ -239,8 +239,8 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
           </div>
         </FadeIn>
 
-        {/* Hero Dashboard Mockup — Apple-style scale reveal */}
-        <ScaleOnScroll>
+        {/* Hero Dashboard Mockup — Apple-style dramatic scale reveal */}
+        <ScaleOnScroll intensity="dramatic">
           <div className="relative max-w-4xl mx-auto">
             <div className={`${t.bgCard} border ${t.border} rounded-2xl p-4 shadow-lg sm:shadow-2xl`}>
               <div className="flex items-center gap-2 mb-4">
@@ -2816,8 +2816,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
           ))}
         </div>
 
-        {/* Report Card — Rich Visual */}
-        <ScaleOnScroll>
+        {/* Report Card — Rich Visual, dramatic scale */}
+        <ScaleOnScroll intensity="dramatic">
           <div className="bg-[#F8F8F8] border border-gray-200 rounded-3xl overflow-hidden shadow-2xl">
             {/* Report header */}
             <div className="px-6 sm:px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3" style={{ borderBottom: `1px solid ${current.color}20` }}>

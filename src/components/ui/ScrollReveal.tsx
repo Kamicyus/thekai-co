@@ -35,20 +35,28 @@ export function ParallaxSection({
 export function ScaleOnScroll({
   children,
   className = "",
+  intensity = "normal",
 }: {
   children: ReactNode;
   className?: string;
+  intensity?: "subtle" | "normal" | "dramatic";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center center"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+
+  const scaleRange = intensity === "dramatic" ? [0.82, 1] : intensity === "subtle" ? [0.96, 1] : [0.9, 1];
+  const opacityRange = intensity === "dramatic" ? [0, 0.4] : [0, 0.3];
+  const yRange = intensity === "dramatic" ? [40, 0] : intensity === "normal" ? [20, 0] : [0, 0];
+
+  const scale = useTransform(scrollYProgress, [0, 1], scaleRange);
+  const opacity = useTransform(scrollYProgress, opacityRange, [0, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], yRange);
 
   return (
-    <motion.div ref={ref} style={{ scale, opacity }} className={className}>
+    <motion.div ref={ref} style={{ scale, opacity, y }} className={className}>
       {children}
     </motion.div>
   );
