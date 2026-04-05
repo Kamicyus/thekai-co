@@ -2669,25 +2669,39 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
   const reports = [
     {
-      icon: "🏋️",
-      title: "Spor & Sağlık Programı",
-      subtitle: "12 Haftalık Kişiselleştirilmiş Program",
-      color: "#22c55e",
-      tab: "Spor",
+      icon: "📱",
+      title: "Sosyal Medya Performans Raporu",
+      subtitle: "Haftalık Platform Analizi",
+      color: "#4ECDC4",
+      tab: "Sosyal Medya",
     },
     {
-      icon: "🧠",
-      title: "Mental Wellness Raporu",
-      subtitle: "Haftalık Psikolojik Durum Analizi",
-      color: "#A855F7",
-      tab: "Mental",
+      icon: "💰",
+      title: "Finansal Analiz Raporu",
+      subtitle: "Aylık Gelir-Gider Raporu",
+      color: "#22C55E",
+      tab: "Finans",
     },
     {
-      icon: "📈",
-      title: "Q2 Büyüme Stratejisi",
-      subtitle: "90 Günlük Gelir Büyüme Planı",
+      icon: "⚖️",
+      title: "Hukuk & Uyum Denetimi",
+      subtitle: "Aylık Uyum Analizi",
+      color: "#F59E0B",
+      tab: "Hukuk",
+    },
+    {
+      icon: "💻",
+      title: "Yazılım Geliştirme Sprint Raporu",
+      subtitle: "Sprint #14 Performans Analizi",
       color: "#3B82F6",
-      tab: "Büyüme",
+      tab: "Yazılım",
+    },
+    {
+      icon: "🔍",
+      title: "Pazar Araştırması İstihbarat Raporu",
+      subtitle: "Q2 Trend ve Fırsat Analizi",
+      color: "#A855F7",
+      tab: "İstihbarat",
     },
   ];
 
@@ -2702,10 +2716,10 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
               Profesyonel Raporlar
             </p>
             <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
-              Ger&ccedil;ek raporlar. Ger&ccedil;ek grafikler.
+              Gerçek raporlar. Gerçek grafikler.
             </h2>
             <p className={`${t.textDim} text-lg mt-4 max-w-2xl mx-auto`}>
-              Her sabah masanızda &mdash; otomatik oluşturulmuş, grafikli, aksiyon &ouml;nerili raporlar.
+              Her sabah masanızda — otomatik oluşturulmuş, grafikli, aksiyon önerili raporlar.
               <br />
               <span className="text-[#D8FB32] font-semibold">Bu raporları da bu sistem hazırladı.</span>
             </p>
@@ -2713,7 +2727,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
         </FadeIn>
 
         {/* Report tabs */}
-        <div className="flex justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           {reports.map((r, i) => (
             <button
               key={i}
@@ -2750,22 +2764,23 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                   <span className="text-[10px] text-green-400 font-medium">Canlı</span>
                 </div>
-                <span className={`text-xs ${t.textDim}`}>5 Nisan 2026 &bull; 08:00</span>
+                <span className={`text-xs ${t.textDim}`}>5 Nisan 2026 - 08:00</span>
               </div>
             </div>
 
             {/* Report body — conditional render based on active tab */}
             <div className="px-6 sm:px-8 py-6">
+
+              {/* ──── 1. SOSYAL MEDYA PERFORMANS ──── */}
               {activeReport === 0 && (
-                /* ──── SPOR & SAĞLIK ──── */
                 <div className="space-y-6">
-                  {/* Top metrics row */}
+                  {/* KPI Metrics */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     {[
-                      { label: "Program", value: "Hafta 3/12", sub: "Kas + Yağ yakımı" },
-                      { label: "Kalori", value: "2.340", sub: "/ 2.400 hedef" },
-                      { label: "Protein", value: "160g", sub: "%96 tutturuldu" },
-                      { label: "Su", value: "2.8L", sub: "/ 3L hedef" },
+                      { label: "Toplam Erişim", value: "48.2K", sub: "Geçen hafta: 41.8K" },
+                      { label: "Etkileşim Oranı", value: "%4.7", sub: "Sektör ort: %2.1" },
+                      { label: "Takipçi Büyüme", value: "+1.240", sub: "Son 7 gün" },
+                      { label: "İçerik Üretildi", value: "34", sub: "Post / Reel / Story" },
                     ].map((m, i) => (
                       <motion.div
                         key={i}
@@ -2776,7 +2791,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
                       >
                         <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
-                        <span className="text-xl font-black text-[#22c55e] block">{m.value}</span>
+                        <span className="text-xl font-black block" style={{ color: "#4ECDC4" }}>{m.value}</span>
                         <span className="text-[10px] text-[#666]">{m.sub}</span>
                       </motion.div>
                     ))}
@@ -2784,160 +2799,338 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
                   {/* Charts row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Progress bars — macros */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5 space-y-4`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider">Beslenme Takibi</h4>
-                      <ProgressBar value={96} max={100} color="#22c55e" label="Protein" />
-                      <ProgressBar value={82} max={100} color="#3B82F6" label="Karbonhidrat" />
-                      <ProgressBar value={71} max={100} color="#F59E0B" label="Yağ" />
-                      <ProgressBar value={93} max={100} color="#4ECDC4" label="Su" />
-                    </div>
-
-                    {/* Bar chart — weekly */}
+                    {/* Platform bazlı erişim */}
                     <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Haftalık Antrenman Yoğunluğu</h4>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Platform Bazlı Erişim</h4>
                       <MiniBarChart
                         data={[
-                          { label: "Pzt", value: 85 },
-                          { label: "Sal", value: 0 },
-                          { label: "Çar", value: 72 },
-                          { label: "Per", value: 0 },
-                          { label: "Cum", value: 90 },
-                          { label: "Cmt", value: 65 },
-                          { label: "Paz", value: 0 },
+                          { label: "X", value: 14200 },
+                          { label: "IG", value: 18600 },
+                          { label: "LI", value: 4800 },
+                          { label: "YT", value: 7200 },
+                          { label: "TT", value: 3400 },
                         ]}
-                        color="#22c55e"
+                        color="#4ECDC4"
+                      />
+                    </div>
+
+                    {/* Haftalık engagement sparkline + donut */}
+                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Haftalık Etkileşim Trendi</h4>
+                      <SparkLine data={[320, 480, 390, 520, 610, 580, 720]} color="#4ECDC4" />
+                      <div className="flex items-center justify-around mt-4">
+                        <DonutChart value={78} max={100} color="#4ECDC4" label="Organik" size={65} />
+                        <DonutChart value={22} max={100} color="#F59E0B" label="Paid" size={65} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Aksiyon bölümü */}
+                  <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">En İyi İçerik Formatları ve Öneriler</h4>
+                    <div className="space-y-2.5">
+                      {[
+                        { text: "Reels / Kısa Video — en yüksek etkileşim oranı", status: "1. Sıra", color: "#4ECDC4" },
+                        { text: "Carousel / Kaydırmalı Gönderi — kaydetme oranı yüksek", status: "2. Sıra", color: "#3B82F6" },
+                        { text: "Thread / Uzun Metin — paylaşım oranı yüksek", status: "3. Sıra", color: "#A855F7" },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center justify-between">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
+                            <span className={`text-xs ${t.textMuted}`}>{item.text}</span>
+                          </div>
+                          <StatusBadge status={item.status} color={item.color} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Highlight */}
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#4ECDC415", border: "1px solid #4ECDC430" }}>
+                    <span className="text-lg">📊</span>
+                    <span className="text-sm font-semibold" style={{ color: "#4ECDC4" }}>Reels formatı %180 daha fazla etkileşim alıyor — kısa video üretimini artırın.</span>
+                  </div>
+                </div>
+              )}
+
+              {/* ──── 2. FİNANSAL ANALİZ ──── */}
+              {activeReport === 1 && (
+                <div className="space-y-6">
+                  {/* KPI Metrics */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    {[
+                      { label: "Aylık Gelir", value: "₺284K", sub: "Geçen ay: ₺261K" },
+                      { label: "Gider", value: "₺196K", sub: "Bütçe: ₺210K" },
+                      { label: "Net Kar", value: "₺88K", sub: "Hedef: ₺100K" },
+                      { label: "Kar Marjı", value: "%31", sub: "Geçen ay: %27" },
+                    ].map((m, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                      >
+                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-xl font-black block" style={{ color: "#22C55E" }}>{m.value}</span>
+                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Charts row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Gelir vs Gider bar chart */}
+                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Son 6 Ay Gelir Trendi</h4>
+                      <MiniBarChart
+                        data={[
+                          { label: "Kas", value: 198 },
+                          { label: "Ara", value: 215 },
+                          { label: "Oca", value: 234 },
+                          { label: "Şub", value: 248 },
+                          { label: "Mar", value: 261 },
+                          { label: "Nis", value: 284 },
+                        ]}
+                        color="#22C55E"
+                      />
+                      <div className="mt-3 flex items-center gap-4">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-2 h-2 rounded-full bg-[#22C55E]" />
+                          <span className="text-[10px] text-[#999]">Gelir</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Gider dağılımı donut chart */}
+                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Gider Dağılımı</h4>
+                      <div className="flex items-center justify-around">
+                        <DonutChart value={45} max={100} color="#22C55E" label="Personel" size={65} />
+                        <DonutChart value={20} max={100} color="#3B82F6" label="Pazarlama" size={65} />
+                        <DonutChart value={15} max={100} color="#F59E0B" label="Altyapı" size={65} />
+                        <DonutChart value={20} max={100} color="#A855F7" label="Diğer" size={65} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Aksiyon bölümü */}
+                  <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Nakit Akış Projeksiyonu ve Tasarruf Önerileri</h4>
+                    <div className="space-y-3">
+                      <ProgressBar value={88} max={100} color="#22C55E" label="Nakit Akış Sağlığı" />
+                      <ProgressBar value={72} max={100} color="#3B82F6" label="Bütçe Uyumu" />
+                      <ProgressBar value={65} max={100} color="#F59E0B" label="Tasarruf Potansiyeli" />
+                    </div>
+                    <div className="mt-4 space-y-2">
+                      {[
+                        { text: "Altyapı maliyetlerini %12 düşürme fırsatı tespit edildi", status: "Aksiyon", color: "#F59E0B" },
+                        { text: "Pazarlama ROI optimizasyonu ile ₺18K tasarruf mümkün", status: "Öneri", color: "#3B82F6" },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center justify-between">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
+                            <span className={`text-xs ${t.textMuted}`}>{item.text}</span>
+                          </div>
+                          <StatusBadge status={item.status} color={item.color} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Highlight */}
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#22C55E15", border: "1px solid #22C55E30" }}>
+                    <span className="text-lg">📈</span>
+                    <span className="text-sm font-semibold" style={{ color: "#22C55E" }}>Q2 hedefi: ₺100K net kar — mevcut trendle ulaşılabilir.</span>
+                  </div>
+                </div>
+              )}
+
+              {/* ──── 3. HUKUK & UYUM DENETİMİ ──── */}
+              {activeReport === 2 && (
+                <div className="space-y-6">
+                  {/* KPI Metrics */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    {[
+                      { label: "Denetlenen Döküman", value: "47", sub: "Bu ay" },
+                      { label: "Uyum Skoru", value: "%94", sub: "Hedef: %90" },
+                      { label: "Risk Tespiti", value: "3", sub: "Kritik: 0" },
+                      { label: "Çözülen", value: "2", sub: "Bekleyen: 1" },
+                    ].map((m, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                      >
+                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-xl font-black block" style={{ color: "#F59E0B" }}>{m.value}</span>
+                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Charts row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Uyum kategorileri progress bars */}
+                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5 space-y-4`}>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider">Uyum Kategorileri</h4>
+                      <ProgressBar value={98} max={100} color="#22C55E" label="KVKK" />
+                      <ProgressBar value={92} max={100} color="#F59E0B" label="Mesafeli Satış" />
+                      <ProgressBar value={88} max={100} color="#3B82F6" label="ETBİS" />
+                      <ProgressBar value={96} max={100} color="#A855F7" label="İş Hukuku" />
+                    </div>
+
+                    {/* Risk seviyesi donut */}
+                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Risk Dağılımı</h4>
+                      <div className="flex items-center justify-around">
+                        <DonutChart value={82} max={100} color="#22C55E" label="Düşük" size={70} />
+                        <DonutChart value={15} max={100} color="#F59E0B" label="Orta" size={70} />
+                        <DonutChart value={3} max={100} color="#EF4444" label="Yüksek" size={70} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Detay bölümü — Risk tespitleri */}
+                  <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Tespit Edilen Riskler ve Çözüm Durumları</h4>
+                    <div className="space-y-2.5">
+                      {[
+                        { text: "Gizlilik politikası güncelleme gerekiyor (KVKK m.10)", status: "Tamamlandı", color: "#22C55E" },
+                        { text: "Mesafeli satış sözleşmesi revize edildi", status: "Tamamlandı", color: "#22C55E" },
+                        { text: "Çerez onay mekanizması uyumsuzluk tespiti", status: "Devam Ediyor", color: "#F59E0B" },
+                      ].map((risk, i) => (
+                        <div key={i} className="flex items-center justify-between">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: risk.color }} />
+                            <span className={`text-xs ${t.textMuted}`}>{risk.text}</span>
+                          </div>
+                          <StatusBadge status={risk.status} color={risk.color} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Highlight */}
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#F59E0B15", border: "1px solid #F59E0B30" }}>
+                    <span className="text-lg">⚖️</span>
+                    <span className="text-sm font-semibold" style={{ color: "#F59E0B" }}>KVKK uyum skoru sektör ortalamasının %18 üzerinde.</span>
+                  </div>
+                </div>
+              )}
+
+              {/* ──── 4. YAZILIM GELİŞTİRME SPRİNT ──── */}
+              {activeReport === 3 && (
+                <div className="space-y-6">
+                  {/* KPI Metrics */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    {[
+                      { label: "Tamamlanan Task", value: "28", sub: "Planlanan: 32" },
+                      { label: "Sprint Velocity", value: "34pts", sub: "Ort: 29pts" },
+                      { label: "Bug Fix", value: "12", sub: "Kritik: 3" },
+                      { label: "Deploy", value: "8", sub: "Başarılı: 8/8" },
+                    ].map((m, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                      >
+                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-xl font-black block" style={{ color: "#3B82F6" }}>{m.value}</span>
+                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Charts row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Sprint burndown sparkline */}
+                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Sprint Burndown</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-3 mb-1">
+                          <div className="flex items-center gap-1.5">
+                            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#3B82F6" }} />
+                            <span className="text-[10px] text-[#999]">Gerçekleşen</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#666" }} />
+                            <span className="text-[10px] text-[#999]">İdeal</span>
+                          </div>
+                        </div>
+                        <SparkLine data={[32, 30, 27, 24, 20, 17, 13, 9, 5, 4]} color="#3B82F6" />
+                      </div>
+                      <div className="flex items-center gap-2 mt-3">
+                        <StatusBadge status="Hedefin önünde" color="#22C55E" />
+                        <span className="text-[10px] text-[#666]">4 task kaldı, 2 gün var</span>
+                      </div>
+                    </div>
+
+                    {/* Task dağılımı bar chart */}
+                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Task Dağılımı</h4>
+                      <MiniBarChart
+                        data={[
+                          { label: "Feature", value: 45 },
+                          { label: "Bug", value: 25 },
+                          { label: "Refactor", value: 15 },
+                          { label: "Docs", value: 15 },
+                        ]}
+                        color="#3B82F6"
                       />
                     </div>
                   </div>
 
-                  {/* Bottom row — supplements + mental */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Supplement Takibi</h4>
-                      <div className="space-y-2">
-                        {[
-                          { name: "Magnezyum + B-Complex", time: "Sabah", done: true },
-                          { name: "L-Citrulline", time: "Antrenman &ouml;ncesi", done: true },
-                          { name: "Whey + Kreatin", time: "Antrenman sonrası", done: true },
-                          { name: "Omega-3", time: "Akşam", done: false },
-                        ].map((s, i) => (
-                          <div key={i} className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                              <div className={`w-4 h-4 rounded border flex items-center justify-center ${s.done ? "bg-[#22c55e] border-[#22c55e]" : "border-[#333]"}`}>
-                                {s.done && <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="white" strokeWidth="1.5" /></svg>}
-                              </div>
-                              <span className={`text-xs ${t.textMuted}`}>{s.name}</span>
-                            </div>
-                            <span className="text-[10px] text-[#666]" dangerouslySetInnerHTML={{ __html: s.time }} />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Mental Check-in</h4>
-                      <div className="flex items-center justify-around">
-                        <DonutChart value={7} max={10} color="#22c55e" label="Uyku" size={70} />
-                        <DonutChart value={8} max={10} color="#3B82F6" label="Enerji" size={70} />
-                        <DonutChart value={4} max={10} color="#F59E0B" label="Stres" size={70} />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Achievement */}
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#22c55e15", border: "1px solid #22c55e30" }}>
-                    <span className="text-lg">💪</span>
-                    <span className="text-sm text-[#22c55e] font-semibold">Bench Press rekor: Bu hafta 65kg (+5kg) &mdash; hedef doğrultusunda ilerliyorsunuz!</span>
-                  </div>
-                </div>
-              )}
-
-              {activeReport === 1 && (
-                /* ──── MENTAL WELLNESS ──── */
-                <div className="space-y-6">
-                  {/* Score + Trend */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    {[
-                      { label: "Haftalık Skor", value: "7.2", sub: "/ 10 (↑ 0.4)" },
-                      { label: "&Uuml;retken G&uuml;nler", value: "5/7", sub: "Çok iyi" },
-                      { label: "Uyku Ort.", value: "7.5h", sub: "Stabil" },
-                      { label: "İla&ccedil; Takibi", value: "%100", sub: "Kusursuz" },
-                    ].map((m, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
-                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
-                      >
-                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1" dangerouslySetInnerHTML={{ __html: m.label }} />
-                        <span className="text-xl font-black text-[#A855F7] block">{m.value}</span>
-                        <span className="text-[10px] text-[#666]" dangerouslySetInnerHTML={{ __html: m.sub }} />
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Mood sparkline */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Duygu Durumu Trendi (7 G&uuml;n)</h4>
-                      <SparkLine data={[6.2, 6.8, 7.0, 6.5, 7.5, 7.8, 7.2]} color="#A855F7" />
-                      <div className="flex items-center gap-2 mt-3">
-                        <StatusBadge status="↗ Y&uuml;kseliyor" color="#A855F7" />
-                        <span className="text-[10px] text-[#666]">Geçen haftaya göre +%6</span>
-                      </div>
-                    </div>
-
-                    {/* Donut charts */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Boyut Analizi</h4>
-                      <div className="flex items-center justify-around">
-                        <DonutChart value={72} max={100} color="#A855F7" label="Genel" />
-                        <DonutChart value={85} max={100} color="#22c55e" label="Sosyal" />
-                        <DonutChart value={68} max={100} color="#3B82F6" label="Yaratıcı" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Recommendations */}
+                  {/* Code review metrikleri */}
                   <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">&Ouml;neriler</h4>
-                    <div className="space-y-2.5">
+                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Code Review Metrikleri ve Sonraki Sprint</h4>
+                    <div className="space-y-3">
+                      <ProgressBar value={92} max={100} color="#22C55E" label="Review Tamamlanma" />
+                      <ProgressBar value={85} max={100} color="#3B82F6" label="Test Coverage" />
+                      <ProgressBar value={78} max={100} color="#A855F7" label="Kod Kalite Skoru" />
+                    </div>
+                    <div className="mt-4 space-y-2">
                       {[
-                        { text: "&Ccedil;arşamba g&uuml;nleri 15dk nefes egzersizi ekle", priority: "Y&uuml;ksek", color: "#A855F7" },
-                        { text: "Hafta sonu doğa y&uuml;r&uuml;y&uuml;ş&uuml; devam etsin", priority: "Devam", color: "#22c55e" },
-                        { text: "G&uuml;nl&uuml;k 3 ş&uuml;kran notu yazma alışkanlığı", priority: "Yeni", color: "#3B82F6" },
-                      ].map((rec, i) => (
+                        { text: "Sprint #15: Auth v2 ve Dashboard yenileme planlandı", status: "Planlandı", color: "#3B82F6" },
+                        { text: "Teknik borç: 4 story point ayrıldı", status: "Kabul", color: "#F59E0B" },
+                        { text: "CI/CD pipeline optimizasyonu tamamlandı", status: "Bitti", color: "#22C55E" },
+                      ].map((item, i) => (
                         <div key={i} className="flex items-center justify-between">
                           <div className="flex items-center gap-2.5">
-                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: rec.color }} />
-                            <span className={`text-xs ${t.textMuted}`} dangerouslySetInnerHTML={{ __html: rec.text }} />
+                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
+                            <span className={`text-xs ${t.textMuted}`}>{item.text}</span>
                           </div>
-                          <StatusBadge status={rec.priority} color={rec.color} />
+                          <StatusBadge status={item.status} color={item.color} />
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#A855F715", border: "1px solid #A855F730" }}>
-                    <span className="text-lg">✨</span>
-                    <span className="text-sm text-[#A855F7] font-semibold">Pozitif trend: Spor rutini otomatikleşti, sosyal etkileşim artıyor, yaratıcı &uuml;retkenlik y&uuml;ksek.</span>
+                  {/* Highlight */}
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#3B82F615", border: "1px solid #3B82F630" }}>
+                    <span className="text-lg">🚀</span>
+                    <span className="text-sm font-semibold" style={{ color: "#3B82F6" }}>Sprint velocity %15 arttı — takım hızlanıyor.</span>
                   </div>
                 </div>
               )}
 
-              {activeReport === 2 && (
-                /* ──── BÜYÜME STRATEJİSİ ──── */
+              {/* ──── 5. PAZAR ARAŞTIRMASI İSTİHBARAT ──── */}
+              {activeReport === 4 && (
                 <div className="space-y-6">
-                  {/* KPIs */}
+                  {/* KPI Metrics */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     {[
-                      { label: "MRR", value: "$10.2K", sub: "Hedef: $25K", trend: "+%34" },
-                      { label: "Organik Trafik", value: "12.4K", sub: "/ ay", trend: "+%34" },
-                      { label: "D&ouml;n&uuml;ş&uuml;m", value: "%3.2", sub: "Sekt&ouml;r: %2.1", trend: "+%52" },
-                      { label: "Churn", value: "%4.8", sub: "Hedef: <%5", trend: "Hedefte" },
+                      { label: "Analiz Edilen Kaynak", value: "2.340", sub: "Web, sosyal, rapor" },
+                      { label: "Trend Tespiti", value: "8", sub: "Yükselen sektörler" },
+                      { label: "Rakip Takip", value: "12", sub: "Aktif izleme" },
+                      { label: "Fırsat", value: "5", sub: "Aksiyon bekliyor" },
                     ].map((m, i) => (
                       <motion.div
                         key={i}
@@ -2947,99 +3140,69 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         transition={{ delay: i * 0.1 }}
                         className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
                       >
-                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1" dangerouslySetInnerHTML={{ __html: m.label }} />
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-xl font-black text-[#3B82F6]">{m.value}</span>
-                          <span className="text-[10px] font-bold text-[#22c55e]">{m.trend}</span>
-                        </div>
-                        <span className="text-[10px] text-[#666]" dangerouslySetInnerHTML={{ __html: m.sub }} />
+                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-xl font-black block" style={{ color: "#A855F7" }}>{m.value}</span>
+                        <span className="text-[10px] text-[#666]">{m.sub}</span>
                       </motion.div>
                     ))}
                   </div>
 
+                  {/* Charts row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Revenue projection bar chart */}
+                    {/* Trend kategorileri bar chart */}
                     <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Gelir Projeksiyonu</h4>
-                      <div className="space-y-3">
-                        {[
-                          { month: "Nisan", value: 10.2, max: 25, status: "Mevcut" },
-                          { month: "Mayıs", value: 15.8, max: 25, status: "Projeksiyon" },
-                          { month: "Haziran", value: 23.4, max: 25, status: "Hedef" },
-                        ].map((m, i) => (
-                          <div key={i} className="space-y-1">
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-[#999]">{m.month}</span>
-                              <div className="flex items-center gap-2">
-                                <span className="text-xs font-bold text-[#3B82F6]">${m.value}K</span>
-                                <StatusBadge status={m.status} color={i === 0 ? "#22c55e" : "#3B82F6"} />
-                              </div>
-                            </div>
-                            <div className="h-3 rounded-full bg-white/5 overflow-hidden">
-                              <motion.div
-                                className="h-full rounded-full"
-                                style={{ backgroundColor: i === 2 ? "#22c55e" : "#3B82F6" }}
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${(m.value / m.max) * 100}%` }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1, delay: i * 0.2 }}
-                              />
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Trend Kategorileri</h4>
+                      <MiniBarChart
+                        data={[
+                          { label: "AI", value: 92 },
+                          { label: "NoCode", value: 71 },
+                          { label: "SaaS", value: 65 },
+                          { label: "Creator", value: 58 },
+                          { label: "Fintech", value: 47 },
+                        ]}
+                        color="#A855F7"
+                      />
                     </div>
 
-                    {/* Revenue sparkline */}
+                    {/* Rakip positioning donut chart */}
                     <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">MRR B&uuml;y&uuml;me Trendi</h4>
-                      <SparkLine data={[3.2, 4.1, 5.8, 6.5, 7.2, 8.9, 10.2]} color="#3B82F6" />
-                      <div className="flex items-center gap-2 mt-3">
-                        <StatusBadge status="↗ B&uuml;y&uuml;yor" color="#22c55e" />
-                        <span className="text-[10px] text-[#666]">Son 7 ay s&uuml;rekli artış</span>
+                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Rakip Konumlandırma</h4>
+                      <div className="flex items-center justify-around">
+                        <DonutChart value={35} max={100} color="#A855F7" label="Lider" size={65} />
+                        <DonutChart value={40} max={100} color="#3B82F6" label="Takipçi" size={65} />
+                        <DonutChart value={25} max={100} color="#F59E0B" label="Niş" size={65} />
                       </div>
                     </div>
                   </div>
 
-                  {/* Action plan */}
+                  {/* Detay bölümü — Trend ve aksiyonlar */}
                   <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Aksiyon Planı</h4>
+                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">En Önemli Trendler ve Aksiyon Önerileri</h4>
                     <div className="space-y-2.5">
                       {[
-                        { text: "&Uuml;r&uuml;n sayfası A/B testi", status: "Tamamlandı", pct: 100, color: "#22c55e", result: "Varyant B %23 ↑" },
-                        { text: "İ&ccedil;erik pazarlama &mdash; 3 blog/hafta", status: "&Ccedil;alışıyor", pct: 60, color: "#3B82F6", result: "" },
-                        { text: "Referral programı", status: "Haziran", pct: 20, color: "#F59E0B", result: "" },
-                        { text: "YouTube demo serisi", status: "Script hazır", pct: 35, color: "#A855F7", result: "" },
-                      ].map((action, i) => (
-                        <div key={i} className="space-y-1.5">
-                          <div className="flex items-center justify-between">
-                            <span className={`text-xs ${t.textMuted}`} dangerouslySetInnerHTML={{ __html: action.text }} />
-                            <div className="flex items-center gap-2">
-                              {action.result && <span className="text-[10px] text-[#22c55e] font-medium">{action.result}</span>}
-                              <StatusBadge status={action.status} color={action.color} />
-                            </div>
+                        { text: "AI ajan platformları hızla büyüyor — erken giriş avantajı var", status: "Kritik", color: "#A855F7" },
+                        { text: "No-code araçlar KOBİ segmentinde %60 penetrasyon", status: "Fırsat", color: "#22C55E" },
+                        { text: "Creator Economy monetizasyon modelleri çeşitleniyor", status: "İzle", color: "#3B82F6" },
+                      ].map((trend, i) => (
+                        <div key={i} className="flex items-center justify-between">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: trend.color }} />
+                            <span className={`text-xs ${t.textMuted}`}>{trend.text}</span>
                           </div>
-                          <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
-                            <motion.div
-                              className="h-full rounded-full"
-                              style={{ backgroundColor: action.color }}
-                              initial={{ width: 0 }}
-                              whileInView={{ width: `${action.pct}%` }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.8, delay: i * 0.15 }}
-                            />
-                          </div>
+                          <StatusBadge status={trend.status} color={trend.color} />
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#3B82F615", border: "1px solid #3B82F630" }}>
-                    <span className="text-lg">🚀</span>
-                    <span className="text-sm text-[#3B82F6] font-semibold">T&uuml;rkiye&apos;de doğrudan rakip yok. Global benchmark: Lindy.ai ($49/ay, 10K+ user). Farkımız: T&uuml;rk&ccedil;e + departman yapısı + toplantı sistemi.</span>
+                  {/* Highlight */}
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: "#A855F715", border: "1px solid #A855F730" }}>
+                    <span className="text-lg">🔮</span>
+                    <span className="text-sm font-semibold" style={{ color: "#A855F7" }}>AI ajan pazarı 2026{"'"}da %340 büyüme bekleniyor.</span>
                   </div>
                 </div>
               )}
+
             </div>
 
             {/* Report footer — CTA */}
@@ -3054,7 +3217,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   <rect x="0.5" y="5.5" width="11" height="8" rx="2" stroke={current.color} strokeWidth="1" />
                   <path d="M3 5.5V3.5C3 1.84 4.34 0.5 6 0.5C7.66 0.5 9 1.84 9 3.5V5.5" stroke={current.color} strokeWidth="1" strokeLinecap="round" />
                 </svg>
-                Pro planla t&uuml;m raporlara erişin &rarr;
+                Pro planla tüm raporlara erişin →
               </a>
             </div>
           </div>
