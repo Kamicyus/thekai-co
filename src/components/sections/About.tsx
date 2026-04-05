@@ -37,7 +37,7 @@ export default function About() {
             {/* Quote Highlight */}
             <FadeIn delay={0.2}>
               <div className="mt-10 pl-6 border-l-2 border-[#D8FB32]">
-                <p className="text-[#F5F5F5] text-xl lg:text-2xl font-medium italic leading-relaxed">
+                <p className="text-xl lg:text-2xl font-medium italic leading-relaxed bg-gradient-to-b from-[#F5F5F5] to-[#666666] bg-clip-text text-transparent">
                   &ldquo;{t("quote")}&rdquo;
                 </p>
               </div>
@@ -47,11 +47,14 @@ export default function About() {
           {/* Right: Founder Card (2/5 width) */}
           <div className="lg:col-span-2">
             <FadeIn delay={0.3} direction="left">
-              <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8 lg:p-10">
+              <div className="bg-[#141414] border border-transparent rounded-[20px] p-6 sm:p-8 lg:p-10 relative" style={{ backgroundImage: 'linear-gradient(#141414, #141414), linear-gradient(135deg, rgba(216,251,50,0.3), transparent 50%, rgba(216,251,50,0.05))', backgroundOrigin: 'border-box', backgroundClip: 'padding-box, border-box', borderWidth: '1px' }}>
                 {/* Avatar */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">
-                    <Image src="/images/kamer.png" alt="Kamer" width={64} height={64} className="object-cover" />
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-full scale-150 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(216,251,50,0.15) 0%, transparent 70%)' }} />
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#D8FB32]/40 shadow-[0_0_20px_rgba(216,251,50,0.15)]">
+                      <Image src="/images/kamer.png" alt="Kamer" width={64} height={64} className="object-cover" />
+                    </div>
                   </div>
                   <div>
                     <p className="text-[#F5F5F5] font-semibold text-lg">
@@ -70,7 +73,7 @@ export default function About() {
                       key={key}
                       className="flex items-center gap-3 py-3 border-b border-[#1F2937]/50 last:border-0"
                     >
-                      <div className="w-2 h-2 rounded-full bg-[#D8FB32] flex-shrink-0" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#D8FB32] flex-shrink-0 shadow-[0_0_8px_rgba(216,251,50,0.5)]" />
                       <span className="text-[#F5F5F5] text-base font-medium">
                         {t(`highlights.${key}`)}
                       </span>

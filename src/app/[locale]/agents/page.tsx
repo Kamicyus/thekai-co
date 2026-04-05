@@ -64,20 +64,20 @@ function NotificationBar() {
   if (!visible) return null;
 
   return (
-    <div className="w-full bg-[#D8FB32] text-[#0A0A0A] py-2.5 px-4 flex items-center justify-center gap-3 relative z-50">
-      <span className="text-sm font-semibold text-center">
-        🔥 Beta erişim açıldı — İlk 100 kullanıcıya özel fiyat{" "}
-        <a href="#bekleme-listesi" className="underline font-bold hover:opacity-70 transition-opacity ml-1">
+    <div className="w-full bg-[#0A0A0A] border-b border-white/[0.06] py-2 px-4 flex items-center justify-center gap-3 relative z-50">
+      <span className="text-xs font-medium text-white/60 text-center">
+        Beta erişim açıldı — İlk 100 kullanıcıya özel fiyat{" "}
+        <a href="#bekleme-listesi" className="text-[#D8FB32] underline font-semibold hover:text-[#D8FB32]/80 transition-colors ml-1">
           Hemen Katıl →
         </a>
       </span>
       <button
         onClick={dismiss}
         aria-label="Kapat"
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#0A0A0A]/10 transition-colors"
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/[0.06] transition-colors"
       >
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M1 1L11 11M11 1L1 11" stroke="#0A0A0A" strokeWidth="2" strokeLinecap="round" />
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+          <path d="M1 1L11 11M11 1L1 11" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       </button>
     </div>
@@ -370,8 +370,10 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
 
         {/* Hero Dashboard Mockup — Apple-style dramatic scale reveal */}
         <ScaleOnScroll intensity="dramatic">
-          <div className="relative max-w-4xl mx-auto">
-            <div className={`${t.bgCard} border ${t.border} rounded-2xl p-4 shadow-lg sm:shadow-2xl`}>
+          <div className="relative max-w-4xl mx-auto group">
+            {/* Animated gradient border */}
+            <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#D8FB32]/40 via-[#3B82F6]/30 to-[#D8FB32]/40 opacity-60 blur-[1px] bg-[length:200%_200%]" style={{ animation: "gradient-shift 6s ease infinite" }} />
+            <div className={`relative ${t.bgCard} border ${t.border} rounded-2xl p-4 shadow-[0_20px_80px_rgba(216,251,50,0.08)]`}>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
@@ -413,11 +415,16 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className={`${t.textWhite30} text-xs hidden sm:block`}>{agent.dept}</span>
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                        agent.status === "Çalışıyor" ? "bg-green-500/20 text-green-400" :
-                        agent.status === "Tamamlandı" ? "bg-[#D8FB32]/20 text-[#D8FB32]" :
-                        `${t.whiteOverlay10} ${t.textDimmer}`
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-medium inline-flex items-center gap-1.5 ${
+                        agent.status === "Çalışıyor" ? "bg-green-500/15 text-green-400 border border-green-500/20" :
+                        agent.status === "Tamamlandı" ? "bg-[#D8FB32]/15 text-[#D8FB32] border border-[#D8FB32]/20" :
+                        `${t.whiteOverlay10} ${t.textDimmer} border border-white/[0.06]`
                       }`}>
+                        <span className={`w-1.5 h-1.5 rounded-full ${
+                          agent.status === "Çalışıyor" ? "bg-green-400 animate-pulse" :
+                          agent.status === "Tamamlandı" ? "bg-[#D8FB32]" :
+                          "bg-white/30"
+                        }`} />
                         {agent.status}
                       </span>
                     </div>
@@ -431,7 +438,7 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
 
         {/* Stats integrated from StatsBar */}
         <FadeIn delay={0.4}>
-          <div className="mt-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {[
               { value: "40+", label: "Uzman Ajan" },
               { value: "8", label: "Departman" },
@@ -444,7 +451,7 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col items-center gap-1"
+                className="flex flex-col items-center gap-1 bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-xl px-6 py-3"
               >
                 <span className="text-3xl sm:text-4xl font-black text-[#D8FB32] leading-none tabular-nums">
                   {stat.value}
@@ -3951,174 +3958,340 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
   const t = c(theme);
   usePaddleInit();
 
-  const plans = [
-    {
-      name: "Free",
-      price: "$0",
-      period: "sonsuza dek",
-      highlight: false,
-      priceId: null,
-      href: "/agents/giris",
-      features: [
-        "1 departman",
-        "3 uzman ajan",
-        "50 görev / ay",
-        "Temel dashboard",
-        "Topluluk desteği",
-      ],
-      cta: "Ücretsiz Başla",
-    },
-    {
-      name: "Starter",
-      price: "$49",
-      period: "/ ay",
-      highlight: false,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_STARTER_PRICE_ID || "pri_01kneqb0fy99hn58h3ntt00732m",
-      href: null,
-      features: [
-        "3 departman",
-        "15 uzman ajan",
-        "1.000 görev / ay",
-        "Birimler arası toplantılar",
-        "E-posta desteği",
-        "Temel raporlar",
-      ],
-      cta: "Başla",
-    },
-    {
-      name: "Pro",
-      price: "$149",
-      period: "/ ay",
-      highlight: true,
-      badge: "En Popüler",
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PRO_PRICE_ID || "pri_01kneq6ck9e8k0b4r8apzbbvfn",
-      href: null,
-      features: [
-        "8 departman",
-        "40+ uzman ajan",
-        "Sınırsız görev",
-        "Birimler arası toplantılar",
-        "Haftalık otomatik raporlar",
-        "Bütçe kontrolü",
-        "Telegram entegrasyonu",
-        "Heartbeats (zamanlanmış görev)",
-        "Öncelikli e-posta desteği",
-      ],
-      cta: "Pro Başla",
-    },
-    {
-      name: "Business",
-      price: "$349",
-      period: "/ ay",
-      highlight: false,
-      priceId: null,
-      href: "mailto:merhaba@thekai.co",
-      features: [
-        "Sınırsız departman & ajan",
-        "Sınırsız görev",
-        "API erişimi",
-        "Çoklu kullanıcı",
-        "Özel departman şablonları",
-        "Dedicated destek",
-        "Onboarding çağrısı",
-      ],
-      cta: "Satış Ekibine Yaz",
-    },
-  ];
+  /* ── Animated gradient border for Pro card ── */
+  const AnimatedGradientBorder = ({ children }: { children: ReactNode }) => (
+    <div className="relative rounded-2xl p-[2px] overflow-hidden">
+      <motion.div
+        className="absolute inset-[-50%] w-[200%] h-[200%]"
+        style={{
+          background: "conic-gradient(from 0deg, #D8FB32, #A855F7, #D8FB32, #A855F7, #D8FB32)",
+        }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+      />
+      <div className="relative rounded-[14px] overflow-hidden">
+        {children}
+      </div>
+    </div>
+  );
+
+  /* ── Checkmark icon ── */
+  const CheckIcon = ({ color = "#22C55E" }: { color?: string }) => (
+    <span className="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: `${color}20` }}>
+      <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+        <path d="M1 4L3.5 6.5L9 1" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  );
+
+  /* ── Feature row ── */
+  const FeatureRow = ({ text, dimClass }: { text: string; dimClass: string }) => (
+    <li className="flex items-center gap-2.5 text-sm">
+      <CheckIcon />
+      <span className={dimClass}>{text}</span>
+    </li>
+  );
+
+  /* ── Category header (Pro card only) ── */
+  const CategoryHeader = ({ label }: { label: string }) => (
+    <li className="flex items-center gap-2 pt-2 first:pt-0">
+      <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/30">{label}</span>
+      <span className="flex-1 h-px bg-white/[0.06]" />
+    </li>
+  );
+
+  /* ── Plan data ── */
+  const freePlan = {
+    name: "Free",
+    icon: "\u{1F193}",
+    price: "$0",
+    period: "sonsuza dek",
+    priceId: null as string | null,
+    href: "/agents/giris",
+    features: [
+      "1 departman",
+      "3 uzman ajan",
+      "50 g\u00F6rev / ay",
+      "Temel dashboard",
+      "Topluluk deste\u011Fi",
+    ],
+    cta: "\u00DCcretsiz Ba\u015Fla",
+  };
+
+  const starterPlan = {
+    name: "Starter",
+    icon: "\u{1F680}",
+    price: "$49",
+    period: "/ ay",
+    priceId: process.env.NEXT_PUBLIC_PADDLE_STARTER_PRICE_ID || "pri_01kneqb0fy99hn58h3ntt00732m",
+    href: null as string | null,
+    features: [
+      "3 departman",
+      "15 uzman ajan",
+      "1.000 g\u00F6rev / ay",
+      "Birimler aras\u0131 toplant\u0131lar",
+      "E-posta deste\u011Fi",
+      "Temel raporlar",
+    ],
+    cta: "Ba\u015Fla",
+  };
+
+  const proPlan = {
+    name: "Pro",
+    icon: "\u26A1",
+    price: "$149",
+    period: "/ ay",
+    badge: "En Pop\u00FCler",
+    priceId: process.env.NEXT_PUBLIC_PADDLE_PRO_PRICE_ID || "pri_01kneq6ck9e8k0b4r8apzbbvfn",
+    href: null as string | null,
+    featureGroups: [
+      {
+        category: "Temel",
+        items: ["8 departman", "40+ uzman ajan", "S\u0131n\u0131rs\u0131z g\u00F6rev"],
+      },
+      {
+        category: "Geli\u015Fmi\u015F",
+        items: ["Birimler aras\u0131 toplant\u0131lar", "Haftal\u0131k otomatik raporlar", "B\u00FCt\u00E7e kontrol\u00FC"],
+      },
+      {
+        category: "Entegrasyon",
+        items: ["Telegram entegrasyonu", "Heartbeats (zamanlanm\u0131\u015F g\u00F6rev)", "\u00D6ncelikli e-posta deste\u011Fi"],
+      },
+    ],
+    cta: "Pro Ba\u015Fla",
+  };
+
+  const businessPlan = {
+    name: "Business",
+    icon: "\u{1F3E2}",
+    price: "$349",
+    period: "/ ay",
+    priceId: null as string | null,
+    href: "mailto:merhaba@thekai.co",
+    extras: [
+      "API eri\u015Fimi",
+      "\u00C7oklu kullan\u0131c\u0131",
+      "\u00D6zel departman \u015Fablonlar\u0131",
+      "Dedicated destek",
+      "Onboarding \u00E7a\u011Fr\u0131s\u0131",
+    ],
+    cta: "Sat\u0131\u015F Ekibine Yaz",
+  };
+
+  /* ── Shared CTA renderer ── */
+  const renderCta = (plan: { priceId: string | null; href: string | null; cta: string }, variant: "default" | "pro" | "business") => {
+    const href = plan.href || "/agents/giris";
+    const baseClasses = "w-full py-3.5 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] active:scale-[0.98] block cursor-pointer";
+
+    const variantClasses =
+      variant === "pro"
+        ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80] shadow-lg shadow-[#D8FB32]/20"
+        : variant === "business"
+        ? "bg-white/[0.08] text-white border border-purple-500/30 hover:border-purple-400/50 hover:bg-white/[0.12]"
+        : "bg-white/[0.08] text-white hover:bg-white/[0.14]";
+
+    return (
+      <a href={href} className={`${baseClasses} ${variantClasses}`}>
+        {plan.cta}
+      </a>
+    );
+  };
 
   return (
-    <section id="fiyatlandirma" className="py-24 px-5" style={{ background: "linear-gradient(180deg, #D8FB32 0%, #B4F030 100%)" }}>
-      <div className="max-w-5xl mx-auto">
+    <section id="fiyatlandirma" className="relative py-28 px-5 bg-[#0A0A0A] overflow-hidden">
+      {/* Subtle radial glow behind Pro card area */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(216,251,50,0.06) 0%, rgba(168,85,247,0.03) 40%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto">
+        {/* ── Header ── */}
         <FadeIn>
-          <div className="text-center mb-16">
-            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
-              Fiyatlandırma
+          <div className="text-center mb-6">
+            <p className="text-white/40 border border-white/10 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+              Fiyatland&#305;rma
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
-              Basit, şeffaf fiyatlar
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white">
+              Basit, &#351;effaf fiyatlar
             </h2>
-            <p className="text-[#0A0A0A]/70 text-lg mt-4 max-w-xl mx-auto">
-              Kendi API anahtarını kullan (BYOK).
-              <br />
-              Ekstra AI maliyeti &ouml;demiyorsun.
+            <p className="text-white/40 text-lg mt-4 max-w-xl mx-auto">
+              Kendi API anahtar&#305;n&#305; kullan (BYOK). Ekstra AI maliyeti &ouml;demiyorsun.
             </p>
           </div>
         </FadeIn>
 
-        <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {plans.map((plan, i) => (
-            <StaggerItem key={i}>
-              <div
-                className={`rounded-2xl flex flex-col h-full ${
-                  plan.highlight
-                    ? "bg-[#0A0A0A] text-white p-7 ring-2 ring-[#0A0A0A] shadow-xl shadow-black/20 scale-[1.03]"
-                    : "bg-white text-[#0A0A0A] border border-gray-200 p-7"
-                }`}
-              >
-                <div className="mb-6">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className={`text-xs font-bold uppercase tracking-widest ${plan.highlight ? "text-[#D8FB32]" : "text-gray-500"}`}>
-                      {plan.name}
-                    </span>
-                    {"badge" in plan && plan.badge && (
-                      <span className="text-xs bg-[#D8FB32] text-[#0A0A0A] px-2 py-0.5 rounded-full font-semibold">
-                        {plan.badge}
+        {/* ── Billing toggle (cosmetic) ── */}
+        <FadeIn>
+          <div className="flex items-center justify-center gap-3 mb-16">
+            <span className="text-white/60 text-sm font-medium">Ayl&#305;k</span>
+            <div className="relative w-11 h-6 bg-white/10 rounded-full cursor-not-allowed">
+              <div className="absolute left-1 top-1 w-4 h-4 bg-white/30 rounded-full" />
+            </div>
+            <span className="text-white/30 text-sm font-medium">Y&#305;ll&#305;k</span>
+            <span className="text-[10px] text-white/20 border border-white/10 px-2 py-0.5 rounded-full ml-1">Yak&#305;nda</span>
+          </div>
+        </FadeIn>
+
+        {/* ── Cards grid ── */}
+        <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-center">
+
+          {/* ──────── FREE ──────── */}
+          <StaggerItem>
+            <div className="rounded-2xl bg-white/[0.02] border border-white/[0.06] p-7 flex flex-col h-full hover:border-white/[0.12] transition-colors duration-300">
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg">{freePlan.icon}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-white/40">{freePlan.name}</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-black text-white">{freePlan.price}</span>
+                  <span className="text-sm text-white/30">{freePlan.period}</span>
+                </div>
+              </div>
+              <ul className="flex flex-col gap-3 mb-8 flex-1">
+                {freePlan.features.map((f, j) => (
+                  <FeatureRow key={j} text={f} dimClass="text-white/50" />
+                ))}
+              </ul>
+              {renderCta(freePlan, "default")}
+            </div>
+          </StaggerItem>
+
+          {/* ──────── STARTER ──────── */}
+          <StaggerItem>
+            <div className="rounded-2xl bg-white/[0.04] border border-white/[0.08] p-7 flex flex-col h-full hover:border-white/[0.16] transition-colors duration-300 shadow-lg shadow-black/10">
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg">{starterPlan.icon}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-white/50">{starterPlan.name}</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-black text-white">{starterPlan.price}</span>
+                  <span className="text-sm text-white/30">{starterPlan.period}</span>
+                </div>
+              </div>
+              <ul className="flex flex-col gap-3 mb-8 flex-1">
+                {starterPlan.features.map((f, j) => (
+                  <FeatureRow key={j} text={f} dimClass="text-white/60" />
+                ))}
+              </ul>
+              {renderCta(starterPlan, "default")}
+            </div>
+          </StaggerItem>
+
+          {/* ──────── PRO (HERO) ──────── */}
+          <StaggerItem>
+            <div className="lg:scale-[1.05] origin-center">
+              <AnimatedGradientBorder>
+                <div className="relative bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-8 flex flex-col">
+                  {/* Inner glow */}
+                  <div className="absolute inset-0 pointer-events-none rounded-[14px]" style={{
+                    background: "radial-gradient(ellipse at top center, rgba(216,251,50,0.08) 0%, transparent 60%)",
+                  }} />
+
+                  <div className="relative mb-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">{proPlan.icon}</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-[#D8FB32]">{proPlan.name}</span>
+                      </div>
+                      {/* Pulse badge */}
+                      <span className="relative flex items-center gap-1.5 text-xs bg-[#D8FB32] text-[#0A0A0A] px-3 py-1 rounded-full font-bold">
+                        <span className="absolute inset-0 bg-[#D8FB32] rounded-full animate-ping opacity-20" />
+                        <span className="relative">{proPlan.badge}</span>
                       </span>
-                    )}
+                    </div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-5xl font-black text-white">{proPlan.price}</span>
+                      <span className="text-sm text-white/40">{proPlan.period}</span>
+                    </div>
                   </div>
-                  <div className="flex items-baseline gap-1 mt-2">
-                    <span className="text-4xl font-black">{plan.price}</span>
-                    <span className={`text-sm ${plan.highlight ? "text-white/60" : "text-gray-400"}`}>{plan.period}</span>
+
+                  {/* Grouped features */}
+                  <ul className="relative flex flex-col gap-2.5 mb-8 flex-1">
+                    {proPlan.featureGroups.map((group, gi) => (
+                      <div key={gi} className="flex flex-col gap-2.5">
+                        <CategoryHeader label={group.category} />
+                        {group.items.map((item, ii) => (
+                          <FeatureRow key={ii} text={item} dimClass="text-white/70" />
+                        ))}
+                      </div>
+                    ))}
+                  </ul>
+
+                  <div className="relative">
+                    {renderCta(proPlan, "pro")}
                   </div>
                 </div>
+              </AnimatedGradientBorder>
+            </div>
+          </StaggerItem>
 
-                <ul className="flex flex-col gap-3 mb-8 flex-1">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm">
-                      <span className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${
-                        plan.highlight ? "bg-[#D8FB32] text-[#0A0A0A]" : "bg-[#0A0A0A]/10 text-[#0A0A0A]"
-                      }`}>
-                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none">
-                          <path d="M1 3L3 5L7 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
-                      <span className={plan.highlight ? "text-white/80" : "text-gray-600"}>{feature}</span>
+          {/* ──────── BUSINESS ──────── */}
+          <StaggerItem>
+            <div className="rounded-2xl bg-white/[0.03] border border-purple-500/20 p-7 flex flex-col h-full hover:border-purple-400/40 transition-colors duration-300">
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg">{businessPlan.icon}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-purple-400/70">{businessPlan.name}</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-black text-white">{businessPlan.price}</span>
+                  <span className="text-sm text-white/30">{businessPlan.period}</span>
+                </div>
+              </div>
+
+              {/* "Everything in Pro + extras" */}
+              <div className="flex-1 mb-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-purple-400/50">Pro&apos;daki her &#351;ey +</span>
+                  <span className="flex-1 h-px bg-purple-500/10" />
+                </div>
+                <ul className="flex flex-col gap-3">
+                  <li className="flex items-center gap-2.5 text-sm">
+                    <CheckIcon color="#A855F7" />
+                    <span className="text-white/60">S&#305;n&#305;rs&#305;z departman &amp; ajan</span>
+                  </li>
+                  <li className="flex items-center gap-2.5 text-sm">
+                    <CheckIcon color="#A855F7" />
+                    <span className="text-white/60">S&#305;n&#305;rs&#305;z g&ouml;rev</span>
+                  </li>
+                  {businessPlan.extras.map((f, j) => (
+                    <li key={j} className="flex items-center gap-2.5 text-sm">
+                      <CheckIcon color="#A855F7" />
+                      <span className="text-white/60">{f}</span>
                     </li>
                   ))}
                 </ul>
-
-                {/* TODO: Paddle onayı gelince openPaddleCheckout aktif et */}
-                {plan.priceId ? (
-                  <a
-                    href="/agents/giris"
-                    className={`w-full py-3 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] block cursor-pointer ${
-                      plan.highlight
-                        ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80]"
-                        : "bg-[#0A0A0A] text-white hover:bg-[#1a1a1a]"
-                    }`}
-                  >
-                    {plan.cta}
-                  </a>
-                ) : (
-                  <a
-                    href={plan.href || "/agents/giris"}
-                    className={`w-full py-3 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] block ${
-                      plan.highlight
-                        ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80]"
-                        : "bg-[#0A0A0A] text-white hover:bg-[#1a1a1a]"
-                    }`}
-                  >
-                    {plan.cta}
-                  </a>
-                )}
               </div>
-            </StaggerItem>
-          ))}
+              {renderCta(businessPlan, "business")}
+            </div>
+          </StaggerItem>
         </StaggerChildren>
 
+        {/* ── Trust badges ── */}
         <FadeIn>
-          <p className="text-center text-[#0A0A0A]/50 text-sm mt-8">
-            İlk 100 kullanıcıya özel erken erişim fiyatı geçerlidir. Hemen başla, istediğin zaman iptal et.
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-14">
+            <div className="flex items-center gap-2 text-white/30 text-sm">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0"><path d="M7 1L8.5 4.5L12.5 5L9.75 7.5L10.5 11.5L7 9.5L3.5 11.5L4.25 7.5L1.5 5L5.5 4.5L7 1Z" fill="currentColor" opacity="0.5" /></svg>
+              7 g&#252;n &#252;cretsiz deneme
+            </div>
+            <div className="w-px h-4 bg-white/10" />
+            <div className="flex items-center gap-2 text-white/30 text-sm">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0"><circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" /><path d="M5 7L6.5 8.5L9.5 5.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" /></svg>
+              &#304;stedi&#287;in zaman iptal et
+            </div>
+            <div className="w-px h-4 bg-white/10" />
+            <div className="flex items-center gap-2 text-white/30 text-sm">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0"><path d="M7 1.5L2 5V9.5L7 13L12 9.5V5L7 1.5Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" opacity="0.5" /><circle cx="7" cy="7.5" r="1.5" stroke="currentColor" strokeWidth="1" opacity="0.5" /></svg>
+              KVKK Uyumlu
+            </div>
+          </div>
+          <p className="text-center text-white/20 text-xs mt-6">
+            &#304;lk 100 kullan&#305;c&#305;ya &ouml;zel erken eri&#351;im fiyat&#305; ge&#231;erlidir.
           </p>
         </FadeIn>
       </div>
@@ -4134,24 +4307,47 @@ function SecuritySection({ theme }: { theme: "dark" | "light" }) {
 
   const cards = [
     {
-      icon: "🔒",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+      ),
       title: "Tam İzolasyon",
       desc: "Her kullanıcının verileri ayrı kasada. Başka kullanıcılar asla erişemez.",
+      gradient: "from-[#D8FB32]/60 to-[#D8FB32]/0",
     },
     {
-      icon: "🛡️",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+      ),
       title: "KVKK Uyumlu",
       desc: "Türkiye ve AB veri koruma yasalarına tam uyum. Verileriniz Türkiye'de.",
+      gradient: "from-[#3B82F6]/60 to-[#3B82F6]/0",
     },
     {
-      icon: "🚫",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M4.93 4.93l14.14 14.14" />
+        </svg>
+      ),
       title: "AI'ya Sızmaz",
       desc: "Ajanlarınıza verdiğiniz bilgiler başka kullanıcıların ajanlarına aktarılmaz.",
+      gradient: "from-[#A855F7]/60 to-[#A855F7]/0",
     },
     {
-      icon: "🗑️",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+      ),
       title: "Silme Hakkı",
       desc: "Hesabınızı sildiğinizde tüm verileriniz 30 gün içinde kalıcı olarak silinir.",
+      gradient: "from-[#D8FB32]/60 to-[#D8FB32]/0",
     },
   ];
 
@@ -4177,8 +4373,10 @@ function SecuritySection({ theme }: { theme: "dark" | "light" }) {
         <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {cards.map((card, i) => (
             <StaggerItem key={i}>
-              <div className={`${t.bgCard} border border-[#D8FB32]/20 rounded-2xl p-6 flex flex-col gap-4 h-full hover:border-[#D8FB32]/50 transition-colors duration-200`}>
-                <div className="w-12 h-12 rounded-xl bg-[#D8FB32]/10 flex items-center justify-center text-2xl shrink-0">
+              <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-6 flex flex-col gap-4 h-full hover:border-[#D8FB32]/30 transition-colors duration-300 overflow-hidden">
+                {/* Gradient accent line at top */}
+                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${card.gradient}`} />
+                <div className="w-12 h-12 rounded-xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 flex items-center justify-center shrink-0">
                   {card.icon}
                 </div>
                 <div>
@@ -4208,25 +4406,28 @@ function FounderStory({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section className="py-24 px-5 bg-white">
+    <section className={`py-24 px-5 ${t.bg}`}>
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <FadeIn>
             <div>
-              <div className="text-6xl text-[#0A0A0A] font-black leading-none mb-6">&ldquo;</div>
-              <blockquote className="text-2xl sm:text-3xl font-bold text-[#0A0A0A] leading-snug mb-6">
+              <div className="text-6xl text-[#D8FB32] font-black leading-none mb-6">&ldquo;</div>
+              <blockquote className={`text-2xl sm:text-3xl font-bold ${t.text} leading-snug mb-6`}>
                 Bu sistemi önce kendim için kurdum. 40+ uzman AI ajanım, 10 departmanım var.{" "}
-                <span className="text-gray-400">Şimdi herkese açıyorum.</span>
+                <span className="text-[#D8FB32]">Şimdi herkese açıyorum.</span>
               </blockquote>
               <div className="flex items-center gap-4">
-                <img
-                  src="/images/kamer.png"
-                  alt="Kamer"
-                  className="w-14 h-14 rounded-full object-cover border-2 border-[#D8FB32]"
-                />
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-[#D8FB32]/30 rounded-full blur-md" />
+                  <img
+                    src="/images/kamer.png"
+                    alt="Kamer"
+                    className="relative w-14 h-14 rounded-full object-cover border-2 border-[#D8FB32]"
+                  />
+                </div>
                 <div>
-                  <div className="font-bold text-[#0A0A0A] text-lg">Kamer</div>
-                  <div className="text-gray-400 text-sm">Kurucu &amp; CEO, The Kai</div>
+                  <div className={`font-bold ${t.text} text-lg`}>Kamer</div>
+                  <div className={`${t.textDim} text-sm`}>Kurucu &amp; CEO, The Kai</div>
                 </div>
               </div>
             </div>
@@ -4235,9 +4436,9 @@ function FounderStory({ theme }: { theme: "dark" | "light" }) {
           <StaggerChildren className="grid grid-cols-2 gap-4">
             {stats.map((stat, i) => (
               <StaggerItem key={i}>
-                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-black text-[#0A0A0A] mb-1">{stat.value}</div>
-                  <div className="text-gray-500 text-sm">{stat.label}</div>
+                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-6 text-center hover:border-[#D8FB32]/20 transition-colors duration-300">
+                  <div className="text-4xl font-black text-[#D8FB32] mb-1">{stat.value}</div>
+                  <div className={`${t.textMuted} text-sm`}>{stat.label}</div>
                 </div>
               </StaggerItem>
             ))}

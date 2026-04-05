@@ -110,23 +110,59 @@ export default function CTABanner() {
         </motion.div>
       </div>
 
+      {/* Floating particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
+        <motion.div
+          animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[20%] left-[15%] w-2 h-2 rounded-full bg-[#0A0A0A]/15"
+        />
+        <motion.div
+          animate={{ y: [15, -15, 15], x: [8, -8, 8] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-[40%] right-[20%] w-3 h-3 rounded-full bg-[#0A0A0A]/10"
+        />
+        <motion.div
+          animate={{ y: [-10, 25, -10], x: [-5, 12, -5] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-[30%] left-[30%] w-1.5 h-1.5 rounded-full bg-[#0A0A0A]/12"
+        />
+        <motion.div
+          animate={{ y: [12, -18, 12], x: [6, -10, 6] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          className="absolute top-[60%] right-[35%] w-2.5 h-2.5 rounded-full bg-[#0A0A0A]/8"
+        />
+        <motion.div
+          animate={{ y: [-15, 10, -15] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute top-[15%] right-[40%] w-1.5 h-1.5 rounded-full bg-white/10"
+        />
+        <motion.div
+          animate={{ y: [10, -12, 10] }}
+          transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+          className="absolute bottom-[20%] right-[10%] w-2 h-2 rounded-full bg-white/8"
+        />
+      </div>
+
       <FadeIn>
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 text-center relative z-10">
-          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] tracking-[-0.02em] mb-6 max-w-3xl mx-auto leading-tight">
-            {t("title")}
-          </h2>
-          <p className="text-[#0A0A0A]/70 text-lg sm:text-xl mb-10 max-w-lg mx-auto">
-            {t("subtitle")}
-          </p>
-          <Link
-            href="/iletisim"
-            className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#0A0A0A] text-[#D8FB32] font-semibold rounded-[10px] text-base hover:bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-200 shadow-xl"
-          >
-            {t("button")}
-            <span className="animate-[spin-slow_3s_linear_infinite] inline-flex">
-              <DecorativePinwheel size={16} opacity={0.9} />
-            </span>
-          </Link>
+          <div className="inline-block bg-white/[0.08] backdrop-blur-md border border-white/[0.1] rounded-[24px] px-8 sm:px-16 py-10 sm:py-14 shadow-[0_8px_60px_rgba(0,0,0,0.2)]">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0A0A0A] tracking-[-0.02em] mb-6 max-w-3xl mx-auto leading-tight">
+              {t("title")}
+            </h2>
+            <p className="text-[#0A0A0A]/70 text-lg sm:text-xl mb-10 max-w-lg mx-auto">
+              {t("subtitle")}
+            </p>
+            <Link
+              href="/iletisim"
+              className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#0A0A0A] text-[#D8FB32] font-semibold rounded-[12px] text-base hover:bg-[#1A1A1A] hover:scale-[1.04] transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_40px_rgba(216,251,50,0.15)]"
+            >
+              {t("button")}
+              <span className="animate-[spin-slow_3s_linear_infinite] inline-flex">
+                <DecorativePinwheel size={16} opacity={0.9} />
+              </span>
+            </Link>
+          </div>
         </div>
       </FadeIn>
     </section>

@@ -51,7 +51,7 @@ export default function Services() {
             return (
             <StaggerItem key={service.title}>
               <Link href={`/hizmetler#${service.slug}`} className="block h-full">
-                <div className="group relative flex flex-col h-full p-5 lg:p-6 bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[16px] hover:border-[#D8FB32]/30 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(216,251,50,0.08)] hover:scale-[1.01] cursor-pointer overflow-hidden">
+                <div className="group relative flex flex-col h-full p-5 lg:p-6 bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[16px] hover:border-[#D8FB32]/40 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(216,251,50,0.12),0_0_0_1px_rgba(216,251,50,0.1)] hover:-translate-y-1 cursor-pointer overflow-hidden">
                   {/* Background image */}
                   <div
                     className="absolute inset-0 opacity-60 group-hover:opacity-80 transition-opacity duration-500"
@@ -67,7 +67,7 @@ export default function Services() {
                   {/* Content — pushed to bottom */}
                   <div className="relative z-10 flex flex-col h-full justify-end">
                     {/* Icon */}
-                    <div className="w-12 h-12 rounded-xl bg-[#0A0A0A]/60 backdrop-blur-sm border border-white/[0.06] flex items-center justify-center mb-3 text-[#D8FB32] group-hover:bg-gradient-to-br group-hover:from-[#D8FB32]/15 group-hover:to-[#D8FB32]/5 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D8FB32]/10 to-[#D8FB32]/[0.02] backdrop-blur-sm border border-white/[0.08] flex items-center justify-center mb-3 text-[#D8FB32] group-hover:from-[#D8FB32]/20 group-hover:to-[#D8FB32]/5 group-hover:shadow-[0_0_20px_rgba(216,251,50,0.15)] transition-all duration-300">
                       <ServiceIcon icon={service.icon} size={22} />
                     </div>
 

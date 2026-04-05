@@ -35,9 +35,9 @@ export default function Process() {
         >
           {STEPS.map((step, i) => (
             <StaggerItem key={step.number} className="relative">
-              <div className="flex flex-col items-center md:items-start text-center md:text-left md:bg-white/[0.03] md:backdrop-blur-sm md:border md:border-white/[0.06] md:rounded-2xl md:p-5 md:lg:p-6">
+              <div className="flex flex-col items-center md:items-start text-center md:text-left bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 lg:p-6 hover:border-white/[0.1] hover:bg-white/[0.05] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(216,251,50,0.06)]">
                 {/* Number */}
-                <span className="text-4xl lg:text-5xl font-black text-[#D8FB32] tracking-[-2px] mb-4 font-sans" style={{ textShadow: '0 0 30px rgba(216,251,50,0.25)' }}>
+                <span className="text-4xl lg:text-5xl font-black text-[#D8FB32] tracking-[-2px] mb-4 font-sans" style={{ textShadow: '0 0 40px rgba(216,251,50,0.35), 0 0 80px rgba(216,251,50,0.15)' }}>
                   {step.number}
                 </span>
 
@@ -55,14 +55,14 @@ export default function Process() {
               {/* Connector line (not on last item, desktop only) */}
               {i < STEPS.length - 1 && (
                 <div className="hidden md:block absolute top-6 right-0 translate-x-1/2 w-full h-px">
-                  <div className="w-full h-px bg-gradient-to-r from-[#1F2937] via-[#D8FB32]/30 to-[#1F2937]" />
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-[#D8FB32]/40 to-transparent shadow-[0_0_6px_rgba(216,251,50,0.15)]" />
                 </div>
               )}
 
               {/* Connector line (mobile only, not on last item) */}
               {i < STEPS.length - 1 && (
                 <div className="md:hidden flex justify-center my-4">
-                  <div className="w-px h-8 bg-gradient-to-b from-[#D8FB32]/30 to-[#1F2937]" />
+                  <div className="w-px h-8 bg-gradient-to-b from-[#D8FB32]/40 via-[#D8FB32]/20 to-transparent shadow-[0_0_6px_rgba(216,251,50,0.1)]" />
                 </div>
               )}
             </StaggerItem>

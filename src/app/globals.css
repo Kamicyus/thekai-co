@@ -121,6 +121,13 @@ body {
   }
 }
 
+/* Animated gradient border for hero mockup */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   html {

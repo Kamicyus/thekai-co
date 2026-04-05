@@ -105,7 +105,7 @@ function BlogContent({ section, isEn }: { section: BlogSection; isEn: boolean })
       );
     case "cta":
       return (
-        <div className="mt-12 mb-4 p-8 bg-gradient-to-br from-[#141414] to-[#1A1A1A] border border-[#1F2937] rounded-[20px] text-center">
+        <div className="mt-12 mb-4 p-8 bg-gradient-to-br from-[#141414] to-[#1A1A1A] border border-white/[0.06] rounded-[20px] text-center">
           <Link
             href={section.href || "/iletisim"}
             className="inline-flex items-center justify-center px-10 py-4 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] text-base hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_rgba(216,251,50,0.1)]"
@@ -124,7 +124,7 @@ function BlogContent({ section, isEn }: { section: BlogSection; isEn: boolean })
             {section.faqItems?.map((faq, i) => (
               <details
                 key={i}
-                className="group bg-[#141414] border border-[#1F2937] rounded-[16px] overflow-hidden"
+                className="group bg-white/[0.03] border border-white/[0.06] rounded-[16px] overflow-hidden"
               >
                 <summary className="flex items-center justify-between p-5 cursor-pointer text-[#F5F5F5] font-medium text-base sm:text-lg hover:text-[#D8FB32] transition-colors">
                   <span>{faq.question}</span>
@@ -154,7 +154,7 @@ function BlogContent({ section, isEn }: { section: BlogSection; isEn: boolean })
     case "img":
       return (
         <figure className="my-8">
-          <div className="bg-[#141414] border border-[#1F2937] rounded-[16px] overflow-hidden aspect-video">
+          <div className="bg-white/[0.03] border border-white/[0.06] rounded-[16px] overflow-hidden aspect-video">
             {section.src ? (
               <img
                 src={section.src}
@@ -331,7 +331,7 @@ export default async function BlogPostPage({
             </p>
 
             {/* Author */}
-            <div className="flex items-center gap-3 mt-6 pt-6 border-t border-[#1F2937]">
+            <div className="flex items-center gap-3 mt-6 pt-6 border-t border-white/[0.06]">
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">
                 <Image src="/images/kamer.png" alt="Kamer Can İzvermez" width={40} height={40} className="w-full h-full object-cover" />
               </div>
@@ -348,7 +348,7 @@ export default async function BlogPostPage({
 
           {/* Cover Image */}
           {post.coverImage && (
-            <div className="relative w-full aspect-[1200/630] overflow-hidden rounded-[20px] border border-[#1F2937] mb-10">
+            <div className="relative w-full aspect-[1200/630] overflow-hidden rounded-[20px] border border-white/[0.06] mb-10">
               <img
                 src={post.coverImage}
                 alt={post.title}
@@ -358,19 +358,19 @@ export default async function BlogPostPage({
           )}
 
           {/* Content */}
-          <div className="border-t border-[#1F2937] pt-10">
+          <div className="border-t border-white/[0.06] pt-10">
             {post.content.map((section, index) => (
               <BlogContent key={index} section={section} isEn={isEn} />
             ))}
           </div>
 
           {/* Tags */}
-          <div className="mt-12 pt-8 border-t border-[#1F2937]">
+          <div className="mt-12 pt-8 border-t border-white/[0.06]">
             <div className="flex flex-wrap gap-2">
               {post.keywords.map((keyword) => (
                 <span
                   key={keyword}
-                  className="px-3 py-1.5 bg-[#1A1A1A] border border-[#1F2937] rounded-full text-[#999999] text-xs"
+                  className="px-3 py-1.5 bg-[#1A1A1A] border border-white/[0.06] rounded-full text-[#999999] text-xs"
                 >
                   {keyword}
                 </span>
@@ -380,7 +380,7 @@ export default async function BlogPostPage({
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
-            <div className="mt-16 pt-10 border-t border-[#1F2937]">
+            <div className="mt-16 pt-10 border-t border-white/[0.06]">
               <h3 className="font-serif text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">
                 {isEn ? "Other Posts" : "Diğer Yazılar"}
               </h3>
@@ -389,7 +389,7 @@ export default async function BlogPostPage({
                   <Link
                     key={related.slug}
                     href={`/blog/${related.slug}`}
-                    className="group bg-[#141414] border border-[#1F2937] rounded-[16px] p-5 hover:border-[#D8FB32]/20 transition-all duration-300"
+                    className="group bg-white/[0.03] border border-white/[0.06] rounded-[16px] p-5 hover:border-[#D8FB32]/20 transition-all duration-300"
                   >
                     <time
                       dateTime={related.date}

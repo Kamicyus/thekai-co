@@ -164,6 +164,22 @@ export default function Hero() {
         </motion.div>
       </div>
 
+      {/* Animated ring pulse behind heading */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[5]">
+        <motion.div
+          animate={{ scale: [1, 1.15, 1], opacity: [0.06, 0.12, 0.06] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] rounded-full border border-[#D8FB32]/10"
+        />
+      </div>
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[5]">
+        <motion.div
+          animate={{ scale: [1.1, 1.3, 1.1], opacity: [0.03, 0.08, 0.03] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          className="w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] rounded-full border border-[#D8FB32]/5"
+        />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 lg:px-8 text-center mt-28 sm:mt-24">
         {/* Headline */}
@@ -237,13 +253,13 @@ export default function Hero() {
         >
           <Link
             href="/#hizmetler"
-            className="inline-flex items-center justify-center px-8 py-3.5 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[10px] hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-200 text-base shadow-[0_0_30px_rgba(216,251,50,0.15)]"
+            className="inline-flex items-center justify-center px-10 py-4 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[12px] hover:bg-[#B4F030] hover:scale-[1.03] transition-all duration-300 text-lg shadow-[0_0_40px_rgba(216,251,50,0.3),0_0_80px_rgba(216,251,50,0.1)]"
           >
             {t("ctaServices")}
           </Link>
           <Link
             href="/#portfolyo"
-            className="inline-flex items-center justify-center px-8 py-3.5 border border-[#1F2937] text-[#F5F5F5] font-semibold rounded-[10px] hover:border-[#D8FB32]/30 hover:bg-[#D8FB32]/5 hover:scale-[1.02] transition-all duration-200 text-base"
+            className="inline-flex items-center justify-center px-10 py-4 border border-white/[0.1] text-[#F5F5F5] font-semibold rounded-[12px] hover:border-[#D8FB32]/40 hover:bg-[#D8FB32]/5 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(216,251,50,0.08)] transition-all duration-300 text-lg backdrop-blur-sm"
           >
             {t("ctaPortfolio")}
           </Link>
@@ -258,9 +274,9 @@ export default function Hero() {
         >
           <a
             href="/#hizmetler"
-            className="flex flex-col items-center gap-2 text-[#666666] hover:text-[#999999] transition-colors duration-300 group"
+            className="flex flex-col items-center gap-2 text-[#666666] hover:text-[#999999] transition-colors duration-300 group opacity-30 hover:opacity-50"
           >
-            <div className="w-6 h-10 rounded-full border-2 border-[#333333] group-hover:border-[#666666] transition-colors duration-300 flex justify-center pt-2">
+            <div className="w-6 h-10 rounded-full border border-[#333333] group-hover:border-[#555555] transition-colors duration-300 flex justify-center pt-2">
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

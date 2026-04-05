@@ -45,20 +45,30 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group bg-[#141414] border border-[#1F2937] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/20 transition-all duration-300 flex flex-col"
+              className="group bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/30 hover:shadow-[0_8px_32px_rgba(216,251,50,0.06)] transition-all duration-300 flex flex-col"
             >
-              {/* Cover Image */}
-              {post.coverImage && (
-                <div className="relative w-full aspect-[1200/630] overflow-hidden">
-                  <img
-                    src={post.coverImage}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-60" />
-                </div>
-              )}
+              {/* Cover Image or Gradient Placeholder */}
+              <div className="relative w-full aspect-[1200/630] overflow-hidden">
+                {post.coverImage ? (
+                  <>
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).nextElementSibling?.classList.remove("hidden"); }}
+                    />
+                    <div className="hidden absolute inset-0 bg-gradient-to-br from-[#D8FB32]/20 via-[#1a1a2e] to-[#0A0A0A] flex items-center justify-center">
+                      <span className="text-4xl opacity-40">📝</span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#D8FB32]/20 via-[#1a1a2e] to-[#0A0A0A] flex items-center justify-center">
+                    <span className="text-4xl opacity-40">📝</span>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-60" />
+              </div>
 
               <div className="p-6 sm:p-8 flex flex-col flex-1">
               {/* Meta */}

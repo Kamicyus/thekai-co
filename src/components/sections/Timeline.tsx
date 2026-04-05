@@ -24,8 +24,8 @@ export default function Timeline() {
 
         {/* Timeline */}
         <div className="relative max-w-3xl mx-auto">
-          {/* Vertical line */}
-          <div className="absolute left-[23px] lg:left-[27px] top-0 bottom-0 w-px bg-gradient-to-b from-[#D8FB32]/40 via-[#1F2937] to-[#1F2937]/20" />
+          {/* Vertical line — gradient with lime glow */}
+          <div className="absolute left-[23px] lg:left-[27px] top-0 bottom-0 w-px bg-gradient-to-b from-[#D8FB32]/60 via-[#D8FB32]/20 to-[#1F2937]/20 shadow-[0_0_8px_rgba(216,251,50,0.15)]" />
 
           <div className="space-y-12">
             {MILESTONE_KEYS.map((key, i) => (
@@ -38,9 +38,9 @@ export default function Timeline() {
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="pb-2">
-                    <span className="inline-block text-sm font-bold text-[#D8FB32] mb-1 tracking-wide">
+                  {/* Content — glassmorphism card */}
+                  <div className="pb-2 bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-xl p-4 lg:p-5 hover:border-white/[0.1] transition-all duration-300">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold text-[#D8FB32] bg-[#D8FB32]/10 border border-[#D8FB32]/20 mb-2 tracking-wide">
                       {t(`milestones.${key}.year`)}
                     </span>
                     <h3 className="text-lg lg:text-xl font-semibold text-[#F5F5F5] mb-1">

@@ -98,7 +98,7 @@ export default function Showcase() {
             const Wrapper = project.href ? ({ children, className }: { children: React.ReactNode; className: string }) => <Link href={project.href!} className={className}>{children}</Link> : ({ children, className }: { children: React.ReactNode; className: string }) => <div className={className}>{children}</div>;
             return (
             <StaggerItem key={key}>
-              <Wrapper className="group relative flex flex-col h-full bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/30 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(216,251,50,0.1)] hover:scale-[1.01]">
+              <Wrapper className="group relative flex flex-col h-full bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/40 transition-all duration-300 hover:shadow-[0_16px_50px_rgba(216,251,50,0.12),0_0_0_1px_rgba(216,251,50,0.08)] hover:-translate-y-1">
                 {/* Header Area — Image or Gradient */}
                 {project.image ? (
                   <div className="relative h-[160px] w-full overflow-hidden">
@@ -106,7 +106,7 @@ export default function Showcase() {
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                     />
                     {/* Subtle dark overlay for badge readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/30" />
@@ -118,7 +118,7 @@ export default function Showcase() {
                     </div>
                     {/* Metric badge */}
                     <div className="absolute bottom-6 right-6 z-10">
-                      <span className="text-sm font-bold text-[#F5F5F5]/80">
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-bold text-[#F5F5F5] bg-white/[0.08] backdrop-blur-lg border border-white/[0.1] shadow-[0_4px_16px_rgba(0,0,0,0.3)]">
                         {metric}
                       </span>
                     </div>
@@ -174,7 +174,7 @@ export default function Showcase() {
                     </div>
                     {/* Metric badge */}
                     <div className="absolute bottom-6 right-6">
-                      <span className="text-sm font-bold text-[#F5F5F5]/80">
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-bold text-[#F5F5F5] bg-white/[0.08] backdrop-blur-lg border border-white/[0.1] shadow-[0_4px_16px_rgba(0,0,0,0.3)]">
                         {metric}
                       </span>
                     </div>
@@ -189,6 +189,9 @@ export default function Showcase() {
                   <p className="text-[#999999] text-base leading-relaxed flex-1">
                     {description}
                   </p>
+                  <div className="mt-4 text-[#D8FB32] text-sm font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    View Project <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                  </div>
                 </div>
               </Wrapper>
             </StaggerItem>
