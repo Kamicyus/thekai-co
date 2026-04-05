@@ -52,6 +52,15 @@ body {
   color: #F5F5F5;
 }
 
+/* Hide scrollbar for horizontal tab containers on mobile */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -109,5 +118,17 @@ body {
   @keyframes scrollSite {
     0%, 10% { transform: translateY(0%); }
     90%, 100% { transform: translateY(-75%); }
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

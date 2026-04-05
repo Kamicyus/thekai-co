@@ -149,9 +149,10 @@ export function FloatingOrb({
   delay?: number;
   blur?: number;
 }) {
+  // Hidden on mobile (sm breakpoint) to save GPU — large blurred orbs are expensive
   return (
     <motion.div
-      className="absolute rounded-full pointer-events-none"
+      className="absolute rounded-full pointer-events-none hidden sm:block"
       style={{
         width: size,
         height: size,
@@ -161,6 +162,7 @@ export function FloatingOrb({
         bottom,
         background: `radial-gradient(circle, ${color}30 0%, transparent 70%)`,
         filter: `blur(${blur}px)`,
+        willChange: "transform",
       }}
       animate={{
         y: [0, -20, 0, 20, 0],
@@ -227,6 +229,7 @@ export function MarqueeText({
     <div className={`overflow-hidden whitespace-nowrap ${className}`}>
       <motion.div
         className="inline-flex gap-8"
+        style={{ willChange: "transform" }}
         animate={{ x: ["0%", "-50%"] }}
         transition={{
           x: {

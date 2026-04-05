@@ -1,7 +1,37 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, ReactNode } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+
+// ─���───────────────────────────────────────────
+// LAZY SECTION — only renders when near viewport
+// ──────────────────────��──────────────────────
+function LazySection({ children, className = "", minHeight = "200px" }: { children: ReactNode; className?: string; minHeight?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={className} style={!isVisible ? { minHeight } : undefined}>
+      {isVisible ? children : null}
+    </div>
+  );
+}
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
 import { ScaleOnScroll, RevealText, FloatingOrb, MarqueeText, GlowDivider } from "@/components/ui/ScrollReveal";
@@ -44,7 +74,7 @@ function NotificationBar() {
       <button
         onClick={dismiss}
         aria-label="Kapat"
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full hover:bg-[#0A0A0A]/10 transition-colors"
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#0A0A0A]/10 transition-colors"
       >
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
           <path d="M1 1L11 11M11 1L1 11" stroke="#0A0A0A" strokeWidth="2" strokeLinecap="round" />
@@ -113,7 +143,7 @@ function ThemeToggle({ theme, toggleTheme }: { theme: "dark" | "light"; toggleTh
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-[60] w-10 h-10 rounded-full bg-[#D8FB32]/10 border border-[#D8FB32]/30 flex items-center justify-center hover:bg-[#D8FB32]/20 transition-all duration-200"
+      className="fixed top-6 right-6 z-[60] w-11 h-11 rounded-full bg-[#D8FB32]/10 border border-[#D8FB32]/30 flex items-center justify-center hover:bg-[#D8FB32]/20 transition-all duration-200"
       aria-label="Tema Değiştir"
       title={theme === "dark" ? "Açık tema" : "Koyu tema"}
     >
@@ -191,7 +221,7 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
             <a
               href="#bekleme-listesi"
-              className="w-full sm:w-auto bg-[#D8FB32] text-[#0A0A0A] px-8 py-4 rounded-xl text-base font-semibold hover:bg-[#B4F030] transition-colors"
+              className="w-full sm:w-auto bg-[#D8FB32] text-[#0A0A0A] px-8 py-4 rounded-xl text-base font-semibold hover:bg-[#B4F030] transition-colors focus:outline-none focus:ring-2 focus:ring-[#D8FB32]/50 focus:ring-offset-2 focus:ring-offset-[#0A0A0A]"
             >
               Hemen Başla →
             </a>
@@ -212,7 +242,7 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
         {/* Hero Dashboard Mockup — Apple-style scale reveal */}
         <ScaleOnScroll>
           <div className="relative max-w-4xl mx-auto">
-            <div className={`${t.bgCard} border ${t.border} rounded-2xl p-4 shadow-2xl`}>
+            <div className={`${t.bgCard} border ${t.border} rounded-2xl p-4 shadow-lg sm:shadow-2xl`}>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
@@ -266,7 +296,7 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
                 ))}
               </div>
             </div>
-            <div className="absolute -inset-4 bg-[#D8FB32]/5 rounded-3xl blur-3xl -z-10" />
+            <div className="absolute -inset-4 bg-[#D8FB32]/5 rounded-3xl blur-xl sm:blur-3xl -z-10" />
           </div>
         </ScaleOnScroll>
       </div>
@@ -578,12 +608,12 @@ function UseCaseShowcase({ theme }: { theme: "dark" | "light" }) {
         </FadeIn>
 
         {/* Tab navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="flex overflow-x-auto sm:flex-wrap sm:justify-center gap-2 mb-10 pb-2 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scrollbar-hide">
           {cases.map((item, i) => (
             <button
               key={i}
               onClick={() => setActiveCase(i)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              className={`flex items-center gap-2 px-4 py-3 sm:py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 shrink-0 min-h-[44px] ${
                 activeCase === i
                   ? "bg-[#0A0A0A] text-white shadow-lg"
                   : "bg-white text-gray-600 border border-gray-200 hover:border-gray-400"
@@ -598,7 +628,7 @@ function UseCaseShowcase({ theme }: { theme: "dark" | "light" }) {
         {/* Active case detail */}
         <div className="bg-white border border-gray-200 rounded-3xl p-8 sm:p-10 relative overflow-hidden">
           {/* Background glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] opacity-10" style={{ backgroundColor: activeItem.color }} />
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[40px] sm:blur-[100px] opacity-10" style={{ backgroundColor: activeItem.color }} />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 relative z-10">
             {/* Left: Info */}
@@ -711,7 +741,7 @@ function CinematicDivider({ theme }: { theme: "dark" | "light" }) {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           {/* Big number */}
-          <div className="flex items-center justify-center gap-8 mb-8">
+          <div className="flex items-center justify-center gap-4 sm:gap-8 mb-8 flex-wrap">
             {[
               { num: "40+", label: "Uzman Ajan" },
               { num: "8", label: "Departman" },
@@ -725,7 +755,7 @@ function CinematicDivider({ theme }: { theme: "dark" | "light" }) {
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="text-center"
               >
-                <div className="text-5xl sm:text-7xl font-black text-[#D8FB32] leading-none">{item.num}</div>
+                <div className="text-4xl sm:text-7xl font-black text-[#D8FB32] leading-none">{item.num}</div>
                 <div className="text-sm text-[#666] mt-2 font-medium">{item.label}</div>
               </motion.div>
             ))}
@@ -2367,7 +2397,7 @@ function DepartmentShowcase({ theme }: { theme: "dark" | "light" }) {
 
         {/* Department Tabs */}
         <FadeIn delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex overflow-x-auto sm:flex-wrap sm:justify-center gap-2 mb-10 pb-2 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scrollbar-hide">
             {DEPARTMENTS.map((dept) => (
               <button
                 key={dept.id}
@@ -2377,7 +2407,7 @@ function DepartmentShowcase({ theme }: { theme: "dark" | "light" }) {
                     ? { backgroundColor: dept.color, color: "#0A0A0A", borderColor: dept.color }
                     : {}
                 }
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border ${
+                className={`flex items-center gap-2 px-4 py-3 sm:py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border shrink-0 min-h-[44px] ${
                   activeTab === dept.id
                     ? "shadow-lg"
                     : `${t.whiteOverlay5} ${t.textMuted} hover:bg-white/10 border-transparent`
@@ -2738,12 +2768,12 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
         </FadeIn>
 
         {/* Report tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex overflow-x-auto sm:flex-wrap sm:justify-center gap-2 mb-8 pb-2 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scrollbar-hide">
           {reports.map((r, i) => (
             <button
               key={i}
               onClick={() => setActiveReport(i)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              className={`flex items-center gap-2 px-4 py-3 sm:py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 shrink-0 min-h-[44px] ${
                 activeReport === i
                   ? "shadow-lg text-white"
                   : "bg-gray-50 text-gray-500 border border-gray-200"
@@ -3769,7 +3799,7 @@ function WaitlistSection({ theme }: { theme: "dark" | "light" }) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="email@adresin.com"
                   required
-                  className={`flex-1 ${t.inputBg} border ${t.inputBorder} ${t.text} rounded-xl px-4 py-3.5 text-base placeholder:text-[#444444] focus:outline-none focus:border-[#D8FB32] transition-colors`}
+                  className={`flex-1 ${t.inputBg} border ${t.inputBorder} ${t.text} rounded-xl px-4 py-3.5 text-base placeholder:text-[#444444] focus:outline-none focus:border-[#D8FB32] focus:ring-2 focus:ring-[#D8FB32]/30 transition-colors`}
                 />
                 <button
                   type="submit"
@@ -3785,7 +3815,7 @@ function WaitlistSection({ theme }: { theme: "dark" | "light" }) {
                 <button
                   type="button"
                   onClick={() => setKvkkAccepted(!kvkkAccepted)}
-                  className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded border-2 transition-all duration-200 flex items-center justify-center ${
+                  className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded border-2 transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#D8FB32]/50 focus:ring-offset-1 focus:ring-offset-transparent ${
                     kvkkAccepted
                       ? "bg-[#D8FB32] border-[#D8FB32]"
                       : `border-white/20 ${t.inputBg}`
@@ -3876,14 +3906,15 @@ function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${t.textDim} hover:text-[#D8FB32] transition-colors text-sm font-semibold`}
+                aria-label={link.label}
+                className={`${t.textDim} hover:text-[#D8FB32] transition-colors text-sm font-semibold min-w-[44px] min-h-[44px] flex items-center justify-center`}
                 title={link.label}
               >
                 {link.icon}
@@ -3897,15 +3928,15 @@ function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
               &copy; 2026 The Kai. Tüm hakları saklıdır.
             </p>
             <div className="flex items-center gap-3">
-              <a href="/gizlilik" className={`${t.textDimmer} text-xs hover:text-[#D8FB32] transition-colors`}>
+              <a href="/gizlilik" className={`${t.textDimmer} text-xs hover:text-[#D8FB32] transition-colors min-h-[44px] flex items-center`}>
                 Gizlilik
               </a>
               <span className={`${t.textDimmest} text-xs`}>·</span>
-              <a href="/kullanim-sartlari" className={`${t.textDimmer} text-xs hover:text-[#D8FB32] transition-colors`}>
+              <a href="/kullanim-sartlari" className={`${t.textDimmer} text-xs hover:text-[#D8FB32] transition-colors min-h-[44px] flex items-center`}>
                 Kullanım Şartları
               </a>
               <span className={`${t.textDimmest} text-xs`}>·</span>
-              <a href="/kvkk" className={`${t.textDimmer} text-xs hover:text-[#D8FB32] transition-colors`}>
+              <a href="/kvkk" className={`${t.textDimmer} text-xs hover:text-[#D8FB32] transition-colors min-h-[44px] flex items-center`}>
                 KVKK
               </a>
             </div>
@@ -3940,11 +3971,19 @@ export default function AgentsPage() {
       <HumanVsAI theme={theme} />
       <Features theme={theme} />
       <DepartmentShowcase theme={theme} />
-      <ProfessionalReports theme={theme} />
-      <Testimonials theme={theme} />
-      <Pricing theme={theme} />
+      <LazySection minHeight="600px">
+        <ProfessionalReports theme={theme} />
+      </LazySection>
+      <LazySection minHeight="400px">
+        <Testimonials theme={theme} />
+      </LazySection>
+      <LazySection minHeight="400px">
+        <Pricing theme={theme} />
+      </LazySection>
       <UserResponsibilityNote />
-      <SecuritySection theme={theme} />
+      <LazySection minHeight="300px">
+        <SecuritySection theme={theme} />
+      </LazySection>
       <FounderStory theme={theme} />
       <WaitlistSection theme={theme} />
       <AgentsFooter theme={theme} />
