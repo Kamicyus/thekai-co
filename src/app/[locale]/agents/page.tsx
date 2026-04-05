@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, ReactNode } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useAnimationControls } from "framer-motion";
 
 // ─���───────────────────────────────────────────
 // LAZY SECTION — only renders when near viewport
@@ -847,33 +847,56 @@ function SuperpowerStatement({ theme }: { theme: "dark" | "light" }) {
 // ─────────────────────────────────────────────
 function TrustBar({ theme }: { theme: "dark" | "light" }) {
   const t = c(theme);
+  const [isPaused, setIsPaused] = useState(false);
 
   const models = [
     { name: "Claude", color: "#D97706", desc: "Anthropic", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 8.5L21 9.5L16 14L17.5 21L12 17.5L6.5 21L8 14L3 9.5L9.5 8.5L12 2Z" fill="#D97706"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 8.5L21 9.5L16 14L17.5 21L12 17.5L6.5 21L8 14L3 9.5L9.5 8.5L12 2Z" fill="#D97706"/></svg>
     )},
     { name: "GPT-4o", color: "#10B981", desc: "OpenAI", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 14.5 5.5 14.5 8C14.5 10.5 16 12 18.5 12C21 12 22 14.5 22 14.5C22 14.5 18.5 17 16 17C13.5 17 12 18.5 12 22C12 18.5 10.5 17 8 17C5.5 17 2 14.5 2 14.5C2 14.5 3 12 5.5 12C8 12 9.5 10.5 9.5 8C9.5 5.5 12 2 12 2Z" fill="#10B981"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 14.5 5.5 14.5 8C14.5 10.5 16 12 18.5 12C21 12 22 14.5 22 14.5C22 14.5 18.5 17 16 17C13.5 17 12 18.5 12 22C12 18.5 10.5 17 8 17C5.5 17 2 14.5 2 14.5C2 14.5 3 12 5.5 12C8 12 9.5 10.5 9.5 8C9.5 5.5 12 2 12 2Z" fill="#10B981"/></svg>
     )},
     { name: "Gemini", color: "#4285F4", desc: "Google", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" fill="#4285F4"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" fill="#4285F4"/></svg>
     )},
     { name: "Llama 3", color: "#7C3AED", desc: "Meta", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 12C2 12 5.5 7 8 7C10 7 10.5 10 12 10C13.5 10 14 7 16 7C18.5 7 22 12 22 12C22 12 18.5 17 16 17C14 17 13.5 14 12 14C10.5 14 10 17 8 17C5.5 17 2 12 2 12Z" fill="#7C3AED"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M2 12C2 12 5.5 7 8 7C10 7 10.5 10 12 10C13.5 10 14 7 16 7C18.5 7 22 12 22 12C22 12 18.5 17 16 17C14 17 13.5 14 12 14C10.5 14 10 17 8 17C5.5 17 2 12 2 12Z" fill="#7C3AED"/></svg>
     )},
     { name: "Mistral", color: "#F97316", desc: "Mistral AI", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="5" height="5" rx="1" fill="#F97316"/><rect x="10" y="3" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="3" width="5" height="5" rx="1" fill="#F97316"/><rect x="3" y="10" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="10" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="3" y="17" width="5" height="5" rx="1" fill="#F97316"/><rect x="10" y="17" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="17" width="5" height="5" rx="1" fill="#F97316"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="5" height="5" rx="1" fill="#F97316"/><rect x="10" y="3" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="3" width="5" height="5" rx="1" fill="#F97316"/><rect x="3" y="10" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="10" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="3" y="17" width="5" height="5" rx="1" fill="#F97316"/><rect x="10" y="17" width="5" height="5" rx="1" fill="#F97316" opacity="0.7"/><rect x="17" y="17" width="5" height="5" rx="1" fill="#F97316"/></svg>
     )},
     { name: "Grok", color: "#EF4444", desc: "xAI", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4L10.5 12L4 20H7L12 13.5L17 20H20L13.5 12L20 4H17L12 10.5L7 4H4Z" fill="#EF4444"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4L10.5 12L4 20H7L12 13.5L17 20H20L13.5 12L20 4H17L12 10.5L7 4H4Z" fill="#EF4444"/></svg>
     )},
     { name: "DeepSeek", color: "#06B6D4", desc: "DeepSeek", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 10C4 10 6 6 10 5C14 4 16 6 18 8C20 10 21 14 19 17C17 20 13 21 10 19C7 17 5 14 6 11" stroke="#06B6D4" strokeWidth="2.5" strokeLinecap="round" fill="none"/><circle cx="14" cy="10" r="1.5" fill="#06B6D4"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 10C4 10 6 6 10 5C14 4 16 6 18 8C20 10 21 14 19 17C17 20 13 21 10 19C7 17 5 14 6 11" stroke="#06B6D4" strokeWidth="2.5" strokeLinecap="round" fill="none"/><circle cx="14" cy="10" r="1.5" fill="#06B6D4"/></svg>
     )},
     { name: "Qwen", color: "#8B5CF6", desc: "Alibaba", svg: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#8B5CF6" strokeWidth="2.5" fill="none"/><path d="M15 12C15 14 13.5 16 12 16C10.5 16 9 14 9 12C9 10 10.5 8 12 8C13.5 8 15 10 15 12Z" fill="#8B5CF6"/><path d="M16 16L20 21" stroke="#8B5CF6" strokeWidth="2.5" strokeLinecap="round"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#8B5CF6" strokeWidth="2.5" fill="none"/><path d="M15 12C15 14 13.5 16 12 16C10.5 16 9 14 9 12C9 10 10.5 8 12 8C13.5 8 15 10 15 12Z" fill="#8B5CF6"/><path d="M16 16L20 21" stroke="#8B5CF6" strokeWidth="2.5" strokeLinecap="round"/></svg>
     )},
   ];
+
+  const allModels = [...models, ...models];
+  const controls = useAnimationControls();
+  const marqueeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isPaused) {
+      controls.start({
+        x: ["0%", "-50%"],
+        transition: {
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 25,
+            ease: "linear",
+          },
+        },
+      });
+    } else {
+      controls.stop();
+    }
+  }, [isPaused, controls]);
 
   return (
     <section className="py-16 border-y border-gray-200 bg-white">
@@ -881,35 +904,42 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
         <p className="text-center text-xs text-gray-400 font-medium mb-8 uppercase tracking-widest">
           Desteklenen AI Modelleri
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          {models.map((model) => (
-            <motion.div
-              key={model.name}
-              whileHover={{ scale: 1.08, y: -2 }}
-              className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 flex items-center gap-3 cursor-default transition-all duration-200 group"
-              style={{ borderColor: "transparent" }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.borderColor = `${model.color}50`;
-                (e.currentTarget as HTMLDivElement).style.boxShadow = `0 4px 20px ${model.color}20`;
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.borderColor = "transparent";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-              }}
-            >
-              {/* Model SVG icon */}
+        <div
+          className="overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <motion.div
+            ref={marqueeRef}
+            className="flex gap-4 items-center"
+            animate={controls}
+          >
+            {allModels.map((model, idx) => (
               <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow"
-                style={{ backgroundColor: `${model.color}15` }}
+                key={`${model.name}-${idx}`}
+                className="bg-gray-50 border border-transparent rounded-xl px-3 py-2 flex items-center gap-2.5 cursor-default transition-all duration-200 group shrink-0"
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = `${model.color}50`;
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = `0 4px 20px ${model.color}20`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "transparent";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+                }}
               >
-                {model.svg}
+                <div
+                  className="w-7 h-7 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow"
+                  style={{ backgroundColor: `${model.color}15` }}
+                >
+                  {model.svg}
+                </div>
+                <div>
+                  <span className="text-gray-900 text-sm font-bold block leading-tight">{model.name}</span>
+                  <span className="text-[10px] text-gray-400">{model.desc}</span>
+                </div>
               </div>
-              <div>
-                <span className="text-gray-900 text-sm font-bold block leading-tight">{model.name}</span>
-                <span className="text-[10px] text-gray-400">{model.desc}</span>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </motion.div>
         </div>
         <p className="text-center text-xs text-gray-400 mt-8">
           BYOK &mdash; Kendi API anahtarını getir, ekstra AI maliyeti yok. İstediğin modeli kullan.
@@ -1136,10 +1166,10 @@ function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
           {comparisons.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.04, duration: 0.35 }}
+              transition={{ delay: i * 0.04, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className={`${t.bgCard} border ${t.border} rounded-2xl p-5 sm:p-6 hover:border-[#D8FB32]/30 transition-all duration-200 group`}
             >
               <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 sm:gap-6 items-center">
@@ -1158,7 +1188,7 @@ function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
                     initial={{ scale: 0.5, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.04 + 0.15, type: "spring" }}
+                    transition={{ delay: i * 0.04 + 0.1, type: "spring" }}
                     className="bg-[#D8FB32] text-[#0A0A0A] text-xs font-black px-3 py-1 rounded-full"
                   >
                     {item.multiplier}
@@ -3686,13 +3716,15 @@ function FounderStory({ theme }: { theme: "dark" | "light" }) {
                 Bu sistemi önce kendim için kurdum. 40+ uzman AI ajanım, 10 departmanım var.{" "}
                 <span className="text-gray-400">Şimdi herkese açıyorum.</span>
               </blockquote>
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-[#0A0A0A] flex items-center justify-center font-black text-[#D8FB32]">
-                  K
-                </div>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/kamer.png"
+                  alt="Kamer"
+                  className="w-14 h-14 rounded-full object-cover border-2 border-[#D8FB32]"
+                />
                 <div>
-                  <div className="font-bold text-[#0A0A0A]">Kai</div>
-                  <div className="text-gray-400 text-sm">Kurucu, The Kai / Kai Agents</div>
+                  <div className="font-bold text-[#0A0A0A] text-lg">Kamer</div>
+                  <div className="text-gray-400 text-sm">Kurucu &amp; CEO, The Kai</div>
                 </div>
               </div>
             </div>
@@ -3870,11 +3902,44 @@ function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
   const t = c(theme);
 
   const socialLinks = [
-    { label: "X / Twitter", href: "https://x.com/kamicyus", icon: "𝕏" },
-    { label: "Instagram", href: "https://instagram.com/kamer.kim", icon: "IG" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/kamercanizvermez", icon: "in" },
-    { label: "GitHub", href: "https://github.com/kamicyus", icon: "<>" },
-    { label: "YouTube", href: "https://youtube.com/@echobazaar", icon: "▶" },
+    {
+      label: "X / Twitter",
+      href: "https://x.com/thekai_co",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      ),
+    },
+    {
+      label: "Instagram",
+      href: "https://instagram.com/thekai.co",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+        </svg>
+      ),
+    },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com/company/thekai",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+        </svg>
+      ),
+    },
+    {
+      label: "YouTube",
+      href: "https://youtube.com/@thekaico",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -3906,7 +3971,7 @@ function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -3914,10 +3979,10 @@ function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className={`${t.textDim} hover:text-[#D8FB32] transition-colors text-sm font-semibold min-w-[44px] min-h-[44px] flex items-center justify-center`}
+                className={`${t.textDim} hover:text-[#D8FB32] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/10`}
                 title={link.label}
               >
-                {link.icon}
+                {link.svg}
               </a>
             ))}
           </div>
