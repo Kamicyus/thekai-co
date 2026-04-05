@@ -1093,51 +1093,51 @@ function SystemDeepDive({ theme }: { theme: "dark" | "light" }) {
 // ─────────────────────────────────────────────
 // HUMAN vs AI COMPARISON — Smart metrics
 // ─────────────────────────────────────────────
-function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
+function MethodComparison({ theme }: { theme: "dark" | "light" }) {
   const t = c(theme);
 
   const comparisons = [
     {
-      category: "Öğrenme Kapasitesi",
-      icon: "🧠",
-      human: { value: "~50 sayfa/gün", detail: "Bir insan günde ortalama 50 sayfa okuyup sindirerek öğrenebilir" },
-      ai: { value: "100.000+ sayfa/gün", detail: "AI ajanlar binlerce makale, video transkripti ve dökümanı aynı anda işler" },
-      multiplier: "2.000x",
-    },
-    {
-      category: "Çalışma Süresi",
-      icon: "⏰",
-      human: { value: "8 saat/gün", detail: "Yorgunluk, dikkat dağınıklığı, molalar dahil verimli çalışma süresi" },
-      ai: { value: "24 saat/gün", detail: "Durmadan, yorulmadan, tatil istemeden — 7 gün 24 saat aktif" },
-      multiplier: "3x",
-    },
-    {
-      category: "Eşzamanlı Görev",
-      icon: "🔀",
-      human: { value: "1-2 görev", detail: "İnsan beyni aynı anda en fazla 1-2 göreve odaklanabilir" },
-      ai: { value: "40+ görev", detail: "Her ajan kendi alanında bağımsız çalışır — paralel işlem gücü" },
-      multiplier: "20x+",
-    },
-    {
-      category: "Araştırma Hızı",
+      category: "Araştırma",
       icon: "🔍",
-      human: { value: "2-4 saat", detail: "Bir konuda derinlemesine araştırma yapmak saatler alır" },
-      ai: { value: "2-4 dakika", detail: "Yüzlerce kaynağı tarayıp, özetleyip, aksiyon önerisi sunar" },
-      multiplier: "60x",
+      human: { value: "Saatlerce Google", detail: "Onlarca sekme, dağınık notlar, hangi kaynağa güveneceğini bilemezsin" },
+      ai: { value: "Dakikalar içinde rapor", detail: "Yüzlerce kaynağı tarar, özetler, aksiyon önerisiyle sunar" },
+      multiplier: "60x hızlı",
     },
     {
-      category: "Maliyet (Aylık)",
+      category: "Koordinasyon",
+      icon: "🔀",
+      human: { value: "10 farklı araç", detail: "Notion, Excel, Slack, Mail, Canva, ChatGPT... hepsi ayrı ayrı" },
+      ai: { value: "Tek platform", detail: "Tüm departmanlar, ajanlar ve görevler tek dashboard'dan yönetilir" },
+      multiplier: "Hepsi bir arada",
+    },
+    {
+      category: "Maliyet",
       icon: "💰",
-      human: { value: "40.000+ TL", detail: "Tek bir uzman çalışanın asgari maaş + SGK maliyeti" },
-      ai: { value: "$49'dan", detail: "40+ uzman ajan, 8 departman, sınırsız çalışma — tek abonelik" },
-      multiplier: "20x ucuz",
+      human: { value: "Freelancer'a 40K+/ay", detail: "Tek bir uzmana ödenen aylık maliyet — SGK, vergi dahil değil" },
+      ai: { value: "$49'dan başlayan", detail: "40+ uzman ajan, 8 departman, 7/24 çalışma — tek abonelik" },
+      multiplier: "20x tasarruf",
     },
     {
-      category: "Tutarlılık",
-      icon: "🎯",
-      human: { value: "Değişken", detail: "Ruh hali, yorgunluk, motivasyon — performans dalgalanır" },
-      ai: { value: "%99.9", detail: "Her seferinde aynı kalitede, tutarlı ve ölçülebilir çıktı" },
-      multiplier: "Sabit",
+      category: "Hız",
+      icon: "⚡",
+      human: { value: "Günler, haftalar", detail: "Teklif hazırla, revize et, onay al, tekrar revize... döngüsü" },
+      ai: { value: "Dakikalar", detail: "Sözleşme taslağı, içerik planı, finansal model — anında hazır" },
+      multiplier: "100x hızlı",
+    },
+    {
+      category: "Süreklilik",
+      icon: "🔄",
+      human: { value: "Mesai saatleri", detail: "9-6 arası, tatiller, izinler, motivasyon düşüşleri" },
+      ai: { value: "7/24 aktif", detail: "Gece 3'te görev ver, sabah kahvende rapor hazır" },
+      multiplier: "Kesintisiz",
+    },
+    {
+      category: "Ölçeklenme",
+      icon: "📈",
+      human: { value: "Her iş için yeni kişi", detail: "Yeni bir alan = yeni freelancer bul, brief ver, bekle, kontrol et" },
+      ai: { value: "Yeni ajan ekle", detail: "Bir tıkla yeni departman kur, uzman ajan ata, hemen çalışsın" },
+      multiplier: "Anında",
     },
   ];
 
@@ -1154,10 +1154,10 @@ function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
               Kıyaslama
             </p>
             <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
-              Bir insan vs. AI ekip
+              Klasik yöntem vs. Kai Agents
             </h2>
             <p className={`${t.textDim} text-lg mt-4 max-w-xl mx-auto`}>
-              Rakamlar kendisi i&ccedil;in konuşuyor.
+              Aynı işi nasıl yapıyordun, nasıl yapacaksın.
             </p>
           </div>
         </FadeIn>
@@ -1175,7 +1175,7 @@ function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
               <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 sm:gap-6 items-center">
                 {/* Human side */}
                 <div className="text-center sm:text-right">
-                  <div className={`text-xs font-bold uppercase tracking-wider ${t.textDimmer} mb-1`}>İnsan</div>
+                  <div className={`text-xs font-bold uppercase tracking-wider ${t.textDimmer} mb-1`}>Klasik</div>
                   <div className={`text-xl sm:text-2xl font-black ${t.textMuted}`}>{item.human.value}</div>
                   <p className={`text-xs ${t.textDim} mt-1 hidden sm:block`}>{item.human.detail}</p>
                 </div>
@@ -1209,16 +1209,16 @@ function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
         <FadeIn delay={0.4}>
           <div className="text-center mt-12">
             <p className={`${t.textDim} text-base mb-2`}>
-              Bir &ccedil;alışan m&uuml;lakat, eğitim ve adaptasyon s&uuml;reci: <span className="text-[#D8FB32] font-semibold">ortalama 3 ay</span>
+              Klasik yol: Freelancer bul, brief ver, bekle, revize et. <span className="text-[#D8FB32] font-semibold">Haftalar s&uuml;rer.</span>
             </p>
             <p className={`${t.textDim} text-base mb-6`}>
-              AI ekibinin hazır olma s&uuml;resi: <span className="text-[#D8FB32] font-semibold">10 dakika</span>
+              Kai Agents ile: Departman kur, ajan ata, g&ouml;rev ver. <span className="text-[#D8FB32] font-semibold">10 dakikada hazır.</span>
             </p>
             <a
               href="#bekleme-listesi"
               className="inline-flex items-center gap-2 bg-[#D8FB32] text-[#0A0A0A] px-8 py-4 rounded-xl text-base font-semibold hover:bg-[#B4F030] transition-colors"
             >
-              AI Ekibini Kur &rarr;
+              Farkı Yaşa &rarr;
             </a>
           </div>
         </FadeIn>
@@ -4033,7 +4033,7 @@ export default function AgentsPage() {
       <HowItWorks theme={theme} />
       <GlowDivider color="#A855F7" />
       <SystemDeepDive theme={theme} />
-      <HumanVsAI theme={theme} />
+      <MethodComparison theme={theme} />
       <Features theme={theme} />
       <DepartmentShowcase theme={theme} />
       <LazySection minHeight="600px">
