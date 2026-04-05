@@ -253,14 +253,14 @@ export default function PortfolyoPage() {
                   <div className="flex-1 mx-2 bg-[#0A0A0A] rounded-md h-5" />
                 </div>
                 {/* Smooth CSS scroll viewport */}
-                <div className="h-[320px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
+                <div className="h-[240px] sm:h-[320px] overflow-hidden rounded-b-xl border border-[#2A2A2A] border-t-0 bg-[#0A0A0A]">
                   <img
                     src={site.image}
                     alt={`${site.name} ${isEn ? "website" : "web sitesi"}`}
                     className="w-full h-auto object-cover object-top"
                     loading="lazy"
                     style={{
-                      animation: "scrollSite 25s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate",
+                      animation: "scrollSite 20s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate",
                     }}
                   />
                 </div>

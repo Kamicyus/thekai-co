@@ -118,6 +118,34 @@ export function ClockIcon({ className = "", size = 32 }: IconProps) {
   );
 }
 
+export function VideoIcon({ className = "", size = 32 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <polygon points="10 9 16 12 10 15 10 9" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function SearchIcon({ className = "", size = 32 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
+export function CartIcon({ className = "", size = 32 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="9" cy="21" r="1" />
+      <circle cx="20" cy="21" r="1" />
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+    </svg>
+  );
+}
+
 const serviceIconMap = {
   brain: BrainIcon,
   music: MusicIcon,
@@ -130,6 +158,9 @@ const serviceIconMap = {
   robot: RobotIcon,
   chart: ChartIcon,
   clock: ClockIcon,
+  video: VideoIcon,
+  search: SearchIcon,
+  cart: CartIcon,
 };
 
 export function ServiceIcon({ icon, ...props }: IconProps & { icon: string }) {

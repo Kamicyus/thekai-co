@@ -81,6 +81,24 @@ export const SERVICES = [
     icon: "chart",
     slug: "performans-pazarlama",
   },
+  {
+    title: "Video Prodüksiyon",
+    description: "Klip, tanıtım filmi, motion graphics.",
+    icon: "video",
+    slug: "video-produksiyon",
+  },
+  {
+    title: "SEO & Organik Büyüme",
+    description: "Google'da üst sıralara çıkın, organik trafikle büyüyün.",
+    icon: "search",
+    slug: "seo-organik-buyume",
+  },
+  {
+    title: "E-Ticaret Çözümleri",
+    description: "Online mağaza kurulumu, ödeme entegrasyonu.",
+    icon: "cart",
+    slug: "e-ticaret",
+  },
 ] as const;
 
 export const TOOLS = [
@@ -197,6 +215,18 @@ export const TOOLS = [
     description: "İki metni yan yana karşılaştırın. Eklenen satırlar yeşil, silinen satırlar kırmızı. Satır bazlı diff görünümü.",
     icon: "diff",
     slug: "metin-farki",
+  },
+  {
+    title: "AI Rapor Oluşturucu",
+    description: "Konunuzu yazın, rapor tipini seçin — profesyonel yapıda bir rapor şablonu anında oluşsun. PDF veya Markdown olarak indirin.",
+    icon: "📊",
+    slug: "rapor-olusturucu",
+  },
+  {
+    title: "YouTube BPM & Ton Analiz",
+    description: "YouTube linkinden şarkının BPM (tempo) ve müzikal ton (key) bilgisini öğrenin. Prodüksiyon ve DJ mix uyumu için ideal.",
+    icon: "youtube-bpm",
+    slug: "youtube-bpm-analiz",
   },
 ] as const;
 

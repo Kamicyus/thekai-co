@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
@@ -25,16 +26,14 @@ export default function RegexTestPage() {
   const [pattern, setPattern] = useState("");
   const [flags, setFlags] = useState("g");
   const [testText, setTestText] = useState("");
-  const [error, setError] = useState("");
 
-  const matches: MatchResult[] = useMemo(() => {
+  // Hata ve eşleşme sonuçlarını setState olmadan render sırasında türet
+  const { matches, error } = useMemo<{ matches: MatchResult[]; error: string }>(() => {
     if (!pattern || !testText) {
-      setError("");
-      return [];
+      return { matches: [], error: "" };
     }
     try {
       const regex = new RegExp(pattern, flags);
-      setError("");
       const results: MatchResult[] = [];
       if (flags.includes("g")) {
         let match;
@@ -58,11 +57,10 @@ export default function RegexTestPage() {
           });
         }
       }
-      return results;
+      return { matches: results, error: "" };
     } catch (e) {
       const err = e as Error;
-      setError(err.message);
-      return [];
+      return { matches: [], error: err.message };
     }
   }, [pattern, testText, flags]);
 

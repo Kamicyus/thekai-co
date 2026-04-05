@@ -314,6 +314,108 @@ const HIZMET_DETAYLARI_TR = [
       },
     ],
   },
+  {
+    slug: "video-produksiyon",
+    icon: "video",
+    title: "Video Prodüksiyon",
+    subtitle: "Klip, tanıtım filmi, motion graphics.",
+    portfolioLink: "/portfolyo#video",
+    description:
+      "Müzik klipleri, marka tanıtım filmleri, sosyal medya videoları ve motion graphics prodüksiyonu. Konsept geliştirmeden son rötuşa kadar tüm süreç. AI destekli post-prodüksiyon ile hızlı ve etkileyici sonuçlar.",
+    features: [
+      "Müzik klibi prodüksiyon",
+      "Marka tanıtım filmi",
+      "Motion graphics ve animasyon",
+      "Sosyal medya video içerik",
+      "AI destekli post-prodüksiyon",
+      "Renk düzeltme ve grading",
+    ],
+    packages: [
+      {
+        name: "CLIP",
+        label: "Tekil Video",
+        features: ["1 video prodüksiyon (60 sn'ye kadar)", "Konsept geliştirme", "Temel düzenleme + renk grading", "2 platform formatı", "1 revizyon turu", "5 iş günü teslimat"],
+      },
+      {
+        name: "STUDIO",
+        label: "Profesyonel",
+        features: ["3 video prodüksiyon", "Senaryo + storyboard", "Motion graphics dahil", "Tüm platform formatları", "Müzik ve ses tasarımı", "Sınırsız revizyon"],
+      },
+      {
+        name: "DIRECTOR",
+        label: "Yönetmen",
+        features: ["Aylık video prodüksiyon paketi", "Tam yaratıcı yönetim", "Çekim organizasyonu", "VFX ve ileri post-prodüksiyon", "Sosyal medya kesim optimizasyonu", "Sürekli destek + öncelik"],
+      },
+    ],
+  },
+  {
+    slug: "seo-organik-buyume",
+    icon: "search",
+    title: "SEO & Organik Büyüme",
+    subtitle: "Google'da üst sıralara çıkın.",
+    portfolioLink: "/blog/seo-rehberi",
+    description:
+      "Arama motoru optimizasyonu ile organik trafiğinizi artırın. Teknik SEO, içerik stratejisi, anahtar kelime araştırması ve backlink yönetimi. Google'da üst sıralara çıkarak sürdürülebilir büyüme sağlayın.",
+    features: [
+      "Teknik SEO audit ve optimizasyon",
+      "Anahtar kelime araştırması",
+      "İçerik SEO stratejisi",
+      "Backlink yönetimi",
+      "Google Search Console yönetimi",
+      "Aylık SEO performans raporu",
+    ],
+    packages: [
+      {
+        name: "AUDIT",
+        label: "SEO Analiz",
+        features: ["Teknik SEO audit raporu", "Anahtar kelime analizi", "Rakip SEO araştırması", "Aksiyon önerileri listesi", "1 saat danışmanlık", "5 iş günü teslimat"],
+      },
+      {
+        name: "GROWTH",
+        label: "Büyüme",
+        features: ["3 aylık SEO stratejisi", "Aylık 4 SEO uyumlu içerik", "Teknik optimizasyonlar", "Backlink geliştirme", "Haftalık sıralama takibi", "Aylık performans raporu"],
+      },
+      {
+        name: "DOMINATE",
+        label: "Hakimiyet",
+        features: ["6 aylık kapsamlı SEO planı", "Sınırsız SEO içerik üretimi", "Gelişmiş backlink stratejisi", "Yerel SEO optimizasyonu", "Schema markup implementasyonu", "Günlük izleme + haftalık strateji"],
+      },
+    ],
+  },
+  {
+    slug: "e-ticaret",
+    icon: "cart",
+    title: "E-Ticaret Çözümleri",
+    subtitle: "Online mağaza kurulumu ve yönetimi.",
+    portfolioLink: "/portfolyo#e-ticaret",
+    description:
+      "Online mağaza kurulumu, ödeme entegrasyonu, ürün yönetimi ve e-ticaret stratejisi. Shopify, WooCommerce veya custom Next.js çözümleriyle satışa hazır dijital mağazalar.",
+    features: [
+      "E-ticaret sitesi kurulumu",
+      "Ödeme sistemi entegrasyonu",
+      "Ürün ve stok yönetimi",
+      "Kargo entegrasyonu",
+      "Mobil uyumlu tasarım",
+      "Analytics ve dönüşüm takibi",
+    ],
+    packages: [
+      {
+        name: "STARTER",
+        label: "Başlangıç",
+        features: ["50 ürüne kadar mağaza", "Temel ödeme entegrasyonu", "Mobil responsive tasarım", "Standart kargo ayarları", "Temel SEO", "1 hafta kurulum"],
+      },
+      {
+        name: "PRO",
+        label: "Profesyonel",
+        features: ["Sınırsız ürün", "Çoklu ödeme yöntemi", "Gelişmiş filtreleme + arama", "Kargo API entegrasyonu", "E-posta otomasyon", "2 hafta kurulum + 3 ay destek"],
+      },
+      {
+        name: "ENTERPRISE",
+        label: "Kurumsal",
+        features: ["Custom Next.js e-ticaret", "ERP / muhasebe entegrasyonu", "Çoklu dil + para birimi", "Gelişmiş analytics dashboard", "A/B test altyapısı", "Sürekli geliştirme + bakım"],
+      },
+    ],
+  },
 ];
 
 const HIZMET_DETAYLARI_EN = [
@@ -623,6 +725,108 @@ const HIZMET_DETAYLARI_EN = [
       },
     ],
   },
+  {
+    slug: "video-produksiyon",
+    icon: "video",
+    title: "Video Production",
+    subtitle: "Music videos, promo films, motion graphics.",
+    portfolioLink: "/portfolyo#video",
+    description:
+      "Music video production, brand promo films, social media videos and motion graphics. From concept development to final touches. Fast and impactful results with AI-powered post-production.",
+    features: [
+      "Music video production",
+      "Brand promo films",
+      "Motion graphics & animation",
+      "Social media video content",
+      "AI-powered post-production",
+      "Color correction & grading",
+    ],
+    packages: [
+      {
+        name: "CLIP",
+        label: "Single Video",
+        features: ["1 video production (up to 60s)", "Concept development", "Basic editing + color grading", "2 platform formats", "1 revision round", "5 business days delivery"],
+      },
+      {
+        name: "STUDIO",
+        label: "Professional",
+        features: ["3 video productions", "Script + storyboard", "Motion graphics included", "All platform formats", "Music & sound design", "Unlimited revisions"],
+      },
+      {
+        name: "DIRECTOR",
+        label: "Director",
+        features: ["Monthly video production package", "Full creative direction", "Shoot organization", "VFX & advanced post-production", "Social media cut optimization", "Ongoing support + priority"],
+      },
+    ],
+  },
+  {
+    slug: "seo-organik-buyume",
+    icon: "search",
+    title: "SEO & Organic Growth",
+    subtitle: "Rank higher on Google.",
+    portfolioLink: "/blog/seo-rehberi",
+    description:
+      "Increase your organic traffic with search engine optimization. Technical SEO, content strategy, keyword research and backlink management. Achieve sustainable growth by ranking higher on Google.",
+    features: [
+      "Technical SEO audit & optimization",
+      "Keyword research",
+      "Content SEO strategy",
+      "Backlink management",
+      "Google Search Console management",
+      "Monthly SEO performance report",
+    ],
+    packages: [
+      {
+        name: "AUDIT",
+        label: "SEO Analysis",
+        features: ["Technical SEO audit report", "Keyword analysis", "Competitor SEO research", "Action recommendations list", "1 hour consulting", "5 business days delivery"],
+      },
+      {
+        name: "GROWTH",
+        label: "Growth",
+        features: ["3-month SEO strategy", "4 SEO-optimized articles/month", "Technical optimizations", "Backlink development", "Weekly ranking tracking", "Monthly performance report"],
+      },
+      {
+        name: "DOMINATE",
+        label: "Domination",
+        features: ["6-month comprehensive SEO plan", "Unlimited SEO content production", "Advanced backlink strategy", "Local SEO optimization", "Schema markup implementation", "Daily monitoring + weekly strategy"],
+      },
+    ],
+  },
+  {
+    slug: "e-ticaret",
+    icon: "cart",
+    title: "E-Commerce Solutions",
+    subtitle: "Online store setup & management.",
+    portfolioLink: "/portfolyo#e-ticaret",
+    description:
+      "Online store setup, payment integration, product management and e-commerce strategy. Sales-ready digital stores with Shopify, WooCommerce or custom Next.js solutions.",
+    features: [
+      "E-commerce site setup",
+      "Payment system integration",
+      "Product & inventory management",
+      "Shipping integration",
+      "Mobile-responsive design",
+      "Analytics & conversion tracking",
+    ],
+    packages: [
+      {
+        name: "STARTER",
+        label: "Starter",
+        features: ["Up to 50 products", "Basic payment integration", "Mobile responsive design", "Standard shipping settings", "Basic SEO", "1 week setup"],
+      },
+      {
+        name: "PRO",
+        label: "Professional",
+        features: ["Unlimited products", "Multiple payment methods", "Advanced filtering + search", "Shipping API integration", "Email automation", "2 week setup + 3 month support"],
+      },
+      {
+        name: "ENTERPRISE",
+        label: "Enterprise",
+        features: ["Custom Next.js e-commerce", "ERP / accounting integration", "Multi-language + currency", "Advanced analytics dashboard", "A/B testing infrastructure", "Ongoing development + maintenance"],
+      },
+    ],
+  },
 ];
 
 export default function HizmetlerPage() {
@@ -655,13 +859,13 @@ export default function HizmetlerPage() {
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
             {isEn ? (
               <>
-                Nine core disciplines at the intersection of music, technology and creativity.
+                Twelve core disciplines at the intersection of music, technology and creativity.
                 <br />
                 Each one a specialty, together a creative force.
               </>
             ) : (
               <>
-                Müzik, teknoloji ve yaratıcılık kesişiminde dokuz temel alan.
+                Müzik, teknoloji ve yaratıcılık kesişiminde on iki temel alan.
                 <br />
                 Her biri ayrı bir uzmanlık, hepsi birlikte yaratıcı güç.
               </>

@@ -23,6 +23,7 @@ export default function Navbar() {
     { label: t("blog"), href: "/blog" as const },
     { label: t("tools"), href: "/araclar" as const },
     { label: t("contact"), href: "/iletisim" as const },
+    { label: t("agents"), href: "/agents" as const, badge: true },
   ];
 
   const switchLocale = (newLocale: "tr" | "en") => {
@@ -80,8 +81,17 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={link.href === "/" ? () => window.scrollTo({ top: 0, behavior: "smooth" }) : undefined}
-                  className="text-sm font-medium text-[#999999] hover:text-[#F5F5F5] transition-colors duration-200"
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    "badge" in link && link.badge
+                      ? "flex items-center gap-1.5 text-[#D8FB32] hover:text-white"
+                      : "text-[#999999] hover:text-[#F5F5F5]"
+                  }`}
                 >
+                  {"badge" in link && link.badge && (
+                    <span className="inline-flex items-center bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide leading-none">
+                      NEW
+                    </span>
+                  )}
                   {link.label}
                 </Link>
               ))}
@@ -90,10 +100,10 @@ export default function Navbar() {
             {/* CTA + Language Switcher + Hamburger */}
             <div className="flex items-center gap-4">
               <Link
-                href="/iletisim"
+                href="#waitlist"
                 className="hidden md:inline-flex items-center justify-center px-5 py-2.5 bg-[#D8FB32] text-[#0A0A0A] text-sm font-semibold rounded-[10px] hover:bg-[#B4F030] transition-colors duration-200"
               >
-                {t("cta")}
+                Ücretsiz Başla
               </Link>
 
               {/* Language Switcher */}
@@ -170,9 +180,18 @@ export default function Navbar() {
                       setMobileOpen(false);
                       if (link.href === "/") window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className="text-2xl font-semibold text-[#F5F5F5] hover:text-[#D8FB32] transition-colors"
+                    className={`text-2xl font-semibold transition-colors flex items-center gap-2 ${
+                      "badge" in link && link.badge
+                        ? "text-[#D8FB32] hover:text-white"
+                        : "text-[#F5F5F5] hover:text-[#D8FB32]"
+                    }`}
                   >
                     {link.label}
+                    {"badge" in link && link.badge && (
+                      <span className="text-xs bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] px-2 py-0.5 rounded font-bold uppercase tracking-wide">
+                        NEW
+                      </span>
+                    )}
                   </Link>
                 </motion.div>
               ))}
@@ -183,11 +202,11 @@ export default function Navbar() {
                 transition={{ delay: 0.35 }}
               >
                 <Link
-                  href="/iletisim"
+                  href="#waitlist"
                   onClick={() => setMobileOpen(false)}
                   className="inline-flex items-center justify-center px-8 py-3 bg-[#D8FB32] text-[#0A0A0A] text-lg font-semibold rounded-[10px] hover:bg-[#B4F030] transition-colors"
                 >
-                  {t("cta")}
+                  Ücretsiz Başla
                 </Link>
               </motion.div>
 

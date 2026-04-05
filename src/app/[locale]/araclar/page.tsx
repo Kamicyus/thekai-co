@@ -27,6 +27,7 @@ const TOOLS_EN: Record<string, { title: string; description: string }> = {
   "regex-test": { title: "Regex Tester", description: "Write regex patterns and test them live on text. See matches highlighted, inspect groups." },
   "renk-paleti": { title: "Color Palette Generator", description: "Generate random color palettes. HEX, RGB, HSL codes, color locking and one-click copy." },
   "metin-farki": { title: "Text Diff Comparator", description: "Compare two texts side by side. Added lines in green, removed lines in red. Line-by-line diff view." },
+  "youtube-bpm-analiz": { title: "YouTube BPM & Key Analyzer", description: "Paste a YouTube link and instantly get the song's BPM (tempo) and musical key. Perfect for production and DJ mixing." },
 };
 
 const toolIcons: Record<string, React.ReactNode> = {
@@ -164,6 +165,12 @@ const toolIcons: Record<string, React.ReactNode> = {
       <path d="M16 8h2" />
       <path d="M15 12h4" />
       <path d="M17 10v4" />
+    </svg>
+  ),
+  "youtube-bpm": (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+      <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
     </svg>
   ),
 };

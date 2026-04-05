@@ -7,7 +7,8 @@
     "blog": "Blog",
     "tools": "Araçlar",
     "contact": "İletişim",
-    "cta": "İletişime Geç"
+    "cta": "İletişime Geç",
+    "agents": "Kai Agents"
   },
   "hero": {
     "subtitle": "Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.",
@@ -80,11 +81,26 @@
     "title": "Nasıl Çalışıyoruz",
     "subtitle": "Her projeye aynı yaklaşımla başlıyoruz.",
     "steps": {
-      "discover": { "title": "Keşfet", "description": "Vizyonunuzu anlıyoruz, pazarınızı analiz ediyoruz ve projenin kapsamını belirliyoruz." },
-      "design": { "title": "Tasarla", "description": "Strateji ve konsept geliştirme. Yaratıcı brief ve görsel yön oluşturuyoruz." },
-      "build": { "title": "Kur", "description": "Planı hayata geçiriyoruz. AI destekli üretim süreciyle hızlı ve kaliteli sonuçlar." },
-      "train": { "title": "Eğit", "description": "Araçları ve sistemleri öğretiyoruz. Yarattığımız değer birikmeli olarak büyüyor." },
-      "support": { "title": "Destek", "description": "Teslimat sonrası bakım, optimizasyon ve sürekli destek." }
+      "discover": {
+        "title": "Keşfet",
+        "description": "Vizyonunuzu anlıyoruz, pazarınızı analiz ediyoruz ve projenin kapsamını belirliyoruz."
+      },
+      "design": {
+        "title": "Tasarla",
+        "description": "Strateji ve konsept geliştirme. Yaratıcı brief ve görsel yön oluşturuyoruz."
+      },
+      "build": {
+        "title": "Kur",
+        "description": "Planı hayata geçiriyoruz. AI destekli üretim süreciyle hızlı ve kaliteli sonuçlar."
+      },
+      "train": {
+        "title": "Eğit",
+        "description": "Araçları ve sistemleri öğretiyoruz. Yarattığımız değer birikmeli olarak büyüyor."
+      },
+      "support": {
+        "title": "Destek",
+        "description": "Teslimat sonrası bakım, optimizasyon ve sürekli destek."
+      }
     }
   },
   "showcase": {
@@ -127,13 +143,41 @@
     "title": "Yolculuk",
     "subtitle": "Bir fikrin stüdyoya dönüşme hikâyesi.",
     "milestones": {
-      "m1": { "year": "2011", "title": "Başlangıç", "description": "Kurucu Kamer Can İzvermez, müzik yolculuğuna şarkı yazarak başladı. Müziğini dağıtmak ve tanıtmak adına pazarlama, tasarım ve dijital strateji öğrenmeye koyuldu." },
-      "m2": { "year": "2011–2023", "title": "Çok Yönlü Deneyim", "description": "Dergi editörlüğü, call center, spor ajanslarında sosyal medya yönetimi — farklı sektörlerde çalışırken hep müzik yapmaya ve şarkılar çıkarmaya devam etti. Bu süreçte pazarlama, marka yönetimi ve dijital içerik üretiminin inceliklerini sahada öğrendi." },
-      "m3": { "year": "2023", "title": "Yapay Zeka Dönüşümü", "description": "AI araçlarını en başından beri iş süreçlerine entegre eden Kamer, yapay zekanın yaratıcı endüstriyi dönüştürme potansiyelini erken fark etti. Otomasyon ve AI ajan sistemleri kurmaya başladı." },
-      "m4": { "year": "2024", "title": "Echo Bazaar", "description": "The Kai'nin ilk büyük projesi: AI müzik kanalı kuruldu. YouTube'da yükselen bir marka haline geldi." },
-      "m5": { "year": "2025", "title": "20 Milyon+ Dinlenme", "description": "Echo Bazaar 20 milyon dinlenmeyi aştı. KİM? albümü Spotify Keşif playlist'inde yer aldı. 72+ AI ajan sistemi kuruldu, operasyonlar otomatize edildi." },
-      "m6": { "year": "2026", "title": "The Kai", "description": "Şirket resmi olarak kuruldu. thekai.co yayına girdi. Müzik, teknoloji ve yaratıcılığı birleştiren bir stüdyo doğdu." },
-      "m7": { "year": "2026", "title": "Murmur", "description": "AI sesli kitap yayınevi projesi başlatıldı. Yeni dünyalar kurmaya devam." }
+      "m1": {
+        "year": "2011",
+        "title": "Başlangıç",
+        "description": "Kurucu Kamer Can İzvermez, müzik yolculuğuna şarkı yazarak başladı. Müziğini dağıtmak ve tanıtmak adına pazarlama, tasarım ve dijital strateji öğrenmeye koyuldu."
+      },
+      "m2": {
+        "year": "2011–2023",
+        "title": "Çok Yönlü Deneyim",
+        "description": "Dergi editörlüğü, call center, spor ajanslarında sosyal medya yönetimi — farklı sektörlerde çalışırken hep müzik yapmaya ve şarkılar çıkarmaya devam etti. Bu süreçte pazarlama, marka yönetimi ve dijital içerik üretiminin inceliklerini sahada öğrendi."
+      },
+      "m3": {
+        "year": "2023",
+        "title": "Yapay Zeka Dönüşümü",
+        "description": "AI araçlarını en başından beri iş süreçlerine entegre eden Kamer, yapay zekanın yaratıcı endüstriyi dönüştürme potansiyelini erken fark etti. Otomasyon ve AI ajan sistemleri kurmaya başladı."
+      },
+      "m4": {
+        "year": "2024",
+        "title": "Echo Bazaar",
+        "description": "The Kai'nin ilk büyük projesi: AI müzik kanalı kuruldu. YouTube'da yükselen bir marka haline geldi."
+      },
+      "m5": {
+        "year": "2025",
+        "title": "20 Milyon+ Dinlenme",
+        "description": "Echo Bazaar 20 milyon dinlenmeyi aştı. KİM? albümü Spotify Keşif playlist'inde yer aldı. 72+ AI ajan sistemi kuruldu, operasyonlar otomatize edildi."
+      },
+      "m6": {
+        "year": "2026",
+        "title": "The Kai",
+        "description": "Şirket resmi olarak kuruldu. thekai.co yayına girdi. Müzik, teknoloji ve yaratıcılığı birleştiren bir stüdyo doğdu."
+      },
+      "m7": {
+        "year": "2026",
+        "title": "Murmur",
+        "description": "AI sesli kitap yayınevi projesi başlatıldı. Yeni dünyalar kurmaya devam."
+      }
     }
   },
   "about": {
@@ -154,10 +198,22 @@
     },
     "values": {
       "title": "Değerlerimiz",
-      "creativity": { "title": "Yaratıcılık", "description": "Her proje bir dünya. Her birine taze gözlerle yaklaşıyoruz." },
-      "technology": { "title": "Teknoloji", "description": "AI-native yaklaşım. AI'ı sadece kullanmıyoruz — onunla düşünüyoruz." },
-      "quality": { "title": "Kalite", "description": "Detaylara takıntılı özen. Pikselden prodüksiyona kadar." },
-      "transparency": { "title": "Şeffaflık", "description": "Net iletişim, dürüst fiyatlandırma, sürpriz yok." }
+      "creativity": {
+        "title": "Yaratıcılık",
+        "description": "Her proje bir dünya. Her birine taze gözlerle yaklaşıyoruz."
+      },
+      "technology": {
+        "title": "Teknoloji",
+        "description": "AI-native yaklaşım. AI'ı sadece kullanmıyoruz — onunla düşünüyoruz."
+      },
+      "quality": {
+        "title": "Kalite",
+        "description": "Detaylara takıntılı özen. Pikselden prodüksiyona kadar."
+      },
+      "transparency": {
+        "title": "Şeffaflık",
+        "description": "Net iletişim, dürüst fiyatlandırma, sürpriz yok."
+      }
     }
   },
   "techStack": {
@@ -189,5 +245,24 @@
     "contact": "İletişim",
     "copyright": "© 2026 The Kai. Tüm hakları saklıdır.",
     "privacy": "Gizlilik Politikası"
+  },
+  "agents": {
+    "title": "Kai Agents — AI Ajanlarınızı Bir Şirket Gibi Yönetin",
+    "description": "Kod yazmadan AI çalışan ekibi kurun. Departmanlar oluşturun, görevler verin, toplantılar düzenleyin.",
+    "badge": "Türkiye nin İlk AI Çalışan Platformu",
+    "heroHeadline": "AI Ajanlarınızı",
+    "heroHeadlineHighlight": "Bir Şirket",
+    "heroHeadlineSuffix": "Gibi Yönetin",
+    "heroSubtitle": "Kod yazmadan AI çalışan ekibi kurun. Departmanlar oluşturun, görevler verin, toplantılar düzenleyin.",
+    "ctaPrimary": "Ücretsiz Başla",
+    "ctaSecondary": "Demo İzle",
+    "waitlistTitle": "Erken Erişim Al",
+    "waitlistSubtitle": "Beta listesine katıl. İlk 100 kullanıcıya Pro özellikleri ücretsiz, ardından özel indirimli fiyat.",
+    "waitlistBadge": "İlk 100 Kullanıcı — Özel Fiyat",
+    "waitlistSuccess": "Listeye alındın!",
+    "waitlistSuccessDesc": "Kai Agents erken erişim açıldığında sana haber vereceğiz.",
+    "waitlistCta": "Erken Erişim Al",
+    "waitlistLoading": "Kaydediliyor...",
+    "waitlistNoSpam": "Spam yok. İstediğin zaman çıkabilirsin."
   }
 }

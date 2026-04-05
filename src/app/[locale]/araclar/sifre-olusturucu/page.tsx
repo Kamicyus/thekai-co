@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
@@ -81,18 +81,24 @@ export default function SifreOlusturucuPage() {
     numbers: true,
     symbols: true,
   });
-  const [password, setPassword] = useState("");
+  // Yenile tuşuna basılınca seed değişir, yeni şifre üretilir
+  const [seed, setSeed] = useState(0);
   const [copied, setCopied] = useState(false);
 
-  const generate = useCallback(() => {
-    const pw = generatePassword(length, options);
-    setPassword(pw);
-    setCopied(false);
-  }, [length, options]);
+  // password'ü useMemo ile türet — useEffect + setState döngüsünden kaçın
+  const password = useMemo(() => {
+    // seed bağımlılığı sayesinde "Yenile" butonu yeni şifre üretir
+    void seed;
+    return generatePassword(length, options);
+  }, [length, options, seed]);
 
-  useEffect(() => {
-    generate();
-  }, [generate]);
+  const generate = useCallback(() => {
+    setSeed((s) => s + 1);
+    setCopied(false);
+  }, []);
+
+  // İlk render'da useEffect gerekmiyor; useMemo zaten üretiyor
+  useEffect(() => { /* intentionally empty — password useMemo'dan geliyor */ }, []);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(password).then(() => {

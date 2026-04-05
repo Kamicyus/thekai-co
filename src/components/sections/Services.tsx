@@ -30,7 +30,7 @@ export default function Services() {
 
         {/* Cards Grid */}
         <StaggerChildren
-          className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
           staggerDelay={0.08}
         >
           {SERVICES.map((service) => {
@@ -44,6 +44,9 @@ export default function Services() {
               "dijital-strateji": "/images/services/dijital-strateji.jpg",
               "telegram-bot": "/images/services/telegram-bot.jpg",
               "performans-pazarlama": "/images/services/performans-pazarlama.jpg",
+              "video-produksiyon": "/images/services/video-produksiyon.jpg",
+              "seo-organik-buyume": "/images/services/seo-organik-buyume.jpg",
+              "e-ticaret": "/images/services/e-ticaret.jpg",
             };
             return (
             <StaggerItem key={service.title}>

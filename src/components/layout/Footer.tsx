@@ -137,16 +137,32 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-[#1F2937]/50 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mt-16 pt-8 border-t border-[#1F2937]/50 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[#666666] text-xs">
             {t("copyright")}
           </p>
-          <Link
-            href="/gizlilik"
-            className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
-          >
-            {t("privacy")}
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/gizlilik"
+              className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
+            >
+              {t("privacy")}
+            </Link>
+            <span className="text-[#333333] text-xs">·</span>
+            <Link
+              href="/kullanim-sartlari"
+              className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
+            >
+              Kullanım Şartları
+            </Link>
+            <span className="text-[#333333] text-xs">·</span>
+            <Link
+              href="/kvkk"
+              className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
+            >
+              KVKK
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

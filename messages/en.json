@@ -7,7 +7,8 @@
     "blog": "Blog",
     "tools": "Tools",
     "contact": "Contact",
-    "cta": "Get in Touch"
+    "cta": "Get in Touch",
+    "agents": "Kai Agents"
   },
   "hero": {
     "subtitle": "A studio at the intersection of music, technology and creativity.",
@@ -80,11 +81,26 @@
     "title": "How We Work",
     "subtitle": "Every project follows the same approach.",
     "steps": {
-      "discover": { "title": "Discover", "description": "We understand your vision, analyze your market, and identify key opportunities." },
-      "design": { "title": "Design", "description": "Strategy and concept development. We create a creative brief and visual direction." },
-      "build": { "title": "Build", "description": "We bring the plan to life. AI-powered production for fast, high-quality results." },
-      "train": { "title": "Train", "description": "We teach your team the tools and systems, so the value we create keeps compounding." },
-      "support": { "title": "Support", "description": "Ongoing maintenance, optimization, and support after delivery." }
+      "discover": {
+        "title": "Discover",
+        "description": "We understand your vision, analyze your market, and identify key opportunities."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Strategy and concept development. We create a creative brief and visual direction."
+      },
+      "build": {
+        "title": "Build",
+        "description": "We bring the plan to life. AI-powered production for fast, high-quality results."
+      },
+      "train": {
+        "title": "Train",
+        "description": "We teach your team the tools and systems, so the value we create keeps compounding."
+      },
+      "support": {
+        "title": "Support",
+        "description": "Ongoing maintenance, optimization, and support after delivery."
+      }
     }
   },
   "showcase": {
@@ -127,13 +143,41 @@
     "title": "The Journey",
     "subtitle": "The story of an idea becoming a studio.",
     "milestones": {
-      "m1": { "year": "2011", "title": "The Beginning", "description": "Founder Kamer Can Izvermez started his music journey by writing songs. He began learning marketing, design and digital strategy to distribute and promote his music." },
-      "m2": { "year": "2011-2023", "title": "Versatile Experience", "description": "Magazine editing, call center, social media management at sports agencies -- while working across different sectors, he never stopped making music and releasing songs. During this time, he learned the nuances of marketing, brand management and digital content production in the field." },
-      "m3": { "year": "2023", "title": "AI Transformation", "description": "Kamer, who integrated AI tools into his workflows from the very beginning, recognized early the potential of artificial intelligence to transform the creative industry. He began building automation and AI agent systems." },
-      "m4": { "year": "2024", "title": "Echo Bazaar", "description": "The Kai's first major project: an AI music channel was launched. It became a rising brand on YouTube." },
-      "m5": { "year": "2025", "title": "20 Million+ Streams", "description": "Echo Bazaar surpassed 20 million streams. The KIM? album was featured on Spotify's Discover playlist. 72+ AI agent systems were built, operations were automated." },
-      "m6": { "year": "2026", "title": "The Kai", "description": "The company was officially founded. thekai.co went live. A studio merging music, technology and creativity was born." },
-      "m7": { "year": "2026", "title": "Murmur", "description": "The AI audiobook publishing project was launched. Continuing to build new worlds." }
+      "m1": {
+        "year": "2011",
+        "title": "The Beginning",
+        "description": "Founder Kamer Can Izvermez started his music journey by writing songs. He began learning marketing, design and digital strategy to distribute and promote his music."
+      },
+      "m2": {
+        "year": "2011-2023",
+        "title": "Versatile Experience",
+        "description": "Magazine editing, call center, social media management at sports agencies -- while working across different sectors, he never stopped making music and releasing songs. During this time, he learned the nuances of marketing, brand management and digital content production in the field."
+      },
+      "m3": {
+        "year": "2023",
+        "title": "AI Transformation",
+        "description": "Kamer, who integrated AI tools into his workflows from the very beginning, recognized early the potential of artificial intelligence to transform the creative industry. He began building automation and AI agent systems."
+      },
+      "m4": {
+        "year": "2024",
+        "title": "Echo Bazaar",
+        "description": "The Kai's first major project: an AI music channel was launched. It became a rising brand on YouTube."
+      },
+      "m5": {
+        "year": "2025",
+        "title": "20 Million+ Streams",
+        "description": "Echo Bazaar surpassed 20 million streams. The KIM? album was featured on Spotify's Discover playlist. 72+ AI agent systems were built, operations were automated."
+      },
+      "m6": {
+        "year": "2026",
+        "title": "The Kai",
+        "description": "The company was officially founded. thekai.co went live. A studio merging music, technology and creativity was born."
+      },
+      "m7": {
+        "year": "2026",
+        "title": "Murmur",
+        "description": "The AI audiobook publishing project was launched. Continuing to build new worlds."
+      }
     }
   },
   "about": {
@@ -154,10 +198,22 @@
     },
     "values": {
       "title": "Our Values",
-      "creativity": { "title": "Creativity", "description": "Every project is a world. We approach each one with fresh eyes." },
-      "technology": { "title": "Technology", "description": "AI-native approach. We don't just use AI — we think with it." },
-      "quality": { "title": "Quality", "description": "Obsessive attention to detail. From pixel to production." },
-      "transparency": { "title": "Transparency", "description": "Clear communication, honest pricing, no surprises." }
+      "creativity": {
+        "title": "Creativity",
+        "description": "Every project is a world. We approach each one with fresh eyes."
+      },
+      "technology": {
+        "title": "Technology",
+        "description": "AI-native approach. We don't just use AI — we think with it."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Obsessive attention to detail. From pixel to production."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Clear communication, honest pricing, no surprises."
+      }
     }
   },
   "techStack": {
@@ -189,5 +245,24 @@
     "contact": "Contact",
     "copyright": "© 2026 The Kai. All rights reserved.",
     "privacy": "Privacy Policy"
+  },
+  "agents": {
+    "title": "Kai Agents — Manage Your AI Agents Like a Company",
+    "description": "Build an AI employee team without writing code. Create departments, assign tasks, run meetings.",
+    "badge": "Turkey's First AI Workforce Platform",
+    "heroHeadline": "Manage Your AI Agents",
+    "heroHeadlineHighlight": "Like a Company",
+    "heroHeadlineSuffix": "",
+    "heroSubtitle": "Build an AI employee team without writing code. Create departments, assign tasks, run cross-team meetings.",
+    "ctaPrimary": "Start Free",
+    "ctaSecondary": "Watch Demo",
+    "waitlistTitle": "Get Early Access",
+    "waitlistSubtitle": "Join the beta list. First 100 users get Pro features free, then a special discounted price.",
+    "waitlistBadge": "First 100 Users — Special Price",
+    "waitlistSuccess": "You're on the list!",
+    "waitlistSuccessDesc": "We'll notify you when Kai Agents early access opens.",
+    "waitlistCta": "Get Early Access",
+    "waitlistLoading": "Saving...",
+    "waitlistNoSpam": "No spam. Unsubscribe anytime."
   }
 }

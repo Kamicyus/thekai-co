@@ -31,7 +31,12 @@ const TR_ROUTES = [
   { path: "/araclar/regex-test", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/araclar/renk-paleti", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/araclar/metin-farki", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/rapor-olusturucu", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/araclar/youtube-bpm-analiz", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/agents", changeFrequency: "monthly" as const, priority: 0.9 },
   { path: "/gizlilik", changeFrequency: "yearly" as const, priority: 0.3 },
+  { path: "/kullanim-sartlari", changeFrequency: "yearly" as const, priority: 0.3 },
+  { path: "/kvkk", changeFrequency: "yearly" as const, priority: 0.3 },
 ];
 
 // English routes (prefixed with /en)
@@ -43,7 +48,10 @@ const EN_ROUTES = [
   { path: "/en/hakkimizda", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/en/blog", changeFrequency: "weekly" as const, priority: 0.7 },
   { path: "/en/araclar", changeFrequency: "weekly" as const, priority: 0.7 },
+  { path: "/en/agents", changeFrequency: "monthly" as const, priority: 0.8 },
   { path: "/en/gizlilik", changeFrequency: "yearly" as const, priority: 0.3 },
+  { path: "/en/kullanim-sartlari", changeFrequency: "yearly" as const, priority: 0.3 },
+  { path: "/en/kvkk", changeFrequency: "yearly" as const, priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -275,7 +275,7 @@ export default function TunerPage() {
         <div className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-6 sm:p-8">
           <h2 className="text-lg font-semibold text-[#F5F5F5] mb-4">Nasıl Kullanılır?</h2>
           <ol className="space-y-3 text-[#CCCCCC] text-sm list-decimal list-inside">
-            <li>Yeşil "Akort Cihazını Aç" butonuna tıklayın</li>
+            <li>Yeşil &ldquo;Akort Cihazını Aç&rdquo; butonuna tıklayın</li>
             <li>Tarayıcınız mikrofon izni isteyecek — izin verin</li>
             <li>Gitarınızın bir telini çalın</li>
             <li>Ekrandaki ibre ortaya gelene kadar teli ayarlayın</li>
