@@ -3531,10 +3531,10 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                   ))}
                 </ul>
 
+                {/* TODO: Paddle onayı gelince openPaddleCheckout aktif et */}
                 {plan.priceId ? (
-                  <button
-                    type="button"
-                    onClick={() => openPaddleCheckout({ priceId: plan.priceId as string })}
+                  <a
+                    href="#bekleme-listesi"
                     className={`w-full py-3 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] block cursor-pointer ${
                       plan.highlight
                         ? "bg-[#0A0A0A] text-[#D8FB32] hover:bg-[#1F2937]"
@@ -3542,7 +3542,7 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                     }`}
                   >
                     {plan.cta}
-                  </button>
+                  </a>
                 ) : (
                   <a
                     href={plan.href || "#bekleme-listesi"}
