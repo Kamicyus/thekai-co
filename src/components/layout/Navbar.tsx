@@ -15,6 +15,14 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Agents page/subdomain has its own navbar — hide via CSS to avoid hydration mismatch
+  const [isAgents, setIsAgents] = useState(false);
+  useEffect(() => {
+    if (window.location.hostname.startsWith("agents.") || pathname === "/agents" || pathname.startsWith("/agents/")) {
+      setIsAgents(true);
+    }
+  }, [pathname]);
+
   const NAV_LINKS = [
     { label: t("home"), href: "/" as const },
     { label: t("services"), href: "/hizmetler" as const },
@@ -23,7 +31,7 @@ export default function Navbar() {
     { label: t("blog"), href: "/blog" as const },
     { label: t("tools"), href: "/araclar" as const },
     { label: t("contact"), href: "/iletisim" as const },
-    { label: t("agents"), href: "/agents" as const, badge: true },
+    { label: t("agents"), href: "https://agents.thekai.co" as const, badge: true, external: true },
   ];
 
   const switchLocale = (newLocale: "tr" | "en") => {
@@ -49,9 +57,12 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
+  if (isAgents) return null;
+
   return (
     <>
       <nav
+        data-global-navbar
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-[#1F2937]/50"
@@ -76,25 +87,39 @@ export default function Navbar() {
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={link.href === "/" ? () => window.scrollTo({ top: 0, behavior: "smooth" }) : undefined}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    "badge" in link && link.badge
-                      ? "flex items-center gap-1.5 text-[#D8FB32] hover:text-white"
-                      : "text-[#999999] hover:text-[#F5F5F5]"
-                  }`}
-                >
-                  {"badge" in link && link.badge && (
-                    <span className="inline-flex items-center bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide leading-none">
-                      NEW
-                    </span>
-                  )}
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const cls = `text-sm font-medium transition-colors duration-200 ${
+                  "badge" in link && link.badge
+                    ? "flex items-center gap-1.5 text-[#D8FB32] hover:text-white"
+                    : "text-[#999999] hover:text-[#F5F5F5]"
+                }`;
+                const badge = "badge" in link && link.badge && (
+                  <span className="inline-flex items-center bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide leading-none">
+                    NEW
+                  </span>
+                );
+
+                if ("external" in link && link.external) {
+                  return (
+                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                      {badge}
+                      {link.label}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={link.href === "/" ? () => window.scrollTo({ top: 0, behavior: "smooth" }) : undefined}
+                    className={cls}
+                  >
+                    {badge}
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* CTA + Language Switcher + Hamburger */}
@@ -166,7 +191,14 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-[#0A0A0A]/98 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full gap-8">
-              {NAV_LINKS.map((link, i) => (
+              {NAV_LINKS.map((link, i) => {
+                const isExternal = "external" in link && link.external;
+                const mobileCls = `text-2xl font-semibold transition-colors flex items-center gap-2 ${
+                  "badge" in link && link.badge
+                    ? "text-[#D8FB32] hover:text-white"
+                    : "text-[#F5F5F5] hover:text-[#D8FB32]"
+                }`;
+                return (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, y: 20 }}
@@ -174,17 +206,21 @@ export default function Navbar() {
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ delay: i * 0.05 + 0.1 }}
                 >
+                  {isExternal ? (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className={mobileCls}>
+                      {link.label}
+                      {"badge" in link && link.badge && (
+                        <span className="text-xs bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] px-2 py-0.5 rounded font-bold uppercase tracking-wide">NEW</span>
+                      )}
+                    </a>
+                  ) : (
                   <Link
                     href={link.href}
                     onClick={() => {
                       setMobileOpen(false);
                       if (link.href === "/") window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className={`text-2xl font-semibold transition-colors flex items-center gap-2 ${
-                      "badge" in link && link.badge
-                        ? "text-[#D8FB32] hover:text-white"
-                        : "text-[#F5F5F5] hover:text-[#D8FB32]"
-                    }`}
+                    className={mobileCls}
                   >
                     {link.label}
                     {"badge" in link && link.badge && (
@@ -193,8 +229,10 @@ export default function Navbar() {
                       </span>
                     )}
                   </Link>
+                  )}
                 </motion.div>
-              ))}
+                );
+              })}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

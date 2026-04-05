@@ -35,9 +35,9 @@ export default function Process() {
         >
           {STEPS.map((step, i) => (
             <StaggerItem key={step.number} className="relative">
-              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="flex flex-col items-center md:items-start text-center md:text-left md:bg-white/[0.03] md:backdrop-blur-sm md:border md:border-white/[0.06] md:rounded-2xl md:p-5 md:lg:p-6">
                 {/* Number */}
-                <span className="text-4xl lg:text-5xl font-black text-[#D8FB32] tracking-[-2px] mb-4 font-sans">
+                <span className="text-4xl lg:text-5xl font-black text-[#D8FB32] tracking-[-2px] mb-4 font-sans" style={{ textShadow: '0 0 30px rgba(216,251,50,0.25)' }}>
                   {step.number}
                 </span>
 
@@ -55,7 +55,7 @@ export default function Process() {
               {/* Connector line (not on last item, desktop only) */}
               {i < STEPS.length - 1 && (
                 <div className="hidden md:block absolute top-6 right-0 translate-x-1/2 w-full h-px">
-                  <div className="w-full h-px bg-gradient-to-r from-[#1F2937] via-[#D8FB32]/20 to-[#1F2937]" />
+                  <div className="w-full h-px bg-gradient-to-r from-[#1F2937] via-[#D8FB32]/30 to-[#1F2937]" />
                 </div>
               )}
 

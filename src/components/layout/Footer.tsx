@@ -1,6 +1,9 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import KaiIcon from "@/components/icons/KaiIcon";
 import { SocialIcon } from "@/components/icons/SocialIcons";
 import { SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants";
@@ -9,6 +12,16 @@ import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 export default function Footer() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
+  const pathname = usePathname();
+  const [isAgents, setIsAgents] = useState(false);
+
+  useEffect(() => {
+    if (window.location.hostname.startsWith("agents.") || pathname === "/agents" || pathname.startsWith("/agents/")) {
+      setIsAgents(true);
+    }
+  }, [pathname]);
+
+  if (isAgents) return null;
 
   const NAV_LINKS = [
     { label: tn("home"), href: "/" as const },
@@ -20,7 +33,7 @@ export default function Footer() {
     { label: tn("contact"), href: "/iletisim" as const },
   ];
   return (
-    <footer className="w-full bg-[#0F0F0F] border-t border-[#1F2937] relative overflow-hidden">
+    <footer data-global-footer className="w-full bg-[#0F0F0F] border-t border-[#1F2937] relative overflow-hidden">
       {/* Large watermark pinwheel — right side */}
       <div className="absolute top-1/2 right-[-80px] -translate-y-1/2 pointer-events-none">
         <DecorativePinwheel size={350} opacity={0.04} rotate={-10} />

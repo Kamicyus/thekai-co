@@ -98,7 +98,7 @@ export default function Showcase() {
             const Wrapper = project.href ? ({ children, className }: { children: React.ReactNode; className: string }) => <Link href={project.href!} className={className}>{children}</Link> : ({ children, className }: { children: React.ReactNode; className: string }) => <div className={className}>{children}</div>;
             return (
             <StaggerItem key={key}>
-              <Wrapper className="group relative flex flex-col h-full bg-[#141414] border border-[#1F2937] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(216,251,50,0.06)] hover:scale-[1.01]">
+              <Wrapper className="group relative flex flex-col h-full bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/30 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(216,251,50,0.1)] hover:scale-[1.01]">
                 {/* Header Area — Image or Gradient */}
                 {project.image ? (
                   <div className="relative h-[160px] w-full overflow-hidden">
@@ -109,10 +109,10 @@ export default function Showcase() {
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* Subtle dark overlay for badge readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/60 via-transparent to-[#141414]/30" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/30" />
                     {/* Category badge */}
                     <div className="absolute top-6 left-6 z-10">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A]/60 backdrop-blur-sm text-[#D8FB32] border border-[#1F2937]">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A]/60 backdrop-blur-lg text-[#D8FB32] border border-white/[0.08]">
                         {category}
                       </span>
                     </div>
@@ -168,7 +168,7 @@ export default function Showcase() {
 
                     {/* Category badge */}
                     <div className="absolute top-6 left-6">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A]/60 backdrop-blur-sm text-[#D8FB32] border border-[#1F2937]">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A]/60 backdrop-blur-lg text-[#D8FB32] border border-white/[0.08]">
                         {category}
                       </span>
                     </div>

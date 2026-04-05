@@ -3334,6 +3334,753 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "ai-ajan-orkestrasyonu-nedir",
+    title: "AI Ajan Orkestrasyonu Nedir? Tek Ajan Neden Yetmiyor?",
+    description:
+      "AI ajan orkestrasyonu kavramını, çoklu ajan koordinasyonunun mantığını ve gerçek şirket yapısıyla olan benzerliğini örneklerle açıklıyoruz.",
+    date: "2026-04-05",
+    readingTime: "8 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "ai ajan orkestrasyonu",
+      "çoklu ajan koordinasyonu",
+      "ajan orkestrasyonu nedir",
+      "ai orkestratör",
+      "multi-agent orchestration",
+      "yapay zeka ajan yönetimi",
+    ],
+    coverImage: "/images/blog/ai-ajan-orkestrasyonu-nedir.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Bir AI ajanı tek başına harikalar yaratabilir — ama <strong>gerçek dünya tek ajandan ibaret değil</strong>. Bir e-posta yazdırmak, bir dosya özetletmek, bir görseli analiz ettirmek... Bunlar güzel. Ama iş birden fazla süreci koordine etmeye geldiğinde, tek bir ajan tıkanır. Tıpkı bir şirkette tek kişinin hem muhasebe hem pazarlama hem de hukuk işlerini yürütemeyeceği gibi. İşte tam burada <strong>AI ajan orkestrasyonu</strong> devreye giriyor.",
+      },
+      {
+        type: "h2",
+        text: "Orkestrasyon Ne Demek?",
+      },
+      {
+        type: "p",
+        text: "Müzikten geliyorum, o yüzden bu metaforu seviyorum. Bir orkestrada her enstrüman kendi partisini çalar — ama şef olmazsa kaos çıkar. <strong>Orkestrasyon</strong>, birden fazla AI ajanını bir şef (orkestratör) aracılığıyla koordine etme sanatı. Kimin ne zaman devreye gireceğini, hangi bilginin kime aktarılacağını ve sonuçların nasıl birleştirileceğini belirleyen katman bu.",
+      },
+      {
+        type: "p",
+        text: "Pratik örnek: Ben Telegram'dan sesli mesaj gönderiyorum. Orkestratör bunu alıyor, transkript çıkartıyor, içeriği analiz ediyor — müzikle ilgiliyse Müzik Ajanı'na, finansla ilgiliyse Finans Ajanı'na, sosyal medyayla ilgiliyse SM Direktörü'ne yönlendiriyor. Ben sadece konuşuyorum. Geri kalan her şey otomatik.",
+      },
+      {
+        type: "h2",
+        text: "Neden Tek Ajan Yetmiyor?",
+      },
+      {
+        type: "p",
+        text: "Tek bir AI ajanı şu sınırlarla karşılaşır:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Context window limiti:</strong> Tek bir ajana hem pazarlama bilgisi, hem hukuk kuralları, hem finans verileri yüklerseniz context window dolup taşar. Performans düşer, halüsinasyonlar artar",
+          "<strong>Uzmanlık derinliği:</strong> Genel bir ajan her konudan biraz bilir ama hiçbir konuyu derinden bilmez. Hukuk ajanı KVKK'yı bilir, genel ajan bilmez",
+          "<strong>Araç karmaşıklığı:</strong> 25 farklı MCP entegrasyonunu tek ajana bağlarsanız hangi aracı ne zaman kullanacağını karıştırır",
+          "<strong>Hata yayılması:</strong> Tek ajan hata yaparsa tüm sistem etkilenir. Çoklu mimaride bir ajan hata yapsa diğerleri devam eder",
+          "<strong>Ölçeklenme zorluğu:</strong> Yeni bir iş alanı eklemek istediğinizde tek ajanı yeniden tasarlamanız gerekir. Çoklu sistemde sadece yeni bir ajan eklersiniz",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Şirket Yapısı Metaforu: CEO → Departmanlar → Çalışanlar",
+      },
+      {
+        type: "p",
+        text: "AI ajan orkestrasyonunu en iyi anlatan metafor <strong>gerçek bir şirket yapısı</strong>. Orkestratör = CEO. Departman liderleri = uzman ajanlar. Araçlar = çalışanların kullandığı yazılımlar. Hafıza sistemi = şirketin bilgi tabanı ve dosya arşivi.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>CEO (Orkestratör):</strong> Gelen talepleri analiz eder, doğru departmana yönlendirir, büyük resmi görür",
+          "<strong>Pazarlama Departmanı:</strong> İçerik üretimi, sosyal medya, SEO — kendi araçları ve bilgi tabanıyla",
+          "<strong>Hukuk Departmanı:</strong> Sözleşme analizi, KVKK uyumu, telif hakları — kendi uzmanlık alanıyla",
+          "<strong>Finans Departmanı:</strong> Gelir-gider takibi, faturalama, vergi — kendi veri setleriyle",
+          "<strong>Teknoloji Departmanı:</strong> Web geliştirme, otomasyon, bot kurulumu — kendi kod tabanıyla",
+        ],
+      },
+      {
+        type: "p",
+        text: "Tıpkı gerçek bir şirkette olduğu gibi, her departman bağımsız çalışır ama gerektiğinde bilgi paylaşır. CEO her işi kendisi yapmaz — doğru kişiye delege eder. İşte orkestratör ajan da tam bunu yapıyor.",
+      },
+      {
+        type: "h2",
+        text: "Orkestrasyon Nasıl Çalışır? Teknik Bakış",
+      },
+      {
+        type: "p",
+        text: "Kendi sistemimden somut bir örnek vereyim. CLAUDE.md dosyasında şu yapı tanımlı: mesajdaki anahtar kelimeler tetikleyici olarak kullanılıyor. \"Sözleşme\" kelimesi geçerse → Avukat Ajanı. \"Thumbnail\" geçerse → Video Prodüksiyon Ajanı. \"Stres\" geçerse → Psikiyatr Ajanı. Belirsiz durumlarda orkestratör kendisi karar veriyor veya birden fazla ajana danışıyor.",
+      },
+      {
+        type: "p",
+        text: "Bu yönlendirme kurallarının yanı sıra, <strong>model seçimi</strong> de orkestrasyonun parçası. Basit bir dosya taşıma işi için Haiku 4.5 kullanılır (ucuz, hızlı). Kritik bir strateji kararı için Opus 4 kullanılır (pahalı ama doğru). Orkestratör bu kaynak dağılımını da yönetir — aynen bir CEO'nun bütçeyi departmanlara dağıtması gibi.",
+      },
+      {
+        type: "h2",
+        text: "Orkestrasyon Olmadan Ne Olur?",
+      },
+      {
+        type: "p",
+        text: "Orkestrasyon olmadan çoklu ajan sistemi <strong>koordinasyonsuz bir ekip</strong> gibi çalışır. Her ajan kendi bildiğini yapar, bilgi paylaşımı olmaz, aynı iş birden fazla kez yapılır, çelişkili çıktılar üretilir. Bu, 10 kişilik bir ofiste herkesin birbirine sormadan çalışmasına benzer — verimsiz, kaotik ve hata dolu.",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Orkestrasyon için özel yazılım gerekir mi?",
+            answer:
+              "Hayır. Claude Code'un CLAUDE.md dosyası doğal bir orkestrasyon katmanı görevi görür. Yönlendirme kurallarını, ajan tanımlarını ve öncelikleri bu dosyaya yazarsınız. Ekstra yazılım veya framework gerekmez.",
+          },
+          {
+            question: "Kaç ajandan sonra orkestrasyona ihtiyaç duyulur?",
+            answer:
+              "3+ ajandan itibaren orkestrasyon anlamlı hale gelir. 1-2 ajanı manuel yönetebilirsiniz. Ama 3'ü geçtiğinde yönlendirme kuralları, öncelik sıralamaları ve bilgi akışı tanımlamadan verimli çalışamazsınız.",
+          },
+          {
+            question: "Orkestratör ajan diğer ajanlara müdahale edebilir mi?",
+            answer:
+              "Evet. Orkestratör bir ajandan gelen çıktıyı değerlendirebilir, yetersiz bulursa yeniden görev atayabilir veya farklı bir ajana yönlendirebilir. Bu, bir yöneticinin iş teslimini kontrol etmesine benzer.",
+          },
+          {
+            question: "Orkestrasyon sistemi hata yaparsa ne olur?",
+            answer:
+              "Yönlendirme hataları olabilir — yanlış ajana giden bir görev gibi. Bu durumda kullanıcı müdahale eder veya ajan hata bildirir. Sistem kullandıkça öğrenir: tetikleyici kelimeleri ve kuralları güncelleyerek doğruluk oranını artırırsınız.",
+          },
+          {
+            question: "Orkestrasyon kurulumu ne kadar sürer?",
+            answer:
+              "Temel bir CLAUDE.md dosyası ile orkestrasyon kurallarını 1-2 saatte yazabilirsiniz. Gelişmiş seviye — model seçimi, hata yönetimi, hafıza senkronizasyonu dahil — birkaç gün ila bir hafta sürer. Ama ilk gün bile çalışan bir sisteminiz olur.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "AI ajan orkestrasyonunu kendi işinize uygulamak mı istiyorsunuz? Kai Agents platformuyla departmanlarınızı, ajanlarınızı ve toplantılarınızı tek ekrandan yönetin.",
+        href: "https://agents.thekai.co",
+        label: "Kai Agents'ı Keşfet",
+      },
+    ],
+  },
+  {
+    slug: "kod-yazmadan-ai-sirket-kurmak",
+    title: "Kod Yazmadan AI Şirket Kurmak: Adım Adım Rehber",
+    description:
+      "Tek satır kod yazmadan AI ajanlarla çalışan bir dijital şirket nasıl kurulur? Departman oluşturma, ajan atama ve görev yönetimini adım adım anlatıyoruz.",
+    date: "2026-04-05",
+    readingTime: "9 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "kod yazmadan AI şirket",
+      "no-code AI ajan",
+      "AI ile şirket kurma",
+      "yapay zeka otomasyon",
+      "AI şirket yönetimi",
+      "no-code otomasyon Türkiye",
+    ],
+    coverImage: "/images/blog/kod-yazmadan-ai-sirket-kurmak.jpg",
+    content: [
+      {
+        type: "p",
+        text: "\"Kod bilmiyorum, bu AI ajan sistemi bana göre değil.\" Bu cümleyi çok duyuyorum — ve her seferinde aynı şeyi söylüyorum: <strong>kod bilmenize gerek yok</strong>. Kendi 72+ ajanlı sistemimi kurarken kod yazdığım yerler var elbette, ama ajanların büyük çoğunluğu doğal dilde tanımlanıyor. Bir AGENT.md dosyası yazıyorsunuz, görev tanımını belirliyorsunuz, araçları bağlıyorsunuz — hepsi bu. Bu rehberde, sıfırdan bir AI şirket yapısını nasıl kuracağınızı adım adım anlatıyorum.",
+      },
+      {
+        type: "h2",
+        text: "Adım 1: Departmanlarınızı Belirleyin",
+      },
+      {
+        type: "p",
+        text: "Her iş bir organizasyon şemasıyla başlar. <strong>AI şirketiniz de öyle</strong>. Şu soruyu sorun: İşimi yürütmek için hangi departmanlara ihtiyacım var? Tipik bir solopreneur veya küçük ekip için 3-5 departman yeterli:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Pazarlama:</strong> İçerik üretimi, sosyal medya, SEO",
+          "<strong>Operasyon:</strong> E-posta yönetimi, takvim, müşteri takibi",
+          "<strong>Finans:</strong> Gelir-gider, faturalama, vergi takibi",
+          "<strong>Yaratıcı:</strong> Görsel tasarım, video, copywriting",
+          "<strong>Strateji:</strong> Pazar analizi, rakip takibi, trend izleme",
+        ],
+      },
+      {
+        type: "p",
+        text: "Kendi sistemimde 10 departman var. Ama siz 3 ile başlayın. Her departmanı bir klasör gibi düşünün — içine ajanlar koyacaksınız.",
+      },
+      {
+        type: "h2",
+        text: "Adım 2: Her Departmana Ajan Atayın",
+      },
+      {
+        type: "p",
+        text: "Her departmanın en az bir uzman ajana ihtiyacı var. Ajan tanımlamak için yapmanız gereken tek şey bir AGENT.md dosyası yazmak. Bu dosyada şunlar yer alır:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Ajanın adı ve rolü (örn: \"SEO Uzmanı Ajanı\")",
+          "Görev kapsamı (ne yapabilir, ne yapamaz)",
+          "Kullanacağı araçlar (Gmail, Calendar, Canva vs.)",
+          "Raporlama kuralları (kime rapor verir, ne sıklıkla)",
+          "Hafıza dosyaları (hangi bilgileri hatırlamalı)",
+        ],
+      },
+      {
+        type: "p",
+        text: "Bu bir Word belgesi yazmak kadar basit. Kod yok. Sadece doğal dilde, net ve spesifik bir iş tanımı. \"Bu ajan haftada 3 Instagram postu önerir, her Pazartesi içerik takvimini günceller ve performans raporunu Cuma akşamına kadar hazırlar\" — bu kadar yeterli.",
+      },
+      {
+        type: "h2",
+        text: "Adım 3: Orkestratörünüzü Kurun",
+      },
+      {
+        type: "p",
+        text: "CLAUDE.md dosyanız orkestratörünüz — yani <strong>AI CEO'nuz</strong>. Bu dosyada yönlendirme kurallarını tanımlarsınız: hangi konu hangi ajana gidecek, öncelikler ne, belirsiz durumlarda ne olacak. Mesela:",
+      },
+      {
+        type: "ul",
+        items: [
+          "\"SEO\" kelimesi geçerse → SEO Ajanı'na yönlendir",
+          "\"Fatura\" kelimesi geçerse → Finans Ajanı'na yönlendir",
+          "\"Logo\" kelimesi geçerse → Tasarım Ajanı'na yönlendir",
+          "Belirsiz → orkestratör kendisi cevaplasın",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Adım 4: Araçlarınızı Bağlayın",
+      },
+      {
+        type: "p",
+        text: "<strong>MCP (Model Context Protocol)</strong> entegrasyonlarıyla ajanlarınızı gerçek araçlarınıza bağlarsınız. Gmail, Google Calendar, Canva, Telegram — hepsi MCP üzerinden bağlanır. Kurulum genellikle 5-10 dakika sürer ve tek seferlik bir iştir. Kod gerekmez — sadece yetkilendirme onayı verirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "Adım 5: Toplantı Düzenleyin (Evet, AI Toplantısı)",
+      },
+      {
+        type: "p",
+        text: "Bu kısmı çoğu kişi garip buluyor ama ciddi söylüyorum: <strong>AI ajanlarınızla toplantı yapın</strong>. Haftalık bir review toplantısı düzenleyin. Orkestratörden her departmanın haftalık raporunu isteyin. Neyi iyi yaptılar, nerede tıkandılar, önümüzdeki hafta öncelikler ne? Bu, sistemin sürekli iyileşmesini sağlıyor.",
+      },
+      {
+        type: "h2",
+        text: "Farklı Meslekler İçin Örnekler",
+      },
+      {
+        type: "h3",
+        text: "E-Ticaret Girişimcisi",
+      },
+      {
+        type: "p",
+        text: "Departmanlar: Ürün Yönetimi, Pazarlama, Müşteri Hizmetleri. Ajanlar: Ürün açıklaması yazan ajan, sosyal medya içerik ajanı, müşteri sorusu yanıtlayan ajan. Araçlar: Shopify API, Instagram, Gmail. Sonuç: haftada 20+ saat tasarruf, 7/24 müşteri desteği.",
+      },
+      {
+        type: "h3",
+        text: "Freelancer Grafik Tasarımcı",
+      },
+      {
+        type: "p",
+        text: "Departmanlar: Müşteri İletişim, Portföy Yönetimi, Finans. Ajanlar: Brief toplayan ajan, teklif hazırlayan ajan, fatura takip ajanı. Araçlar: Gmail, Calendar, dosya sistemi. Sonuç: müşteri yönetimi otomatik, siz sadece tasarıma odaklanın.",
+      },
+      {
+        type: "h3",
+        text: "Startup Kurucusu (3 Kişilik Ekip)",
+      },
+      {
+        type: "p",
+        text: "Departmanlar: Ürün, Büyüme, Operasyon, Yatırımcı İlişkileri. Her ekip üyesinin kendi ajanları var ama ortak bilgi tabanını paylaşıyorlar. Haftalık sprint toplantısı orkestratör tarafından özetleniyor. Yatırımcı sunumu ajan tarafından güncelleniyor.",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Gerçekten kod yazmadan yapılabiliyor mu?",
+            answer:
+              "Evet. AGENT.md ve CLAUDE.md dosyaları tamamen doğal Türkçe ile yazılır. MCP entegrasyonları OAuth ile bağlanır — bir tık onay. Tek ihtiyacınız Claude Code aboneliği ($20/ay Pro veya $100/ay Max) ve net bir iş tanımı.",
+          },
+          {
+            question: "Kaç ajanla başlamalıyım?",
+            answer:
+              "3 ajan + 1 orkestratör ideal başlangıç noktası. En sık ihtiyaç duyduğunuz 3 görevi belirleyin ve onlar için ajan oluşturun. Sistem zamanla organik büyür — 3 ayda 10-15 ajana ulaşmanız normal.",
+          },
+          {
+            question: "AI şirketim gerçek bir şirket yerine geçer mi?",
+            answer:
+              "Hayır ve evet. Yasal olarak bir şirket değil — ama operasyonel olarak bir şirketin yapabileceği birçok şeyi yapıyor. İçerik üretimi, müşteri takibi, veri analizi, raporlama... Hepsini insan müdahalesi minimumda tutarak yürütebilirsiniz.",
+          },
+          {
+            question: "Ekibimle birlikte kullanabilir miyiz?",
+            answer:
+              "Evet. Ajan dosyaları Git ile paylaşılabilir. Her ekip üyesi kendi Claude Code instance'ında aynı sistemle çalışır. Ortak bilgi tabanı senkronize kalır. Slack veya Telegram üzerinden ajan çıktılarını paylaşabilirsiniz.",
+          },
+          {
+            question: "Aylık maliyeti ne kadar?",
+            answer:
+              "Claude Code Pro $20/ay, Max $100/ay. API kullanımı (sub-agent'lar) aylık $30-150 arası. MCP entegrasyonlarının çoğu ücretsiz. Toplam: ayda $50-250. Karşılığında haftada 15-25 saat tasarruf. Bir yarı zamanlı çalışandan ucuz.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Kod yazmadan kendi AI şirketinizi kurmaya hazır mısınız? Kai Agents ile departmanlarınızı oluşturun, ajanlarınızı atayın ve ilk toplantınızı yapın.",
+        href: "https://agents.thekai.co",
+        label: "Kai Agents ile Başla",
+      },
+    ],
+  },
+  {
+    slug: "ai-avukat-hukuk-danismani",
+    title: "AI Avukat: Yapay Zeka Hukuk Danışmanınız",
+    description:
+      "AI avukat ajanı neler yapabilir, neler yapamaz? Sözleşme analizi, KVKK uyumu, marka araştırması ve gerçek avukat maliyetiyle karşılaştırma.",
+    date: "2026-04-05",
+    readingTime: "8 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "AI avukat",
+      "yapay zeka hukuk danışmanı",
+      "AI sözleşme analizi",
+      "KVKK yapay zeka",
+      "AI hukuk asistanı",
+      "dijital hukuk danışmanlık",
+    ],
+    coverImage: "/images/blog/ai-avukat-hukuk-danismani.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Bir freelancer olarak sözleşme imzalamadan önce avukata danışmak istiyorsunuz ama her konsültasyon 2.000-5.000 TL. Bir e-ticaret girişimcisi olarak KVKK uyumu yapmanız gerekiyor ama nereden başlayacağınızı bilmiyorsunuz. Tanıdık geliyor mu? İşte <strong>AI avukat ajanı</strong> tam bu noktada devreye giriyor. Profesyonel bir avukatın yerini almıyor — ama avukata gitmeden önce hazırlık yapmanızı, temel hukuki analizleri anlamanızı ve maliyetlerinizi dramatik şekilde düşürmenizi sağlıyor.",
+      },
+      {
+        type: "h2",
+        text: "AI Avukat Ne Yapabilir?",
+      },
+      {
+        type: "p",
+        text: "Kendi sistemimde aktif olarak kullandığım <strong>Avukat Ajanı</strong> şu görevleri yerine getiriyor:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Sözleşme analizi:</strong> Bir sözleşmeyi yüklüyorsunuz, ajan madde madde analiz ediyor. Riskli noktaları, eksik maddeleri, belirsiz ifadeleri işaretliyor",
+          "<strong>KVKK uyum kontrolü:</strong> Web sitenizin veya uygulamanızın kişisel veri işleme süreçlerini tarayıp uyum raporu çıkarıyor",
+          "<strong>Marka araştırması:</strong> Bir isim veya logo tescil ettirmeden önce benzer markaları araştırıyor, risk analizi yapıyor",
+          "<strong>FSEK (Fikir ve Sanat Eserleri Kanunu) analizi:</strong> İçerik üreticileri için telif hakları konusunda yönlendirme yapıyor",
+          "<strong>Hukuki belge taslağı:</strong> NDA, freelancer sözleşmesi, gizlilik politikası gibi standart belgelerin ilk taslağını hazırlıyor",
+          "<strong>Yasal terim açıklama:</strong> Anlamadığınız bir hukuki metni sade Türkçeyle açıklıyor",
+        ],
+      },
+      {
+        type: "h2",
+        text: "AI Avukat Ne Yapamaz?",
+      },
+      {
+        type: "p",
+        text: "Bu kısım en az yukarısı kadar önemli. Şeffaf olmak gerekiyor:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Mahkemede temsil edemez:</strong> Yasal temsil yetkisi yoktur, olamaz da",
+          "<strong>Kesin hukuki karar veremez:</strong> \"Bu sözleşmeyi imzala\" veya \"dava aç\" gibi nihai kararlar vermez — seçenekleri ve riskleri sunar",
+          "<strong>Güncel içtihat takibi sınırlıdır:</strong> Yargıtay kararlarına gerçek zamanlı erişimi yoktur, bilgi tabanı beslenmelidir",
+          "<strong>Karmaşık davaları yönetemez:</strong> Çok taraflı, uluslararası veya ceza hukuku meselelerinde mutlaka gerçek avukata yönlendirir",
+          "<strong>Mesleki sorumluluk taşımaz:</strong> Hatalı bir analizden yasal sorumluluk AI ajana yüklenemez",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Maliyet Karşılaştırması: AI Avukat vs Gerçek Avukat",
+      },
+      {
+        type: "p",
+        text: "Bunu sert bir şekilde söylemiyorum — avukatlar kesinlikle gerekli ve değerli. Ama basit, tekrarlayan hukuki işler için <strong>maliyet farkı çarpıcı</strong>:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Sözleşme inceleme (avukat): 2.000-5.000 TL/seans → AI avukat: ~0 TL (mevcut abonelik dahilinde)",
+          "KVKK uyum raporu (avukat/danışman): 15.000-50.000 TL → AI avukat: birkaç saat çalışma",
+          "NDA taslağı (avukat): 3.000-8.000 TL → AI avukat: 5 dakika",
+          "Marka tescil araştırması (avukat): 2.000-4.000 TL → AI avukat: anında",
+        ],
+      },
+      {
+        type: "p",
+        text: "Tabii ki AI ajanın çıktısını avukata doğrulatmanız gereken durumlar olacak. Ama noktayı şuraya koyuyorum: <strong>avukata gittiğinizde %80'i hazır giderseniz, hem zaman hem para kazanırsınız</strong>. AI avukat sizi sıfırdan başlamaktan kurtarır.",
+      },
+      {
+        type: "h2",
+        text: "Gerçek Kullanım Senaryoları",
+      },
+      {
+        type: "p",
+        text: "Kendi deneyimimden örnekler:",
+      },
+      {
+        type: "ul",
+        items: [
+          "HIT or LIT yarışmasına katılmadan önce sözleşmeyi AI avukata analiz ettirdim. 3 riskli madde tespit etti — bunları gerçek avukatıma sordum, haklıydı",
+          "Echo Bazaar için telif hakları konusunda FSEK analizi yaptırdım. AI müzik eserlerinin telif durumunu detaylı raporladı",
+          "Müşteri sözleşmesi taslağı hazırlarken AI avukat ilk versiyonu 5 dakikada çıkardı. Avukatım sadece fine-tuning yaptı — 2 saat yerine 20 dakika sürdü",
+          "KVKK uyumu için web sitemdeki tüm formları ve veri toplama noktalarını tarayıp uyum raporu çıkardım",
+        ],
+      },
+      {
+        type: "h2",
+        text: "AI Avukat Ajanı Nasıl Kurulur?",
+      },
+      {
+        type: "p",
+        text: "Kendi hukuk ajanınızı kurmak için AGENT.md dosyanızda şunları tanımlamanız yeterli:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Uzmanlık alanı: Sözleşme hukuku, KVKK, fikri mülkiyet, ticaret hukuku",
+          "Bilgi tabanı: Güncel mevzuat, sık kullanılan sözleşme şablonları, KVKK rehberleri",
+          "Sınırlar: Nerede durması gerektiği, ne zaman gerçek avukata yönlendirmesi gerektiği",
+          "Çıktı formatı: Madde madde analiz, risk skoru, öneri listesi",
+        ],
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI avukat gerçek avukatın yerini alır mı?",
+            answer:
+              "Hayır. AI avukat bir asistan ve ön hazırlık aracıdır. Kesin hukuki kararlar, mahkeme temsili ve mesleki sorumluluk gerektiren konularda mutlaka gerçek avukata danışmalısınız. AI avukat sizi avukata daha hazır götürür.",
+          },
+          {
+            question: "Türk hukukuna uygun mu?",
+            answer:
+              "Bilgi tabanına Türk mevzuatını (TTK, KVKK, FSEK, Borçlar Kanunu) beslediğinizde Türk hukukuna uygun analizler yapabilir. Ancak güncel içtihat ve yeni düzenlemeler için bilgi tabanını düzenli güncellemeniz gerekir.",
+          },
+          {
+            question: "Sözleşmeyi yükleyip analiz ettirebilir miyim?",
+            answer:
+              "Evet. PDF veya metin formatında sözleşmeyi yüklersiniz, AI avukat madde madde analiz eder: riskli noktaları işaretler, eksik maddeleri belirtir, belirsiz ifadeleri sade dille açıklar ve önerilerini sunar.",
+          },
+          {
+            question: "KVKK uyum raporu gerçekten işe yarar mı?",
+            answer:
+              "İlk tarama ve temel uyum kontrolü için çok işe yarar. Web sitenizde gizlilik politikası var mı, çerez onayı doğru mu, veri işleme envanteri tam mı — bunları hızlıca kontrol eder. Ama resmi KVKK denetimi için profesyonel danışman gerekir.",
+          },
+          {
+            question: "Gizli belgelerimi AI'a yüklemek güvenli mi?",
+            answer:
+              "Claude Code yerel makinenizde çalışır — verileriniz buluta gönderilmeden işlenebilir. Yine de hassas belgeler için şirketinizin veri güvenliği politikasına uyun. API çağrılarında veri Anthropic sunucularından geçer, bu durumda NDA kapsamındaki belgeler için dikkatli olun.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Hukuk ajanınızı Kai Agents platformunda kurun. Sözleşme analizi, KVKK kontrolü ve hukuki belge taslağı — hepsi tek yerden.",
+        href: "https://agents.thekai.co",
+        label: "Hukuk Ajanınızı Kurun",
+      },
+    ],
+  },
+  {
+    slug: "ai-pazarlama-muduru",
+    title: "AI Pazarlama Müdürü: 7/24 Çalışan Dijital Stratejist",
+    description:
+      "AI pazarlama müdürü ajanı ile içerik takvimi, rakip analizi, sosyal medya stratejisi ve SEO optimizasyonu nasıl otomatize edilir? Gerçek metriklerle anlatıyoruz.",
+    date: "2026-04-05",
+    readingTime: "9 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "AI pazarlama müdürü",
+      "yapay zeka dijital pazarlama",
+      "AI içerik stratejisi",
+      "AI sosyal medya yönetimi",
+      "dijital pazarlama otomasyonu",
+      "AI SEO stratejisi",
+    ],
+    coverImage: "/images/blog/ai-pazarlama-muduru.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Bir pazarlama müdürü işe almak Türkiye'de aylık 40.000-80.000 TL maaş demek. Üstüne SGK, ofis gideri, ekipman... Ve o müdür günde 8 saat çalışır, izne çıkar, hasta olabilir. Peki ya <strong>7/24 çalışan, izne çıkmayan, her gün aynı kalitede çıktı üreten bir AI pazarlama müdürü</strong> olsa? Bunu kurdum, kullanıyorum ve müşterilerime de kuruyorum. Abartmıyorum — gerçekten çalışıyor.",
+      },
+      {
+        type: "h2",
+        text: "AI Pazarlama Müdürü Ne Yapar?",
+      },
+      {
+        type: "p",
+        text: "Kendi sistemimde aktif olarak çalışan pazarlama departmanım 5 ajandan oluşuyor. Ama hepsinin üstünde bir <strong>AI Pazarlama Müdürü</strong> var — stratejiyi belirleyen, diğer ajanları koordine eden, sonuçları raporlayan ajan. İşte yetenekleri:",
+      },
+      {
+        type: "h3",
+        text: "İçerik Takvimi Yönetimi",
+      },
+      {
+        type: "p",
+        text: "Haftalık ve aylık içerik takvimini otomatik oluşturur. Hangi gün hangi platformda ne paylaşılacak, temaları ne, CTA'lar ne — hepsini planlar. Özel günleri, trend konuları ve sektörel etkinlikleri takip eder. Ben sadece onaylıyorum veya tweek yapıyorum.",
+      },
+      {
+        type: "h3",
+        text: "Rakip Analizi",
+      },
+      {
+        type: "p",
+        text: "Belirlediğiniz rakiplerin sosyal medya aktivitesini, içerik stratejisini ve engagement oranlarını izler. Hangi içerik tipleri onlarda çalışıyor, hangileri çalışmıyor — raporlar. \"Rakibin X bu hafta 3 carousel post attı, ortalama engagement %4.2 — bizim carousel'lerimiz %2.8'de, format değişikliği öneriyorum\" gibi somut aksiyonlar önerir.",
+      },
+      {
+        type: "h3",
+        text: "Sosyal Medya Stratejisi",
+      },
+      {
+        type: "p",
+        text: "Her platform için özelleştirilmiş strateji belirler. Instagram'da carousel ağırlıklı, X'te thread formatında, LinkedIn'de uzun form, TikTok'ta trend sesler... Platform dinamiklerini bilir ve stratejisini buna göre şekillendirir. Altında çalışan platform uzmanı ajanlar (Instagram Ajanı, X Ajanı, TikTok Ajanı) ile koordineli çalışır.",
+      },
+      {
+        type: "h3",
+        text: "SEO Optimizasyonu",
+      },
+      {
+        type: "p",
+        text: "Anahtar kelime araştırması yapar, mevcut içeriklerin SEO performansını analiz eder, yeni blog konuları önerir. Meta description'ları optimize eder, internal linking stratejisi kurar. Bu blog yazısını bile SEO ajanıyla birlikte planladık — hedef anahtar kelimeleri, başlık yapısını ve içerik akışını o belirledi.",
+      },
+      {
+        type: "h2",
+        text: "Gerçek Metrikler: Ne Kadar Fark Yaratıyor?",
+      },
+      {
+        type: "p",
+        text: "Kendi deneyimimden ve müşterilerimden somut rakamlar:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>İçerik üretim hızı:</strong> Haftalık 15 post planı 3 saatten 30 dakikaya düştü",
+          "<strong>SEO traffic:</strong> AI destekli blog stratejisiyle organik traffic 3 ayda %180 arttı (thekai.co verisi)",
+          "<strong>Sosyal medya engagement:</strong> Data-driven içerik önerileriyle ortalama engagement %35 yükseldi",
+          "<strong>Rakip analiz süresi:</strong> Manuel 4 saat → AI ile 15 dakika",
+          "<strong>İçerik takvimi hazırlama:</strong> Aylık plan 2 günden 1 saate düştü",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Pazarlama Departmanı Nasıl Yapılandırılır?",
+      },
+      {
+        type: "p",
+        text: "Etkili bir AI pazarlama departmanı şu ajanlardan oluşur:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>SM Direktörü (Pazarlama Müdürü):</strong> Strateji, koordinasyon, raporlama",
+          "<strong>İçerik Üretici Ajanı:</strong> Post metinleri, caption'lar, blog içerikleri",
+          "<strong>SEO Ajanı:</strong> Anahtar kelime, teknik SEO, içerik optimizasyonu",
+          "<strong>Platform Uzmanları:</strong> Instagram, X, TikTok, LinkedIn — her biri kendi platformunun dinamiklerini bilir",
+          "<strong>Trend & A/R Ajanı:</strong> Viral içerik takibi, sektörel trend analizi",
+        ],
+      },
+      {
+        type: "p",
+        text: "Bu 5-7 ajan birlikte çalıştığında, tam zamanlı 3 kişilik bir pazarlama ekibinin çıktısını üretir. Ve 7/24 çalışır.",
+      },
+      {
+        type: "h2",
+        text: "Gerçek Pazarlama Müdürüyle Nasıl Çalışır?",
+      },
+      {
+        type: "p",
+        text: "AI pazarlama müdürü gerçek bir pazarlamacının yerini almak zorunda değil — <strong>onu güçlendirmek</strong> için de kullanılabilir. Gerçek müdürünüz strateji ve yaratıcılığa odaklanırken, AI ajan veri analizi, raporlama, içerik takvimi ve rutin optimizasyonları üstlenir. Bu hibrit model, özellikle 5-20 kişilik ekiplerde çok etkili.",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI pazarlama müdürü gerçek bir müdürün yerini alır mı?",
+            answer:
+              "Solopreneur ve küçük ekipler için evet — operasyonel pazarlama işlerinin %80'ini karşılar. Büyük ekipler için ise gerçek müdürü güçlendiren bir asistan olarak çalışır. Yaratıcı strateji ve marka vizyonu hala insana ihtiyaç duyar.",
+          },
+          {
+            question: "Hangi platformları yönetebilir?",
+            answer:
+              "Instagram, X/Twitter, TikTok, LinkedIn, Pinterest, YouTube — hepsini. Her platform için ayrı uzman ajan atanabilir. SM Direktörü hepsini koordine eder. Kai Agents'ta departman yapısıyla tüm platformları tek yerden yönetirsiniz.",
+          },
+          {
+            question: "İçerik kalitesi insan seviyesinde mi?",
+            answer:
+              "Taslak kalitesi yüksek — ama son dokunuş insanda olmalı. Özellikle marka sesi, mizah, kültürel referanslar konusunda insan editörlüğü fark yaratır. AI %80'ini yapar, siz %20'sini cilalanırsınız. Net zaman kazancı: %60-70.",
+          },
+          {
+            question: "Raporlama nasıl çalışıyor?",
+            answer:
+              "Haftalık ve aylık performans raporları otomatik üretilir. Engagement oranları, erişim, tıklama, dönüşüm — metrikler takip edilir ve önceki dönemlerle karşılaştırılır. Rapor formatını istediğiniz şekilde özelleştirebilirsiniz.",
+          },
+          {
+            question: "Reklam bütçesi yönetebilir mi?",
+            answer:
+              "Bütçe önerileri ve kampanya planlaması yapabilir. Ama Google Ads veya Meta Ads hesabınıza doğrudan erişip harcama yapması için ekstra entegrasyon ve onay mekanizması gerekir. Öneri verir, kararı siz verirsiniz.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Pazarlama departmanınızı AI ajanlarla güçlendirmek mi istiyorsunuz? Kai Agents ile SM Direktörü, içerik üretici ve SEO ajanlarınızı kurun.",
+        href: "https://agents.thekai.co",
+        label: "Pazarlama Departmanınızı Kurun",
+      },
+    ],
+  },
+  {
+    slug: "kai-agents-vs-chatgpt-farki",
+    title: "Kai Agents vs ChatGPT: Fark Ne?",
+    description:
+      "Kai Agents çoklu ajan sistemi ile ChatGPT tek konuşma modeli arasındaki farkları departman yapısı, hafıza, koordinasyon ve raporlama açısından karşılaştırıyoruz.",
+    date: "2026-04-05",
+    readingTime: "7 dk",
+    author: "Kamer Can İzvermez",
+    keywords: [
+      "Kai Agents vs ChatGPT",
+      "ChatGPT alternatifi",
+      "çoklu ajan sistemi karşılaştırma",
+      "AI ajan vs chatbot",
+      "Kai Agents farkı",
+      "ChatGPT yetmiyor",
+    ],
+    coverImage: "/images/blog/kai-agents-vs-chatgpt-farki.jpg",
+    content: [
+      {
+        type: "p",
+        text: "\"ChatGPT kullanıyorum zaten, neden başka bir şeye ihtiyacım olsun?\" Bu soruyu her hafta en az 5 kez duyuyorum. Haklı bir soru — ChatGPT güçlü bir araç. Ama <strong>bir araç ile bir sistem arasında dağlar kadar fark var</strong>. ChatGPT bir konuşma partneri. Kai Agents ise sizin için çalışan bir dijital şirket. Bu yazıda ikisi arasındaki farkları net olarak açıklıyorum.",
+      },
+      {
+        type: "h2",
+        text: "Temel Fark: Tek Konuşma vs Çoklu Ajan",
+      },
+      {
+        type: "p",
+        text: "ChatGPT ile bir konuşma başlatırsınız. Soru sorarsınız, cevap alırsınız. Yeni bir konuşma açtığınızda önceki bağlam kaybolur. Her şey tek bir pencerede, tek bir \"kişilik\" ile döner. İyi midir? İyi. Yeterli midir? Basit sorular için evet. Gerçek iş süreçleri için <strong>kesinlikle hayır</strong>.",
+      },
+      {
+        type: "p",
+        text: "Kai Agents'ta ise birden fazla uzman ajan var. Her biri kendi görev tanımına, bilgi tabanına ve araç setine sahip. Bir orkestratör bu ajanları koordine ediyor. Yani siz tek bir yerden yazıyorsunuz ama arka planda 5, 10, 50 farklı uzman sizin için çalışıyor.",
+      },
+      {
+        type: "h2",
+        text: "Karşılaştırma Tablosu",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Mimari:</strong> ChatGPT → Tek model, tek konuşma | Kai Agents → Çoklu ajan, departman yapısı",
+          "<strong>Hafıza:</strong> ChatGPT → Konuşma bazlı, sınırlı | Kai Agents → Kalıcı hafıza dosyaları, bilgi tabanı",
+          "<strong>Uzmanlık:</strong> ChatGPT → Genel bilgi, her konuda orta seviye | Kai Agents → Her ajan kendi alanında uzman",
+          "<strong>Araç kullanımı:</strong> ChatGPT → Sınırlı (web search, code interpreter) | Kai Agents → Gmail, Calendar, Canva, Telegram, dosya sistemi, API'ler",
+          "<strong>Koordinasyon:</strong> ChatGPT → Yok, her şey tek pencerede | Kai Agents → Orkestratör ile departmanlar arası koordinasyon",
+          "<strong>Raporlama:</strong> ChatGPT → Manuel olarak sormanız gerekir | Kai Agents → Otomatik haftalık raporlar, performans metrikleri",
+          "<strong>Ölçeklenme:</strong> ChatGPT → Aynı konuşmaya daha fazla yüklersiniz | Kai Agents → Yeni ajan eklersiniz, sistem büyür",
+          "<strong>Kişiselleştirme:</strong> ChatGPT → Custom instructions (sınırlı) | Kai Agents → AGENT.md dosyaları ile sınırsız özelleştirme",
+          "<strong>Maliyet:</strong> ChatGPT Plus → $20/ay | Kai Agents → $20-250/ay (kullanıma göre)",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Hafıza: En Kritik Fark",
+      },
+      {
+        type: "p",
+        text: "ChatGPT'ye bugün müşterinizin adını söylüyorsunuz. Yarın yeni bir konuşma açtığınızda unutmuş oluyor. Evet, \"memory\" özelliği var ama sınırlı ve yüzeysel. Kai Agents'ta her ajanın kendi <strong>hafıza dosyaları</strong> var. Müşteri bilgileri, proje notları, marka kimliği, geçmiş kararlar — hepsi kalıcı olarak saklanıyor ve her konuşmada kullanılıyor.",
+      },
+      {
+        type: "p",
+        text: "Benim sistemimde 50'den fazla hafıza dosyası var. Hangi müziği sevdiğimi, hangi müşteriyle ne konuştuğumu, Echo Bazaar'ın son metriklerini, yarışma hazırlığının hangi aşamada olduğunu biliyor. Bu, bir asistanın 6 aydır sizinle çalışıyor olması gibi — context hiç kaybolmuyor.",
+      },
+      {
+        type: "h2",
+        text: "Departman Yapısı: Şirket vs Sohbet",
+      },
+      {
+        type: "p",
+        text: "ChatGPT'de departman kavramı yoktur. Her şey tek bir konuşma penceresi. Pazarlama sorusu da, hukuk sorusu da, finans sorusu da aynı \"kişiye\" gider. O kişi her konudan biraz bilir ama hiçbir konuda derinleşmez.",
+      },
+      {
+        type: "p",
+        text: "Kai Agents'ta <strong>gerçek bir şirket yapısı</strong> var. Pazarlama departmanında 5 ajan, teknoloji departmanında 3 ajan, destek departmanında 4 ajan çalışıyor. Her birinin kendi bilgi tabanı, araçları ve raporlama yapısı var. Sorununuz pazarlamayla ilgiliyse pazarlama ajanı devreye girer — hukuk bilgisiyle kafanızı karıştırmaz.",
+      },
+      {
+        type: "h2",
+        text: "Ne Zaman ChatGPT Yeterli?",
+      },
+      {
+        type: "p",
+        text: "Dürüst olmak gerekiyor — her durumda Kai Agents gerekmez. Şu durumlar için ChatGPT gayet yeterli:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Tek seferlik sorular: \"Bu kelimeyi İngilizce'ye çevir\", \"Bu kodu debug et\"",
+          "Beyin fırtınası: Hızlı fikir üretme, brainstorming seansları",
+          "Basit içerik: Tek bir e-posta taslağı, kısa bir metin",
+          "Öğrenme: Bir konuyu anlama, açıklama isteme",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Ne Zaman Kai Agents Gerekli?",
+      },
+      {
+        type: "ul",
+        items: [
+          "Birden fazla iş sürecini koordine etmeniz gerektiğinde",
+          "Hafıza ve süreklilik kritik olduğunda (müşteri yönetimi, proje takibi)",
+          "Farklı uzmanlık alanlarına aynı anda ihtiyacınız olduğunda",
+          "Otomatik raporlama ve performans takibi istediğinizde",
+          "Gerçek araçlarla (Gmail, Calendar, CRM) entegrasyon gerektiğinde",
+          "Ekip olarak çalışıyorsanız ve paylaşılan bir AI sistemi istiyorsanız",
+          "İşinizi ölçeklendirmek istiyorsanız — 3 ajandan 30'a büyüme planınız varsa",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Sonuç: Araç mı, Sistem mi?",
+      },
+      {
+        type: "p",
+        text: "ChatGPT bir <strong>araç</strong>. Kai Agents bir <strong>sistem</strong>. Araç size yardımcı olur. Sistem sizin yerinize çalışır. Araç kullandığınızda siz hala operasyonun merkezindesiniz. Sistem kurduğunuzda operasyon siz olmadan da dönebilir. Hangisini istediğiniz, nerede olduğunuza bağlı. İkisi de değerli — ama aynı şey değiller.",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "ChatGPT'den Kai Agents'a geçiş zor mu?",
+            answer:
+              "Hayır. Kai Agents, ChatGPT'nin rakibi değil — üstüne inşa edilen bir katman. ChatGPT veya Claude gibi AI modellerini arka planda kullanan, ama onları organize eden bir sistem. Geçiş değil, yükseltme olarak düşünün.",
+          },
+          {
+            question: "ChatGPT Teams veya Enterprise da aynı şeyi yapmıyor mu?",
+            answer:
+              "ChatGPT Teams paylaşılan konuşma alanı ve GPT'ler sunuyor. Ama departman yapısı, ajan koordinasyonu, kalıcı hafıza sistemi ve gerçek araç entegrasyonu yok. GPT'ler bağımsız çalışır — birbirleriyle konuşamazlar.",
+          },
+          {
+            question: "Kai Agents hangi AI modelini kullanıyor?",
+            answer:
+              "Arka planda Claude (Anthropic) modelleri çalışıyor — Opus, Sonnet ve Haiku. Görevin karmaşıklığına göre otomatik model seçimi yapılır. Basit işler için Haiku (ucuz, hızlı), kritik kararlar için Opus (güçlü, doğru).",
+          },
+          {
+            question: "Kai Agents daha pahalı mı?",
+            answer:
+              "ChatGPT Plus $20/ay. Kai Agents kullanım yoğunluğuna göre $50-250/ay arası. Ama karşılığında günde 4-6 saat tasarruf, 7/24 çalışan bir ekip ve ölçeklenebilir bir altyapı elde ediyorsunuz. ROI açısından karşılaştırma bile yapılamaz.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "ChatGPT'den bir sonraki seviyeye geçmeye hazır mısınız? Kai Agents ile kendi AI şirketinizi kurun — departmanlar, ajanlar, toplantılar ve raporlarla.",
+        href: "https://agents.thekai.co",
+        label: "Kai Agents'ı Deneyin",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

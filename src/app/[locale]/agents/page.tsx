@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, ReactNode } from "react";
-import { motion, useScroll, useTransform, useAnimationControls } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useAnimationControls } from "framer-motion";
 
 // ─���───────────────────────────────────────────
 // LAZY SECTION — only renders when near viewport
@@ -137,34 +137,163 @@ function c(theme: "dark" | "light") {
 }
 
 // ─────────────────────────────────────────────
-// THEME TOGGLE BUTTON
+// AGENTS NAVBAR — Sticky with integrated ThemeToggle
 // ─────────────────────────────────────────────
-function ThemeToggle({ theme, toggleTheme }: { theme: "dark" | "light"; toggleTheme: () => void }) {
+function AgentsNavbar({ theme, toggleTheme }: { theme: "dark" | "light"; toggleTheme: () => void }) {
+  const t = c(theme);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const NAV_LINKS = [
+    { label: "Nasıl Çalışır", href: "#nasil-calisir" },
+    { label: "Özellikler", href: "#ozellikler" },
+    { label: "Departmanlar", href: "#kullanim-alanlari" },
+    { label: "Fiyatlandırma", href: "#fiyatlandirma" },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   return (
-    <button
-      onClick={toggleTheme}
-      className="fixed top-6 right-6 z-[60] w-11 h-11 rounded-full bg-[#D8FB32]/10 border border-[#D8FB32]/30 flex items-center justify-center hover:bg-[#D8FB32]/20 transition-all duration-200"
-      aria-label="Tema Değiştir"
-      title={theme === "dark" ? "Açık tema" : "Koyu tema"}
-    >
-      {theme === "dark" ? (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="5" />
-          <line x1="12" y1="1" x2="12" y2="3" />
-          <line x1="12" y1="21" x2="12" y2="23" />
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-          <line x1="1" y1="12" x2="3" y2="12" />
-          <line x1="21" y1="12" x2="23" y2="12" />
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-        </svg>
-      ) : (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      )}
-    </button>
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? `${t.navBg} backdrop-blur-xl border-b ${t.border}`
+          : "bg-transparent"
+      }`}>
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="flex items-center gap-2.5 group">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/kai-carkli.svg" alt="The Kai" className="h-[36px] w-auto" />
+              <span className={`text-sm font-bold ${t.text} tracking-tight hidden sm:block`}>Agents</span>
+            </a>
+
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-8">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium ${t.textMuted} hover:${t.text} transition-colors duration-200`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Right side: Theme + CTA + Hamburger */}
+            <div className="flex items-center gap-3">
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className={`w-9 h-9 rounded-lg ${t.whiteOverlay5} border ${t.border} flex items-center justify-center hover:border-[#D8FB32]/50 transition-all duration-200`}
+                aria-label="Tema Değiştir"
+              >
+                {theme === "dark" ? (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                  </svg>
+                )}
+              </button>
+
+              {/* Giriş + CTA */}
+              <a
+                href="/agents/giris"
+                className={`hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${t.textMuted} hover:${t.text} border ${t.border} hover:border-[#D8FB32]/30`}
+              >
+                Giriş Yap
+              </a>
+              <a
+                href="/agents/giris"
+                className="hidden md:inline-flex items-center justify-center px-5 py-2 bg-[#D8FB32] text-[#0A0A0A] text-sm font-semibold rounded-lg hover:bg-[#B4F030] transition-colors duration-200"
+              >
+                Ücretsiz Başla →
+              </a>
+
+              {/* Mobile hamburger */}
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="md:hidden flex flex-col gap-1.5 p-2"
+                aria-label="Menu"
+              >
+                <motion.span animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }} className={`block w-5 h-[2px] ${theme === "dark" ? "bg-white" : "bg-[#0A0A0A]"}`} />
+                <motion.span animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }} className={`block w-5 h-[2px] ${theme === "dark" ? "bg-white" : "bg-[#0A0A0A]"}`} />
+                <motion.span animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }} className={`block w-5 h-[2px] ${theme === "dark" ? "bg-white" : "bg-[#0A0A0A]"}`} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-[#0A0A0A]/98 backdrop-blur-xl md:hidden"
+          >
+            <div className="flex flex-col items-center justify-center h-full gap-8">
+              {NAV_LINKS.map((link, i) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: i * 0.05 + 0.1 }}
+                  className="text-2xl font-semibold text-[#F5F5F5] hover:text-[#D8FB32] transition-colors"
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+              <motion.a
+                href="/agents/giris"
+                onClick={() => setMobileOpen(false)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: 0.3 }}
+                className="inline-flex items-center justify-center px-8 py-3 text-[#F5F5F5] text-lg font-semibold border border-white/10 rounded-xl hover:border-[#D8FB32]/30 transition-colors"
+              >
+                Giriş Yap
+              </motion.a>
+              <motion.a
+                href="/agents/giris"
+                onClick={() => setMobileOpen(false)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: 0.35 }}
+                className="inline-flex items-center justify-center px-8 py-3 bg-[#D8FB32] text-[#0A0A0A] text-lg font-semibold rounded-xl hover:bg-[#B4F030] transition-colors"
+              >
+                Ücretsiz Başla →
+              </motion.a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
@@ -220,7 +349,7 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
         <FadeIn delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
             <a
-              href="#bekleme-listesi"
+              href="/agents/giris"
               className="w-full sm:w-auto bg-[#D8FB32] text-[#0A0A0A] px-8 py-4 rounded-xl text-base font-semibold hover:bg-[#B4F030] transition-colors focus:outline-none focus:ring-2 focus:ring-[#D8FB32]/50 focus:ring-offset-2 focus:ring-offset-[#0A0A0A]"
             >
               Hemen Başla →
@@ -299,6 +428,34 @@ function Hero({ theme }: { theme: "dark" | "light" }) {
             <div className="absolute -inset-4 bg-[#D8FB32]/5 rounded-3xl blur-xl sm:blur-3xl -z-10" />
           </div>
         </ScaleOnScroll>
+
+        {/* Stats integrated from StatsBar */}
+        <FadeIn delay={0.4}>
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            {[
+              { value: "40+", label: "Uzman Ajan" },
+              { value: "8", label: "Departman" },
+              { value: "100.000+", label: "Kaynak Analiz Edilmiş" },
+              { value: "7/24", label: "Çalışıyor" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col items-center gap-1"
+              >
+                <span className="text-3xl sm:text-4xl font-black text-[#D8FB32] leading-none tabular-nums">
+                  {stat.value}
+                </span>
+                <span className={`text-xs font-medium ${t.textMuted} uppercase tracking-wide`}>
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -1015,76 +1172,268 @@ function HowItWorks({ theme }: { theme: "dark" | "light" }) {
 }
 
 // ─────────────────────────────────────────────
-// HOW THE SYSTEM WORKS (detailed deep dive)
+// SYSTEM DEEP DIVE — Immersive visual experience
 // ─────────────────────────────────────────────
 function SystemDeepDive({ theme }: { theme: "dark" | "light" }) {
-  const t = c(theme);
+  const [expandedDept, setExpandedDept] = useState<string | null>("pazarlama");
 
-  const points = [
+  const departments = [
     {
-      icon: "📚",
-      title: "Binlerce Kaynaktan Beslenen Uzmanlar",
-      desc: "Her ajan, binlerce YouTube videosu, sosyal medya paylaşımı, GitHub projesi ve akademik makaleyi analiz ederek uzmanlaştırılmıştır. Bir avukat ajanı binlerce yasal içeriği, bir SEO uzmanı binlerce site denetimini içselleştirmiştir.",
+      id: "pazarlama",
+      label: "Pazarlama",
+      color: "#4ECDC4",
+      agents: ["SM Direktörü", "X Uzmanı", "Instagram Uzmanı", "SEO Uzmanı"],
     },
     {
-      icon: "🤝",
-      title: "Şirket İçi Toplantılar",
-      desc: "Ajanlar birbirleriyle toplantılara katılır — pazarlama ajanı finans ajanının bütçe kısıtlamalarını bilir, içerik üretici ajanın SEO uzmanının keyword araştırmasını kullanır. Gerçek bir şirket gibi koordineli çalışma.",
+      id: "hukuk",
+      label: "Hukuk",
+      color: "#FF6B6B",
+      agents: ["Avukat Ajanı", "KVKK Uzmanı", "Telif Uzmanı"],
     },
     {
-      icon: "🧠",
-      title: "Entelektüel Ajan",
-      desc: "Binlerce kitap, film ve makaleyi içselleştirmiş bir ajan. Toplantılarda kimsenin düşünmediği bakış açılarını sunar. Strateji tartışmalarında felsefi derinlik katar.",
+      id: "finans",
+      label: "Finans",
+      color: "#22C55E",
+      agents: ["CFO Ajanı", "Muhasebeci", "Yatırım Analisti"],
     },
     {
-      icon: "📱",
-      title: "İçerik Üreticilerinin Bilgisi",
-      desc: "Kullanıcılar, sosyal medyadaki içerik üreticilerinin fikirlerini ve görüşlerini de ajan sistemi üzerinden görebilir. 25+ uzman içerik üreticisinin birikimi sisteme entegre.",
+      id: "yazilim",
+      label: "Yazılım",
+      color: "#3B82F6",
+      agents: ["Full-Stack Dev", "UI/UX Tasarımcı", "QA Tester"],
     },
     {
-      icon: "🔄",
-      title: "Sürekli Öğrenen Sistem",
-      desc: "Ajanlar pasif değildir — YouTube, X, Reddit, GitHub ve daha fazlasından sürekli veri toplar, analiz eder ve kendini günceller. Her gün daha akıllı olur.",
+      id: "muzik",
+      label: "Müzik",
+      color: "#A855F7",
+      agents: ["Prodüktör", "Vokal Koçu", "Sahne Performans"],
     },
     {
-      icon: "🎯",
-      title: "Orkestra Yönetimi",
-      desc: "Bir orkestra şefi gibi: her enstrüman kendi partisini çalar, ama orkestra şefi hepsini koordine eder. Siz yönetirsiniz, ajanlar çalışır.",
+      id: "istihbarat",
+      label: "İstihbarat",
+      color: "#F59E0B",
+      agents: ["Trend Analisti", "Rakip Takip", "Pazar Araştırma"],
     },
   ];
 
   return (
-    <section className="py-24 px-5 bg-[#2D1B69]">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-28 px-5 relative overflow-hidden" style={{ background: "linear-gradient(170deg, #0A0A0A 0%, #1a0f30 25%, #0d0d20 75%, #0A0A0A 100%)" }}>
+      {/* Atmospheric */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#D8FB32]/[0.03] rounded-full blur-[120px] animate-pulse" style={{ animationDuration: "8s" }} />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#A855F7]/[0.04] rounded-full blur-[100px] animate-pulse" style={{ animationDuration: "12s", animationDelay: "4s" }} />
+      </div>
+      <div className="absolute inset-0 opacity-[0.015]" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(216,251,50,0.5) 1px, transparent 0)`,
+        backgroundSize: "48px 48px",
+      }} />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <FadeIn>
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Perde Arkası
             </p>
             <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white">
               Bir AI Şirketi Nasıl Çalışır?
             </h2>
-            <p className="text-white/60 text-lg mt-4 max-w-2xl mx-auto">
-              Sadece chatbot değil &mdash; gerçek bir organizasyon yapısı.
-              <br />
-              Her ajan uzman, her departman koordineli, her toplantı &uuml;retken.
-            </p>
           </div>
         </FadeIn>
 
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {points.map((point, i) => (
-            <StaggerItem key={i}>
-              <div className="bg-[#3D2B79] rounded-2xl p-6 border border-white/10 hover:border-[#D8FB32]/50 hover:shadow-lg hover:shadow-[#D8FB32]/5 transition-all duration-200 group h-full">
-                <div className="w-12 h-12 rounded-xl bg-white/10 group-hover:bg-[#D8FB32] flex items-center justify-center text-2xl mb-4 transition-colors duration-200">
-                  {point.icon}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">{point.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{point.desc}</p>
+        {/* ═══════ HIERARCHICAL TREE ═══════ */}
+        <div className="flex flex-col items-center">
+
+          {/* ─── LEVEL 0: SEN (User) ─── */}
+          <FadeIn>
+            <motion.div
+              className="relative mb-2"
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="px-8 py-4 rounded-2xl text-center relative overflow-hidden" style={{
+                background: "linear-gradient(135deg, #D8FB32, #B4F030)",
+                boxShadow: "0 0 60px rgba(216,251,50,0.25), 0 0 120px rgba(216,251,50,0.1)",
+              }}>
+                <div className="text-[#0A0A0A] text-2xl font-black tracking-tight">SEN</div>
+                <div className="text-[#0A0A0A]/60 text-xs font-semibold mt-0.5">CEO &amp; Karar Verici</div>
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerChildren>
+            </motion.div>
+          </FadeIn>
+
+          {/* Connector line */}
+          <motion.div
+            className="w-px h-10 bg-gradient-to-b from-[#D8FB32]/60 to-[#D8FB32]/10"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            style={{ transformOrigin: "top" }}
+          />
+
+          {/* ─── LEVEL 1: ORKESTRATÖR ─── */}
+          <FadeIn delay={0.15}>
+            <motion.div
+              className="relative mb-2"
+              whileHover={{ scale: 1.03 }}
+            >
+              {/* Pulse ring */}
+              <motion.div
+                className="absolute inset-0 rounded-2xl"
+                style={{ border: "1px solid rgba(216,251,50,0.3)" }}
+                animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+              <div className="px-7 py-4 rounded-2xl text-center backdrop-blur-sm" style={{
+                background: "linear-gradient(135deg, rgba(216,251,50,0.12), rgba(216,251,50,0.04))",
+                border: "1px solid rgba(216,251,50,0.25)",
+              }}>
+                <div className="text-lg">🎯</div>
+                <div className="text-white text-base font-bold mt-1">Orkestratör</div>
+                <div className="text-white/40 text-[10px] mt-0.5">Koordinasyon &amp; Dağıtım</div>
+              </div>
+            </motion.div>
+          </FadeIn>
+
+          {/* Connector: orkestratör → departments (branching) */}
+          <div className="relative w-full max-w-3xl mx-auto h-12 mb-2">
+            <motion.div
+              className="absolute left-1/2 top-0 w-px h-5 -translate-x-1/2 bg-gradient-to-b from-[#D8FB32]/30 to-white/10"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              style={{ transformOrigin: "top" }}
+            />
+            <motion.div
+              className="absolute top-5 left-[8%] right-[8%] h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            />
+            {/* Vertical drops from horizontal line */}
+            {departments.map((_, i) => {
+              const pct = 8 + (i * 84) / (departments.length - 1);
+              return (
+                <motion.div
+                  key={i}
+                  className="absolute top-5 w-px h-7 bg-gradient-to-b from-white/15 to-transparent"
+                  style={{ left: `${pct}%`, transformOrigin: "top" }}
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + i * 0.05, duration: 0.3 }}
+                />
+              );
+            })}
+          </div>
+
+          {/* ─── LEVEL 2: DEPARTMANLAR ─── */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 w-full max-w-3xl mx-auto mb-4">
+            {departments.map((dept, i) => (
+              <motion.button
+                key={dept.id}
+                onClick={() => setExpandedDept(expandedDept === dept.id ? null : dept.id)}
+                className={`rounded-xl p-3 text-center transition-all duration-300 relative group ${
+                  expandedDept === dept.id ? "scale-[1.02]" : "hover:scale-[1.02]"
+                }`}
+                style={{
+                  background: expandedDept === dept.id
+                    ? `linear-gradient(135deg, ${dept.color}20, ${dept.color}08)`
+                    : "rgba(255,255,255,0.03)",
+                  border: `1px solid ${expandedDept === dept.id ? dept.color + "50" : "rgba(255,255,255,0.06)"}`,
+                  boxShadow: expandedDept === dept.id ? `0 8px 32px ${dept.color}15` : "none",
+                }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + i * 0.06, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="w-2.5 h-2.5 rounded-full mx-auto mb-2 transition-all duration-300" style={{
+                  backgroundColor: dept.color,
+                  boxShadow: expandedDept === dept.id ? `0 0 12px ${dept.color}60` : "none",
+                }} />
+                <div className="text-white/80 text-xs font-bold">{dept.label}</div>
+                <div className="text-white/25 text-[10px] mt-0.5">{dept.agents.length} ajan</div>
+                {/* Expand indicator */}
+                <motion.svg
+                  width="12" height="12" viewBox="0 0 12 12" fill="none"
+                  className="mx-auto mt-1.5"
+                  animate={{ rotate: expandedDept === dept.id ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke={dept.color} strokeWidth="1.5" strokeLinecap="round" />
+                </motion.svg>
+              </motion.button>
+            ))}
+          </div>
+
+          {/* ─── LEVEL 3: AJANLAR (expanded) ─── */}
+          <AnimatePresence mode="wait">
+            {expandedDept && (
+              <motion.div
+                key={expandedDept}
+                initial={{ opacity: 0, height: 0, y: -10 }}
+                animate={{ opacity: 1, height: "auto", y: 0 }}
+                exit={{ opacity: 0, height: 0, y: -10 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full max-w-3xl mx-auto overflow-hidden"
+              >
+                {(() => {
+                  const dept = departments.find((d) => d.id === expandedDept)!;
+                  return (
+                    <div className="rounded-2xl p-5 mb-2" style={{
+                      background: `linear-gradient(135deg, ${dept.color}08, transparent)`,
+                      border: `1px solid ${dept.color}15`,
+                    }}>
+                      {/* Connector from dept to agents */}
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: dept.color, boxShadow: `0 0 10px ${dept.color}50` }} />
+                        <span className="text-white/60 text-xs font-bold uppercase tracking-wider">{dept.label} Departmanı — Uzman Kadro</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        {dept.agents.map((agent, j) => (
+                          <motion.div
+                            key={agent}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: j * 0.06, duration: 0.3 }}
+                            className="flex items-center gap-3 rounded-xl px-4 py-3 group hover:bg-white/[0.04] transition-colors"
+                            style={{ background: "rgba(255,255,255,0.02)", border: `1px solid ${dept.color}10` }}
+                          >
+                            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0" style={{
+                              background: `linear-gradient(135deg, ${dept.color}25, ${dept.color}08)`,
+                            }}>
+                              🤖
+                            </div>
+                            <div className="min-w-0">
+                              <div className="text-white/80 text-xs font-semibold truncate">{agent}</div>
+                              <div className="flex items-center gap-1.5 mt-0.5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                                <span className="text-white/30 text-[10px]">Aktif</span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Bottom note */}
+        <FadeIn delay={0.6}>
+          <div className="text-center mt-12">
+            <p className="text-white/30 text-sm max-w-lg mx-auto">
+              <span className="text-[#D8FB32] font-bold">Sen</span> yönet, <span className="text-[#D8FB32] font-bold">orkestratör</span> koordine etsin, <span className="text-[#D8FB32] font-bold">uzmanlar</span> çalışsın.
+              <br />
+              <span className="text-white/50">40+ ajan, 8 departman, 100.000+ kaynak — hepsi sana bağlı.</span>
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -1232,72 +1581,225 @@ function MethodComparison({ theme }: { theme: "dark" | "light" }) {
 // ─────────────────────────────────────────────
 function Features({ theme }: { theme: "dark" | "light" }) {
   const t = c(theme);
+  const isDark = theme === "dark";
+  const [activeFeature, setActiveFeature] = useState(0);
 
   const features = [
     {
       icon: "🏢",
       title: "Departman Yönetimi",
-      desc: "Müzik, pazarlama, finans, hukuk... İstediğin departmanı sıfırdan kur ya da hazır şablonlardan başla.",
+      subtitle: "Sıfırdan kur veya şablondan başla",
+      desc: "Müzik, pazarlama, finans, hukuk — istediğin departmanı oluştur. Her departmanın kendi ajan kadrosu, bilgi tabanı ve raporlama sistemi var.",
+      color: "#D8FB32",
+      mockup: (
+        <div className="space-y-2">
+          {[
+            { name: "Sosyal Medya", agents: 6, color: "#4ECDC4", status: "Aktif" },
+            { name: "Hukuk", agents: 4, color: "#FF6B6B", status: "Aktif" },
+            { name: "Müzik", agents: 5, color: "#A855F7", status: "Aktif" },
+            { name: "Finans", agents: 3, color: "#22C55E", status: "Kurulum" },
+          ].map((dept) => (
+            <div key={dept.name} className="flex items-center justify-between bg-white/[0.04] rounded-lg px-3 py-2.5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: dept.color }} />
+                <span className="text-white/80 text-xs font-medium">{dept.name}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-white/30 text-[10px]">{dept.agents} ajan</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${dept.color}20`, color: dept.color }}>{dept.status}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
     },
     {
       icon: "🤖",
       title: "Uzman Ajanlar",
-      desc: "Her ajana özel rol, kişilik ve uzmanlık tanımla. Binlerce kaynaktan beslenmiş, sürekli öğrenen uzmanlar.",
-    },
-    {
-      icon: "📋",
-      title: "Görev Takibi",
-      desc: "Ajan bazlı görev ver, önceliklendir, takip et. Sonuçları gerçek zamanlı gör.",
+      subtitle: "Binlerce kaynaktan beslenmiş",
+      desc: "Her ajana özel rol, kişilik ve uzmanlık. Avukat ajanınız binlerce yasal içeriği, SEO uzmanınız binlerce site denetimini içselleştirmiştir.",
+      color: "#3B82F6",
+      mockup: (
+        <div className="space-y-2">
+          {[
+            { name: "Avukat Ajanı", task: "Sözleşme analiz ediyor...", pct: 78 },
+            { name: "SEO Uzmanı", task: "Keyword araştırması...", pct: 45 },
+            { name: "İçerik Üretici", task: "Thread hazırlıyor...", pct: 92 },
+          ].map((agent) => (
+            <div key={agent.name} className="bg-white/[0.04] rounded-lg px-3 py-2.5">
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-white/80 text-xs font-medium">{agent.name}</span>
+                <span className="text-[#D8FB32] text-[10px] font-bold">%{agent.pct}</span>
+              </div>
+              <div className="text-white/30 text-[10px] mb-1.5">{agent.task}</div>
+              <div className="h-1 rounded-full bg-white/5 overflow-hidden">
+                <motion.div className="h-full rounded-full bg-[#D8FB32]" initial={{ width: 0 }} whileInView={{ width: `${agent.pct}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.3 }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
     },
     {
       icon: "🤝",
       title: "Birimler Arası Toplantı",
-      desc: "Müzik ajanın pazarlama ajanıyla konuşsun. Bilgi akışı otomatik, koordinasyon kusursuz.",
-    },
-    {
-      icon: "💰",
-      title: "Bütçe Kontrolü",
-      desc: "Ajan bazlı harcama limiti belirle. Token maliyetlerini gerçek zamanlı takip et.",
+      subtitle: "Gerçek şirket koordinasyonu",
+      desc: "Pazarlama ajanınız finans ajanının bütçe kısıtlamalarını bilir. İçerik üretici, SEO uzmanının keyword araştırmasını kullanır.",
+      color: "#F59E0B",
+      mockup: (
+        <div className="space-y-2">
+          <div className="bg-white/[0.04] rounded-lg p-3">
+            <div className="text-[10px] text-white/30 mb-2">Toplantı #47 — Haftalık Strateji</div>
+            {[
+              { from: "SM Direktörü", msg: "X etkileşimi %23 arttı, thread formatına odaklanmalıyız" },
+              { from: "SEO Uzmanı", msg: "\"AI ajan\" keyword'ünde #3'e yükseldik" },
+              { from: "Finans Ajanı", msg: "Bu ayki bütçe %80 kullanıldı, dikkatli olalım" },
+            ].map((chat, i) => (
+              <motion.div key={i} className="flex gap-2 mb-2" initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 + i * 0.15 }}>
+                <div className="w-5 h-5 rounded-full bg-[#D8FB32]/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-[8px]">🤖</span>
+                </div>
+                <div>
+                  <span className="text-[#D8FB32] text-[10px] font-bold">{chat.from}</span>
+                  <p className="text-white/50 text-[10px] leading-relaxed">{chat.msg}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ),
     },
     {
       icon: "⏰",
-      title: "Heartbeats",
-      desc: "Zamanlanmış görevler ve otomatik çalışma döngüleri. Her sabah raporunu al, akşam özetini gör.",
+      title: "Heartbeats & Görevler",
+      subtitle: "Zamanlanmış otomasyon",
+      desc: "Her sabah brifing, akşam özet. Görev takibi, önceliklendirme, tamamlanma bildirimi — hepsi otomatik.",
+      color: "#22C55E",
+      mockup: (
+        <div className="space-y-2">
+          {[
+            { time: "08:00", task: "Günlük brifing hazırla", status: "done" },
+            { time: "10:30", task: "Rakip analiz raporu", status: "done" },
+            { time: "14:00", task: "İçerik takvimi güncelle", status: "active" },
+            { time: "18:00", task: "Günlük özet gönder", status: "pending" },
+            { time: "22:00", task: "Sosyal medya performansı", status: "pending" },
+          ].map((item) => (
+            <div key={item.time} className="flex items-center gap-3 bg-white/[0.04] rounded-lg px-3 py-2">
+              <span className="text-white/30 text-[10px] font-mono w-9">{item.time}</span>
+              <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${
+                item.status === "done" ? "bg-[#22C55E]" :
+                item.status === "active" ? "bg-[#D8FB32] animate-pulse" : "bg-white/10"
+              }`} />
+              <span className={`text-xs ${item.status === "done" ? "text-white/40 line-through" : "text-white/70"}`}>{item.task}</span>
+            </div>
+          ))}
+        </div>
+      ),
     },
   ];
 
+  const active = features[activeFeature];
+
   return (
-    <section id="ozellikler" className="py-24 px-5 bg-[#F5F5F5]">
-      <div className="max-w-5xl mx-auto">
+    <section id="ozellikler" className={`py-28 px-5 ${t.bg}`}>
+      <div className="max-w-6xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
-            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Özellikler
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
+            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
               Her şey yerli yerinde
             </h2>
-            <p className="text-gray-600 text-lg mt-4 max-w-xl mx-auto">
-              Dağınık araçlar, birbirini bilmeyen botlar, kopuk iş akışları...
-              <br />
-              <span className="text-[#0A0A0A] font-semibold">&mdash; Buna son veren, gelişmiş bir sistem &mdash;</span>
-            </p>
           </div>
         </FadeIn>
 
-        <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {features.map((feature, i) => (
-            <StaggerItem key={i}>
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#0A0A0A]/30 hover:shadow-lg transition-all duration-200 group h-full">
-                <div className="w-12 h-12 rounded-xl bg-gray-100 group-hover:bg-[#D8FB32] flex items-center justify-center text-2xl mb-4 transition-colors duration-200">
-                  {feature.icon}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* Left: Feature tabs */}
+          <FadeIn delay={0.05}>
+            <div className="space-y-3">
+              {features.map((feature, i) => (
+                <motion.button
+                  key={i}
+                  onClick={() => setActiveFeature(i)}
+                  className={`w-full text-left rounded-2xl p-5 transition-all duration-300 border ${
+                    activeFeature === i
+                      ? `${isDark ? "bg-white/[0.06]" : "bg-white"} border-[#D8FB32]/40 shadow-lg ${isDark ? "shadow-[#D8FB32]/5" : "shadow-[#D8FB32]/10"}`
+                      : `${isDark ? "bg-white/[0.02] border-white/5" : "bg-white/50 border-black/5"} hover:border-[#D8FB32]/20`
+                  }`}
+                  whileHover={{ x: activeFeature === i ? 0 : 4 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 transition-all duration-300"
+                      style={{
+                        background: activeFeature === i ? `linear-gradient(135deg, ${feature.color}, ${feature.color}80)` : isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
+                        boxShadow: activeFeature === i ? `0 4px 20px ${feature.color}40` : "none",
+                      }}
+                    >
+                      {feature.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className={`text-base font-bold ${t.text} mb-0.5`}>{feature.title}</h3>
+                      <p className={`text-xs ${activeFeature === i ? t.textMuted : t.textDim} transition-colors`}>{feature.subtitle}</p>
+                      {activeFeature === i && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          className={`${t.textMuted} text-sm leading-relaxed mt-2`}
+                        >
+                          {feature.desc}
+                        </motion.p>
+                      )}
+                    </div>
+                    {/* Active indicator */}
+                    <div className={`w-1.5 h-1.5 rounded-full shrink-0 mt-3 transition-all duration-300 ${activeFeature === i ? "bg-[#D8FB32] scale-100" : "bg-transparent scale-0"}`} />
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Right: Live mockup preview */}
+          <FadeIn delay={0.15}>
+            <div className="sticky top-24">
+              <motion.div
+                key={activeFeature}
+                initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="rounded-2xl overflow-hidden"
+                style={{
+                  background: "linear-gradient(135deg, #0A0A0A, #141418)",
+                  border: `1px solid ${active.color}25`,
+                  boxShadow: `0 20px 60px ${active.color}10, 0 0 0 1px ${active.color}08`,
+                }}
+              >
+                {/* Mock browser bar */}
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+                  </div>
+                  <div className="flex-1 bg-white/5 rounded-md h-5 ml-2 flex items-center px-2">
+                    <span className="text-white/20 text-[10px]">agents.thekai.co / {active.title.toLowerCase().replace(/ /g, "-")}</span>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-[#0A0A0A] mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerChildren>
+
+                {/* Mock content */}
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-lg">{active.icon}</span>
+                    <span className="text-white/80 text-sm font-bold">{active.title}</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full ml-auto" style={{ backgroundColor: `${active.color}20`, color: active.color }}>Canlı</span>
+                  </div>
+                  {active.mockup}
+                </div>
+              </motion.div>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );
@@ -3456,7 +3958,7 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
       period: "sonsuza dek",
       highlight: false,
       priceId: null,
-      href: "#bekleme-listesi",
+      href: "/agents/giris",
       features: [
         "1 departman",
         "3 uzman ajan",
@@ -3588,7 +4090,7 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                 {/* TODO: Paddle onayı gelince openPaddleCheckout aktif et */}
                 {plan.priceId ? (
                   <a
-                    href="#bekleme-listesi"
+                    href="/agents/giris"
                     className={`w-full py-3 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] block cursor-pointer ${
                       plan.highlight
                         ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80]"
@@ -3599,7 +4101,7 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                   </a>
                 ) : (
                   <a
-                    href={plan.href || "#bekleme-listesi"}
+                    href={plan.href || "/agents/giris"}
                     className={`w-full py-3 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] block ${
                       plan.highlight
                         ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80]"
@@ -3761,36 +4263,25 @@ function WaitlistSection({ theme }: { theme: "dark" | "light" }) {
     setStatus("loading");
 
     try {
-      const res = await fetch("https://formspree.io/f/xpwzpdkz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email, source: "kai-agents", kvkk: true }),
+      // Supabase magic link — kullanıcı kaydı + giriş tek adımda
+      const { createClient } = await import("@/lib/supabase");
+      const supabase = createClient();
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          emailRedirectTo: `${window.location.origin}/api/auth/callback`,
+        },
       });
-      if (res.ok) {
-        setStatus("success");
-        setEmail("");
-        setKvkkAccepted(false);
+
+      if (error) {
+        setStatus("error");
       } else {
-        // Formspree hata verirse localStorage fallback + success göster
-        try {
-          const existing = JSON.parse(localStorage.getItem("kai-waitlist") || "[]");
-          existing.push({ email, date: new Date().toISOString() });
-          localStorage.setItem("kai-waitlist", JSON.stringify(existing));
-        } catch {}
         setStatus("success");
         setEmail("");
         setKvkkAccepted(false);
       }
     } catch {
-      // Network hatası — localStorage fallback
-      try {
-        const existing = JSON.parse(localStorage.getItem("kai-waitlist") || "[]");
-        existing.push({ email, date: new Date().toISOString() });
-        localStorage.setItem("kai-waitlist", JSON.stringify(existing));
-      } catch {}
-      setStatus("success");
-      setEmail("");
-      setKvkkAccepted(false);
+      setStatus("error");
     }
   };
 
@@ -3816,10 +4307,12 @@ function WaitlistSection({ theme }: { theme: "dark" | "light" }) {
         <FadeIn delay={0.1}>
           {status === "success" ? (
             <div className="bg-[#D8FB32]/10 border border-[#D8FB32]/30 rounded-2xl p-8">
-              <div className="text-4xl mb-3">🎉</div>
-              <h3 className="text-[#D8FB32] text-xl font-bold mb-2">Listeye alındın!</h3>
+              <div className="text-4xl mb-3">✉️</div>
+              <h3 className="text-[#D8FB32] text-xl font-bold mb-2">Giriş linki gönderildi!</h3>
               <p className={`${t.textDim} text-sm`}>
-                Kai Agents erken erişim açıldığında sana haber vereceğiz.
+                E-posta kutunu kontrol et — sana özel giriş linki gönderdik.
+                <br />
+                Linke tıklayarak Kai Agents dashboard'una erişebilirsin.
               </p>
             </div>
           ) : (
@@ -3896,6 +4389,106 @@ function WaitlistSection({ theme }: { theme: "dark" | "light" }) {
 }
 
 // ─────────────────────────────────────────────
+// FAQ SECTION
+// ─────────────────────────────────────────────
+function FAQSection({ theme }: { theme: "dark" | "light" }) {
+  const t = c(theme);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "Kai Agents tam olarak ne işe yarar?",
+      a: "Kai Agents, kod yazmadan kendi AI çalışan ekibinizi kurmanızı sağlayan bir orkestrasyon platformudur. Departmanlar oluşturur, uzman ajanlar atarsınız — hukuk, finans, pazarlama, yazılım gibi alanlarda. Ajanlar görevleri yerine getirir, birbirleriyle toplantılar yapar ve size raporlar sunar.",
+    },
+    {
+      q: "Yapay zeka konusunda bilgim yok, kullanabilir miyim?",
+      a: "Evet. Platform tamamen kodsuz (no-code) tasarlandı. Şablon departmanlardan başlayıp birkaç tıkla ilk ajanınızı oluşturabilirsiniz. Teknik bilgi gerektirmez.",
+    },
+    {
+      q: "BYOK ne demek? AI maliyetleri ayrı mı?",
+      a: "BYOK = Bring Your Own Key. Kendi OpenAI, Anthropic veya diğer AI sağlayıcılarının API anahtarınızı getirirsiniz. Kai Agents abonelik ücreti alır, AI kullanım maliyetleri kendi hesabınızdan düşer. Bu sayede şeffaf ve kontrol sizde.",
+    },
+    {
+      q: "Verilerim güvende mi?",
+      a: "Evet. Her kullanıcının verileri tamamen izole kasalarda saklanır. KVKK ve AB veri koruma yasalarına uyumluyuz. Ajanlarınıza verdiğiniz bilgiler başka kullanıcıların sistemlerine asla aktarılmaz. Hesap sildiğinizde tüm verileriniz 30 gün içinde kalıcı olarak silinir.",
+    },
+    {
+      q: "Hangi AI modellerini destekliyorsunuz?",
+      a: "Claude (Anthropic), GPT-4 (OpenAI), Gemini (Google), Llama (Meta) ve Mistral desteklenmektedir. Basit görevler için küçük modeller, kritik kararlar için güçlü modeller kullanarak maliyet optimizasyonu yapabilirsiniz.",
+    },
+    {
+      q: "Ücretsiz plan var mı?",
+      a: "Evet. Free plan ile 1 departman, 3 uzman ajan ve ayda 50 göreve kadar ücretsiz kullanabilirsiniz. Platformu keşfetmek için idealdir. İhtiyacınız arttıkça Starter, Pro veya Business planlarına yükseltebilirsiniz.",
+    },
+    {
+      q: "Ajanlar gerçekten birbirleriyle toplantı mı yapıyor?",
+      a: "Evet. Birimler arası toplantı özelliği ile farklı departmanlardaki ajanlar bir araya gelip bilgi paylaşır. Örneğin pazarlama ajanınız, finans ajanınızın bütçe kısıtlamalarını bilerek strateji önerir. Gerçek bir şirket koordinasyonu.",
+    },
+    {
+      q: "Ne zaman kullanmaya başlayabilirim?",
+      a: "Şu an beta erişim aşamasındayız. Bekleme listesine katılarak ilk 100 kullanıcı arasına girebilir ve özel fiyatlardan faydalanabilirsiniz. Lansman tarihimiz yakında duyurulacak.",
+    },
+  ];
+
+  return (
+    <section id="sss" className={`py-24 px-5 ${t.bg}`}>
+      <div className="max-w-3xl mx-auto">
+        <FadeIn>
+          <div className="text-center mb-14">
+            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+              SSS
+            </p>
+            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+              Merak Edilenler
+            </h2>
+          </div>
+        </FadeIn>
+
+        <div className="space-y-3">
+          {faqs.map((faq, i) => (
+            <FadeIn key={i} delay={i * 0.03}>
+              <div className={`${t.bgCard} border ${t.border} rounded-xl overflow-hidden transition-all duration-200 ${openIndex === i ? "border-[#D8FB32]/30" : ""}`}>
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left"
+                >
+                  <span className={`text-base font-semibold ${t.text} pr-4`}>{faq.q}</span>
+                  <motion.svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    animate={{ rotate: openIndex === i ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="shrink-0"
+                  >
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="#D8FB32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </motion.svg>
+                </button>
+                <AnimatePresence>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <div className={`px-6 pb-5 ${t.textMuted} text-sm leading-relaxed`}>
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────
 // CUSTOM FOOTER for Agents page (social links)
 // ─────────────────────────────────────────────
 function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
@@ -3963,11 +4556,9 @@ function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#D8FB32] flex items-center justify-center font-black text-sm text-[#0A0A0A]">
-              K
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/kai-carkli.svg" alt="The Kai" className="h-8 w-auto" />
             <span className={`font-bold ${t.text}`}>Kai Agents</span>
-            <span className={`text-xs ${t.textDimmer}`}>by The Kai</span>
           </div>
 
           {/* Social Links */}
@@ -4020,36 +4611,27 @@ export default function AgentsPage() {
 
   return (
     <>
+      <AgentsNavbar theme={theme} toggleTheme={toggleTheme} />
       <NotificationBar />
-      <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       <Hero theme={theme} />
-      <StatsBar theme={theme} />
-      <BeeHiveSection />
-      <TransformationSection theme={theme} />
-      <CinematicDivider theme={theme} />
-      <UseCaseShowcase theme={theme} />
-      <SuperpowerStatement theme={theme} />
       <TrustBar theme={theme} />
+      <BeeHiveSection />
       <HowItWorks theme={theme} />
-      <GlowDivider color="#A855F7" />
-      <SystemDeepDive theme={theme} />
-      <MethodComparison theme={theme} />
       <Features theme={theme} />
+      <SystemDeepDive theme={theme} />
       <DepartmentShowcase theme={theme} />
-      <LazySection minHeight="600px">
-        <ProfessionalReports theme={theme} />
-      </LazySection>
+      <MethodComparison theme={theme} />
       <LazySection minHeight="400px">
         <Testimonials theme={theme} />
       </LazySection>
       <LazySection minHeight="400px">
         <Pricing theme={theme} />
       </LazySection>
-      <UserResponsibilityNote />
       <LazySection minHeight="300px">
         <SecuritySection theme={theme} />
       </LazySection>
       <FounderStory theme={theme} />
+      <FAQSection theme={theme} />
       <WaitlistSection theme={theme} />
       <AgentsFooter theme={theme} />
     </>

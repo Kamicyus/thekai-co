@@ -48,7 +48,7 @@ export default function TechStack() {
         >
           {TECH_ITEMS.map((item) => (
             <StaggerItem key={item.key}>
-              <div className="group relative flex flex-col items-center justify-center text-center p-4 sm:p-6 lg:p-8 bg-[#141414] border border-[#1F2937] rounded-[16px] hover:border-[#D8FB32]/20 transition-all duration-300 hover:bg-[#1A1A1A]">
+              <div className="group relative flex flex-col items-center justify-center text-center p-4 sm:p-6 lg:p-8 bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[16px] hover:border-[#D8FB32]/30 transition-all duration-300 hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(216,251,50,0.08)]">
                 {/* Tiny pinwheel — fades in on hover */}
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                   <DecorativePinwheel
