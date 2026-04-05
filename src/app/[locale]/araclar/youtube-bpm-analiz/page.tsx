@@ -490,15 +490,48 @@ export default function YoutubeBpmAnalyzPage() {
 
   // ── Download WAV handler (creates a named anchor with a placeholder) ───
 
-  const handleDownloadHint = useCallback(() => {
-    if (!result) return;
-    const filename = buildWavFilename(result.title, result.bpm, result.key);
-    alert(
-      `Beat indirmek için aşağıdaki adımları takip et:\n\n` +
-        `1. yt-dlp ile sesi indir:\n   yt-dlp -x --audio-format wav "${url}"\n\n` +
-        `2. Dosyayı yeniden adlandır:\n   ${filename}\n\n` +
-        `💡 Terminal aracımızı kullanabilirsin:\n   ~/Agentlarım/araclar/beat_indir.sh "${url}"`
-    );
+  const [downloading, setDownloading] = useState(false);
+
+  const handleDownloadHint = useCallback(async () => {
+    if (!result || !url) return;
+    setDownloading(true);
+
+    try {
+      // Try cobalt API for audio extraction
+      const res = await fetch("https://api.cobalt.tools/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ url, audioFormat: "wav", isAudioOnly: true, aFormat: "wav" }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data.url) {
+          // Direct download link from cobalt
+          const a = document.createElement("a");
+          a.href = data.url;
+          a.download = buildWavFilename(result.title, result.bpm, result.key);
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setDownloading(false);
+          return;
+        }
+      }
+
+      // Fallback: open in new tab for manual download
+      const videoId = url.match(/(?:v=|youtu\.be\/|\/shorts\/)([a-zA-Z0-9_-]{11})/)?.[1];
+      if (videoId) {
+        window.open(`https://cobalt.tools/#${url}`, "_blank");
+      } else {
+        alert("Bu URL desteklenmiyor. Lütfen geçerli bir YouTube linki girin.");
+      }
+    } catch {
+      // Network error — open cobalt.tools as fallback
+      window.open(`https://cobalt.tools/`, "_blank");
+    } finally {
+      setDownloading(false);
+    }
   }, [result, url]);
 
   const isLoading =
@@ -757,14 +790,24 @@ export default function YoutubeBpmAnalyzPage() {
                 {/* Beat download hint */}
                 <button
                   onClick={handleDownloadHint}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 text-[#D8FB32] text-sm hover:bg-[#D8FB32]/15 hover:border-[#D8FB32]/40 transition-all font-medium"
+                  disabled={downloading}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 text-[#D8FB32] text-sm hover:bg-[#D8FB32]/15 hover:border-[#D8FB32]/40 transition-all font-medium disabled:opacity-50"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Beat İndir (WAV)
+                  {downloading ? (
+                    <>
+                      <svg className="animate-spin w-3.5 h-3.5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-20"/><path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg>
+                      İndiriliyor...
+                    </>
+                  ) : (
+                    <>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                      Beat İndir (WAV)
+                    </>
+                  )}
                 </button>
 
                 {/* Spotify link */}
