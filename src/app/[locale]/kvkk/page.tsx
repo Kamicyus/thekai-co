@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında The Kai / Kai Agents platformuna ilişkin aydınlatma metni.",
   alternates: {
     canonical: "/kvkk",
+    languages: {
+      tr: "https://thekai.co/kvkk",
+      en: "https://thekai.co/en/kvkk",
+    },
   },
   openGraph: {
     title: "KVKK Aydınlatma Metni — The Kai",

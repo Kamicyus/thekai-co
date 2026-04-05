@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -332,7 +333,7 @@ export default async function BlogPostPage({
             {/* Author */}
             <div className="flex items-center gap-3 mt-6 pt-6 border-t border-[#1F2937]">
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">
-                <img src="/images/kamer.png" alt="Kamer Can İzvermez" className="w-full h-full object-cover" />
+                <Image src="/images/kamer.png" alt="Kamer Can İzvermez" width={40} height={40} className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="text-[#E0E0E0] text-sm font-medium">

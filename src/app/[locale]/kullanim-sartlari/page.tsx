@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "Kai Agents platformu kullanım şartları. Hizmet kapsamı, ödeme koşulları, iptal politikası ve kullanıcı sorumlulukları.",
   alternates: {
     canonical: "/kullanim-sartlari",
+    languages: {
+      tr: "https://thekai.co/kullanim-sartlari",
+      en: "https://thekai.co/en/kullanim-sartlari",
+    },
   },
   openGraph: {
     title: "Kullanım Şartları — The Kai",

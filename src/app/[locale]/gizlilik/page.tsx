@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "The Kai gizlilik politikası. Veri toplama, AI ajan sistemi gizliliği, çerez kullanımı ve üçüncü taraf hizmetleri hakkında bilgilendirme.",
   alternates: {
     canonical: "/gizlilik",
+    languages: {
+      tr: "https://thekai.co/gizlilik",
+      en: "https://thekai.co/en/gizlilik",
+    },
   },
   openGraph: {
     title: "Gizlilik Politikası — The Kai",
