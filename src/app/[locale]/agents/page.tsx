@@ -326,7 +326,7 @@ function StatsBar({ theme }: { theme: "dark" | "light" }) {
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ delay: i * 0.05, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col items-center gap-1"
             >
               <span className="text-4xl sm:text-5xl font-black text-[#D8FB32] leading-none tabular-nums">
@@ -738,7 +738,7 @@ function CinematicDivider({ theme }: { theme: "dark" | "light" }) {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Big number */}
           <div className="flex items-center justify-center gap-4 sm:gap-8 mb-8 flex-wrap">
@@ -752,7 +752,7 @@ function CinematicDivider({ theme }: { theme: "dark" | "light" }) {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
+                transition={{ delay: i * 0.05, duration: 0.35 }}
                 className="text-center"
               >
                 <div className="text-4xl sm:text-7xl font-black text-[#D8FB32] leading-none">{item.num}</div>
@@ -1139,7 +1139,7 @@ function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
               initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
+              transition={{ delay: i * 0.04, duration: 0.35 }}
               className={`${t.bgCard} border ${t.border} rounded-2xl p-5 sm:p-6 hover:border-[#D8FB32]/30 transition-all duration-200 group`}
             >
               <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 sm:gap-6 items-center">
@@ -1158,7 +1158,7 @@ function HumanVsAI({ theme }: { theme: "dark" | "light" }) {
                     initial={{ scale: 0.5, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 + 0.3, type: "spring" }}
+                    transition={{ delay: i * 0.04 + 0.15, type: "spring" }}
                     className="bg-[#D8FB32] text-[#0A0A0A] text-xs font-black px-3 py-1 rounded-full"
                   >
                     {item.multiplier}
@@ -2611,7 +2611,7 @@ function ProgressBar({ value, max, color, label, showPercent = true }: { value: 
           initial={{ width: 0 }}
           whileInView={{ width: `${pct}%` }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         />
       </div>
     </div>
@@ -2630,7 +2630,7 @@ function MiniBarChart({ data, color }: { data: { label: string; value: number }[
             initial={{ height: 0 }}
             whileInView={{ height: `${(d.value / maxVal) * 100}%` }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
+            transition={{ duration: 0.35, delay: i * 0.05 }}
           />
           <span className="text-[9px] text-gray-500 leading-none">{d.label}</span>
         </div>
@@ -2656,7 +2656,7 @@ function DonutChart({ value, max, color, label, size = 80 }: { value: number; ma
             initial={{ strokeDashoffset: circumference }}
             whileInView={{ strokeDashoffset }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -2828,7 +2828,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
+                        transition={{ delay: i * 0.05 }}
                         className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
                         <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
@@ -2910,7 +2910,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
+                        transition={{ delay: i * 0.05 }}
                         className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
                         <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
@@ -3004,7 +3004,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
+                        transition={{ delay: i * 0.05 }}
                         className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
                         <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
@@ -3080,7 +3080,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
+                        transition={{ delay: i * 0.05 }}
                         className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
                         <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
@@ -3178,7 +3178,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
+                        transition={{ delay: i * 0.05 }}
                         className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
                         <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>

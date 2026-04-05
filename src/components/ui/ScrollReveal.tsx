@@ -44,8 +44,8 @@ export function ScaleOnScroll({
     target: ref,
     offset: ["start end", "center center"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   return (
     <motion.div ref={ref} style={{ scale, opacity }} className={className}>
@@ -71,7 +71,7 @@ export function RevealText({
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.9", "start 0.3"],
+    offset: ["start 0.9", "start 0.45"],
   });
 
   const words = text.split(" ");
@@ -268,7 +268,7 @@ export function GlowDivider({ color = "#D8FB32" }: { color?: string }) {
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       />
     </div>
   );
