@@ -3417,7 +3417,7 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
       price: "$49",
       period: "/ ay",
       highlight: false,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_STARTER_PRICE_ID || "pri_starter_placeholder",
+      priceId: process.env.NEXT_PUBLIC_PADDLE_STARTER_PRICE_ID || "pri_01kneqb0fy99hn58h3ntt00732m",
       href: null,
       features: [
         "3 departman",
@@ -3435,7 +3435,7 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
       period: "/ ay",
       highlight: true,
       badge: "En Popüler",
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PRO_PRICE_ID || "pri_pro_placeholder",
+      priceId: process.env.NEXT_PUBLIC_PADDLE_PRO_PRICE_ID || "pri_01kneq6ck9e8k0b4r8apzbbvfn",
       href: null,
       features: [
         "8 departman",
