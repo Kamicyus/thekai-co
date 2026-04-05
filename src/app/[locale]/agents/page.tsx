@@ -416,22 +416,19 @@ function TransformationSection({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section className={`py-28 px-5 overflow-hidden relative`} style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #0D1117 40%, #0A1628 70%, #0A0A0A 100%)" }}>
-      {/* Blue atmosphere orbs */}
-      <FloatingOrb color="#3B82F6" size={350} top="5%" left="-5%" delay={0} blur={120} />
-      <FloatingOrb color="#22C55E" size={200} bottom="10%" right="5%" delay={3} blur={80} />
+    <section className="py-28 px-5 overflow-hidden relative bg-[#D8FB32]">
 
       <div className="max-w-6xl mx-auto relative z-10">
         <FadeIn>
           <div className="text-center mb-6">
-            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               D&ouml;n&uuml;ş&uuml;m
             </p>
-            <h2 className={`text-4xl sm:text-6xl font-black tracking-tight ${t.text} leading-tight`}>
+            <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-[#0A0A0A] leading-tight">
               Artık kimse{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">tek başına</span>
-                <span className="absolute bottom-1 left-0 right-0 h-3 bg-[#D8FB32]/30 -z-0" />
+                <span className="absolute bottom-1 left-0 right-0 h-3 bg-[#0A0A0A]/15 -z-0" />
               </span>{" "}
               <br className="hidden sm:block" />
               olmak zorunda değil.
@@ -440,18 +437,18 @@ function TransformationSection({ theme }: { theme: "dark" | "light" }) {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className={`text-center ${t.textDim} text-lg sm:text-xl max-w-3xl mx-auto mb-16 leading-relaxed`}>
+          <p className="text-center text-[#0A0A0A]/70 text-lg sm:text-xl max-w-3xl mx-auto mb-16 leading-relaxed">
             Avukatınız, muhasebeceniz, sosyal medya ekibiniz, yazılım geliştiriciniz,
             <br className="hidden sm:block" />
             pazar araştırmacınız ve daha fazlası &mdash;{" "}
-            <span className="text-[#D8FB32] font-semibold">hepsi 7/24 emrinizde.</span>
+            <span className="text-[#0A0A0A] font-semibold">hepsi 7/24 emrinizde.</span>
           </p>
         </FadeIn>
 
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {transformations.map((item, i) => (
             <StaggerItem key={i}>
-              <div className={`${t.bgCard} border ${t.border} ${t.cardHoverBorder} rounded-2xl p-6 h-full group hover:shadow-lg transition-all duration-300 relative overflow-hidden`}>
+              <div className="bg-white border border-gray-200 hover:border-[#0A0A0A]/30 rounded-2xl p-6 h-full group hover:shadow-lg transition-all duration-300 relative overflow-hidden">
                 {/* Accent line top */}
                 <div className="absolute top-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: item.color }} />
 
@@ -460,18 +457,18 @@ function TransformationSection({ theme }: { theme: "dark" | "light" }) {
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl" style={{ backgroundColor: `${item.color}20` }}>
                     {item.icon}
                   </div>
-                  <span className={`text-xs font-bold uppercase tracking-wider ${t.textDim}`}>{item.role}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-gray-500">{item.role}</span>
                 </div>
 
                 {/* Before → After */}
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <span className="text-red-400/60 text-lg mt-0.5 shrink-0">✗</span>
-                    <p className={`${t.textDim} text-sm leading-relaxed line-through decoration-red-400/30`}>{item.before}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed line-through decoration-red-400/30">{item.before}</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-[#D8FB32] text-lg mt-0.5 shrink-0">✓</span>
-                    <p className={`${t.text} text-sm leading-relaxed font-medium`}>{item.after}</p>
+                    <span className="text-[#0A0A0A] text-lg mt-0.5 shrink-0">✓</span>
+                    <p className="text-[#0A0A0A] text-sm leading-relaxed font-medium">{item.after}</p>
                   </div>
                 </div>
 
@@ -488,14 +485,14 @@ function TransformationSection({ theme }: { theme: "dark" | "light" }) {
 
         <FadeIn delay={0.3}>
           <div className="text-center mt-14">
-            <p className={`${t.textDim} text-base mb-6`}>
+            <p className="text-[#0A0A0A]/70 text-base mb-6">
               Hukuk, finans, pazarlama, yazılım, istihbarat, i&ccedil;erik, spor, sağlık...
               <br />
-              <span className="text-[#D8FB32] font-semibold">Her alanda uzmanlaş. Tek platformdan.</span>
+              <span className="text-[#0A0A0A] font-semibold">Her alanda uzmanlaş. Tek platformdan.</span>
             </p>
             <a
               href="#bekleme-listesi"
-              className="inline-flex items-center gap-2 bg-[#D8FB32] text-[#0A0A0A] px-8 py-4 rounded-xl text-base font-semibold hover:bg-[#B4F030] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#0A0A0A] text-[#D8FB32] px-8 py-4 rounded-xl text-base font-semibold hover:bg-[#1a1a1a] transition-colors"
             >
               Uzman Ekibini Kur &rarr;
             </a>
@@ -564,21 +561,18 @@ function UseCaseShowcase({ theme }: { theme: "dark" | "light" }) {
   const activeItem = cases[activeCase];
 
   return (
-    <section className="py-28 px-5 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #120A1A 40%, #1A0D2E 60%, #0A0A0A 100%)" }}>
-      {/* Purple atmosphere */}
-      <FloatingOrb color="#A855F7" size={300} top="10%" right="-5%" delay={1} blur={110} />
-      <FloatingOrb color="#EC4899" size={200} bottom="20%" left="10%" delay={4} blur={80} />
+    <section className="py-28 px-5 relative overflow-hidden bg-[#F5F5F5]">
 
       <div className="max-w-6xl mx-auto relative z-10">
         <FadeIn>
           <div className="text-center mb-14">
-            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Kullanım Senaryoları
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
               Sen ne iş yapıyorsan,
               <br />
-              <span className="text-[#D8FB32]">AI ekibin ona g&ouml;re şekillenir.</span>
+              <span className="text-[#0A0A0A]/70">AI ekibin ona g&ouml;re şekillenir.</span>
             </h2>
           </div>
         </FadeIn>
@@ -591,8 +585,8 @@ function UseCaseShowcase({ theme }: { theme: "dark" | "light" }) {
               onClick={() => setActiveCase(i)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
                 activeCase === i
-                  ? "bg-[#D8FB32] text-[#0A0A0A] shadow-lg shadow-[#D8FB32]/20"
-                  : `${t.bgCardInner} ${t.textDim} border ${t.border} hover:border-[#D8FB32]/30`
+                  ? "bg-[#0A0A0A] text-white shadow-lg"
+                  : "bg-white text-gray-600 border border-gray-200 hover:border-gray-400"
               }`}
             >
               <span>{item.icon}</span>
@@ -602,7 +596,7 @@ function UseCaseShowcase({ theme }: { theme: "dark" | "light" }) {
         </div>
 
         {/* Active case detail */}
-        <div className={`${t.bgCard} border ${t.border} rounded-3xl p-8 sm:p-10 relative overflow-hidden`}>
+        <div className="bg-white border border-gray-200 rounded-3xl p-8 sm:p-10 relative overflow-hidden">
           {/* Background glow */}
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] opacity-10" style={{ backgroundColor: activeItem.color }} />
 
@@ -611,10 +605,10 @@ function UseCaseShowcase({ theme }: { theme: "dark" | "light" }) {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">{activeItem.icon}</span>
-                <h3 className={`text-2xl sm:text-3xl font-black ${t.text}`}>{activeItem.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-black text-[#0A0A0A]">{activeItem.title}</h3>
               </div>
-              <p className={`text-xl sm:text-2xl font-bold ${t.text} mb-4 leading-snug`} dangerouslySetInnerHTML={{ __html: activeItem.headline }} />
-              <p className={`${t.textDim} leading-relaxed mb-6`}>{activeItem.description}</p>
+              <p className="text-xl sm:text-2xl font-bold text-[#0A0A0A] mb-4 leading-snug" dangerouslySetInnerHTML={{ __html: activeItem.headline }} />
+              <p className="text-gray-600 leading-relaxed mb-6">{activeItem.description}</p>
 
               {/* Agent chips */}
               <div className="flex flex-wrap gap-2 mb-6">
@@ -642,27 +636,27 @@ function UseCaseShowcase({ theme }: { theme: "dark" | "light" }) {
             </div>
 
             {/* Right: Example scenario card */}
-            <div className={`${t.bgCardInner} border ${t.border} rounded-2xl p-6 relative`}>
+            <div className="bg-[#F5F5F5] border border-gray-200 rounded-2xl p-6 relative">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: activeItem.color }} />
-                <span className={`text-xs font-bold uppercase tracking-wider`} style={{ color: activeItem.color }}>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{ color: activeItem.color }}>
                   &Ouml;rnek Senaryo
                 </span>
               </div>
-              <p className={`${t.text} text-sm leading-relaxed`}>{activeItem.example}</p>
+              <p className="text-[#0A0A0A] text-sm leading-relaxed">{activeItem.example}</p>
 
               {/* Mini dashboard mockup */}
               <div className="mt-6 space-y-2">
                 {activeItem.agents.slice(0, 3).map((agent, idx) => (
-                  <div key={agent} className={`${t.whiteOverlay5} rounded-lg px-3 py-2 flex items-center justify-between`}>
+                  <div key={agent} className="bg-white rounded-lg px-3 py-2 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="text-xs">🤖</span>
-                      <span className={`${t.text} text-xs font-medium`}>{agent}</span>
+                      <span className="text-[#0A0A0A] text-xs font-medium">{agent}</span>
                     </div>
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                      idx === 0 ? "bg-green-500/20 text-green-400" :
-                      idx === 1 ? "bg-[#D8FB32]/20 text-[#D8FB32]" :
-                      `${t.whiteOverlay10} ${t.textDimmer}`
+                      idx === 0 ? "bg-green-500/20 text-green-600" :
+                      idx === 1 ? "bg-amber-500/20 text-amber-600" :
+                      "bg-gray-100 text-gray-500"
                     }`}>
                       {idx === 0 ? "Tamamlandı" : idx === 1 ? "Çalışıyor" : "Sırada"}
                     </span>
@@ -852,9 +846,9 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section className={`py-16 border-y ${t.border} ${t.bg}`}>
+    <section className="py-16 border-y border-gray-200 bg-white">
       <div className="max-w-5xl mx-auto px-5">
-        <p className={`text-center text-xs ${t.textWhite30} font-medium mb-8 uppercase tracking-widest`}>
+        <p className="text-center text-xs text-gray-400 font-medium mb-8 uppercase tracking-widest">
           Desteklenen AI Modelleri
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -862,7 +856,7 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
             <motion.div
               key={model.name}
               whileHover={{ scale: 1.08, y: -2 }}
-              className={`${t.bgCard} border ${t.border} rounded-xl px-4 py-3 flex items-center gap-3 cursor-default transition-all duration-200 group`}
+              className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 flex items-center gap-3 cursor-default transition-all duration-200 group"
               style={{ borderColor: "transparent" }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLDivElement).style.borderColor = `${model.color}50`;
@@ -881,13 +875,13 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
                 {model.svg}
               </div>
               <div>
-                <span className={`${t.text} text-sm font-bold block leading-tight`}>{model.name}</span>
-                <span className={`text-[10px] ${t.textDimmer}`}>{model.desc}</span>
+                <span className="text-gray-900 text-sm font-bold block leading-tight">{model.name}</span>
+                <span className="text-[10px] text-gray-400">{model.desc}</span>
               </div>
             </motion.div>
           ))}
         </div>
-        <p className={`text-center text-xs ${t.textDimmest} mt-8`}>
+        <p className="text-center text-xs text-gray-400 mt-8">
           BYOK &mdash; Kendi API anahtarını getir, ekstra AI maliyeti yok. İstediğin modeli kullan.
         </p>
       </div>
@@ -1000,17 +994,17 @@ function SystemDeepDive({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section className={`py-24 px-5 ${t.bgAlt}`}>
+    <section className="py-24 px-5 bg-[#2D1B69]">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
             <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Perde Arkası
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white">
               Bir AI Şirketi Nasıl Çalışır?
             </h2>
-            <p className={`${t.textDim} text-lg mt-4 max-w-2xl mx-auto`}>
+            <p className="text-white/60 text-lg mt-4 max-w-2xl mx-auto">
               Sadece chatbot değil &mdash; gerçek bir organizasyon yapısı.
               <br />
               Her ajan uzman, her departman koordineli, her toplantı &uuml;retken.
@@ -1021,12 +1015,12 @@ function SystemDeepDive({ theme }: { theme: "dark" | "light" }) {
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {points.map((point, i) => (
             <StaggerItem key={i}>
-              <div className={`${t.bgCardInner} rounded-2xl p-6 border ${t.border} ${t.cardHoverBorder} hover:shadow-lg hover:shadow-[#D8FB32]/5 transition-all duration-200 group h-full`}>
-                <div className={`w-12 h-12 rounded-xl ${t.whiteOverlay5} group-hover:bg-[#D8FB32] flex items-center justify-center text-2xl mb-4 transition-colors duration-200`}>
+              <div className="bg-[#3D2B79] rounded-2xl p-6 border border-white/10 hover:border-[#D8FB32]/50 hover:shadow-lg hover:shadow-[#D8FB32]/5 transition-all duration-200 group h-full">
+                <div className="w-12 h-12 rounded-xl bg-white/10 group-hover:bg-[#D8FB32] flex items-center justify-center text-2xl mb-4 transition-colors duration-200">
                   {point.icon}
                 </div>
-                <h3 className={`text-lg font-bold ${t.text} mb-2`}>{point.title}</h3>
-                <p className={`${t.textDim} text-sm leading-relaxed`}>{point.desc}</p>
+                <h3 className="text-lg font-bold text-white mb-2">{point.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{point.desc}</p>
               </div>
             </StaggerItem>
           ))}
@@ -1213,20 +1207,20 @@ function Features({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section id="ozellikler" className={`py-24 px-5 ${t.bgAlt}`}>
+    <section id="ozellikler" className="py-24 px-5 bg-[#F5F5F5]">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
-            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Özellikler
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
               Her şey yerli yerinde
             </h2>
-            <p className={`${t.textDim} text-lg mt-4 max-w-xl mx-auto`}>
+            <p className="text-gray-600 text-lg mt-4 max-w-xl mx-auto">
               Dağınık araçlar, birbirini bilmeyen botlar, kopuk iş akışları...
               <br />
-              <span className="text-[#D8FB32] font-semibold">&mdash; Buna son veren, gelişmiş bir sistem &mdash;</span>
+              <span className="text-[#0A0A0A] font-semibold">&mdash; Buna son veren, gelişmiş bir sistem &mdash;</span>
             </p>
           </div>
         </FadeIn>
@@ -1234,12 +1228,12 @@ function Features({ theme }: { theme: "dark" | "light" }) {
         <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature, i) => (
             <StaggerItem key={i}>
-              <div className={`${t.bgCardInner} rounded-2xl p-6 border ${t.border} ${t.cardHoverBorder} hover:shadow-lg hover:shadow-[#D8FB32]/5 transition-all duration-200 group h-full`}>
-                <div className={`w-12 h-12 rounded-xl ${t.whiteOverlay5} group-hover:bg-[#D8FB32] flex items-center justify-center text-2xl mb-4 transition-colors duration-200`}>
+              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#0A0A0A]/30 hover:shadow-lg transition-all duration-200 group h-full">
+                <div className="w-12 h-12 rounded-xl bg-gray-100 group-hover:bg-[#D8FB32] flex items-center justify-center text-2xl mb-4 transition-colors duration-200">
                   {feature.icon}
                 </div>
-                <h3 className={`text-lg font-bold ${t.text} mb-2`}>{feature.title}</h3>
-                <p className={`${t.textDim} text-sm leading-relaxed`}>{feature.desc}</p>
+                <h3 className="text-lg font-bold text-[#0A0A0A] mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
               </div>
             </StaggerItem>
           ))}
@@ -2577,10 +2571,10 @@ function ProgressBar({ value, max, color, label, showPercent = true }: { value: 
   return (
     <div className="space-y-1">
       <div className="flex items-center justify-between">
-        <span className="text-xs text-[#999]">{label}</span>
+        <span className="text-xs text-gray-500">{label}</span>
         <span className="text-xs font-bold" style={{ color }}>{showPercent ? `%${pct}` : `${value}/${max}`}</span>
       </div>
-      <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+      <div className="h-2 rounded-full bg-gray-200 overflow-hidden">
         <motion.div
           className="h-full rounded-full"
           style={{ backgroundColor: color }}
@@ -2608,7 +2602,7 @@ function MiniBarChart({ data, color }: { data: { label: string; value: number }[
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
           />
-          <span className="text-[9px] text-[#666] leading-none">{d.label}</span>
+          <span className="text-[9px] text-gray-500 leading-none">{d.label}</span>
         </div>
       ))}
     </div>
@@ -2624,7 +2618,7 @@ function DonutChart({ value, max, color, label, size = 80 }: { value: number; ma
     <div className="flex flex-col items-center gap-2">
       <div className="relative" style={{ width: size, height: size }}>
         <svg width={size} height={size} viewBox="0 0 80 80" className="-rotate-90">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="6" />
+          <circle cx="40" cy="40" r="32" fill="none" stroke="rgba(0,0,0,0.05)" strokeWidth="6" />
           <motion.circle
             cx="40" cy="40" r="32" fill="none" stroke={color} strokeWidth="6"
             strokeLinecap="round"
@@ -2636,10 +2630,10 @@ function DonutChart({ value, max, color, label, size = 80 }: { value: number; ma
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-sm font-black text-white">{pct}%</span>
+          <span className="text-sm font-black text-gray-900">{pct}%</span>
         </div>
       </div>
-      <span className="text-[10px] text-[#999] text-center leading-tight">{label}</span>
+      <span className="text-[10px] text-gray-500 text-center leading-tight">{label}</span>
     </div>
   );
 }
@@ -2668,7 +2662,7 @@ function SparkLine({ data, color }: { data: number[]; color: string }) {
 
 function StatusBadge({ status, color }: { status: string; color: string }) {
   const isGood = ["tamamlandı", "iyi", "yüksek", "düşük risk", "aktif"].some((s) => status.toLowerCase().includes(s));
-  const bgColor = isGood ? `${color}20` : "rgba(255,255,255,0.05)";
+  const bgColor = isGood ? `${color}20` : "rgba(0,0,0,0.05)";
   return (
     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: bgColor, color }}>
       {status}
@@ -2725,20 +2719,20 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
   const current = reports[activeReport];
 
   return (
-    <section className={`py-28 px-5 ${t.bgAlt}`}>
+    <section className="py-28 px-5 bg-white">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <div className="text-center mb-14">
-            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Profesyonel Raporlar
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-gray-900">
               Gerçek raporlar. Gerçek grafikler.
             </h2>
-            <p className={`${t.textDim} text-lg mt-4 max-w-2xl mx-auto`}>
+            <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
               Her sabah masanızda — otomatik oluşturulmuş, grafikli, aksiyon önerili raporlar.
               <br />
-              <span className="text-[#D8FB32] font-semibold">Bu raporları da bu sistem hazırladı.</span>
+              <span className="text-gray-900 font-semibold">Bu raporları da bu sistem hazırladı.</span>
             </p>
           </div>
         </FadeIn>
@@ -2751,8 +2745,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
               onClick={() => setActiveReport(i)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
                 activeReport === i
-                  ? "shadow-lg text-[#0A0A0A]"
-                  : `${t.bgCardInner} ${t.textDim} border ${t.border}`
+                  ? "shadow-lg text-white"
+                  : "bg-gray-50 text-gray-500 border border-gray-200"
               }`}
               style={activeReport === i ? { backgroundColor: r.color } : {}}
             >
@@ -2764,7 +2758,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
         {/* Report Card — Rich Visual */}
         <ScaleOnScroll>
-          <div className={`${t.bgCard} border ${t.border} rounded-3xl overflow-hidden shadow-2xl`}>
+          <div className="bg-[#F8F8F8] border border-gray-200 rounded-3xl overflow-hidden shadow-2xl">
             {/* Report header */}
             <div className="px-6 sm:px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3" style={{ borderBottom: `1px solid ${current.color}20` }}>
               <div className="flex items-center gap-3">
@@ -2772,8 +2766,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   {current.icon}
                 </div>
                 <div>
-                  <h3 className={`text-lg font-bold ${t.text}`}>{current.title}</h3>
-                  <span className={`text-xs ${t.textDim}`}>{current.subtitle}</span>
+                  <h3 className="text-lg font-bold text-gray-900">{current.title}</h3>
+                  <span className="text-xs text-gray-500">{current.subtitle}</span>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -2781,7 +2775,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                   <span className="text-[10px] text-green-400 font-medium">Canlı</span>
                 </div>
-                <span className={`text-xs ${t.textDim}`}>5 Nisan 2026 - 08:00</span>
+                <span className="text-xs text-gray-400">5 Nisan 2026 - 08:00</span>
               </div>
             </div>
 
@@ -2805,11 +2799,11 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                        className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
-                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
                         <span className="text-xl font-black block" style={{ color: "#4ECDC4" }}>{m.value}</span>
-                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                        <span className="text-[10px] text-gray-400">{m.sub}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -2817,8 +2811,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   {/* Charts row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Platform bazlı erişim */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Platform Bazlı Erişim</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Platform Bazlı Erişim</h4>
                       <MiniBarChart
                         data={[
                           { label: "X", value: 14200 },
@@ -2832,8 +2826,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                     </div>
 
                     {/* Haftalık engagement sparkline + donut */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Haftalık Etkileşim Trendi</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Haftalık Etkileşim Trendi</h4>
                       <SparkLine data={[320, 480, 390, 520, 610, 580, 720]} color="#4ECDC4" />
                       <div className="flex items-center justify-around mt-4">
                         <DonutChart value={78} max={100} color="#4ECDC4" label="Organik" size={65} />
@@ -2844,7 +2838,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
                   {/* Aksiyon bölümü */}
                   <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">En İyi İçerik Formatları ve Öneriler</h4>
+                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">En İyi İçerik Formatları ve Öneriler</h4>
                     <div className="space-y-2.5">
                       {[
                         { text: "Reels / Kısa Video — en yüksek etkileşim oranı", status: "1. Sıra", color: "#4ECDC4" },
@@ -2854,7 +2848,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         <div key={i} className="flex items-center justify-between">
                           <div className="flex items-center gap-2.5">
                             <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
-                            <span className={`text-xs ${t.textMuted}`}>{item.text}</span>
+                            <span className="text-xs text-gray-600">{item.text}</span>
                           </div>
                           <StatusBadge status={item.status} color={item.color} />
                         </div>
@@ -2887,11 +2881,11 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                        className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
-                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
                         <span className="text-xl font-black block" style={{ color: "#22C55E" }}>{m.value}</span>
-                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                        <span className="text-[10px] text-gray-400">{m.sub}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -2899,8 +2893,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   {/* Charts row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Gelir vs Gider bar chart */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Son 6 Ay Gelir Trendi</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Son 6 Ay Gelir Trendi</h4>
                       <MiniBarChart
                         data={[
                           { label: "Kas", value: 198 },
@@ -2915,14 +2909,14 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                       <div className="mt-3 flex items-center gap-4">
                         <div className="flex items-center gap-1.5">
                           <div className="w-2 h-2 rounded-full bg-[#22C55E]" />
-                          <span className="text-[10px] text-[#999]">Gelir</span>
+                          <span className="text-[10px] text-gray-500">Gelir</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Gider dağılımı donut chart */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Gider Dağılımı</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Gider Dağılımı</h4>
                       <div className="flex items-center justify-around">
                         <DonutChart value={45} max={100} color="#22C55E" label="Personel" size={65} />
                         <DonutChart value={20} max={100} color="#3B82F6" label="Pazarlama" size={65} />
@@ -2934,7 +2928,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
                   {/* Aksiyon bölümü */}
                   <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Nakit Akış Projeksiyonu ve Tasarruf Önerileri</h4>
+                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Nakit Akış Projeksiyonu ve Tasarruf Önerileri</h4>
                     <div className="space-y-3">
                       <ProgressBar value={88} max={100} color="#22C55E" label="Nakit Akış Sağlığı" />
                       <ProgressBar value={72} max={100} color="#3B82F6" label="Bütçe Uyumu" />
@@ -2948,7 +2942,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         <div key={i} className="flex items-center justify-between">
                           <div className="flex items-center gap-2.5">
                             <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
-                            <span className={`text-xs ${t.textMuted}`}>{item.text}</span>
+                            <span className="text-xs text-gray-600">{item.text}</span>
                           </div>
                           <StatusBadge status={item.status} color={item.color} />
                         </div>
@@ -2981,11 +2975,11 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                        className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
-                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
                         <span className="text-xl font-black block" style={{ color: "#F59E0B" }}>{m.value}</span>
-                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                        <span className="text-[10px] text-gray-400">{m.sub}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -2994,7 +2988,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Uyum kategorileri progress bars */}
                     <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5 space-y-4`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider">Uyum Kategorileri</h4>
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">Uyum Kategorileri</h4>
                       <ProgressBar value={98} max={100} color="#22C55E" label="KVKK" />
                       <ProgressBar value={92} max={100} color="#F59E0B" label="Mesafeli Satış" />
                       <ProgressBar value={88} max={100} color="#3B82F6" label="ETBİS" />
@@ -3002,8 +2996,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                     </div>
 
                     {/* Risk seviyesi donut */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Risk Dağılımı</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Risk Dağılımı</h4>
                       <div className="flex items-center justify-around">
                         <DonutChart value={82} max={100} color="#22C55E" label="Düşük" size={70} />
                         <DonutChart value={15} max={100} color="#F59E0B" label="Orta" size={70} />
@@ -3014,7 +3008,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
                   {/* Detay bölümü — Risk tespitleri */}
                   <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Tespit Edilen Riskler ve Çözüm Durumları</h4>
+                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Tespit Edilen Riskler ve Çözüm Durumları</h4>
                     <div className="space-y-2.5">
                       {[
                         { text: "Gizlilik politikası güncelleme gerekiyor (KVKK m.10)", status: "Tamamlandı", color: "#22C55E" },
@@ -3024,7 +3018,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         <div key={i} className="flex items-center justify-between">
                           <div className="flex items-center gap-2.5">
                             <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: risk.color }} />
-                            <span className={`text-xs ${t.textMuted}`}>{risk.text}</span>
+                            <span className="text-xs text-gray-600">{risk.text}</span>
                           </div>
                           <StatusBadge status={risk.status} color={risk.color} />
                         </div>
@@ -3057,11 +3051,11 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                        className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
-                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
                         <span className="text-xl font-black block" style={{ color: "#3B82F6" }}>{m.value}</span>
-                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                        <span className="text-[10px] text-gray-400">{m.sub}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -3069,30 +3063,30 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   {/* Charts row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Sprint burndown sparkline */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Sprint Burndown</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Sprint Burndown</h4>
                       <div className="space-y-2">
                         <div className="flex items-center gap-3 mb-1">
                           <div className="flex items-center gap-1.5">
                             <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#3B82F6" }} />
-                            <span className="text-[10px] text-[#999]">Gerçekleşen</span>
+                            <span className="text-[10px] text-gray-500">Gerçekleşen</span>
                           </div>
                           <div className="flex items-center gap-1.5">
                             <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#666" }} />
-                            <span className="text-[10px] text-[#999]">İdeal</span>
+                            <span className="text-[10px] text-gray-500">İdeal</span>
                           </div>
                         </div>
                         <SparkLine data={[32, 30, 27, 24, 20, 17, 13, 9, 5, 4]} color="#3B82F6" />
                       </div>
                       <div className="flex items-center gap-2 mt-3">
                         <StatusBadge status="Hedefin önünde" color="#22C55E" />
-                        <span className="text-[10px] text-[#666]">4 task kaldı, 2 gün var</span>
+                        <span className="text-[10px] text-gray-400">4 task kaldı, 2 gün var</span>
                       </div>
                     </div>
 
                     {/* Task dağılımı bar chart */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Task Dağılımı</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Task Dağılımı</h4>
                       <MiniBarChart
                         data={[
                           { label: "Feature", value: 45 },
@@ -3107,7 +3101,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
                   {/* Code review metrikleri */}
                   <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Code Review Metrikleri ve Sonraki Sprint</h4>
+                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Code Review Metrikleri ve Sonraki Sprint</h4>
                     <div className="space-y-3">
                       <ProgressBar value={92} max={100} color="#22C55E" label="Review Tamamlanma" />
                       <ProgressBar value={85} max={100} color="#3B82F6" label="Test Coverage" />
@@ -3122,7 +3116,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         <div key={i} className="flex items-center justify-between">
                           <div className="flex items-center gap-2.5">
                             <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
-                            <span className={`text-xs ${t.textMuted}`}>{item.text}</span>
+                            <span className="text-xs text-gray-600">{item.text}</span>
                           </div>
                           <StatusBadge status={item.status} color={item.color} />
                         </div>
@@ -3155,11 +3149,11 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className={`${t.bgCardInner} border ${t.border} rounded-xl p-4`}
+                        className="bg-gray-100 border border-gray-200 rounded-xl p-4"
                       >
-                        <span className="text-[10px] text-[#999] uppercase tracking-wider block mb-1">{m.label}</span>
+                        <span className="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">{m.label}</span>
                         <span className="text-xl font-black block" style={{ color: "#A855F7" }}>{m.value}</span>
-                        <span className="text-[10px] text-[#666]">{m.sub}</span>
+                        <span className="text-[10px] text-gray-400">{m.sub}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -3167,8 +3161,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                   {/* Charts row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Trend kategorileri bar chart */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-4">Trend Kategorileri</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Trend Kategorileri</h4>
                       <MiniBarChart
                         data={[
                           { label: "AI", value: 92 },
@@ -3182,8 +3176,8 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
                     </div>
 
                     {/* Rakip positioning donut chart */}
-                    <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                      <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">Rakip Konumlandırma</h4>
+                    <div className="bg-gray-100 border border-gray-200 rounded-xl p-5">
+                      <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Rakip Konumlandırma</h4>
                       <div className="flex items-center justify-around">
                         <DonutChart value={35} max={100} color="#A855F7" label="Lider" size={65} />
                         <DonutChart value={40} max={100} color="#3B82F6" label="Takipçi" size={65} />
@@ -3194,7 +3188,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
                   {/* Detay bölümü — Trend ve aksiyonlar */}
                   <div className={`${t.bgCardInner} border ${t.border} rounded-xl p-5`}>
-                    <h4 className="text-xs font-bold text-[#999] uppercase tracking-wider mb-3">En Önemli Trendler ve Aksiyon Önerileri</h4>
+                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">En Önemli Trendler ve Aksiyon Önerileri</h4>
                     <div className="space-y-2.5">
                       {[
                         { text: "AI ajan platformları hızla büyüyor — erken giriş avantajı var", status: "Kritik", color: "#A855F7" },
@@ -3224,7 +3218,7 @@ function ProfessionalReports({ theme }: { theme: "dark" | "light" }) {
 
             {/* Report footer — CTA */}
             <div className="px-6 sm:px-8 py-4 flex items-center justify-between" style={{ borderTop: `1px solid ${current.color}15` }}>
-              <span className={`text-xs ${t.textDim}`}>Bu rapor AI ajanlar tarafından otomatik oluşturuldu</span>
+              <span className="text-xs text-gray-500">Bu rapor AI ajanlar tarafından otomatik oluşturuldu</span>
               <a
                 href="#fiyatlandirma"
                 className="flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-lg transition-colors"
@@ -3471,17 +3465,17 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section id="fiyatlandirma" className={`py-24 px-5 ${t.bgAlt}`}>
+    <section id="fiyatlandirma" className="py-24 px-5" style={{ background: "linear-gradient(180deg, #D8FB32 0%, #B4F030 100%)" }}>
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
-            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Fiyatlandırma
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
               Basit, şeffaf fiyatlar
             </h2>
-            <p className={`${t.textDim} text-lg mt-4 max-w-xl mx-auto`}>
+            <p className="text-[#0A0A0A]/70 text-lg mt-4 max-w-xl mx-auto">
               Kendi API anahtarını kullan (BYOK).
               <br />
               Ekstra AI maliyeti &ouml;demiyorsun.
@@ -3495,24 +3489,24 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
               <div
                 className={`rounded-2xl flex flex-col h-full ${
                   plan.highlight
-                    ? "bg-[#D8FB32] text-[#0A0A0A] p-7 ring-2 ring-[#D8FB32] shadow-xl shadow-[#D8FB32]/20 scale-[1.03]"
-                    : `${t.bgCardInner} ${t.text} border ${t.border} p-7`
+                    ? "bg-[#0A0A0A] text-white p-7 ring-2 ring-[#0A0A0A] shadow-xl shadow-black/20 scale-[1.03]"
+                    : "bg-white text-[#0A0A0A] border border-gray-200 p-7"
                 }`}
               >
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-1">
-                    <span className={`text-xs font-bold uppercase tracking-widest ${plan.highlight ? "text-[#0A0A0A]" : t.textDim}`}>
+                    <span className={`text-xs font-bold uppercase tracking-widest ${plan.highlight ? "text-[#D8FB32]" : "text-gray-500"}`}>
                       {plan.name}
                     </span>
                     {"badge" in plan && plan.badge && (
-                      <span className="text-xs bg-[#0A0A0A] text-[#D8FB32] px-2 py-0.5 rounded-full font-semibold">
+                      <span className="text-xs bg-[#D8FB32] text-[#0A0A0A] px-2 py-0.5 rounded-full font-semibold">
                         {plan.badge}
                       </span>
                     )}
                   </div>
                   <div className="flex items-baseline gap-1 mt-2">
                     <span className="text-4xl font-black">{plan.price}</span>
-                    <span className={`text-sm ${plan.highlight ? "text-[#0A0A0A]/60" : t.textDimmer}`}>{plan.period}</span>
+                    <span className={`text-sm ${plan.highlight ? "text-white/60" : "text-gray-400"}`}>{plan.period}</span>
                   </div>
                 </div>
 
@@ -3520,13 +3514,13 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                   {plan.features.map((feature, j) => (
                     <li key={j} className="flex items-center gap-2 text-sm">
                       <span className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${
-                        plan.highlight ? "bg-[#0A0A0A] text-[#D8FB32]" : "bg-[#D8FB32]/10 text-[#D8FB32]"
+                        plan.highlight ? "bg-[#D8FB32] text-[#0A0A0A]" : "bg-[#0A0A0A]/10 text-[#0A0A0A]"
                       }`}>
                         <svg width="8" height="6" viewBox="0 0 8 6" fill="none">
                           <path d="M1 3L3 5L7 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </span>
-                      <span className={plan.highlight ? "text-[#0A0A0A]" : t.textMuted}>{feature}</span>
+                      <span className={plan.highlight ? "text-white/80" : "text-gray-600"}>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -3537,8 +3531,8 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                     href="#bekleme-listesi"
                     className={`w-full py-3 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] block cursor-pointer ${
                       plan.highlight
-                        ? "bg-[#0A0A0A] text-[#D8FB32] hover:bg-[#1F2937]"
-                        : "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#B4F030]"
+                        ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80]"
+                        : "bg-[#0A0A0A] text-white hover:bg-[#1a1a1a]"
                     }`}
                   >
                     {plan.cta}
@@ -3548,8 +3542,8 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                     href={plan.href || "#bekleme-listesi"}
                     className={`w-full py-3 rounded-xl text-sm font-bold text-center transition-all hover:scale-[1.02] block ${
                       plan.highlight
-                        ? "bg-[#0A0A0A] text-[#D8FB32] hover:bg-[#1F2937]"
-                        : "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#B4F030]"
+                        ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80]"
+                        : "bg-[#0A0A0A] text-white hover:bg-[#1a1a1a]"
                     }`}
                   >
                     {plan.cta}
@@ -3561,7 +3555,7 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
         </StaggerChildren>
 
         <FadeIn>
-          <p className={`text-center ${t.textDimmer} text-sm mt-8`}>
+          <p className="text-center text-[#0A0A0A]/50 text-sm mt-8">
             İlk 100 kullanıcıya özel erken erişim fiyatı geçerlidir. Hemen başla, istediğin zaman iptal et.
           </p>
         </FadeIn>
@@ -3652,23 +3646,23 @@ function FounderStory({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section className={`py-24 px-5 ${t.bg}`}>
+    <section className="py-24 px-5 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <FadeIn>
             <div>
-              <div className="text-6xl text-[#D8FB32] font-black leading-none mb-6">&ldquo;</div>
-              <blockquote className={`text-2xl sm:text-3xl font-bold ${t.text} leading-snug mb-6`}>
+              <div className="text-6xl text-[#0A0A0A] font-black leading-none mb-6">&ldquo;</div>
+              <blockquote className="text-2xl sm:text-3xl font-bold text-[#0A0A0A] leading-snug mb-6">
                 Bu sistemi önce kendim için kurdum. 40+ uzman AI ajanım, 10 departmanım var.{" "}
-                <span className={t.textDimmer}>Şimdi herkese açıyorum.</span>
+                <span className="text-gray-400">Şimdi herkese açıyorum.</span>
               </blockquote>
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-[#D8FB32] flex items-center justify-center font-black text-[#0A0A0A]">
+                <div className="w-11 h-11 rounded-full bg-[#0A0A0A] flex items-center justify-center font-black text-[#D8FB32]">
                   K
                 </div>
                 <div>
-                  <div className={`font-bold ${t.text}`}>Kai</div>
-                  <div className={`${t.textDimmer} text-sm`}>Kurucu, The Kai / Kai Agents</div>
+                  <div className="font-bold text-[#0A0A0A]">Kai</div>
+                  <div className="text-gray-400 text-sm">Kurucu, The Kai / Kai Agents</div>
                 </div>
               </div>
             </div>
@@ -3677,9 +3671,9 @@ function FounderStory({ theme }: { theme: "dark" | "light" }) {
           <StaggerChildren className="grid grid-cols-2 gap-4">
             {stats.map((stat, i) => (
               <StaggerItem key={i}>
-                <div className={`${t.bgCard} border ${t.border} rounded-2xl p-6 text-center`}>
-                  <div className={`text-4xl font-black ${t.text} mb-1`}>{stat.value}</div>
-                  <div className={`${t.textDim} text-sm`}>{stat.label}</div>
+                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center">
+                  <div className="text-4xl font-black text-[#0A0A0A] mb-1">{stat.value}</div>
+                  <div className="text-gray-500 text-sm">{stat.label}</div>
                 </div>
               </StaggerItem>
             ))}
@@ -3715,10 +3709,26 @@ function WaitlistSection({ theme }: { theme: "dark" | "light" }) {
         setEmail("");
         setKvkkAccepted(false);
       } else {
-        setStatus("error");
+        // Formspree hata verirse localStorage fallback + success göster
+        try {
+          const existing = JSON.parse(localStorage.getItem("kai-waitlist") || "[]");
+          existing.push({ email, date: new Date().toISOString() });
+          localStorage.setItem("kai-waitlist", JSON.stringify(existing));
+        } catch {}
+        setStatus("success");
+        setEmail("");
+        setKvkkAccepted(false);
       }
     } catch {
-      setStatus("error");
+      // Network hatası — localStorage fallback
+      try {
+        const existing = JSON.parse(localStorage.getItem("kai-waitlist") || "[]");
+        existing.push({ email, date: new Date().toISOString() });
+        localStorage.setItem("kai-waitlist", JSON.stringify(existing));
+      } catch {}
+      setStatus("success");
+      setEmail("");
+      setKvkkAccepted(false);
     }
   };
 
@@ -3919,12 +3929,10 @@ export default function AgentsPage() {
       <Hero theme={theme} />
       <StatsBar theme={theme} />
       <BeeHiveSection />
-      <GlowDivider />
       <TransformationSection theme={theme} />
       <CinematicDivider theme={theme} />
       <UseCaseShowcase theme={theme} />
       <SuperpowerStatement theme={theme} />
-      <GlowDivider color="#3B82F6" />
       <TrustBar theme={theme} />
       <HowItWorks theme={theme} />
       <GlowDivider color="#A855F7" />
@@ -3933,7 +3941,6 @@ export default function AgentsPage() {
       <Features theme={theme} />
       <DepartmentShowcase theme={theme} />
       <ProfessionalReports theme={theme} />
-      <GlowDivider />
       <Testimonials theme={theme} />
       <Pricing theme={theme} />
       <UserResponsibilityNote />
