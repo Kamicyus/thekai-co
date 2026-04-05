@@ -46,8 +46,16 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { name, icon, color, description } = body;
 
-  if (!name) {
-    return NextResponse.json({ error: "name is required" }, { status: 400 });
+  if (!name || typeof name !== "string" || name.trim().length === 0) {
+    return NextResponse.json({ error: "Name is required and must be a non-empty string" }, { status: 400 });
+  }
+
+  if (icon !== undefined && typeof icon !== "string") {
+    return NextResponse.json({ error: "Icon must be a string" }, { status: 400 });
+  }
+
+  if (color !== undefined && typeof color !== "string") {
+    return NextResponse.json({ error: "Color must be a string" }, { status: 400 });
   }
 
   const { data, error } = await supabase

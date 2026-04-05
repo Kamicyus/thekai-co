@@ -28,6 +28,9 @@ export async function GET(request: Request) {
     await supabase.auth.exchangeCodeForSession(code);
   }
 
-  // Redirect to dashboard after login
-  return NextResponse.redirect(`${origin}/tr/agents/dashboard`);
+  // Detect locale from referer or default to 'tr'
+  const referer = request.headers.get("referer") ?? "";
+  const locale = referer.includes("/en/") ? "en" : "tr";
+
+  return NextResponse.redirect(`${origin}/${locale}/agents/dashboard`);
 }

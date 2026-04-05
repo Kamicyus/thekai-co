@@ -159,6 +159,7 @@ export default function DashboardPage() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [tasks, setTasks] = useState<Task[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [showForm, setShowForm] = useState<"dept" | "agent" | "task" | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [selectedDept, setSelectedDept] = useState<string | null>(null);
@@ -177,13 +178,19 @@ export default function DashboardPage() {
   // Fetch
   const fetchData = useCallback(async () => {
     setDataLoading(true);
+    setError(null);
     try {
       const [dR, aR, tR] = await Promise.all([fetch("/api/departments"), fetch("/api/agents"), fetch("/api/tasks")]);
+      if (!dR.ok || !aR.ok || !tR.ok) {
+        throw new Error("API istekleri başarısız oldu");
+      }
       const [d, a, t] = await Promise.all([dR.json(), aR.json(), tR.json()]);
       if (Array.isArray(d)) setDepartments(d);
       if (Array.isArray(a)) setAgents(a);
       if (Array.isArray(t)) setTasks(t);
-    } catch { /* noop */ }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Veriler yüklenirken bir hata oluştu");
+    }
     setDataLoading(false);
   }, []);
 
@@ -283,6 +290,24 @@ export default function DashboardPage() {
             <StatCard label="Toplam Görev" value={tasks.length} icon={I.task} delay={0.15}/>
             <StatCard label="Tamamlanan" value={completed} icon={I.check} delay={0.2}/>
           </div>
+
+          {/* Error State */}
+          {error && (
+            <div className={`${cardCls} border-red-500/20 bg-red-500/[0.04] p-5 mb-8`}>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 text-lg">!</div>
+                  <div>
+                    <div className="text-sm font-semibold text-red-400">Hata</div>
+                    <div className="text-white/40 text-xs mt-0.5">{error}</div>
+                  </div>
+                </div>
+                <button onClick={fetchData} className="bg-red-500/10 text-red-400 border border-red-500/20 px-4 py-2 rounded-[10px] text-sm font-semibold hover:bg-red-500/20 transition-all">
+                  Tekrar Dene
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Quick Actions */}
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.4, ease }} className="mb-8">

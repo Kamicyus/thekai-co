@@ -48,11 +48,20 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { department_id, name, role, icon, description, capabilities } = body;
 
-  if (!department_id || !name || !role) {
-    return NextResponse.json(
-      { error: "department_id, name, and role are required" },
-      { status: 400 }
-    );
+  if (!department_id || typeof department_id !== "string" || department_id.trim().length === 0) {
+    return NextResponse.json({ error: "department_id is required and must be a non-empty string" }, { status: 400 });
+  }
+
+  if (!name || typeof name !== "string" || name.trim().length === 0) {
+    return NextResponse.json({ error: "name is required and must be a non-empty string" }, { status: 400 });
+  }
+
+  if (!role || typeof role !== "string" || role.trim().length === 0) {
+    return NextResponse.json({ error: "role is required and must be a non-empty string" }, { status: 400 });
+  }
+
+  if (capabilities !== undefined && !Array.isArray(capabilities)) {
+    return NextResponse.json({ error: "capabilities must be an array" }, { status: 400 });
   }
 
   const { data, error } = await supabase

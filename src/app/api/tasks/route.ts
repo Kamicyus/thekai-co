@@ -53,8 +53,16 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { agent_id, department_id, title, description } = body;
 
-  if (!title) {
-    return NextResponse.json({ error: "title is required" }, { status: 400 });
+  if (!title || typeof title !== "string" || title.trim().length === 0) {
+    return NextResponse.json({ error: "Title is required and must be a non-empty string" }, { status: 400 });
+  }
+
+  if (agent_id !== undefined && agent_id !== null && typeof agent_id !== "string") {
+    return NextResponse.json({ error: "agent_id must be a string" }, { status: 400 });
+  }
+
+  if (department_id !== undefined && department_id !== null && typeof department_id !== "string") {
+    return NextResponse.json({ error: "department_id must be a string" }, { status: 400 });
   }
 
   const { data, error } = await supabase

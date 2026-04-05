@@ -3350,7 +3350,6 @@ export const blogPosts: BlogPost[] = [
       "multi-agent orchestration",
       "yapay zeka ajan yönetimi",
     ],
-    coverImage: "/images/blog/ai-ajan-orkestrasyonu-nedir.jpg",
     content: [
       {
         type: "p",
@@ -3482,7 +3481,6 @@ export const blogPosts: BlogPost[] = [
       "AI şirket yönetimi",
       "no-code otomasyon Türkiye",
     ],
-    coverImage: "/images/blog/kod-yazmadan-ai-sirket-kurmak.jpg",
     content: [
       {
         type: "p",
@@ -3647,7 +3645,6 @@ export const blogPosts: BlogPost[] = [
       "AI hukuk asistanı",
       "dijital hukuk danışmanlık",
     ],
-    coverImage: "/images/blog/ai-avukat-hukuk-danismani.jpg",
     content: [
       {
         type: "p",
@@ -3799,7 +3796,6 @@ export const blogPosts: BlogPost[] = [
       "dijital pazarlama otomasyonu",
       "AI SEO stratejisi",
     ],
-    coverImage: "/images/blog/ai-pazarlama-muduru.jpg",
     content: [
       {
         type: "p",
@@ -3947,7 +3943,6 @@ export const blogPosts: BlogPost[] = [
       "Kai Agents farkı",
       "ChatGPT yetmiyor",
     ],
-    coverImage: "/images/blog/kai-agents-vs-chatgpt-farki.jpg",
     content: [
       {
         type: "p",

@@ -424,7 +424,7 @@ export default function YoutubeBpmAnalyzPage() {
     }
 
     // ── 5. Lokal BPM API (yt-dlp + librosa ile gerçek ses analizi) ─────
-    if (!found || bpm === null) {
+    if (process.env.NODE_ENV === "development" && (!found || bpm === null)) {
       try {
         const localRes = await fetch("http://localhost:5555/analyze", {
           method: "POST",
