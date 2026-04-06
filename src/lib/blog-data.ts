@@ -3799,7 +3799,7 @@ export const blogPosts: BlogPost[] = [
       "dijital pazarlama otomasyonu",
       "AI SEO stratejisi",
     ],
-    coverImage: "/images/blog/ai-pazarlama-muduru.svg",
+    coverImage: "/images/blog/ai-pazarlama-muduru.jpg",
     content: [
       {
         type: "p",
