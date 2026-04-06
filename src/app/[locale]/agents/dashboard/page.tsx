@@ -18,6 +18,15 @@ const cardCls = "bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rou
 const DEPT_ICONS = ["🏢", "💻", "🎨", "📊", "🎵", "📢", "🔧", "🧠", "🎯", "📦", "🔬", "🛡️"];
 const DEPT_COLORS = ["#D8FB32", "#3B82F6", "#A855F7", "#F97316", "#EF4444", "#06B6D4", "#EC4899", "#10B981"];
 
+const TEMPLATES = [
+  { name: "Pazarlama", icon: "📢", color: "#4ECDC4", desc: "Sosyal medya, SEO, içerik, reklam", agents: ["SM Direktörü", "İçerik Uzmanı", "SEO Analisti"] },
+  { name: "Hukuk", icon: "⚖️", color: "#FF6B6B", desc: "Sözleşme, KVKK, telif, marka", agents: ["Avukat Ajanı", "KVKK Uzmanı"] },
+  { name: "Finans", icon: "💰", color: "#22C55E", desc: "Muhasebe, bütçe, vergi, raporlama", agents: ["CFO Ajanı", "Muhasebeci"] },
+  { name: "Yazılım", icon: "💻", color: "#3B82F6", desc: "Geliştirme, test, deployment", agents: ["Full-Stack Dev", "QA Tester"] },
+  { name: "Müzik", icon: "🎵", color: "#A855F7", desc: "Prodüksiyon, vokal, dağıtım", agents: ["Prodüktör", "Vokal Koçu"] },
+  { name: "İçerik", icon: "✍️", color: "#F59E0B", desc: "Blog, video, sosyal medya içeriği", agents: ["İçerik Yazarı", "Video Editör"] },
+];
+
 /* ── Helpers ───────────────────────────────────── */
 function formatTimeAgo(dateStr: string, now: number) {
   const diff = now - new Date(dateStr).getTime();
@@ -224,11 +233,39 @@ export default function DashboardPage() {
     setSubmitting(false);
   };
 
+  // Template creation
+  const [creatingTemplate, setCreatingTemplate] = useState<string | null>(null);
+
+  const createFromTemplate = async (tpl: typeof TEMPLATES[number]) => {
+    setCreatingTemplate(tpl.name);
+    try {
+      const deptRes = await fetch("/api/departments", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: tpl.name, icon: tpl.icon, color: tpl.color, description: tpl.desc }),
+      });
+      if (!deptRes.ok) throw new Error("Departman oluşturulamadı");
+      const dept = await deptRes.json();
+      const deptId = dept.id;
+      await Promise.all(
+        tpl.agents.map((agentName) =>
+          fetch("/api/agents", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ department_id: deptId, name: agentName, role: "Uzman Ajan", icon: "🤖" }),
+          })
+        )
+      );
+      await fetchData();
+    } catch { /* noop */ }
+    setCreatingTemplate(null);
+  };
+
   // Derived
   const completed = tasks.filter((t) => t.status === "completed").length;
   const filteredAgents = selectedDept ? agents.filter((a) => a.department_id === selectedDept) : agents;
   const selDeptData = departments.find((d) => d.id === selectedDept);
   const recent = tasks.slice(0, 10);
+  const existingNames = useMemo(() => new Set(departments.map((d) => d.name)), [departments]);
+  const availableTemplates = TEMPLATES.filter((t) => !existingNames.has(t.name));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const now = useMemo(() => Date.now(), [tasks]);
 
@@ -351,11 +388,53 @@ export default function DashboardPage() {
                   <span className="text-[#D8FB32]">{I.dept}</span> Departmanlar {dataLoading && <Spinner s={14}/>}
                 </h2>
                 {departments.length === 0 && !dataLoading ? (
-                  <div className={`${cardCls} border-dashed p-10 text-center`}>
-                    <div className="text-3xl mb-3">🏗️</div>
-                    <p className="text-white/50 text-sm font-medium mb-1">Henüz departman yok</p>
-                    <p className="text-white/30 text-xs">İlk departmanını oluştur, ajanlarını ata, görevler ver.</p>
-                    <button onClick={() => openForm("dept")} className="mt-4 text-[#D8FB32] text-xs font-semibold hover:underline">+ Departman Oluştur</button>
+                  <div className="space-y-6">
+                    <div className={`${cardCls} border-dashed p-10 text-center`}>
+                      <div className="text-3xl mb-3">🏗️</div>
+                      <p className="text-white/50 text-sm font-medium mb-1">Henüz departman yok</p>
+                      <p className="text-white/30 text-xs">İlk departmanını oluştur, ajanlarını ata, görevler ver.</p>
+                      <button onClick={() => openForm("dept")} className="mt-4 text-[#D8FB32] text-xs font-semibold hover:underline">+ Departman Oluştur</button>
+                    </div>
+
+                    {/* Ready Templates */}
+                    <div>
+                      <h3 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
+                        <span className="text-[#D8FB32]">⚡</span> Hazır Şablonlar
+                        <span className="text-white/30 text-xs font-normal">— 1 tıkla kur</span>
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {availableTemplates.map((tpl, i) => {
+                          const isCreating = creatingTemplate === tpl.name;
+                          return (
+                            <motion.div key={tpl.name} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: 0.1 + i * 0.06, duration: 0.35, ease }}
+                              className="group bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-xl p-4 transition-all duration-300"
+                              whileHover={{ borderColor: `${tpl.color}50` }}>
+                              <div className="flex items-start gap-3">
+                                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-lg shrink-0"
+                                  style={{ background: `${tpl.color}15`, border: `1px solid ${tpl.color}30` }}>
+                                  {tpl.icon}
+                                </div>
+                                <div className="min-w-0 flex-1">
+                                  <div className="text-sm font-semibold text-white">{tpl.name}</div>
+                                  <div className="text-white/30 text-xs mt-0.5">{tpl.desc}</div>
+                                  <div className="text-white/20 text-[10px] mt-1.5">{tpl.agents.length} ajan: {tpl.agents.join(", ")}</div>
+                                </div>
+                              </div>
+                              <button onClick={() => !isCreating && createFromTemplate(tpl)} disabled={isCreating || creatingTemplate !== null}
+                                className="mt-3 w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-300 disabled:opacity-40"
+                                style={{
+                                  background: isCreating ? `${tpl.color}20` : `${tpl.color}10`,
+                                  color: tpl.color,
+                                  border: `1px solid ${tpl.color}25`,
+                                }}>
+                                {isCreating ? <><Spinner s={12}/> Kuruluyor...</> : <>Kur →</>}
+                              </button>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
