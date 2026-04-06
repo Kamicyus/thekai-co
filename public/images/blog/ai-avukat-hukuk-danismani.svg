@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#0d0d20"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#D8FB32" opacity="0.06"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Scales of justice -->
+  <!-- Center pillar -->
+  <line x1="600" y1="150" x2="600" y2="450" stroke="#D8FB32" stroke-width="2" opacity="0.6"/>
+  <!-- Balance beam -->
+  <line x1="400" y1="230" x2="800" y2="230" stroke="#D8FB32" stroke-width="2" opacity="0.8"/>
+  <!-- Left plate -->
+  <path d="M370,270 Q400,310 430,270" fill="none" stroke="#A855F7" stroke-width="1.5" opacity="0.7"/>
+  <line x1="400" y1="230" x2="370" y2="270" stroke="#A855F7" stroke-width="1" opacity="0.5"/>
+  <line x1="400" y1="230" x2="430" y2="270" stroke="#A855F7" stroke-width="1" opacity="0.5"/>
+  <!-- Right plate -->
+  <path d="M770,280 Q800,320 830,280" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.7"/>
+  <line x1="800" y1="230" x2="770" y2="280" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  <line x1="800" y1="230" x2="830" y2="280" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  <!-- AI circuit pattern on right plate -->
+  <circle cx="800" cy="260" r="8" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+  <circle cx="800" cy="260" r="3" fill="#3B82F6" opacity="0.3"/>
+  <!-- Triangle top -->
+  <polygon points="600,150 585,175 615,175" fill="#D8FB32" opacity="0.2" stroke="#D8FB32" stroke-width="1"/>
+  <!-- Base platform -->
+  <rect x="550" y="450" width="100" height="8" rx="4" fill="#D8FB32" opacity="0.15"/>
+  <!-- Decorative lines -->
+  <line x1="200" y1="400" x2="350" y2="400" stroke="#D8FB32" stroke-width="0.5" opacity="0.1"/>
+  <line x1="850" y1="400" x2="1000" y2="400" stroke="#D8FB32" stroke-width="0.5" opacity="0.1"/>
+  <!-- kai branding -->
+  <circle cx="1150" cy="580" r="20" fill="#D8FB32" opacity="0.12"/>
+</svg>

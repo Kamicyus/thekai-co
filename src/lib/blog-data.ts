@@ -3350,6 +3350,7 @@ export const blogPosts: BlogPost[] = [
       "multi-agent orchestration",
       "yapay zeka ajan yönetimi",
     ],
+    coverImage: "/images/blog/ai-ajan-orkestrasyonu-nedir.svg",
     content: [
       {
         type: "p",
@@ -3481,6 +3482,7 @@ export const blogPosts: BlogPost[] = [
       "AI şirket yönetimi",
       "no-code otomasyon Türkiye",
     ],
+    coverImage: "/images/blog/kod-yazmadan-ai-sirket-kurmak.svg",
     content: [
       {
         type: "p",
@@ -3645,6 +3647,7 @@ export const blogPosts: BlogPost[] = [
       "AI hukuk asistanı",
       "dijital hukuk danışmanlık",
     ],
+    coverImage: "/images/blog/ai-avukat-hukuk-danismani.svg",
     content: [
       {
         type: "p",
@@ -3796,6 +3799,7 @@ export const blogPosts: BlogPost[] = [
       "dijital pazarlama otomasyonu",
       "AI SEO stratejisi",
     ],
+    coverImage: "/images/blog/ai-pazarlama-muduru.svg",
     content: [
       {
         type: "p",
@@ -3943,6 +3947,7 @@ export const blogPosts: BlogPost[] = [
       "Kai Agents farkı",
       "ChatGPT yetmiyor",
     ],
+    coverImage: "/images/blog/kai-agents-vs-chatgpt-farki.svg",
     content: [
       {
         type: "p",
@@ -4093,6 +4098,7 @@ export const blogPosts: BlogPost[] = [
       "freelancer verimlilik",
       "AI ile freelance",
     ],
+    coverImage: "/images/blog/ai-ajan-freelancerlar-icin.svg",
     content: [
       {
         type: "p",
@@ -4243,6 +4249,7 @@ export const blogPosts: BlogPost[] = [
       "ajans ölçeklendirme",
       "sosyal medya ajans AI",
     ],
+    coverImage: "/images/blog/ai-ajan-dijital-ajanslar-icin.svg",
     content: [
       {
         type: "p",
@@ -4391,6 +4398,7 @@ export const blogPosts: BlogPost[] = [
       "yapay zeka müşteri destek",
       "e-ticaret chatbot",
     ],
+    coverImage: "/images/blog/ai-ajan-e-ticaret-icin.svg",
     content: [
       {
         type: "p",
@@ -4521,6 +4529,7 @@ export const blogPosts: BlogPost[] = [
       "yapay zeka startup",
       "lean startup AI",
     ],
+    coverImage: "/images/blog/ai-ajan-startuplar-icin.svg",
     content: [
       {
         type: "p",
@@ -4651,6 +4660,7 @@ export const blogPosts: BlogPost[] = [
       "AI müzik pazarlama",
       "müzisyen yapay zeka",
     ],
+    coverImage: "/images/blog/ai-ajan-muzisyenler-icin.svg",
     content: [
       {
         type: "p",
@@ -4772,6 +4782,7 @@ export const blogPosts: BlogPost[] = [
       "Instagram AI yönetim",
       "content creator yapay zeka",
     ],
+    coverImage: "/images/blog/ai-ajan-icerik-ureticileri-icin.svg",
     content: [
       {
         type: "p",
@@ -4889,6 +4900,7 @@ export const blogPosts: BlogPost[] = [
       "yapay zeka hukuk",
       "legal tech Türkiye",
     ],
+    coverImage: "/images/blog/ai-ajan-avukatlar-icin.svg",
     content: [
       {
         type: "p",
@@ -5009,6 +5021,7 @@ export const blogPosts: BlogPost[] = [
       "muhasebe otomasyon",
       "e-fatura yapay zeka",
     ],
+    coverImage: "/images/blog/ai-ajan-muhasebeciler-icin.svg",
     content: [
       {
         type: "p",
@@ -5126,6 +5139,7 @@ export const blogPosts: BlogPost[] = [
       "emlak piyasa analizi AI",
       "gayrimenkul CRM otomasyon",
     ],
+    coverImage: "/images/blog/ai-ajan-gayrimenkul-icin.svg",
     content: [
       {
         type: "p",
@@ -5242,6 +5256,7 @@ export const blogPosts: BlogPost[] = [
       "eğitim teknolojisi",
       "eğitimci AI asistan",
     ],
+    coverImage: "/images/blog/ai-ajan-egitimciler-icin.svg",
     content: [
       {
         type: "p",

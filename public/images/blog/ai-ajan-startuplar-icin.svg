@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#0d0d20"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#D8FB32" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#D8FB32" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#D8FB32" opacity="0.06"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Rocket body -->
+  <polygon points="600,120 560,320 640,320" fill="none" stroke="#D8FB32" stroke-width="2" opacity="0.8"/>
+  <!-- Rocket nose cone -->
+  <path d="M575,240 Q600,120 625,240" fill="#D8FB32" opacity="0.06"/>
+  <!-- Rocket fins -->
+  <polygon points="560,320 520,380 560,300" fill="none" stroke="#A855F7" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="640,320 680,380 640,300" fill="none" stroke="#A855F7" stroke-width="1.5" opacity="0.5"/>
+  <!-- Flame/exhaust -->
+  <path d="M570,320 Q600,430 630,320" fill="url(#flame)" opacity="0.3"/>
+  <path d="M580,320 Q600,400 620,320" fill="#D8FB32" opacity="0.1"/>
+  <!-- Seed/sprout element bottom-left -->
+  <circle cx="320" cy="420" r="20" fill="none" stroke="#D8FB32" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="320" cy="420" r="6" fill="#D8FB32" opacity="0.15"/>
+  <path d="M320,400 Q330,370 350,360" fill="none" stroke="#D8FB32" stroke-width="1" opacity="0.3"/>
+  <path d="M320,400 Q310,370 290,360" fill="none" stroke="#D8FB32" stroke-width="1" opacity="0.3"/>
+  <!-- Stars -->
+  <circle cx="800" cy="200" r="2" fill="#D8FB32" opacity="0.4"/>
+  <circle cx="400" cy="160" r="2" fill="#A855F7" opacity="0.3"/>
+  <circle cx="900" cy="300" r="1.5" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="350" cy="280" r="1.5" fill="#D8FB32" opacity="0.2"/>
+  <circle cx="850" cy="400" r="2" fill="#D8FB32" opacity="0.25"/>
+  <!-- Orbit ring -->
+  <ellipse cx="600" cy="315" rx="280" ry="60" fill="none" stroke="#D8FB32" stroke-width="0.5" opacity="0.1" stroke-dasharray="8 6"/>
+  <!-- kai branding -->
+  <circle cx="1150" cy="580" r="20" fill="#D8FB32" opacity="0.12"/>
+</svg>

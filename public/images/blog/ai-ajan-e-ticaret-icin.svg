@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#0d0d20"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#D8FB32" opacity="0.06"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Shopping cart -->
+  <path d="M440,350 L480,220 L780,220 L740,350 Z" fill="none" stroke="#D8FB32" stroke-width="2" opacity="0.7"/>
+  <!-- Cart handle -->
+  <path d="M440,350 L400,380 L380,380" fill="none" stroke="#D8FB32" stroke-width="2" opacity="0.5"/>
+  <!-- Cart wheels -->
+  <circle cx="490" cy="380" r="14" fill="none" stroke="#D8FB32" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="700" cy="380" r="14" fill="none" stroke="#D8FB32" stroke-width="1.5" opacity="0.5"/>
+  <!-- Items in cart (abstract) -->
+  <rect x="510" y="250" width="50" height="50" rx="4" fill="#A855F7" opacity="0.12" stroke="#A855F7" stroke-width="1"/>
+  <rect x="580" y="260" width="40" height="40" rx="4" fill="#3B82F6" opacity="0.12" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="640" y="250" width="50" height="50" rx="4" fill="#D8FB32" opacity="0.08" stroke="#D8FB32" stroke-width="1"/>
+  <!-- AI sparkle/circuit element top-right -->
+  <circle cx="850" cy="200" r="40" fill="none" stroke="#D8FB32" stroke-width="1" opacity="0.2" stroke-dasharray="6 4"/>
+  <circle cx="850" cy="200" r="12" fill="#D8FB32" opacity="0.1"/>
+  <line x1="850" y1="160" x2="850" y2="150" stroke="#D8FB32" stroke-width="1" opacity="0.3"/>
+  <line x1="890" y1="200" x2="900" y2="200" stroke="#D8FB32" stroke-width="1" opacity="0.3"/>
+  <line x1="850" y1="240" x2="850" y2="250" stroke="#D8FB32" stroke-width="1" opacity="0.3"/>
+  <line x1="810" y1="200" x2="800" y2="200" stroke="#D8FB32" stroke-width="1" opacity="0.3"/>
+  <!-- Floating price tags -->
+  <rect x="300" y="200" width="60" height="24" rx="4" fill="none" stroke="#D8FB32" stroke-width="0.8" opacity="0.2"/>
+  <rect x="880" y="350" width="60" height="24" rx="4" fill="none" stroke="#A855F7" stroke-width="0.8" opacity="0.2"/>
+  <!-- kai branding -->
+  <circle cx="1150" cy="580" r="20" fill="#D8FB32" opacity="0.12"/>
+</svg>

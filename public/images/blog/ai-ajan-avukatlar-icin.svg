@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#0d0d20"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#D8FB32" opacity="0.06"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Legal document -->
+  <rect x="440" y="140" width="240" height="320" rx="4" fill="none" stroke="#D8FB32" stroke-width="1.5" opacity="0.5"/>
+  <!-- Document lines -->
+  <line x1="470" y1="190" x2="650" y2="190" stroke="#D8FB32" stroke-width="1" opacity="0.15"/>
+  <line x1="470" y1="220" x2="630" y2="220" stroke="#D8FB32" stroke-width="1" opacity="0.12"/>
+  <line x1="470" y1="250" x2="650" y2="250" stroke="#D8FB32" stroke-width="1" opacity="0.15"/>
+  <line x1="470" y1="280" x2="620" y2="280" stroke="#D8FB32" stroke-width="1" opacity="0.1"/>
+  <line x1="470" y1="310" x2="650" y2="310" stroke="#D8FB32" stroke-width="1" opacity="0.12"/>
+  <line x1="470" y1="340" x2="600" y2="340" stroke="#D8FB32" stroke-width="1" opacity="0.1"/>
+  <line x1="470" y1="370" x2="640" y2="370" stroke="#D8FB32" stroke-width="1" opacity="0.12"/>
+  <!-- Shield overlay -->
+  <path d="M780,200 L780,340 Q780,420 830,440 Q880,420 880,340 L880,200 Z" fill="none" stroke="#A855F7" stroke-width="2" opacity="0.6"/>
+  <path d="M780,200 L880,200 L880,240 L780,240 Z" fill="#A855F7" opacity="0.06"/>
+  <!-- Shield checkmark -->
+  <polyline points="810,320 828,345 860,290" fill="none" stroke="#D8FB32" stroke-width="2" opacity="0.5"/>
+  <!-- Seal/stamp on document -->
+  <circle cx="620" cy="420" r="25" fill="none" stroke="#D8FB32" stroke-width="1" opacity="0.25"/>
+  <circle cx="620" cy="420" r="12" fill="#D8FB32" opacity="0.08"/>
+  <!-- Decorative corners -->
+  <path d="M200,160 L200,130 L230,130" fill="none" stroke="#D8FB32" stroke-width="0.8" opacity="0.15"/>
+  <path d="M1000,470 L1000,500 L970,500" fill="none" stroke="#D8FB32" stroke-width="0.8" opacity="0.15"/>
+  <!-- kai branding -->
+  <circle cx="1150" cy="580" r="20" fill="#D8FB32" opacity="0.12"/>
+</svg>
