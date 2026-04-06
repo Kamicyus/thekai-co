@@ -48,27 +48,28 @@ export default function BlogPage() {
               className="group bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-[20px] overflow-hidden hover:border-[#D8FB32]/30 hover:shadow-[0_8px_32px_rgba(216,251,50,0.06)] transition-all duration-300 flex flex-col"
             >
               {/* Cover Image or Gradient Placeholder */}
-              <div className="relative w-full aspect-[1200/630] overflow-hidden">
-                {post.coverImage ? (
-                  <>
-                    <img
-                      src={post.coverImage}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).nextElementSibling?.classList.remove("hidden"); }}
-                    />
-                    <div className="hidden absolute inset-0 bg-gradient-to-br from-[#D8FB32]/20 via-[#1a1a2e] to-[#0A0A0A] flex items-center justify-center">
-                      <span className="text-4xl opacity-40">📝</span>
+              {post.coverImage ? (
+                <div className="relative w-full aspect-[1200/630] overflow-hidden">
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60" />
+                </div>
+              ) : (
+                <div className="relative w-full aspect-[1200/630] overflow-hidden bg-gradient-to-br from-[#D8FB32]/10 via-[#0A0A0A] to-[#1a0f30] flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-16 h-16 rounded-2xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 flex items-center justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/>
+                      </svg>
                     </div>
-                  </>
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#D8FB32]/20 via-[#1a1a2e] to-[#0A0A0A] flex items-center justify-center">
-                    <span className="text-4xl opacity-40">📝</span>
+                    <span className="text-white/20 text-xs font-medium">Blog</span>
                   </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-60" />
-              </div>
+                </div>
+              )}
 
               <div className="p-6 sm:p-8 flex flex-col flex-1">
               {/* Meta */}
