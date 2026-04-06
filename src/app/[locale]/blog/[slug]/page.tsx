@@ -353,6 +353,7 @@ export default async function BlogPostPage({
                 src={post.coverImage}
                 alt={post.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           )}

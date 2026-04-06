@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
+
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import KaiIcon from "@/components/icons/KaiIcon";

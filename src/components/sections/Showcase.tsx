@@ -106,6 +106,8 @@ export default function Showcase() {
                       src={project.image}
                       alt={project.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
                       className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                     />
                     {/* Subtle dark overlay for badge readability */}

@@ -34,7 +34,7 @@ function LazySection({ children, className = "", minHeight = "200px" }: { childr
 }
 import FadeIn from "@/components/ui/FadeIn";
 import StaggerChildren, { StaggerItem } from "@/components/ui/StaggerChildren";
-import { ScaleOnScroll, RevealText, FloatingOrb, MarqueeText, GlowDivider } from "@/components/ui/ScrollReveal";
+import { ScaleOnScroll, RevealText, FloatingOrb, MarqueeText } from "@/components/ui/ScrollReveal";
 import { openPaddleCheckout, usePaddleInit } from "@/components/payment/PaddleCheckout";
 
 // ─────────────────────────────────────────────
@@ -4393,6 +4393,7 @@ function FounderStory({ theme }: { theme: "dark" | "light" }) {
                     src="/images/kamer.png"
                     alt="Kamer"
                     className="relative w-14 h-14 rounded-full object-cover border-2 border-[#D8FB32]"
+                    loading="lazy"
                   />
                 </div>
                 <div>
