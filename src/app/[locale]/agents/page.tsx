@@ -1141,17 +1141,17 @@ function HowItWorks({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section id="nasil-calisir" className={`py-24 px-5 ${t.bg}`}>
+    <section id="nasil-calisir" className="py-24 px-5 bg-[#F5F5F5]">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
-            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Nasıl Çalışır
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
               3 Adımda Başla
             </h2>
-            <p className={`${t.textDim} text-lg mt-4 max-w-xl mx-auto`}>
+            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
               Teknik bilgi gerekmez.
               <br />
               10 dakikada ilk ajanın çalışıyor olsun.
@@ -1166,10 +1166,10 @@ function HowItWorks({ theme }: { theme: "dark" | "light" }) {
                 <div className="w-16 h-16 rounded-2xl bg-[#D8FB32] flex items-center justify-center text-2xl font-black text-[#0A0A0A] shadow-lg">
                   {step.icon}
                 </div>
-                <span className={`text-5xl font-black ${t.textWhite10} select-none`}>{step.num}</span>
+                <span className="text-5xl font-black text-[#0A0A0A]/10 select-none">{step.num}</span>
               </div>
-              <h3 className={`text-xl font-bold ${t.text}`}>{step.title}</h3>
-              <p className={`${t.textDim} leading-relaxed`}>{step.desc}</p>
+              <h3 className="text-xl font-bold text-[#0A0A0A]">{step.title}</h3>
+              <p className="text-gray-500 leading-relaxed">{step.desc}</p>
             </StaggerItem>
           ))}
         </StaggerChildren>
@@ -3871,17 +3871,17 @@ function Testimonials({ theme }: { theme: "dark" | "light" }) {
   ];
 
   return (
-    <section className={`py-28 px-5 ${t.bg}`}>
+    <section className="py-28 px-5 bg-[#F5F5F5]">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <div className="text-center mb-14">
-            <p className="text-[#D8FB32] border border-[#D8FB32]/30 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Kullanıcı Deneyimleri
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-black tracking-tight ${t.text}`}>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
               Onlar &ccedil;oktan başladı.
             </h2>
-            <p className={`${t.textDim} text-lg mt-4 max-w-xl mx-auto`}>
+            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
               Beta kullanıcılarımızın ger&ccedil;ek hikayeleri.
             </p>
           </div>
@@ -3890,7 +3890,7 @@ function Testimonials({ theme }: { theme: "dark" | "light" }) {
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {reviews.map((review, i) => (
             <StaggerItem key={i}>
-              <div className={`${t.bgCard} border ${t.border} rounded-2xl p-6 h-full flex flex-col hover:border-[#D8FB32]/30 transition-all duration-200`}>
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 h-full flex flex-col hover:border-[#D8FB32]/50 transition-all duration-200">
                 {/* Stars */}
                 <div className="flex items-center gap-0.5 mb-4">
                   {Array.from({ length: review.stars }).map((_, s) => (
@@ -3901,7 +3901,7 @@ function Testimonials({ theme }: { theme: "dark" | "light" }) {
                 </div>
 
                 {/* Review text */}
-                <p className={`${t.textMuted} text-sm leading-relaxed flex-1 mb-5`} dangerouslySetInnerHTML={{ __html: `&ldquo;${review.text}&rdquo;` }} />
+                <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5" dangerouslySetInnerHTML={{ __html: `&ldquo;${review.text}&rdquo;` }} />
 
                 {/* Metric badge */}
                 <div className="mb-4">
@@ -3921,8 +3921,8 @@ function Testimonials({ theme }: { theme: "dark" | "light" }) {
                     {review.avatar}
                   </div>
                   <div>
-                    <div className={`text-sm font-bold ${t.text}`}>{review.name}</div>
-                    <div className={`text-xs ${t.textDim}`}>{review.role}</div>
+                    <div className="text-sm font-bold text-[#0A0A0A]">{review.name}</div>
+                    <div className="text-xs text-gray-500">{review.role}</div>
                   </div>
                 </div>
               </div>
@@ -3958,45 +3958,28 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
   const t = c(theme);
   usePaddleInit();
 
-  /* ── Animated gradient border for Pro card ── */
-  const AnimatedGradientBorder = ({ children }: { children: ReactNode }) => (
-    <div className="relative rounded-2xl p-[2px] overflow-hidden">
-      <motion.div
-        className="absolute inset-[-50%] w-[200%] h-[200%]"
-        style={{
-          background: "conic-gradient(from 0deg, #D8FB32, #A855F7, #D8FB32, #A855F7, #D8FB32)",
-        }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-      />
-      <div className="relative rounded-[14px] overflow-hidden">
-        {children}
-      </div>
-    </div>
-  );
-
   /* ── Checkmark icon ── */
-  const CheckIcon = ({ color = "#22C55E" }: { color?: string }) => (
-    <span className="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: `${color}20` }}>
+  const CheckIcon = ({ highlight = false }: { highlight?: boolean }) => (
+    <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${highlight ? "bg-[#D8FB32] text-[#0A0A0A]" : "bg-[#0A0A0A]/10 text-[#0A0A0A]"}`}>
       <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-        <path d="M1 4L3.5 6.5L9 1" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M1 4L3.5 6.5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </span>
   );
 
   /* ── Feature row ── */
-  const FeatureRow = ({ text, dimClass }: { text: string; dimClass: string }) => (
+  const FeatureRow = ({ text, highlight = false }: { text: string; dimClass?: string; highlight?: boolean }) => (
     <li className="flex items-center gap-2.5 text-sm">
-      <CheckIcon />
-      <span className={dimClass}>{text}</span>
+      <CheckIcon highlight={highlight} />
+      <span className={highlight ? "text-white/80" : "text-[#0A0A0A]/70"}>{text}</span>
     </li>
   );
 
   /* ── Category header (Pro card only) ── */
-  const CategoryHeader = ({ label }: { label: string }) => (
+  const CategoryHeader = ({ label, highlight = false }: { label: string; highlight?: boolean }) => (
     <li className="flex items-center gap-2 pt-2 first:pt-0">
-      <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/30">{label}</span>
-      <span className="flex-1 h-px bg-white/[0.06]" />
+      <span className={`text-[10px] font-bold uppercase tracking-[0.15em] ${highlight ? "text-white/30" : "text-[#0A0A0A]/30"}`}>{label}</span>
+      <span className={`flex-1 h-px ${highlight ? "bg-white/[0.06]" : "bg-[#0A0A0A]/[0.06]"}`} />
     </li>
   );
 
@@ -4087,8 +4070,8 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
       variant === "pro"
         ? "bg-[#D8FB32] text-[#0A0A0A] hover:bg-[#E8FF80] shadow-lg shadow-[#D8FB32]/20"
         : variant === "business"
-        ? "bg-white/[0.08] text-white border border-purple-500/30 hover:border-purple-400/50 hover:bg-white/[0.12]"
-        : "bg-white/[0.08] text-white hover:bg-white/[0.14]";
+        ? "bg-[#0A0A0A] text-white border border-[#0A0A0A]/30 hover:bg-[#1a1a1a]"
+        : "bg-[#0A0A0A] text-white hover:bg-[#1a1a1a]";
 
     return (
       <a href={href} className={`${baseClasses} ${variantClasses}`}>
@@ -4098,26 +4081,19 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
   };
 
   return (
-    <section id="fiyatlandirma" className="relative py-28 px-5 bg-[#0A0A0A] overflow-hidden">
-      {/* Subtle radial glow behind Pro card area */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(216,251,50,0.06) 0%, rgba(168,85,247,0.03) 40%, transparent 70%)",
-        }}
-      />
+    <section id="fiyatlandirma" className="relative py-28 px-5 overflow-hidden" style={{ background: "linear-gradient(180deg, #D8FB32 0%, #B4F030 100%)" }}>
 
       <div className="relative max-w-6xl mx-auto">
         {/* ── Header ── */}
         <FadeIn>
           <div className="text-center mb-6">
-            <p className="text-white/40 border border-white/10 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-[#0A0A0A] border border-[#0A0A0A]/20 inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest mb-4">
               Fiyatland&#305;rma
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white">
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#0A0A0A]">
               Basit, &#351;effaf fiyatlar
             </h2>
-            <p className="text-white/40 text-lg mt-4 max-w-xl mx-auto">
+            <p className="text-[#0A0A0A]/70 text-lg mt-4 max-w-xl mx-auto">
               Kendi API anahtar&#305;n&#305; kullan (BYOK). Ekstra AI maliyeti &ouml;demiyorsun.
             </p>
           </div>
@@ -4126,12 +4102,12 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
         {/* ── Billing toggle (cosmetic) ── */}
         <FadeIn>
           <div className="flex items-center justify-center gap-3 mb-16">
-            <span className="text-white/60 text-sm font-medium">Ayl&#305;k</span>
-            <div className="relative w-11 h-6 bg-white/10 rounded-full cursor-not-allowed">
-              <div className="absolute left-1 top-1 w-4 h-4 bg-white/30 rounded-full" />
+            <span className="text-[#0A0A0A]/70 text-sm font-medium">Ayl&#305;k</span>
+            <div className="relative w-11 h-6 bg-[#0A0A0A]/10 rounded-full cursor-not-allowed">
+              <div className="absolute left-1 top-1 w-4 h-4 bg-[#0A0A0A]/30 rounded-full" />
             </div>
-            <span className="text-white/30 text-sm font-medium">Y&#305;ll&#305;k</span>
-            <span className="text-[10px] text-white/20 border border-white/10 px-2 py-0.5 rounded-full ml-1">Yak&#305;nda</span>
+            <span className="text-[#0A0A0A]/30 text-sm font-medium">Y&#305;ll&#305;k</span>
+            <span className="text-[10px] text-[#0A0A0A]/30 border border-[#0A0A0A]/20 px-2 py-0.5 rounded-full ml-1">Yak&#305;nda</span>
           </div>
         </FadeIn>
 
@@ -4140,20 +4116,20 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
 
           {/* ──────── FREE ──────── */}
           <StaggerItem>
-            <div className="rounded-2xl bg-white/[0.02] border border-white/[0.06] p-7 flex flex-col h-full hover:border-white/[0.12] transition-colors duration-300">
+            <div className="rounded-2xl bg-white text-[#0A0A0A] border border-gray-200 p-7 flex flex-col h-full hover:border-gray-400 transition-colors duration-300">
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-lg">{freePlan.icon}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-white/40">{freePlan.name}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#0A0A0A]/40">{freePlan.name}</span>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-black text-white">{freePlan.price}</span>
-                  <span className="text-sm text-white/30">{freePlan.period}</span>
+                  <span className="text-4xl font-black text-[#0A0A0A]">{freePlan.price}</span>
+                  <span className="text-sm text-[#0A0A0A]/30">{freePlan.period}</span>
                 </div>
               </div>
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {freePlan.features.map((f, j) => (
-                  <FeatureRow key={j} text={f} dimClass="text-white/50" />
+                  <FeatureRow key={j} text={f} />
                 ))}
               </ul>
               {renderCta(freePlan, "default")}
@@ -4162,20 +4138,20 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
 
           {/* ──────── STARTER ──────── */}
           <StaggerItem>
-            <div className="rounded-2xl bg-white/[0.04] border border-white/[0.08] p-7 flex flex-col h-full hover:border-white/[0.16] transition-colors duration-300 shadow-lg shadow-black/10">
+            <div className="rounded-2xl bg-white text-[#0A0A0A] border border-gray-200 p-7 flex flex-col h-full hover:border-gray-400 transition-colors duration-300 shadow-lg shadow-black/5">
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-lg">{starterPlan.icon}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-white/50">{starterPlan.name}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#0A0A0A]/50">{starterPlan.name}</span>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-black text-white">{starterPlan.price}</span>
-                  <span className="text-sm text-white/30">{starterPlan.period}</span>
+                  <span className="text-4xl font-black text-[#0A0A0A]">{starterPlan.price}</span>
+                  <span className="text-sm text-[#0A0A0A]/30">{starterPlan.period}</span>
                 </div>
               </div>
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {starterPlan.features.map((f, j) => (
-                  <FeatureRow key={j} text={f} dimClass="text-white/60" />
+                  <FeatureRow key={j} text={f} />
                 ))}
               </ul>
               {renderCta(starterPlan, "default")}
@@ -4184,15 +4160,10 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
 
           {/* ──────── PRO (HERO) ──────── */}
           <StaggerItem>
-            <div className="lg:scale-[1.05] origin-center">
-              <AnimatedGradientBorder>
-                <div className="relative bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-8 flex flex-col">
-                  {/* Inner glow */}
-                  <div className="absolute inset-0 pointer-events-none rounded-[14px]" style={{
-                    background: "radial-gradient(ellipse at top center, rgba(216,251,50,0.08) 0%, transparent 60%)",
-                  }} />
+            <div className="lg:scale-[1.03] origin-center">
+              <div className="bg-[#0A0A0A] text-white p-7 rounded-2xl ring-2 ring-[#0A0A0A] shadow-xl shadow-black/20 flex flex-col">
 
-                  <div className="relative mb-6">
+                  <div className="mb-6">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2">
                         <span className="text-lg">{proPlan.icon}</span>
@@ -4211,58 +4182,57 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
                   </div>
 
                   {/* Grouped features */}
-                  <ul className="relative flex flex-col gap-2.5 mb-8 flex-1">
+                  <ul className="flex flex-col gap-2.5 mb-8 flex-1">
                     {proPlan.featureGroups.map((group, gi) => (
                       <div key={gi} className="flex flex-col gap-2.5">
-                        <CategoryHeader label={group.category} />
+                        <CategoryHeader label={group.category} highlight />
                         {group.items.map((item, ii) => (
-                          <FeatureRow key={ii} text={item} dimClass="text-white/70" />
+                          <FeatureRow key={ii} text={item} highlight />
                         ))}
                       </div>
                     ))}
                   </ul>
 
-                  <div className="relative">
+                  <div>
                     {renderCta(proPlan, "pro")}
                   </div>
-                </div>
-              </AnimatedGradientBorder>
+              </div>
             </div>
           </StaggerItem>
 
           {/* ──────── BUSINESS ──────── */}
           <StaggerItem>
-            <div className="rounded-2xl bg-white/[0.03] border border-purple-500/20 p-7 flex flex-col h-full hover:border-purple-400/40 transition-colors duration-300">
+            <div className="rounded-2xl bg-white text-[#0A0A0A] border border-gray-200 p-7 flex flex-col h-full hover:border-gray-400 transition-colors duration-300">
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-lg">{businessPlan.icon}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-purple-400/70">{businessPlan.name}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#0A0A0A]/50">{businessPlan.name}</span>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-black text-white">{businessPlan.price}</span>
-                  <span className="text-sm text-white/30">{businessPlan.period}</span>
+                  <span className="text-4xl font-black text-[#0A0A0A]">{businessPlan.price}</span>
+                  <span className="text-sm text-[#0A0A0A]/30">{businessPlan.period}</span>
                 </div>
               </div>
 
               {/* "Everything in Pro + extras" */}
               <div className="flex-1 mb-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-purple-400/50">Pro&apos;daki her &#351;ey +</span>
-                  <span className="flex-1 h-px bg-purple-500/10" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#0A0A0A]/40">Pro&apos;daki her &#351;ey +</span>
+                  <span className="flex-1 h-px bg-[#0A0A0A]/10" />
                 </div>
                 <ul className="flex flex-col gap-3">
                   <li className="flex items-center gap-2.5 text-sm">
-                    <CheckIcon color="#A855F7" />
-                    <span className="text-white/60">S&#305;n&#305;rs&#305;z departman &amp; ajan</span>
+                    <CheckIcon />
+                    <span className="text-[#0A0A0A]/70">S&#305;n&#305;rs&#305;z departman &amp; ajan</span>
                   </li>
                   <li className="flex items-center gap-2.5 text-sm">
-                    <CheckIcon color="#A855F7" />
-                    <span className="text-white/60">S&#305;n&#305;rs&#305;z g&ouml;rev</span>
+                    <CheckIcon />
+                    <span className="text-[#0A0A0A]/70">S&#305;n&#305;rs&#305;z g&ouml;rev</span>
                   </li>
                   {businessPlan.extras.map((f, j) => (
                     <li key={j} className="flex items-center gap-2.5 text-sm">
-                      <CheckIcon color="#A855F7" />
-                      <span className="text-white/60">{f}</span>
+                      <CheckIcon />
+                      <span className="text-[#0A0A0A]/70">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -4275,22 +4245,22 @@ function Pricing({ theme }: { theme: "dark" | "light" }) {
         {/* ── Trust badges ── */}
         <FadeIn>
           <div className="flex flex-wrap items-center justify-center gap-6 mt-14">
-            <div className="flex items-center gap-2 text-white/30 text-sm">
+            <div className="flex items-center gap-2 text-[#0A0A0A]/40 text-sm">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0"><path d="M7 1L8.5 4.5L12.5 5L9.75 7.5L10.5 11.5L7 9.5L3.5 11.5L4.25 7.5L1.5 5L5.5 4.5L7 1Z" fill="currentColor" opacity="0.5" /></svg>
               7 g&#252;n &#252;cretsiz deneme
             </div>
-            <div className="w-px h-4 bg-white/10" />
-            <div className="flex items-center gap-2 text-white/30 text-sm">
+            <div className="w-px h-4 bg-[#0A0A0A]/10" />
+            <div className="flex items-center gap-2 text-[#0A0A0A]/40 text-sm">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0"><circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" /><path d="M5 7L6.5 8.5L9.5 5.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" /></svg>
               &#304;stedi&#287;in zaman iptal et
             </div>
-            <div className="w-px h-4 bg-white/10" />
-            <div className="flex items-center gap-2 text-white/30 text-sm">
+            <div className="w-px h-4 bg-[#0A0A0A]/10" />
+            <div className="flex items-center gap-2 text-[#0A0A0A]/40 text-sm">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0"><path d="M7 1.5L2 5V9.5L7 13L12 9.5V5L7 1.5Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" opacity="0.5" /><circle cx="7" cy="7.5" r="1.5" stroke="currentColor" strokeWidth="1" opacity="0.5" /></svg>
               KVKK Uyumlu
             </div>
           </div>
-          <p className="text-center text-white/20 text-xs mt-6">
+          <p className="text-center text-[#0A0A0A]/50 text-xs mt-6">
             &#304;lk 100 kullan&#305;c&#305;ya &ouml;zel erken eri&#351;im fiyat&#305; ge&#231;erlidir.
           </p>
         </FadeIn>
