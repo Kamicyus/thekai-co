@@ -3350,7 +3350,7 @@ export const blogPosts: BlogPost[] = [
       "multi-agent orchestration",
       "yapay zeka ajan yönetimi",
     ],
-    coverImage: "/images/blog/ai-ajan-orkestrasyonu-nedir.svg",
+    coverImage: "/images/blog/ai-ajan-orkestrasyonu-nedir.jpg",
     content: [
       {
         type: "p",
@@ -3482,7 +3482,7 @@ export const blogPosts: BlogPost[] = [
       "AI şirket yönetimi",
       "no-code otomasyon Türkiye",
     ],
-    coverImage: "/images/blog/kod-yazmadan-ai-sirket-kurmak.svg",
+    coverImage: "/images/blog/kod-yazmadan-ai-sirket-kurmak.jpg",
     content: [
       {
         type: "p",
@@ -3647,7 +3647,7 @@ export const blogPosts: BlogPost[] = [
       "AI hukuk asistanı",
       "dijital hukuk danışmanlık",
     ],
-    coverImage: "/images/blog/ai-avukat-hukuk-danismani.svg",
+    coverImage: "/images/blog/ai-avukat-hukuk-danismani.jpg",
     content: [
       {
         type: "p",
@@ -3947,7 +3947,7 @@ export const blogPosts: BlogPost[] = [
       "Kai Agents farkı",
       "ChatGPT yetmiyor",
     ],
-    coverImage: "/images/blog/kai-agents-vs-chatgpt-farki.svg",
+    coverImage: "/images/blog/kai-agents-vs-chatgpt-farki.jpg",
     content: [
       {
         type: "p",
@@ -4098,7 +4098,7 @@ export const blogPosts: BlogPost[] = [
       "freelancer verimlilik",
       "AI ile freelance",
     ],
-    coverImage: "/images/blog/ai-ajan-freelancerlar-icin.svg",
+    coverImage: "/images/blog/ai-ajan-freelancerlar-icin.jpg",
     content: [
       {
         type: "p",
@@ -4249,7 +4249,7 @@ export const blogPosts: BlogPost[] = [
       "ajans ölçeklendirme",
       "sosyal medya ajans AI",
     ],
-    coverImage: "/images/blog/ai-ajan-dijital-ajanslar-icin.svg",
+    coverImage: "/images/blog/ai-ajan-dijital-ajanslar-icin.jpg",
     content: [
       {
         type: "p",
@@ -4398,7 +4398,7 @@ export const blogPosts: BlogPost[] = [
       "yapay zeka müşteri destek",
       "e-ticaret chatbot",
     ],
-    coverImage: "/images/blog/ai-ajan-e-ticaret-icin.svg",
+    coverImage: "/images/blog/ai-ajan-e-ticaret-icin.jpg",
     content: [
       {
         type: "p",
@@ -4529,7 +4529,7 @@ export const blogPosts: BlogPost[] = [
       "yapay zeka startup",
       "lean startup AI",
     ],
-    coverImage: "/images/blog/ai-ajan-startuplar-icin.svg",
+    coverImage: "/images/blog/ai-ajan-startuplar-icin.jpg",
     content: [
       {
         type: "p",
@@ -4660,7 +4660,7 @@ export const blogPosts: BlogPost[] = [
       "AI müzik pazarlama",
       "müzisyen yapay zeka",
     ],
-    coverImage: "/images/blog/ai-ajan-muzisyenler-icin.svg",
+    coverImage: "/images/blog/ai-ajan-muzisyenler-icin.jpg",
     content: [
       {
         type: "p",
@@ -4782,7 +4782,7 @@ export const blogPosts: BlogPost[] = [
       "Instagram AI yönetim",
       "content creator yapay zeka",
     ],
-    coverImage: "/images/blog/ai-ajan-icerik-ureticileri-icin.svg",
+    coverImage: "/images/blog/ai-ajan-icerik-ureticileri-icin.jpg",
     content: [
       {
         type: "p",
@@ -4900,7 +4900,7 @@ export const blogPosts: BlogPost[] = [
       "yapay zeka hukuk",
       "legal tech Türkiye",
     ],
-    coverImage: "/images/blog/ai-ajan-avukatlar-icin.svg",
+    coverImage: "/images/blog/ai-ajan-avukatlar-icin.jpg",
     content: [
       {
         type: "p",
@@ -5021,7 +5021,7 @@ export const blogPosts: BlogPost[] = [
       "muhasebe otomasyon",
       "e-fatura yapay zeka",
     ],
-    coverImage: "/images/blog/ai-ajan-muhasebeciler-icin.svg",
+    coverImage: "/images/blog/ai-ajan-muhasebeciler-icin.jpg",
     content: [
       {
         type: "p",
@@ -5139,7 +5139,7 @@ export const blogPosts: BlogPost[] = [
       "emlak piyasa analizi AI",
       "gayrimenkul CRM otomasyon",
     ],
-    coverImage: "/images/blog/ai-ajan-gayrimenkul-icin.svg",
+    coverImage: "/images/blog/ai-ajan-gayrimenkul-icin.jpg",
     content: [
       {
         type: "p",
@@ -5256,7 +5256,7 @@ export const blogPosts: BlogPost[] = [
       "eğitim teknolojisi",
       "eğitimci AI asistan",
     ],
-    coverImage: "/images/blog/ai-ajan-egitimciler-icin.svg",
+    coverImage: "/images/blog/ai-ajan-egitimciler-icin.jpg",
     content: [
       {
         type: "p",
@@ -5368,7 +5368,623 @@ export const blogPosts: BlogPost[] = [
         label: "Eğitimciler İçin Kai Agents",
       },
     ],
-  },
+  },,
+  {
+  slug: "web-gelistirmede-ai-araclari-cursor-v0-claude-code",
+  title: "Web Geliştirmede AI Araçları: Cursor, v0 ve Claude Code ile Daha Hızlı Üretmek",
+  description: "Cursor, v0 ve Claude Code'u gerçek projelerimde test ettim. Hangisi ne işe yarıyor, üçünü birlikte nasıl kullanıyorum — işte 2026 iş akışım.",
+  date: "2026-04-07",
+  readingTime: "9 dk",
+  author: "Kamer",
+  keywords: ["web geliştirme araçları", "Cursor", "v0", "Claude Code", "AI destekli geliştirme", "2026"],
+  coverImage: "/images/blog/web-gelistirmede-ai-araclari-cursor-v0-claude-code.jpg",
+  content: [
+    {
+      type: "p",
+      text: "Web geliştirme araçları 2023'ten bu yana o kadar hızlı değişti ki, iki yıl önce standart olan iş akışları bugün neredeyse modası geçmiş görünüyor. Ben de bu süreçte çok şey denedim — ve söyleyeyim, AI destekli geliştirme araçları söz konusu olduğunda gerçekten bir şeyler köklü biçimde değişti. Bu yazıda Cursor, v0 ve Claude Code'u kendi kullanım deneyimimle karşılaştırıyorum; hangisinin ne işe yaradığını, hangi senaryoda hangisini tercih ettiğimi paylaşıyorum. Teori değil, sahadan notlar."
+    },
+    {
+      type: "h2",
+      text: "Tek Başına Kod Yazmak Artık Çok Yavaş"
+    },
+    {
+      type: "p",
+      text: "Bir müzisyen ve içerik üreticisi olarak web geliştirmeye girmek zorunda kaldım. Kendi sitemi, projelerimin landing page'lerini, küçük araçlarımı ve botlarımı kurmam gerekiyordu. Freelancer tutmak masraflı; üstelik her şeyi dışarıya vermek, projeniz üzerindeki kontrolü de dışarıya vermek demek. Çözüm: kendim öğrenmek, kendim üretmek. Ama tek başına öğrenmek hem yavaş hem gereksiz yere yorucu."
+    },
+    {
+      type: "p",
+      text: "Sonra AI araçları girdi hayatıma. İlk başta 'hepsi aynı şey, fark yok' dedim — şüpheciydim. Her yerde 'bu araç hayatı değiştiriyor' yazıyor ama kaç kere hayal kırıklığı yaşadınız? Çok fazla. Bu sefer ise meseleye yakından bakınca her birinin gerçekten farklı bir problemi çözdüğünü fark ettim. Cursor, v0 ve Claude Code birbirinin rakibi değil — birbirini tamamlayan katmanlar. Bunu anladığım an her şey yerine oturdu."
+    },
+    {
+      type: "h2",
+      text: "Cursor: Editörün İçine Gömülü Akıl"
+    },
+    {
+      type: "p",
+      text: "Cursor, Visual Studio Code'un fork'u — görünüşte benzer, ama fark muazzam. AI editörün içinde yaşıyor. Kodu anlıyor, bağlamı görüyor, refactor öneriyor. Birkaç hafta kullandıktan sonra normal VS Code'a dönmek garip hissettiriyor; eksik bir şey var gibi. Alışma süreci de yok denecek kadar kısa — VS Code biliyorsanız hemen başlıyorsunuz."
+    },
+    {
+      type: "h3",
+      text: "Cursor'u Diğerlerinden Ayıran Ne?"
+    },
+    {
+      type: "p",
+      text: "Cursor'un en güçlü özelliği 'codebase understanding', yani projenin tamamını bağlam olarak kullanabilmesi. Bir dosyayı açmadan, tek bir soruyla 'bu fonksiyon nerede kullanılıyor?' veya 'neden bu component bu props'u alıyor?' diye sorabiliyorsunuz. Kaybolmadan ilerlemenizi sağlıyor. Büyük bir projeye yeni başladığınızda ya da başkasının yazdığı koda girdiğinizde bu özellik inanılmaz zaman kazandırıyor."
+    },
+    {
+      type: "p",
+      text: "Tab completion'ı da beklentinin çok üstünde. Sadece bir sonraki satırı değil, bazen beş ila on satırlık bloğu tahmin edip yazıyor. Kendi düşünce akışınıza yakın bir şey üretiyor, çünkü projeyi tanıyor. İlk birkaç haftada hem hızım ciddi biçimde arttı hem de daha az zihinsel yorgunluk hissettim. 'Şimdi ne yazacaktım?' diye duraklamak azaldı."
+    },
+    {
+      type: "h3",
+      text: "Cursor Ne Zaman Yetersiz Kalıyor?"
+    },
+    {
+      type: "p",
+      text: "UI tasarımında eksik kalıyor. Cursor kod yazıyor ama 'şu butonu daha iyi yap, biraz daha hafif olsun' gibi görsel geri bildirime cevap veremiyor. Ayrıca proje başından itibaren büyük mimari kararlar vermek için biraz zayıf kalıyor; parçaları görüyor ama sistemi bir bütün olarak kavraması sınırlı. Özellikle karmaşık entegrasyon işlerinde kendimi otomatik olarak Claude Code'a geçerken buluyorum."
+    },
+    {
+      type: "h2",
+      text: "v0: Bileşen Üretiminde Farklı Bir Boyut"
+    },
+    {
+      type: "p",
+      text: "v0, Vercel'in ücretsiz başlanabilen bir ürünü. Kısa bir prompt yazıyorsunuz, karşınıza React ve Tailwind ile hazır bir bileşen çıkıyor. Sadece bu değil — görsel önizleme geliyor, değiştirmek istediğiniz yeri söylüyorsunuz, güncelliyor. Şu an thekai.co'daki birçok bileşenin taslağını v0 ile çıkardım, sonra gerçek projeye entegre ettim. Tasarım ile geliştirme arasındaki sınır bu araçla bayağı bulanıklaştı."
+    },
+    {
+      type: "h3",
+      text: "v0 ile UI Tasarımı: Kafamı Koda Dökmek"
+    },
+    {
+      type: "p",
+      text: "Benim için v0'ın asıl gücü şurada: tasarım kafamda net ama kodu sıfırdan yazmak hem zaman alıyor hem de işin yaratıcı tarafını köreltiyor. 'Dashboard kartı, dark mode, sol tarafta bir icon, sağda büyük rakam ve küçük yüzde değişim göstergesi' diyorum, geliyor. Shadcn/ui bileşenlerini tanıyor, Tailwind sınıflarını biliyor. Pratikte çoğu zaman ilk çıkan sonuç yüzde seksen hazır. Geri kalanını Cursor'da hallederek tamamlıyorum."
+    },
+    {
+      type: "p",
+      text: "Ama dikkat: v0 her zaman production-ready kod üretmiyor. Erişilebilirlik (accessibility) bazen gözden kaçıyor, bazı edge case'ler eksik kalıyor. Kodu kör kopyalamak yerine anlamak ve gözden geçirmek şart. Araç güçlü, ama düşünmek hâlâ insana düşüyor. Körü körüne yapıştır-çalıştır yaklaşımı er ya da geç sizi köşeye sıkıştırıyor."
+    },
+    {
+      type: "h2",
+      text: "Claude Code: Sistem Düzeyinde Düşünen Asistan"
+    },
+    {
+      type: "p",
+      text: "Claude Code benim için tamamen farklı bir kategori. Editör eklentisi değil — terminal tabanlı çalışıyor ve projenizin tamamını okuyup anlayabiliyor. Dosya yapısını tarayabiliyor, birden fazla dosyayı aynı anda değiştirebiliyor, komut satırında işlem yapabiliyor. Bu, onu diğer iki araçtan işlevsel olarak ayıran temel şey. Editör düzeyinde değil, sistem düzeyinde çalışıyor."
+    },
+    {
+      type: "h3",
+      text: "Claude Code'u Öne Çıkaran Ne?"
+    },
+    {
+      type: "p",
+      text: "Claude Code'un güçlü olduğu yer büyük resim. 'Şu fonksiyonu yaz' demiyorum, 'şu problemi çöz' diyorum. Dosyaları kendisi okuyor, ilgili yerleri buluyor, çözüm öneriyor, implement ediyor. Bir keresinde 'kullanıcı giriş yaptığında Telegram'a bildirim gönder' dedim. Hem webhook endpoint yazdı, hem Telegram bot entegrasyonunu kurdu, hem de .env dosyasına ne eklenmesi gerektiğini açıkladı. Baştan sona tek seferde. Bu tür sistem düzeyinde düşünme kapasitesi Cursor'da yok."
+    },
+    {
+      type: "p",
+      text: "Cursor satır bazında çok iyi; Claude Code proje bazında. Ayrıca karmaşık bir hatayı açıklamak için saatlerce uğraşmanıza gerek yok — hata mesajını, ilgili kodu ve bağlamı veriyorsunuz, sizi doğru yere götürüyor. Çoğu zaman 'işte sorun burada' diyip tam konuma götürüyor. Bence en hafife alınan özelliği bu. Özellikle birden fazla servisin birbirine bağlı olduğu projelerde bu kabiliyet paha biçilemez."
+    },
+    {
+      type: "h3",
+      text: "Claude Code'un Kısıtları"
+    },
+    {
+      type: "p",
+      text: "Claude Code terminal'de yaşıyor. Görsel geri bildirim yok, yani UI tweaks için ideal değil. Ayrıca her sorgu token harcıyor; büyük projelerde maliyeti artabiliyor. Kullanırken ne sorduğunuzu netleştirmek, gereksiz gidip gelmeden kaçınmak önemli. Akıllıca kullanım şart — her şeyi Claude Code'a sormak yerine, büyük kararlar ve entegrasyonlar için saklayın. Detaylar için Cursor daha verimli."
+    },
+    {
+      type: "h2",
+      text: "Üçünü Birlikte Kullandığımda Ortaya Çıkan İş Akışı"
+    },
+    {
+      type: "p",
+      text: "Bu üç aracı birleştirince gerçekten güçlü bir döngü ortaya çıkıyor. Süreç şöyle işliyor: önce v0 ile hızlı bir UI taslağı çıkarıyorum — ne istediğimi görsel olarak netleştiriyor. Sonra Cursor'a alıyorum ve gerçek projeye entegre ediyorum; küçük ayarları, mantığı, hook'ları ekliyorum. Backend ve entegrasyon için Claude Code devreye giriyor — veritabanı bağlantısı, API çağrıları, webhook'lar. Son kez Cursor'a dönüp ince ayarlar ve hız optimizasyonu yapıyorum."
+    },
+    {
+      type: "p",
+      text: "thekai.co'nun şu anki yapısındaki bileşenlerin büyük çoğunluğu bu döngüyle üretildi. Tek geliştirici, tek başıma. Ama üç araç sayesinde hareket hızı bambaşka. Tabii bu hız, temeli doğru atmışsanız geliyor — eğer ne istediğinizi bilmiyorsanız, araçlar sizi daha hızlı çıkmaza sürüklüyor. Araçlar karar vermez; sizi daha hızlı karar noktasına getirir."
+    },
+    {
+      type: "ul",
+      items: [
+        "Yeni UI bileşeni ihtiyacı: v0 ile başla, taslağı görsel olarak onayla",
+        "Mevcut kodu anlama veya düzenleme: Cursor, bağlamı gördüğü için en doğru seçim",
+        "Yeni özellik mimarisi veya üçüncü parti entegrasyon: Claude Code devreye gir",
+        "Debugging ve hata takibi: Cursor — satır düzeyinde anlık bağlam sağlıyor",
+        "Büyük refactor veya çapraz dosya değişiklikleri: Claude Code — tüm projeyi görüyor",
+        "Mobil uyum ve responsive düzeltmeler: v0 ile yeniden prototip, Cursor'da uygula",
+        "Güvenlik ve environment değişkenleri: Claude Code ile sistem genelinde tara"
+      ]
+    },
+    {
+      type: "h2",
+      text: "Bu Araçlar Sizi Geliştirici Yapıyor mu?"
+    },
+    {
+      type: "p",
+      text: "Bu soruyu çok duyuyorum ve dürüst cevap şu: hayır, yapmıyor. Bu araçlar sizi geliştirici yapmıyor — ama zaten bir şeyler üretebilen, düşünebilen, problemi tanımlayabilen birine süpergüç veriyor. Temel mantığı anlıyorsanız, bir bileşenin neden çalışmadığını yorumlayabiliyorsanız, bu araçlar 10x hızlandırıyor. Ama sıfırdan, hiçbir şey bilmeden 'araçlara bastırırım, çıkar' diyorsanız — bu yol genellikle ortada tıkıyor. Ya da ürününüz çalışıyor ama neden çalıştığını bilmiyorsunuz; bu da tehlikeli, o bilmezlik ilerleyen süreçte sizi zorluyor."
+    },
+    {
+      type: "p",
+      text: "Benim önerim şu: önce temel kavramları öğrenin. HTML, CSS, JavaScript'in ne iş yaptığını anlayın. Tek sayfalık küçük bir şey yapın, çalıştırın, hatayı düzeltin. Sonra bu araçları kullanmaya başlayın. O zaman gerçekten uçuş moduna geçiyorsunuz. <a href='/blog/next-js-ile-web-sitesi-nasil-yapilir'>Next.js ile web sitesi nasıl yapılır</a> yazımda bu temel adımları anlattım, oradan başlamak iyi bir hareket noktası olabilir."
+    },
+    {
+      type: "p",
+      text: "Eğer kendi dijital altyapınızı kurmak istiyorsanız ama maliyeti merak ediyorsanız, <a href='/blog/web-sitesi-maliyeti-2026'>2026'da web sitesi maliyeti ne kadar</a> yazısına da bakın. Freelancer tutmak ile kendiniz yapmak arasındaki dengeyi orada tartıştım. Bu AI araçları o denklemi epey değiştiriyor — özellikle yinelemeli geliştirme yapıyorsanız, yani sık sık değişiklik gerektiren projelerde kendiniz yapmanın avantajı artık çok net."
+    },
+    {
+      type: "faq",
+      items: [
+        {
+          q: "Bu araçları kullanmak için ileri seviye geliştirici olmak gerekiyor mu?",
+          a: "Hayır, ama temel kavramları bilmek şart. HTML, CSS ve JavaScript mantığını anlıyorsanız bu araçlar sizi ciddi oranda hızlandırır. Sıfır bilgiyle başlarsanız araç çıktılarını değerlendiremez, hataları ayırt edemezsiniz. Orta düzey bir anlayış yeterli — uzman olmak gerekmiyor."
+        },
+        {
+          q: "v0 ücretsiz mi?",
+          a: "v0, sınırlı bir ücretsiz planla başlıyor. Belirli sayıda mesaj hakkınız var, sonrasında ücretli plana geçmeniz gerekiyor. Aylık birkaç dolar seviyesinde — düzenli kullanım için makul bir maliyet. Aylık on beş ila yirmi bileşen üretecekseniz ücretsiz plan yeterli gelebilir."
+        },
+        {
+          q: "Claude Code ile Claude.ai aynı şey mi?",
+          a: "Hayır, farklı ürünler. Claude.ai tarayıcıda çalışan bir sohbet arayüzü; Claude Code ise terminal tabanlı, dosya sisteminize erişebilen, komut çalıştırabilen bir araç. Geliştirme için Claude Code çok daha güçlü çünkü projeyi gerçekten okuyabiliyor ve değişiklik yapabiliyor."
+        },
+        {
+          q: "Cursor aylık ne kadar tutuyor?",
+          a: "Cursor'un ücretsiz planı mevcut ama sınırlı. Pro planı aylık yaklaşık yirmi dolar civarında. Eğer ciddi proje yapıyorsanız bu maliyete değiyor — kazandığı zamana bakınca çok uygun. İlk ay ücretsiz deneme süresi var, önce deneyin."
+        },
+        {
+          q: "Üçünü birden kullanmak zorunda mıyım?",
+          a: "Hayır. Başlangıç için Cursor ve v0 ikili yeterli. Claude Code özellikle büyük projelerde, karmaşık entegrasyonlarda ve sistem düzeyinde düşünme gerektiren işlerde parlıyor. Küçük ve orta ölçekli projelerde Cursor tek başına çoğu ihtiyacı karşılıyor."
+        },
+        {
+          q: "Bu araçlar Türkçe içerikle de iyi çalışıyor mu?",
+          a: "Evet, Türkçe prompt ve içerikle çalışıyorlar. Claude Code ve Cursor için dil fark etmiyor çünkü kod dili zaten evrensel. v0'da Türkçe açıklama yazmak da gayet iyi sonuç veriyor, sadece bileşen içeriğindeki metinleri sonradan düzeltmeniz gerekebilir."
+        }
+      ]
+    },
+    {
+      type: "cta",
+      text: "Kendi projeniz için hangi araç kombinasyonunun doğru olduğunu bilmek istiyorsanız, konuşalım. Kurulum, iş akışı ve araç seçimi konusunda deneyimlerimi paylaşabilirim.",
+      href: "/iletisim",
+      label: "Ücretsiz Danışmanlık Alın"
+    },
+    {
+      type: "p",
+      text: "Son olarak şunu ekleyeyim: bu araçların hızla geliştiğini, altı ayda bir yeniden değerlendirmeniz gerektiğini unutmayın. Bu yazıyı yazdığımda 2026 Nisan itibarıyla bu araçlar bu kapasitedeydı — muhtemelen okuduğunuzda bazı şeyler değişmiş olacak. Takip edin, deneyin, kendi iş akışınızı bulun. Başkasının workflow'u size uymayabilir; bu benim hikayem. Önemli olan sistemi anlamak ve araçları bilinçli kullanmak — onları körce takip etmek değil."
+    }
+  ]
+},
+  {
+  slug: "en-iyi-ai-uretkenlik-araclari-2026",
+  title: "2026'da Gerçekten Kullandığım AI Üretkenlik Araçları",
+  description: "Claude, Cursor, Perplexity, Suno ve daha fazlası — bir müzisyen ve girişimci olarak günlük iş akışımda test ettiğim AI araçları rehberi.",
+  date: "2026-04-08",
+  readingTime: "9 dk",
+  author: "Kamer",
+  keywords: ["AI araçlar 2026", "en iyi AI araçları", "AI üretkenlik", "Claude AI", "Cursor AI"],
+  coverImage: "/images/blog/en-iyi-ai-uretkenlik-araclari-2026.jpg",
+  content: [
+    {
+      type: "p",
+      text: "AI üretkenlik araçları artık o kadar çok ki neyin gerçekten işe yaradığını, neyin sadece hype olduğunu ayırt etmek neredeyse tam zamanlı bir iş haline geldi. Son iki yılda onlarca aracı test ettim — bazıları iş akışımın vazgeçilmez parçası oldu, bazıları ise bir hafta sonra unuttum. Bu yazıda, müzisyen, söz yazarı ve aynı zamanda birden fazla dijital projeyi yöneten biri olarak günlük hayatımda gerçekten kullandığım araçları dürüstçe anlatacağım. Ücretli sürüm mü, ücretsiz mi, gerçekten değiyor mu — hepsini konuşacağız."
+    },
+    {
+      type: "h2",
+      text: "Önce Bir Çerçeve: Hangi Araçları Neden Test Ediyorum?"
+    },
+    {
+      type: "p",
+      text: "Bir aracı test ederken kendime üç soru soruyorum: Bu benim için düşünüyor mu, yoksa ben onun için mi düşünüyorum? Çıktıyı doğrudan kullanabilir miyim yoksa sıfırdan temizlemem mi gerekiyor? Ve son olarak: Bunu üç ay sonra da kullanıyor olacak mıyım?"
+    },
+    {
+      type: "p",
+      text: "Çoğu AI aracı birinci sınavı geçemez. Sana süslü kelimelerle boş içerik üretir, sen de onu okuyup sıfırdan yazarsın. Gerçek AI aracı senin zamanını değil, senin dikkatini tasarruf ettirendir. Bu ayrımı aklınızda tutarak devam edelim."
+    },
+    {
+      type: "h2",
+      text: "Yazma, Düşünme ve Araştırma: Bu Kategoride Kazananlar Belli"
+    },
+    {
+      type: "h3",
+      text: "Claude (Anthropic) — Düşünce Ortağım"
+    },
+    {
+      type: "p",
+      text: "Dürüst olmak gerekirse Claude olmadan son altı ayın nasıl geçeceğini hayal edemiyorum. ChatGPT'den önce kullanmaya başladım ve geçmedim — çünkü Claude'un ürettiği Türkçe çıktının kalitesi gerçekten farklı. Hem dilsel doğallık açısından hem de uzun bağlam tutma konusunda şu an piyasadaki en iyi araç bu."
+    },
+    {
+      type: "p",
+      text: "Ben Claude'u özellikle stratejik düşünme süreçlerinde kullanıyorum. Bir müzik projesinin lansmanını planlamak, bir metnin tonunu test etmek, bir kararın olası sonuçlarını düşünmek. ChatGPT size hemen bir liste verir; Claude ise genellikle size geri bir soru sorar. Bu rahatsız edici gelebilir ama çoğunlukla doğru olanı yapıyor."
+    },
+    {
+      type: "p",
+      text: "Ücretli plan (Max) kesinlikle değiyor. Ücretsiz sürümle başlayabilirsiniz ama günde birkaç saat yoğun kullanım yapıyorsanız context limitleri hızla dolacak. Claude'u <a href='/blog/claude-code-rehber'>Claude Code ile birlikte kullanmanın</a> nasıl bir fark yarattığına dair ayrı bir yazım var — okumadıysanız bakın."
+    },
+    {
+      type: "h3",
+      text: "Perplexity AI — Araştırma İçin Google'ın Yerini Aldı"
+    },
+    {
+      type: "p",
+      text: "Google'ı hâlâ açıyorum ama çok daha az. Perplexity, web aramasını gerçek zamanlı kaynakla birleştiriyor ve çıktıda kaynakları da gösteriyor. Bu son kısım kritik — AI'ın ne uydurduğunu değil, nereden öğrendiğini görmek istiyorum."
+    },
+    {
+      type: "p",
+      text: "Özellikle müzik endüstrisi trendleri, streaming istatistikleri veya teknik bir konuyu hızlıca anlamak istediğimde Perplexity kullanıyorum. Sonuçların çoğu zaman güncel ve kaynaklı olması, ChatGPT'nin eski verilerle cevap verme sorununu ortadan kaldırıyor."
+    },
+    {
+      type: "p",
+      text: "Ücretsiz sürümü çoğu kullanım için yeterli. Pro sürümü ise daha uzun ve derinlikli araştırmalar için tercih edilebilir — özellikle akademik veya teknik araştırma yapıyorsanız."
+    },
+    {
+      type: "h2",
+      text: "Kod ve Geliştirme: Programcı Olmasam da Kod Yazıyorum"
+    },
+    {
+      type: "h3",
+      text: "Cursor — AI Destekli Kod Editörünün En İyisi"
+    },
+    {
+      type: "p",
+      text: "Teknik bir insan değilim ama son iki yılda birden fazla web sitesi, Telegram botu ve otomasyon scripti ürettim. Bunu mümkün kılan araç Cursor oldu. VS Code'un üzerine kurulu bir editör ama Claude ve GPT-4 entegrasyonuyla geliştiricilerin benim gibi 'yaratıcı teknik olmayan' kişileri empowered hale getiriyor."
+    },
+    {
+      type: "p",
+      text: "Cursor'da benim en çok kullandığım özellik 'Composer' — tüm proje bağlamını vererek büyük değişiklikler yapabiliyorsunuz. Bir dosyayla değil, tüm codebase'le konuşuyorsunuz. Bu, küçük scriptler yazmanın ötesine geçip gerçek projeler üretmenizi sağlıyor."
+    },
+    {
+      type: "h3",
+      text: "Claude Code — Terminal'de Ajan"
+    },
+    {
+      type: "p",
+      text: "Claude Code, Cursor'dan farklı bir şey: doğrudan terminal üzerinden çalışan, bağımsız adımlar atabilen bir coding agent. Ben bunu özellikle rutin otomasyon görevleri, dosya yönetimi ve multi-step işlemler için kullanıyorum. <a href='/blog/claude-code-ai-ajan-sistemi-kurulumu'>AI ajan sistemini Claude Code ile nasıl kurduğumu</a> anlattığım yazıda detaylar var."
+    },
+    {
+      type: "p",
+      text: "İkisi arasındaki fark şu: Cursor bir proje üzerinde çalışırken ideal, Claude Code ise işletim sistemi düzeyinde görevler için. İkisini birlikte kullanmak en güçlü kombinasyon."
+    },
+    {
+      type: "h2",
+      text: "Görsel ve Tasarım: Yaratıcı Sürecin Hızlandığı Yer"
+    },
+    {
+      type: "p",
+      text: "Tasarımcı değilim ama görsellik her projemde kritik. Müzik artwork'ü, sosyal medya görseli, web sitesi öğeleri — bunların hepsini artık çok daha hızlı üretebiliyorum."
+    },
+    {
+      type: "h3",
+      text: "Midjourney ve Ideogram — İkisi Farklı İşler İçin"
+    },
+    {
+      type: "p",
+      text: "Midjourney hâlâ sinematik, yüksek kaliteli görsel üretimde bir numara. <a href='/blog/ai-ile-muzik-artwork-tasarimi'>Müzik artwork tasarımı</a> konusundaki yazımda Midjourney'in nasıl kullandığımı anlattım. Ama Ideogram, özellikle metin içeren görseller söz konusu olduğunda Midjourney'in önüne geçiyor — Türkçe karakterleri bile düzgün render edebiliyor, ki bu küçük bir mucize."
+    },
+    {
+      type: "h3",
+      text: "Canva AI — Hız Gerektiğinde"
+    },
+    {
+      type: "p",
+      text: "Canva'yı küçümseyenler var ama yanlış yapıyorlar. Canva'nın AI özellikleri sosyal medya içeriğini gerçekten hızlandırıyor. Magic Write, Background Remover ve şimdi gelen generative fill — bu üçlü birlikte kullanıldığında günlük içerik üretimi ciddi ölçüde hızlanıyor. Profesyonel bir tasarımcı gibi çıktı almak için değil, hız gerektiğinde doğru araç."
+    },
+    {
+      type: "h2",
+      text: "Ses ve Müzik: Üretici Olarak Bu Araçlara Nasıl Bakıyorum?"
+    },
+    {
+      type: "p",
+      text: "Burada dürüst olmam gerekiyor: Müzisyen olarak AI ses araçlarına karmaşık hissediyorum. Hem bu araçları kullanan hem de sanatçı kimliğini koruyan biri olarak ikisi arasındaki çizgiyi nereye çizdiğimi düşünmek zorundayım."
+    },
+    {
+      type: "h3",
+      text: "Suno ve Udio — Echo Bazaar'ın Temeli"
+    },
+    {
+      type: "p",
+      text: "Echo Bazaar kanalım için Suno ve Udio'yu aktif olarak kullanıyorum. Ama buradaki kullanım biçimi önemli: Bu araçları ham materyal için kullanıyorum, sonra üzerine kurgu, seçim ve yön katıyorum. Suno'nun son versiyonlarında vokal kalitesi belirgin biçimde arttı — özellikle spesifik stil referanslarıyla çalışıldığında tutarlı sonuçlar veriyor."
+    },
+    {
+      type: "p",
+      text: "Udio ise daha deneysel, daha az kontrol edilebilir ama zaman zaman Suno'nun veremeyeceği sürpriz sonuçlar üretiyor. İkisini paralel kullanmak en iyi workflow."
+    },
+    {
+      type: "h3",
+      text: "ElevenLabs — Vokal ve Seslendirme İçin"
+    },
+    {
+      type: "p",
+      text: "MURMUR sesli kitap projem için ElevenLabs'i entegre ettim. Türkçe seslendirme kalitesi bir yıl öncesine kıyasla çok daha iyi — hâlâ robotik bir his var ama doğal bir anlatıcı tonu yakalanmış. Özellikle saatler süren seslendirme gerektiren projelerde bu araç gerçek bir zaman tasarrufu sağlıyor."
+    },
+    {
+      type: "ul",
+      items: [
+        "Claude (Anthropic) — Stratejik düşünme, uzun bağlam, Türkçe kalite",
+        "Perplexity AI — Gerçek zamanlı araştırma, kaynaklı cevaplar",
+        "Cursor — AI destekli kod editörü, proje bazlı geliştirme",
+        "Claude Code — Terminal agent, otomasyon, multi-step görevler",
+        "Midjourney — Sinematik, yüksek kaliteli görsel üretimi",
+        "Ideogram — Metin içeren görseller, Türkçe karakter desteği",
+        "Canva AI — Hızlı sosyal medya içeriği",
+        "Suno — Müzik üretimi, tutarlı stil çıktısı",
+        "Udio — Deneysel müzik, yaratıcı sürprizler",
+        "ElevenLabs — Türkçe seslendirme, sesli kitap"
+      ]
+    },
+    {
+      type: "h2",
+      text: "Ödeme Kararları: Hangi Araçlara Para Veriyorum?"
+    },
+    {
+      type: "p",
+      text: "Her aracın ücretli planını almak anlamlı değil. Benim yaklaşımım basit: Bir araç günde en az bir kez iş akışımda yer alıyorsa, ücretli sürümü test ediyorum. Eğer ücretsiz sürümle yapabildiğimi yapabiliyorsa — ödemiyor olmanın bir bedeli yoksa — bedava kalıyor."
+    },
+    {
+      type: "p",
+      text: "Şu an aktif olarak ücretli kullandığım araçlar: Claude Max, Cursor Pro, Midjourney, Suno Pro ve ElevenLabs Creator. Bunların toplamı aylık yaklaşık 120-150 dolar ediyor. Bu bedeli karşılıyor mu? Benim için kesinlikle — çünkü bu araçlar olmadan yapacağım işleri ya yapmayacaktım ya da 5 kat daha uzun sürede yapıyor olacaktım."
+    },
+    {
+      type: "p",
+      text: "Perplexity, Udio ve Canva'nın ücretsiz versiyonları şu an ihtiyacımı karşılıyor. Ideogram de ücretsiz planıyla çoğu görevi yapabiliyor."
+    },
+    {
+      type: "h2",
+      text: "2026'da AI Araç Seçiminde Dikkat Edilmesi Gereken Şeyler"
+    },
+    {
+      type: "p",
+      text: "Bu kadar araç içinde kaybolmamak için birkaç pratik kural geliştirdim. Önce ihtiyacı tanımla, sonra aracı ara — tam tersi değil. 'Şu an hangi AI araçları popüler?' diye araştırıp kendini onlara adapte etmeye çalışmak verimsiz. Bunun yerine 'şu an hangi görevim beni en çok yavaşlatıyor?' sorusunu sor ve o göreve özel araç ara."
+    },
+    {
+      type: "p",
+      text: "İkinci kural: Araçları birlikte test et, izole değil. Claude tek başına güçlü, ama Claude + Cursor + Perplexity birlikte bambaşka bir iş akışı oluşturuyor. Araçlar arası geçişin sürtünmesini azaltmak, verimlilik artışının gerçek kaynağı."
+    },
+    {
+      type: "p",
+      text: "Üçüncü kural: Her altı ayda bir listeyi gözden geçir. AI sektörü çok hızlı değişiyor. Altı ay önce hayatımda olan bir araç bugün alakasız olabilir. Periyodik review yapmadan 'bağımlılık' gelişiyor — kullandığın araç için değil, kullandığın araç yerine geçen yenisi için."
+    },
+    {
+      type: "p",
+      text: "<a href='/blog/ai-ajan-sistemi-nedir'>AI ajan sistemlerinin</a> bu araçları nasıl birbirine bağladığını ve otomatize ettiğini anlamak, bireysel araç verimliliğinin ötesine geçmenizi sağlıyor. Ben kendi sistemimi bu araçların üzerine kurdum."
+    },
+    {
+      type: "faq",
+      items: [
+        {
+          question: "Claude ile ChatGPT arasında hangisini seçmeliyim?",
+          answer: "Türkçe içerik ve uzun bağlam gerektiren işler için Claude. Görsel analiz, plugin entegrasyonu ve geniş araç ekosistemine ihtiyaç duyuyorsanız ChatGPT. İkisini birlikte kullanmak da tamamen mantıklı — farklı güçlü yönleri var."
+        },
+        {
+          question: "Cursor kullanmak için programcı olmak gerekiyor mu?",
+          answer: "Hayır. Cursor'u programcı olmadan da verimli kullanabilirsiniz. Özellikle Claude ve GPT-4 entegrasyonuyla, ne yapmak istediğinizi doğal dilde tarif edebiliyorsunuz. Temel bir mantık anlayışı yardımcı olur ama zorunlu değil."
+        },
+        {
+          question: "AI müzik araçlarını kullanmak sanatçı kimliğime zarar verir mi?",
+          answer: "Bu tamamen nasıl kullandığınıza bağlı. Suno ile bir şarkı üretip 'bu benim şarkım' demek farklı, bu araçları fikir geliştirme ve prodüksiyon sürecinin bir parçası olarak kullanmak farklı. Benim için sınır şu: Kendi sesim, kendi kararlarım, kendi yönüm — araçlar sadece hız katıyor."
+        },
+        {
+          question: "Aylık AI araç bütçesi ne kadar olmalı?",
+          answer: "Yeni başlıyorsanız 20-30 dolarla başlayın — Claude Pro veya ChatGPT Plus yeterli. İş akışınızda net bir fark yaratıyorsa genişletin. Benim mevcut bütçem 120-150 dolar ama bu seviye 2+ yıllık deneme yanılmayla oluştu. Doğrudan o seviyeye başlamayın."
+        },
+        {
+          question: "ElevenLabs Türkçe sesler gerçekten doğal mı?",
+          answer: "2025 sonundan itibaren ciddi şekilde iyileşti. Hâlâ profesyonel bir seslendirme sanatçısının yerini tutmuyor ama sesli podcast, sesli kitap veya tanıtım videosu gibi içerikler için kullanılabilir kalitede. Özellikle kendi sesinizi clone ederseniz sonuç çok daha inandırıcı oluyor."
+        }
+      ]
+    },
+    {
+      type: "p",
+      text: "Son olarak şunu söylemek istiyorum: Bu araçların hiçbiri sizi yetersiz kılmıyor, tam tersi — iyi araçlar iyi kararların önüne geçemez. Yanlış strateji, doğru araçlarla daha hızlı uygulanır — ama yanlış kalır. Bu yüzden her zaman önce ne yapmak istediğinizi netleştirin, sonra o işi hangi araçla hızlandırabileceğinizi sorun. Araçtan başlamak değil, sorudan başlamak."
+    },
+    {
+      type: "cta",
+      text: "Kendi iş akışınız için hangi AI araçların doğru seçim olduğunu birlikte değerlendirmek ister misiniz? Projenizi anlatın, size özel bir araç seti önerelim.",
+      href: "/iletisim",
+      label: "Ücretsiz Danışmanlık Alın"
+    }
+  ]
+}
+```
+
+---
+
+*"The best tool is the one you actually use."* — Jason Fried
+*"En iyi araç gerçekten kullandığın araçtır."*,
+  {
+  slug: "echo-bazaar-ai-muzik-youtube-stratejisi",
+  title: "Echo Bazaar'dan Öğrendiklerim: AI Müzik Kanalını YouTube'da Nasıl Büyütürsün?",
+  description: "15M+ dinlenme, ₺37K gelir ve bir yığın hata. Echo Bazaar'ı kurarken YouTube büyütme konusunda öğrendiğim her şey.",
+  date: "2026-04-09",
+  readingTime: "9 dk",
+  author: "Kamer",
+  keywords: ["YouTube büyütme", "AI müzik kanalı", "Echo Bazaar", "YouTube algoritması", "AI müzik üretimi"],
+  coverImage: "/images/blog/echo-bazaar-ai-muzik-youtube-stratejisi.jpg",
+  content: [
+    {
+      type: "p",
+      text: "YouTube büyütme tavsiyelerinin %90'ı yanlış — ya da en azından AI müzik kanalları için işe yaramıyor. Bunu soyut bir iddia olarak söylemiyorum; Echo Bazaar'ı sıfırdan kurdum, 15 milyonu aşan dinlenmeye ulaştım, telif duvarlarına çarptım, gelir modelini birkaç kez yeniden yazmak zorunda kaldım. Bu yazıda o süreçte gerçekten ne işe yaradığını anlatıyorum — motivasyon değil, pratik."
+    },
+    {
+      type: "h2",
+      text: "AI Müzik Kanalı Açmadan Önce Kimse Söylemiyor"
+    },
+    {
+      type: "p",
+      text: "Birçok insan AI müzik kanalı açmayı pasif gelir gibi hayal ediyor. Suno'ya veya Udio'ya bir prompt yaz, videoyu render et, yükle, para gelsin. Gerçek bu kadar temiz değil. Echo Bazaar'ı kurarken anladığım ilk şey şuydu: AI araçlar içerik üretim hızını artırıyor ama kanal stratejisi hâlâ insan işi."
+    },
+    {
+      type: "p",
+      text: "İlk altı ayda yaptığım en büyük hata her tarzda müzik üretmeye çalışmaktı. Lo-fi, epic orchestral, dark ambient, chill hip-hop — hepsi. YouTube algoritması bunu sevmiyor. Algoritma için bir kanal bir şey demek zorunda. Ziyaretçi profilin dağınıksa, önerilme oranın düşüyor. Odaklanmak acı verici görünüyor ama büyüme için zorunlu."
+    },
+    {
+      type: "ul",
+      items: [
+        "Tek bir müzik tarzına veya ruh haline odaklan — 'chill beats' değil, daha spesifik: 'gece sürüşü için lo-fi hip-hop'",
+        "İlk 30 videoya kadar thumbnail formatını değiştirme — tutarlılık marka hafızası oluşturur",
+        "Upload sıklığı kaliteden önce gelir başlangıçta — haftada 3 video, mükemmel ama ayda 1 videodan iyidir",
+        "Başlık ve açıklama SEO'su gerçek — 'relaxing music' değil, 'gece çalışırken konsantrasyon müziği 2026' yaz",
+        "İlk 1000 abonenin %60'ı başka kanalların videolarına yorum yazmaktan geldi bende — rakip kanalda takipçi avı değil, gerçek yorum"
+      ]
+    },
+    {
+      type: "h2",
+      text: "YouTube Algoritması AI Müziği Farklı Mı Değerlendiriyor?"
+    },
+    {
+      type: "p",
+      text: "Kısa cevap: evet, ama senin sandığın şekilde değil. YouTube'un AI içerik politikası sürekli değişiyor ve 2025-2026 döneminde en önemli faktör şu: izlenme süresi ve geri dönüş oranı. İzleyicin videonun ilk 30 saniyesinde çıkıyorsa, ne kadar iyi müzik ürettiğin önemini yitiriyor."
+    },
+    {
+      type: "h3",
+      text: "Telif Tuzağı: Echo Bazaar'ın En Pahalı Dersi"
+    },
+    {
+      type: "p",
+      text: "Echo Bazaar gelirimin yaklaşık üçte birini bir dönem telif uyarıları yüzünden kaybettim. AI ile üretilen müzikte beklenmedik bir sorun var: bazı üretim araçları, eğitim verisi olarak kullandıkları materyallerin melodic fingerprint'lerini taşıyabiliyor. YouTube'un Content ID sistemi bu benzerliği yakalayınca video para kazanmıyor, hatta bazen görünürlüğü düşüyor."
+    },
+    {
+      type: "p",
+      text: "Çözümüm şu oldu: sadece tamamen özgün çıktı veren araçlarla çalışmak ve her yeni parçayı yüklemeden önce Tunebat veya benzeri bir araçla melodic similarity testi yapmak. Zaman alıyor ama telif uyarısıyla uğraşmaktan daha az zaman alıyor. Ayrıca — ve bunu çok az kişi söylüyor — kendi müzik estetiğini geliştirmek, AI'a verdiğin prompt kalitesini doğrudan etkiliyor. 15 yıllık şarkı yazma deneyimim bu noktada fark yarattı."
+    },
+    {
+      type: "h3",
+      text: "Consistency mi, Viral mı? İkisi Birden Mümkün Değil"
+    },
+    {
+      type: "p",
+      text: "Echo Bazaar'ın en iyi performans gösteren videoları planlı değildi. Bir tanesi sabah 3'te upload ettiğim, thumbnail'i son dakika hazırladığım bir videoydu — 4 ay içinde 2 milyonu geçti. Bunu formüle etmeye çalıştım, benzer içerikler ürettim, hiçbiri o kadar tutmadı."
+    },
+    {
+      type: "p",
+      text: "Viral peşinde koşmak tüketici. Consistency ise compound faiz gibi çalışıyor. Echo Bazaar büyüme grafiği düz değil — süreksiz sıçramalar ve uzun düz dönemler var. O düz dönemlerde yüklemeyi bırakmak istiyorsun ama tam orada devam etmek kanal hafızasını inşa ediyor. YouTube'un algoritması tutarlı içerik üreten kanallara önerilme avantajı veriyor çünkü izleyicinin geri döneceğini öğreniyor."
+    },
+    {
+      type: "h2",
+      text: "Echo Bazaar'ın Büyüme Stratejisi: Gerçekte Ne Yaptım"
+    },
+    {
+      type: "p",
+      text: "İlk 1000 abone için YouTube SEO'ya aşırı odaklandım. Her videonun açıklamasına 300-400 kelime yazdım, timestamp ekledim, ilk yorumu ben attım. Bu temel ama etkili. Sonraki 1000 için farklı bir şey gerekti: topluluk."
+    },
+    {
+      type: "h3",
+      text: "Playlist Stratejisi: Göz Ardı Edilen Büyüme Kanalı"
+    },
+    {
+      type: "p",
+      text: "Echo Bazaar'da keşfettiğim en etkili taktiklerden biri playlist kurgusu. Tek tek videolar değil, playlist'ler rank alıyor ve önerilme alıyor. 'Gece Çalışma Müziği', 'Focus Mode', 'Sabah Enerjisi' gibi net amaçlı playlist'ler oluşturduğumda izlenme süreleri %40 arttı. Çünkü izleyici bir video biter bitmez playlist'teki sıradakine geçiyor — YouTube bu bağlılık sinyalini seviyor."
+    },
+    {
+      type: "p",
+      text: "Playlist açıklamalarını da ihmal etme. YouTube bu metni de tarar. 'Bu playlist geç saate kadar çalışanlar, ders çalışan öğrenciler ve derin konsantrasyon arayanlar için...' gibi açıklamalar arama görünürlüğünü artırıyor. Basit ama çoğu kanalın yapmadığı bir şey."
+    },
+    {
+      type: "h3",
+      text: "Thumbnail: AI Müzik Kanalında Görsel Dili"
+    },
+    {
+      type: "p",
+      text: "AI müzik videolarının büyük çoğunluğu aynı görsel dili konuşuyor: lo-fi girl, anime çizimi, bulutlu şehir manzarası. Bu estetik tükendi. Echo Bazaar'da farklılaşmak için daha soyut, daha minimal bir dile geçtim. Koyu zemin, minimal typografi, tek güçlü görsel element. Bu değişiklikten sonra tıklama oranım (CTR) %2.1'den %3.8'e çıktı."
+    },
+    {
+      type: "p",
+      text: "Thumbnail tasarımında şunu fark ettim: mobilde küçük görünümde okunaklı olması masaüstünde güzel görünmesinden daha önemli. YouTube izleyicilerinin %70'i mobil. Thumbnail'ini telefonunda bak, küçük hâlde. Eğer kim olduğunu ve ne hissettirdiğini anlatamıyorsa, yeniden tasarla. <a href='/blog/ai-ile-muzik-artwork-tasarimi'>AI ile müzik artwork tasarımı</a> yazımda bu konuya daha detaylı girdim."
+    },
+    {
+      type: "h2",
+      text: "Gelir Modeli: Sadece AdSense Yeterli Değil"
+    },
+    {
+      type: "p",
+      text: "Echo Bazaar'ın gelir düşüşü bana tek gelir kaynağına yaslanmanın riskini öğretti. AdSense dalgalanıyor — reklam sezonuna, içerik kategorisine ve platformun para politikasına göre değişiyor. Müzik kategorisi bazı kategorilere göre daha düşük RPM (bin izlenme başına gelir) alıyor."
+    },
+    {
+      type: "p",
+      text: "Alternatif gelir kanalları üzerinde çalışıyorum: müzik lisanslama, beat satışı, playlist placement. YouTube kanalı bu modellerde bir pazarlama kanalı işlevi görüyor — ürünü orada satmak zorunda değilsin, ama izleyicini oradan organik olarak kazanabiliyorsun. <a href='/blog/spotify-sarki-dagitim-rehberi'>Spotify dağıtım rehberi</a>nde bu entegrasyon hakkında da konuştum."
+    },
+    {
+      type: "p",
+      text: "Bir diğer model: Patreon veya Gumroad üzerinden extended versions, stems veya royalty-free lisans satmak. Echo Bazaar izleyici kitlesinin küçük bir kısmı içerik üretici veya video editörü — onlar için stems satışı düşük eforgla ekstra gelir. Bu modelin çalışması için kanalın güvenilir bir kimliği olması lazım. Anonim kanallar bu geçişi zorlanarak yapıyor."
+    },
+    {
+      type: "h2",
+      text: "2026'da AI Müzik YouTube'da Nereye Gidiyor?"
+    },
+    {
+      type: "p",
+      text: "Rekabet arttı, bu açık. 2023'te AI müzik kanalı açmak nispeten boş bir alandaydı. Şimdi her hafta yüzlerce yeni kanal açılıyor. Bu durum SEO'yu daha kritik kılıyor ve aynı zamanda farklılaşmayı zorunlu hale getiriyor."
+    },
+    {
+      type: "p",
+      text: "Öngörüm şu: önümüzdeki 12-18 ayda hayatta kalacak AI müzik kanalları ya güçlü bir niş kimliği olanlar (sadece dark ambient, sadece Türk lo-fi, sadece coding music) ya da arkasında gerçek bir müzisyen olan kanallar olacak. Otomatize, kişiliksiz kanallar algoritma değişikliklerine karşı savunmasız. YouTube izleyici bağlılığına giderek daha fazla ağırlık veriyor — ve bağlılık, insan bağlantısı gerektiriyor."
+    },
+    {
+      type: "p",
+      text: "Echo Bazaar için bu kararı zaten verdim: kanalın arkasındaki müzisyen kimliği giderek daha görünür olacak. Tam prodüksiyon sürecini değil ama estetik kararları, ilhamları, müzikle ilişkimi paylaşmak. Bu hem kanalı rakiplerden ayırt ediyor hem de izleyicinin kanal yerine müzisyene bağlanmasını sağlıyor. Uzun vadeli büyüme orada. <a href='/blog/muzisyenler-icin-dijital-pazarlama'>Müzisyenler için dijital pazarlama</a> yazısında bu kimlik inşası meselesine daha geniş baktım."
+    },
+    {
+      type: "h2",
+      text: "Pratik Başlangıç Planı: İlk 90 Gün"
+    },
+    {
+      type: "p",
+      text: "Sıfırdan başlayanlara veya yeniden yapılanmak isteyenlere somut bir çerçeve:"
+    },
+    {
+      type: "ul",
+      items: [
+        "1-30. gün: Niş araştırması — YouTube'da arama hacmi var ama görece az kanal olan bir alt kategori bul. Ahrefs veya TubeBuddy ile keyword analizi yap",
+        "1-30. gün: İlk 10 video için içerik takvimi oluştur, thumbnail şablonunu sabitle, kanal tanıtım videosu çek",
+        "31-60. gün: Haftada en az 3 video yükle, her yüklemenin ilk saatinde aktif ol (yorum yanıtla, community post at)",
+        "31-60. gün: Rakip kanalların yorumlarında görünür ol — kopyala-yapıştır değil, gerçek yorum",
+        "61-90. gün: Analytics'e bak — hangi videolar izlenme süresini tutuyor? O formata yatırım yap, diğerlerini kıs",
+        "61-90. gün: İlk playlist'leri oluştur, her birini en az 8 videoyla doldur",
+        "90. gün: Gelir modelini planla — AdSense beklerken stems/lisans satışı için altyapı kur"
+      ]
+    },
+    {
+      type: "p",
+      text: "Bu plan romantik değil ama işe yarıyor. Echo Bazaar'ı bu sistematiğin biraz daha dağınık bir versiyonuyla kurdum — sistematik olsaydım muhtemelen daha hızlı giderdim."
+    },
+    {
+      type: "faq",
+      items: [
+        {
+          question: "AI müzik kanalı açmak için müzik bilgisi gerekli mi?",
+          answer: "Zorunlu değil ama fark yaratıyor. Müzik teorisi bilmeden de üretim araçlarını kullanabilirsin. Ancak neyin iyi neyin kötü olduğunu ayırt edebilmek, hangi prompt'un ne çıktı vereceğini öngörebilmek ve telif risklerini değerlendirebilmek için müzikle bir geçmiş avantaj sağlıyor. Başlamak için bekleme — öğrenme süreçte olur."
+        },
+        {
+          question: "YouTube'da AI müzik kanalı ne kadar sürede para kazanmaya başlar?",
+          answer: "YouTube Partner Program için 1000 abone ve 4000 saat izlenme gerekiyor. Haftada 3 video yükleme temposunda ve iyi SEO ile bu eşiğe 4-8 ayda ulaşmak mümkün. Ama AdSense geliri başlangıçta düşük olur — müzik kategorisinin RPM'i ortalama 1-3 dolar arası. Gerçek gelir için lisanslama ve stems satışı gibi ek kanallar kurmak gerekiyor."
+        },
+        {
+          question: "Echo Bazaar hangi araçları kullanıyor?",
+          answer: "Müzik üretiminde birden fazla araçla çalışıyorum — belirli bir araca bağlı kalmamak stratejik tercih, çünkü bu alan çok hızlı değişiyor. Video için CapCut ve DaVinci Resolve kombinasyonu kullanıyorum. Thumbnail için Canva ve Photoshop. SEO için TubeBuddy. Analitik için YouTube Studio'nun kendisi çoğunlukla yeterli."
+        },
+        {
+          question: "Kanal temalı mı olmalı yoksa genel mi?",
+          answer: "Kesinlikle temalı. 'Genel müzik kanalı' diye bir şey algoritma gözünde yok. YouTube izleyici profilini öğrenerek öneri yapıyor — profil dağınıksa önerilme düşüyor. Ne kadar spesifik olursa o kadar iyi: 'lo-fi' değil, 'sabah ritüeli için lo-fi', 'study music' değil, 'ADHD için dikkat müziği' gibi."
+        },
+        {
+          question: "Telif uyarısı gelirse ne yapmalı?",
+          answer: "Paniklemeden önce uyarının türüne bak: monetization claim ise video çalışmaya devam ediyor ama gelir hak sahibine gidiyor. Takedown ise video yayından kalkıyor. Birincisi için itiraz edebilirsin, ikincisi için gerçekten telif ihlali varsa vazgeç, yoksa itiraz et. Tekrarlayan uyarılar kanalı tehlikeye atar — proaktif önlem almak reaktif tepkiden çok daha az maliyetli."
+        }
+      ]
+    },
+    {
+      type: "p",
+      text: "Echo Bazaar bir deneme zemini olarak başladı, şimdi gerçek bir iş modeline dönüşüyor. Yolda yaptığım hataları başkası tekrar yapmasın diye bu yazıyı yazdım. Kanalını kurarken veya yeniden yapılandırırken takıldığın nokta varsa, aşağıdaki danışmanlık seçeneği üzerinden konuşabiliriz — genel tavsiye değil, senin kanalına özgü bakış açısı."
+    },
+    {
+      type: "cta",
+      href: "/iletisim",
+      label: "Kanalın İçin Ücretsiz Strateji Görüşmesi"
+    }
+  ]
+}
+```
+
+---
+
+*"The way to get started is to quit talking and begin doing." — Walt Disney / "Başlamanın yolu, konuşmayı bırakıp yapmaya başlamaktır."*
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
