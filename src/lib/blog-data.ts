@@ -5513,30 +5513,30 @@ export const blogPosts: BlogPost[] = [
     },
     {
       type: "faq",
-      items: [
+      faqItems: [
         {
-          q: "Bu araçları kullanmak için ileri seviye geliştirici olmak gerekiyor mu?",
-          a: "Hayır, ama temel kavramları bilmek şart. HTML, CSS ve JavaScript mantığını anlıyorsanız bu araçlar sizi ciddi oranda hızlandırır. Sıfır bilgiyle başlarsanız araç çıktılarını değerlendiremez, hataları ayırt edemezsiniz. Orta düzey bir anlayış yeterli — uzman olmak gerekmiyor."
+          question: "Bu araçları kullanmak için ileri seviye geliştirici olmak gerekiyor mu?",
+          answer: "Hayır, ama temel kavramları bilmek şart. HTML, CSS ve JavaScript mantığını anlıyorsanız bu araçlar sizi ciddi oranda hızlandırır. Sıfır bilgiyle başlarsanız araç çıktılarını değerlendiremez, hataları ayırt edemezsiniz. Orta düzey bir anlayış yeterli — uzman olmak gerekmiyor."
         },
         {
-          q: "v0 ücretsiz mi?",
-          a: "v0, sınırlı bir ücretsiz planla başlıyor. Belirli sayıda mesaj hakkınız var, sonrasında ücretli plana geçmeniz gerekiyor. Aylık birkaç dolar seviyesinde — düzenli kullanım için makul bir maliyet. Aylık on beş ila yirmi bileşen üretecekseniz ücretsiz plan yeterli gelebilir."
+          question: "v0 ücretsiz mi?",
+          answer: "v0, sınırlı bir ücretsiz planla başlıyor. Belirli sayıda mesaj hakkınız var, sonrasında ücretli plana geçmeniz gerekiyor. Aylık birkaç dolar seviyesinde — düzenli kullanım için makul bir maliyet. Aylık on beş ila yirmi bileşen üretecekseniz ücretsiz plan yeterli gelebilir."
         },
         {
-          q: "Claude Code ile Claude.ai aynı şey mi?",
-          a: "Hayır, farklı ürünler. Claude.ai tarayıcıda çalışan bir sohbet arayüzü; Claude Code ise terminal tabanlı, dosya sisteminize erişebilen, komut çalıştırabilen bir araç. Geliştirme için Claude Code çok daha güçlü çünkü projeyi gerçekten okuyabiliyor ve değişiklik yapabiliyor."
+          question: "Claude Code ile Claude.ai aynı şey mi?",
+          answer: "Hayır, farklı ürünler. Claude.ai tarayıcıda çalışan bir sohbet arayüzü; Claude Code ise terminal tabanlı, dosya sisteminize erişebilen, komut çalıştırabilen bir araç. Geliştirme için Claude Code çok daha güçlü çünkü projeyi gerçekten okuyabiliyor ve değişiklik yapabiliyor."
         },
         {
-          q: "Cursor aylık ne kadar tutuyor?",
-          a: "Cursor'un ücretsiz planı mevcut ama sınırlı. Pro planı aylık yaklaşık yirmi dolar civarında. Eğer ciddi proje yapıyorsanız bu maliyete değiyor — kazandığı zamana bakınca çok uygun. İlk ay ücretsiz deneme süresi var, önce deneyin."
+          question: "Cursor aylık ne kadar tutuyor?",
+          answer: "Cursor'un ücretsiz planı mevcut ama sınırlı. Pro planı aylık yaklaşık yirmi dolar civarında. Eğer ciddi proje yapıyorsanız bu maliyete değiyor — kazandığı zamana bakınca çok uygun. İlk ay ücretsiz deneme süresi var, önce deneyin."
         },
         {
-          q: "Üçünü birden kullanmak zorunda mıyım?",
-          a: "Hayır. Başlangıç için Cursor ve v0 ikili yeterli. Claude Code özellikle büyük projelerde, karmaşık entegrasyonlarda ve sistem düzeyinde düşünme gerektiren işlerde parlıyor. Küçük ve orta ölçekli projelerde Cursor tek başına çoğu ihtiyacı karşılıyor."
+          question: "Üçünü birden kullanmak zorunda mıyım?",
+          answer: "Hayır. Başlangıç için Cursor ve v0 ikili yeterli. Claude Code özellikle büyük projelerde, karmaşık entegrasyonlarda ve sistem düzeyinde düşünme gerektiren işlerde parlıyor. Küçük ve orta ölçekli projelerde Cursor tek başına çoğu ihtiyacı karşılıyor."
         },
         {
-          q: "Bu araçlar Türkçe içerikle de iyi çalışıyor mu?",
-          a: "Evet, Türkçe prompt ve içerikle çalışıyorlar. Claude Code ve Cursor için dil fark etmiyor çünkü kod dili zaten evrensel. v0'da Türkçe açıklama yazmak da gayet iyi sonuç veriyor, sadece bileşen içeriğindeki metinleri sonradan düzeltmeniz gerekebilir."
+          question: "Bu araçlar Türkçe içerikle de iyi çalışıyor mu?",
+          answer: "Evet, Türkçe prompt ve içerikle çalışıyorlar. Claude Code ve Cursor için dil fark etmiyor çünkü kod dili zaten evrensel. v0'da Türkçe açıklama yazmak da gayet iyi sonuç veriyor, sadece bileşen içeriğindeki metinleri sonradan düzeltmeniz gerekebilir."
         }
       ]
     },
@@ -5747,7 +5747,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
       type: "faq",
-      items: [
+      faqItems: [
         {
           question: "Claude ile ChatGPT arasında hangisini seçmeliyim?",
           answer: "Türkçe içerik ve uzun bağlam gerektiren işler için Claude. Görsel analiz, plugin entegrasyonu ve geniş araç ekosistemine ihtiyaç duyuyorsanız ChatGPT. İkisini birlikte kullanmak da tamamen mantıklı — farklı güçlü yönleri var."
@@ -5941,7 +5941,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
       type: "faq",
-      items: [
+      faqItems: [
         {
           question: "AI müzik kanalı açmak için müzik bilgisi gerekli mi?",
           answer: "Zorunlu değil ama fark yaratıyor. Müzik teorisi bilmeden de üretim araçlarını kullanabilirsin. Ancak neyin iyi neyin kötü olduğunu ayırt edebilmek, hangi prompt'un ne çıktı vereceğini öngörebilmek ve telif risklerini değerlendirebilmek için müzikle bir geçmiş avantaj sağlıyor. Başlamak için bekleme — öğrenme süreçte olur."
