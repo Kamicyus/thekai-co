@@ -5781,8 +5781,7 @@ export const blogPosts: BlogPost[] = [
       label: "Ücretsiz Danışmanlık Alın"
     }
   ]
-}
-  ,
+},
   {
   slug: "echo-bazaar-ai-muzik-youtube-stratejisi",
   title: "Echo Bazaar'dan Öğrendiklerim: AI Müzik Kanalını YouTube'da Nasıl Büyütürsün?",
