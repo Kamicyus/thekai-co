@@ -5782,12 +5782,7 @@ export const blogPosts: BlogPost[] = [
     }
   ]
 }
-```
-
----
-
-*"The best tool is the one you actually use."* — Jason Fried
-*"En iyi araç gerçekten kullandığın araçtır."*,
+  ,
   {
   slug: "echo-bazaar-ai-muzik-youtube-stratejisi",
   title: "Echo Bazaar'dan Öğrendiklerim: AI Müzik Kanalını YouTube'da Nasıl Büyütürsün?",
@@ -5980,11 +5975,6 @@ export const blogPosts: BlogPost[] = [
     }
   ]
 }
-```
-
----
-
-*"The way to get started is to quit talking and begin doing." — Walt Disney / "Başlamanın yolu, konuşmayı bırakıp yapmaya başlamaktır."*
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
