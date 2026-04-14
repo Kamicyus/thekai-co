@@ -5513,30 +5513,33 @@ export const blogPosts: BlogPost[] = [
     },
     {
       type: "faq",
-      faqItems: [
+      items: [
         {
-          question: "Bu araçları kullanmak için ileri seviye geliştirici olmak gerekiyor mu?",
-          answer: "Hayır, ama temel kavramları bilmek şart. HTML, CSS ve JavaScript mantığını anlıyorsanız bu araçlar sizi ciddi oranda hızlandırır. Sıfır bilgiyle başlarsanız araç çıktılarını değerlendiremez, hataları ayırt edemezsiniz. Orta düzey bir anlayış yeterli — uzman olmak gerekmiyor."
+          q: "Bu araçları kullanmak için ileri seviye geliştirici olmak gerekiyor mu?",
+          a: "Hayır, ama temel kavramları bilmek şart. HTML, CSS ve JavaScript mantığını anlıyorsanız bu araçlar sizi ciddi oranda hızlandırır. Sıfır bilgiyle başlarsanız araç çıktılarını değerlendiremez, hataları ayırt edemezsiniz. Orta düzey bir anlayış yeterli — uzman olmak gerekmiyor."
         },
         {
-          question: "v0 ücretsiz mi?",
-          answer: "v0, sınırlı bir ücretsiz planla başlıyor. Belirli sayıda mesaj hakkınız var, sonrasında ücretli plana geçmeniz gerekiyor. Aylık birkaç dolar seviyesinde — düzenli kullanım için makul bir maliyet. Aylık on beş ila yirmi bileşen üretecekseniz ücretsiz plan yeterli gelebilir."
+          q: "v0 ücretsiz mi?",
+          a: "v0, sınırlı bir ücretsiz planla başlıyor. Belirli sayıda mesaj hakkınız var, sonrasında ücretli plana geçmeniz gerekiyor. Aylık birkaç dolar seviyesinde — düzenli kullanım için makul bir maliyet. Aylık on beş ila yirmi bileşen üretecekseniz ücretsiz plan yeterli gelebilir."
         },
         {
-          question: "Claude Code ile Claude.ai aynı şey mi?",
-          answer: "Hayır, farklı ürünler. Claude.ai tarayıcıda çalışan bir sohbet arayüzü; Claude Code ise terminal tabanlı, dosya sisteminize erişebilen, komut çalıştırabilen bir araç. Geliştirme için Claude Code çok daha güçlü çünkü projeyi gerçekten okuyabiliyor ve değişiklik yapabiliyor."
+          q: "Claude Code ile Claude.ai aynı şey mi?",
+          a: "Hayır, farklı ürünler. Claude.ai tarayıcıda çalışan bir sohbet arayüzü; Claude Code ise terminal tabanlı, dosya sisteminize erişebilen, komut çalıştırabilen bir araç. Geliştirme için Claude Code çok daha güçlü çünkü projeyi gerçekten okuyabiliyor ve değişiklik yapabiliyor."
         },
         {
-          question: "Cursor aylık ne kadar tutuyor?",
-          answer: "Cursor'un ücretsiz planı mevcut ama sınırlı. Pro planı aylık yaklaşık yirmi dolar civarında. Eğer ciddi proje yapıyorsanız bu maliyete değiyor — kazandığı zamana bakınca çok uygun. İlk ay ücretsiz deneme süresi var, önce deneyin."
+          q: "Cursor aylık ne kadar tutuyor?",
+          a: "Cursor'un ücretsiz planı mevcut ama sınırlı. Pro planı aylık yaklaşık yirmi dolar civarında. Eğer ciddi proje yapıyorsanız bu maliyete değiyor — kazandığı zamana bakınca çok uygun. İlk ay ücretsiz deneme süresi var, önce deneyin."
         },
         {
-          question: "Üçünü birden kullanmak zorunda mıyım?",
-          answer: "Hayır. Başlangıç için Cursor ve v0 ikili yeterli. Claude Code özellikle büyük projelerde, karmaşık entegrasyonlarda ve sistem düzeyinde düşünme gerektiren işlerde parlıyor. Küçük ve orta ölçekli projelerde Cursor tek başına çoğu ihtiyacı karşılıyor."
+          q: "Üçünü birden kullanmak zorunda mıyım?",
+          a: "Hayır. Başlangıç için Cursor ve v0 ikili yeterli. Claude Code özellikle büyük projelerde, karmaşık entegrasyonlarda ve sistem düzeyinde düşünme gerektiren işlerde parlıyor. Küçük ve orta ölçekli projelerde Cursor tek başına çoğu ihtiyacı karşılıyor."
         },
         {
-          question: "Bu araçlar Türkçe içerikle de iyi çalışıyor mu?",
-          answer: "Evet, Türkçe prompt ve içerikle çalışıyorlar. Claude Code ve Cursor için dil fark etmiyor çünkü kod dili zaten evrensel. v0'da Türkçe açıklama yazmak da gayet iyi sonuç veriyor, sadece bileşen içe  },
+          q: "Bu araçlar Türkçe içerikle de iyi çalışıyor mu?",
+          a: "Evet, Türkçe prompt ve içerikle çalışıyorlar. Claude Code ve Cursor için dil fark etmiyor çünkü kod dili zaten evrensel. v0'da Türkçe açıklama yazmak da gayet iyi sonuç veriyor, sadece bileşen içeriğindeki metinleri sonradan düzeltmeniz gerekebilir."
+        }
+      ]
+    },
     {
       type: "cta",
       text: "Kendi projeniz için hangi araç kombinasyonunun doğru olduğunu bilmek istiyorsanız, konuşalım. Kurulum, iş akışı ve araç seçimi konusunda deneyimlerimi paylaşabilirim.",
@@ -5744,7 +5747,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
       type: "faq",
-      faqItems: [
+      items: [
         {
           question: "Claude ile ChatGPT arasında hangisini seçmeliyim?",
           answer: "Türkçe içerik ve uzun bağlam gerektiren işler için Claude. Görsel analiz, plugin entegrasyonu ve geniş araç ekosistemine ihtiyaç duyuyorsanız ChatGPT. İkisini birlikte kullanmak da tamamen mantıklı — farklı güçlü yönleri var."
@@ -5765,7 +5768,8 @@ export const blogPosts: BlogPost[] = [
           question: "ElevenLabs Türkçe sesler gerçekten doğal mı?",
           answer: "2025 sonundan itibaren ciddi şekilde iyileşti. Hâlâ profesyonel bir seslendirme sanatçısının yerini tutmuyor ama sesli podcast, sesli kitap veya tanıtım videosu gibi içerikler için kullanılabilir kalitede. Özellikle kendi sesinizi clone ederseniz sonuç çok daha inandırıcı oluyor."
         }
-      ]  },
+      ]
+    },
     {
       type: "p",
       text: "Son olarak şunu söylemek istiyorum: Bu araçların hiçbiri sizi yetersiz kılmıyor, tam tersi — iyi araçlar iyi kararların önüne geçemez. Yanlış strateji, doğru araçlarla daha hızlı uygulanır — ama yanlış kalır. Bu yüzden her zaman önce ne yapmak istediğinizi netleştirin, sonra o işi hangi araçla hızlandırabileceğinizi sorun. Araçtan başlamak değil, sorudan başlamak."
@@ -5937,7 +5941,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
       type: "faq",
-      faqItems: [
+      items: [
         {
           question: "AI müzik kanalı açmak için müzik bilgisi gerekli mi?",
           answer: "Zorunlu değil ama fark yaratıyor. Müzik teorisi bilmeden de üretim araçlarını kullanabilirsin. Ancak neyin iyi neyin kötü olduğunu ayırt edebilmek, hangi prompt'un ne çıktı vereceğini öngörebilmek ve telif risklerini değerlendirebilmek için müzikle bir geçmiş avantaj sağlıyor. Başlamak için bekleme — öğrenme süreçte olur."
@@ -5958,7 +5962,8 @@ export const blogPosts: BlogPost[] = [
           question: "Telif uyarısı gelirse ne yapmalı?",
           answer: "Paniklemeden önce uyarının türüne bak: monetization claim ise video çalışmaya devam ediyor ama gelir hak sahibine gidiyor. Takedown ise video yayından kalkıyor. Birincisi için itiraz edebilirsin, ikincisi için gerçekten telif ihlali varsa vazgeç, yoksa itiraz et. Tekrarlayan uyarılar kanalı tehlikeye atar — proaktif önlem almak reaktif tepkiden çok daha az maliyetli."
         }
-      ]  },
+      ]
+    },
     {
       type: "p",
       text: "Echo Bazaar bir deneme zemini olarak başladı, şimdi gerçek bir iş modeline dönüşüyor. Yolda yaptığım hataları başkası tekrar yapmasın diye bu yazıyı yazdım. Kanalını kurarken veya yeniden yapılandırırken takıldığın nokta varsa, aşağıdaki danışmanlık seçeneği üzerinden konuşabiliriz — genel tavsiye değil, senin kanalına özgü bakış açısı."
