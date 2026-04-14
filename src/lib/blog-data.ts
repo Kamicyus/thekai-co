@@ -5368,7 +5368,7 @@ export const blogPosts: BlogPost[] = [
         label: "Eğitimciler İçin Kai Agents",
       },
     ],
-  },,
+  },
   {
   slug: "web-gelistirmede-ai-araclari-cursor-v0-claude-code",
   title: "Web Geliştirmede AI Araçları: Cursor, v0 ve Claude Code ile Daha Hızlı Üretmek",
