@@ -168,38 +168,94 @@ export default async function LocaleLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground">
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "The Kai",
-            url: "https://thekai.co",
-            logo: "https://thekai.co/images/kai-carkli.svg",
-            description:
-              "AI-Native Creative Studio. Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.",
-            founder: {
-              "@type": "Person",
-              name: "Kamer Can İzvermez",
-            },
-            sameAs: [
-              "https://x.com/callmethekai",
-              "https://youtube.com/@callmethekai",
-              "https://instagram.com/callmethekai",
-              "https://tiktok.com/@callmethekai",
-              "https://linkedin.com/company/the-kai",
-            ],
-          }),
-        }}
-      />
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
-      <ChatBot />
-      <Script src="https://cdn.paddle.com/paddle/v2/paddle.js" strategy="afterInteractive" />
-    </NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@graph": [
+                  {
+                    "@type": "Organization",
+                    "@id": "https://thekai.co/#organization",
+                    name: "The Kai",
+                    alternateName: ["Kai", "Kai Agents", "thekai.co"],
+                    url: "https://thekai.co",
+                    logo: {
+                      "@type": "ImageObject",
+                      url: "https://thekai.co/images/kai-logo.svg",
+                      width: 512,
+                      height: 512,
+                    },
+                    image: "https://thekai.co/images/og-image.png",
+                    description:
+                      "AI-Native Creative Studio. Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo. AI ajan orkestrasyonu, müzik prodüksiyon, dijital yaratıcılık.",
+                    slogan: "AI ajanları senin için çalışsın",
+                    foundingDate: "2026",
+                    founder: {
+                      "@type": "Person",
+                      name: "Kamer Can İzvermez",
+                      alternateName: "Kamer",
+                      jobTitle: "Founder & AI-Native Creator",
+                      url: "https://thekai.co/hakkimizda",
+                      sameAs: [
+                        "https://x.com/kamicyus",
+                        "https://instagram.com/kamer.kim",
+                      ],
+                    },
+                    contactPoint: {
+                      "@type": "ContactPoint",
+                      email: "hello@thekai.co",
+                      contactType: "Customer Service",
+                      availableLanguage: ["Turkish", "English"],
+                    },
+                    address: {
+                      "@type": "PostalAddress",
+                      addressLocality: "İstanbul",
+                      addressCountry: "TR",
+                    },
+                    sameAs: [
+                      "https://x.com/callmethekai",
+                      "https://youtube.com/@callmethekai",
+                      "https://instagram.com/callmethekai",
+                      "https://tiktok.com/@callmethekai",
+                      "https://linkedin.com/company/the-kai",
+                    ],
+                  },
+                  {
+                    "@type": "WebSite",
+                    "@id": "https://thekai.co/#website",
+                    url: "https://thekai.co",
+                    name: "The Kai",
+                    description:
+                      "AI ajan sistemi, müzik prodüksiyon, dijital yaratıcılık stüdyosu",
+                    publisher: {
+                      "@id": "https://thekai.co/#organization",
+                    },
+                    inLanguage: ["tr-TR", "en-US"],
+                    potentialAction: {
+                      "@type": "SearchAction",
+                      target: {
+                        "@type": "EntryPoint",
+                        urlTemplate:
+                          "https://thekai.co/blog?q={search_term_string}",
+                      },
+                      "query-input": "required name=search_term_string",
+                    },
+                  },
+                ],
+              }),
+            }}
+          />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <ChatBot />
+          <Script
+            src="https://cdn.paddle.com/paddle/v2/paddle.js"
+            strategy="afterInteractive"
+          />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
