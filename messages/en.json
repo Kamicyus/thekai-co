@@ -14,7 +14,8 @@
     "subtitle": "A studio at the intersection of music, technology and creativity.",
     "tagline": "Call me Kai!",
     "ctaServices": "View Services",
-    "ctaPortfolio": "Portfolio"
+    "ctaPortfolio": "Portfolio",
+    "scrollToServices": "Scroll to services"
   },
   "services": {
     "title": "What We Do",

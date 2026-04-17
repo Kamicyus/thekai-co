@@ -68,7 +68,13 @@ export async function generateMetadata({
   };
 }
 
-function BlogContent({ section, isEn }: { section: BlogSection; isEn: boolean }) {
+function BlogContent({
+  section,
+  isEn,
+}: {
+  section: BlogSection;
+  isEn: boolean;
+}) {
   switch (section.type) {
     case "h2":
       return (
@@ -154,13 +160,14 @@ function BlogContent({ section, isEn }: { section: BlogSection; isEn: boolean })
     case "img":
       return (
         <figure className="my-8">
-          <div className="bg-white/[0.03] border border-white/[0.06] rounded-[16px] overflow-hidden aspect-video">
+          <div className="relative bg-white/[0.03] border border-white/[0.06] rounded-[16px] overflow-hidden aspect-video">
             {section.src ? (
-              <img
+              <Image
                 src={section.src}
                 alt={section.alt || ""}
-                className="w-full h-full object-cover"
-                loading="lazy"
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center">
@@ -195,11 +202,7 @@ function BlogContent({ section, isEn }: { section: BlogSection; isEn: boolean })
   }
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Params;
-}) {
+export default async function BlogPostPage({ params }: { params: Params }) {
   const { slug, locale } = await params;
   const isEn = locale === "en";
   const post = getBlogPost(slug);
@@ -310,11 +313,14 @@ export default async function BlogPostPage({
                 dateTime={post.date}
                 className="text-[#666666] text-sm font-medium"
               >
-                {new Date(post.date).toLocaleDateString(isEn ? "en-US" : "tr-TR", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
+                {new Date(post.date).toLocaleDateString(
+                  isEn ? "en-US" : "tr-TR",
+                  {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  },
+                )}
               </time>
               <span className="w-1 h-1 bg-[#333333] rounded-full" />
               <span className="text-[#666666] text-sm font-medium">
@@ -333,7 +339,13 @@ export default async function BlogPostPage({
             {/* Author */}
             <div className="flex items-center gap-3 mt-6 pt-6 border-t border-white/[0.06]">
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">
-                <Image src="/images/kamer.png" alt="Kamer Can İzvermez" width={40} height={40} className="w-full h-full object-cover" />
+                <Image
+                  src="/images/kamer.png"
+                  alt="Kamer Can İzvermez"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-[#E0E0E0] text-sm font-medium">
@@ -349,11 +361,13 @@ export default async function BlogPostPage({
           {/* Cover Image */}
           {post.coverImage && (
             <div className="relative w-full aspect-[1200/630] overflow-hidden rounded-[20px] border border-white/[0.06] mb-10">
-              <img
+              <Image
                 src={post.coverImage}
                 alt={post.title}
-                className="w-full h-full object-cover"
-                loading="lazy"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                className="object-cover"
               />
             </div>
           )}
@@ -396,11 +410,14 @@ export default async function BlogPostPage({
                       dateTime={related.date}
                       className="text-[#666666] text-xs font-medium"
                     >
-                      {new Date(related.date).toLocaleDateString(isEn ? "en-US" : "tr-TR", {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
-                      })}
+                      {new Date(related.date).toLocaleDateString(
+                        isEn ? "en-US" : "tr-TR",
+                        {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        },
+                      )}
                     </time>
                     <h4 className="font-serif text-base font-bold text-[#F5F5F5] tracking-[-0.01em] mt-2 mb-2 group-hover:text-[#D8FB32] transition-colors duration-300 leading-snug line-clamp-2">
                       {related.title}

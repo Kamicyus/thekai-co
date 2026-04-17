@@ -16,7 +16,11 @@ export default function Footer() {
   const [isAgents, setIsAgents] = useState(false);
 
   useEffect(() => {
-    if (window.location.hostname.startsWith("agents.") || pathname === "/agents" || pathname.startsWith("/agents/")) {
+    if (
+      window.location.hostname.startsWith("agents.") ||
+      pathname === "/agents" ||
+      pathname.startsWith("/agents/")
+    ) {
       setIsAgents(true);
     }
   }, [pathname]);
@@ -33,7 +37,10 @@ export default function Footer() {
     { label: tn("contact"), href: "/iletisim" as const },
   ];
   return (
-    <footer data-global-footer className="w-full bg-[#0F0F0F] border-t border-[#1F2937] relative overflow-hidden">
+    <footer
+      data-global-footer
+      className="w-full bg-[#0F0F0F] border-t border-[#1F2937] relative overflow-hidden"
+    >
       {/* Large watermark pinwheel — right side */}
       <div className="absolute top-1/2 right-[-80px] -translate-y-1/2 pointer-events-none">
         <DecorativePinwheel size={350} opacity={0.04} rotate={-10} />
@@ -82,9 +89,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[#F5F5F5] font-semibold text-sm mb-4 tracking-wide uppercase">
+            <h2 className="text-[#F5F5F5] font-semibold text-sm mb-4 tracking-wide uppercase">
               {t("pages")}
-            </h4>
+            </h2>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -101,9 +108,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[#F5F5F5] font-semibold text-sm mb-4 tracking-wide uppercase">
+            <h2 className="text-[#F5F5F5] font-semibold text-sm mb-4 tracking-wide uppercase">
               {t("contact")}
-            </h4>
+            </h2>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
                 <svg
@@ -151,27 +158,25 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-[#1F2937]/50 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#666666] text-xs">
-            {t("copyright")}
-          </p>
+          <p className="text-[#999999] text-xs">{t("copyright")}</p>
           <div className="flex items-center gap-4">
             <Link
               href="/gizlilik"
-              className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
+              className="text-[#999999] text-xs hover:text-[#F5F5F5] transition-colors duration-200"
             >
               {t("privacy")}
             </Link>
-            <span className="text-[#333333] text-xs">·</span>
+            <span className="text-[#666666] text-xs">·</span>
             <Link
               href="/kullanim-sartlari"
-              className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
+              className="text-[#999999] text-xs hover:text-[#F5F5F5] transition-colors duration-200"
             >
               Kullanım Şartları
             </Link>
-            <span className="text-[#333333] text-xs">·</span>
+            <span className="text-[#666666] text-xs">·</span>
             <Link
               href="/kvkk"
-              className="text-[#666666] text-xs hover:text-[#999999] transition-colors duration-200"
+              className="text-[#999999] text-xs hover:text-[#F5F5F5] transition-colors duration-200"
             >
               KVKK
             </Link>

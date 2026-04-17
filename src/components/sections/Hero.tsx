@@ -15,7 +15,8 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse at top, #020A1B 0%, #0A0A0A 70%)",
+          background:
+            "radial-gradient(ellipse at top, #020A1B 0%, #0A0A0A 70%)",
         }}
       />
 
@@ -26,7 +27,8 @@ export default function Hero() {
       <div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] rounded-full opacity-20 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(216,251,50,0.08) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(216,251,50,0.08) 0%, transparent 70%)",
         }}
       />
 
@@ -53,17 +55,24 @@ export default function Hero() {
           transition={{ duration: 140, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute" style={{ top: -520, left: -16 }}>
-            <div className="w-10 h-10 rounded-full relative overflow-hidden"
+            <div
+              className="w-10 h-10 rounded-full relative overflow-hidden"
               style={{
-                background: "radial-gradient(circle at 35% 30%, #7EB8E8 0%, #3B6BAA 40%, #1B3B6E 70%, #0A1A3A 100%)",
-                boxShadow: "0 0 25px rgba(91,141,239,0.3), inset -3px -2px 6px rgba(0,0,0,0.4), inset 2px 2px 4px rgba(200,230,255,0.15)",
+                background:
+                  "radial-gradient(circle at 35% 30%, #7EB8E8 0%, #3B6BAA 40%, #1B3B6E 70%, #0A1A3A 100%)",
+                boxShadow:
+                  "0 0 25px rgba(91,141,239,0.3), inset -3px -2px 6px rgba(0,0,0,0.4), inset 2px 2px 4px rgba(200,230,255,0.15)",
                 opacity: 0.45,
               }}
             >
               {/* Atmosphere band */}
-              <div className="absolute inset-0 rounded-full" style={{
-                background: "linear-gradient(160deg, transparent 30%, rgba(100,160,220,0.2) 50%, transparent 70%)",
-              }} />
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background:
+                    "linear-gradient(160deg, transparent 30%, rgba(100,160,220,0.2) 50%, transparent 70%)",
+                }}
+              />
             </div>
           </div>
         </motion.div>
@@ -77,22 +86,41 @@ export default function Hero() {
         >
           <div className="absolute" style={{ top: -460, left: -20 }}>
             <div className="relative">
-              <div className="w-9 h-9 rounded-full relative overflow-hidden"
+              <div
+                className="w-9 h-9 rounded-full relative overflow-hidden"
                 style={{
-                  background: "radial-gradient(circle at 35% 30%, #F0DCA0 0%, #D4A84A 30%, #A07820 60%, #604810 100%)",
-                  boxShadow: "0 0 20px rgba(232,213,163,0.25), inset -3px -2px 5px rgba(0,0,0,0.4), inset 2px 1px 3px rgba(255,240,200,0.2)",
+                  background:
+                    "radial-gradient(circle at 35% 30%, #F0DCA0 0%, #D4A84A 30%, #A07820 60%, #604810 100%)",
+                  boxShadow:
+                    "0 0 20px rgba(232,213,163,0.25), inset -3px -2px 5px rgba(0,0,0,0.4), inset 2px 1px 3px rgba(255,240,200,0.2)",
                   opacity: 0.4,
                 }}
               >
                 {/* Bands */}
-                <div className="absolute w-full" style={{ top: '35%', height: '8%', background: 'rgba(180,140,60,0.3)' }} />
-                <div className="absolute w-full" style={{ top: '55%', height: '5%', background: 'rgba(140,100,30,0.25)' }} />
+                <div
+                  className="absolute w-full"
+                  style={{
+                    top: "35%",
+                    height: "8%",
+                    background: "rgba(180,140,60,0.3)",
+                  }}
+                />
+                <div
+                  className="absolute w-full"
+                  style={{
+                    top: "55%",
+                    height: "5%",
+                    background: "rgba(140,100,30,0.25)",
+                  }}
+                />
               </div>
               {/* Ring */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[16px] rounded-full -rotate-[25deg]"
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[16px] rounded-full -rotate-[25deg]"
                 style={{
-                  border: '1.5px solid rgba(232,213,163,0.3)',
-                  background: 'linear-gradient(90deg, transparent 10%, rgba(232,213,163,0.08) 50%, transparent 90%)',
+                  border: "1.5px solid rgba(232,213,163,0.3)",
+                  background:
+                    "linear-gradient(90deg, transparent 10%, rgba(232,213,163,0.08) 50%, transparent 90%)",
                 }}
               />
             </div>
@@ -107,19 +135,50 @@ export default function Hero() {
           transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute" style={{ top: -400, left: -18 }}>
-            <div className="w-12 h-12 rounded-full relative overflow-hidden"
+            <div
+              className="w-12 h-12 rounded-full relative overflow-hidden"
               style={{
-                background: "radial-gradient(circle at 35% 30%, #E8C080 0%, #C09040 30%, #8B6020 60%, #503010 100%)",
-                boxShadow: "0 0 28px rgba(212,167,106,0.2), inset -4px -3px 8px rgba(0,0,0,0.5), inset 3px 2px 5px rgba(255,220,150,0.15)",
+                background:
+                  "radial-gradient(circle at 35% 30%, #E8C080 0%, #C09040 30%, #8B6020 60%, #503010 100%)",
+                boxShadow:
+                  "0 0 28px rgba(212,167,106,0.2), inset -4px -3px 8px rgba(0,0,0,0.5), inset 3px 2px 5px rgba(255,220,150,0.15)",
                 opacity: 0.4,
               }}
             >
               {/* Jupiter bands */}
-              <div className="absolute w-full" style={{ top: '25%', height: '6%', background: 'rgba(200,150,80,0.3)' }} />
-              <div className="absolute w-full" style={{ top: '40%', height: '10%', background: 'rgba(160,100,40,0.25)' }} />
-              <div className="absolute w-full" style={{ top: '60%', height: '7%', background: 'rgba(180,120,50,0.2)' }} />
+              <div
+                className="absolute w-full"
+                style={{
+                  top: "25%",
+                  height: "6%",
+                  background: "rgba(200,150,80,0.3)",
+                }}
+              />
+              <div
+                className="absolute w-full"
+                style={{
+                  top: "40%",
+                  height: "10%",
+                  background: "rgba(160,100,40,0.25)",
+                }}
+              />
+              <div
+                className="absolute w-full"
+                style={{
+                  top: "60%",
+                  height: "7%",
+                  background: "rgba(180,120,50,0.2)",
+                }}
+              />
               {/* Great Red Spot */}
-              <div className="absolute w-3 h-2 rounded-full" style={{ top: '42%', left: '55%', background: 'rgba(200,80,40,0.3)' }} />
+              <div
+                className="absolute w-3 h-2 rounded-full"
+                style={{
+                  top: "42%",
+                  left: "55%",
+                  background: "rgba(200,80,40,0.3)",
+                }}
+              />
             </div>
           </div>
         </motion.div>
@@ -132,15 +191,25 @@ export default function Hero() {
           transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute" style={{ top: -480, left: -10 }}>
-            <div className="w-7 h-7 rounded-full relative overflow-hidden"
+            <div
+              className="w-7 h-7 rounded-full relative overflow-hidden"
               style={{
-                background: "radial-gradient(circle at 35% 30%, #E89070 0%, #C05030 40%, #802010 70%, #401008 100%)",
-                boxShadow: "0 0 15px rgba(224,112,64,0.25), inset -2px -2px 5px rgba(0,0,0,0.5), inset 1px 1px 3px rgba(255,180,140,0.15)",
+                background:
+                  "radial-gradient(circle at 35% 30%, #E89070 0%, #C05030 40%, #802010 70%, #401008 100%)",
+                boxShadow:
+                  "0 0 15px rgba(224,112,64,0.25), inset -2px -2px 5px rgba(0,0,0,0.5), inset 1px 1px 3px rgba(255,180,140,0.15)",
                 opacity: 0.4,
               }}
             >
               {/* Polar ice cap */}
-              <div className="absolute w-3 h-1.5 rounded-full" style={{ top: '8%', left: '30%', background: 'rgba(255,240,230,0.2)' }} />
+              <div
+                className="absolute w-3 h-1.5 rounded-full"
+                style={{
+                  top: "8%",
+                  left: "30%",
+                  background: "rgba(255,240,230,0.2)",
+                }}
+              />
             </div>
           </div>
         </motion.div>
@@ -153,10 +222,13 @@ export default function Hero() {
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute" style={{ top: -360, left: -7 }}>
-            <div className="w-5 h-5 rounded-full"
+            <div
+              className="w-5 h-5 rounded-full"
               style={{
-                background: "radial-gradient(circle at 35% 30%, #E8FF80 0%, #D8FB32 40%, #90B010 70%, #506008 100%)",
-                boxShadow: "0 0 18px rgba(216,251,50,0.25), inset -2px -1px 4px rgba(0,0,0,0.3), inset 1px 1px 2px rgba(255,255,200,0.2)",
+                background:
+                  "radial-gradient(circle at 35% 30%, #E8FF80 0%, #D8FB32 40%, #90B010 70%, #506008 100%)",
+                boxShadow:
+                  "0 0 18px rgba(216,251,50,0.25), inset -2px -1px 4px rgba(0,0,0,0.3), inset 1px 1px 2px rgba(255,255,200,0.2)",
                 opacity: 0.2,
               }}
             />
@@ -175,7 +247,12 @@ export default function Hero() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[5]">
         <motion.div
           animate={{ scale: [1.1, 1.3, 1.1], opacity: [0.03, 0.08, 0.03] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
           className="w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] rounded-full border border-[#D8FB32]/5"
         />
       </div>
@@ -211,7 +288,7 @@ export default function Hero() {
             {/* Animated pinwheel on the i dot */}
             <motion.div
               className="absolute"
-              style={{ top: '8%', right: '6%' }}
+              style={{ top: "8%", right: "6%" }}
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
@@ -274,18 +351,22 @@ export default function Hero() {
         >
           <a
             href="/#hizmetler"
+            aria-label={t("scrollToServices")}
             className="flex flex-col items-center gap-2 text-[#666666] hover:text-[#999999] transition-colors duration-300 group opacity-30 hover:opacity-50"
           >
             <div className="w-6 h-10 rounded-full border border-[#333333] group-hover:border-[#555555] transition-colors duration-300 flex justify-center pt-2">
               <motion.div
                 animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="w-1.5 h-1.5 bg-[#D8FB32] rounded-full"
               />
             </div>
           </a>
         </motion.div>
-
       </div>
     </section>
   );

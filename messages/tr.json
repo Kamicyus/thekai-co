@@ -14,7 +14,8 @@
     "subtitle": "Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.",
     "tagline": "Call me Kai!",
     "ctaServices": "Hizmetleri Gör",
-    "ctaPortfolio": "Portfolyo"
+    "ctaPortfolio": "Portfolyo",
+    "scrollToServices": "Hizmetlere kaydır"
   },
   "services": {
     "title": "Ne Yapıyoruz",
