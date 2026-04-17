@@ -3,6 +3,12 @@
 import { useState, useCallback, useRef } from "react";
 import FadeIn from "@/components/ui/FadeIn";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
+import {
+  audioBufferToWav,
+  audioBufferToMp3,
+  sanitizeFilename,
+  triggerDownload,
+} from "@/lib/audio-export";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -291,6 +297,13 @@ export default function YoutubeBpmAnalyzPage() {
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
+  // Audio storage for downloads
+  const [audioRaw, setAudioRaw] = useState<ArrayBuffer | null>(null);
+  const [audioBuf, setAudioBuf] = useState<AudioBuffer | null>(null);
+  const [downloading, setDownloading] = useState<
+    "idle" | "m4a" | "wav" | "mp3"
+  >("idle");
+
   // File upload state
   const [fileResult, setFileResult] = useState<FileAnalysisResult | null>(null);
   const [fileStep, setFileStep] = useState<
@@ -381,6 +394,8 @@ export default function YoutubeBpmAnalyzPage() {
 
       setError(null);
       setResult(null);
+      setAudioRaw(null);
+      setAudioBuf(null);
       setStep("fetching-meta");
 
       let title = "";
@@ -410,6 +425,7 @@ export default function YoutubeBpmAnalyzPage() {
 
       setStep("downloading-audio");
       let audioBuffer: AudioBuffer | null = null;
+      let rawBuffer: ArrayBuffer | null = null;
       let downloadErrorDetail: string | null = null;
 
       try {
@@ -426,6 +442,7 @@ export default function YoutubeBpmAnalyzPage() {
           if (arrayBuffer.byteLength < 1024) {
             downloadErrorDetail = "Ses verisi çok küçük";
           } else {
+            rawBuffer = arrayBuffer;
             setStep("decoding-audio");
             const audioContext = new AudioContext();
             try {
@@ -442,6 +459,9 @@ export default function YoutubeBpmAnalyzPage() {
       } catch (e) {
         downloadErrorDetail = e instanceof Error ? e.message : "Ağ hatası";
       }
+
+      if (rawBuffer) setAudioRaw(rawBuffer);
+      if (audioBuffer) setAudioBuf(audioBuffer);
 
       if (audioBuffer) {
         setStep("analyzing-bpm");
@@ -528,6 +548,55 @@ export default function YoutubeBpmAnalyzPage() {
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
   }, [result]);
+
+  // ── Download handlers ────────────────────────────────────────────────────
+  const buildBaseName = useCallback(() => {
+    if (!result) return "audio";
+    const artist = result.artist ? sanitizeFilename(result.artist) : "";
+    const title = result.title ? sanitizeFilename(result.title) : "audio";
+    const tag: string[] = [];
+    if (result.bpm) tag.push(`${result.bpm}bpm`);
+    if (result.key) tag.push(result.key);
+    const tagStr = tag.length ? ` [${tag.join(" ")}]` : "";
+    return artist ? `${artist} - ${title}${tagStr}` : `${title}${tagStr}`;
+  }, [result]);
+
+  const downloadM4a = useCallback(() => {
+    if (!audioRaw) return;
+    setDownloading("m4a");
+    try {
+      const blob = new Blob([audioRaw], { type: "audio/mp4" });
+      triggerDownload(blob, `${buildBaseName()}.m4a`);
+    } finally {
+      setTimeout(() => setDownloading("idle"), 400);
+    }
+  }, [audioRaw, buildBaseName]);
+
+  const downloadWav = useCallback(() => {
+    if (!audioBuf) return;
+    setDownloading("wav");
+    setTimeout(() => {
+      try {
+        const blob = audioBufferToWav(audioBuf);
+        triggerDownload(blob, `${buildBaseName()}.wav`);
+      } finally {
+        setDownloading("idle");
+      }
+    }, 30);
+  }, [audioBuf, buildBaseName]);
+
+  const downloadMp3 = useCallback(async () => {
+    if (!audioBuf) return;
+    setDownloading("mp3");
+    try {
+      const blob = await audioBufferToMp3(audioBuf, 192);
+      triggerDownload(blob, `${buildBaseName()}.mp3`);
+    } catch (e) {
+      console.error("MP3 encode failed:", e);
+    } finally {
+      setDownloading("idle");
+    }
+  }, [audioBuf, buildBaseName]);
 
   const isLoading =
     step === "fetching-meta" ||
@@ -896,11 +965,87 @@ export default function YoutubeBpmAnalyzPage() {
                   </a>
                 )}
 
+                {/* Download buttons */}
+                {audioRaw && (
+                  <button
+                    onClick={downloadM4a}
+                    disabled={downloading !== "idle"}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A1A1A] border border-[#1F2937] text-[#CCCCCC] text-sm hover:border-[#D8FB32]/30 hover:text-[#D8FB32] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Orijinal kaliteyi anında indir (en hızlı)"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    {downloading === "m4a" ? "İniyor..." : "M4A indir"}
+                  </button>
+                )}
+                {audioBuf && (
+                  <button
+                    onClick={downloadWav}
+                    disabled={downloading !== "idle"}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A1A1A] border border-[#1F2937] text-[#CCCCCC] text-sm hover:border-[#D8FB32]/30 hover:text-[#D8FB32] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Stüdyo kalitesinde WAV (beat üretimi için)"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    {downloading === "wav" ? "Hazırlanıyor..." : "WAV indir"}
+                  </button>
+                )}
+                {audioBuf && (
+                  <button
+                    onClick={downloadMp3}
+                    disabled={downloading !== "idle"}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A1A1A] border border-[#1F2937] text-[#CCCCCC] text-sm hover:border-[#D8FB32]/30 hover:text-[#D8FB32] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="MP3 192kbps (paylaşmak için ideal)"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    {downloading === "mp3" ? "Encode..." : "MP3 indir"}
+                  </button>
+                )}
+
                 {/* New analysis */}
                 <button
                   onClick={() => {
                     setStep("idle");
                     setResult(null);
+                    setAudioRaw(null);
+                    setAudioBuf(null);
                     setUrl("");
                   }}
                   className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A1A1A] border border-[#1F2937] text-[#999] text-sm hover:border-[#EF4444]/30 hover:text-[#EF4444] transition-all ml-auto"
