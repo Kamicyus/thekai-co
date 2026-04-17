@@ -368,139 +368,143 @@ export default function YoutubeBpmAnalyzPage() {
 
   // ── Core analysis pipeline ────────────────────────────────────────────────
 
-  const analyze = useCallback(async () => {
-    const videoId = extractVideoId(url);
-    if (!videoId) {
-      setError(
-        "Geçerli bir YouTube URL'si girin. (örn: https://youtube.com/watch?v=...)",
-      );
-      return;
-    }
+  const analyze = useCallback(
+    async (overrideUrl?: string) => {
+      const target = overrideUrl ?? url;
+      const videoId = extractVideoId(target);
+      if (!videoId) {
+        setError(
+          "Geçerli bir YouTube URL'si girin. (örn: https://youtube.com/watch?v=...)",
+        );
+        return;
+      }
 
-    setError(null);
-    setResult(null);
-    setStep("fetching-meta");
+      setError(null);
+      setResult(null);
+      setStep("fetching-meta");
 
-    let title = "";
-    let artist = "";
-    let thumbnail = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+      let title = "";
+      let artist = "";
+      let thumbnail = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 
-    try {
-      const oembed = await fetch(
-        `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`,
-      );
-      if (oembed.ok) {
-        const data = await oembed.json();
-        title = data.title ?? "";
-        artist = data.author_name ?? "";
-      } else {
+      try {
+        const oembed = await fetch(
+          `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`,
+        );
+        if (oembed.ok) {
+          const data = await oembed.json();
+          title = data.title ?? "";
+          artist = data.author_name ?? "";
+        } else {
+          title = `YouTube Video (${videoId})`;
+        }
+      } catch {
         title = `YouTube Video (${videoId})`;
       }
-    } catch {
-      title = `YouTube Video (${videoId})`;
-    }
 
-    let bpm: number | null = null;
-    let keyShort: string | null = null;
-    let keyFull: string | null = null;
-    let found = false;
-    const spotifyId: string | null = null;
+      let bpm: number | null = null;
+      let keyShort: string | null = null;
+      let keyFull: string | null = null;
+      let found = false;
+      const spotifyId: string | null = null;
 
-    setStep("downloading-audio");
-    let audioBuffer: AudioBuffer | null = null;
-    let downloadErrorDetail: string | null = null;
+      setStep("downloading-audio");
+      let audioBuffer: AudioBuffer | null = null;
+      let downloadErrorDetail: string | null = null;
 
-    try {
-      const audioRes = await fetch(`/api/youtube-audio?videoId=${videoId}`);
-      if (!audioRes.ok) {
-        try {
-          const j = await audioRes.json();
-          downloadErrorDetail = j?.error ?? `HTTP ${audioRes.status}`;
-        } catch {
-          downloadErrorDetail = `HTTP ${audioRes.status}`;
-        }
-      } else {
-        const arrayBuffer = await audioRes.arrayBuffer();
-        if (arrayBuffer.byteLength < 1024) {
-          downloadErrorDetail = "Ses verisi çok küçük";
-        } else {
-          setStep("decoding-audio");
-          const audioContext = new AudioContext();
+      try {
+        const audioRes = await fetch(`/api/youtube-audio?videoId=${videoId}`);
+        if (!audioRes.ok) {
           try {
-            audioBuffer = await audioContext.decodeAudioData(
-              arrayBuffer.slice(0),
-            );
-          } catch (decErr) {
-            downloadErrorDetail = `Ses çözümlenemedi: ${decErr instanceof Error ? decErr.message : "decode error"}`;
-          } finally {
-            await audioContext.close().catch(() => {});
+            const j = await audioRes.json();
+            downloadErrorDetail = j?.error ?? `HTTP ${audioRes.status}`;
+          } catch {
+            downloadErrorDetail = `HTTP ${audioRes.status}`;
+          }
+        } else {
+          const arrayBuffer = await audioRes.arrayBuffer();
+          if (arrayBuffer.byteLength < 1024) {
+            downloadErrorDetail = "Ses verisi çok küçük";
+          } else {
+            setStep("decoding-audio");
+            const audioContext = new AudioContext();
+            try {
+              audioBuffer = await audioContext.decodeAudioData(
+                arrayBuffer.slice(0),
+              );
+            } catch (decErr) {
+              downloadErrorDetail = `Ses çözümlenemedi: ${decErr instanceof Error ? decErr.message : "decode error"}`;
+            } finally {
+              await audioContext.close().catch(() => {});
+            }
+          }
+        }
+      } catch (e) {
+        downloadErrorDetail = e instanceof Error ? e.message : "Ağ hatası";
+      }
+
+      if (audioBuffer) {
+        setStep("analyzing-bpm");
+        const detectedBpm = detectBpmFromBuffer(audioBuffer);
+        if (detectedBpm > 0) {
+          bpm = detectedBpm;
+          found = true;
+        }
+
+        setStep("analyzing-key");
+        const k = detectKeyFromBuffer(audioBuffer);
+        keyShort = k.short;
+        keyFull = k.full;
+        if (!found && keyShort) found = true;
+      }
+
+      if (!found || bpm === null) {
+        const bpmMatch =
+          title.match(/(\d{2,3})\s*bpm/i) || title.match(/tempo\s*(\d{2,3})/i);
+        if (bpmMatch) {
+          const parsed = parseInt(bpmMatch[1]);
+          if (parsed >= 40 && parsed <= 300) {
+            bpm = parsed;
+            found = true;
+          }
+        }
+        if (!keyShort) {
+          const keyMatch =
+            title.match(/\b([A-G][#b]?)\s*(min(?:or)?|maj(?:or)?|m)\b/i) ||
+            title.match(/\b([A-G][#b]?m)\b/);
+          if (keyMatch) {
+            const rawKey = keyMatch[0].trim();
+            keyShort = rawKey
+              .replace(/minor/i, "m")
+              .replace(/major/i, "")
+              .replace(/min/i, "m")
+              .replace(/maj/i, "");
+            keyFull = rawKey;
+            found = true;
           }
         }
       }
-    } catch (e) {
-      downloadErrorDetail = e instanceof Error ? e.message : "Ağ hatası";
-    }
 
-    if (audioBuffer) {
-      setStep("analyzing-bpm");
-      const detectedBpm = detectBpmFromBuffer(audioBuffer);
-      if (detectedBpm > 0) {
-        bpm = detectedBpm;
-        found = true;
+      if (!found && downloadErrorDetail) {
+        setError(
+          `Otomatik analiz başarısız (${downloadErrorDetail}). Aşağıdaki dosya yükleme alanını kullan — anında sonuç verir.`,
+        );
       }
 
-      setStep("analyzing-key");
-      const k = detectKeyFromBuffer(audioBuffer);
-      keyShort = k.short;
-      keyFull = k.full;
-      if (!found && keyShort) found = true;
-    }
-
-    if (!found || bpm === null) {
-      const bpmMatch =
-        title.match(/(\d{2,3})\s*bpm/i) || title.match(/tempo\s*(\d{2,3})/i);
-      if (bpmMatch) {
-        const parsed = parseInt(bpmMatch[1]);
-        if (parsed >= 40 && parsed <= 300) {
-          bpm = parsed;
-          found = true;
-        }
-      }
-      if (!keyShort) {
-        const keyMatch =
-          title.match(/\b([A-G][#b]?)\s*(min(?:or)?|maj(?:or)?|m)\b/i) ||
-          title.match(/\b([A-G][#b]?m)\b/);
-        if (keyMatch) {
-          const rawKey = keyMatch[0].trim();
-          keyShort = rawKey
-            .replace(/minor/i, "m")
-            .replace(/major/i, "")
-            .replace(/min/i, "m")
-            .replace(/maj/i, "");
-          keyFull = rawKey;
-          found = true;
-        }
-      }
-    }
-
-    if (!found && downloadErrorDetail) {
-      setError(
-        "YouTube otomatik analiz şu an mevcut değil. Şarkıyı indir ve aşağıdaki dosya yükleme alanını kullan — sonuç anında gelir.",
-      );
-    }
-
-    setResult({
-      title,
-      artist,
-      thumbnail,
-      bpm,
-      key: keyShort,
-      keyFull,
-      spotifyId,
-      found,
-    });
-    setStep("done");
-  }, [url]);
+      setResult({
+        title,
+        artist,
+        thumbnail,
+        bpm,
+        key: keyShort,
+        keyFull,
+        spotifyId,
+        found,
+      });
+      setStep("done");
+    },
+    [url],
+  );
 
   // ── Copy BPM handler ──────────────────────────────────────────────────────
 
@@ -572,8 +576,7 @@ export default function YoutubeBpmAnalyzPage() {
             YouTube URL
           </label>
           <p className="text-[#666] text-xs mb-3">
-            ⚠️ YouTube otomatik analizi YouTube&apos;un anti-bot kısıtlamaları
-            nedeniyle değişken çalışıyor. En tutarlı sonuç için aşağıdaki dosya
+            Linki yapıştır — analiz otomatik başlar. Olmazsa aşağıdaki dosya
             yükleme alanını kullan.
           </p>
 
@@ -586,6 +589,16 @@ export default function YoutubeBpmAnalyzPage() {
                 if (error) setError(null);
                 if (step === "done") setStep("idle");
               }}
+              onPaste={(e) => {
+                const pasted = e.clipboardData.getData("text");
+                if (extractVideoId(pasted) && !isLoading) {
+                  setUrl(pasted);
+                  setError(null);
+                  if (step === "done") setStep("idle");
+                  setTimeout(() => analyze(pasted), 0);
+                  e.preventDefault();
+                }
+              }}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !isLoading) analyze();
               }}
@@ -593,7 +606,7 @@ export default function YoutubeBpmAnalyzPage() {
               className="flex-1 px-4 py-3.5 bg-[#0A0A0A] border border-[#1F2937] rounded-[12px] text-[#F5F5F5] text-sm placeholder-[#444] outline-none focus:border-[#D8FB32]/40 focus:ring-1 focus:ring-[#D8FB32]/20 transition-all"
             />
             <button
-              onClick={analyze}
+              onClick={() => analyze()}
               disabled={isLoading || !url.trim()}
               className="px-7 py-3.5 rounded-[12px] bg-[#D8FB32] text-[#0A0A0A] text-sm font-bold hover:bg-[#C4E82C] active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap shadow-[0_0_20px_rgba(216,251,50,0.12)]"
             >

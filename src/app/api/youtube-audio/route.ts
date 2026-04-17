@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import ytdl from "@distube/ytdl-core";
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+export const maxDuration = 60;
 export const dynamic = "force-dynamic";
 
-const MAX_BYTES = 4 * 1024 * 1024;
+const MAX_BYTES = 5 * 1024 * 1024;
 
 function isValidVideoId(id: string): boolean {
   return /^[a-zA-Z0-9_-]{11}$/.test(id);
@@ -20,96 +19,62 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const url = `https://www.youtube.com/watch?v=${videoId}`;
+  const relayUrl = process.env.YOUTUBE_RELAY_URL?.replace(/\/+$/, "");
+  const relayToken = process.env.YOUTUBE_RELAY_TOKEN;
 
-  let info;
-  try {
-    info = await ytdl.getInfo(url);
-  } catch (e) {
+  if (!relayUrl || !relayToken) {
     return NextResponse.json(
-      {
-        error:
-          "YouTube videosuna erişilemedi (geo-block / private / silinmiş olabilir)",
-        detail: e instanceof Error ? e.message : String(e),
-      },
-      { status: 502 },
+      { error: "Relay yapılandırılmamış" },
+      { status: 503 },
     );
   }
 
-  const audioFormats = info.formats.filter(
-    (f) => f.hasAudio && !f.hasVideo && f.contentLength,
-  );
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 55_000);
 
-  if (audioFormats.length === 0) {
-    return NextResponse.json(
-      { error: "Bu video için ses akışı bulunamadı" },
-      { status: 404 },
-    );
-  }
-
-  audioFormats.sort(
-    (a, b) => Number(a.contentLength ?? 0) - Number(b.contentLength ?? 0),
-  );
-
-  const chosen = audioFormats[0];
-  const contentType = chosen.mimeType?.split(";")[0] ?? "audio/webm";
-
-  let stream;
+  let upstream: Response;
   try {
-    stream = ytdl.downloadFromInfo(info, {
-      format: chosen,
-      highWaterMark: 1 << 20,
+    upstream = await fetch(`${relayUrl}/audio?videoId=${videoId}`, {
+      headers: { Authorization: `Bearer ${relayToken}` },
+      signal: controller.signal,
+      cache: "no-store",
     });
   } catch (e) {
+    clearTimeout(timeout);
     return NextResponse.json(
       {
-        error: "Stream başlatılamadı",
+        error: "Relay'a ulaşılamadı (offline olabilir)",
         detail: e instanceof Error ? e.message : String(e),
       },
       { status: 502 },
     );
   }
+  clearTimeout(timeout);
 
-  const chunks: Buffer[] = [];
-  let total = 0;
-
-  try {
-    await new Promise<void>((resolve, reject) => {
-      stream.on("data", (chunk: Buffer) => {
-        if (total >= MAX_BYTES) return;
-        const remaining = MAX_BYTES - total;
-        const slice =
-          chunk.length > remaining ? chunk.subarray(0, remaining) : chunk;
-        chunks.push(slice);
-        total += slice.length;
-        if (total >= MAX_BYTES) {
-          stream.destroy();
-          resolve();
-        }
-      });
-      stream.on("end", () => resolve());
-      stream.on("error", (err) => reject(err));
-    });
-  } catch (e) {
+  if (!upstream.ok) {
+    const text = await upstream.text().catch(() => "");
     return NextResponse.json(
       {
-        error: "Ses indirme başarısız",
-        detail: e instanceof Error ? e.message : String(e),
+        error: `Relay hatası (${upstream.status})`,
+        detail: text.slice(0, 300),
       },
-      { status: 502 },
+      { status: upstream.status === 401 ? 500 : 502 },
     );
   }
 
-  const buffer = Buffer.concat(chunks, total);
-  const out = new Uint8Array(buffer);
+  const buf = await upstream.arrayBuffer();
+  const truncated = buf.byteLength > MAX_BYTES ? buf.slice(0, MAX_BYTES) : buf;
+  const bytes = new Uint8Array(truncated);
+  const contentType = upstream.headers.get("content-type") ?? "audio/mp4";
 
-  return new Response(out, {
+  return new Response(bytes, {
     status: 200,
     headers: {
       "Content-Type": contentType,
-      "Content-Length": String(out.byteLength),
+      "Content-Length": String(bytes.byteLength),
       "Cache-Control": "public, max-age=3600",
-      "X-Audio-Bytes": String(out.byteLength),
+      "X-Audio-Bytes": String(bytes.byteLength),
+      "X-Audio-Source": "relay",
     },
   });
 }
