@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import { fontVariables } from "@/lib/fonts";
 import Navbar from "@/components/layout/Navbar";
@@ -251,10 +250,6 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <ChatBot />
-          <Script
-            src="https://cdn.paddle.com/paddle/v2/paddle.js"
-            strategy="afterInteractive"
-          />
         </NextIntlClientProvider>
       </body>
     </html>

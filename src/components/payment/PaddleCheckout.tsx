@@ -9,10 +9,26 @@ declare global {
   }
 }
 
+const PADDLE_SCRIPT_SRC = "https://cdn.paddle.com/paddle/v2/paddle.js";
 let paddleInitialized = false;
+let paddleScriptInjected = false;
+
+function injectPaddleScript() {
+  if (paddleScriptInjected || typeof document === "undefined") return;
+  if (document.querySelector(`script[src="${PADDLE_SCRIPT_SRC}"]`)) {
+    paddleScriptInjected = true;
+    return;
+  }
+  const s = document.createElement("script");
+  s.src = PADDLE_SCRIPT_SRC;
+  s.async = true;
+  document.head.appendChild(s);
+  paddleScriptInjected = true;
+}
 
 function initPaddle() {
-  if (paddleInitialized || typeof window === "undefined" || !window.Paddle) return;
+  if (paddleInitialized || typeof window === "undefined" || !window.Paddle)
+    return;
 
   const env = process.env.NEXT_PUBLIC_PADDLE_ENV;
   if (env === "sandbox") {
@@ -28,7 +44,7 @@ function initPaddle() {
 
 export function usePaddleInit() {
   useEffect(() => {
-    // Paddle.js might not be loaded yet — retry until available
+    injectPaddleScript();
     const interval = setInterval(() => {
       if (typeof window !== "undefined" && window.Paddle) {
         initPaddle();
@@ -46,6 +62,7 @@ interface OpenCheckoutOptions {
 }
 
 export function openPaddleCheckout({ priceId, email }: OpenCheckoutOptions) {
+  injectPaddleScript();
   if (typeof window === "undefined" || !window.Paddle) {
     console.warn("Paddle.js henüz yüklenmedi.");
     return;
