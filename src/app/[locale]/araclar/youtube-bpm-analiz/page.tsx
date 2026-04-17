@@ -28,8 +28,10 @@ interface FileAnalysisResult {
 type AnalysisStep =
   | "idle"
   | "fetching-meta"
-  | "searching-spotify"
-  | "fetching-features"
+  | "downloading-audio"
+  | "decoding-audio"
+  | "analyzing-bpm"
+  | "analyzing-key"
   | "done"
   | "error";
 
@@ -48,52 +50,67 @@ function extractVideoId(url: string): string | null {
 }
 
 // Camelot / Open Key wheel — maps Spotify pitch class + mode to key notation
-const PITCH_CLASS_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+const PITCH_CLASS_NAMES = [
+  "C",
+  "C#",
+  "D",
+  "D#",
+  "E",
+  "F",
+  "F#",
+  "G",
+  "G#",
+  "A",
+  "A#",
+  "B",
+];
 
 const CAMELOT_WHEEL: Record<string, string> = {
-  "C_major": "8B", "C#_major": "3B", "D_major": "10B", "D#_major": "5B",
-  "E_major": "12B", "F_major": "7B", "F#_major": "2B", "G_major": "9B",
-  "G#_major": "4B", "A_major": "11B", "A#_major": "6B", "B_major": "1B",
-  "C_minor": "5A", "C#_minor": "12A", "D_minor": "7A", "D#_minor": "2A",
-  "E_minor": "9A", "F_minor": "4A", "F#_minor": "11A", "G_minor": "6A",
-  "G#_minor": "1A", "A_minor": "8A", "A#_minor": "3A", "B_minor": "10A",
+  C_major: "8B",
+  "C#_major": "3B",
+  D_major: "10B",
+  "D#_major": "5B",
+  E_major: "12B",
+  F_major: "7B",
+  "F#_major": "2B",
+  G_major: "9B",
+  "G#_major": "4B",
+  A_major: "11B",
+  "A#_major": "6B",
+  B_major: "1B",
+  C_minor: "5A",
+  "C#_minor": "12A",
+  D_minor: "7A",
+  "D#_minor": "2A",
+  E_minor: "9A",
+  F_minor: "4A",
+  "F#_minor": "11A",
+  G_minor: "6A",
+  "G#_minor": "1A",
+  A_minor: "8A",
+  "A#_minor": "3A",
+  B_minor: "10A",
 };
-
-function formatKey(pitchClass: number, mode: number): { short: string; full: string } {
-  const note = PITCH_CLASS_NAMES[pitchClass] ?? "?";
-  const modeStr = mode === 1 ? "Majör" : "Minör";
-  const modeKey = mode === 1 ? "major" : "minor";
-  const short = mode === 1 ? note : `${note}m`;
-  const camelot = CAMELOT_WHEEL[`${note}_${modeKey}`] ?? "";
-  const full = `${note} ${modeStr}${camelot ? ` · Camelot: ${camelot}` : ""}`;
-  return { short, full };
-}
-
-function slugifyTitle(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .slice(0, 60);
-}
-
-function buildWavFilename(title: string, bpm: number | null, key: string | null): string {
-  const t = slugifyTitle(title) || "beat";
-  const b = bpm ? `${bpm}bpm` : "";
-  const k = key ? `_${key}` : "";
-  return `${t}${b ? `_${b}` : ""}${k}.wav`;
-}
 
 // Step labels for progress indicator
 const STEP_LABELS: Record<AnalysisStep, string> = {
   idle: "",
   "fetching-meta": "YouTube bilgisi alınıyor...",
-  "searching-spotify": "Spotify'da aranıyor...",
-  "fetching-features": "BPM & ton analiz ediliyor...",
+  "downloading-audio": "Ses indiriliyor (~60s)...",
+  "decoding-audio": "Ses çözümleniyor...",
+  "analyzing-bpm": "BPM tespit ediliyor...",
+  "analyzing-key": "Ton (key) tespit ediliyor...",
   done: "",
   error: "",
 };
+
+const PROGRESS_STEPS = [
+  "fetching-meta",
+  "downloading-audio",
+  "decoding-audio",
+  "analyzing-bpm",
+  "analyzing-key",
+] as const;
 
 // ─── Component ──────────────────────────────────────────────────────────────
 
@@ -123,9 +140,14 @@ function detectBpmFromBuffer(audioBuffer: AudioBuffer): number {
 
   // Find peaks (onsets)
   const peaks: number[] = [];
-  const threshold = energies.reduce((a, b) => a + b, 0) / energies.length * 1.4;
+  const threshold =
+    (energies.reduce((a, b) => a + b, 0) / energies.length) * 1.4;
   for (let i = 1; i < energies.length - 1; i++) {
-    if (energies[i] > threshold && energies[i] > energies[i - 1] && energies[i] > energies[i + 1]) {
+    if (
+      energies[i] > threshold &&
+      energies[i] > energies[i - 1] &&
+      energies[i] > energies[i + 1]
+    ) {
       peaks.push(i);
     }
   }
@@ -136,7 +158,8 @@ function detectBpmFromBuffer(audioBuffer: AudioBuffer): number {
   const intervals: number[] = [];
   for (let i = 1; i < peaks.length; i++) {
     const interval = (peaks[i] - peaks[i - 1]) * 0.05; // seconds
-    if (interval > 0.2 && interval < 2.0) { // 30-300 BPM range
+    if (interval > 0.2 && interval < 2.0) {
+      // 30-300 BPM range
       intervals.push(interval);
     }
   }
@@ -168,7 +191,10 @@ function detectBpmFromBuffer(audioBuffer: AudioBuffer): number {
 }
 
 // ─── Key Detection (Krumhansl-Schmuckler algorithm) ───────────────────────
-function detectKeyFromBuffer(audioBuffer: AudioBuffer): { short: string; full: string } {
+function detectKeyFromBuffer(audioBuffer: AudioBuffer): {
+  short: string;
+  full: string;
+} {
   const channel = audioBuffer.getChannelData(0);
   const sampleRate = audioBuffer.sampleRate;
   const fftSize = 4096;
@@ -179,8 +205,8 @@ function detectKeyFromBuffer(audioBuffer: AudioBuffer): { short: string; full: s
 
   // Simple chromagram via autocorrelation-based pitch detection
   const noteFreqs = [
-    261.63, 277.18, 293.66, 311.13, 329.63, 349.23,
-    369.99, 392.00, 415.30, 440.00, 466.16, 493.88
+    261.63, 277.18, 293.66, 311.13, 329.63, 349.23, 369.99, 392.0, 415.3, 440.0,
+    466.16, 493.88,
   ]; // C4 to B4
 
   for (let offset = 0; offset < maxSamples - fftSize; offset += fftSize) {
@@ -189,21 +215,27 @@ function detectKeyFromBuffer(audioBuffer: AudioBuffer): { short: string; full: s
       let correlation = 0;
       const samples = Math.min(fftSize, maxSamples - offset);
       for (let i = 0; i < samples - Math.ceil(period); i++) {
-        correlation += channel[offset + i] * channel[offset + i + Math.round(period)];
+        correlation +=
+          channel[offset + i] * channel[offset + i + Math.round(period)];
       }
       // Also check octaves
       const period2 = period * 2;
       let corr2 = 0;
       for (let i = 0; i < samples - Math.ceil(period2); i++) {
-        corr2 += channel[offset + i] * channel[offset + i + Math.round(period2)];
+        corr2 +=
+          channel[offset + i] * channel[offset + i + Math.round(period2)];
       }
       chromagram[note] += Math.max(0, correlation) + Math.max(0, corr2) * 0.5;
     }
   }
 
   // Krumhansl-Schmuckler profiles
-  const majorProfile = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88];
-  const minorProfile = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17];
+  const majorProfile = [
+    6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88,
+  ];
+  const minorProfile = [
+    6.33, 2.68, 3.52, 5.38, 2.6, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17,
+  ];
 
   let bestKey = 0;
   let bestMode = 0;
@@ -213,7 +245,11 @@ function detectKeyFromBuffer(audioBuffer: AudioBuffer): { short: string; full: s
     for (let mode = 0; mode < 2; mode++) {
       const profile = mode === 0 ? majorProfile : minorProfile;
       // Rotate chromagram
-      let sumXY = 0, sumX = 0, sumY = 0, sumX2 = 0, sumY2 = 0;
+      let sumXY = 0,
+        sumX = 0,
+        sumY = 0,
+        sumX2 = 0,
+        sumY2 = 0;
       for (let i = 0; i < 12; i++) {
         const x = chromagram[(i + key) % 12];
         const y = profile[i];
@@ -224,7 +260,8 @@ function detectKeyFromBuffer(audioBuffer: AudioBuffer): { short: string; full: s
         sumY2 += y * y;
       }
       const n = 12;
-      const corr = (n * sumXY - sumX * sumY) /
+      const corr =
+        (n * sumXY - sumX * sumY) /
         Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
       if (corr > bestCorr) {
         bestCorr = corr;
@@ -256,7 +293,9 @@ export default function YoutubeBpmAnalyzPage() {
 
   // File upload state
   const [fileResult, setFileResult] = useState<FileAnalysisResult | null>(null);
-  const [fileStep, setFileStep] = useState<"idle" | "decoding" | "analyzing-bpm" | "analyzing-key" | "done" | "error">("idle");
+  const [fileStep, setFileStep] = useState<
+    "idle" | "decoding" | "analyzing-bpm" | "analyzing-key" | "done" | "error"
+  >("idle");
   const [fileError, setFileError] = useState<string | null>(null);
   const [fileCopied, setFileCopied] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -264,8 +303,13 @@ export default function YoutubeBpmAnalyzPage() {
 
   // ── File analysis handler ──────────────────────────────────────────────────
   const analyzeFile = useCallback(async (file: File) => {
-    if (!file.type.startsWith("audio/") && !file.name.match(/\.(mp3|wav|flac|ogg|m4a|aac|aiff|wma)$/i)) {
-      setFileError("Lütfen bir ses dosyası seçin (MP3, WAV, FLAC, OGG, M4A, AAC)");
+    if (
+      !file.type.startsWith("audio/") &&
+      !file.name.match(/\.(mp3|wav|flac|ogg|m4a|aac|aiff|wma)$/i)
+    ) {
+      setFileError(
+        "Lütfen bir ses dosyası seçin (MP3, WAV, FLAC, OGG, M4A, AAC)",
+      );
       return;
     }
 
@@ -297,29 +341,39 @@ export default function YoutubeBpmAnalyzPage() {
 
       await audioContext.close();
     } catch (e) {
-      setFileError(`Dosya analiz edilemedi: ${e instanceof Error ? e.message : "Bilinmeyen hata"}`);
+      setFileError(
+        `Dosya analiz edilemedi: ${e instanceof Error ? e.message : "Bilinmeyen hata"}`,
+      );
       setFileStep("error");
     }
   }, []);
 
-  const handleFileDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
-    const file = e.dataTransfer.files[0];
-    if (file) analyzeFile(file);
-  }, [analyzeFile]);
+  const handleFileDrop = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      setIsDragging(false);
+      const file = e.dataTransfer.files[0];
+      if (file) analyzeFile(file);
+    },
+    [analyzeFile],
+  );
 
-  const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) analyzeFile(file);
-  }, [analyzeFile]);
+  const handleFileSelect = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (file) analyzeFile(file);
+    },
+    [analyzeFile],
+  );
 
   // ── Core analysis pipeline ────────────────────────────────────────────────
 
   const analyze = useCallback(async () => {
     const videoId = extractVideoId(url);
     if (!videoId) {
-      setError("Geçerli bir YouTube URL'si girin. (örn: https://youtube.com/watch?v=...)");
+      setError(
+        "Geçerli bir YouTube URL'si girin. (örn: https://youtube.com/watch?v=...)",
+      );
       return;
     }
 
@@ -327,141 +381,112 @@ export default function YoutubeBpmAnalyzPage() {
     setResult(null);
     setStep("fetching-meta");
 
-    // ── 1. YouTube oEmbed → title + thumbnail ────────────────────────────
     let title = "";
     let artist = "";
-    let thumbnail = "";
+    let thumbnail = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 
     try {
       const oembed = await fetch(
-        `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`
+        `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`,
       );
-      if (!oembed.ok) throw new Error("oEmbed isteği başarısız");
-      const data = await oembed.json();
-      title = data.title ?? "";
-      artist = data.author_name ?? "";
-      // oEmbed doesn't return thumbnail — build it directly
-      thumbnail = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+      if (oembed.ok) {
+        const data = await oembed.json();
+        title = data.title ?? "";
+        artist = data.author_name ?? "";
+      } else {
+        title = `YouTube Video (${videoId})`;
+      }
     } catch {
-      // Fallback: use video ID thumbnail, no title
-      thumbnail = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
       title = `YouTube Video (${videoId})`;
     }
-
-    setStep("searching-spotify");
-
-    // ── 2. Spotify token (Client Credentials) ────────────────────────────
-    // We use a public proxy approach: call /api/spotify-features
-    // which handles the token server-side. But since we're fully client-side
-    // here, we use the Spotify public search widget API (no auth needed for search)
-    // and the GetSongBPM free API as fallback.
 
     let bpm: number | null = null;
     let keyShort: string | null = null;
     let keyFull: string | null = null;
-    let spotifyId: string | null = null;
     let found = false;
+    const spotifyId: string | null = null;
 
-    // ── 3. GetSongBPM API (public, free, no key needed for basic search) ─
-    // API: https://getsongbpm.com/api
-    // The free tier allows searches without an API key via their public endpoint.
+    setStep("downloading-audio");
+    let audioBuffer: AudioBuffer | null = null;
+    let downloadErrorDetail: string | null = null;
+
     try {
-      const cleanTitle = title
-        .replace(/\(.*?\)/g, "")
-        .replace(/\[.*?\]/g, "")
-        .replace(/ft\..*/i, "")
-        .replace(/feat\..*/i, "")
-        .trim();
-
-      const searchQuery = encodeURIComponent(`${cleanTitle}`);
-      const gsbRes = await fetch(
-        `https://api.getsongbpm.com/search/?api_key=free&type=both&lookup=${searchQuery}`,
-        { headers: { Accept: "application/json" } }
-      );
-
-      if (gsbRes.ok) {
-        const gsbData = await gsbRes.json();
-        const songs = gsbData?.search ?? [];
-        if (songs.length > 0) {
-          const song = songs[0];
-          if (song.tempo) {
-            bpm = Math.round(Number(song.tempo));
-            found = true;
-          }
-          if (song.key_of) {
-            keyShort = song.key_of;
-            keyFull = song.key_of;
+      const audioRes = await fetch(`/api/youtube-audio?videoId=${videoId}`);
+      if (!audioRes.ok) {
+        try {
+          const j = await audioRes.json();
+          downloadErrorDetail = j?.error ?? `HTTP ${audioRes.status}`;
+        } catch {
+          downloadErrorDetail = `HTTP ${audioRes.status}`;
+        }
+      } else {
+        const arrayBuffer = await audioRes.arrayBuffer();
+        if (arrayBuffer.byteLength < 1024) {
+          downloadErrorDetail = "Ses verisi çok küçük";
+        } else {
+          setStep("decoding-audio");
+          const audioContext = new AudioContext();
+          try {
+            audioBuffer = await audioContext.decodeAudioData(
+              arrayBuffer.slice(0),
+            );
+          } catch (decErr) {
+            downloadErrorDetail = `Ses çözümlenemedi: ${decErr instanceof Error ? decErr.message : "decode error"}`;
+          } finally {
+            await audioContext.close().catch(() => {});
           }
         }
       }
-    } catch {
-      // GetSongBPM failed — continue to next method
+    } catch (e) {
+      downloadErrorDetail = e instanceof Error ? e.message : "Ağ hatası";
     }
 
-    setStep("fetching-features");
-
-    // ── 4. Spotify Search + Audio Features (via our API route) ───────────
-    // Falls back if GetSongBPM didn't return results
-    if (!found || bpm === null) {
-      try {
-        const apiRes = await fetch(
-          `/api/spotify-features?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`
-        );
-        if (apiRes.ok) {
-          const apiData = await apiRes.json();
-          if (apiData.bpm) bpm = Math.round(apiData.bpm);
-          if (apiData.key !== undefined && apiData.mode !== undefined) {
-            const { short, full } = formatKey(apiData.key, apiData.mode);
-            keyShort = short;
-            keyFull = full;
-          }
-          if (apiData.spotifyId) spotifyId = apiData.spotifyId;
-          found = true;
-        }
-      } catch {
-        // API route not available (static export) — that's fine
-      }
-    }
-
-    // ── 5. Lokal BPM API (yt-dlp + librosa ile gerçek ses analizi) ─────
-    if (process.env.NODE_ENV === "development" && (!found || bpm === null)) {
-      try {
-        const localRes = await fetch("http://localhost:5555/analyze", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url }),
-        });
-        if (localRes.ok) {
-          const localData = await localRes.json();
-          if (localData.bpm) {
-            bpm = localData.bpm;
-            keyShort = localData.key;
-            keyFull = localData.keyFull;
-            found = true;
-          }
-        }
-      } catch {
-        // Lokal API çalışmıyor — devam et
-      }
-    }
-
-    // ── 6. Fallback: Parse BPM/Key from video title (type beats often include it)
-    if (!found || bpm === null) {
-      // Try to extract BPM from title like "140 BPM", "tempo 120", etc.
-      const bpmMatch = title.match(/(\d{2,3})\s*bpm/i) || title.match(/tempo\s*(\d{2,3})/i);
-      if (bpmMatch) {
-        bpm = parseInt(bpmMatch[1]);
-        if (bpm >= 40 && bpm <= 300) found = true;
-      }
-      // Try to extract key from title like "Am", "C# Minor", "F Major", "Dm"
-      const keyMatch = title.match(/\b([A-G][#b]?)\s*(min(?:or)?|maj(?:or)?|m)\b/i)
-        || title.match(/\b([A-G][#b]?m)\b/);
-      if (keyMatch) {
-        const rawKey = keyMatch[0].trim();
-        keyShort = rawKey.replace(/minor/i, "m").replace(/major/i, "").replace(/min/i, "m").replace(/maj/i, "");
-        keyFull = rawKey;
+    if (audioBuffer) {
+      setStep("analyzing-bpm");
+      const detectedBpm = detectBpmFromBuffer(audioBuffer);
+      if (detectedBpm > 0) {
+        bpm = detectedBpm;
         found = true;
       }
+
+      setStep("analyzing-key");
+      const k = detectKeyFromBuffer(audioBuffer);
+      keyShort = k.short;
+      keyFull = k.full;
+      if (!found && keyShort) found = true;
+    }
+
+    if (!found || bpm === null) {
+      const bpmMatch =
+        title.match(/(\d{2,3})\s*bpm/i) || title.match(/tempo\s*(\d{2,3})/i);
+      if (bpmMatch) {
+        const parsed = parseInt(bpmMatch[1]);
+        if (parsed >= 40 && parsed <= 300) {
+          bpm = parsed;
+          found = true;
+        }
+      }
+      if (!keyShort) {
+        const keyMatch =
+          title.match(/\b([A-G][#b]?)\s*(min(?:or)?|maj(?:or)?|m)\b/i) ||
+          title.match(/\b([A-G][#b]?m)\b/);
+        if (keyMatch) {
+          const rawKey = keyMatch[0].trim();
+          keyShort = rawKey
+            .replace(/minor/i, "m")
+            .replace(/major/i, "")
+            .replace(/min/i, "m")
+            .replace(/maj/i, "");
+          keyFull = rawKey;
+          found = true;
+        }
+      }
+    }
+
+    if (!found && downloadErrorDetail) {
+      setError(
+        "YouTube otomatik analiz şu an mevcut değil. Şarkıyı indir ve aşağıdaki dosya yükleme alanını kullan — sonuç anında gelir.",
+      );
     }
 
     setResult({
@@ -488,56 +513,24 @@ export default function YoutubeBpmAnalyzPage() {
     }
   }, [result]);
 
-  // ── Download WAV handler (creates a named anchor with a placeholder) ───
+  // ── Copy "BPM · Key" combined ─────────────────────────────────────────────
 
-  const [downloading, setDownloading] = useState(false);
-
-  const handleDownloadHint = useCallback(async () => {
-    if (!result || !url) return;
-    setDownloading(true);
-
-    try {
-      // Try cobalt API for audio extraction
-      const res = await fetch("https://api.cobalt.tools/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ url, audioFormat: "wav", isAudioOnly: true, aFormat: "wav" }),
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        if (data.url) {
-          // Direct download link from cobalt
-          const a = document.createElement("a");
-          a.href = data.url;
-          a.download = buildWavFilename(result.title, result.bpm, result.key);
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          setDownloading(false);
-          return;
-        }
-      }
-
-      // Fallback: open in new tab for manual download
-      const videoId = url.match(/(?:v=|youtu\.be\/|\/shorts\/)([a-zA-Z0-9_-]{11})/)?.[1];
-      if (videoId) {
-        window.open(`https://cobalt.tools/#${url}`, "_blank");
-      } else {
-        alert("Bu URL desteklenmiyor. Lütfen geçerli bir YouTube linki girin.");
-      }
-    } catch {
-      // Network error — open cobalt.tools as fallback
-      window.open(`https://cobalt.tools/`, "_blank");
-    } finally {
-      setDownloading(false);
-    }
-  }, [result, url]);
+  const copyAll = useCallback(() => {
+    if (!result?.bpm && !result?.key) return;
+    const parts: string[] = [];
+    if (result.bpm) parts.push(`${result.bpm} BPM`);
+    if (result.keyFull) parts.push(result.keyFull);
+    navigator.clipboard.writeText(parts.join(" · "));
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }, [result]);
 
   const isLoading =
     step === "fetching-meta" ||
-    step === "searching-spotify" ||
-    step === "fetching-features";
+    step === "downloading-audio" ||
+    step === "decoding-audio" ||
+    step === "analyzing-bpm" ||
+    step === "analyzing-key";
 
   // ─── Render ───────────────────────────────────────────────────────────────
 
@@ -567,8 +560,9 @@ export default function YoutubeBpmAnalyzPage() {
             YouTube BPM &amp; Ton Analiz
           </h1>
           <p className="text-[#999999] text-base max-w-lg mx-auto leading-relaxed">
-            YouTube linki yapıştır veya ses dosyası yükle — şarkının BPM (tempo) ve
-            müzikal ton (key) bilgisini anında öğren. Prodüksiyonda mix uyumu için ideal.
+            YouTube linki yapıştır veya ses dosyası yükle — şarkının BPM (tempo)
+            ve müzikal ton (key) bilgisini anında öğren. Prodüksiyonda mix uyumu
+            için ideal.
           </p>
         </FadeIn>
 
@@ -578,7 +572,9 @@ export default function YoutubeBpmAnalyzPage() {
             YouTube URL
           </label>
           <p className="text-[#666] text-xs mb-3">
-            ⚠️ Tarayıcınızda pop-up engelleyici veya mikrofon izni uyarısı çıkarsa &quot;İzin Ver&quot; butonuna tıklayın.
+            ⚠️ YouTube otomatik analizi YouTube&apos;un anti-bot kısıtlamaları
+            nedeniyle değişken çalışıyor. En tutarlı sonuç için aşağıdaki dosya
+            yükleme alanını kullan.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -617,25 +613,30 @@ export default function YoutubeBpmAnalyzPage() {
             <div className="mt-5 space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-5 h-5 rounded-full border-2 border-[#D8FB32]/30 border-t-[#D8FB32] animate-spin flex-shrink-0" />
-                <span className="text-[#D8FB32] text-sm">{STEP_LABELS[step]}</span>
+                <span className="text-[#D8FB32] text-sm">
+                  {STEP_LABELS[step]}
+                </span>
               </div>
               {/* Step dots */}
               <div className="flex gap-2 pl-8">
-                {(["fetching-meta", "searching-spotify", "fetching-features"] as const).map(
-                  (s) => (
+                {PROGRESS_STEPS.map((s) => {
+                  const currentIdx = PROGRESS_STEPS.indexOf(
+                    step as (typeof PROGRESS_STEPS)[number],
+                  );
+                  const stepIdx = PROGRESS_STEPS.indexOf(s);
+                  return (
                     <div
                       key={s}
                       className={`h-1 rounded-full transition-all duration-500 ${
                         step === s
                           ? "w-6 bg-[#D8FB32]"
-                          : ["fetching-meta", "searching-spotify", "fetching-features"].indexOf(s) <
-                            ["fetching-meta", "searching-spotify", "fetching-features"].indexOf(step)
-                          ? "w-4 bg-[#D8FB32]/50"
-                          : "w-4 bg-[#1F2937]"
+                          : stepIdx < currentIdx
+                            ? "w-4 bg-[#D8FB32]/50"
+                            : "w-4 bg-[#1F2937]"
                       }`}
                     />
-                  )
-                )}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -686,7 +687,16 @@ export default function YoutubeBpmAnalyzPage() {
                   className="flex-shrink-0 p-2 rounded-xl bg-[#1A1A1A] border border-[#1F2937] text-[#999] hover:text-[#D8FB32] hover:border-[#D8FB32]/30 transition-all"
                   title="YouTube'da aç"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
@@ -699,7 +709,16 @@ export default function YoutubeBpmAnalyzPage() {
                 {/* BPM */}
                 <div className="bg-[#141414] p-7 flex flex-col gap-2">
                   <div className="flex items-center gap-2 text-[#666] text-xs uppercase tracking-wider mb-1">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <circle cx="12" cy="12" r="9" />
                       <path d="m12 7 1 4.5L16 13" />
                     </svg>
@@ -717,16 +736,16 @@ export default function YoutubeBpmAnalyzPage() {
                           {result.bpm < 70
                             ? "Largo — Çok Yavaş"
                             : result.bpm < 90
-                            ? "Andante — Yavaş"
-                            : result.bpm < 110
-                            ? "Moderato — Orta"
-                            : result.bpm < 130
-                            ? "Allegretto — Canlı"
-                            : result.bpm < 160
-                            ? "Allegro — Hızlı"
-                            : result.bpm < 200
-                            ? "Vivace — Çok Hızlı"
-                            : "Presto — Aşırı Hızlı"}
+                              ? "Andante — Yavaş"
+                              : result.bpm < 110
+                                ? "Moderato — Orta"
+                                : result.bpm < 130
+                                  ? "Allegretto — Canlı"
+                                  : result.bpm < 160
+                                    ? "Allegro — Hızlı"
+                                    : result.bpm < 200
+                                      ? "Vivace — Çok Hızlı"
+                                      : "Presto — Aşırı Hızlı"}
                         </span>
                       </div>
                     </>
@@ -738,7 +757,16 @@ export default function YoutubeBpmAnalyzPage() {
                 {/* Key */}
                 <div className="bg-[#141414] p-7 flex flex-col gap-2">
                   <div className="flex items-center gap-2 text-[#666] text-xs uppercase tracking-wider mb-1">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <path d="m21 2-9.6 9.6" />
                       <path d="M3.5 17.5 5 20l2.5 1.5 10-10-3-3L4.5 18Z" />
                       <circle cx="14" cy="9" r="2" />
@@ -770,15 +798,40 @@ export default function YoutubeBpmAnalyzPage() {
                   >
                     {copied ? (
                       <>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="#D8FB32"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                         Kopyalandı!
                       </>
                     ) : (
                       <>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <rect
+                            x="9"
+                            y="9"
+                            width="13"
+                            height="13"
+                            rx="2"
+                            ry="2"
+                          />
                           <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                         </svg>
                         BPM Kopyala
@@ -787,28 +840,28 @@ export default function YoutubeBpmAnalyzPage() {
                   </button>
                 )}
 
-                {/* Beat download hint */}
-                <button
-                  onClick={handleDownloadHint}
-                  disabled={downloading}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 text-[#D8FB32] text-sm hover:bg-[#D8FB32]/15 hover:border-[#D8FB32]/40 transition-all font-medium disabled:opacity-50"
-                >
-                  {downloading ? (
-                    <>
-                      <svg className="animate-spin w-3.5 h-3.5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-20"/><path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg>
-                      İndiriliyor...
-                    </>
-                  ) : (
-                    <>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                      </svg>
-                      Beat İndir (WAV)
-                    </>
-                  )}
-                </button>
+                {/* Copy all (BPM + Key) */}
+                {(result.bpm || result.key) && (
+                  <button
+                    onClick={copyAll}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 text-[#D8FB32] text-sm hover:bg-[#D8FB32]/15 hover:border-[#D8FB32]/40 transition-all font-medium"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                    Tümünü Kopyala
+                  </button>
+                )}
 
                 {/* Spotify link */}
                 {result.spotifyId && (
@@ -818,8 +871,13 @@ export default function YoutubeBpmAnalyzPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1DB954]/10 border border-[#1DB954]/20 text-[#1DB954] text-sm hover:bg-[#1DB954]/15 transition-all"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
                     </svg>
                     Spotify
                   </a>
@@ -834,7 +892,16 @@ export default function YoutubeBpmAnalyzPage() {
                   }}
                   className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A1A1A] border border-[#1F2937] text-[#999] text-sm hover:border-[#EF4444]/30 hover:text-[#EF4444] transition-all ml-auto"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <polyline points="1 4 1 10 7 10" />
                     <path d="M3.51 15a9 9 0 1 0 .49-3.5" />
                   </svg>
@@ -847,10 +914,15 @@ export default function YoutubeBpmAnalyzPage() {
                 <div className="px-5 pb-5">
                   <div className="p-4 bg-[#F59E0B]/8 border border-[#F59E0B]/20 rounded-xl">
                     <p className="text-[#F59E0B] text-sm">
-                      <strong>BPM / ton bilgisi bulunamadı.</strong> Bu şarkı müzik
-                      veritabanlarında kayıtlı olmayabilir (type beat, remix, cover vb.).{" "}
+                      <strong>BPM / ton bilgisi bulunamadı.</strong> Bu şarkı
+                      müzik veritabanlarında kayıtlı olmayabilir (type beat,
+                      remix, cover vb.).{" "}
                       <button
-                        onClick={() => document.getElementById("file-upload-section")?.scrollIntoView({ behavior: "smooth" })}
+                        onClick={() =>
+                          document
+                            .getElementById("file-upload-section")
+                            ?.scrollIntoView({ behavior: "smooth" })
+                        }
                         className="underline hover:text-[#F5F5F5] transition-colors font-medium"
                       >
                         Aşağıdaki ses dosyası yükleme alanını kullanarak
@@ -865,24 +937,43 @@ export default function YoutubeBpmAnalyzPage() {
         )}
 
         {/* ── File Upload Section ───────────────────────────────────────── */}
-        <div id="file-upload-section" className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-7 sm:p-9 mb-6">
+        <div
+          id="file-upload-section"
+          className="bg-[#141414] border border-[#1F2937] rounded-[20px] p-7 sm:p-9 mb-6"
+        >
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 flex items-center justify-center flex-shrink-0">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#D8FB32"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M9 18V5l12-2v13" />
                 <circle cx="6" cy="18" r="3" />
                 <circle cx="18" cy="16" r="3" />
               </svg>
             </div>
             <div>
-              <h2 className="text-[#F5F5F5] text-base font-semibold">Ses Dosyası Analizi</h2>
-              <p className="text-[#666] text-xs">Kendi ses dosyanı yükle — BPM ve ton anında analiz edilsin</p>
+              <h2 className="text-[#F5F5F5] text-base font-semibold">
+                Ses Dosyası Analizi
+              </h2>
+              <p className="text-[#666] text-xs">
+                Kendi ses dosyanı yükle — BPM ve ton anında analiz edilsin
+              </p>
             </div>
           </div>
 
           {/* Drop zone */}
           <div
-            onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+            onDragOver={(e) => {
+              e.preventDefault();
+              setIsDragging(true);
+            }}
             onDragLeave={() => setIsDragging(false)}
             onDrop={handleFileDrop}
             onClick={() => fileInputRef.current?.click()}
@@ -900,10 +991,21 @@ export default function YoutubeBpmAnalyzPage() {
               className="hidden"
             />
             <div className="flex flex-col items-center gap-3">
-              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${
-                isDragging ? "bg-[#D8FB32]/20" : "bg-[#1A1A1A]"
-              }`}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={isDragging ? "#D8FB32" : "#666"} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <div
+                className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${
+                  isDragging ? "bg-[#D8FB32]/20" : "bg-[#1A1A1A]"
+                }`}
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke={isDragging ? "#D8FB32" : "#666"}
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="17 8 12 3 7 8" />
                   <line x1="12" y1="3" x2="12" y2="15" />
@@ -913,22 +1015,26 @@ export default function YoutubeBpmAnalyzPage() {
                 <p className="text-[#CCCCCC] text-sm font-medium">
                   {isDragging ? "Bırak!" : "Ses dosyasını sürükle veya tıkla"}
                 </p>
-                <p className="text-[#555] text-xs mt-1">MP3, WAV, FLAC, OGG, M4A, AAC — maks 100MB</p>
+                <p className="text-[#555] text-xs mt-1">
+                  MP3, WAV, FLAC, OGG, M4A, AAC — maks 100MB
+                </p>
               </div>
             </div>
           </div>
 
           {/* File loading progress */}
-          {fileStep !== "idle" && fileStep !== "done" && fileStep !== "error" && (
-            <div className="mt-4 flex items-center gap-3">
-              <div className="w-5 h-5 rounded-full border-2 border-[#D8FB32]/30 border-t-[#D8FB32] animate-spin flex-shrink-0" />
-              <span className="text-[#D8FB32] text-sm">
-                {fileStep === "decoding" && "Ses dosyası çözümleniyor..."}
-                {fileStep === "analyzing-bpm" && "BPM tespit ediliyor..."}
-                {fileStep === "analyzing-key" && "Ton analiz ediliyor..."}
-              </span>
-            </div>
-          )}
+          {fileStep !== "idle" &&
+            fileStep !== "done" &&
+            fileStep !== "error" && (
+              <div className="mt-4 flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full border-2 border-[#D8FB32]/30 border-t-[#D8FB32] animate-spin flex-shrink-0" />
+                <span className="text-[#D8FB32] text-sm">
+                  {fileStep === "decoding" && "Ses dosyası çözümleniyor..."}
+                  {fileStep === "analyzing-bpm" && "BPM tespit ediliyor..."}
+                  {fileStep === "analyzing-key" && "Ton analiz ediliyor..."}
+                </span>
+              </div>
+            )}
 
           {/* File error */}
           {fileError && (
@@ -943,16 +1049,32 @@ export default function YoutubeBpmAnalyzPage() {
               {/* File info header */}
               <div className="flex items-center gap-3 p-5 border-b border-[#1F2937]">
                 <div className="w-10 h-10 rounded-xl bg-[#D8FB32]/10 flex items-center justify-center flex-shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#D8FB32"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M9 18V5l12-2v13" />
                     <circle cx="6" cy="18" r="3" />
                     <circle cx="18" cy="16" r="3" />
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[#F5F5F5] text-sm font-semibold truncate">{fileResult.fileName}</p>
+                  <p className="text-[#F5F5F5] text-sm font-semibold truncate">
+                    {fileResult.fileName}
+                  </p>
                   <p className="text-[#666] text-xs">
-                    {Math.floor(fileResult.duration / 60)}:{String(Math.floor(fileResult.duration % 60)).padStart(2, "0")} süre
+                    {Math.floor(fileResult.duration / 60)}:
+                    {String(Math.floor(fileResult.duration % 60)).padStart(
+                      2,
+                      "0",
+                    )}{" "}
+                    süre
                   </p>
                 </div>
               </div>
@@ -960,7 +1082,9 @@ export default function YoutubeBpmAnalyzPage() {
               {/* BPM + Key grid */}
               <div className="grid grid-cols-2 gap-px bg-[#1F2937]">
                 <div className="bg-[#0A0A0A] p-6 flex flex-col gap-1.5">
-                  <div className="text-[#666] text-xs uppercase tracking-wider">BPM</div>
+                  <div className="text-[#666] text-xs uppercase tracking-wider">
+                    BPM
+                  </div>
                   {fileResult.bpm ? (
                     <>
                       <div className="text-[#D8FB32] text-5xl font-bold tabular-nums leading-none">
@@ -968,7 +1092,17 @@ export default function YoutubeBpmAnalyzPage() {
                       </div>
                       <div className="mt-1.5 inline-flex">
                         <span className="text-[10px] bg-[#D8FB32]/10 text-[#D8FB32] px-2.5 py-1 rounded-full font-medium">
-                          {fileResult.bpm < 70 ? "Largo" : fileResult.bpm < 90 ? "Andante" : fileResult.bpm < 110 ? "Moderato" : fileResult.bpm < 130 ? "Allegretto" : fileResult.bpm < 160 ? "Allegro" : "Vivace"}
+                          {fileResult.bpm < 70
+                            ? "Largo"
+                            : fileResult.bpm < 90
+                              ? "Andante"
+                              : fileResult.bpm < 110
+                                ? "Moderato"
+                                : fileResult.bpm < 130
+                                  ? "Allegretto"
+                                  : fileResult.bpm < 160
+                                    ? "Allegro"
+                                    : "Vivace"}
                         </span>
                       </div>
                     </>
@@ -977,11 +1111,17 @@ export default function YoutubeBpmAnalyzPage() {
                   )}
                 </div>
                 <div className="bg-[#0A0A0A] p-6 flex flex-col gap-1.5">
-                  <div className="text-[#666] text-xs uppercase tracking-wider">Ton (Key)</div>
+                  <div className="text-[#666] text-xs uppercase tracking-wider">
+                    Ton (Key)
+                  </div>
                   {fileResult.key ? (
                     <>
-                      <div className="text-[#D8FB32] text-5xl font-bold leading-none">{fileResult.key}</div>
-                      <div className="text-[#999] text-xs mt-1">{fileResult.keyFull}</div>
+                      <div className="text-[#D8FB32] text-5xl font-bold leading-none">
+                        {fileResult.key}
+                      </div>
+                      <div className="text-[#999] text-xs mt-1">
+                        {fileResult.keyFull}
+                      </div>
                     </>
                   ) : (
                     <div className="text-[#555] text-3xl font-bold">—</div>
@@ -1032,12 +1172,16 @@ export default function YoutubeBpmAnalyzPage() {
           <div className="mt-4 space-y-2">
             <div className="p-3 bg-[#3B82F6]/8 border border-[#3B82F6]/20 rounded-xl">
               <p className="text-[#93C5FD] text-xs leading-relaxed">
-                ℹ️ <strong>İzin gerekebilir:</strong> Tarayıcınız ses analizi için izin isteyebilir. &quot;İzin Ver&quot; veya &quot;Allow&quot; butonuna tıklayın. Bu izin sadece yüklediğiniz dosyayı analiz etmek içindir.
+                ℹ️ <strong>İzin gerekebilir:</strong> Tarayıcınız ses analizi
+                için izin isteyebilir. &quot;İzin Ver&quot; veya
+                &quot;Allow&quot; butonuna tıklayın. Bu izin sadece yüklediğiniz
+                dosyayı analiz etmek içindir.
               </p>
             </div>
             <div className="p-3 bg-[#D8FB32]/5 border border-[#D8FB32]/10 rounded-xl">
               <p className="text-[#D8FB32]/70 text-xs leading-relaxed">
-                🔒 Ses dosyanız sunucuya yüklenmez. Tüm analiz tarayıcınızda (Web Audio API) yapılır. Verileriniz cihazınızdan çıkmaz.
+                🔒 Ses dosyanız sunucuya yüklenmez. Tüm analiz tarayıcınızda
+                (Web Audio API) yapılır. Verileriniz cihazınızdan çıkmaz.
               </p>
             </div>
           </div>
