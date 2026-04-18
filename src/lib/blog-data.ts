@@ -7540,7 +7540,8 @@ export const blogPosts: BlogPost[] = [
     
     { type: "p", text: "Başarısızlık korkusu, potansiyelinizi gerçekleştirmenin önündeki en büyük engellerden biri olabilir, ancak aşılamaz değildir. Bu yazıda paylaştığımız stratejiler, binlerce insanın bu korkuyu yenmesine ve hayallerini gerçekleştirmesine yardımcı olmuştur. Unutmayın, başarılı insanlar başarısız olmayan değil, başarısızlıktan pes etmeyen insanlardır. 2026'da artık sadece düşünme değil, harekete geçme zamanı. Küçük bir adımla başlayın, tutarlı olun ve her başarısızlığı bir öğrenme fırsatına dönüştürün. Başarı yolculuğunuz bugün başlıyor - cesaret edin ve ilk adımı atın!" }
   ]
-},];
+},
+];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
