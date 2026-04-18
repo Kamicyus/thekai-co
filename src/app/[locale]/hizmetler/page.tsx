@@ -28,17 +28,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "SPARK",
         label: "Başlangıç",
-        features: ["3 temel ajan", "Tek orkestrasyon", "Temel hafıza sistemi", "CLAUDE.md yapılandırma", "1 hafta kurulum", "1 ay destek"],
+        features: [
+          "3 temel ajan",
+          "Tek orkestrasyon",
+          "Temel hafıza sistemi",
+          "CLAUDE.md yapılandırma",
+          "1 hafta kurulum",
+          "1 ay destek",
+        ],
       },
       {
         name: "ENGINE",
         label: "Profesyonel",
-        features: ["10+ özel ajan", "Çoklu orkestrasyon", "Gelişmiş hafıza + bilgi tabanı", "MCP entegrasyonları (3+)", "Telegram bot dahil", "2 hafta kurulum + 3 ay destek"],
+        features: [
+          "10+ özel ajan",
+          "Çoklu orkestrasyon",
+          "Gelişmiş hafıza + bilgi tabanı",
+          "MCP entegrasyonları (3+)",
+          "Telegram bot dahil",
+          "2 hafta kurulum + 3 ay destek",
+        ],
       },
       {
         name: "ARCHITECT",
         label: "Kurumsal",
-        features: ["Sınırsız ajan mimarisi", "Tam orkestrasyon + model routing", "Özel MCP server geliştirme", "Cron otomasyon pipeline'ları", "Ekip eğitimi + dokümantasyon", "Sürekli destek + bakım"],
+        features: [
+          "Sınırsız ajan mimarisi",
+          "Tam orkestrasyon + model routing",
+          "Özel MCP server geliştirme",
+          "Cron otomasyon pipeline'ları",
+          "Ekip eğitimi + dokümantasyon",
+          "Sürekli destek + bakım",
+        ],
       },
     ],
   },
@@ -62,17 +83,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "STARTER",
         label: "Tek Sayfa",
-        features: ["Landing page tasarımı", "Mobil responsive", "Temel SEO", "İletişim formu", "Vercel deployment", "1 revizyon turu"],
+        features: [
+          "Landing page tasarımı",
+          "Mobil responsive",
+          "Temel SEO",
+          "İletişim formu",
+          "Vercel deployment",
+          "1 revizyon turu",
+        ],
       },
       {
         name: "PRO",
         label: "Kurumsal Site",
-        features: ["5+ sayfa (ana, hizmetler, hakkımızda, iletişim, blog)", "Gelişmiş SEO + sitemap", "Animasyonlar (Framer Motion)", "Sosyal medya entegrasyonu", "Analytics kurulumu", "3 revizyon turu"],
+        features: [
+          "5+ sayfa (ana, hizmetler, hakkımızda, iletişim, blog)",
+          "Gelişmiş SEO + sitemap",
+          "Animasyonlar (Framer Motion)",
+          "Sosyal medya entegrasyonu",
+          "Analytics kurulumu",
+          "3 revizyon turu",
+        ],
       },
       {
         name: "PREMIUM",
         label: "Tam Paket",
-        features: ["Sınırsız sayfa", "E-ticaret / ödeme entegrasyonu", "Blog + CMS altyapısı", "Çoklu dil desteği", "Özel tasarım sistemi", "6 ay bakım + destek"],
+        features: [
+          "Sınırsız sayfa",
+          "E-ticaret / ödeme entegrasyonu",
+          "Blog + CMS altyapısı",
+          "Çoklu dil desteği",
+          "Özel tasarım sistemi",
+          "6 ay bakım + destek",
+        ],
       },
     ],
   },
@@ -96,17 +138,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "BASIC",
         label: "Başlangıç",
-        features: ["Aylık 8 sosyal medya postu", "2 platform (seçiminize göre)", "Temel görsel tasarım", "İçerik takvimi", "Aylık performans raporu", "1 revizyon/post"],
+        features: [
+          "Aylık 8 sosyal medya postu",
+          "2 platform (seçiminize göre)",
+          "Temel görsel tasarım",
+          "İçerik takvimi",
+          "Aylık performans raporu",
+          "1 revizyon/post",
+        ],
       },
       {
         name: "GROWTH",
         label: "Büyüme",
-        features: ["Aylık 20 post + 4 video", "4 platform yönetimi", "Thumbnail + görsel tasarım", "Hashtag ve SEO stratejisi", "Haftalık performans raporu", "Sınırsız revizyon"],
+        features: [
+          "Aylık 20 post + 4 video",
+          "4 platform yönetimi",
+          "Thumbnail + görsel tasarım",
+          "Hashtag ve SEO stratejisi",
+          "Haftalık performans raporu",
+          "Sınırsız revizyon",
+        ],
       },
       {
         name: "SCALE",
         label: "Ölçeklendirme",
-        features: ["Sınırsız içerik üretimi", "Tüm platformlar", "Video prodüksiyon (çekim dahil)", "Influencer koordinasyonu", "Reklam kreatif üretimi", "Günlük raporlama + strateji toplantısı"],
+        features: [
+          "Sınırsız içerik üretimi",
+          "Tüm platformlar",
+          "Video prodüksiyon (çekim dahil)",
+          "Influencer koordinasyonu",
+          "Reklam kreatif üretimi",
+          "Günlük raporlama + strateji toplantısı",
+        ],
       },
     ],
   },
@@ -130,17 +193,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "SINGLE",
         label: "Tek Proje",
-        features: ["1 kapak tasarımı veya görsel set", "3 konsept önerisi", "Tüm platform boyutları", "Kaynak dosyalar (AI/PSD)", "2 revizyon turu", "5 iş günü teslimat"],
+        features: [
+          "1 kapak tasarımı veya görsel set",
+          "3 konsept önerisi",
+          "Tüm platform boyutları",
+          "Kaynak dosyalar (AI/PSD)",
+          "2 revizyon turu",
+          "5 iş günü teslimat",
+        ],
       },
       {
         name: "BUNDLE",
         label: "Paket",
-        features: ["5 kapak/görsel tasarımı", "Tutarlı görsel dil", "Sosyal medya kit", "Animasyonlu versiyon", "Sınırsız revizyon", "Öncelikli teslimat"],
+        features: [
+          "5 kapak/görsel tasarımı",
+          "Tutarlı görsel dil",
+          "Sosyal medya kit",
+          "Animasyonlu versiyon",
+          "Sınırsız revizyon",
+          "Öncelikli teslimat",
+        ],
       },
       {
         name: "IDENTITY",
         label: "Marka Kimliği",
-        features: ["Logo + görsel kimlik sistemi", "Renk paleti + tipografi", "Sosyal medya şablonları", "Marka rehberi (brand guide)", "Kartvizit + kurumsal set", "Kapsamlı sunum dosyası"],
+        features: [
+          "Logo + görsel kimlik sistemi",
+          "Renk paleti + tipografi",
+          "Sosyal medya şablonları",
+          "Marka rehberi (brand guide)",
+          "Kartvizit + kurumsal set",
+          "Kapsamlı sunum dosyası",
+        ],
       },
     ],
   },
@@ -164,17 +248,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "CHAPTER",
         label: "Tek Bölüm",
-        features: ["1 bölüm seslendirme (max 30 dk)", "Ses seçimi (5+ ses)", "Temel düzenleme", "MP3 + WAV çıktı", "1 revizyon", "3 iş günü teslimat"],
+        features: [
+          "1 bölüm seslendirme (max 30 dk)",
+          "Ses seçimi (5+ ses)",
+          "Temel düzenleme",
+          "MP3 + WAV çıktı",
+          "1 revizyon",
+          "3 iş günü teslimat",
+        ],
       },
       {
         name: "BOOK",
         label: "Tam Kitap",
-        features: ["Komple kitap seslendirme", "Profesyonel ses tasarımı", "Bölüm bölüm düzenleme", "Tüm platformlara dağıtım", "Kapak tasarımı dahil", "Sınırsız revizyon"],
+        features: [
+          "Komple kitap seslendirme",
+          "Profesyonel ses tasarımı",
+          "Bölüm bölüm düzenleme",
+          "Tüm platformlara dağıtım",
+          "Kapak tasarımı dahil",
+          "Sınırsız revizyon",
+        ],
       },
       {
         name: "PUBLISHER",
         label: "Yayınevi",
-        features: ["Aylık 3+ kitap prodüksiyon", "Özel ses kütüphanesi", "Otomatik pipeline kurulumu", "Platform yönetimi", "Gelir takibi + raporlama", "Sürekli destek + öncelik"],
+        features: [
+          "Aylık 3+ kitap prodüksiyon",
+          "Özel ses kütüphanesi",
+          "Otomatik pipeline kurulumu",
+          "Platform yönetimi",
+          "Gelir takibi + raporlama",
+          "Sürekli destek + öncelik",
+        ],
       },
     ],
   },
@@ -198,17 +303,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "TRACK",
         label: "Tek Şarkı",
-        features: ["1 şarkı prodüksiyon", "Beat/aranjman", "Mix + master", "Vokal düzenleme", "Dijital dağıtım danışmanlığı", "2 revizyon turu"],
+        features: [
+          "1 şarkı prodüksiyon",
+          "Beat/aranjman",
+          "Mix + master",
+          "Vokal düzenleme",
+          "Dijital dağıtım danışmanlığı",
+          "2 revizyon turu",
+        ],
       },
       {
         name: "EP",
         label: "EP Paketi",
-        features: ["4-6 şarkı prodüksiyon", "Tutarlı ses tasarımı", "Profesyonel mix + master", "Artwork tasarımı dahil", "Spotify/Apple Music dağıtım", "Sınırsız revizyon"],
+        features: [
+          "4-6 şarkı prodüksiyon",
+          "Tutarlı ses tasarımı",
+          "Profesyonel mix + master",
+          "Artwork tasarımı dahil",
+          "Spotify/Apple Music dağıtım",
+          "Sınırsız revizyon",
+        ],
       },
       {
         name: "ALBUM",
         label: "Albüm",
-        features: ["10+ şarkı full prodüksiyon", "Konsept geliştirme", "AI + geleneksel hibrit üretim", "Mastering (referans eşleştirme)", "Tam artwork + video klip danışmanlık", "Lansman stratejisi"],
+        features: [
+          "10+ şarkı full prodüksiyon",
+          "Konsept geliştirme",
+          "AI + geleneksel hibrit üretim",
+          "Mastering (referans eşleştirme)",
+          "Tam artwork + video klip danışmanlık",
+          "Lansman stratejisi",
+        ],
       },
     ],
   },
@@ -232,17 +358,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "AUDIT",
         label: "Analiz",
-        features: ["Mevcut durum analizi", "Rakip araştırması", "SWOT analizi", "Fırsat haritası", "Aksiyon önerileri raporu", "1 saat danışmanlık görüşmesi"],
+        features: [
+          "Mevcut durum analizi",
+          "Rakip araştırması",
+          "SWOT analizi",
+          "Fırsat haritası",
+          "Aksiyon önerileri raporu",
+          "1 saat danışmanlık görüşmesi",
+        ],
       },
       {
         name: "STRATEGY",
         label: "Strateji",
-        features: ["3 aylık strateji planı", "Platform bazlı yol haritası", "İçerik stratejisi", "KPI tanımlama + dashboard", "Haftalık check-in toplantıları", "Aylık performans raporu"],
+        features: [
+          "3 aylık strateji planı",
+          "Platform bazlı yol haritası",
+          "İçerik stratejisi",
+          "KPI tanımlama + dashboard",
+          "Haftalık check-in toplantıları",
+          "Aylık performans raporu",
+        ],
       },
       {
         name: "PARTNER",
         label: "Ortak",
-        features: ["Sürekli strateji ortağı", "Tüm platformların yönetimi", "Reklam bütçesi optimizasyonu", "Kriz yönetimi", "Ekip eğitimi", "Sınırsız danışmanlık"],
+        features: [
+          "Sürekli strateji ortağı",
+          "Tüm platformların yönetimi",
+          "Reklam bütçesi optimizasyonu",
+          "Kriz yönetimi",
+          "Ekip eğitimi",
+          "Sınırsız danışmanlık",
+        ],
       },
     ],
   },
@@ -266,17 +413,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "BASIC BOT",
         label: "Temel Bot",
-        features: ["Tek amaçlı bot (FAQ, bilgi, destek)", "Metin tabanlı etkileşim", "Temel komut sistemi", "Basit hafıza", "Always-on kurulum", "1 hafta geliştirme"],
+        features: [
+          "Tek amaçlı bot (FAQ, bilgi, destek)",
+          "Metin tabanlı etkileşim",
+          "Temel komut sistemi",
+          "Basit hafıza",
+          "Always-on kurulum",
+          "1 hafta geliştirme",
+        ],
       },
       {
         name: "SMART BOT",
         label: "Akıllı Bot",
-        features: ["AI destekli konuşma (Claude API)", "Ses + görsel mesaj desteği", "Bilgi tabanı entegrasyonu", "Kullanıcı bazlı hafıza", "Webhook tetikleyiciler", "2 hafta geliştirme + 1 ay destek"],
+        features: [
+          "AI destekli konuşma (Claude API)",
+          "Ses + görsel mesaj desteği",
+          "Bilgi tabanı entegrasyonu",
+          "Kullanıcı bazlı hafıza",
+          "Webhook tetikleyiciler",
+          "2 hafta geliştirme + 1 ay destek",
+        ],
       },
       {
         name: "ENTERPRISE",
         label: "Kurumsal Bot",
-        features: ["Çoklu bot mimarisi", "CRM / veritabanı entegrasyonu", "Otomatik raporlama", "Kullanıcı yönetim paneli", "API erişimi", "Sürekli geliştirme + bakım"],
+        features: [
+          "Çoklu bot mimarisi",
+          "CRM / veritabanı entegrasyonu",
+          "Otomatik raporlama",
+          "Kullanıcı yönetim paneli",
+          "API erişimi",
+          "Sürekli geliştirme + bakım",
+        ],
       },
     ],
   },
@@ -300,17 +468,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "STARTER",
         label: "Başlangıç",
-        features: ["1 platform (Google veya Meta)", "Aylık 10.000 TL'ye kadar reklam bütçesi", "Kampanya kurulumu + optimizasyon", "Temel hedef kitle analizi", "Aylık performans raporu", "Haftalık kontrol"],
+        features: [
+          "1 platform (Google veya Meta)",
+          "Aylık 10.000 TL'ye kadar reklam bütçesi",
+          "Kampanya kurulumu + optimizasyon",
+          "Temel hedef kitle analizi",
+          "Aylık performans raporu",
+          "Haftalık kontrol",
+        ],
       },
       {
         name: "PRO",
         label: "Profesyonel",
-        features: ["Google + Meta Ads birlikte", "Aylık 50.000 TL'ye kadar reklam bütçesi", "Gelişmiş hedef kitle + retargeting", "A/B test stratejisi", "Dönüşüm takibi + Analytics kurulumu", "Haftalık rapor + strateji toplantısı"],
+        features: [
+          "Google + Meta Ads birlikte",
+          "Aylık 50.000 TL'ye kadar reklam bütçesi",
+          "Gelişmiş hedef kitle + retargeting",
+          "A/B test stratejisi",
+          "Dönüşüm takibi + Analytics kurulumu",
+          "Haftalık rapor + strateji toplantısı",
+        ],
       },
       {
         name: "PREMIUM",
         label: "Kurumsal",
-        features: ["Tüm platformlar (Google + Meta + YouTube)", "Sınırsız reklam bütçesi yönetimi", "AI destekli otomatik optimizasyon", "Rakip analizi + pazar araştırması", "Landing page tasarımı dahil", "Günlük izleme + 7/24 destek"],
+        features: [
+          "Tüm platformlar (Google + Meta + YouTube)",
+          "Sınırsız reklam bütçesi yönetimi",
+          "AI destekli otomatik optimizasyon",
+          "Rakip analizi + pazar araştırması",
+          "Landing page tasarımı dahil",
+          "Günlük izleme + 7/24 destek",
+        ],
       },
     ],
   },
@@ -334,17 +523,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "CLIP",
         label: "Tekil Video",
-        features: ["1 video prodüksiyon (60 sn'ye kadar)", "Konsept geliştirme", "Temel düzenleme + renk grading", "2 platform formatı", "1 revizyon turu", "5 iş günü teslimat"],
+        features: [
+          "1 video prodüksiyon (60 sn'ye kadar)",
+          "Konsept geliştirme",
+          "Temel düzenleme + renk grading",
+          "2 platform formatı",
+          "1 revizyon turu",
+          "5 iş günü teslimat",
+        ],
       },
       {
         name: "STUDIO",
         label: "Profesyonel",
-        features: ["3 video prodüksiyon", "Senaryo + storyboard", "Motion graphics dahil", "Tüm platform formatları", "Müzik ve ses tasarımı", "Sınırsız revizyon"],
+        features: [
+          "3 video prodüksiyon",
+          "Senaryo + storyboard",
+          "Motion graphics dahil",
+          "Tüm platform formatları",
+          "Müzik ve ses tasarımı",
+          "Sınırsız revizyon",
+        ],
       },
       {
         name: "DIRECTOR",
         label: "Yönetmen",
-        features: ["Aylık video prodüksiyon paketi", "Tam yaratıcı yönetim", "Çekim organizasyonu", "VFX ve ileri post-prodüksiyon", "Sosyal medya kesim optimizasyonu", "Sürekli destek + öncelik"],
+        features: [
+          "Aylık video prodüksiyon paketi",
+          "Tam yaratıcı yönetim",
+          "Çekim organizasyonu",
+          "VFX ve ileri post-prodüksiyon",
+          "Sosyal medya kesim optimizasyonu",
+          "Sürekli destek + öncelik",
+        ],
       },
     ],
   },
@@ -368,17 +578,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "AUDIT",
         label: "SEO Analiz",
-        features: ["Teknik SEO audit raporu", "Anahtar kelime analizi", "Rakip SEO araştırması", "Aksiyon önerileri listesi", "1 saat danışmanlık", "5 iş günü teslimat"],
+        features: [
+          "Teknik SEO audit raporu",
+          "Anahtar kelime analizi",
+          "Rakip SEO araştırması",
+          "Aksiyon önerileri listesi",
+          "1 saat danışmanlık",
+          "5 iş günü teslimat",
+        ],
       },
       {
         name: "GROWTH",
         label: "Büyüme",
-        features: ["3 aylık SEO stratejisi", "Aylık 4 SEO uyumlu içerik", "Teknik optimizasyonlar", "Backlink geliştirme", "Haftalık sıralama takibi", "Aylık performans raporu"],
+        features: [
+          "3 aylık SEO stratejisi",
+          "Aylık 4 SEO uyumlu içerik",
+          "Teknik optimizasyonlar",
+          "Backlink geliştirme",
+          "Haftalık sıralama takibi",
+          "Aylık performans raporu",
+        ],
       },
       {
         name: "DOMINATE",
         label: "Hakimiyet",
-        features: ["6 aylık kapsamlı SEO planı", "Sınırsız SEO içerik üretimi", "Gelişmiş backlink stratejisi", "Yerel SEO optimizasyonu", "Schema markup implementasyonu", "Günlük izleme + haftalık strateji"],
+        features: [
+          "6 aylık kapsamlı SEO planı",
+          "Sınırsız SEO içerik üretimi",
+          "Gelişmiş backlink stratejisi",
+          "Yerel SEO optimizasyonu",
+          "Schema markup implementasyonu",
+          "Günlük izleme + haftalık strateji",
+        ],
       },
     ],
   },
@@ -402,17 +633,38 @@ const HIZMET_DETAYLARI_TR = [
       {
         name: "STARTER",
         label: "Başlangıç",
-        features: ["50 ürüne kadar mağaza", "Temel ödeme entegrasyonu", "Mobil responsive tasarım", "Standart kargo ayarları", "Temel SEO", "1 hafta kurulum"],
+        features: [
+          "50 ürüne kadar mağaza",
+          "Temel ödeme entegrasyonu",
+          "Mobil responsive tasarım",
+          "Standart kargo ayarları",
+          "Temel SEO",
+          "1 hafta kurulum",
+        ],
       },
       {
         name: "PRO",
         label: "Profesyonel",
-        features: ["Sınırsız ürün", "Çoklu ödeme yöntemi", "Gelişmiş filtreleme + arama", "Kargo API entegrasyonu", "E-posta otomasyon", "2 hafta kurulum + 3 ay destek"],
+        features: [
+          "Sınırsız ürün",
+          "Çoklu ödeme yöntemi",
+          "Gelişmiş filtreleme + arama",
+          "Kargo API entegrasyonu",
+          "E-posta otomasyon",
+          "2 hafta kurulum + 3 ay destek",
+        ],
       },
       {
         name: "ENTERPRISE",
         label: "Kurumsal",
-        features: ["Custom Next.js e-ticaret", "ERP / muhasebe entegrasyonu", "Çoklu dil + para birimi", "Gelişmiş analytics dashboard", "A/B test altyapısı", "Sürekli geliştirme + bakım"],
+        features: [
+          "Custom Next.js e-ticaret",
+          "ERP / muhasebe entegrasyonu",
+          "Çoklu dil + para birimi",
+          "Gelişmiş analytics dashboard",
+          "A/B test altyapısı",
+          "Sürekli geliştirme + bakım",
+        ],
       },
     ],
   },
@@ -439,17 +691,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "SPARK",
         label: "Starter",
-        features: ["3 core agents", "Single orchestration", "Basic memory system", "CLAUDE.md configuration", "1 week setup", "1 month support"],
+        features: [
+          "3 core agents",
+          "Single orchestration",
+          "Basic memory system",
+          "CLAUDE.md configuration",
+          "1 week setup",
+          "1 month support",
+        ],
       },
       {
         name: "ENGINE",
         label: "Professional",
-        features: ["10+ custom agents", "Multi-orchestration", "Advanced memory + knowledge base", "MCP integrations (3+)", "Telegram bot included", "2 week setup + 3 month support"],
+        features: [
+          "10+ custom agents",
+          "Multi-orchestration",
+          "Advanced memory + knowledge base",
+          "MCP integrations (3+)",
+          "Telegram bot included",
+          "2 week setup + 3 month support",
+        ],
       },
       {
         name: "ARCHITECT",
         label: "Enterprise",
-        features: ["Unlimited agent architecture", "Full orchestration + model routing", "Custom MCP server development", "Cron automation pipelines", "Team training + documentation", "Ongoing support + maintenance"],
+        features: [
+          "Unlimited agent architecture",
+          "Full orchestration + model routing",
+          "Custom MCP server development",
+          "Cron automation pipelines",
+          "Team training + documentation",
+          "Ongoing support + maintenance",
+        ],
       },
     ],
   },
@@ -473,17 +746,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "STARTER",
         label: "Single Page",
-        features: ["Landing page design", "Mobile responsive", "Basic SEO", "Contact form", "Vercel deployment", "1 revision round"],
+        features: [
+          "Landing page design",
+          "Mobile responsive",
+          "Basic SEO",
+          "Contact form",
+          "Vercel deployment",
+          "1 revision round",
+        ],
       },
       {
         name: "PRO",
         label: "Corporate Site",
-        features: ["5+ pages (home, services, about, contact, blog)", "Advanced SEO + sitemap", "Animations (Framer Motion)", "Social media integration", "Analytics setup", "3 revision rounds"],
+        features: [
+          "5+ pages (home, services, about, contact, blog)",
+          "Advanced SEO + sitemap",
+          "Animations (Framer Motion)",
+          "Social media integration",
+          "Analytics setup",
+          "3 revision rounds",
+        ],
       },
       {
         name: "PREMIUM",
         label: "Full Package",
-        features: ["Unlimited pages", "E-commerce / payment integration", "Blog + CMS infrastructure", "Multi-language support", "Custom design system", "6 months maintenance + support"],
+        features: [
+          "Unlimited pages",
+          "E-commerce / payment integration",
+          "Blog + CMS infrastructure",
+          "Multi-language support",
+          "Custom design system",
+          "6 months maintenance + support",
+        ],
       },
     ],
   },
@@ -507,17 +801,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "BASIC",
         label: "Starter",
-        features: ["8 social media posts/month", "2 platforms (your choice)", "Basic visual design", "Content calendar", "Monthly performance report", "1 revision/post"],
+        features: [
+          "8 social media posts/month",
+          "2 platforms (your choice)",
+          "Basic visual design",
+          "Content calendar",
+          "Monthly performance report",
+          "1 revision/post",
+        ],
       },
       {
         name: "GROWTH",
         label: "Growth",
-        features: ["20 posts + 4 videos/month", "4 platform management", "Thumbnail + visual design", "Hashtag & SEO strategy", "Weekly performance report", "Unlimited revisions"],
+        features: [
+          "20 posts + 4 videos/month",
+          "4 platform management",
+          "Thumbnail + visual design",
+          "Hashtag & SEO strategy",
+          "Weekly performance report",
+          "Unlimited revisions",
+        ],
       },
       {
         name: "SCALE",
         label: "Scale",
-        features: ["Unlimited content production", "All platforms", "Video production (filming included)", "Influencer coordination", "Ad creative production", "Daily reporting + strategy meetings"],
+        features: [
+          "Unlimited content production",
+          "All platforms",
+          "Video production (filming included)",
+          "Influencer coordination",
+          "Ad creative production",
+          "Daily reporting + strategy meetings",
+        ],
       },
     ],
   },
@@ -541,17 +856,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "SINGLE",
         label: "Single Project",
-        features: ["1 cover design or visual set", "3 concept proposals", "All platform sizes", "Source files (AI/PSD)", "2 revision rounds", "5 business days delivery"],
+        features: [
+          "1 cover design or visual set",
+          "3 concept proposals",
+          "All platform sizes",
+          "Source files (AI/PSD)",
+          "2 revision rounds",
+          "5 business days delivery",
+        ],
       },
       {
         name: "BUNDLE",
         label: "Bundle",
-        features: ["5 cover/visual designs", "Consistent visual language", "Social media kit", "Animated version", "Unlimited revisions", "Priority delivery"],
+        features: [
+          "5 cover/visual designs",
+          "Consistent visual language",
+          "Social media kit",
+          "Animated version",
+          "Unlimited revisions",
+          "Priority delivery",
+        ],
       },
       {
         name: "IDENTITY",
         label: "Brand Identity",
-        features: ["Logo + visual identity system", "Color palette + typography", "Social media templates", "Brand guide", "Business card + corporate set", "Comprehensive presentation file"],
+        features: [
+          "Logo + visual identity system",
+          "Color palette + typography",
+          "Social media templates",
+          "Brand guide",
+          "Business card + corporate set",
+          "Comprehensive presentation file",
+        ],
       },
     ],
   },
@@ -575,17 +911,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "CHAPTER",
         label: "Single Chapter",
-        features: ["1 chapter narration (max 30 min)", "Voice selection (5+ voices)", "Basic editing", "MP3 + WAV output", "1 revision", "3 business days delivery"],
+        features: [
+          "1 chapter narration (max 30 min)",
+          "Voice selection (5+ voices)",
+          "Basic editing",
+          "MP3 + WAV output",
+          "1 revision",
+          "3 business days delivery",
+        ],
       },
       {
         name: "BOOK",
         label: "Full Book",
-        features: ["Complete book narration", "Professional sound design", "Chapter-by-chapter editing", "All platform distribution", "Cover design included", "Unlimited revisions"],
+        features: [
+          "Complete book narration",
+          "Professional sound design",
+          "Chapter-by-chapter editing",
+          "All platform distribution",
+          "Cover design included",
+          "Unlimited revisions",
+        ],
       },
       {
         name: "PUBLISHER",
         label: "Publisher",
-        features: ["3+ books/month production", "Custom voice library", "Automated pipeline setup", "Platform management", "Revenue tracking + reporting", "Ongoing support + priority"],
+        features: [
+          "3+ books/month production",
+          "Custom voice library",
+          "Automated pipeline setup",
+          "Platform management",
+          "Revenue tracking + reporting",
+          "Ongoing support + priority",
+        ],
       },
     ],
   },
@@ -609,17 +966,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "TRACK",
         label: "Single Track",
-        features: ["1 song production", "Beat/arrangement", "Mix + master", "Vocal editing", "Digital distribution consulting", "2 revision rounds"],
+        features: [
+          "1 song production",
+          "Beat/arrangement",
+          "Mix + master",
+          "Vocal editing",
+          "Digital distribution consulting",
+          "2 revision rounds",
+        ],
       },
       {
         name: "EP",
         label: "EP Package",
-        features: ["4-6 song production", "Consistent sound design", "Professional mix + master", "Artwork design included", "Spotify/Apple Music distribution", "Unlimited revisions"],
+        features: [
+          "4-6 song production",
+          "Consistent sound design",
+          "Professional mix + master",
+          "Artwork design included",
+          "Spotify/Apple Music distribution",
+          "Unlimited revisions",
+        ],
       },
       {
         name: "ALBUM",
         label: "Album",
-        features: ["10+ songs full production", "Concept development", "AI + traditional hybrid production", "Mastering (reference matching)", "Full artwork + music video consulting", "Launch strategy"],
+        features: [
+          "10+ songs full production",
+          "Concept development",
+          "AI + traditional hybrid production",
+          "Mastering (reference matching)",
+          "Full artwork + music video consulting",
+          "Launch strategy",
+        ],
       },
     ],
   },
@@ -643,17 +1021,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "AUDIT",
         label: "Analysis",
-        features: ["Current state analysis", "Competitor research", "SWOT analysis", "Opportunity mapping", "Action recommendations report", "1 hour consulting session"],
+        features: [
+          "Current state analysis",
+          "Competitor research",
+          "SWOT analysis",
+          "Opportunity mapping",
+          "Action recommendations report",
+          "1 hour consulting session",
+        ],
       },
       {
         name: "STRATEGY",
         label: "Strategy",
-        features: ["3-month strategy plan", "Platform-based roadmap", "Content strategy", "KPI definition + dashboard", "Weekly check-in meetings", "Monthly performance report"],
+        features: [
+          "3-month strategy plan",
+          "Platform-based roadmap",
+          "Content strategy",
+          "KPI definition + dashboard",
+          "Weekly check-in meetings",
+          "Monthly performance report",
+        ],
       },
       {
         name: "PARTNER",
         label: "Partner",
-        features: ["Ongoing strategy partner", "All platform management", "Ad budget optimization", "Crisis management", "Team training", "Unlimited consulting"],
+        features: [
+          "Ongoing strategy partner",
+          "All platform management",
+          "Ad budget optimization",
+          "Crisis management",
+          "Team training",
+          "Unlimited consulting",
+        ],
       },
     ],
   },
@@ -677,17 +1076,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "BASIC BOT",
         label: "Basic Bot",
-        features: ["Single-purpose bot (FAQ, info, support)", "Text-based interaction", "Basic command system", "Simple memory", "Always-on setup", "1 week development"],
+        features: [
+          "Single-purpose bot (FAQ, info, support)",
+          "Text-based interaction",
+          "Basic command system",
+          "Simple memory",
+          "Always-on setup",
+          "1 week development",
+        ],
       },
       {
         name: "SMART BOT",
         label: "Smart Bot",
-        features: ["AI-powered conversation (Claude API)", "Voice + image message support", "Knowledge base integration", "User-based memory", "Webhook triggers", "2 week development + 1 month support"],
+        features: [
+          "AI-powered conversation (Claude API)",
+          "Voice + image message support",
+          "Knowledge base integration",
+          "User-based memory",
+          "Webhook triggers",
+          "2 week development + 1 month support",
+        ],
       },
       {
         name: "ENTERPRISE",
         label: "Enterprise Bot",
-        features: ["Multi-bot architecture", "CRM / database integration", "Automated reporting", "User management panel", "API access", "Ongoing development + maintenance"],
+        features: [
+          "Multi-bot architecture",
+          "CRM / database integration",
+          "Automated reporting",
+          "User management panel",
+          "API access",
+          "Ongoing development + maintenance",
+        ],
       },
     ],
   },
@@ -711,17 +1131,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "STARTER",
         label: "Starter",
-        features: ["1 platform (Google or Meta)", "Up to $300/month ad budget", "Campaign setup + optimization", "Basic audience analysis", "Monthly performance report", "Weekly check-ins"],
+        features: [
+          "1 platform (Google or Meta)",
+          "Up to $300/month ad budget",
+          "Campaign setup + optimization",
+          "Basic audience analysis",
+          "Monthly performance report",
+          "Weekly check-ins",
+        ],
       },
       {
         name: "PRO",
         label: "Professional",
-        features: ["Google + Meta Ads together", "Up to $1,500/month ad budget", "Advanced audience + retargeting", "A/B test strategy", "Conversion tracking + Analytics setup", "Weekly report + strategy meeting"],
+        features: [
+          "Google + Meta Ads together",
+          "Up to $1,500/month ad budget",
+          "Advanced audience + retargeting",
+          "A/B test strategy",
+          "Conversion tracking + Analytics setup",
+          "Weekly report + strategy meeting",
+        ],
       },
       {
         name: "PREMIUM",
         label: "Enterprise",
-        features: ["All platforms (Google + Meta + YouTube)", "Unlimited ad budget management", "AI-powered auto optimization", "Competitor analysis + market research", "Landing page design included", "Daily monitoring + 24/7 support"],
+        features: [
+          "All platforms (Google + Meta + YouTube)",
+          "Unlimited ad budget management",
+          "AI-powered auto optimization",
+          "Competitor analysis + market research",
+          "Landing page design included",
+          "Daily monitoring + 24/7 support",
+        ],
       },
     ],
   },
@@ -745,17 +1186,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "CLIP",
         label: "Single Video",
-        features: ["1 video production (up to 60s)", "Concept development", "Basic editing + color grading", "2 platform formats", "1 revision round", "5 business days delivery"],
+        features: [
+          "1 video production (up to 60s)",
+          "Concept development",
+          "Basic editing + color grading",
+          "2 platform formats",
+          "1 revision round",
+          "5 business days delivery",
+        ],
       },
       {
         name: "STUDIO",
         label: "Professional",
-        features: ["3 video productions", "Script + storyboard", "Motion graphics included", "All platform formats", "Music & sound design", "Unlimited revisions"],
+        features: [
+          "3 video productions",
+          "Script + storyboard",
+          "Motion graphics included",
+          "All platform formats",
+          "Music & sound design",
+          "Unlimited revisions",
+        ],
       },
       {
         name: "DIRECTOR",
         label: "Director",
-        features: ["Monthly video production package", "Full creative direction", "Shoot organization", "VFX & advanced post-production", "Social media cut optimization", "Ongoing support + priority"],
+        features: [
+          "Monthly video production package",
+          "Full creative direction",
+          "Shoot organization",
+          "VFX & advanced post-production",
+          "Social media cut optimization",
+          "Ongoing support + priority",
+        ],
       },
     ],
   },
@@ -779,17 +1241,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "AUDIT",
         label: "SEO Analysis",
-        features: ["Technical SEO audit report", "Keyword analysis", "Competitor SEO research", "Action recommendations list", "1 hour consulting", "5 business days delivery"],
+        features: [
+          "Technical SEO audit report",
+          "Keyword analysis",
+          "Competitor SEO research",
+          "Action recommendations list",
+          "1 hour consulting",
+          "5 business days delivery",
+        ],
       },
       {
         name: "GROWTH",
         label: "Growth",
-        features: ["3-month SEO strategy", "4 SEO-optimized articles/month", "Technical optimizations", "Backlink development", "Weekly ranking tracking", "Monthly performance report"],
+        features: [
+          "3-month SEO strategy",
+          "4 SEO-optimized articles/month",
+          "Technical optimizations",
+          "Backlink development",
+          "Weekly ranking tracking",
+          "Monthly performance report",
+        ],
       },
       {
         name: "DOMINATE",
         label: "Domination",
-        features: ["6-month comprehensive SEO plan", "Unlimited SEO content production", "Advanced backlink strategy", "Local SEO optimization", "Schema markup implementation", "Daily monitoring + weekly strategy"],
+        features: [
+          "6-month comprehensive SEO plan",
+          "Unlimited SEO content production",
+          "Advanced backlink strategy",
+          "Local SEO optimization",
+          "Schema markup implementation",
+          "Daily monitoring + weekly strategy",
+        ],
       },
     ],
   },
@@ -813,17 +1296,38 @@ const HIZMET_DETAYLARI_EN = [
       {
         name: "STARTER",
         label: "Starter",
-        features: ["Up to 50 products", "Basic payment integration", "Mobile responsive design", "Standard shipping settings", "Basic SEO", "1 week setup"],
+        features: [
+          "Up to 50 products",
+          "Basic payment integration",
+          "Mobile responsive design",
+          "Standard shipping settings",
+          "Basic SEO",
+          "1 week setup",
+        ],
       },
       {
         name: "PRO",
         label: "Professional",
-        features: ["Unlimited products", "Multiple payment methods", "Advanced filtering + search", "Shipping API integration", "Email automation", "2 week setup + 3 month support"],
+        features: [
+          "Unlimited products",
+          "Multiple payment methods",
+          "Advanced filtering + search",
+          "Shipping API integration",
+          "Email automation",
+          "2 week setup + 3 month support",
+        ],
       },
       {
         name: "ENTERPRISE",
         label: "Enterprise",
-        features: ["Custom Next.js e-commerce", "ERP / accounting integration", "Multi-language + currency", "Advanced analytics dashboard", "A/B testing infrastructure", "Ongoing development + maintenance"],
+        features: [
+          "Custom Next.js e-commerce",
+          "ERP / accounting integration",
+          "Multi-language + currency",
+          "Advanced analytics dashboard",
+          "A/B testing infrastructure",
+          "Ongoing development + maintenance",
+        ],
       },
     ],
   },
@@ -859,7 +1363,8 @@ export default function HizmetlerPage() {
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
             {isEn ? (
               <>
-                Twelve core disciplines at the intersection of music, technology and creativity.
+                Twelve core disciplines at the intersection of music, technology
+                and creativity.
                 <br />
                 Each one a specialty, together a creative force.
               </>
@@ -913,7 +1418,7 @@ export default function HizmetlerPage() {
 
                   {/* Features Grid */}
                   <div className="mb-8">
-                    <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
+                    <h3 className="text-xs text-[#999999] uppercase tracking-wider font-medium mb-4">
                       {isEn ? "What's Included" : "Neler Dahil"}
                     </h3>
                     <StaggerChildren
@@ -948,7 +1453,7 @@ export default function HizmetlerPage() {
                   {/* Packages */}
                   {hizmet.packages && (
                     <div className="mb-8">
-                      <h3 className="text-xs text-[#666666] uppercase tracking-wider font-medium mb-4">
+                      <h3 className="text-xs text-[#999999] uppercase tracking-wider font-medium mb-4">
                         {isEn ? "Packages" : "Paketler"}
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -966,7 +1471,7 @@ export default function HizmetlerPage() {
                                 className={`text-sm font-bold tracking-wider ${
                                   pkgIndex === 1
                                     ? "text-[#D8FB32]"
-                                    : "text-[#5532FA]"
+                                    : "text-[#A493FF]"
                                 }`}
                               >
                                 {pkg.name}
@@ -1011,7 +1516,19 @@ export default function HizmetlerPage() {
                         className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#1F2937] text-[#F5F5F5] font-semibold rounded-[10px] text-sm hover:border-[#D8FB32]/30 hover:bg-[#D8FB32]/5 transition-all duration-200"
                       >
                         {isEn ? "See Examples" : "Örnekleri Gör"}
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="m12 5 7 7-7 7" />
+                        </svg>
                       </Link>
                     )}
                   </div>
@@ -1025,7 +1542,12 @@ export default function HizmetlerPage() {
         <FadeIn className="mt-24 lg:mt-32 text-center">
           <div className="bg-gradient-to-br from-[#141414] to-[#1A1A1A] border border-[#1F2937] rounded-[20px] p-8 sm:p-12 lg:p-16 relative overflow-hidden">
             <div className="absolute top-6 right-6 pointer-events-none">
-              <DecorativePinwheel size={60} opacity={0.06} rotate={30} animate />
+              <DecorativePinwheel
+                size={60}
+                opacity={0.06}
+                rotate={30}
+                animate
+              />
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-4">
               {isEn ? "Let's Talk About Your Project" : "Projenizi Konuşalım"}
