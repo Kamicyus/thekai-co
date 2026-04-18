@@ -25,13 +25,15 @@ export default function BlogPage() {
           <p className="text-[#999999] text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
             {isEn ? (
               <>
-                AI agent systems, music production, Claude Code and digital creativity.
+                AI agent systems, music production, Claude Code and digital
+                creativity.
                 <br />
                 In-depth articles, guides and experiences.
               </>
             ) : (
               <>
-                AI ajan sistemleri, müzik prodüksiyon, Claude Code ve dijital yaratıcılık.
+                AI ajan sistemleri, müzik prodüksiyon, Claude Code ve dijital
+                yaratıcılık.
                 <br />
                 Derinlemesine yazılar, rehberler ve deneyimler.
               </>
@@ -62,61 +64,76 @@ export default function BlogPage() {
                 <div className="relative w-full aspect-[1200/630] overflow-hidden bg-gradient-to-br from-[#D8FB32]/10 via-[#0A0A0A] to-[#1a0f30] flex items-center justify-center">
                   <div className="flex flex-col items-center gap-3">
                     <div className="w-16 h-16 rounded-2xl bg-[#D8FB32]/10 border border-[#D8FB32]/20 flex items-center justify-center">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D8FB32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#D8FB32"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 20h9" />
+                        <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z" />
                       </svg>
                     </div>
-                    <span className="text-white/20 text-xs font-medium">Blog</span>
+                    <span className="text-white/20 text-xs font-medium">
+                      Blog
+                    </span>
                   </div>
                 </div>
               )}
 
               <div className="p-6 sm:p-8 flex flex-col flex-1">
-              {/* Meta */}
-              <div className="flex items-center gap-3 mb-4">
-                <time
-                  dateTime={post.date}
-                  className="text-[#666666] text-xs font-medium"
-                >
-                  {new Date(post.date).toLocaleDateString(isEn ? "en-US" : "tr-TR", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </time>
-                <span className="w-1 h-1 bg-[#333333] rounded-full" />
-                <span className="text-[#666666] text-xs font-medium">
-                  {post.readingTime} {isEn ? "read" : "okuma"}
-                </span>
-              </div>
+                {/* Meta */}
+                <div className="flex items-center gap-3 mb-4">
+                  <time
+                    dateTime={post.date}
+                    className="text-[#999999] text-xs font-medium"
+                  >
+                    {new Date(post.date).toLocaleDateString(
+                      isEn ? "en-US" : "tr-TR",
+                      {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      },
+                    )}
+                  </time>
+                  <span className="w-1 h-1 bg-[#333333] rounded-full" />
+                  <span className="text-[#999999] text-xs font-medium">
+                    {post.readingTime} {isEn ? "read" : "okuma"}
+                  </span>
+                </div>
 
-              {/* Title */}
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3 group-hover:text-[#D8FB32] transition-colors duration-300 leading-snug">
-                {post.title}
-              </h2>
+                {/* Title */}
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-3 group-hover:text-[#D8FB32] transition-colors duration-300 leading-snug">
+                  {post.title}
+                </h2>
 
-              {/* Description */}
-              <p className="text-[#999999] text-sm leading-relaxed mb-6 flex-1">
-                {post.description}
-              </p>
+                {/* Description */}
+                <p className="text-[#999999] text-sm leading-relaxed mb-6 flex-1">
+                  {post.description}
+                </p>
 
-              {/* Read More */}
-              <div className="flex items-center gap-2 text-[#D8FB32] text-sm font-medium group-hover:gap-3 transition-all duration-300">
-                <span>{isEn ? "Read More" : "Devamını Oku"}</span>
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </div>
+                {/* Read More */}
+                <div className="flex items-center gap-2 text-[#D8FB32] text-sm font-medium group-hover:gap-3 transition-all duration-300">
+                  <span>{isEn ? "Read More" : "Devamını Oku"}</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </div>
               </div>
             </Link>
           ))}
