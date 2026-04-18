@@ -140,10 +140,10 @@ function c(theme: "dark" | "light") {
     bgCard: isDark ? "bg-[#141414]" : "bg-white",
     bgCardInner: isDark ? "bg-[#0A0A0A]" : "bg-[#F5F5F5]",
     text: isDark ? "text-white" : "text-[#0A0A0A]",
-    textMuted: isDark ? "text-[#999999]" : "text-[#666666]",
-    textDim: isDark ? "text-[#666666]" : "text-[#999999]",
-    textDimmer: isDark ? "text-[#555555]" : "text-[#AAAAAA]",
-    textDimmest: isDark ? "text-[#444444]" : "text-[#BBBBBB]",
+    textMuted: isDark ? "text-[#B0B0B0]" : "text-[#525252]",
+    textDim: isDark ? "text-[#999999]" : "text-[#666666]",
+    textDimmer: isDark ? "text-[#888888]" : "text-[#757575]",
+    textDimmest: isDark ? "text-[#828282]" : "text-[#767676]",
     border: isDark ? "border-white/5" : "border-black/10",
     borderHover: isDark ? "border-white/20" : "border-black/20",
     accent: "#D8FB32",
@@ -1075,7 +1075,7 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
   return (
     <section className="py-16 border-y border-gray-200 bg-white">
       <div className="max-w-5xl mx-auto px-5">
-        <p className="text-center text-xs text-gray-400 font-medium mb-8 uppercase tracking-widest">
+        <p className="text-center text-xs text-gray-500 font-medium mb-8 uppercase tracking-widest">
           Desteklenen AI Modelleri
         </p>
         <div
@@ -1114,7 +1114,7 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
                   <span className="text-gray-900 text-sm font-bold block leading-tight">
                     {model.name}
                   </span>
-                  <span className="text-[10px] text-gray-400">
+                  <span className="text-[10px] text-gray-500">
                     {model.desc}
                   </span>
                 </div>
@@ -1122,7 +1122,7 @@ function TrustBar({ theme }: { theme: "dark" | "light" }) {
             ))}
           </motion.div>
         </div>
-        <p className="text-center text-xs text-gray-400 mt-8">
+        <p className="text-center text-xs text-gray-500 mt-8">
           BYOK &mdash; Kendi API anahtarını getir, ekstra AI maliyeti yok.
           İstediğin modeli kullan.
         </p>
@@ -1315,13 +1315,13 @@ function HowItWorks({ theme }: { theme: "dark" | "light" }) {
                 <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 sm:gap-6 items-center">
                   {/* Human side */}
                   <div className="text-center sm:text-right">
-                    <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
+                    <div className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
                       Klasik
                     </div>
                     <div className="text-xl sm:text-2xl font-black text-gray-500">
                       {item.human.value}
                     </div>
-                    <p className="text-xs text-gray-400 mt-1 hidden sm:block">
+                    <p className="text-xs text-gray-500 mt-1 hidden sm:block">
                       {item.human.detail}
                     </p>
                   </div>
@@ -1329,7 +1329,7 @@ function HowItWorks({ theme }: { theme: "dark" | "light" }) {
                   {/* Center — icon + multiplier */}
                   <div className="flex flex-col items-center gap-1.5 mx-4">
                     <span className="text-2xl">{item.icon}</span>
-                    <span className="text-xs font-bold text-gray-400 uppercase">
+                    <span className="text-xs font-bold text-gray-500 uppercase">
                       {item.category}
                     </span>
                     <motion.div
@@ -1351,7 +1351,7 @@ function HowItWorks({ theme }: { theme: "dark" | "light" }) {
                     <div className="text-xl sm:text-2xl font-black text-[#0A0A0A]">
                       {item.ai.value}
                     </div>
-                    <p className="text-xs text-gray-400 mt-1 hidden sm:block">
+                    <p className="text-xs text-gray-500 mt-1 hidden sm:block">
                       {item.ai.detail}
                     </p>
                   </div>
