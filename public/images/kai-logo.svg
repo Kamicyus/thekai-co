@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="currentColor">
+  <!-- Kai Logo Lockup — icon + wordmark -->
+  <!-- Uses currentColor for text, explicit #D8FB32 for accent -->
+
+  <!-- ═══ Pinwheel Icon ═══ -->
+  <g transform="translate(50,50)">
+    <path d="M2,-7 C8,-14 12,-30 6,-40 C4,-43 0,-42 -1,-39 C-5,-29 -6,-14 -2,-7 Z" fill="#D8FB32" transform="rotate(0)"/>
+    <path d="M2,-7 C8,-14 12,-30 6,-40 C4,-43 0,-42 -1,-39 C-5,-29 -6,-14 -2,-7 Z" fill="#D8FB32" transform="rotate(72)"/>
+    <path d="M2,-7 C8,-14 12,-30 6,-40 C4,-43 0,-42 -1,-39 C-5,-29 -6,-14 -2,-7 Z" fill="#D8FB32" transform="rotate(144)"/>
+    <path d="M2,-7 C8,-14 12,-30 6,-40 C4,-43 0,-42 -1,-39 C-5,-29 -6,-14 -2,-7 Z" fill="#D8FB32" transform="rotate(216)"/>
+    <path d="M2,-7 C8,-14 12,-30 6,-40 C4,-43 0,-42 -1,-39 C-5,-29 -6,-14 -2,-7 Z" fill="#D8FB32" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="7" fill="#D8FB32"/>
+  </g>
+
+  <!-- ═══ Wordmark ═══ -->
+  <g transform="translate(110,0)">
+    <!-- k -->
+    <rect x="20" y="15" width="11" height="70" rx="2"/>
+    <path d="M31,52 L31,46 L68,15 L76,15 L76,21 L37,49 Z"/>
+    <path d="M31,54 L37,51 L76,79 L76,85 L68,85 L31,58 Z"/>
+
+    <!-- a -->
+    <path d="M120,85 L120,55 C120,39 130,30 147,30 C164,30 174,39 174,55 L174,85 L163,85 L163,55 C163,44 157,38 147,38 C137,38 131,44 131,55 L131,85 Z"/>
+    <rect x="163" y="30" width="11" height="55" rx="2"/>
+
+    <!-- i stem -->
+    <rect x="210" y="30" width="11" height="55" rx="2"/>
+
+    <!-- i dot: pinwheel -->
+    <g transform="translate(215.5,14)">
+      <path d="M0.5,-2 C2,-3.5 3,-7.5 1.5,-10 C1,-11 0,-10.8 -0.2,-10 C-1.2,-7.5 -1.5,-3.5 -0.5,-2 Z" fill="#D8FB32" transform="rotate(0)"/>
+      <path d="M0.5,-2 C2,-3.5 3,-7.5 1.5,-10 C1,-11 0,-10.8 -0.2,-10 C-1.2,-7.5 -1.5,-3.5 -0.5,-2 Z" fill="#D8FB32" transform="rotate(72)"/>
+      <path d="M0.5,-2 C2,-3.5 3,-7.5 1.5,-10 C1,-11 0,-10.8 -0.2,-10 C-1.2,-7.5 -1.5,-3.5 -0.5,-2 Z" fill="#D8FB32" transform="rotate(144)"/>
+      <path d="M0.5,-2 C2,-3.5 3,-7.5 1.5,-10 C1,-11 0,-10.8 -0.2,-10 C-1.2,-7.5 -1.5,-3.5 -0.5,-2 Z" fill="#D8FB32" transform="rotate(216)"/>
+      <path d="M0.5,-2 C2,-3.5 3,-7.5 1.5,-10 C1,-11 0,-10.8 -0.2,-10 C-1.2,-7.5 -1.5,-3.5 -0.5,-2 Z" fill="#D8FB32" transform="rotate(288)"/>
+      <circle cx="0" cy="0" r="2" fill="#D8FB32"/>
+    </g>
+  </g>
+</svg>
