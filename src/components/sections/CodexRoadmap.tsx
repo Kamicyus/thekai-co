@@ -1,11 +1,21 @@
 const ROADMAP = [
-  { num: "№01", artist: "Ezhel", status: "Pre-order · Ships May 2026", live: true },
-  { num: "№02", artist: "The Weeknd", status: "In research", live: false },
-  { num: "№03", artist: "Dua Lipa", status: "Synthesis complete", live: true },
-  { num: "№04", artist: "Tyler, the Creator", status: "Synthesis complete", live: true },
-  { num: "№05", artist: "Kendrick Lamar", status: "Synthesis complete", live: true },
-  { num: "№06", artist: "Sabrina Carpenter", status: "Synthesis complete", live: true },
-  { num: "№07", artist: "Mabel Matiz", status: "Planned", live: false },
+  { num: "№01", artist: "Ezhel", status: "Live · $14", live: true },
+  { num: "№02", artist: "Mabel Matiz", status: "Live · $14", live: true },
+  { num: "№03", artist: "Dua Lipa", status: "Live · $14", live: true },
+  {
+    num: "№04",
+    artist: "Tyler, The Creator",
+    status: "Live · $14",
+    live: true,
+  },
+  { num: "№05", artist: "Kendrick Lamar", status: "Live · $14", live: true },
+  { num: "№06", artist: "Sabrina Carpenter", status: "Live · $14", live: true },
+  {
+    num: "Bundle",
+    artist: "The 6-Pack",
+    status: "Live · $79 ($5 off)",
+    live: true,
+  },
 ];
 
 export default function CodexRoadmap() {
