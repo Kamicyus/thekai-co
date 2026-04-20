@@ -60,7 +60,6 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      site: "@callmethekai",
       ...(post.coverImage && {
         images: [`https://thekai.co${post.coverImage}`],
       }),

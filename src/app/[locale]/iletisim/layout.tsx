@@ -29,7 +29,9 @@ export async function generateMetadata({
       description: isEn
         ? "Get in touch with The Kai for your AI and creative projects."
         : "The Kai ile iletişime geçin. AI ajan sistemi, müzik prodüksiyon, web tasarımı projeleriniz için görüşelim.",
-      url: isEn ? "https://thekai.co/en/iletisim" : "https://thekai.co/iletisim",
+      url: isEn
+        ? "https://thekai.co/en/iletisim"
+        : "https://thekai.co/iletisim",
       siteName: "The Kai",
       type: "website",
       locale: isEn ? "en_US" : "tr_TR",
@@ -37,7 +39,6 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      site: "@callmethekai",
       images: ["/images/og-image.png"],
     },
   };

@@ -46,8 +46,6 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      site: "@callmethekai",
-      creator: "@callmethekai",
       images: ["/images/og-image.png"],
     },
   };

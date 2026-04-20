@@ -124,8 +124,6 @@ export async function generateMetadata({
       description: isEn
         ? "AI agent system setup, music production, web design and content creation."
         : "AI ajan sistemi kurulumu, müzik prodüksiyon, web tasarımı ve içerik üretimi.",
-      site: "@callmethekai",
-      creator: "@callmethekai",
       images: [
         {
           url: "/images/og-image.png",

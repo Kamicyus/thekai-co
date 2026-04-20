@@ -2,7 +2,9 @@ export const SITE_CONFIG = {
   name: "The Kai",
   slogan: "Call Me Kai",
   domain: "thekai.co",
-  handle: "@callmethekai",
+  // X (@callmethekai) askıya alındı 17 Nis 2026; Bluesky alternatifi aktif olunca güncellenecek.
+  // Boş string conditional render için — handle == "" ise X icon/link gösterilmiyor.
+  handle: "",
   email: "hello@thekai.co",
   description: "Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.",
 } as const;

@@ -77,8 +77,6 @@ export async function generateMetadata({
       description: isEn
         ? "Build an AI employee team without writing code. Turkey's first AI orchestration platform."
         : "Kod yazmadan AI çalışan ekibi kurun. Türkiye'nin ilk AI orkestrasyon platformu.",
-      site: "@callmethekai",
-      creator: "@callmethekai",
       images: ["/images/og-image.png"],
     },
     robots: {

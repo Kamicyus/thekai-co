@@ -22,47 +22,47 @@ const RESPONSES: { pattern: RegExp; reply: string }[] = [
   {
     pattern: /hizmet|ne yapıyorsunuz|servis|neler sunuyorsunuz/i,
     reply:
-      '9 temel alanda hizmet veriyoruz: AI Ajan Sistemi, Web Sitesi, İçerik Üretimi, Artwork, Sesli Kitap, Müzik Prodüksiyon, Dijital Strateji, Telegram Bot ve Performans Pazarlama. Detaylar için [Hizmetler](/hizmetler) sayfamıza göz atın!',
+      "9 temel alanda hizmet veriyoruz: AI Ajan Sistemi, Web Sitesi, İçerik Üretimi, Artwork, Sesli Kitap, Müzik Prodüksiyon, Dijital Strateji, Telegram Bot ve Performans Pazarlama. Detaylar için [Hizmetler](/hizmetler) sayfamıza göz atın!",
   },
   {
     pattern: /fiyat|ücret|maliyet|kaç para|fiyatlandırma/i,
     reply:
-      'Her projemiz özel olduğu için fiyatlarımız projeye göre belirleniyor. Ücretsiz görüşme için [İletişim](/iletisim) sayfamızdan bize ulaşabilirsiniz.',
+      "Her projemiz özel olduğu için fiyatlarımız projeye göre belirleniyor. Ücretsiz görüşme için [İletişim](/iletisim) sayfamızdan bize ulaşabilirsiniz.",
   },
   {
     pattern: /ai ajan|yapay zeka|claude|otomasyon/i,
     reply:
-      'AI ajan sistemi kurulumunda uzmanız. 72+ ajanla kendi operasyonlarımızı yönetiyoruz. SPARK, ENGINE ve ARCHITECT paketlerimiz var. [Detaylı bilgi](/hizmetler#ai-ajan-sistemi)',
+      "AI ajan sistemi kurulumunda uzmanız. 72+ ajanla kendi operasyonlarımızı yönetiyoruz. SPARK, ENGINE ve ARCHITECT paketlerimiz var. [Detaylı bilgi](/hizmetler#ai-ajan-sistemi)",
   },
   {
     pattern: /müzik|prodüksiyon|şarkı|beat/i,
     reply:
-      '15 yıllık müzik deneyimi ve Echo Bazaar\'da 20M+ dinlenme ile müzik prodüksiyon hizmeti veriyoruz. [Müzik Prodüksiyon](/hizmetler#muzik-produksiyon)',
+      "15 yıllık müzik deneyimi ve Echo Bazaar'da 20M+ dinlenme ile müzik prodüksiyon hizmeti veriyoruz. [Müzik Prodüksiyon](/hizmetler#muzik-produksiyon)",
   },
   {
     pattern: /web|site|tasarım/i,
     reply:
-      'Next.js + Tailwind CSS ile modern web siteleri yapıyoruz. Bu site de bizim işimiz! [Web Tasarımı](/hizmetler#web-sitesi-tasarimi)',
+      "Next.js + Tailwind CSS ile modern web siteleri yapıyoruz. Bu site de bizim işimiz! [Web Tasarımı](/hizmetler#web-sitesi-tasarimi)",
   },
   {
     pattern: /echo bazaar/i,
     reply:
-      'Echo Bazaar, Türk halk müziğini AI ile yeniden yorumlayan YouTube kanalımız. 20M+ dinlenmeye ulaştık! [Portfolyomuza göz atın](/#portfolyo)',
+      "Echo Bazaar, Türk halk müziğini AI ile yeniden yorumlayan YouTube kanalımız. 20M+ dinlenmeye ulaştık! [Portfolyomuza göz atın](/#portfolyo)",
   },
   {
     pattern: /araç|tool|araçlar/i,
     reply:
-      'Ücretsiz online araçlarımızı kullanabilirsiniz: QR Kod Oluşturucu, Kelime Sayacı, Şifre Oluşturucu ve daha fazlası. [Araçlar](/araclar)',
+      "Ücretsiz online araçlarımızı kullanabilirsiniz: QR Kod Oluşturucu, Kelime Sayacı, Şifre Oluşturucu ve daha fazlası. [Araçlar](/araclar)",
   },
   {
     pattern: /iletişim|email|telefon|ulaş|bize yaz/i,
     reply:
-      'Bize hello@thekai.co adresinden veya [İletişim](/iletisim) sayfamızdaki form ile ulaşabilirsiniz. Sosyal medya: @callmethekai',
+      "Bize hello@thekai.co adresinden veya [İletişim](/iletisim) sayfamızdaki form ile ulaşabilirsiniz. YouTube, Instagram, TikTok ve Pinterest'te @callmethekai hesaplarımızdan da takip edebilirsiniz.",
   },
   {
     pattern: /blog|yazı|makale/i,
     reply:
-      'AI, müzik ve teknoloji üzerine blog yazılarımızı okuyabilirsiniz. [Blog](/blog)',
+      "AI, müzik ve teknoloji üzerine blog yazılarımızı okuyabilirsiniz. [Blog](/blog)",
   },
   {
     pattern: /kim|kurucu|kamer/i,
@@ -76,7 +76,7 @@ const RESPONSES: { pattern: RegExp; reply: string }[] = [
 ];
 
 const DEFAULT_REPLY =
-  'Bu konuda size daha iyi yardımcı olabilmem için [İletişim](/iletisim) sayfamızdan bize yazabilirsiniz. Ya da şu konularda hemen yardımcı olabilirim: hizmetlerimiz, fiyatlarımız, araçlarımız, portfolyomuz.';
+  "Bu konuda size daha iyi yardımcı olabilmem için [İletişim](/iletisim) sayfamızdan bize yazabilirsiniz. Ya da şu konularda hemen yardımcı olabilirim: hizmetlerimiz, fiyatlarımız, araçlarımız, portfolyomuz.";
 
 const WELCOME_MESSAGE: Message = {
   id: "welcome",
@@ -187,7 +187,7 @@ export default function ChatBot() {
         setTyping(false);
       }, 500);
     },
-    [typing]
+    [typing],
   );
 
   const handleSubmit = (e: React.FormEvent) => {

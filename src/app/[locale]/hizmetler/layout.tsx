@@ -29,7 +29,9 @@ export async function generateMetadata({
       description: isEn
         ? "AI agent system setup, music production, web design, content creation and digital consultancy."
         : "AI ajan sistemi kurulumu, müzik prodüksiyon, web sitesi tasarımı, içerik üretimi ve dijital danışmanlık.",
-      url: isEn ? "https://thekai.co/en/hizmetler" : "https://thekai.co/hizmetler",
+      url: isEn
+        ? "https://thekai.co/en/hizmetler"
+        : "https://thekai.co/hizmetler",
       siteName: "The Kai",
       type: "website",
       locale: isEn ? "en_US" : "tr_TR",
@@ -37,7 +39,6 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      site: "@callmethekai",
       images: ["/images/og-image.png"],
     },
   };
