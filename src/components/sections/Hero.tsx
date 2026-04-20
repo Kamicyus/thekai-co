@@ -11,12 +11,22 @@ export default function Hero() {
   const t = useTranslations("hero");
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/videos/kai-hero.mp4" type="video/mp4" />
+      </video>
+      {/* Dark overlay on video */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at top, #020A1B 0%, #0A0A0A 70%)",
+            "radial-gradient(ellipse at top, rgba(2,10,27,0.7) 0%, rgba(10,10,10,0.85) 70%)",
         }}
       />
 

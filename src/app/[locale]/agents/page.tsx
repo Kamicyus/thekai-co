@@ -219,7 +219,7 @@ function AgentsNavbar({
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/kai-logo.svg"
+                src="/images/kai-carkli.svg"
                 alt="The Kai"
                 className="h-[36px] w-auto"
               />
@@ -4538,7 +4538,7 @@ function AgentsFooter({ theme }: { theme: "dark" | "light" }) {
           <div className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/kai-logo.svg"
+              src="/images/kai-carkli.svg"
               alt="The Kai"
               className="h-8 w-auto"
             />

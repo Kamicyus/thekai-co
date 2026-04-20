@@ -182,7 +182,7 @@ export default async function LocaleLayout({
                     url: "https://thekai.co",
                     logo: {
                       "@type": "ImageObject",
-                      url: "https://thekai.co/images/kai-logo.svg",
+                      url: "https://thekai.co/images/kai-carkli.svg",
                       width: 512,
                       height: 512,
                     },

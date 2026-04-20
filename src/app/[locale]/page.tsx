@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Stats from "@/components/sections/Stats";
 import Showcase from "@/components/sections/Showcase";
+import Products from "@/components/sections/Products";
 import Process from "@/components/sections/Process";
 import About from "@/components/sections/About";
 import Timeline from "@/components/sections/Timeline";
@@ -22,6 +23,7 @@ export default async function Home({
       <Services />
       <Stats />
       <Showcase />
+      <Products />
       <Process />
       <About />
       <Timeline />
