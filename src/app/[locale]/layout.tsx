@@ -214,7 +214,6 @@ export default async function LocaleLayout({
                       addressCountry: "TR",
                     },
                     sameAs: [
-                      "https://x.com/callmethekai",
                       "https://youtube.com/@callmethekai",
                       "https://instagram.com/callmethekai",
                       "https://tiktok.com/@callmethekai",

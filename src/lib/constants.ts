@@ -18,12 +18,27 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { label: "X", href: "https://x.com/callmethekai", icon: "x" },
-  { label: "YouTube", href: "https://youtube.com/@callmethekai", icon: "youtube" },
-  { label: "Instagram", href: "https://instagram.com/callmethekai", icon: "instagram" },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@callmethekai",
+    icon: "youtube",
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/callmethekai",
+    icon: "instagram",
+  },
   { label: "TikTok", href: "https://tiktok.com/@callmethekai", icon: "tiktok" },
-  { label: "Pinterest", href: "https://pinterest.com/callmethekai", icon: "pinterest" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/the-kai", icon: "linkedin" },
+  {
+    label: "Pinterest",
+    href: "https://pinterest.com/callmethekai",
+    icon: "pinterest",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/the-kai",
+    icon: "linkedin",
+  },
 ] as const;
 
 export const SERVICES = [
@@ -104,127 +119,148 @@ export const SERVICES = [
 export const TOOLS = [
   {
     title: "QR Kod Oluşturucu",
-    description: "URL veya metin girin, anında QR kod oluşturun. Renk ve boyut özelleştirme. PNG olarak indirin.",
+    description:
+      "URL veya metin girin, anında QR kod oluşturun. Renk ve boyut özelleştirme. PNG olarak indirin.",
     icon: "qrcode",
     slug: "qr-kod",
   },
   {
     title: "Kelime & Karakter Sayacı",
-    description: "Metin yapıştırın, kelime, karakter, cümle ve paragraf sayısını anında görün. Okuma süresi tahmini.",
+    description:
+      "Metin yapıştırın, kelime, karakter, cümle ve paragraf sayısını anında görün. Okuma süresi tahmini.",
     icon: "counter",
     slug: "kelime-sayaci",
   },
   {
     title: "Şifre Oluşturucu",
-    description: "Güvenli, rastgele şifre oluşturun. Uzunluk, karakter tipi seçenekleri ve şifre gücü göstergesi.",
+    description:
+      "Güvenli, rastgele şifre oluşturun. Uzunluk, karakter tipi seçenekleri ve şifre gücü göstergesi.",
     icon: "password",
     slug: "sifre-olusturucu",
   },
   {
     title: "Renk Kodu Çevirici",
-    description: "HEX, RGB ve HSL renk kodlarını anında çevirin. Canlı önizleme ve kopyalama.",
+    description:
+      "HEX, RGB ve HSL renk kodlarını anında çevirin. Canlı önizleme ve kopyalama.",
     icon: "color",
     slug: "renk-cevirici",
   },
   {
     title: "BMI Hesaplayıcı",
-    description: "Boy ve kilonuzu girin, vücut kitle indeksinizi anında hesaplayın. Sağlıklı kilo aralığı göstergesi.",
+    description:
+      "Boy ve kilonuzu girin, vücut kitle indeksinizi anında hesaplayın. Sağlıklı kilo aralığı göstergesi.",
     icon: "bmi",
     slug: "bmi-hesaplayici",
   },
   {
     title: "Büyük/Küçük Harf Çevirici",
-    description: "Metni büyük harfe, küçük harfe, başlık düzenine veya cümle düzenine anında çevirin.",
+    description:
+      "Metni büyük harfe, küçük harfe, başlık düzenine veya cümle düzenine anında çevirin.",
     icon: "textcase",
     slug: "harf-cevirici",
   },
   {
     title: "JSON Formatlayıcı",
-    description: "JSON verilerinizi otomatik formatlayın, syntax hatalarını tespit edin, sıkıştırın veya güzelleştirin.",
+    description:
+      "JSON verilerinizi otomatik formatlayın, syntax hatalarını tespit edin, sıkıştırın veya güzelleştirin.",
     icon: "json",
     slug: "json-formatlayici",
   },
   {
     title: "Yüzde Hesaplayıcı",
-    description: "Yüzde hesaplama, oran bulma ve yüzde değişim hesaplama. 3 farklı hesaplama modu.",
+    description:
+      "Yüzde hesaplama, oran bulma ve yüzde değişim hesaplama. 3 farklı hesaplama modu.",
     icon: "percent",
     slug: "yuzde-hesaplayici",
   },
   {
     title: "Görsel Boyutlandırıcı",
-    description: "Görsellerinizi sosyal medya boyutlarına uyarlayın. Instagram, YouTube, Twitter ve özel boyutlar.",
+    description:
+      "Görsellerinizi sosyal medya boyutlarına uyarlayın. Instagram, YouTube, Twitter ve özel boyutlar.",
     icon: "image",
     slug: "gorsel-boyutlandirma",
   },
   {
     title: "Yaş Hesaplayıcı",
-    description: "Doğum tarihinizi girin, yaşınızı yıl, ay, gün olarak görün. Burç ve doğum gününe kalan süre.",
+    description:
+      "Doğum tarihinizi girin, yaşınızı yıl, ay, gün olarak görün. Burç ve doğum gününe kalan süre.",
     icon: "cake",
     slug: "yas-hesaplayici",
   },
   {
     title: "Online Gitar Akort",
-    description: "Mikrofonunuzu kullanarak gitarınızı akort edin. Standart akort (EADGBE), referans notalar ve cent göstergesi.",
+    description:
+      "Mikrofonunuzu kullanarak gitarınızı akort edin. Standart akort (EADGBE), referans notalar ve cent göstergesi.",
     icon: "music",
     slug: "tuner",
   },
   {
     title: "Online Metronom",
-    description: "Web Audio API ile çalışan metronom. BPM ayarlama, tap tempo, vuruş sayısı seçimi ve görsel vuruş göstergesi.",
+    description:
+      "Web Audio API ile çalışan metronom. BPM ayarlama, tap tempo, vuruş sayısı seçimi ve görsel vuruş göstergesi.",
     icon: "music",
     slug: "metronom",
   },
   {
     title: "BPM Bulucu",
-    description: "Ritme tıklayarak şarkının BPM değerini hesaplayın. Ortalama, minimum ve maksimum BPM göstergesi.",
+    description:
+      "Ritme tıklayarak şarkının BPM değerini hesaplayın. Ortalama, minimum ve maksimum BPM göstergesi.",
     icon: "music",
     slug: "bpm-bulucu",
   },
   {
     title: "Base64 Encoder / Decoder",
-    description: "Metin veya dosyalarınızı Base64 formatına dönüştürün. Base64 kodunu tekrar metne çevirin.",
+    description:
+      "Metin veya dosyalarınızı Base64 formatına dönüştürün. Base64 kodunu tekrar metne çevirin.",
     icon: "code",
     slug: "base64",
   },
   {
     title: "Lorem Ipsum Üretici",
-    description: "Tasarım projeleri için placeholder metin üretin. Paragraf, cümle, kelime modu ve Türkçe desteği.",
+    description:
+      "Tasarım projeleri için placeholder metin üretin. Paragraf, cümle, kelime modu ve Türkçe desteği.",
     icon: "counter",
     slug: "lorem-ipsum",
   },
   {
     title: "Pomodoro Zamanlayıcı",
-    description: "25 dk çalışma, 5 dk mola döngüsü ile verimli çalışın. Süre özelleştirme ve oturum takibi.",
+    description:
+      "25 dk çalışma, 5 dk mola döngüsü ile verimli çalışın. Süre özelleştirme ve oturum takibi.",
     icon: "clock",
     slug: "pomodoro",
   },
   {
     title: "Regex Test Aracı",
-    description: "Düzenli ifade (regex) pattern yazın, metin üzerinde canlı test edin. Eşleşmeleri renkli görün, grupları inceleyin.",
+    description:
+      "Düzenli ifade (regex) pattern yazın, metin üzerinde canlı test edin. Eşleşmeleri renkli görün, grupları inceleyin.",
     icon: "regex",
     slug: "regex-test",
   },
   {
     title: "Renk Paleti Üretici",
-    description: "Rastgele renk paleti oluşturun. HEX, RGB, HSL kodları, renk kilitleme ve tek tıkla kopyalama.",
+    description:
+      "Rastgele renk paleti oluşturun. HEX, RGB, HSL kodları, renk kilitleme ve tek tıkla kopyalama.",
     icon: "palette",
     slug: "renk-paleti",
   },
   {
     title: "Metin Farkı Karşılaştırıcı",
-    description: "İki metni yan yana karşılaştırın. Eklenen satırlar yeşil, silinen satırlar kırmızı. Satır bazlı diff görünümü.",
+    description:
+      "İki metni yan yana karşılaştırın. Eklenen satırlar yeşil, silinen satırlar kırmızı. Satır bazlı diff görünümü.",
     icon: "diff",
     slug: "metin-farki",
   },
   {
     title: "AI Rapor Oluşturucu",
-    description: "Konunuzu yazın, rapor tipini seçin — profesyonel yapıda bir rapor şablonu anında oluşsun. PDF veya Markdown olarak indirin.",
+    description:
+      "Konunuzu yazın, rapor tipini seçin — profesyonel yapıda bir rapor şablonu anında oluşsun. PDF veya Markdown olarak indirin.",
     icon: "📊",
     slug: "rapor-olusturucu",
   },
   {
     title: "YouTube BPM & Ton Analiz",
-    description: "YouTube linkinden şarkının BPM (tempo) ve müzikal ton (key) bilgisini öğrenin. Prodüksiyon ve DJ mix uyumu için ideal.",
+    description:
+      "YouTube linkinden şarkının BPM (tempo) ve müzikal ton (key) bilgisini öğrenin. Prodüksiyon ve DJ mix uyumu için ideal.",
     icon: "youtube-bpm",
     slug: "youtube-bpm-analiz",
   },
