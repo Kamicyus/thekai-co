@@ -140,6 +140,28 @@
       }
     }
   },
+  "products": {
+    "badge": "NEW · LIVE",
+    "title": "Kai Books",
+    "subtitle": "Three guides for anyone who wants to make money making music with AI. The experience that took Echo Bazaar past 20 million streams.",
+    "cta": "View",
+    "allProducts": "See all products on Gumroad",
+    "refundNote": "Digital product · no refunds · instant PDF download",
+    "items": {
+      "starter": {
+        "name": "Make Money with AI Music — Starter (Turkish)",
+        "description": "How do you earn your first dollar? 20 working prompts + Spotify launch path. Pay what you want (min $5)."
+      },
+      "pro-tr": {
+        "name": "The Complete Turkish Guide (Pro)",
+        "description": "5 revenue channels, 50+ prompts, sync licensing deck, Echo Bazaar case study. Full playbook."
+      },
+      "pro-en": {
+        "name": "The Complete Guide (English)",
+        "description": "Same playbook in English — global sync focus. Ready for the international market."
+      }
+    }
+  },
   "timeline": {
     "title": "The Journey",
     "subtitle": "The story of an idea becoming a studio.",

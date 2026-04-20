@@ -140,6 +140,28 @@
       }
     }
   },
+  "products": {
+    "badge": "YENİ · YAYINDA",
+    "title": "Kai Kitapları",
+    "subtitle": "AI ile müzik yapıp para kazanmak isteyenler için üç rehber. Echo Bazaar'ı 20 milyon dinlenmeye taşıyan deneyim.",
+    "cta": "İncele",
+    "allProducts": "Tüm ürünleri Gumroad'da gör",
+    "refundNote": "Dijital ürün · iade yok · anında PDF indirme",
+    "items": {
+      "starter": {
+        "name": "AI Müzikle Para Kazan — Başlangıç Rehberi",
+        "description": "İlk dolarını nasıl kazanırsın? 20 çalışan prompt + Spotify yayın yolu. Ne verirsen o (min $5)."
+      },
+      "pro-tr": {
+        "name": "Komple Türkçe Rehber (Pro)",
+        "description": "5 gelir kanalı, 50+ prompt, sync lisans deck'i, Echo Bazaar vaka analizi. Tam playbook."
+      },
+      "pro-en": {
+        "name": "The Complete Guide (English)",
+        "description": "Aynı playbook İngilizce — global sync odaklı. Uluslararası pazar için hazır hazırlanmış."
+      }
+    }
+  },
   "timeline": {
     "title": "Yolculuk",
     "subtitle": "Bir fikrin stüdyoya dönüşme hikâyesi.",
