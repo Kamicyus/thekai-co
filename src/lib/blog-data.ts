@@ -9848,8 +9848,7 @@ export const blogPosts: BlogPost[] = [
               "Risk, doğru kurulum ve insan gözetimi ile minimize edilebilir. Ajanlarınıza çok net sınırlar çizmeli (ör. 'Şu konuda asla tahminde bulunma', 'Şu durumda mutlaka insana yönlendir') ve özellikle kritik süreçlerde çıktılarını düzenli kontrol etmelisiniz. Sistem, 'öğrenen' bir yapıdadır, hataları tespit edip talimatları güncelleyerek geliştirebilirsiniz.",
           },
           {
-            type: "p",
-            text: "AI ajan orkestrasyonu için aylık maliyet ne kadar?",
+            question: "AI ajan orkestrasyonu için aylık maliyet ne kadar?",
             answer:
               "Maliyet, kullandığınız platforma, ajan sayısına ve AI model seçeneklerine göre değişir. Küçük bir girişim için aylık 50-200 TL arasında başlayan planlar mevcuttur. Bu maliyet, tasarruf ettiğiniz insan saati ve artan verimlilikle karşılaştırıldığında genelde çok küçük kalır. theKAI.co'nun ücretsiz başlangıç katmanı ile deneme yapabilirsiniz.",
           },

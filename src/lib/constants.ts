@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   domain: "thekai.co",
   // X (@callmethekai) askıya alındı 17 Nis 2026; Bluesky alternatifi aktif olunca güncellenecek.
   // Boş string conditional render için — handle == "" ise X icon/link gösterilmiyor.
-  handle: "",
+  handle: "" as string,
   email: "hello@thekai.co",
   description: "Müzik, teknoloji ve yaratıcılık kesişiminde bir stüdyo.",
 } as const;
