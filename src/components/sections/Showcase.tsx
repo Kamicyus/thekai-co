@@ -29,7 +29,7 @@ const PROJECT_META: Record<string, {
     accentFrom: "#D8FB32",
     accentTo: "#2DD4BF",
     decoration: "pinwheel",
-    image: "/images/projects/echo-bazaar-logo.jpg",
+    image: "/images/projects/echo-bazaar-logo.webp",
   },
   "prime-beats": {
     title: "Prime Beats",

@@ -53,7 +53,7 @@ export default function About() {
                   <div className="relative">
                     <div className="absolute inset-0 rounded-full scale-150 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(216,251,50,0.15) 0%, transparent 70%)' }} />
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#D8FB32]/40 shadow-[0_0_20px_rgba(216,251,50,0.15)]">
-                      <Image src="/images/kamer.png" alt="Kamer" width={64} height={64} className="object-cover" />
+                      <Image src="/images/kamer.webp" alt="Kamer" width={64} height={64} className="object-cover" />
                     </div>
                   </div>
                   <div>

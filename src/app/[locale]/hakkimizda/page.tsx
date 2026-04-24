@@ -230,7 +230,7 @@ export default function HakkimizdaPage() {
                   <div className="flex-shrink-0">
                     <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-[#D8FB32]/30 shadow-lg shadow-[#D8FB32]/5">
                       <Image
-                        src="/images/kamer.png"
+                        src="/images/kamer.webp"
                         alt="Kamer Can Izvermez"
                         width={128}
                         height={128}

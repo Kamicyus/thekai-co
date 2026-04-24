@@ -339,7 +339,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
             <div className="flex items-center gap-3 mt-6 pt-6 border-t border-white/[0.06]">
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#D8FB32]/30">
                 <Image
-                  src="/images/kamer.png"
+                  src="/images/kamer.webp"
                   alt="Kamer Can İzvermez"
                   width={40}
                   height={40}

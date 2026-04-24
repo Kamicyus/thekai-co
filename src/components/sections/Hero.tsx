@@ -303,7 +303,7 @@ export default function Hero() {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
               <Image
-                src="/images/cark.png"
+                src="/images/cark.webp"
                 alt=""
                 width={36}
                 height={36}

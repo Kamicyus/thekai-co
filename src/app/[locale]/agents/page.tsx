@@ -4140,7 +4140,7 @@ function FounderStory({ theme }: { theme: "dark" | "light" }) {
                 <div className="relative">
                   <div className="absolute -inset-1 bg-[#D8FB32]/30 rounded-full blur-md" />
                   <img
-                    src="/images/kamer.png"
+                    src="/images/kamer.webp"
                     alt="Kamer"
                     className="relative w-14 h-14 rounded-full object-cover border-2 border-[#D8FB32]"
                     loading="lazy"
