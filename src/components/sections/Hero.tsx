@@ -11,12 +11,14 @@ export default function Hero() {
   const t = useTranslations("hero");
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background video */}
+      {/* Background video — poster gives instant LCP, preload metadata defers full file */}
       <video
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
+        poster="/images/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       >
         <source src="/videos/kai-hero.mp4" type="video/mp4" />

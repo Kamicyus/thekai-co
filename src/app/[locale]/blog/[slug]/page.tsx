@@ -210,10 +210,23 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     notFound();
   }
 
-  // Find related posts (other posts)
+  // Find related posts — score by keyword overlap, fall back to recency
+  const currentKeywords = new Set(post.keywords.map((k) => k.toLowerCase()));
   const relatedPosts = blogPosts
     .filter((p) => p.slug !== post.slug)
-    .slice(0, 2);
+    .map((p) => {
+      const overlap = p.keywords.reduce(
+        (n, k) => n + (currentKeywords.has(k.toLowerCase()) ? 1 : 0),
+        0,
+      );
+      return { post: p, score: overlap };
+    })
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return b.post.date.localeCompare(a.post.date);
+    })
+    .slice(0, 3)
+    .map((x) => x.post);
 
   // JSON-LD structured data
   const jsonLd = {
@@ -396,9 +409,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
           {relatedPosts.length > 0 && (
             <div className="mt-16 pt-10 border-t border-white/[0.06]">
               <h3 className="font-serif text-2xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">
-                {isEn ? "Other Posts" : "Diğer Yazılar"}
+                {isEn ? "Related Posts" : "İlgili Yazılar"}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {relatedPosts.map((related) => (
                   <Link
                     key={related.slug}
