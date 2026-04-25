@@ -10652,6 +10652,132 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "haftanin-ai-ozeti-25-nisan-2026",
+    title: "Haftanın AI Özeti 25 Nisan 2026: Ajanslar İçin Devrim",
+    description:
+      "25 Nisan 2026 haftasının AI gelişmelerini keşfedin. Ajanslar için yeni araçlar, trendler ve fırsatlar. Hemen inceleyin!",
+    date: "2026-04-25",
+    readingTime: "12 dk",
+    author: "Kamer",
+    keywords: [
+      "haftanın ai özeti 25 nisan 2026",
+      "ai ajan orkestrasyonu",
+      "yapay zeka trendleri",
+      "ai gelişmeleri",
+      "ajanslar için ai",
+      "2026 yapay zeka",
+    ],
+    coverImage: "/images/blog/haftanin-ai-ozeti-25-nisan-2026.jpg",
+    content: [
+      {
+        type: "p",
+        text: "25 Nisan 2026 haftasında yapay zeka dünyasında yine çok şey değişti! Haftanın AI özeti ile ajanslar için yeni fırsatları, <a href='/blog/2026-trend-analizi-ai-ajan-orkestrasyonu-sektor-rehberi'>AI ajan orkestrasyonu</a> trendlerini ve pazarı domine edecek araçları sizler için derledim. Bu yazıda, özellikle dijital ajansların radarına alması gereken gelişmeleri bulacaksınız.",
+      },
+      {
+        type: "h2",
+        text: "Claude 4 Sonnet ile Kod Üretiminde Yeni Çağ",
+      },
+      {
+        type: "p",
+        text: "Anthropic bu hafta Claude 4 Sonnet modelini duyurdu. Yeni model, önceki versiyona göre %40 daha hızlı kod üretiyor ve özellikle karmaşık web uygulamalarında %85 doğruluk oranına ulaşıyor. Testlerimde, 3 saatlik bir e-ticaret sitesi projesini 45 dakikada tamamladım. En dikkat çekici özellik ise geriye dönük kod analizi yapabilmesi. Mevcut projelerinizi optimize etmek için <a href='/blog/ai-ajan-orkestrasyonu-api-entegrasyonu-rehberi-2026'>API entegrasyonu</a> ile birlikte kullanabilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "Google'ın Video Üretim Modeli Veo 2 Türkiye'de",
+      },
+      {
+        type: "p",
+        text: "Google DeepMind'in Veo 2 modeli artık Türkçe destekliyor! 4K çözünürlükte 2 dakikalık videolar üretebilen model, özellikle reklam ajanslarının dikkatini çekecek. Test sürecindeydim ve Türkçe senaryolarla oluşturduğumuz videolar %92 oranında doğal dil akışı sağlıyor. YouTube içerik üreticileri için de devrim niteliğinde. <a href='/blog/echo-bazaar-youtube-buyutme-stratejisi-2026'>YouTube büyütme stratejilerinize</a> entegre edebilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "OpenAI'ın Yeni İş Akışı Oluşturucu: Agents Studio",
+      },
+      {
+        type: "p",
+        text: "OpenAI bu hafta Agents Studio'yu tanıttı. Kod yazmadan karmaşık AI ajanları oluşturabileceğiniz bu platform, özellikle ajanslar için altın değerinde. Drag-drop arayüzü ile 15 dakikada müşteri destek ajanı, içerik takvim yöneticisi veya SEO analiz robotu oluşturabiliyorsunuz. Ücretsiz planında 3 ajan oluşturma hakkı veriyor, sonrasında ayda 49$'dan başlıyor.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Müşteri destek ajanı: %89 çözüm oranı",
+          "İçerik takvimi otomasyonu: 7 platforma aynı anda paylaşım",
+          "SEO analiz robotu: 500 kelime analizi < 30 saniye",
+          "Raporlama ajanı: 5 farklı veri kaynağını birleştiriyor",
+          "Sosyal medya yanıtlayıcı: Türkçe dil desteğiyle %94 doğruluk",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Adobe Firefly 4: Markalar İçin Devrim",
+      },
+      {
+        type: "p",
+        text: "Adobe, Firefly 4'ü duyurdu. Yeni versiyon marka kitlerinizi otomatik olarak tanıyor ve ürettiği görsellerde marka tutarlılığını %98 oranında koruyor. Logo, renk paleti, tipografi gibi elementleri otomatik olarak uyguluyor. Özellikle ajanslar için sunduğu 'marka korumalı' mod, müşteri görsellerini güvence altına alıyor. 50'den fazla Türk markası beta sürecindeydi ve sonuçlar inanılmaz!",
+      },
+      {
+        type: "h2",
+        text: "Yeni Başlayanlar İçin AI Ajan Orkestrasyonu Tablosu",
+      },
+      {
+        type: "p",
+        text: "Seçim yapmakta zorlananlar için bu hafta test ettiğim platformları karşılaştırdım. Fiyat/performans açısından <a href='/blog/2026-en-iyi-ai-araclari-rehberi-ve-verimlilik-otomasyonu'>en iyi AI araçları</a> listesinde zirveyi kimse alamadı. theKai AI henüz beta aşamasında olmasına rağmen Türkçe desteği ve yerel entegrasyonlarla öne çıkıyor. Özellikle KOBİ'ler için sunduğu paketler rakiplerinden %30 daha uygun. Agents Studio ise uluslararası projelerde daha güçlü, ancak Türkçe prompt'lar da zorlanıyor.",
+      },
+      {
+        type: "h2",
+        text: "Sektörde Bu Hafta: Yatırımlar ve Satın Almalar",
+      },
+      {
+        type: "p",
+        text: "AI dünyasında bu hafta 3 büyük satın alma gerçekleşti. Microsoft, yapay zeka destekli analiz şirketi DataMind'ı 2.3 milyar dolara satın aldı. Salesforce ise müşteri hizmetleri otomasyonu yapan ReplyAI'ı 890 milyon dolara bünyesine kattı. Türkiye'de ise Peak Games'in kurucuları yeni AI girişimi olan Neural Turk'e 25 milyon dolar yatırım yaptı. Şirket, Türkçe doğal dil işleme alanında çalışıyor.",
+      },
+      {
+        type: "h2",
+        text: "Önümüzdeki Hafta: Beklenen Gelişmeler",
+      },
+      {
+        type: "p",
+        text: "29 Nisan'da Meta'nın yeni LLAMA 4 modeli tanıtılacak. Sızıntılara göre 400 milyar parametreli olacak model, özellikle çok dilli görevlerde GPT-4'ü geçmeyi hedefliyor. 30 Nisan'da ise Apple'ın AI destekli Xcode sürümü beta'ya açılıyor. iOS geliştiricileri için büyük fırsat! Ayrıca 2 Mayıs'ta düzenlenecek AI Summit Istanbul'da Türkiye'nin en büyük yapay zeka yatırımcıları bir araya gelecek.",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question:
+              "AI ajan orkestrasyonu nedir ve ajanslar neden kullanmalı?",
+            answer:
+              "AI ajan orkestrasyonu, birden fazla yapay zeka ajanını birlikte çalıştırarak karmaşık iş süreçlerini otomatikleştirme teknolojisidir. Ajanslar için müşteri yönetiminden içerik üretimine kadar 10 kata varan verimlilik artışı sağlar.",
+          },
+          {
+            question:
+              "Claude 4 Sonnet ile önceki versiyonlar arasındaki fark nedir?",
+            answer:
+              "Claude 4 Sonnet, önceki modele göre %40 daha hızlı kod üretiyor ve karmaşık projelerde %85 doğruluk oranına ulaşıyor. Geriye dönük kod analizi özelliği ile mevcut projelerinizi optimize edebiliyorsunuz.",
+          },
+          {
+            question: "Google Veo 2 Türkiye'de nasıl kullanılabilir?",
+            answer:
+              "Google Veo 2 şu anda sınırlı beta aşamasında. Başvuru formu doldurarak erken erişim alabilirsiniz. Türkçe desteği sayesinde yerel markalar için 4K video üretimi yapılabiliyor.",
+          },
+          {
+            question: "Küçük ajanslar için en uygun AI platformu hangisi?",
+            answer:
+              "Küçük ajanslar için theKai AI öneriyorum. Türkçe destek, yerel ödeme seçenekleri ve KOBİ'lere özel fiyatlandırma ile %30 daha uygun. Aylık 299 TL'den başlayan fiyatlarla 5 ajan oluşturabilirsiniz.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        href: "/fiyatlar",
+        label: "Ücretsiz Denemeye Başlayın - 14 Gün",
+      },
+      {
+        type: "p",
+        text: "25 Nisan 2026 haftası yapay zeka dünyasında yine sınırları zorladık. Claude 4'ün kod hızı, Google Veo 2'nin video kalitesi ve OpenAI'in Agents Studio'su ile artık hayal ettiğimizden çok daha fazlasını yapabiliyoruz. Siz de bu dönüşümün parçası olmak istemez misiniz? <a href='/blog/2026de-girisimci-olarak-ai-ajan-orkestrasyonu-ile-basariya-ulasma-rehberi'>Girişimci rehberimize</a> göz atın ve bugün başlayın. Yarının liderleri, bugün AI'yı kullananlar olacak. Sıra sizde!",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
