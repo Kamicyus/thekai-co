@@ -10778,6 +10778,121 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "ai-ile-dijital-sanat-yaratici-isler-2026-rehberi",
+    title: "AI ile Dijital Sanat: 2026’da Yaratıcı İşler Yapmanın Yolu",
+    description:
+      "AI ile dijital sanat eserleri üretin, 2026’da yaratıcı işlerden para kazanın. Ücretsiz rehber ve stratejiler şimdi detaylarda!",
+    date: "2026-04-25",
+    readingTime: "11 dk",
+    author: "Kamer",
+    keywords: [
+      "ai ile dijital sanat",
+      "dijital sanat yapay zeka",
+      "ai sanatçı",
+      "2026 yaratıcı işler",
+      "yapay zeka ile sanat",
+      "nft ve ai",
+    ],
+    coverImage:
+      "/images/blog/ai-ile-dijital-sanat-yaratici-isler-2026-rehberi.jpg",
+    content: [
+      {
+        type: "p",
+        text: "2026’da dijital sanat dünyası yapay zekâyla bambaşka bir boyuta taşındı. Çizim yeteneğiniz olmasa bile AI ile dijital sanat eserleri üretip satarak yaratıcı işlerden gelir elde etmek artık hayal değil. Bu rehberde, sıfır kod bilgisiyle nasıl aylık binlerce dolar kazanan sanatçılar arasına katılacağınızı adım adım anlatıyorum.",
+      },
+      {
+        type: "h2",
+        text: "AI ile Dijital Sanat Eseri Üretmek Nedir, Neden Bu Kadar Popüler?",
+      },
+      {
+        type: "p",
+        text: "AI ile dijital sanat, metin komutlarıyla saniyelerde görseller, animasyonlar ve hatta 3D modeller üretmeyi ifade eder. 2025’te Midjourney V7, Stable Diffusion 4 ve DALL·E 4’ün çıkmasıyla kalite çizilere kıyasla %300 iyileşti. Geleneksel yöntemlerle haftalar süren çalışmalar, <a href='/blog/2026-en-iyi-ai-araclari-rehberi-ve-verimlilik-otomasyonu'>en iyi AI araçları</a> sayesinde dakikalara indi. Talep patlamasının iki nedeni var: NFT piyasası yeniden canlandı ve markalar sosyal medya için özgün görsellere doymuyor. Sonuç? Yetenek değil, komut (prompt) yazma becerisi öne çıkıyor.",
+      },
+      {
+        type: "h2",
+        text: "Hangi AI Araçları 2026’da One Çıktı? (Karşılaştırmalı Tablo)",
+      },
+      {
+        type: "p",
+        text: "Araç başına 29$–99$ arası değişen fiyatlarla pazar kızıştı. İşte güncel kıyaslama: Midjourney V7, fotoğraf gerçekçiliğinde zirvede; üyelik 49$/ay, ticari hak otomatik. Stable Diffusion 4 XL, açık kaynak olmasıyla sınırsız özelleştirme sunuyor, tek kurulum maliyeti 0$ ama GPU kiralama 0,5$/saat. DALL·E 4, metin içeren görsellerde hata oranını %2’ye indirdi; API başına 0,08$/görsel. Adobe Firefly 3, telifsiz eğitim verisiyle markaların gözdesi; Creative Cloud abonesine ücretsiz. Kısacası bütçeniz düşükse Stable, hızlı satış için Midjourney, metin ağırlıklı poster için DALL·E 4 seçin.",
+      },
+      { type: "h2", text: "Prompt Mühendisliği: Sanatçılığın Yeni Tuşu" },
+      {
+        type: "p",
+        text: "Kaliteli çıktı almak için komutunuzu üç parçaya bölün: tarz + konu + teknik detay. Örnek: 'Oil-on-canvas texture, cyberpunk Istanbul skyline at sunset, 8K, ultra-sharp, pastel palette --ar 16:9 --v 7'. Negatif prompt eklemeyi unutmayın: '--no blur, watermark, extra fingers'. 2026’da trend kelimeler: 'glitchcore', 'biomechanical ornament', 'voxel brush'. Prompt’u thekai.co’nun <a href='/blog/ai-ajan-orkestrasyonu-nedir'>AJAN prompt bankasında</a> saklayıp varyasyon üretin, a/b testleriyle en çok beğenilen stili tespit edin.",
+      },
+      { type: "h2", text: "Üretkenlik Zinciri: Fikirden NFT’ye 5 Adım" },
+      {
+        type: "ul",
+        items: [
+          "Fikir Aşaması: Notion AI ile 100 başlık üretin, Twitter trendlerini eşleştirin.",
+          "Görsel Üretim: Midjourney’de 4K çözünürlükte 20 varyasyon render alın.",
+          "Raritet Ayarlama: Python betiğiyle 5 özelliği rastgele değiştirerek 10.000 koleksiyon görseli oluşturun.",
+          "NFT Basım: OpenSea Studio’da gas’siz Polygon ağında mintleyin, telif yüzdesi %10 olarak sabitleyin.",
+          "Pazarlama: Discord, Instagram Reels ve TikTok’ta 15’er saniyelik time-lapse videolarla story anlatımı yapın.",
+        ],
+      },
+      { type: "h2", text: "Telif, Etik ve Yasal Sınırlar 2026 Güncellemesi" },
+      {
+        type: "p",
+        text: "AB yapay zeka yasası taslak metnine göre AI üretimi eserler telif korumasından mahrum sayılmıyor; ancak eğitim verisinin telif hakkı üreticiye ait olmalı. Çözüm: Adobe Firefly veya Getty AI gibi tamamen telifsiz veriyle çalışan modelleri tercih edin. ABD’de ise kısmi korumayı kazanmak için 'insan dokunuşu' şart; Photoshop’ta renk düzeltmesi ya da elle maskeleme yeterli. Türkiye’de ise eser tescili için 'orijinallik' arandığından, üretken AI çıktısını %20 oranında değiştirip başvuru yapabilirsiniz. Unutmayın: etiket yönetmeliği, yapay zekâ çıktısını paylaşırken #aidigitalart ibaresini açıklama alanına yazmayı zorunlu kılıyor.",
+      },
+      {
+        type: "h2",
+        text: "Gelir Modelleri: NFT, Baskı, Lisanlama ve Freelance",
+      },
+      {
+        type: "p",
+        text: "NFT satışları 2026’da yeniden yükselişte; ortalama koleksiyon fiyatı 0,08 ETH. Ancak pazar doygun, fark yaratmak için utility ekleyin: token sahiplerine özel yüksek çözünürlükklü dosya + PSD şablon. Fiziksel baskıda Printful entegrasyonuyla kanvas tablo maliyeti 12$, satış fiyatı 59$, kâr marjı %79. Stok sitelerine lisanslama yapacaksanız Adobe Stock’ın AI kabulü %100; ortalama indirme başı 0,66$ kazanırsınız. Freelance platformlarda (Fiverr, Upwork) özel portre çizimi 45$’dan başlıyor; 3 saatte teslim edebilmek için <a href='/blog/ai-ajan-orkestrasyonu-ile-2026de-profesyonel-muzik-produksiyonu-rehberi'>AJAN otomasyon şablonu</a> kullanın, aynı anda 10 sipariş alın.",
+      },
+      { type: "h2", text: "İş Akışınızı 10 Kat Hızlandıracak AJAN Şablonu" },
+      {
+        type: "p",
+        text: "thekai.co’da oluşturduğum 'Digital-Art-Factory' şablonu şunları yapar: 1) Google Trends’den günlük popüler 50 anahtar kelimeyi çeker. 2) Prompt şablonlarına otomatik yerleştirip Midjourney API ile 500 görsel üretir. 3) Çıktıları otomatik olarak Watermark-Ly’e gönderip imzalar. 4) Airtable’a meta veri (etiket, açıklama, fiyat) yazar. 5) OpenSea, Etsy ve Shopify’a toplu yükler. Kod bilmeye gerek yok; sürükle-bırak entegrasyon. Şablonu kopyalayıp 30 dakikada çalışır hale getirebilir, aylık 2.000+ görsel envanteri yönetebilirsiniz.",
+      },
+      { type: "h2", text: "Sıkça Sorulan Sorular" },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "Çizim bilmeyen biri gerçekten para kazanabilir mi?",
+            answer:
+              "Kesinlikle. 2026 verilerine göre AI sanat pazarının %68’i çizim bilmeyen üreticilerden oluşuyor. Önemli olan iyi prompt yazmak ve doğru platformda pazarlamak.",
+          },
+          {
+            question: "Hangi platformda ilk satışımı yapmalıyım?",
+            answer:
+              "Hızlı geri bildirim için OpenSea’yi öneririz. Gas ücreti ödemeden Polygon üzerinde mintleyebilir, düşük fiyatla deneme sürüşü yapabilirsiniz.",
+          },
+          {
+            question: "Vergi kaygım var, nasıl fatura keseceğim?",
+            answer:
+              "Türkiye’de 2026 itibarıyla e-ticaret kazançları 230.000 TL’ye kadar basit usulde vergilendirilir. Gelirlerinizi yalnızca banka hesabından alıp e-defter tutarak kolayca beyan edebilirsiniz.",
+          },
+          {
+            question: "Prompt’umu çalarlar mı?",
+            answer:
+              "Blockchain tabanlı prompt pazarı (PromptBase, CivitAI) size NFT gibi prompt’unuzu tescilleyip satma imkânı sunar. Telif ispatı için zaman damgalı dosya yeterlidir.",
+          },
+          {
+            question: "Donanım gereksinimi nedir?",
+            answer:
+              "Bulut tabanlı araçları (Midjourney, DALL·E) kullanıyorsanız sadece tarayıcı yeterli. Stable Diffusion’u local çalıştıracaksanız 8 GB VRAM’lı ekran kartı şart; kiralık GPU 0,5$/saatten başlıyor.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        href: "/fiyatlar",
+        label: "Ücretsiz AJAN Şablonunu Hemen Kullan",
+      },
+      {
+        type: "p",
+        text: "Artık AI ile dijital sanat üretip yaratıcı işlerden gelir elde etmenin tüm adımlarını biliyorsunuz. Sıra, bu bilgiyi aksiyona dönüştürmekte. Üstelik kod yazmadan, sadece thekai.co AJAN şablonlarıyla ilk NFT koleksiyonunuzu 24 saat içinde yayınlayabilirsiniz. Ücretsiz demo için <a href='/blog/2026da-ai-ajan-orkestrasyonu-ile-hayallerini-gerceklestirme-rehberi'>hayallerinizi gerçekleştirme rehberimizi</a> de inceleyebilir, hemen başlayabilirsiniz. Dijital tuvaliniz hazırsa, haydi üretime!",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
