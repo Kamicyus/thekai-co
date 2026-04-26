@@ -19,10 +19,20 @@ export default function CTABanner() {
     >
       {/* Scattered dark pinwheel decorations */}
       <div className="absolute top-8 left-[10%] pointer-events-none">
-        <DecorativePinwheel size={60} opacity={0.12} color="#0A0A0A" rotate={25} />
+        <DecorativePinwheel
+          size={60}
+          opacity={0.12}
+          color="#0A0A0A"
+          rotate={25}
+        />
       </div>
       <div className="absolute bottom-12 right-[15%] pointer-events-none">
-        <DecorativePinwheel size={90} opacity={0.1} color="#0A0A0A" rotate={-15} />
+        <DecorativePinwheel
+          size={90}
+          opacity={0.1}
+          color="#0A0A0A"
+          rotate={-15}
+        />
       </div>
 
       {/* Dark orbiting planets — realistic, wide orbits */}
@@ -35,10 +45,13 @@ export default function CTABanner() {
           transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute" style={{ top: -420, left: -14 }}>
-            <div className="w-9 h-9 rounded-full relative overflow-hidden"
+            <div
+              className="w-9 h-9 rounded-full relative overflow-hidden"
               style={{
-                background: "radial-gradient(circle at 35% 30%, #1a3050 0%, #0a1a30 50%, #050a18 100%)",
-                boxShadow: "inset -2px -2px 5px rgba(0,0,0,0.6), inset 1px 1px 3px rgba(60,100,140,0.1)",
+                background:
+                  "radial-gradient(circle at 35% 30%, #1a3050 0%, #0a1a30 50%, #050a18 100%)",
+                boxShadow:
+                  "inset -2px -2px 5px rgba(0,0,0,0.6), inset 1px 1px 3px rgba(60,100,140,0.1)",
                 opacity: 0.2,
               }}
             />
@@ -54,17 +67,28 @@ export default function CTABanner() {
         >
           <div className="absolute" style={{ top: -380, left: -16 }}>
             <div className="relative">
-              <div className="w-8 h-8 rounded-full relative overflow-hidden"
+              <div
+                className="w-8 h-8 rounded-full relative overflow-hidden"
                 style={{
-                  background: "radial-gradient(circle at 35% 30%, #3a3020 0%, #201808 50%, #100a04 100%)",
-                  boxShadow: "inset -2px -2px 5px rgba(0,0,0,0.6), inset 1px 1px 2px rgba(100,80,40,0.1)",
+                  background:
+                    "radial-gradient(circle at 35% 30%, #3a3020 0%, #201808 50%, #100a04 100%)",
+                  boxShadow:
+                    "inset -2px -2px 5px rgba(0,0,0,0.6), inset 1px 1px 2px rgba(100,80,40,0.1)",
                   opacity: 0.18,
                 }}
               >
-                <div className="absolute w-full" style={{ top: '40%', height: '6%', background: 'rgba(60,50,30,0.3)' }} />
+                <div
+                  className="absolute w-full"
+                  style={{
+                    top: "40%",
+                    height: "6%",
+                    background: "rgba(60,50,30,0.3)",
+                  }}
+                />
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[44px] h-[14px] rounded-full -rotate-[25deg]"
-                style={{ border: '1px solid rgba(80,60,30,0.15)' }}
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[44px] h-[14px] rounded-full -rotate-[25deg]"
+                style={{ border: "1px solid rgba(80,60,30,0.15)" }}
               />
             </div>
           </div>
@@ -78,15 +102,32 @@ export default function CTABanner() {
           transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute" style={{ top: -350, left: -16 }}>
-            <div className="w-10 h-10 rounded-full relative overflow-hidden"
+            <div
+              className="w-10 h-10 rounded-full relative overflow-hidden"
               style={{
-                background: "radial-gradient(circle at 35% 30%, #2a2010 0%, #181008 50%, #0a0804 100%)",
-                boxShadow: "inset -3px -2px 6px rgba(0,0,0,0.6), inset 1px 1px 3px rgba(80,60,20,0.08)",
+                background:
+                  "radial-gradient(circle at 35% 30%, #2a2010 0%, #181008 50%, #0a0804 100%)",
+                boxShadow:
+                  "inset -3px -2px 6px rgba(0,0,0,0.6), inset 1px 1px 3px rgba(80,60,20,0.08)",
                 opacity: 0.15,
               }}
             >
-              <div className="absolute w-full" style={{ top: '30%', height: '6%', background: 'rgba(50,40,20,0.2)' }} />
-              <div className="absolute w-full" style={{ top: '55%', height: '8%', background: 'rgba(40,30,15,0.2)' }} />
+              <div
+                className="absolute w-full"
+                style={{
+                  top: "30%",
+                  height: "6%",
+                  background: "rgba(50,40,20,0.2)",
+                }}
+              />
+              <div
+                className="absolute w-full"
+                style={{
+                  top: "55%",
+                  height: "8%",
+                  background: "rgba(40,30,15,0.2)",
+                }}
+              />
             </div>
           </div>
         </motion.div>
@@ -99,9 +140,11 @@ export default function CTABanner() {
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute" style={{ top: -400, left: -8 }}>
-            <div className="w-6 h-6 rounded-full"
+            <div
+              className="w-6 h-6 rounded-full"
               style={{
-                background: "radial-gradient(circle at 35% 30%, #3a1a10 0%, #201008 50%, #100804 100%)",
+                background:
+                  "radial-gradient(circle at 35% 30%, #3a1a10 0%, #201008 50%, #100804 100%)",
                 boxShadow: "inset -2px -1px 4px rgba(0,0,0,0.6)",
                 opacity: 0.15,
               }}
@@ -119,27 +162,52 @@ export default function CTABanner() {
         />
         <motion.div
           animate={{ y: [15, -15, 15], x: [8, -8, 8] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute top-[40%] right-[20%] w-3 h-3 rounded-full bg-[#0A0A0A]/10"
         />
         <motion.div
           animate={{ y: [-10, 25, -10], x: [-5, 12, -5] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
           className="absolute bottom-[30%] left-[30%] w-1.5 h-1.5 rounded-full bg-[#0A0A0A]/12"
         />
         <motion.div
           animate={{ y: [12, -18, 12], x: [6, -10, 6] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
           className="absolute top-[60%] right-[35%] w-2.5 h-2.5 rounded-full bg-[#0A0A0A]/8"
         />
         <motion.div
           animate={{ y: [-15, 10, -15] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3,
+          }}
           className="absolute top-[15%] right-[40%] w-1.5 h-1.5 rounded-full bg-white/10"
         />
         <motion.div
           animate={{ y: [10, -12, 10] }}
-          transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+          transition={{
+            duration: 6.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.5,
+          }}
           className="absolute bottom-[20%] right-[10%] w-2 h-2 rounded-full bg-white/8"
         />
       </div>
@@ -155,7 +223,7 @@ export default function CTABanner() {
             </p>
             <Link
               href="/iletisim"
-              className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#0A0A0A] text-[#D8FB32] font-semibold rounded-[12px] text-base hover:bg-[#1A1A1A] hover:scale-[1.04] transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_40px_rgba(216,251,50,0.15)]"
+              className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#0A0A0A] text-[#D8FB32] font-semibold rounded-[12px] text-base hover:bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_40px_rgba(216,251,50,0.15)]"
             >
               {t("button")}
               <span className="animate-[spin-slow_3s_linear_infinite] inline-flex">

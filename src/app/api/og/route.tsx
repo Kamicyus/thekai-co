@@ -1,7 +1,10 @@
 import { ImageResponse } from "next/og";
 import { getBlogPost } from "@/lib/blog-data";
 
-export const runtime = "edge";
+// nodejs runtime — blog-data.ts (10K+ satır pure data) edge bundle limitini aşıyor,
+// önceki edge runtime build'de Vercel endpoint'i hiç oluşturmadı (canlıda 404).
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 const KAI_BG = "#0A0A0A";
 const KAI_INK = "#F5F5F5";

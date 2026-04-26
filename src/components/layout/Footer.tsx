@@ -173,14 +173,14 @@ export default function Footer() {
               href="/kullanim-sartlari"
               className="text-[#999999] text-xs hover:text-[#F5F5F5] transition-colors duration-200"
             >
-              Kullanım Şartları
+              {t("terms")}
             </Link>
             <span className="text-[#666666] text-xs">·</span>
             <Link
               href="/kvkk"
               className="text-[#999999] text-xs hover:text-[#F5F5F5] transition-colors duration-200"
             >
-              KVKK
+              {t("kvkk")}
             </Link>
           </div>
         </div>

@@ -30,14 +30,20 @@ export default function Process() {
 
         {/* Steps — horizontal on desktop, vertical on mobile */}
         <StaggerChildren
-          className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 lg:gap-6"
+          className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-6"
           staggerDelay={0.1}
         >
           {STEPS.map((step, i) => (
             <StaggerItem key={step.number} className="relative">
               <div className="flex flex-col items-center md:items-start text-center md:text-left bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 lg:p-6 hover:border-white/[0.1] hover:bg-white/[0.05] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(216,251,50,0.06)]">
                 {/* Number */}
-                <span className="text-4xl lg:text-5xl font-black text-[#D8FB32] tracking-[-2px] mb-4 font-sans" style={{ textShadow: '0 0 40px rgba(216,251,50,0.35), 0 0 80px rgba(216,251,50,0.15)' }}>
+                <span
+                  className="text-4xl lg:text-5xl font-black text-[#D8FB32] tracking-[-2px] mb-4 font-sans"
+                  style={{
+                    textShadow:
+                      "0 0 40px rgba(216,251,50,0.35), 0 0 80px rgba(216,251,50,0.15)",
+                  }}
+                >
                   {step.number}
                 </span>
 

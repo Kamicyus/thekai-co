@@ -342,13 +342,13 @@ export default function Hero() {
         >
           <Link
             href="/#hizmetler"
-            className="inline-flex items-center justify-center px-10 py-4 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[12px] hover:bg-[#B4F030] hover:scale-[1.03] transition-all duration-300 text-lg shadow-[0_0_40px_rgba(216,251,50,0.3),0_0_80px_rgba(216,251,50,0.1)]"
+            className="inline-flex items-center justify-center px-10 py-4 bg-[#D8FB32] text-[#0A0A0A] font-semibold rounded-[12px] hover:bg-[#B4F030] hover:scale-[1.02] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] text-lg shadow-[0_0_40px_rgba(216,251,50,0.3),0_0_80px_rgba(216,251,50,0.1)]"
           >
             {t("ctaServices")}
           </Link>
           <Link
             href="/#portfolyo"
-            className="inline-flex items-center justify-center px-10 py-4 border border-white/[0.1] text-[#F5F5F5] font-semibold rounded-[12px] hover:border-[#D8FB32]/40 hover:bg-[#D8FB32]/5 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(216,251,50,0.08)] transition-all duration-300 text-lg backdrop-blur-sm"
+            className="inline-flex items-center justify-center px-10 py-4 border border-white/[0.1] text-[#F5F5F5] font-semibold rounded-[12px] hover:border-[#D8FB32]/40 hover:bg-[#D8FB32]/5 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(216,251,50,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] text-lg backdrop-blur-sm"
           >
             {t("ctaPortfolio")}
           </Link>
