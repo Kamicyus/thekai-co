@@ -7,6 +7,8 @@ import { fontVariables } from "@/lib/fonts";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ChatBot from "@/components/ui/ChatBot";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -248,6 +250,8 @@ export default async function LocaleLayout({
           <Footer />
           <ChatBot />
         </NextIntlClientProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
