@@ -10,13 +10,13 @@ export default function Hero() {
   const t = useTranslations("hero");
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background video — poster gives instant LCP, preload metadata defers full file */}
+      {/* Background video — poster instant LCP; preload="none" defers full file (mobile LCP fix) */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         poster="/images/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       >
@@ -294,7 +294,9 @@ export default function Hero() {
               width={600}
               height={220}
               className="h-[100px] sm:h-[130px] md:h-[160px] lg:h-[200px] xl:h-[230px] w-auto object-contain"
-              priority
+              preload
+              fetchPriority="high"
+              loading="eager"
             />
             {/* Animated pinwheel on the i dot */}
             <motion.div

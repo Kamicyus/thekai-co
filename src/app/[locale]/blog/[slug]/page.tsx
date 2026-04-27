@@ -377,7 +377,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                 src={post.coverImage}
                 alt={post.title}
                 fill
-                priority
+                preload
+                fetchPriority="high"
+                loading="eager"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                 className="object-cover"
               />
