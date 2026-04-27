@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import KaiIcon from "@/components/icons/KaiIcon";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -18,7 +17,11 @@ export default function Navbar() {
   // Agents page/subdomain has its own navbar — hide via CSS to avoid hydration mismatch
   const [isAgents, setIsAgents] = useState(false);
   useEffect(() => {
-    if (window.location.hostname.startsWith("agents.") || pathname === "/agents" || pathname.startsWith("/agents/")) {
+    if (
+      window.location.hostname.startsWith("agents.") ||
+      pathname === "/agents" ||
+      pathname.startsWith("/agents/")
+    ) {
       setIsAgents(true);
     }
   }, [pathname]);
@@ -31,7 +34,12 @@ export default function Navbar() {
     { label: t("blog"), href: "/blog" as const },
     { label: t("tools"), href: "/araclar" as const },
     { label: t("contact"), href: "/iletisim" as const },
-    { label: t("agents"), href: "https://agents.thekai.co" as const, badge: true, external: true },
+    {
+      label: t("agents"),
+      href: "https://agents.thekai.co" as const,
+      badge: true,
+      external: true,
+    },
   ];
 
   const switchLocale = (newLocale: "tr" | "en") => {
@@ -101,7 +109,13 @@ export default function Navbar() {
 
                 if ("external" in link && link.external) {
                   return (
-                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cls}
+                    >
                       {badge}
                       {link.label}
                     </a>
@@ -112,7 +126,11 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={link.href === "/" ? () => window.scrollTo({ top: 0, behavior: "smooth" }) : undefined}
+                    onClick={
+                      link.href === "/"
+                        ? () => window.scrollTo({ top: 0, behavior: "smooth" })
+                        : undefined
+                    }
                     className={cls}
                   >
                     {badge}
@@ -125,7 +143,7 @@ export default function Navbar() {
             {/* CTA + Language Switcher + Hamburger */}
             <div className="flex items-center gap-4">
               <Link
-                href="#waitlist"
+                href="/codex#waitlist"
                 className="hidden md:inline-flex items-center justify-center px-5 py-2.5 bg-[#D8FB32] text-[#0A0A0A] text-sm font-semibold rounded-[10px] hover:bg-[#B4F030] transition-colors duration-200"
               >
                 Ücretsiz Başla
@@ -161,9 +179,13 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="md:hidden flex flex-col gap-1.5 p-2"
                 aria-label="Menu"
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-menu"
               >
                 <motion.span
-                  animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                  animate={
+                    mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
+                  }
                   className="block w-6 h-[2px] bg-[#F5F5F5]"
                 />
                 <motion.span
@@ -171,7 +193,9 @@ export default function Navbar() {
                   className="block w-6 h-[2px] bg-[#F5F5F5]"
                 />
                 <motion.span
-                  animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                  animate={
+                    mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
+                  }
                   className="block w-6 h-[2px] bg-[#F5F5F5]"
                 />
               </button>
@@ -199,38 +223,47 @@ export default function Navbar() {
                     : "text-[#F5F5F5] hover:text-[#D8FB32]"
                 }`;
                 return (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ delay: i * 0.05 + 0.1 }}
-                >
-                  {isExternal ? (
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className={mobileCls}>
-                      {link.label}
-                      {"badge" in link && link.badge && (
-                        <span className="text-xs bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] px-2 py-0.5 rounded font-bold uppercase tracking-wide">NEW</span>
-                      )}
-                    </a>
-                  ) : (
-                  <Link
-                    href={link.href}
-                    onClick={() => {
-                      setMobileOpen(false);
-                      if (link.href === "/") window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    className={mobileCls}
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: i * 0.05 + 0.1 }}
                   >
-                    {link.label}
-                    {"badge" in link && link.badge && (
-                      <span className="text-xs bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] px-2 py-0.5 rounded font-bold uppercase tracking-wide">
-                        NEW
-                      </span>
+                    {isExternal ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileOpen(false)}
+                        className={mobileCls}
+                      >
+                        {link.label}
+                        {"badge" in link && link.badge && (
+                          <span className="text-xs bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] px-2 py-0.5 rounded font-bold uppercase tracking-wide">
+                            NEW
+                          </span>
+                        )}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={() => {
+                          setMobileOpen(false);
+                          if (link.href === "/")
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className={mobileCls}
+                      >
+                        {link.label}
+                        {"badge" in link && link.badge && (
+                          <span className="text-xs bg-[#D8FB32]/10 border border-[#D8FB32]/30 text-[#D8FB32] px-2 py-0.5 rounded font-bold uppercase tracking-wide">
+                            NEW
+                          </span>
+                        )}
+                      </Link>
                     )}
-                  </Link>
-                  )}
-                </motion.div>
+                  </motion.div>
                 );
               })}
               <motion.div
@@ -240,7 +273,7 @@ export default function Navbar() {
                 transition={{ delay: 0.35 }}
               >
                 <Link
-                  href="#waitlist"
+                  href="/codex#waitlist"
                   onClick={() => setMobileOpen(false)}
                   className="inline-flex items-center justify-center px-8 py-3 bg-[#D8FB32] text-[#0A0A0A] text-lg font-semibold rounded-[10px] hover:bg-[#B4F030] transition-colors"
                 >
@@ -257,7 +290,10 @@ export default function Navbar() {
                 className="flex items-center gap-2 text-sm font-medium mt-2"
               >
                 <button
-                  onClick={() => { switchLocale("tr"); setMobileOpen(false); }}
+                  onClick={() => {
+                    switchLocale("tr");
+                    setMobileOpen(false);
+                  }}
                   className={`px-2 py-1 rounded transition-colors duration-200 ${
                     locale === "tr"
                       ? "text-[#D8FB32]"
@@ -268,7 +304,10 @@ export default function Navbar() {
                 </button>
                 <span className="text-[#333333]">|</span>
                 <button
-                  onClick={() => { switchLocale("en"); setMobileOpen(false); }}
+                  onClick={() => {
+                    switchLocale("en");
+                    setMobileOpen(false);
+                  }}
                   className={`px-2 py-1 rounded transition-colors duration-200 ${
                     locale === "en"
                       ? "text-[#D8FB32]"

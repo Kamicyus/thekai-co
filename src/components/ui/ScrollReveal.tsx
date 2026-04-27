@@ -47,9 +47,19 @@ export function ScaleOnScroll({
     offset: ["start end", "center center"],
   });
 
-  const scaleRange = intensity === "dramatic" ? [0.82, 1] : intensity === "subtle" ? [0.96, 1] : [0.9, 1];
+  const scaleRange =
+    intensity === "dramatic"
+      ? [0.82, 1]
+      : intensity === "subtle"
+        ? [0.96, 1]
+        : [0.9, 1];
   const opacityRange = intensity === "dramatic" ? [0, 0.4] : [0, 0.3];
-  const yRange = intensity === "dramatic" ? [40, 0] : intensity === "normal" ? [20, 0] : [0, 0];
+  const yRange =
+    intensity === "dramatic"
+      ? [40, 0]
+      : intensity === "normal"
+        ? [20, 0]
+        : [0, 0];
 
   const scale = useTransform(scrollYProgress, [0, 1], scaleRange);
   const opacity = useTransform(scrollYProgress, opacityRange, [0, 1]);
@@ -91,7 +101,7 @@ export function RevealText({
           const start = i / words.length;
           const end = start + 1 / words.length;
           const isHighlight = highlightWords.some((hw) =>
-            word.toLowerCase().includes(hw.toLowerCase())
+            word.toLowerCase().includes(hw.toLowerCase()),
           );
           return (
             <WordReveal
@@ -195,13 +205,13 @@ export function AnimatedCounter({
   suffix = "",
   prefix = "",
   className = "",
-  duration = 2,
+  format,
 }: {
   value: number;
   suffix?: string;
   prefix?: string;
   className?: string;
-  duration?: number;
+  format?: (n: number) => string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const { scrollYProgress } = useScroll({
@@ -209,11 +219,14 @@ export function AnimatedCounter({
     offset: ["start end", "start 0.5"],
   });
   const count = useTransform(scrollYProgress, [0, 1], [0, value]);
+  const formatted = useTransform(count, (n) =>
+    format ? format(n) : Math.round(n).toLocaleString("tr-TR"),
+  );
 
   return (
     <motion.span ref={ref} className={className}>
       {prefix}
-      <motion.span>{count}</motion.span>
+      <motion.span>{formatted}</motion.span>
       {suffix}
     </motion.span>
   );

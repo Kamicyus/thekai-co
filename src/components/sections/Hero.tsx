@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import KaiIcon from "@/components/icons/KaiIcon";
 import DecorativePinwheel from "@/components/ui/DecorativePinwheel";
 
 export default function Hero() {

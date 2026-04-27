@@ -36,6 +36,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Anchor target offset — navbar height (80px) compensation */
+[id] {
+  scroll-margin-top: 80px;
 }
 
 body {
