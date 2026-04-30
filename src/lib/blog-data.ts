@@ -13253,6 +13253,286 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "marka-kimligi-ve-tasarimda-ai-ajan-orkestrasyonu-2026",
+    title:
+      "Marka Kimliğinizi AI Ajan Orkestrasyonuyla Yeniden Tasarlayın | 2026",
+    description:
+      "Marka ve tasarım süreçlerinizi AI ajan orkestrasyonuyla nasıl dönüştürebileceğinizi keşfedin. 2026'da tutarlı marka kimliği oluşturmak için 5 strateji.",
+    date: "2026-04-30",
+    readingTime: "8 dk",
+    author: "Kamer",
+    keywords: [
+      "ai ajan orkestrasyonu marka tasarımı",
+      "marka kimliği oluşturma 2026",
+      "yapay zeka ile marka stratejisi",
+      "ai destekli logo tasarımı",
+      "tutarlı marka deneyimi ai",
+      "dijital marka yönetimi ai ajan",
+      "thekai.co marka tasarımı",
+    ],
+    coverImage:
+      "/images/blog/marka-kimligi-ve-tasarimda-ai-ajan-orkestrasyonu-2026.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Bir markanın kalbinde yatan şey, tutarlılık ve özgünlüktür. Ancak 2026 yılında, marka ve tasarım süreçlerini yönetmek, geleneksel yöntemlerle neredeyse imkansız hale geldi. Çünkü tüketiciler artık her temas noktasında kusursuz, kişiselleştirilmiş ve anlık deneyimler bekliyor. İşte tam bu noktada AI ajan orkestrasyonu devreye giriyor. Bu yazıda, marka kimliğinizi oluşturmak ve tasarım süreçlerinizi otomatize etmek için AI ajan orkestrasyonunu nasıl kullanabileceğinizi adım adım anlatacağım.",
+      },
+      {
+        type: "h2",
+        text: "Marka ve Tasarımda AI Ajan Orkestrasyonu Neden Kritik?",
+      },
+      {
+        type: "p",
+        text: "Düşünün ki bir marka danışmanınız, bir grafik tasarımcınız, bir metin yazarınız ve bir sosyal medya yöneticiniz var. Bu ekibin her biri ayrı ayrı çalışırken, markanızın sesi ve görsel kimliği arasında kopukluklar oluşabiliyor. AI ajan orkestrasyonu, tüm bu rolleri tek bir merkezden yöneten, birbiriyle iletişim halinde olan yapay zeka ajanları sayesinde bu sorunu kökünden çözüyor. <a href='/blog/2026da-ai-araclari-ile-is-sureclerinizi-otomatize-edin'>İş süreçlerinizi otomatize etmek</a> için bu teknolojiyi kullanmak, markanızın her kanalda aynı dili konuşmasını sağlar.",
+      },
+      {
+        type: "p",
+        text: "Örneğin, bir AI ajanı markanızın renk paletini ve tipografisini belirlerken, bir diğeri bu kurallara sadık kalarak sosyal medya görselleri üretir. Üçüncü bir ajan ise bu görsellerin metinlerini marka sesinize uygun şekilde yazar. Tüm bu süreç, insan müdahalesine gerek kalmadan, saniyeler içinde gerçekleşir. Bu, pazarlama ekiplerinin yaratıcı stratejiye odaklanmasını sağlar.",
+      },
+      {
+        type: "h2",
+        text: "Tutarlı Marka Kimliği İçin 5 Adımda AI Ajan Orkestrasyonu",
+      },
+      {
+        type: "p",
+        text: "Marka kimliğinizi AI ajan orkestrasyonuyla oluşturmak için izlemeniz gereken adımları aşağıda sıraladım. Bu adımlar, thekai.co platformunun sunduğu yeteneklerle doğrudan uyumludur.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Marka Stratejisi Ajanı: Hedef kitlenizi, pazar konumlandırmanızı ve marka vaadinizi tanımlayın. Bu ajan, rakip analizi yaparak size özgün bir strateji sunar.",
+          "Görsel Kimlik Ajanı: Logo, renk paleti, tipografi ve görsel dilinizi belirler. Tüm çıktılar marka kılavuzunuza uygun olarak üretilir.",
+          "İçerik Üretim Ajanı: Blog yazılarından sosyal medya gönderilerine kadar tüm metinleri marka sesinizle yazar. SEO dostu anahtar kelimeleri de otomatik olarak entegre eder.",
+          "Tasarım Tutarlılık Ajanı: Tüm görsel ve metinsel içeriklerin marka kurallarına uygunluğunu denetler. Herhangi bir sapma olduğunda uyarı verir ve düzeltme önerir.",
+          "Performans Analiz Ajanı: Oluşturulan içeriklerin etkileşim oranlarını, dönüşüm metriklerini analiz eder. Bu veriler ışığında stratejiyi sürekli iyileştirir.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Bu beş ajanın koordineli çalışması, markanızın her temas noktasında tutarlı ve güçlü bir izlenim bırakmasını sağlar. <a href='/blog/ai-destekli-seo-dijital-pazarlama-2026'>AI destekli dijital pazarlama</a> stratejinizin merkezine bu orkestrasyonu koyduğunuzda, rakiplerinizin bir adım önüne geçersiniz.",
+      },
+      {
+        type: "h2",
+        text: "Geleneksel Tasarım Süreci vs. AI Ajan Orkestrasyonu",
+      },
+      {
+        type: "p",
+        text: "Geleneksel bir tasarım sürecinde bir brief oluşturmak, tasarımcıyla görüşmek, revizyonlar yapmak ve nihai çıktıyı almak günler hatta haftalar sürebilir. AI ajan orkestrasyonu ise bu süreci dakikalara indirir. Aşağıdaki karşılaştırma, iki yaklaşım arasındaki farkı net bir şekilde ortaya koyuyor:",
+      },
+      {
+        type: "p",
+        text: "<strong>Geleneksel Yöntem:</strong> Bir sosyal medya görseli için brief yazılır (2 saat), tasarımcıya iletilir (1 saat), ilk taslak hazırlanır (4 saat), revizyon talep edilir (1 saat), düzeltme yapılır (2 saat), onay alınır (1 saat). Toplam: 11 saat. <strong>AI Ajan Orkestrasyonu:</strong> Strateji ajanı briefi oluşturur (1 dakika), görsel ajan taslağı üretir (30 saniye), tutarlılık ajanı kontrol eder (10 saniye), performans ajanı öngörüde bulunur (5 saniye). Toplam: 2 dakikadan az. Üstelik bu süreçte insan hatası ve yorulma faktörü tamamen ortadan kalkar.",
+      },
+      {
+        type: "h2",
+        text: "Marka Sesinizi ve Görsel Dilinizi Nasıl Korursunuz?",
+      },
+      {
+        type: "p",
+        text: "Bir markanın en büyük düşmanı tutarsızlıktır. Müşterileriniz Instagram'da gördükleri bir görselle web sitenizdeki bir banner arasında fark hissettiklerinde, markanıza olan güvenleri sarsılır. AI ajan orkestrasyonu, marka kılavuzunuzu bir veri tabanı olarak kullanır. Her ajan, bu kılavuza bağlı kalarak çalışır. Örneğin, markanızın birincil rengi #FF6B35 ise, hiçbir ajan bu rengin tonunda sapma yapmaz. Aynı şekilde, marka sesiniz 'resmi ve güvenilir' olarak tanımlanmışsa, bir ajan aniden 'argo ve samimi' bir dil kullanamaz.",
+      },
+      {
+        type: "p",
+        text: "Bu sistem, özellikle birden fazla dilde hizmet veren markalar için hayati önem taşır. <a href='/blog/2026da-web-gelistirme-icin-ai-ajan-orkestrasyonu-rehberi'>Web geliştirme süreçlerinizde</a> AI ajan orkestrasyonunu kullanarak, çok dilli marka deneyiminizi de kusursuz hale getirebilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "Küçük ve Orta Ölçekli İşletmeler İçin Marka Tasarımında AI Ajan Orkestrasyonu",
+      },
+      {
+        type: "p",
+        text: "Büyük markaların tam zamanlı tasarım ekipleri ve ajansları varken, küçük işletmeler genellikle bu lükse sahip değildir. AI ajan orkestrasyonu, küçük işletmelere de profesyonel marka kimliği oluşturma imkanı sunar. Bir KOBİ sahibi olarak, thekai.co platformu sayesinde bir grafik tasarımcıya ödemeden, markanızın tüm görsel materyallerini oluşturabilirsiniz. Bu, sadece maliyet avantajı değil, aynı zamanda hız ve esneklik anlamına da gelir.",
+      },
+      {
+        type: "p",
+        text: "Düşünün ki bir hafta sonu kampanyası yapacaksınız. Geleneksel yöntemlerle bu kampanya için görsel ve metin hazırlamak en az 3-4 iş günü sürer. AI ajan orkestrasyonuyla, kampanya briefini girdiğiniz andan itibaren 10 dakika içinde tüm materyaller hazır olur. <a href='/blog/freelancer-olarak-ai-ajan-orkestrasyonu-ile-gelir-artisi-2026'>Freelancer'lar için gelir artışı</a> sağlayan bu teknoloji, KOBİ'ler için de operasyonel verimlilik demektir.",
+      },
+      {
+        type: "h2",
+        text: "Sıkça Sorulan Sorular",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question:
+              "AI ajan orkestrasyonu marka tasarımında yaratıcılığı öldürür mü?",
+            answer:
+              "Tam tersi. AI ajan orkestrasyonu, tekrarlayan ve zaman alan görevleri otomatize ederek tasarımcıların ve pazarlamacıların daha yaratıcı ve stratejik işlere odaklanmasını sağlar. Ajanlar, insan yaratıcılığını besleyen veriler ve öneriler sunar.",
+          },
+          {
+            question:
+              "Marka kılavuzumu AI ajanlarına nasıl entegre edebilirim?",
+            answer:
+              "thekai.co platformunda, marka kılavuzunuzu (renk paleti, tipografi, logo kullanım kuralları, ses tonu) bir JSON veya PDF dosyası olarak yükleyebilirsiniz. AI ajanları bu veriyi okuyarak tüm çıktılarını bu kurallara göre üretir.",
+          },
+          {
+            question:
+              "AI ajanlarının ürettiği tasarımlar telif hakkı sorunu yaratır mı?",
+            answer:
+              "Hayır. thekai.co platformu, eğitim verilerinde telifsiz görseller ve marka varlıkları kullanır. Üstelik, ajanlar sizin yüklediğiniz özel varlıkları kullanarak çalıştığı için, çıktılar tamamen size aittir.",
+          },
+          {
+            question: "Birden fazla markayı aynı anda yönetebilir miyim?",
+            answer:
+              "Evet. Platform, her marka için ayrı bir 'ajan filosu' oluşturmanıza izin verir. Her filo, kendi marka kılavuzuna göre çalışır ve birbirine karışmaz. Bu, ajanslar ve birden çok marka yöneten şirketler için idealdir.",
+          },
+          {
+            question: "AI ajan orkestrasyonu pahalı bir çözüm mü?",
+            answer:
+              "Geleneksel bir tasarım ajansına ödeyeceğiniz aylık ücretin çok küçük bir kısmına mal olur. Ayrıca, zamandan kazandırdığı için uzun vadede büyük bir yatırım getirisi sağlar. Detaylı fiyatlandırma için sayfamızı ziyaret edebilirsiniz.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        href: "/fiyatlar",
+        label: "Markanızı AI ile Dönüştürmek İçin Hemen Fiyatları Görün",
+      },
+      {
+        type: "p",
+        text: "Marka ve tasarım dünyası artık eskisi gibi değil. Tüketicilerin beklentileri her geçen gün artarken, bu beklentileri karşılamanın en akıllı yolu AI ajan orkestrasyonu. thekai.co ile markanızın kimliğini saniyeler içinde oluşturabilir, tutarlılığı garanti altına alabilir ve yaratıcı ekiplerinizi daha değerli işlere yönlendirebilirsiniz. Bu teknolojiyi bugün keşfedin ve markanızı geleceğe taşıyın.",
+      },
+    ],
+  },
+  {
+    slug: "marka-ve-tasarim-icin-ai-ajan-orkestrasyonu",
+    title:
+      "Marka ve Tasarım Süreçlerinizi AI Ajan Orkestrasyonuyla Geleceğe Taşıyın",
+    description:
+      "2026'da marka ve tasarım dünyasında AI ajan orkestrasyonu ile nasıl öne çıkarsınız? 5 adımda marka kimliğinizi dönüştürün, tasarım hızınızı 10 kata çıkarın. Ücretsiz danışmanlık için hemen tıklayın.",
+    date: "2026-04-30",
+    readingTime: "9 dk",
+    author: "Kamer",
+    keywords: [
+      "marka ve tasarımda ai ajan orkestrasyonu",
+      "ai ajan orkestrasyonu marka tasarım",
+      "marka kimliği yapay zeka",
+      "dijital marka tasarımı 2026",
+      "ai ile logo tasarım süreci",
+      "tasarım otomasyonu ai ajan",
+      "marka stratejisi yapay zeka",
+    ],
+    coverImage: "/images/blog/marka-ve-tasarim-icin-ai-ajan-orkestrasyonu.jpg",
+    content: [
+      {
+        type: "p",
+        text: "Bir marka yaratmak, sadece bir logo çizmek ya da bir renk paleti seçmek değildir. Marka ve tasarım, bir şirketin ruhunu, değerlerini ve vaadini görsel bir dile dönüştürme sanatıdır. Ancak 2026 yılında bu sanatı icra ederken, sadece insan yaratıcılığına güvenmek yetmiyor. Artık AI ajan orkestrasyonu ile marka ve tasarım süreçlerinizi baştan sona optimize edebilir, hem zamandan kazanır hem de tutarlı ve etkileyici bir marka deneyimi yaratabilirsiniz. Bu yazıda, marka ve tasarım dünyasında AI ajan orkestrasyonunun nasıl devrim yarattığını, hangi araçlarla bu dönüşümü gerçekleştirebileceğinizi ve pratik adımları keşfedeceksiniz.",
+      },
+      {
+        type: "h2",
+        text: "Marka ve Tasarımda AI Ajan Orkestrasyonu Neden Kritik?",
+      },
+      {
+        type: "p",
+        text: "Geleneksel marka ve tasarım süreçleri, birden fazla disiplini bir araya getirir: stratejistler, grafik tasarımcılar, UX/UI uzmanları, içerik yazarları ve daha fazlası. Bu ekiplerin uyum içinde çalışması zaman alır ve çoğu zaman iletişim kopuklukları yaşanır. AI ajan orkestrasyonu, bu karmaşayı ortadan kaldırır. Birden fazla yapay zeka ajanını (bir tasarım ajanı, bir metin yazma ajanı, bir veri analizi ajanı) tek bir platformda yöneterek, markanızın her temas noktasında tutarlı bir dil ve görsellik yakalamanızı sağlar. Örneğin, <a href='/blog/2026da-seo-stratejinizi-ai-ajan-orkestrasyonuyla-10-kat-hizlandirin'>SEO stratejinizi hızlandıran AI ajan orkestrasyonu</a> gibi, marka tasarımında da aynı verimlilik artışını gözlemleyebilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "AI Ajan Orkestrasyonu ile Marka Kimliği Oluşturmanın 5 Adımı",
+      },
+      {
+        type: "p",
+        text: "Marka kimliğinizi sıfırdan kurarken veya mevcut kimliğinizi yenilerken, AI ajan orkestrasyonu size adım adım rehberlik edebilir. İşte bu süreçte kullanabileceğiniz 5 temel adım:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Strateji Ajanı ile Marka Pozisyonlaması: Hedef kitlenizi, rakiplerinizi ve pazar boşluklarını analiz eden bir AI ajanı, markanızın benzersiz değer önerisini belirler.",
+          "Tasarım Ajanı ile Görsel Dil Oluşturma: Logo, renk paleti, tipografi ve görsel öğeleri sizin belirlediğiniz parametrelere göre üreten bir ajan, yüzlerce varyasyon sunar.",
+          "İçerik Ajanı ile Marka Sesi: Markanızın kişiliğine uygun metinler, sloganlar ve açıklamalar yazan bir ajan, tutarlı bir marka sesi yakalamanızı sağlar.",
+          "Test Ajanı ile Kullanıcı Deneyimi: Oluşturulan tasarımların farklı platformlarda nasıl göründüğünü test eden bir ajan, uyumluluk sorunlarını giderir.",
+          "Orkestrasyon Ajanı ile Entegrasyon: Tüm bu ajanların çıktılarını birleştirerek marka kılavuzunuzu otomatik olarak hazırlayan bir merkezi ajan, sürecin tamamını yönetir.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Tasarım Süreçlerinde Verimlilik Artışı: Rakamlarla AI Ajan Orkestrasyonu",
+      },
+      {
+        type: "p",
+        text: "Bir markanın görsel kimliğini oluşturmak, geleneksel yöntemlerle 4 ila 8 hafta arasında sürebilir. Bu süreçte bir tasarımcı ekibi, yüzlerce e-posta yazışması ve sayısız revizyon döngüsü yaşar. AI ajan orkestrasyonu ile bu süreyi 3-5 iş gününe indirmek mümkün. Üstelik maliyetler de %60 oranında azalır. Aşağıdaki karşılaştırma, bu dönüşümün somut etkisini gösteriyor:",
+      },
+      {
+        type: "p",
+        text: "Geleneksel yöntemlerde bir marka kimliği projesi için ortalama 12.000 TL ile 25.000 TL arasında bütçe ayırmanız gerekirken, AI ajan orkestrasyonu ile bu maliyet 4.000 TL'ye kadar düşebiliyor. Aynı şekilde, tasarım teslim süresi 45 günden 5 güne iniyor. Bu verimlilik artışı, özellikle girişimciler ve küçük işletmeler için büyük bir avantaj sağlıyor. <a href='/blog/2026da-girisimci-olarak-ai-ajan-orkestrasyonu-ile-basarili-is-kurmak'>Girişimciler için AI ajan orkestrasyonu rehberimizde</a> bu konuyu daha detaylı ele alıyoruz.",
+      },
+      {
+        type: "h2",
+        text: "AI Ajan Orkestrasyonu ile Dijital Marka Deneyimi Yaratmak",
+      },
+      {
+        type: "p",
+        text: "Bir marka sadece görsel unsurlardan ibaret değildir. Müşterilerinizle kurduğunuz her etkileşim, marka deneyiminizin bir parçasıdır. AI ajan orkestrasyonu, web sitenizden sosyal medya hesaplarınıza, e-posta pazarlamanızdan müşteri hizmetlerinize kadar her kanalda tutarlı bir marka deneyimi sunmanızı sağlar. Örneğin, bir AI ajanı web sitenizdeki renkleri ve yazı tiplerini marka kılavuzunuza göre otomatik olarak ayarlarken, bir başka ajan sosyal medya gönderilerinizin tonunu ve görsellerini optimize eder. Bu entegrasyon sayesinde, markanızın her temas noktasında aynı hissi yaratabilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "Marka ve Tasarımda AI Ajan Orkestrasyonu Kullanırken Dikkat Edilmesi Gerekenler",
+      },
+      {
+        type: "p",
+        text: "AI ajan orkestrasyonu güçlü bir araç olsa da, insan dokunuşunun yerini tamamen alamaz. İşte bu süreçte dikkat etmeniz gereken bazı noktalar:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Yaratıcı Yönlendirme: AI ajanları, sizin verdiğiniz girdiler kadar iyidir. Markanızın hikayesini ve vizyonunu net bir şekilde tanımlamadan, ajanlardan beklediğiniz sonucu alamazsınız.",
+          "Telif Hakları ve Özgünlük: AI tarafından üretilen tasarımların telif hakları konusunda dikkatli olun. Her zaman özgünlük kontrolü yapın ve gerekirse insan tasarımcılarla son rötuşları paylaşın.",
+          "Marka Tutarlılığı: Birden fazla ajan kullanırken, her birinin aynı marka kılavuzuna sadık kaldığından emin olun. Orkestrasyon ajanınız bu konuda size yardımcı olacaktır.",
+          "Veri Gizliliği: Markanıza ait hassas bilgileri AI platformlarına yüklerken, veri güvenliği politikalarını kontrol edin.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Başarılı Bir Marka ve Tasarım Stratejisi İçin AI Ajanlarınızı Nasıl Eğitirsiniz?",
+      },
+      {
+        type: "p",
+        text: "AI ajanlarınızın sizin markanızı anlaması için onlara doğru verileri sağlamanız gerekir. İlk adım, markanızın mevcut tüm görsel ve metinsel varlıklarını (logo, broşür, web sitesi ekran görüntüleri, eski kampanyalar) bir veri havuzunda toplamaktır. Ardından, bu verileri kullanarak ajanları eğitebilirsiniz. Örneğin, bir tasarım ajanına markanızın geçmişteki başarılı kampanyalarını göstererek, hangi renklerin ve stillerin hedef kitlenizde daha iyi yankı uyandırdığını öğretebilirsiniz. <a href='/blog/ai-ajan-orkestrasyonu-ile-prompt-muhendisligi-rehberi-2026'>Prompt mühendisliği rehberimizde</a>, ajanlara doğru komutları vermenin püf noktalarını bulabilirsiniz.",
+      },
+      {
+        type: "h2",
+        text: "Sıkça Sorulan Sorular",
+      },
+      {
+        type: "faq",
+        faqItems: [
+          {
+            question: "AI ajan orkestrasyonu, küçük işletmeler için uygun mu?",
+            answer:
+              "Evet, kesinlikle. Küçük işletmeler genellikle sınırlı bütçe ve insan kaynağına sahiptir. AI ajan orkestrasyonu, profesyonel bir marka ve tasarım sürecini çok daha düşük maliyetlerle ve hızlı bir şekilde tamamlamanıza olanak tanır. Tek bir platform üzerinden birden fazla ajanı yöneterek, büyük ajanslarla rekabet edebilecek seviyede bir marka kimliği oluşturabilirsiniz.",
+          },
+          {
+            question: "AI tarafından üretilen tasarımlar özgün müdür?",
+            answer:
+              "AI ajanları, eğitildikleri veri kümelerine dayanarak yeni kombinasyonlar oluşturur. Bu nedenle çıktılar genellikle özgündür, ancak nadiren de olsa mevcut tasarımlarla benzerlik gösterebilir. Bu riski azaltmak için, üretilen tasarımları her zaman bir telif hakkı taramasından geçirmenizi öneririz. Ayrıca, insan tasarımcılarla son bir revizyon yaparak özgünlüğü garanti altına alabilirsiniz.",
+          },
+          {
+            question:
+              "Marka ve tasarımda AI ajan orkestrasyonu kullanmak için teknik bilgiye ihtiyacım var mı?",
+            answer:
+              "Hayır, thekai.co gibi platformlar, kullanıcı dostu arayüzler sunar. Kod yazma veya teknik bilgi gerektirmeden, sürükle-bırak yöntemiyle ajanlarınızı yapılandırabilir ve çalıştırabilirsiniz. Temel bilgisayar kullanma becerisi yeterlidir.",
+          },
+          {
+            question:
+              "AI ajan orkestrasyonu geleneksel tasarımcıların işini elinden alır mı?",
+            answer:
+              "Hayır, tam tersine AI ajan orkestrasyonu, tasarımcıların daha yaratıcı ve stratejik işlere odaklanmasını sağlar. Tekrarlayan görevleri (renk paleti oluşturma, varyasyon üretme, format dönüştürme) AI devralırken, tasarımcılar konsept geliştirme ve yaratıcı yönlendirme gibi insan dokunuşu gerektiren alanlarda değer yaratmaya devam eder.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        href: "/iletisim",
+        label: "Markanızı AI ile Dönüştürmek İçin Ücretsiz Danışmanlık Alın",
+      },
+      {
+        type: "p",
+        text: "Marka ve tasarım dünyası, AI ajan orkestrasyonu sayesinde benzeri görülmemiş bir dönüşüm yaşıyor. Artık sadece büyük bütçeli şirketler değil, her ölçekten işletme profesyonel ve tutarlı bir marka kimliğine sahip olabiliyor. Siz de bu devrimin bir parçası olmak istiyorsanız, hemen harekete geçin. Yukarıdaki butona tıklayarak ücretsiz danışmanlık randevusu alabilir, markanızın geleceğini AI ajan orkestrasyonu ile şekillendirebilirsiniz. Unutmayın, doğru araçlarla ve doğru stratejiyle, markanızın potansiyelini en üst seviyeye çıkarmak artık çok kolay.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
